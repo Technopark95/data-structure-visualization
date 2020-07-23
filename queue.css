@@ -1,0 +1,53 @@
+
+
+    .kaydee_queue{
+        width: 75px;
+    
+    height: 75px;
+   
+    padding: 0.5em;  
+   
+    background-color:rgba(54, 54, 54, 0.842); 
+   
+     font-family: Segoe UI;
+         
+      /* changed */   
+     position: relative;
+  
+     border-radius: 10px;
+  
+     font-size: 150%;
+  
+     text-align: center;
+  
+  
+      }
+    
+    
+  
+  
+  .trans{
+    transform: translateY(50px);
+  }
+
+  #kaydeefirq{
+    color : white;
+   
+ 
+   font-family: Segoe UI;
+       
+    /* changed */  
+    position: absolute; 
+    
+   margin-top: 233px;
+
+   
+
+   font-size: 150%;
+
+
+
+
+
+z-index: 2;
+  }

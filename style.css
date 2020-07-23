@@ -1,0 +1,425 @@
+body
+{
+	padding:0px;
+	margin:0px;
+
+  height: 100in;
+  width: 50in;
+
+
+}
+  .dragg { 
+    
+    width: 80px;
+  
+   height: 80px;
+  
+   padding: 0.5em;  
+  
+   background-color:rgba(0, 0, 0, 0.842); 
+  
+    font-family: Segoe UI;
+    
+    position: absolute;
+    margin-top: 135px;
+    border-radius: 80px;
+
+    transition-duration: 300ms;
+    
+   
+    
+    }
+
+    .arrayd { 
+    
+    width: 70px;
+  
+   height: 70px;
+  
+   padding: 0.5em;  
+  
+   background-color:rgba(0, 0, 0, 0.842); 
+  
+    font-family: Segoe UI;
+    
+    position: relative;
+ text-align: justify;
+    border-radius: 6px;
+   
+   border-collapse: collapse;
+   color: white;
+
+   font-size: 150%;
+    
+  transition-duration : 100ms;
+    }
+
+    .arrayitem {
+
+font-size: 90%;
+
+    }
+
+
+    .stacked { 
+    
+    width: 110px;
+  
+   height: 110px;
+  
+   padding: 0.5em;  
+  
+   background-color:rgba(0, 0, 0, 0.842); 
+  
+    font-family: Segoe UI;
+    
+    position: relative;
+ text-align: center;
+    border-radius: 10px;
+   
+   border-collapse: collapse;
+   color: white;
+
+   font-size: 250%;
+    
+
+    }
+
+  
+  
+  #codetype {
+
+
+width: 101%;
+text-align: center;
+top: -5px;
+left: -1%;
+font-size:230%;
+font-family: Segoe UI;
+color: coral;
+position: fixed;
+text-decoration:none;
+height: 130px;
+z-index: 1;
+background-color:rgba(0, 0, 0, 0.842);
+/*box-shadow:  0 0  10px black;*/
+border: none;
+
+
+
+  }
+
+#codetype:focus{
+  outline: none;
+  text-decoration: none;
+}
+
+.t {
+
+  margin-top: 30px;
+  text-align: center;
+  font-size:120%;
+  color: white;
+  }
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: 30px;
+   color: black;
+   font-size: x-large;
+   text-align: center;
+   font-family: Segoe UI;
+   backdrop-filter: blur(3px);
+   z-index: 2;
+}
+
+
+
+ li {
+    float: left;
+    border-style: solid;
+    border-color: white;
+    border: 1px;
+    transition: all  1s ease-in-out;
+  }
+
+.outstyle {
+
+
+  background-color: rgba(0, 0, 0, 0.514); 
+  padding: 15px;
+  margin-top: -18px;
+
+}
+
+.node {
+
+  background-color: red;
+}
+
+.treenode{
+
+  position:absolute; 
+  height:7px; 
+  width:7px;
+   border-radius:7px;
+    background-color:white;
+}
+
+.myrules {
+  display: inline;
+}
+
+
+.log {
+  
+  overflow-y:auto;
+  text-align: center;
+  float: left;
+  max-height: 80%;
+  display: block;
+  border-color: coral;
+  margin-top: 140px;
+  width: 200px;
+  font-size: larger;
+  color : black;
+  backdrop-filter: blur(10px);
+  z-index: 3;
+  right: 0;
+
+
+
+}
+
+.log::-webkit-scrollbar {
+
+width: 0;
+  height: 8px;
+}
+
+
+::-webkit-scrollbar {
+
+width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-thumb {
+  background: grey; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: black; 
+}
+
+
+.out {
+  overflow-y:auto;
+  text-align: center;
+  float: left;
+  max-height: 470px;
+  display: block;
+  border-style:dashed;
+  border-color: rgb(97, 0, 136);
+  margin-top: 705px;
+  height: 470px;
+  width: 500px;
+  font-size: larger;
+  color : black;
+  backdrop-filter: blur(10px);
+  z-index: 3;
+  right: 0;
+ 
+
+  
+}
+
+.watermark {
+
+ 
+  z-index: -2;
+  vertical-align: middle; 
+  left:50% ;
+  top: 50%; 
+  transform: translate(-50%, -50%) scale(.6,.6); 
+  opacity: 13%;
+ 
+
+}
+
+
+.recursion-sheet {
+  display: block;
+  backdrop-filter: blur(2px);
+  border-style: dashed;
+  border-color: black;
+  overflow-x: scroll;
+  overflow-y: scroll;
+text-align: center;
+  min-width: 2000px;
+  height: 700px;
+  z-index: 0;
+  position: absolute;
+  scroll-behavior: smooth;
+}
+
+
+.vert {
+
+
+  height: 80px;
+  width : 80px;
+  border-radius: 100%;
+  background-color:rgba(0, 0, 0, 0.842); 
+  font-family: Segoe UI;
+  position: absolute;
+  margin-top: 135px;
+  transition: linear 100ms;
+  text-align: center;
+  
+  
+
+}
+
+.ver-label {
+
+color: coral;
+font-size: 150%;
+z-index: -1s;
+
+}
+
+
+.floyd {
+
+
+  width: 60px;
+  
+  height: 60px;
+ 
+ overflow-y: hidden;
+ 
+  background-color:rgba(0, 0, 0, 0.842); 
+ 
+   font-family: Segoe UI;
+   
+   position: relative;
+
+   border-collapse: collapse;
+   padding: .5em;  
+   border-radius: 5px;
+
+   font-size: 100%;
+
+
+}
+
+
+#graphinput {
+
+
+  position: absolute;
+
+  top: 200px;
+ left: 0px;
+  height: 100px;
+  width: 200px;
+  
+  font-size: 220%;
+  text-align: center;
+
+  border-style: none;
+  background-color: rgba(0, 0, 0,0.7);
+
+ color: coral;
+
+ font-family: 'Segoe UI';
+
+ visibility: hidden;
+}
+
+
+#undirected_ {
+position: absolute;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 300px;
+  height: 60px;
+  text-align: center;
+  transition-duration: "1000ms";
+  cursor: initial;
+  backdrop-filter: blur(5px);
+}
+
+#directed_  {
+
+
+  position: absolute;
+top: 60px;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 300px;
+  height: 60px;
+  text-align: center;
+  transition-duration: "1000ms";
+  cursor: initial;
+  backdrop-filter: blur(5px);
+
+}
+
+
+
+
+
+
+#anislow {
+  position: absolute;
+  
+    background-image: linear-gradient(to right , #000 , #fff);
+    width: 300px;
+    height: 60px;
+    text-align: center;
+    transition-duration: "1000ms";
+    cursor: initial;
+  }
+
+  
+  #aniquick  {
+  
+  
+    position: absolute;
+    top: 60px;
+    background-image: linear-gradient(to right, #000 , #fff);
+    width: 300px;
+    height: 60px;
+    text-align: center;
+    transition-duration: "1000ms";
+    cursor: initial;
+  
+  }
+
+
+  #copy {
+
+position: fixed;
+left:7px;
+bottom: 4%;
+z-index: 4;
+cursor: default;
+opacity: 0.7;
+width: 300px;
+
+  }
+
+
+#copyrightname{
+position: absolute;
+  font-family: 'consolas';
+  font-size: 80%;
+  color: coral;
+
+
+
+  }

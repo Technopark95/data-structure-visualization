@@ -1,0 +1,69 @@
+
+
+    .kaydee{
+      width: 200px;
+  
+  height: 50px;
+ 
+  padding: 0.5em;  
+ 
+  background-color:rgba(26, 25, 25, 0.842); 
+ 
+   font-family: Segoe UI;
+       
+    /* changed */   
+   position: relative;
+
+   border-radius: 10px;
+
+   font-size: 100%;
+
+   text-align: center;
+
+
+    }
+  
+    #kaydeefir{
+      
+  
+  
+ 
+    
+ color : black;
+   
+ 
+   font-family: Segoe UI;
+       
+    /* changed */  
+    position: absolute; 
+    
+
+
+   font-size: 150%;
+
+margin-left: 20px;
+
+
+
+z-index: 2;
+
+    }
+
+
+
+
+.trans{
+  transform: translateY(50px);
+}
+
+
+
+
+.stack{
+  text-align: center;
+  position: absolute; 
+}
+  
+
+
+

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <title>Graphical Structure</title>
+
+<link rel="stylesheet" href="stack.css">
+<link rel="stylesheet" href="queue.css">
+<link rel="stylesheet" href="style.css">
+
+<script src="Scripts/jquery.js"></script>
+<script src="Scripts/jquery-ui.js"></script>
+<script src="Scripts/jquery.connectingLine.js"></script>
+<script src="Scripts/jquery-simulate.js"></script>
+
+
+
+</head>
+<body>
+
+ 
+  <input id ="codetype" spellcheck="false" type="text" placeholder="Code here >__"/>
+
+
+
+<div class="log" id="log1" style="position: fixed;"> 
+
+</div>
+
+<div class="watermark" style="position: fixed;"> 
+
+  <img  src="logo1.png"/>
+
+</div>
+
+
+
+
+
+
+<div class="footer">
+
+<p id="feed" style=" opacity:100%; color: black; margin-top: -10px; font-size: 120%; text-shadow: 0 0 3px #FF0000; "></p>
+
+
+</div>
+
+
+<div id="anispeed" style="z-index: 2; position: fixed; bottom: 70%; left: -250px; width: auto; height: auto;">
+  <div id="anislow"><p style="position: absolute; font-size:xx-large; margin-top:10px; margin-left: 110px; color:rgb(0, 0, 0);font-family:Segoe UI; cursor:default;">Slow</p><img src="snail.png" style="position: absolute;height: 40px; width: 40px; left: 255px; top: 10px;" ></div>
+  <div id="aniquick"><p style="position: absolute; font-size:xx-large; margin-top:10px; margin-left: 110px;  color:rgb(0, 0, 0);font-family:Segoe UI; cursor: default;">Quick</p><img src="light.png" style="transform: rotate(15deg); position: absolute;height: 40px; width: 50px; left: 250px; top: 13px;" ></div>
+  
+  </div>
+
+<div id="direction" style="z-index: 2; position: fixed; bottom: 30%; left: -250px; width: auto; height: auto;">
+<div id="undirected_"><p style="position: absolute; font-size:xx-large; margin-top:7px; margin-left: 50px; color:rgb(0, 0, 0);font-family:Segoe UI; cursor:default;">Undirected</p><img src="line.png" style="position: absolute;height: 40px; width: 40px; left: 255px; top: 10px;" ></div>
+<div id="directed_"><p style="position: absolute; font-size:xx-large; margin-top:7px; margin-left: 70px;  color:rgb(0, 0, 0);font-family:Segoe UI; cursor: default;">Directed</p><img src="Arrow-right-512.png" style="position: absolute;height: 40px; width: 40px; left: 255px; top: 10px;" ></div>
+
+</div>
+
+<div id="copy"><p id="copyrightname">Graphical Structure © 2020</p></div>
+
+
+
+<script src="allobs.js"></script>
+<script src="queue.js"></script>
+<script src="moded.js"></script>
+
+
+
+</body>
+</html>
