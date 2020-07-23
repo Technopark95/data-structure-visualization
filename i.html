@@ -1,0 +1,362 @@
+<html>
+<title>Graphical Structure</title>
+
+<head>
+<style>
+
+body {
+
+height: 50in;
+
+}
+
+#logo {
+
+position: fixed;
+
+height: 20%;
+height: 20%;
+left: 10px;
+z-index: -2;
+
+
+
+}
+
+
+#name {
+
+position: absolute;
+    font-family: 'Segoe UI';
+    top: -30px;
+    right: 5%;
+    font-size: 500%;
+}
+
+
+#backgra {
+
+
+z-index: -3;
+
+position: absolute;
+left:200px;
+top: 20px;
+opacity: 0.7;
+transform: scale(0.8,0.8);
+
+}
+
+
+#playgrounddiv {
+
+    position: fixed;
+    bottom: 10%; 
+    right: 0; 
+    text-align: center;
+    background-color: rgba(0, 0, 0, .3);
+    height: 100px; 
+    width: 600px; 
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    right: -550px;
+    z-index: 10;
+
+
+}
+
+
+@font-face {
+font-family: "Thin";
+src: url("antipasto.ttf");
+
+}
+
+</style>
+
+<link rel="stylesheet" href="style.css"></style>
+
+<script src="Playground/Scripts/jquery.js"></script>
+<script src="Playground/Scripts/jquery-ui.js"></script>
+<script src="Playground/Scripts/jquery.connectingLine.js"></script>
+<script src="Playground/Scripts/jquery-simulate.js"></script>
+
+<script>
+
+
+$(document).ready(function() {
+
+
+    $('.titles').on( "mouseenter",(e) =>{
+
+        $(`#${e.target.id}-label`).css({"color" : "white" ,transition : "500ms linear"})
+
+
+    }) 
+
+    $('#playgrounddiv').on( "mouseenter",() =>{
+
+$(`#playgrounddiv`).css({"right" : "0" ,transition : "500ms"})
+
+$(`#playvert`).css({"opacity" : "0%" ,transition : "500ms"})
+
+}) 
+
+$('#playgrounddiv').on( "mouseleave",() =>{
+
+$(`#playgrounddiv`).css({"right" : "-550px" ,transition : "500ms"})
+
+$(`#playvert`).css({"opacity" : "100%" ,transition : "500ms"})
+
+
+}) 
+
+
+$('#playgrounddiv').on( "click",() =>{ 
+
+window.location.href = ("Playground/index.html");
+
+})
+
+
+    $('.titles').on( "mouseleave",(e) =>{
+
+$(`#${e.target.id}-label`).css({"color" : "black" ,transition : "500ms linear"})
+
+
+}) 
+
+    $(document).on('mousemove', (e)=> {
+
+     
+        $("#xoff").text("left:"+e.offsetX);
+        $("#yoff").text("top"+e.offsetY);
+
+
+
+    })
+
+$("#logo").css({"transform" : "rotate(360deg)" , "transition" : "2s ease-out"} )
+
+
+leaf(5)
+leaf(15)
+leaf(32)
+leaf(1)
+leaf(2)
+leaf(3)
+leaf(4)
+
+$("#0").offset({left:640 , top :662})
+$("#1").offset({left:400 , top :830})
+$("#2").offset({left:880 , top :830})
+$("#3").offset({left:270 , top :1000})
+$("#4").offset({left:530 , top :1000})
+$("#5").offset({left:750 , top :1000})
+$("#6").offset({left:1070 , top :1000})
+
+treefy("0treeleft" , 1);
+treefy("0treeright" , 2);
+
+treefy("1treeleft" , 3);
+treefy("1treeright" , 4);
+
+treefy("2treeleft" , 5);
+treefy("2treeright" , 6);
+
+
+array([51,6,8,3,22,89,532,13,1067])
+
+
+$("#t1").offset({left:108 , top :1680})
+
+
+addnode('G')
+$("#7list").offset({left:75 , top :174})
+addnode('R')
+$("#8list").offset({left:190 , top :50})
+addnode('A')
+$("#9list").offset({left:360 , top :134})
+addnode('P')
+$("#10list").offset({left:570 , top :88})
+addnode('H')
+$("#11list").offset({left:692 , top :211})
+addnode('I')
+$("#12list").offset({left:915 , top :54})
+addnode('C')
+$("#13list").offset({left:1093 , top :174})
+addnode('A')
+$("#14list").offset({left:1290 , top :200})
+addnode('L')
+$("#15list").offset({left:1428 , top :60})
+
+
+
+addnode('S')
+$("#16list").offset({left:123 , top :350})
+addnode('T')
+$("#17list").offset({left:226 , top :288})
+addnode('R')
+$("#18list").offset({left:392 , top :368})
+addnode('U')
+$("#19list").offset({left:549 , top :314})
+addnode('C')
+$("#20list").offset({left:707 , top :360})
+addnode('T')
+$("#21list").offset({left:908 , top :340})
+addnode('R')
+$("#22list").offset({left:1095 , top :366})
+addnode('E')
+$("#23list").offset({left:1290 , top :350})
+
+
+
+ function cnoo (d)  {
+
+    nodify(d+"list" , (d+1)+"list" );
+
+
+}
+
+
+for (let d= 7 ; d < 15 ;++d)  {
+
+   cnoo(d);
+
+}
+
+for (let d= 16 ; d < 23 ;++d)  {
+
+ cnoo(d);
+
+}
+
+
+addnode('L')
+addnode('I')
+addnode('N')
+addnode('K')
+addnode('E')
+addnode('D')
+
+$("#24list").offset({top: 2443.9876022338867, left: 123})
+$("#25list").offset({top: 2379.9876022338867, left: 340})
+$("#26list").offset({top: 2467.987594604492, left: 586})
+$("#27list").offset({top: 2350.9876022338867, left: 776})
+$("#28list").offset({top: 2420.987594604492, left: 1024})
+$("#29list").offset({top: 2359.9876022338867, left: 1202})
+
+
+
+for (let d=24 ; d < 29 ;++d)  {
+
+cnoo(d);
+
+}
+
+
+Graph(6)
+graphmatrix.hide();
+
+
+$("#A").offset({top: 3195.987403869629, left: 413})
+$("#B").offset({top: 3521.9874877929688, left: 903})
+$("#C").offset({top: 3250.9874114990234, left: 1033})
+$("#D").offset({top: 3540.9874877929688, left: 405} )
+$("#E").offset({top: 3288.9874572753906, left: 683})
+$("#F").offset({top: 3300.9874572753906, left: 100})
+
+graphy("A" , "B" , 4, "UD");
+graphy("B" , "C" , 2, "UD");
+graphy("C" , "D" , 6, "UD");
+graphy("D" , "F" , 12, "UD");
+graphy("A" , "F" , 8, "D");
+graphy("E" , "A" , 3, "D");
+graphy("C" , "E" , 1, "D");
+graphy("F" , "B" , 14, "D");
+
+
+
+})
+
+</script>
+
+
+<head>
+
+</head>
+<body>
+
+
+
+    <div id="playgrounddiv" class = "play" >
+        <img src="Capture.PNG" style="position: absolute;left: 0; transform: scale(.6,.6) translate(-25%,-50%); opacity: .1;"/>
+   <p id="playvert" style="text-orientation:upright; writing-mode: vertical-rl; font-family: 'thin'; margin-left: 15px; font-size: 170%; margin-top: 7px;   font-weight: bolder;">PLAY</p>
+       <p id="playhorz" style="position: absolute; font-family: 'thin'; letter-spacing: 40px    ; font-size: 170%;  font-weight:bold;top: 10%; left:80px" >PLAYGROUND</p>
+
+   
+    </div>
+    
+
+
+  <img id="logo" src="Playground/logo1.png"/> 
+
+   
+
+    <div style="position: absolute; text-align: center;margin-top: 430px; z-index: -1;">
+
+    <p style="position: relative; font-family: 'Thin'  ; font-size: 600%; left: 20%;">We're happy to announce.</p>
+</div>
+
+
+
+<div id="treeddiv" class = "titles" style="position: absolute; text-align: center;top: 1200px; ;background-color: rgba(0, 0, 0, 0.5);height: 400px; width: 100%;">
+
+    <p id="treeddiv-label"  style="position: relative; font-family: 'Thin'  ; font-size: 800%; top:-50px">Tree</p>
+
+
+
+</div>
+
+
+
+<div id="arraydiv" class = "titles" style="position: absolute; text-align: center;top: 1888px; ;background-color: rgba(0, 0, 0, 0.5);height: 400px; width: 100%;">
+
+    <p id="arraydiv-label"   style="position: relative; font-family: 'Thin'  ; font-size: 800%; top:-50px">Array</p>
+
+
+
+</div>
+
+
+<div id="listdiv" class = "titles" style="position: absolute; text-align: center;top: 2708px; ;background-color: rgba(0, 0, 0, 0.5);height: 400px; width: 100%;">
+
+    <p id="listdiv-label"   style="position: relative; font-family: 'Thin'  ; font-size: 800%; top:-50px">Linked list</p>
+
+
+
+</div>
+
+
+
+<div id="graphdiv" class = "titles" style="position: absolute; text-align: center;top: 3750px; ;background-color: rgba(0, 0, 0, 0.5);height: 400px; width: 100%;">
+
+    <p id="graphdiv-label"   style="position: relative; font-family: 'Thin'  ; font-size: 800%; top:-50px">Graph</p>
+
+
+
+</div>
+
+
+
+
+
+
+<p id="xoff" style="position: fixed; bottom:0;left: 30px;">x</p>
+<p id="yoff" style="position: fixed;bottom: 0; left :100px ">y</p>
+<script src="Playground/allobs.js"></script>
+<script src="Playground/graph.js"></script>
+</body>
+</head>
+
+
