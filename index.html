@@ -177,6 +177,24 @@ else {
 }
 
 
+if (scrollpos > 1870 && scrollpos    < 2250 )  {  
+
+$('#infloat1').css({left:"40px" , transition:"800ms"})
+
+$('#infloatclick1').css({right:"50px" , transition:"800ms" })
+
+
+}  
+
+
+else {
+
+$('#infloat1').css({left:"-500px" , transition:"800ms"})
+$('#infloatclick1').css({right:"-500px" , transition:"800ms"})
+
+}
+
+
 
 })
 
@@ -312,6 +330,9 @@ $("#29list").offset({top: 2359.9876022338867, left: 1202})
 
 for (let d=24 ; d < 29 ;++d)  {
 
+    if (d==26) {
+        continue;
+    }
 cnoo(d);
 
 }
@@ -368,6 +389,11 @@ graphy("F" , "B" , 14, "D");
    
 <p id="infloat" style="position: absolute; top:650; font-family: 'thin'; font-size: 400%;width: 400px; text-align: center; left: -500px;"> We are Draggable! Try to drag Us!</p>
 <p id="infloatclick" style="position: absolute; top:650; font-family: 'thin'; font-size: 400%;width: 400px; text-align: center; right: -500px;"> Try to connect the remaining Node!</p>
+
+
+<p id="infloat1" style="position: absolute; top:2250; font-family: 'thin'; font-size: 350%;width: 400px; text-align: center; left: -500px;"> Now Do same with linked List</p>
+<p id="infloatclick1" style="position: absolute; top:2533; font-family: 'thin'; font-size: 200%;width: 400px; text-align: center; right: -500px;"> <strong>Click <span style="color: red;">Red</span> connector then click <span style="color: yellow;">yellow</span> connector.<br>Please do not do in reverse order.</strong></p>
+
 
 
 <div style="position: absolute; text-align: center;margin-top: 430px; z-index: -1;">
