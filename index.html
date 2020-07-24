@@ -87,6 +87,7 @@ src: url("antipasto.ttf");
 
 $(document).ready(function() {
 
+    var done_ = false;
 
     $('.titles').on( "mouseenter",(e) =>{
 
@@ -138,6 +139,9 @@ $('#infloatclick').text("Wow! You just completed a tree ;)")
 
     $('#6treetop').css({"background-color" : "white"})
 
+    done_ = true;
+
+
 })
 
 $(document).on( "click" , '#27listleft' , function()  {
@@ -176,6 +180,7 @@ if (scrollpos > 300 && scrollpos    < 750 )  {
     
     $('#infloatclick').css({right:"50px" , transition:"800ms" , "transition-delay" : "2000ms"})
 
+    if (done_==false) {
 
      setTimeout(()=> {
 
@@ -185,7 +190,7 @@ if (scrollpos > 300 && scrollpos    < 750 )  {
 
 
      },7000)
-
+    }
 
 }    
 
