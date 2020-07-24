@@ -122,6 +122,29 @@ window.location.href = ("Playground/");
 })
 
 
+$(document).on("scroll" ,function()  {
+
+
+    $('#scrolltop').text( Math.ceil( Number( $(window).scrollTop())));
+
+if (Number( $(window).scrollTop()) > 300 && Number( $(window).scrollTop())< 750 )  {
+
+    $('#infloat').css({left:"40px" , transition:"800ms"})
+    
+
+}    
+
+else {
+
+    $('#infloat').css({left:"-500px" , transition:"800ms"})
+    
+}
+
+
+
+})
+
+
     $('.titles').on( "mouseleave",(e) =>{
 
 $(`#${e.target.id}-label`).css({"color" : "black" ,transition : "500ms linear"})
@@ -307,7 +330,7 @@ graphy("F" , "B" , 14, "D");
   <img id="logo" src="Playground/logo1.png"/> 
 
    
-
+<p id="infloat" style="position: absolute; top:650; font-family: 'thin'; font-size: 400%;width: 400px; text-align: center; left: -500px;"> We are Draggable! Try to drag Us!</p>
     <div style="position: absolute; text-align: center;margin-top: 430px; z-index: -1;">
 
     <p style="position: relative; font-family: 'Thin'  ; font-size: 600%; left: 20%;">We're happy to announce.</p>
@@ -359,6 +382,7 @@ graphy("F" , "B" , 14, "D");
 
 <p id="xoff" style="position: fixed; bottom:0;left: 30px; font-family: 'Segoe ui';">x</p>
 <p id="yoff" style="position: fixed;bottom: 0; left :100px;font-family: 'Segoe ui'; ">y</p>
+<p id="scrolltop" style="position: fixed;bottom: 0; right :100px;font-family: 'Segoe ui'; ">y</p>
 <script src="Playground/allobs.js"></script>
 <script src="Playground/graph.js"></script>
 </body>
