@@ -85,7 +85,7 @@ src: url("antipasto.ttf");
 <script>
 
 
-$(document).ready(function() {
+$(document).ready(async function() {
 
     var done_ = false;
 
@@ -164,7 +164,7 @@ setTimeout(()=> {
 })
 
 
-
+let cl_= 0;
 
 
 $(document).on("scroll" ,function()  {
@@ -179,14 +179,17 @@ if (scrollpos > 300 && scrollpos    < 750 )  {
     $('#infloat').css({left:"40px" , transition:"800ms"})
     
     $('#infloatclick').css({right:"50px" , transition:"800ms" , "transition-delay" : "2000ms"})
+    $('#infloatclick').css({"transition-delay" : "0ms"})
 
-    if (done_==false) {
+    if (done_==false && cl_ == 0) {
 
      setTimeout(()=> {
 
         $('#infloatclick').html("Click the <span style='color:red;'><br>red</span> higlighted connector.")
 
         $('#2treeright').css({"background-color" : "red"})
+        
+        cl_=1 ;
 
 
      },7000)
@@ -223,6 +226,22 @@ $('#infloat1').css({left:"-500px" , transition:"800ms"})
 $('#infloatclick1').css({right:"-500px" , transition:"800ms"})
 
 }
+
+
+
+if (scrollpos > 1270  )  {  
+
+for (let i =0 ; i<12 ;++i) {
+
+
+hilight()
+
+
+}
+
+
+}  
+
 
 
 
