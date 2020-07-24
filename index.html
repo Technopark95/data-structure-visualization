@@ -90,6 +90,8 @@ $(document).ready(async function() {
     var done_ = false;
     
 let arsig =0;
+let cl_= 0;
+
 
     $('.titles').on( "mouseenter",(e) =>{
 
@@ -166,7 +168,6 @@ setTimeout(()=> {
 })
 
 
-let cl_= 0;
 
 
 $(document).on("scroll" , async function()  {
@@ -184,17 +185,19 @@ if (scrollpos > 300 && scrollpos    < 750 )  {
 
 
     if (done_==false && cl_ == 0) {
-
+        cl_=1 ;
+        done_=true;
      setTimeout(()=> {
 
+      
         $('#infloatclick').html("Click the <span style='color:red;'><br>red</span> higlighted connector.")
 
         $('#2treeright').css({"background-color" : "red"})
 
-        cl_=1 ;
+       
 
 
-     },7000)
+     },4000)
     }
 
 }    
