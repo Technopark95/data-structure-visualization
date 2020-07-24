@@ -88,6 +88,8 @@ src: url("antipasto.ttf");
 $(document).ready(async function() {
 
     var done_ = false;
+    
+let arsig =0;
 
     $('.titles').on( "mouseenter",(e) =>{
 
@@ -167,7 +169,7 @@ setTimeout(()=> {
 let cl_= 0;
 
 
-$(document).on("scroll" ,function()  {
+$(document).on("scroll" , async function()  {
 
 
 let scrollpos = Math.ceil( Number( $(window).scrollTop()));
@@ -179,7 +181,7 @@ if (scrollpos > 300 && scrollpos    < 750 )  {
     $('#infloat').css({left:"40px" , transition:"800ms"})
     
     $('#infloatclick').css({right:"50px" , transition:"800ms" , "transition-delay" : "2000ms"})
-    $('#infloatclick').css({"transition-delay" : "0ms"})
+
 
     if (done_==false && cl_ == 0) {
 
@@ -188,7 +190,7 @@ if (scrollpos > 300 && scrollpos    < 750 )  {
         $('#infloatclick').html("Click the <span style='color:red;'><br>red</span> higlighted connector.")
 
         $('#2treeright').css({"background-color" : "red"})
-        
+
         cl_=1 ;
 
 
@@ -229,19 +231,24 @@ $('#infloatclick1').css({right:"-500px" , transition:"800ms"})
 
 
 
-if (scrollpos > 1270  )  {  
+if (arsig == 0 ) {
 
-for (let i =0 ; i<12 ;++i) {
+if (scrollpos > 1270 && scrollpos < 1700 )  {  
+
+arsig = 1;
+for (let i =0 ; i<=12 ;++i) {
 
 
-hilight()
-
+ await hilight("aitem"+(i) ,"rgb(109,209,0,1)" , "800ms" , 800)
+  hilight("aitem"+(i) ,defaultcolor , "800ms" , 800)
 
 }
 
+arsig =0;
 
 }  
 
+}
 
 
 
