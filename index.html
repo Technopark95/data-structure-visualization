@@ -7,7 +7,7 @@
 body {
 
 height: 50in;
-
+overflow-x: hidden;
 }
 
 #logo {
@@ -136,9 +136,29 @@ $(document).on( "click" , '#6treetop' , function()  {
 
 $('#infloatclick').text("Wow! You just completed a tree ;)")
 
-    $('#6treetop').css({"background-color" : "yellow"})
+    $('#6treetop').css({"background-color" : "white"})
 
 })
+
+$(document).on( "click" , '#27listleft' , function()  {
+
+
+    $('#infloatclick1').css({right:"-500px" , transition:"800ms" })
+
+setTimeout(()=> {
+
+    $('#infloatclick1').html("<strong>Good! You have to follow this order in linked list everywhere!.</strong>")
+
+    $('#infloatclick1').css({right:"50px" , transition:"800ms" })
+
+},800)
+
+
+
+
+
+})
+
 
 
 
@@ -182,6 +202,11 @@ if (scrollpos > 1870 && scrollpos    < 2250 )  {
 $('#infloat1').css({left:"40px" , transition:"800ms"})
 
 $('#infloatclick1').css({right:"50px" , transition:"800ms" })
+
+
+$('#26listright').css({"background-color" : "red"})
+
+$('#27listleft').css({"background-color" : "yellow"})
 
 
 }  
