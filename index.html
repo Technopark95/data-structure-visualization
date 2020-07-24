@@ -124,7 +124,7 @@ window.location.href = ("Playground/");
 $(document).on( "click" , '#2treeright' , function()  {
 
 
-    $('#infloatclick').text("Now,Click the yellow higlighted connector.")
+    $('#infloatclick').html("Now,Click the <span style='color:yellow;'>yellow</span> higlighted connector.")
 
         $('#6treetop').css({"background-color" : "yellow"})
 
@@ -159,7 +159,7 @@ if (scrollpos > 300 && scrollpos    < 750 )  {
 
      setTimeout(()=> {
 
-        $('#infloatclick').text("Click the red higlighted connector.")
+        $('#infloatclick').html("Click the <span style='color:red;'><br>red</span> higlighted connector.")
 
         $('#2treeright').css({"background-color" : "red"})
 
