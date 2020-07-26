@@ -1,1 +1,3669 @@
-var _0x56f1=['yaSPc','\x20is\x20larger\x20array[','GPJXU','Copy\x20the\x20inorder\x20successor\x27s\x20content\x20to\x20this\x20node','nPXdE','clientY','Incremenet\x20i;\x20\x20i=','kYroW','kKHJz','prepend','-UD-','tes','Push\x20root\x27s\x20right\x20child\x20and\x20then\x20root\x20to\x20stack.','Item\x20larger\x20then\x20current\x20node,\x20going\x20right','UuTcC','div.node','green','\x20+\x20','Tree\x20Empty.\x20Adding\x20root\x20node.','cUNze','1500ms','\x22\x20\x20style\x20=\x20\x22color\x20:\x20white;\x20\x20border-top-left-radius\x20:\x200px;border-top-right-radius\x20:\x200px;\x22><span\x20id\x20=\x20\x22','2000ms\x20linear','Swapping\x20index\x20i+1\x20=','stringify','YAlWy','Script\x20Loaded.','<table\x20style=\x22border-collapse:\x20collapse;\x20margin-top:200px;\x20text-align:center;\x20transition-duration\x20:\x20100ms;table-layout:\x20fixed;\x22\x20><tr>','-40px','yxojG','getting\x20Inorder\x20Successor\x20to\x20replace','Comparing\x20index\x20j=','px;\x20color\x20:\x20white;\x22>','<table\x20id=\x22dijkastratab\x22\x20style\x20=\x22position:absolute;\x20transition:100ms\x20linear;\x20top:200px\x22\x20></table>','</p>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20style=\x22position:absolute;\x20margin-top:-30px;\x22>','return\x20/\x22\x20+\x20this\x20+\x20\x22/','Reach\x20the\x20left\x20most\x20Node\x20of\x20the\x20current\x20Node','#codetype','linear-gradient(to\x20right,\x20#ff9966,\x20#ff5e62)','set\x20first\x20=\x200','preorder(right)','rgb(0,0,0,0.842)','XFVIg','esbAl','charCodeAt','MkYvo','GRXvC','dijkastra','10px','parent','red','#directed_\x20','<td\x20class=\x22floyd\x22\x20id=\x22rw\x22\x20style=\x22background-color\x20:\x20rgba(255,255,255,0);\x22>\x20\x20<div\x20id=\x22crwdiv\x22\x20style=\x22z-index:1;\x20text-align:center;\x22></div></td>','DgSjb','<td\x20class=\x22floyd\x22\x20id=\x22dijkastrac','Going\x20next\x20node','clientX','VhuUh','fromCharCode','\x22\x20class=\x22arrayitem\x22>','test','list\x22\x20\x20class=\x22dragg\x22\x20>\x20<div\x20class=\x22node\x22\x20id=\x22','rgb(0,0,0,0.11)','change','\x22\x20style=\x22margin-left:54px;\x20margin-top:70px;\x22></div>\x20<p\x20\x20style=\x22position:absolute;color:coral;\x20font-size:70%;\x20left:20px;\x22\x20id=\x22','#tb','iZAeK','\x22></span></td></tr>','</p>\x20\x20\x20</div>','<td\x20class=\x22floyd\x22\x20id=\x22dijkastrarw\x22\x20style=\x22background-color\x20:\x20rgba(0,0,0,0.5);\x22>\x20\x20<div\x20id=\x22dijkastracrwdiv\x22\x20style=\x22z-index:1;\x20text-align:center;\x22></div></td>','#aniquick\x20','\x20hidden','tBBSX','false','div\x22\x20style=\x22z-index:1;\x20text-align:center;\x22>\x20<p\x20id=\x22dijkastraspt','<td\x20class\x20=\x20\x22kaydee\x22\x20id\x20=\x20\x22kd','\x22\x20\x20style=\x22text-align:center;\x20position:absolute;\x20z-index:1\x22>\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20id=\x22aitemindex','return;','push\x20root\x20back\x20to\x20stack','Set\x20root\x20as\x20root\x27s\x20left\x20child','body','hgCTp','</tr>','600ms',']\x20>\x20array[','ICwGJ','charAt','jzWLu','hide','#distab','MJBTB','YGCRl','Underflow','rjnLo','Detaching\x20the\x20node','position','lcfXP','0ms','listleft','list','px;\x22>','#directed_','attr','90px','\x22\x20class=\x22arrayd\x22\x20style=\x22text-align:center;\x22>\x20\x20\x20\x20\x20<div\x20id=\x22aitemdiv','linear-gradient(to\x20right\x20,\x20#000\x20,\x20#fff)','Pop\x20element\x20from\x20stack\x20and\x20print','#feed','</span>','PHJfq','iXqgW','Source\x20=\x20','absolute','floor','zmxTR','dijkastrac','random','KCkjf','Item\x20Found','<td\x20class=\x22floyd\x22\x20id=\x22dijkastraspt\x22\x20style=\x22background-color\x20:\x20coral;\x22>\x20\x20<div\x20id=\x22dijkastrasptdiv\x22\x20style=\x22z-index:1;\x20text-align:center;\x22>\x20<p\x20id=\x22dijkastrasptval\x22\x20style=\x22color:black;\x20text-align:center\x22>Processed?</p></div></td>','RRKjn','replaceWith','Calling\x20QuickSort(\x20','KgIyf','getElementById','DqWJw','</p>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20id=\x20\x22aitemval','\x20With\x20pivot=','</p>\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x20\x20</td>','\x22\x20\x20class=\x22stack\x22>\x20<p\x20id\x20=\x20\x22kaydeefir\x22\x20style=\x22margin-top:\x20-40px;\x20\x20\x22\x20></p>','#log1','rolLf','\x22\x20style=\x22position:absolute;\x20height:7px;\x20width:7px;\x20border-radius:7px;\x20background-color:white;\x20margin-left:72px;\x20margin-top:40px;\x22></div>\x20<p\x20\x20style=\x22position:absolute;\x20color:coral;\x20font-size:60%;\x20left:20px;\x22\x20id=\x22','SsHDj','LXqTC','root','coral','drawLine','val\x22\x20style=\x22color:black;\x20text-align:center\x22>','\x22\x20style\x20=\x20\x22color\x20:\x20white;border-radius\x20:\x200px;\x22><span\x20id\x20=\x20\x22','#out1','scrollHeight','rgba(0,0,0,.5)','td.showdis','#kaydeefir','Swap\x20last\x20element\x20with\x20root\x20node','\x20and\x20j+1=','250px','print(value)','PupAB','kVFqQ','tmUWX','EULaG','XDeZT','Pick\x20the\x20minimum\x20distance\x20vertex\x20from\x20the\x20set\x20of\x20vertices\x20not\x20yet\x20processed.','50%','<li\x20class=\x22outstyle\x22>trav</li>','</table></div>','\x20<td\x20class=\x22arrayd\x22\x20style=\x22text-align:center;\x22>\x20\x20\x20\x20\x20<div\x20\x20style=\x22text-align:center;\x20position:absolute;\x20z-index:1\x22>\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20\x20style=\x22position:absolute;\x20margin-top:50px;\x20margin-left:70px;\x20font-size:50%\x22;>','black','linear-gradient(to\x20right\x20,\x20#ff512f\x20,\x20#dd2476)','XZyFr','jevLa','UzKdm','#dijkastraspt','rgba(0,0,255,.5)','170px','IwuaX','div.vert',')\x20td','ViOSp','abs','set\x20last\x20=\x20','target','RmbiN',']\x20=>\x20','naYqE','null','aitem0','GcpRu','RHKVq','animate','dijkastraspt','click','items','shift','preorder(left)','return','\x20,\x20','<table\x20id=\x22distab\x22\x20style\x20=\x22position:absolute;\x20transition:100ms\x20linear;\x20top:200px\x22\x20></table>','white','mouseenter','fadeOut','HKoPZ','val','dDtjc','800ms','<td\x20class=\x22floyd\x22\x20id=\x22r','eYqrV','<span\x20id\x20=\x20\x22','log','end\x20of\x20left\x20subtree','redrawLines','<p\x20id\x20=\x20\x22kaydeefir\x22\x20style=\x22margin-top:\x20-40px;\x22></p>','20px','^([^\x20]+(\x20+[^\x20]+)+)+[^\x20]}','QMOVN','GPOxo','\x22></span></td>','vTePn','1000ms','slice','LdPje','FFiOz','\x22\x20style=\x22border-collapse:\x20collapse;\x20\x20transition-duration\x20:\x20100ms;\x22>','enqueue_','<img\x20id=\x22pointerarrow\x22\x20src=\x22pointer.png\x22\x20style=\x22height:\x2070px;\x20width:\x2070px;\x20position:\x20absolute;\x20top:\x20135px;transition-duration:500ms;\x22>','\x22\x20style=\x22margin-left:35px;\x22></div>\x20\x20<div\x20class=\x22treenode\x22\x20id=\x22','top','The\x20smallest\x20unprocessed\x20edge\x20:\x20<br>','#dijkastratab','val\x22\x20style=\x22color:coral;\x20text-align:center\x22></p>\x20\x20\x20\x20\x20<p\x20id=\x22','\x22\x20class=\x22t\x22>','search\x20item\x20','kAOBn','resoved','#anislow','\x22>\x20\x20<div\x20id=\x22dijkastra','\x20with\x20index','quick','\x20<td\x20id=\x22aitem','length','<td\x20class=\x22floyd\x20showdis\x22\x20id=\x22','Correct\x20place\x20to\x20insert\x20the\x20element\x20=\x20CurrentNode->left','xrdNl','constructor','dequeue_','div\x22\x20style=\x22z-index:1;\x20text-align:center;\x22>\x20<p\x20id=\x22dijkastrac','Attaching\x20new\x20node\x20to\x20the\x20next\x20node','</p>\x20\x20\x20\x20<p\x20\x20id=\x22','UAoJu','\x20is\x20smaller\x20array[','\x20<-->\x20','1s\x20linear','Item\x20found.','Traverse\x20complete','div.dragg,div.vert','rgba(75,0,130,\x200.842)','argb(0,0,0,0.842)','<div\x20id=\x22','rgba(26,\x2025,\x2025,\x200.842)','If\x20the\x20popped\x20item\x20has\x20a\x20right\x20child\x20and\x20itsnotprocessed,\x20then\x20it\x20processed\x20before\x20root','connect','<p\x20id\x20=\x20\x22kaydeefir\x22\x20style=\x22margin-top:\x20-40px;\x22>','<p\x20style=\x22font-size:65%;color:black;font-family:Segoe\x20UI;text-transform:capitalize;\x22>','<input\x20id\x20=\x22graphinput\x22\x20type=\x22text\x22\x20placeholder=\x22Edge\x20Weight\x22/>',']\x20<\x20array[','px;\x20left:','WLiQj','Fvizy','push','\x20>\x20','100%','MWKXm','\x22\x20\x20style\x20=\x20\x22color\x20:\x20white;\x20\x20border-bottom-left-radius\x20:\x200px;border-bottom-right-radius\x20:\x200px;\x22><span\x20id\x20=\x20\x22','tr:nth-child(','Going\x20left\x20of\x20','change\x20root\x20so\x20that\x20the\x20right\x20child\x20is\x20processed\x20next','43%','yMxXO','tr:first\x20td','<p\x20style=\x22font-size:xx-large;\x20margin-top:-5px;\x20\x20color:rgb(0,0,255,\x200.7);font-family:Segoe\x20UI;\x22>','NULL','qMHGj',']\x20,\x20Skip','\x22\x20style=\x22position:absolute;\x20height:7px;\x20width:7px;\x20border-radius:5px;\x20background-color:white;\x20\x20margin-top:40px;\x22></div>\x20\x20<div\x20class=\x22node\x22\x20id=\x22','VQCzd','apply','draggable','DrsBQ','Element\x20array[','0px','searching\x20for\x20target\x20node','AfKcq','push\x20resolved','eJkAV','\x20(popped\x20element)','distance','</p></div></td>','qaBdx','treetop','\x20had\x20set\x20to\x20','giWNc','AaEPr','<p\x20style=\x22font-size:250%;color:coral;font-family:Segoe\x20UI;\x22>','rgba(255,0,0,\x200.91)','FSvHB','show','QaUZS','2000ms','xbCaq','treeval','border-top-left-radius','mfyPv','kruskalize','NlUXJ','CrmpU','bottom','.dijkastracells','rgba(0,0,0,\x200.842)','returning\x20from\x20','treeleft','blue','div\x22\x20style=\x22z-index:1;\x20text-align:center;\x22>\x20<p\x20id=\x22dijkastra','QuickSort(\x20','tKUuo','<td\x20class=\x22floyd\x22\x20id=\x22c','vkaJJ','border-top-right-radius','changecolor','set','val\x22\x20style=\x22color:coral;\x20text-align:center\x22></p>\x20\x20</div></td>','#tab','listbottom','oXhfU','njDil','300ms','\x20Going\x20Right','Going\x20right\x20of\x20','set\x20first\x20=\x20mid+1','NHMuS',']\x20,\x20Swapping','VhyqZ','pop','drag','Add\x20edge\x20','#anislow\x20',',Update.','RQYzR','VZqtG','isEmpty','<br><p\x20style=\x22font-size:x-large;\x20margin-top:-5px;\x20\x20color:rgb(0,0,255,\x200.7);font-family:Segoe\x20UI;text-transform:capitalize;\x22>','aWcKT','cOcAR','xaYXl','\x20to\x20correct\x20index','Swapping\x20index\x20','#undirected_','/</li>','</tr></table>','set\x20mid\x20=\x20(first+last)/2','bxRcN','getJSON','div\x22\x20style=\x22z-index:1;\x20text-align:center;\x22>\x20<p\x20id=\x22c','\x20Push\x20right\x20and\x20left\x20children\x20of\x20the\x20popped\x20node\x20to\x20stack','</p>','fadeIn','#pointerarrow','#aniquick','zVGqh','listid','kcooC','rpnEl','LDvmC','mouseleave','thqQd','4000ms','CYpoV','PVWdW','slow','text','#t1','TuPOC','Transit\x20vertex\x20=\x20','remove','Fswfp','\x20tr','<p\x20id\x20=\x20\x22kaydeefir\x22\x20style=\x22margin-top:\x20','\x22\x20style=\x22transition:500ms\x20;\x22\x20\x20class=\x22dragg\x22\x20>\x20<div\x20class=\x22treenode\x22\x20id=\x22','VVwcO','listright','OQXQZ','Target\x20node\x20found','Current\x20picked\x20Vertex\x20','ZsXVq','ChXXu','<tr><td\x20class\x20=\x20\x22kaydee\x22\x20\x20style\x20=\x20\x22color\x20:\x20white;\x20border-radius\x20:\x200px;\x22><span\x20id\x20=\x20\x22','resolved','kKSUH','#aitemval','distance\x22\x20style=\x22\x20margin-top:-37px;\x20color:coral;\x20text-align:center;\x20opacity:0%;\x22></p>\x20\x20</div></td>','<td\x20class=\x22floyd\x22\x20id=\x22dijkastrarow\x22\x20style=\x22background-color\x20:\x20coral;\x22>\x20\x20<div\x20id=\x22dijkastrarowdiv\x22\x20style=\x22z-index:1;\x20text-align:center;\x22>\x20<p\x20id=\x22dijkastrarowval\x22\x20style=\x22color:black;\x20text-align:center\x22>','getScript','KHBAf','Happenings..','visible','ID\x20','Item\x20smaller\x20then\x20current\x20node,\x20going\x20left','rgba(255,0,0,.5)','bGETV','fast','<div\x20style=\x22position\x20:\x20absolute;\x20margin-top:\x20200px;\x20z-index:1;\x20transition-duration\x20:\x20100ms;\x20width:500px;\x22\x20id=\x22tab','zpiEL','vvSzn','&#8734;','Inserting\x20','#aitem','treeright','qPScO','Pop\x20an\x20item\x20from\x20stack\x20and\x20set\x20it\x20as\x20root','Ncdhp','border-radius','dbHhA','1200ms','append','#output-screen','gjLQQ','dvVlk','HHqAc','<p\x20id\x20=\x20\x22kaydeefir\x22\x20style=\x22margin-top:\x20-40px\x22></p>','Attaching\x20previous\x20node\x20to\x20the\x20newnode','NZSrL',',\x20Dont\x20change.','ToFHc','400ms','pEgzK','oxoiA','muKfN','ujpoJ','xIoSy','kSJHu','#graphinput','Correct\x20place\x20at\x20index\x20=\x20','<p\x20style=\x22font-size:65%;color:black;font-family:Segoe\x20UI;\x20text-transform:capitalize;\x22>','Pick\x20all\x20vertices\x20as\x20transit\x20one\x20by\x20one','delay','niHdP','\x20Update\x20dist\x20value\x20of\x20the\x20adjacent\x20vertices\x20of\x20the\x20picked\x20vertex.','offset','Left\x20sub\x20tree\x20completed.\x20Now,\x20going\x20right\x20subtree','rTKkO','purple','1100ms','Alignment.json','NEcye','500ms','blueviolet','mLtpz','Isetw','.Move\x20element\x20to\x20right.','Discard\x20','\x22\x20class\x20=\x22trans\x22></span>','vsdRr','<table\x20class\x20=\x20\x22stack\x22\x20\x20id=\x22tb','Swapping\x20index\x20i=','qCKlT','div.treenode','gJjUh','pVQkN','<p\x20style=\x22font-size:x-large;\x20margin-top:-5px;\x20\x20color:rgb(255,0,0,\x200.7);font-family:Segoe\x20UI;\x22>','Deleting\x20target\x20node','#dijkastra','left','EcQtc','val\x22\x20style=\x22color:black;\x20text-align:center\x22>Not\x20set</p></div></td>','lzrpg','iIzVo','</p></div>','css','wdMXS','-105px','\x22>\x20\x20<div\x20id=\x22','\x20class=\x22vert\x22>\x20<p\x20class=\x22ver-label\x22>\x20','rgb(109,209,0,1)','pop\x20element\x20from\x20stack\x20and\x20print','gbjkK','Correct\x20place\x20to\x20insert\x20the\x20element\x20=\x20CurrentNode->right','Item\x20Doesnt\x20exist','SHrrl','aitem','GbtWU','FQxYp','head','<li\x20class=\x22outstyle\x22>\x20push','JLVDB','min','div\x22\x20style=\x22z-index:1;\x20text-align:center;\x22>\x20<p\x20id=\x22r','<td\x20class=\x22floyd\x20dijkastracells\x22\x20id=\x22dijkastraspt','scrollTop','html','div.node,\x20div.treenode','zOjdI','\x20<\x20','Next\x20smaller\x20unprocessed\x20edge\x20:\x20<br>','Building\x20Heap','yes','#kd','krnWy','Heap\x20Built','Item\x20Doesnt\x20exist\x20return\x20-1','div\x22\x20style=\x22z-index:1;\x20text-align:center;\x22>\x20<p\x20id=\x22','RCiPT','\x20Going\x20Left','vkWDk','#undirected_\x20','\x22\x20\x20class=\x22dragg\x22\x20>\x20<div\x20class=\x22treenode\x22\x20id=\x22','\x22\x20style=\x22background-color\x20:\x20coral;\x22>\x20\x20<div\x20id=\x22dijkastrac','\x22\x20style=\x22background-color\x20:\x20coral;\x22>\x20\x20<div\x20id=\x22c','lpqRt','fFmQq','\x22\x20style=\x22position:absolute;\x20color:coral;\x20margin-top:67px;\x20margin-left:35px;\x20font-size:37%\x22;>','right','MRTDv','get','WTzrg','set\x20last\x20=\x20mid-1','qOLPV','\x22>\x20\x20<div\x20id=\x22dijkastraspt','<tr>','eXofd','NVTGi','\x22\x20style=\x22margin-left:18px;\x20margin-top:70px;\x22></div>\x20\x20\x20<div\x20class=\x22treenode\x22\x20id=\x22','.dragg,.arrayd','WYoRK'];(function(_0x2faecf,_0x101a30){var _0x50c81b=function(_0x548413){while(--_0x548413){_0x2faecf['push'](_0x2faecf['shift']());}};var _0x121cdb=function(){var _0x1bdaf8={'data':{'key':'cookie','value':'timeout'},'setCookie':function(_0x9dd55c,_0x252f2a,_0x672156,_0x62ebba){_0x62ebba=_0x62ebba||{};var _0x2b3d53=_0x252f2a+'='+_0x672156;var _0x4c16ef=-0x1c45+0x2029+-0x3e4;for(var _0x41c4d7=0x3*-0x89a+-0x5*-0xc5+0xb*0x1ff,_0x1d6bd7=_0x9dd55c['length'];_0x41c4d7<_0x1d6bd7;_0x41c4d7++){var _0x2c3566=_0x9dd55c[_0x41c4d7];_0x2b3d53+=';\x20'+_0x2c3566;var _0x352348=_0x9dd55c[_0x2c3566];_0x9dd55c['push'](_0x352348);_0x1d6bd7=_0x9dd55c['length'];if(_0x352348!==!![]){_0x2b3d53+='='+_0x352348;}}_0x62ebba['cookie']=_0x2b3d53;},'removeCookie':function(){return'dev';},'getCookie':function(_0x417bd8,_0x3a7c2d){_0x417bd8=_0x417bd8||function(_0x44a3e9){return _0x44a3e9;};var _0xbc5a9d=_0x417bd8(new RegExp('(?:^|;\x20)'+_0x3a7c2d['replace'](/([.$?*|{}()[]\/+^])/g,'$1')+'=([^;]*)'));var _0x2f9a1d=function(_0x3760d5,_0xcb162){_0x3760d5(++_0xcb162);};_0x2f9a1d(_0x50c81b,_0x101a30);return _0xbc5a9d?decodeURIComponent(_0xbc5a9d[0x725*-0x1+0x10f+0x617]):undefined;}};var _0x4353a1=function(){var _0x152d0e=new RegExp('\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*[\x27|\x22].+[\x27|\x22];?\x20*}');return _0x152d0e['test'](_0x1bdaf8['removeCookie']['toString']());};_0x1bdaf8['updateCookie']=_0x4353a1;var _0x13aae4='';var _0xe39435=_0x1bdaf8['updateCookie']();if(!_0xe39435){_0x1bdaf8['setCookie'](['*'],'counter',-0x24b+0x8fc+0x4*-0x1ac);}else if(_0xe39435){_0x13aae4=_0x1bdaf8['getCookie'](null,'counter');}else{_0x1bdaf8['removeCookie']();}};_0x121cdb();}(_0x56f1,0x4*-0x552+-0x828*-0x1+-0xb9*-0x13));var _0x136e=function(_0x103110,_0x346202){_0x103110=_0x103110-(-0x1c45+0x2029+-0x3e4);var _0x42e8a7=_0x56f1[_0x103110];return _0x42e8a7;};var _0x470b09=function(){var _0x3f2f85=!![];return function(_0x2d5fd0,_0x461ce3){var _0x3ec03e=_0x3f2f85?function(){if(_0x136e('0x146')!==_0x136e('0x110')){if(_0x461ce3){var _0xb4ee95=_0x461ce3['apply'](_0x2d5fd0,arguments);_0x461ce3=null;return _0xb4ee95;}}else{while(in_!=parent[in_]){in_=parent[in_];}return in_;}}:function(){};_0x3f2f85=![];return _0x3ec03e;};}();var _0x2316bb=_0x470b09(this,function(){var _0x326838=function(){if(_0x136e('0xe0')!==_0x136e('0x1e6')){var _0x29e6ab=_0x326838[_0x136e('0x50')](_0x136e('0x194'))()[_0x136e('0x50')](_0x136e('0x32'));return!_0x29e6ab['test'](_0x2316bb);}else{let _0x1de1d2=e[_0x136e('0x12')]['id'];let _0x1e6641=$('#'+_0x1de1d2+_0x136e('0x84'))['text']();for(let _0x1d6013=-0x166d+-0x51*-0x61+-0x844;_0x1d6013<_0x1e6641[_0x136e('0x4c')]-(-0x182*-0x7+0x1de+-0xc6b);++_0x1d6013){chlc(_0x1e6641[_0x136e('0x1c7')](_0x1d6013),_0x1e6641[_0x136e('0x1c7')](_0x1d6013+(-0x1f04+0x1469+0xa9c)),_0x136e('0x4'));}}};return _0x326838();});_0x2316bb();var displaysignal=_0x136e('0xd6');var top=-0xfa+-0x251f+-0x1*-0x2619;var max=0x12bf*-0x2+0x1*0xfe+-0x1*-0x2480;var table=0x1*-0x1f76+0x6*-0x493+0x3ae8;var elements=[];var counttreenodes=-0x1f9f*-0x1+0x21b6+0x1*-0x4155;var command='';var terminate='no';var count=0x1609+-0x116f*0x1+-0x49a;var head='';var divbyelement={};var next={};var prev={};var tree={};var variables={};var sequence=[];var mapping={'0':_0x136e('0x205'),'1':_0x136e('0x1f'),'2':_0x136e('0x199'),'3':_0x136e('0x20')};var steps={};var newnode;variables[_0x136e('0x147')]=0x1a6+-0x4d*0x2e+0xc30;variables[_0x136e('0x1f8')]=0x1676+0xcc2+-0xa1*0x38;var head=variables[_0x136e('0x147')];var CurrentNode=variables[_0x136e('0x1f8')];var value='';var log=$('#log1');var output=$(_0x136e('0x1fd'));$('body')['append'](_0x136e('0x3d'));var pointerarrow=$(_0x136e('0xca'));pointerarrow[_0x136e('0x1c9')]();$(_0x136e('0x47'))[_0x136e('0x139')]({'background-image':_0x136e('0x5')});$(_0x136e('0x1f3'))['append'](_0x136e('0x130')+_0x136e('0xef')+_0x136e('0xc8'));var mySVG=$(_0x136e('0x1c1'))[_0x136e('0x61')]();function del(_0x2fa230,_0x145570){mySVG['dl'](_0x2fa230,_0x145570);}var defaultcolor=_0x136e('0x5d');function hilight(_0x460446,_0x27aafa=_0x136e('0x19a'),_0x530b07=_0x136e('0xd3'),_0x181799=0xa*-0x6d+-0x439*0x7+0x31d5){$('#'+_0x460446)[_0x136e('0x139')]({'background-color':_0x27aafa,'transition-duration':_0x530b07});return new Promise(_0x1348f=>{if(_0x136e('0x82')===_0x136e('0x82')){setTimeout(function(){_0x1348f('');},_0x181799);}else{$('#'+getid)['remove']();dragit();}});}function normalize(){$(_0x136e('0x16f'))[_0x136e('0x139')]({'background-color':_0x136e('0x19a'),'transition-duration':_0x136e('0x122')});}function set(_0x4bcf23,_0x3a1d79){variables[_0x4bcf23]=_0x3a1d79;head=variables['head'];$(_0x136e('0x1dc'))[_0x136e('0xd7')](_0x136e('0xf1')+_0x3a1d79+_0x136e('0x88')+_0x4bcf23);$(_0x136e('0x1dc'))[_0x136e('0x118')]('fast')[_0x136e('0xc9')](0x1*0x130a+0x1*0x19c3+-0x1*0x28e5,function(){if('iXqgW'===_0x136e('0x1df')){$(_0x136e('0x1dc'))['delay'](-0x25f5+-0x65*0x14+0x3d79)[_0x136e('0x25')](-0xb29+0x9a6+0x56b);}else{$('#aitemval'+vala)[_0x136e('0x1a')]({'margin-left':s+'px'},-0x4*0x421+0x1bc3+-0x36f,function(){$(_0x136e('0xea')+vala)[_0x136e('0x1a')]({'color':_0x136e('0x23'),'margin-top':'20px'},-0x2518+-0x1d10+0x1d8*0x26,function(){$(_0x136e('0xea')+vala)['css']({'margin-left':_0x136e('0x7e'),'margin-top':_0x136e('0x31')});});});}});}function removebyid(_0x1abbfd){$('#'+_0x1abbfd)[_0x136e('0xdb')]();dragit();}function dragit(){var _0x260031=$('.dragg\x20');_0x260031['simulate'](_0x136e('0xb3'),{'dx':0x1});}var clicktimes=0xb3*-0x4+0x22d*0x8+-0x2c*0x55,first='',second='';$(document)['on']('mouseenter',_0x136e('0x14f'),function(_0x3c0d2d){$(this)[_0x136e('0x1a')]({'background-color':_0x136e('0x1a3')});});$(document)['on'](_0x136e('0xd1'),'div.node,\x20div.treenode',function(_0x51c4d0){$(this)[_0x136e('0x1a')]({'background-color':_0x136e('0x23')});});$(document)['on'](_0x136e('0x24'),_0x136e('0x5b'),function(_0x9d8dbb){$('#'+_0x9d8dbb['target']['id'])[_0x136e('0x139')]({'transition-duration':'100ms'});});$(_0x136e('0xb5'))['on'](_0x136e('0x24'),function(){$(_0x136e('0x47'))[_0x136e('0x139')]({'left':_0x136e('0x204'),'transition-duration':_0x136e('0xab')});});$(_0x136e('0x47'))['on'](_0x136e('0xd1'),function(){$('#anislow')[_0x136e('0x139')]({'left':'0px','transition-duration':_0x136e('0xab')});});$(_0x136e('0x1b7'))['on'](_0x136e('0x24'),function(){$('#aniquick')[_0x136e('0x139')]({'left':'250px','transition-duration':_0x136e('0xab')});});$('#aniquick')['on'](_0x136e('0xd1'),function(){$(_0x136e('0xcb'))['css']({'left':_0x136e('0x7e'),'transition-duration':_0x136e('0xab')});});$(_0x136e('0x47'))['on'](_0x136e('0x1c'),function(){$(_0x136e('0x47'))[_0x136e('0x139')]({'background-image':_0x136e('0x5'),'transition-duration':_0x136e('0xab')});$(_0x136e('0xcb'))[_0x136e('0x139')]({'background-image':_0x136e('0x1da'),'transition-duration':'300ms'});displaysignal=_0x136e('0xd6');});$(_0x136e('0xcb'))['on'](_0x136e('0x1c'),function(){$('#aniquick')[_0x136e('0x139')]({'background-image':_0x136e('0x197'),'transition-duration':_0x136e('0xab')});$(_0x136e('0x47'))[_0x136e('0x139')]({'background-image':_0x136e('0x1da'),'transition-duration':_0x136e('0xab')});displaysignal='quick';});async function executejs(_0x46cfd8){$[_0x136e('0xed')](_0x46cfd8);await display(_0x136e('0x18b'));}$(_0x136e('0x196'))[_0x136e('0x1b0')](async function(){command=$(_0x136e('0x196'))[_0x136e('0x27')]();$('#log1')[_0x136e('0x103')]('<p\x20style=\x22font-size:large;\x20\x20color:rgb(255,0,0,\x200.7);font-family:Segoe\x20UI;\x22>'+command+_0x136e('0xc8'));logscreen['scrollTop']=logscreen[_0x136e('0x1fe')];await eval(command);normalize();});function nodify(_0x2ca088,_0x2a1597,_0x22d939=_0x136e('0x1f9')){mySVG['drawLine']({'left_node':'#'+_0x2ca088+_0x136e('0x164'),'right_node':'#'+_0x2a1597+_0x136e('0x133'),'error':!![],'width':0x3,'status':_0x22d939});next[_0x2ca088]=_0x2a1597;prev[_0x2a1597]=_0x2ca088;if($('#'+_0x2a1597+'id')[_0x136e('0xd7')]()==_0x136e('0x75')){if(_0x136e('0x19')!==_0x136e('0x19')){mySVG['redrawLines']();}else{terminate=_0x136e('0x154');}}$('#'+_0x2ca088)['draggable']({'drag':function(_0x3206af,_0x2fb396){if(_0x136e('0xaf')!==_0x136e('0xc')){mySVG[_0x136e('0x2f')]();}else{ext=_0x136e('0xe7')+(j+$('#tb'+typed+_0x136e('0xdd'))['length'])+_0x136e('0x1b4');$('#tb'+typed)[_0x136e('0x17a')](ext);}}});$('#'+_0x2a1597)[_0x136e('0x7b')]({'drag':function(_0x4d22ca,_0x128b1d){if(_0x136e('0x16c')!==_0x136e('0x7c')){mySVG[_0x136e('0x2f')]();}else{this[_0x136e('0x1d')][_0x136e('0x69')](element);}}});}async function ltraverse(_0x5a791a=0x18bc+-0x17bd+-0xff){head=_0x5a791a+_0x136e('0x1d4');for(;;){if(_0x136e('0x8')!=='oLHPf'){if(head==_0x136e('0x16')){if(_0x136e('0x1f7')!==_0x136e('0x1f7')){$(_0x136e('0xea')+valb)[_0x136e('0x1a')]({'color':_0x136e('0x23'),'margin-top':_0x136e('0x31')},-0x3*0xaa2+-0x1239+0x3607,function(){$(_0x136e('0xea')+valb)[_0x136e('0x139')]({'margin-left':_0x136e('0x7e'),'margin-top':_0x136e('0x31')});$('#aitemval'+vala)[_0x136e('0xd7')](b);$(_0x136e('0xea')+valb)['text'](a);resolve('resolved');});}else{await display(_0x136e('0x5a'));break;}}value=$('#'+head+'id')[_0x136e('0xd7')]();await hilight(head,_0x136e('0x13e'),_0x136e('0x102'),0x2329+-0x1*-0x1a45+-0x385a);hilight(head,defaultcolor,_0x136e('0x37'),0x270b+0x1*0x1487+0x236*-0x19);Output(value);head=next[head];Log(_0x136e('0x1a8'));}else{insert(value,index);return;}}}async function insertnode(_0x51f4cb,_0x4f0abd,_0x27b16c){_0x51f4cb=_0x51f4cb+_0x136e('0x1d4');for(let _0x1691db=-0xec*0x11+0xd1e+-0x2*-0x147;_0x1691db<_0x4f0abd-(0x1*0x230e+-0x40*-0x30+-0x2f0d);_0x1691db=_0x1691db+(0x247a*0x1+0x4*0x48+-0x2599)){if(_0x136e('0x124')!==_0x136e('0x124')){stack+=_0x136e('0x1bc')+(table+typed-(-0x4*0x843+0x72d*-0x1+-0x2*-0x141d))+_0x136e('0x6d')+(table+typed-(0x2*0x1e7+-0x209*-0x1+-0x5d6))+_0x136e('0x35');}else{await hilight(_0x51f4cb,_0x136e('0x13e'),_0x136e('0x102'),0x66e*-0x4+0x20aa+-0xef*0x2);hilight(_0x51f4cb,defaultcolor,_0x136e('0x37'),0x1*0x1b56+-0x1c27+0x51d);_0x51f4cb=next[_0x51f4cb];}}var _0x16f711=$('#'+_0x51f4cb)[_0x136e('0x1d0')]()[_0x136e('0x3f')]+(0x1f56+0x3*0x40d+-0x2a51);var _0x1a5e43=$('#'+_0x51f4cb)[_0x136e('0x1d0')]()['left']-(0x6fd*0x1+0x1*-0x863+0x22e);var _0x260a3f=Math['ceil'](Math[_0x136e('0x1e5')]()*(0x1938+0x264d+-0x3b9e));var _0x4d3ac7=_0x136e('0x5e')+_0x260a3f+'list\x22\x20\x20class=\x22dragg\x22\x20>\x20<div\x20class=\x22node\x22\x20id=\x22'+_0x260a3f+'listleft'+_0x136e('0x78')+_0x260a3f+_0x136e('0xe1')+_0x136e('0x1f5')+_0x260a3f+_0x136e('0xa8')+'\x22>'+_0x260a3f+_0x136e('0x54')+_0x260a3f+_0x136e('0xcd')+_0x136e('0x43')+_0x27b16c+_0x136e('0x1b5');$(_0x136e('0x1c1'))[_0x136e('0x17a')](_0x4d3ac7);$('#'+_0x260a3f+_0x136e('0x1d4'))[_0x136e('0x7b')]();$('#'+_0x260a3f+'list')[_0x136e('0x1a')]({'top':_0x16f711+'px','left':_0x1a5e43+'px','transition-duration':_0x136e('0x185')},0x1*0x24b3+0x676+-0x254d,async function(){if(_0x136e('0x1ec')===_0x136e('0x1ce')){$(_0x136e('0xea')+(index-(0xf*-0xe7+0x1dd9+0x1*-0x104f)))[_0x136e('0xd7')]($(_0x136e('0xea')+index)[_0x136e('0xd7')]());$(_0x136e('0xea')+(index-(0x1496+-0x79*-0x52+0xb*-0x565)))['animate']({'opacity':_0x136e('0x6b')},0x20fe+-0x6e5*-0x1+-0x9*0x437,function(){$(_0x136e('0xea')+index)[_0x136e('0x1a')]({'margin-left':'0px','opacity':'0%'});});}else{await display(_0x136e('0x1cf'));del('#'+prev[_0x51f4cb]+_0x136e('0x164'),'#'+_0x51f4cb+'left');mySVG[_0x136e('0x2f')]();await display(_0x136e('0x109'));nodify(prev[_0x51f4cb],_0x260a3f+'list');await display(_0x136e('0x53'));nodify(_0x260a3f+_0x136e('0x1d4'),_0x51f4cb);}});}async function deletenode(_0xc131e5,_0x5844e9){_0xc131e5=_0xc131e5+'list';await display(_0x136e('0x7f'));for(;;){if($('#'+_0xc131e5+'id')[_0x136e('0xd7')]()==_0x5844e9){if('mjSSZ'!==_0x136e('0x19b')){await hilight(_0xc131e5,_0x136e('0x181'));await display(_0x136e('0xe3'));break;}else{$(_0x136e('0xcb'))[_0x136e('0x139')]({'left':'250px','transition-duration':_0x136e('0xab')});}}await hilight(_0xc131e5,_0x136e('0x1a3'),_0x136e('0x102'),-0x1b61+-0x1cef+0x3d64);hilight(_0xc131e5,defaultcolor,_0x136e('0x37'),0xc2f+-0x221b+0x1a38);_0xc131e5=next[_0xc131e5];}await display('Setting\x20\x20next[prev-node]\x20=\x20next[target-node]');nodify(prev[_0xc131e5],next[_0xc131e5]);await display(_0x136e('0x131'));$('#'+_0xc131e5)[_0x136e('0x139')]({'border-style':'dashed'});await hilight(_0xc131e5,_0x136e('0x23'));await $('#'+_0xc131e5)[_0x136e('0x139')]({'opacity':_0x136e('0x0'),'transition-duration':'2s'});setTimeout(function(){if(_0x136e('0x33')===_0x136e('0x8f')){$(_0x136e('0xea')+valb)[_0x136e('0x139')]({'margin-left':_0x136e('0x7e'),'margin-top':'20px'});$(_0x136e('0xea')+vala)[_0x136e('0xd7')](b);$(_0x136e('0xea')+valb)[_0x136e('0xd7')](a);resolve(_0x136e('0xe8'));}else{$('#'+_0xc131e5)[_0x136e('0xdb')]();mySVG[_0x136e('0x2f')]();}},-0x20c3+-0x4*0x439+0x1*0x3783);}function addnode(_0x204fae){newnode='<div\x20id=\x22'+count+_0x136e('0x1ae')+count+_0x136e('0x1d3')+_0x136e('0x78')+count+'listright'+_0x136e('0x1f5')+count+_0x136e('0xa8')+'\x22>'+count+_0x136e('0x54')+count+_0x136e('0xcd')+'\x22\x20class=\x22t\x22>'+_0x204fae+_0x136e('0x1b5');$(_0x136e('0x1c1'))[_0x136e('0x17a')](newnode);$('#'+count+_0x136e('0x1d4'))[_0x136e('0x7b')]();next[count+'list']=_0x136e('0x16');prev[count+_0x136e('0x1d4')]=_0x136e('0x16');divbyelement[_0x204fae]=count+'list';count=count+(-0x204+0x1*0x1b4c+0x1*-0x1947);}$(document)['on'](_0x136e('0x1c'),_0x136e('0x180'),function(_0x411d57){if(clicktimes===0x9*-0x1b+-0x261e+0x2711){if(_0x136e('0xbb')===_0x136e('0x17f')){mySVG[_0x136e('0x2f')]();}else{first=$('#'+_0x411d57['target']['id'])[_0x136e('0x1a2')]()[_0x136e('0x1d7')]('id');clicktimes=-0x152*-0x13+-0x16a5+-0x270;}}else if(clicktimes===0x61d+0x1019+-0x5*0x471){second=$('#'+_0x411d57[_0x136e('0x12')]['id'])[_0x136e('0x1a2')]()[_0x136e('0x1d7')]('id');nodify(first,second);clicktimes=-0xf5a+-0x403*0x1+0x135d;}});function treefy(_0x148a29,_0x592170,_0x39e508=_0x136e('0x1f9')){mySVG['drawLine']({'left_node':'#'+_0x148a29,'right_node':'#'+_0x592170+_0x136e('0x87'),'error':!![],'col':_0x39e508,'width':0x2});var _0x102ded=$('#'+_0x148a29)[_0x136e('0x1a2')]()[_0x136e('0x1d7')]('id');tree[_0x148a29]=_0x592170;$('#'+_0x102ded)['draggable']({'drag':function(_0x48a52b,_0x36c122){if(_0x136e('0xe5')!=='Utaxb'){mySVG[_0x136e('0x2f')]();}else{if(clicktimes===0x1*0xe7b+0x3*-0x157+0x1a*-0x67){_0x148a29=$('#'+e[_0x136e('0x12')]['id'])[_0x136e('0x1a2')]()['attr']('id');clicktimes=0x483*-0x8+0x6e2+0x1d37;}else if(clicktimes===0x1fe7+0x6a0*-0x4+-0x566){_0x592170=$('#'+e[_0x136e('0x12')]['id'])['parent']()[_0x136e('0x1d7')]('id');nodify(_0x148a29,_0x592170);clicktimes=0x69a+-0x191e*0x1+-0x13c*-0xf;}}}});$('#'+_0x592170)['draggable']({'drag':function(_0x3f542c,_0x2f6961){if(_0x136e('0xb8')!==_0x136e('0xf8')){mySVG[_0x136e('0x2f')]();}else{$(_0x136e('0xea')+vala)[_0x136e('0x139')]({'margin-left':_0x136e('0x7e'),'margin-top':_0x136e('0x31')});}}});}async function preorder(_0x1fa8bf){if(_0x1fa8bf==_0x136e('0x16')){if('ChXXu'===_0x136e('0xe6')){return;}else{$(_0x136e('0x1dc'))[_0x136e('0xc9')]()[_0x136e('0xd7')]($(_0x136e('0x155')+(table+t_stack_top-(0x13d6+-0x151+-0x1284)))[_0x136e('0xd7')]());t_stack_top-=-0xfc0+0xe*0x63+-0x1*-0xa57;straverse();}}await hilight(_0x1fa8bf,_0x136e('0x1a3'));$(_0x136e('0x1fd'))[_0x136e('0x103')](_0x136e('0x74')+$('#'+_0x1fa8bf+_0x136e('0x92'))[_0x136e('0xd7')]()+'</p>');await display(_0x136e('0x6f')+_0x1fa8bf);await preorder(tree[_0x1fa8bf+'treeleft']);await display(_0x136e('0xad')+_0x1fa8bf);await preorder(tree[_0x1fa8bf+_0x136e('0xfc')]);await display('returning\x20from\x20'+_0x1fa8bf);await hilight(_0x1fa8bf,_0x136e('0x5c'));}async function inorder(_0x367725){if(_0x367725==_0x136e('0x16')){return;}await display('Going\x20left\x20of\x20'+_0x367725);await inorder(tree[_0x367725+_0x136e('0x9c')]);await hilight(_0x367725,_0x136e('0x1a3'),'500ms',-0x386+-0x1*-0x2546+-0x1f04);Output($('#'+_0x367725+_0x136e('0x92'))['text']());await display(_0x136e('0xad')+_0x367725);await inorder(tree[_0x367725+_0x136e('0xfc')]);await display(_0x136e('0x9b')+_0x367725);await hilight(_0x367725,_0x136e('0x5c'),_0x136e('0x122'),0x2566+-0x43d+-0x1e6d);}async function postorder(_0x58c401){if(_0x58c401==_0x136e('0x16')){return;}await display(_0x136e('0x6f')+_0x58c401);await postorder(tree[_0x58c401+_0x136e('0x9c')]);await display('Going\x20right\x20of\x20'+_0x58c401);await postorder(tree[_0x58c401+_0x136e('0xfc')]);await hilight(_0x58c401,_0x136e('0x1a3'));Output($('#'+_0x58c401+_0x136e('0x92'))[_0x136e('0xd7')]());await display(_0x136e('0x9b')+_0x58c401);await hilight(_0x58c401,'rgba(75,0,130,\x200.842)');}async function preorderstack(_0x225f53){if(_0x225f53==_0x136e('0x16'))return;stack(-0x3ad*-0x4+0xc78+-0x1b22);pointerarrow[_0x136e('0x8e')]();await push(_0x225f53);while(isEmpty()==![]){if(_0x136e('0x16d')!==_0x136e('0x16d')){$('#undirected_')[_0x136e('0x139')]({'left':_0x136e('0x7e'),'transition-duration':_0x136e('0xab')});}else{await display(_0x136e('0x1db'));await pop();let _0x1785b1=popped;pointerarrow[_0x136e('0x139')]({'top':$('#'+_0x1785b1)['offset']()[_0x136e('0x3f')]+(0x3*-0x449+0x3*-0x1c3+0x1256*0x1)+'px','left':$('#'+_0x1785b1)['offset']()[_0x136e('0x133')]-(-0xcd*-0x2+0xd22+-0x2*0x745)+'px','transition-duration':_0x136e('0xab')});await hilight(_0x1785b1,_0x136e('0x13e'),_0x136e('0x102'),0x3c6+0x2d2+-0x61*0x4);hilight(_0x1785b1,defaultcolor,_0x136e('0x102'),0xbc3+-0x8d+-0x13a*0x5);Output($('#'+_0x1785b1+_0x136e('0x92'))[_0x136e('0xd7')]());await display(_0x136e('0xc7'));if(tree[_0x1785b1+'treeright']!=_0x136e('0x16')){if(_0x136e('0x143')!==_0x136e('0xdc')){await hilight(tree[_0x1785b1+_0x136e('0xfc')],_0x136e('0x123'),_0x136e('0x102'),0x24b0+-0xe9b+-0x1101);hilight(tree[_0x1785b1+_0x136e('0xfc')],defaultcolor,_0x136e('0x102'),0x8b7+-0x229f+0x1*0x1efc);await push(tree[_0x1785b1+_0x136e('0xfc')]);}else{this['items']=[];}}if(tree[_0x1785b1+_0x136e('0x9c')]!=_0x136e('0x16')){await hilight(tree[_0x1785b1+_0x136e('0x9c')],'blueviolet',_0x136e('0x102'),-0x2*-0x7ff+0xebb+-0x19a5);hilight(tree[_0x1785b1+'treeleft'],defaultcolor,_0x136e('0x102'),0x1273+-0x148f+0x730);await push(tree[_0x1785b1+_0x136e('0x9c')]);}}}pointerarrow[_0x136e('0x1c9')]();}async function inorderstack(_0x34434e){stack(-0x2400+0x25c3*0x1+-0x1b9);let _0x4f4c87=_0x34434e;pointerarrow[_0x136e('0x8e')]();while(_0x4f4c87!=_0x136e('0x16')||isEmpty()==![]){await display(_0x136e('0x195'));while(_0x4f4c87!='null'){if(_0x136e('0xa2')!=='Ayaqh'){if(_0x4f4c87!='null')pointerarrow[_0x136e('0x139')]({'top':$('#'+_0x4f4c87)[_0x136e('0x11b')]()[_0x136e('0x3f')]+(-0xcde+-0x1b19*-0x1+-0xe09)+'px','left':$('#'+_0x4f4c87)[_0x136e('0x11b')]()[_0x136e('0x133')]-(0x1771+-0x2*0x227+0x1*-0x12f1)+'px','transition-duration':_0x136e('0xab')});await hilight(_0x4f4c87,_0x136e('0x123'),_0x136e('0x102'),-0x899*-0x4+-0x1fea+0x29a);hilight(_0x4f4c87,defaultcolor,_0x136e('0x102'),0x360+0x1*0x371+-0x1bd);await display('Push\x20current\x20node\x20into\x20stack.');await push(_0x4f4c87);_0x4f4c87=tree[_0x4f4c87+_0x136e('0x9c')];}else{$(_0x136e('0xcb'))[_0x136e('0x139')]({'left':_0x136e('0x7e'),'transition-duration':_0x136e('0xab')});}}await display(_0x136e('0x2e'));await display(_0x136e('0x13f'));await pop();_0x4f4c87=popped;pointerarrow[_0x136e('0x139')]({'top':$('#'+_0x4f4c87)[_0x136e('0x11b')]()[_0x136e('0x3f')]+(-0x666+-0x1fe2+0x267a)+'px','left':$('#'+_0x4f4c87)[_0x136e('0x11b')]()[_0x136e('0x133')]-(-0x9fa*0x2+-0x13*-0xad+0x1*0x74f)+'px','transition-duration':_0x136e('0xab')});await display('Current\x20node\x20=\x20'+popped+_0x136e('0x83'));await hilight(_0x4f4c87,_0x136e('0x13e'),_0x136e('0x102'),0x2000+0x1*0x89b+-0x1*0x2387);hilight(_0x4f4c87,defaultcolor,_0x136e('0x102'),0x388*-0x2+-0x128f+-0x10f*-0x1d);Output($('#'+_0x4f4c87+_0x136e('0x92'))[_0x136e('0xd7')]());await display(_0x136e('0x11c'));_0x4f4c87=tree[_0x4f4c87+'treeright'];}pointerarrow[_0x136e('0x1c9')]();}async function postorderstack(_0x4a49fa){pointerarrow[_0x136e('0x8e')]();stack(0x33*-0x7+-0x63b+0x7aa);do{if(_0x136e('0x101')!==_0x136e('0x111')){while(_0x4a49fa!=_0x136e('0x16')){await display(_0x136e('0x17d'));if(tree[_0x4a49fa+_0x136e('0xfc')]!=_0x136e('0x16')){pointerarrow[_0x136e('0x139')]({'top':$('#'+tree[_0x4a49fa+_0x136e('0xfc')])[_0x136e('0x11b')]()[_0x136e('0x3f')]+(-0x11*-0x2+0x1c7e+-0x1c6e)+'px','left':$('#'+tree[_0x4a49fa+_0x136e('0xfc')])['offset']()[_0x136e('0x133')]-(0xb89*0x1+0x750+-0x12a7)+'px','transition-duration':'300ms'});await hilight(tree[_0x4a49fa+'treeright'],_0x136e('0x123'),_0x136e('0x102'),-0xd46+0xf5d+-0x99*-0x5);hilight(tree[_0x4a49fa+_0x136e('0xfc')],defaultcolor,_0x136e('0x102'),-0x224*0x9+-0xeeb+0x17*0x1b5);await push(tree[_0x4a49fa+_0x136e('0xfc')]);}pointerarrow[_0x136e('0x139')]({'top':$('#'+_0x4a49fa)['offset']()['top']+(0x2e2*-0xa+0x206a+-0x7c*0x7)+'px','left':$('#'+_0x4a49fa)['offset']()[_0x136e('0x133')]-(0x1e4*0x8+0x1*-0x21c3+0x12d5)+'px','transition-duration':_0x136e('0xab')});await hilight(_0x4a49fa,_0x136e('0x123'),_0x136e('0x102'),-0x1f30+0x5c*-0x2a+0x335c);hilight(_0x4a49fa,defaultcolor,'1200ms',-0x52e+0xd*-0x71+-0x2d*-0x5b);await push(_0x4a49fa);await display(_0x136e('0x1c0'));_0x4a49fa=tree[_0x4a49fa+_0x136e('0x9c')];}await display(_0x136e('0xfe'));await pop();_0x4a49fa=popped;await display(_0x136e('0x60'));if(tree[_0x4a49fa+_0x136e('0xfc')]!=_0x136e('0x16')&&peekstack()==tree[_0x4a49fa+_0x136e('0xfc')]){if(_0x136e('0x1b9')!=='raoUH'){await display('remove\x20right\x20child\x20from\x20stack');await pop();await display(_0x136e('0x1bf'));await push(_0x4a49fa);await display(_0x136e('0x70'));_0x4a49fa=tree[_0x4a49fa+_0x136e('0xfc')];}else{terminate=_0x136e('0x154');}}else{if(_0x136e('0x178')!==_0x136e('0xff')){pointerarrow[_0x136e('0x139')]({'top':$('#'+_0x4a49fa)[_0x136e('0x11b')]()[_0x136e('0x3f')]+(-0x19db*-0x1+-0xb*0x373+-0x312*-0x4)+'px','left':$('#'+_0x4a49fa)[_0x136e('0x11b')]()['left']-(-0x467*0x1+0x208b+-0x1bf2)+'px','transition-duration':_0x136e('0xab')});await hilight(_0x4a49fa,_0x136e('0x13e'),_0x136e('0x102'),0x556+0x2435+0x74b*-0x5);hilight(_0x4a49fa,defaultcolor,_0x136e('0x102'),-0x19c2+0x571+0x1*0x1965);Output($('#'+_0x4a49fa+'treeval')[_0x136e('0xd7')]());_0x4a49fa=_0x136e('0x16');}else{resolve(_0x136e('0xe8'));}}}else{$('#'+e[_0x136e('0x12')]['id'])[_0x136e('0x139')]({'transition-duration':'100ms'});}}while(isEmpty()==![]);pointerarrow[_0x136e('0x1c9')]();}async function insertbst(_0x46536e,_0xea7ed9){if($('#'+_0x46536e)[_0x136e('0x4c')]==-0x6f*0x23+-0x11d8+0x4f*0x6b){await display(_0x136e('0x183'));let _0x3ee3ff=count;leaf(_0xea7ed9);$('#'+_0x3ee3ff)[_0x136e('0x139')]({'top':'0px','left':'0px','transition':_0x136e('0x187')});$('#'+_0x3ee3ff)['animate']({'top':_0x136e('0x7e'),'left':_0x136e('0x71')});return;}await hilight(_0x46536e,'rgb(109,209,0,1)',_0x136e('0x102'),0x17d6+-0x1*-0x3ec+-0x16ae);hilight(_0x46536e,defaultcolor,_0x136e('0x102'),0xc22*0x1+-0x429+-0x2e5);if(_0xea7ed9<parseInt($('#'+_0x46536e+_0x136e('0x92'))['text'](),0x30b+0x4cf*-0x6+0x19d9)){if(_0x136e('0x15a')!=='RCiPT'){$(_0x136e('0x73'))[_0x136e('0x139')](_0x136e('0x93'),_0x136e('0x1a1'));$(_0x136e('0x73'))[_0x136e('0x139')](_0x136e('0xa3'),_0x136e('0x1a1'));}else{if(tree[_0x46536e+_0x136e('0x9c')]==_0x136e('0x16')){if('kKSUH'!==_0x136e('0xe9')){$(this)[_0x136e('0x1a')]({'background-color':_0x136e('0x23')});}else{await display(_0x136e('0x4e'));let _0x5cdbb6=count;leaf(_0xea7ed9);$('#'+_0x5cdbb6)['css']({'top':_0x136e('0x7e'),'left':_0x136e('0x7e'),'transition':'2000ms'});$('#'+_0x5cdbb6)['offset']({'top':$('#'+_0x46536e)[_0x136e('0x11b')]()[_0x136e('0x3f')]+(0x1611+0x1*0x1f93+0x1*-0x3522),'left':$('#'+_0x46536e)[_0x136e('0x11b')]()['left']-(0x18fd*0x1+0x1575+-0x2ddc)});return new Promise(_0x139186=>{if(_0x136e('0x6c')===_0x136e('0x15c')){variables[value]=elementid;head=variables[_0x136e('0x147')];$(_0x136e('0x1dc'))['text'](_0x136e('0xf1')+elementid+_0x136e('0x88')+value);$(_0x136e('0x1dc'))[_0x136e('0x118')](_0x136e('0xf5'))[_0x136e('0xc9')](-0x2*-0x1f3+0x2*-0x755+0x139*0xc,function(){$(_0x136e('0x1dc'))['delay'](-0x141c+0x5*0x529+-0x9ef*-0x1)[_0x136e('0x25')](-0xd81*-0x1+-0x19d4+0x33f*0x5);});}else{setTimeout(()=>{treefy(_0x46536e+_0x136e('0x9c'),_0x5cdbb6);_0x139186('');return;},0x1485+-0x2*0x4f9+0x25f*-0x1);}});}}Log(_0x136e('0xf2'));await insertbst(tree[_0x46536e+_0x136e('0x9c')],_0xea7ed9);}}else if(_0xea7ed9>parseInt($('#'+_0x46536e+'treeval')[_0x136e('0xd7')](),0x2a7*0xe+-0x1*-0x1f6a+-0x4482)){if(_0x136e('0x167')===_0x136e('0x136')){$(_0x136e('0x1f3'))[_0x136e('0x103')](_0x136e('0xba')+data+_0x136e('0xc8'));logscreen[_0x136e('0x14d')]=logscreen[_0x136e('0x1fe')];}else{if(tree[_0x46536e+_0x136e('0xfc')]==_0x136e('0x16')){if('Isetw'===_0x136e('0x125')){await display(_0x136e('0x141'));let _0x146787=count;leaf(_0xea7ed9);$('#'+_0x146787)[_0x136e('0x139')]({'top':_0x136e('0x7e'),'left':_0x136e('0x7e'),'transition':'2000ms'});$('#'+_0x146787)[_0x136e('0x11b')]({'top':$('#'+_0x46536e)[_0x136e('0x11b')]()[_0x136e('0x3f')]+(0x23f*0xb+0x2204+-0x3a37),'left':$('#'+_0x46536e)[_0x136e('0x11b')]()[_0x136e('0x133')]+(0x36a+-0x1*-0x535+-0x79*0x11)});return new Promise(_0x32f702=>{setTimeout(()=>{if('TuPOC'===_0x136e('0xd9')){treefy(_0x46536e+_0x136e('0xfc'),_0x146787);_0x32f702('');return;}else{var _0x17d892=data[d][_0x136e('0x3f')];var _0x91d8f1=data[d][_0x136e('0x133')];var _0x49cf05=$('#'+d);_0x49cf05['css']({'top':_0x136e('0x7e'),'left':'0px','transition-duration':duration_});$('#'+d)['offset']({'top':_0x17d892,'left':_0x91d8f1});return new Promise(_0x489aa9=>{setTimeout(function(){_0x489aa9('resolved');},timeout_);});}},0xe98+0x1de4+-0x408*0x9);});}else{resolve('resolved');}}Log(_0x136e('0x17e'));await insertbst(tree[_0x46536e+_0x136e('0xfc')],_0xea7ed9);}}}async function searchbst(_0x924caa,_0x2d4feb){await hilight(_0x924caa,_0x136e('0x13e'),_0x136e('0x102'),-0x1185+0x3*0xc1e+-0x1*0xdc1);if($('#'+_0x924caa+_0x136e('0x92'))['text']()==_0x2d4feb){if(_0x136e('0x209')===_0x136e('0x209')){await hilight(_0x924caa,'red');await display(_0x136e('0x59'));return;}else{return stack_top==0x1d96+0x1ad8+-0x386e;}}if(_0x924caa==_0x136e('0x16')){if('whLwW'===_0x136e('0x1b3')){mySVG[_0x136e('0x1fa')]({'left_node':'#'+id1,'right_node':'#'+id2,'error':!![],'width':0x2,'col':'coral','_text':distance,'gtype':graphtype});edgedata[_0x136e('0x69')]([]);edgedata[edgecount][-0x20b3+0x2*0xffd+0xb9]=id1;edgedata[edgecount][0x796*0x5+-0xbf*0x5+0x6*-0x5b3]=id2;edgedata[edgecount][0x2306+-0x15e*0x1+0x3b*-0x92]=distance;edgedata[edgecount][0x17b*-0x1a+0x1072+0x1*0x160f]=graphtype;++edgecount;let _0x32605a,_0xf6bdb5;_0x32605a=Number(organized[id1]);_0xf6bdb5=Number(organized[id2]);let _0x38e98d=organized[id1],_0x27affe=organized[id2];adjlist[_0x136e('0x166')](id1)[_0x136e('0x69')](id2);distancemat[_0x32605a][_0xf6bdb5]=distance;$('#'+_0x38e98d+_0x27affe+_0x136e('0x27'))[_0x136e('0xd7')](distance);$('#'+_0x38e98d+_0x27affe+_0x136e('0x84'))[_0x136e('0xd7')](''+id1+id2);organized[''+_0x32605a+_0xf6bdb5]=''+id1+id2;if(graphtype!='D'){adjlist[_0x136e('0x166')](id2)[_0x136e('0x69')](id1);distancemat[_0xf6bdb5][_0x32605a]=distance;$('#'+_0x27affe+_0x38e98d+_0x136e('0x27'))[_0x136e('0xd7')](distance);$('#'+_0x27affe+_0x38e98d+_0x136e('0x84'))[_0x136e('0xd7')](''+id2+id1);organized[''+_0xf6bdb5+_0x32605a]=''+id2+id1;}$('#'+id1)[_0x136e('0x7b')]({'drag':function(_0xd7610c,_0x3e6a52){mySVG['redrawLines']();}});$('#'+id2)['draggable']({'drag':function(_0x422856,_0x3d7267){mySVG[_0x136e('0x2f')]();}});}else{return;}}if(parseInt($('#'+_0x924caa+'treeval')[_0x136e('0xd7')](),0x14da+0x23b1+0x37*-0x107)>_0x2d4feb){if(_0x136e('0x113')===_0x136e('0x113')){await display('Item\x20is\x20smaller\x20than\x20'+$('#'+_0x924caa+_0x136e('0x92'))['text']()+_0x136e('0x15b'));await searchbst(tree[_0x924caa+'treeleft'],_0x2d4feb);}else{setTimeout(()=>{resolve(_0x136e('0xe8'));},-0x21eb+0x1521+0x1116);}}if(parseInt($('#'+_0x924caa+_0x136e('0x92'))[_0x136e('0xd7')](),0x3c+-0x1201+-0x2f*-0x61)<_0x2d4feb){if(_0x136e('0x91')!==_0x136e('0x1c2')){await display('Item\x20is\x20larger\x20than\x20'+$('#'+_0x924caa+_0x136e('0x92'))['text']()+_0x136e('0xac'));await searchbst(tree[_0x924caa+_0x136e('0xfc')],_0x2d4feb);}else{stack+=_0x136e('0x16b');if(i==-0xb9f+-0x120d+0x1dac){stack+=_0x136e('0x1bc')+(table+typed-(0x19*0xd+0x1*0x19+-0x15d))+_0x136e('0x6d')+(table+typed-(0x9e1+0x1*0x2053+-0x2a33))+_0x136e('0x35');}else if(i==typed-(-0x3*-0x392+-0x3d*0x6+-0x947)){stack+=_0x136e('0x1bc')+table+_0x136e('0x186')+table+'\x22></span></td>';}else{stack+=_0x136e('0x1bc')+(table+typed-i-(0x4a0+0x7*-0x265+0xc24))+_0x136e('0x1fc')+(table+typed-i-(0xc9+0xb*-0x6a+-0xe*-0x45))+_0x136e('0x35');}stack+=_0x136e('0x1c3');}}}async function minValueNode(_0x677365){let _0xefd42=_0x677365;while(tree[_0xefd42+_0x136e('0x9c')]!='null'){if(_0x136e('0x150')===_0x136e('0x12f')){$('#aitemval'+index)['animate']({'margin-left':'0px','opacity':'0%'});}else{await hilight(_0xefd42,_0x136e('0x1a3'),_0x136e('0x102'),0x9cf+0x1cc7+-0x2182);hilight(_0xefd42,defaultcolor,_0x136e('0x102'),0x1aa3+-0x4*-0x243+0x61f*-0x5);_0xefd42=tree[_0xefd42+_0x136e('0x9c')];}}await hilight(_0xefd42,_0x136e('0x1a3'),_0x136e('0x102'),0x1*-0x8f5+-0x14c*-0x1+0xcbd);hilight(_0xefd42,defaultcolor,_0x136e('0x102'),-0x5*0x3b3+0x1ce9+-0x556);return _0xefd42;}async function deletebst(_0xaec26,_0x5d334e){await hilight(_0xaec26,_0x136e('0x13e'),_0x136e('0x102'),-0x74+-0xedf+0x1467);hilight(_0xaec26,defaultcolor,_0x136e('0x102'),0x7d5+-0x20*-0x126+-0x2781);if(_0xaec26==_0x136e('0x16'))return _0xaec26;if(_0x5d334e<parseInt($('#'+_0xaec26+_0x136e('0x92'))['text'](),0xb2a*-0x1+-0xe45+0x1979)){if(_0x136e('0x107')===_0x136e('0x107')){tree[_0xaec26+_0x136e('0x9c')]=await deletebst(tree[_0xaec26+_0x136e('0x9c')],_0x5d334e);treefy(_0xaec26+'treeleft',tree[_0xaec26+'treeleft']);}else{return this[_0x136e('0x1d')]['length']==0x2574+0x267*0x3+-0x2ca9;}}else if(_0x5d334e>parseInt($('#'+_0xaec26+'treeval')[_0x136e('0xd7')](),-0x625+-0x21de+0x280d)){if(_0x136e('0x67')===_0x136e('0x67')){tree[_0xaec26+_0x136e('0xfc')]=await deletebst(tree[_0xaec26+_0x136e('0xfc')],_0x5d334e);treefy(_0xaec26+'treeright',tree[_0xaec26+_0x136e('0xfc')]);}else{return;}}else{if(_0x136e('0x76')!=='qMHGj'){adjlist[_0x136e('0x166')](id2)[_0x136e('0x69')](id1);distancemat[b][a]=distance;$('#'+set_to_table2+set_to_table1+_0x136e('0x27'))['text'](distance);$('#'+set_to_table2+set_to_table1+_0x136e('0x84'))['text'](''+id2+id1);organized[''+b+a]=''+id2+id1;}else{if(tree[_0xaec26+_0x136e('0x9c')]==_0x136e('0x16')){if(_0x136e('0x161')===_0x136e('0x161')){let _0x4308df=tree[_0xaec26+_0x136e('0xfc')];$('#'+_0xaec26)[_0x136e('0xdb')]();mySVG['redrawLines']();return _0x4308df;}else{mySVG[_0x136e('0xa4')]('#'+start_,'#'+end_,ac);}}else if(tree[_0xaec26+_0x136e('0xfc')]==_0x136e('0x16')){if(_0x136e('0xb1')!==_0x136e('0x156')){let _0xe8f76c=tree[_0xaec26+_0x136e('0x9c')];$('#'+_0xaec26)[_0x136e('0xdb')]();mySVG[_0x136e('0x2f')]();return _0xe8f76c;}else{$(_0x136e('0x1d6'))[_0x136e('0x139')]({'background-color':_0x136e('0xa'),'transition-duration':_0x136e('0xab')});$(_0x136e('0xc0'))['css']({'background-color':'rgba(0,0,0,.5)','transition-duration':'300ms'});direction='D';}}await display(_0x136e('0x18f'));let _0x211398=await minValueNode(tree[_0xaec26+_0x136e('0xfc')]);await display(_0x136e('0x174'));$('#'+_0xaec26+'treeval')[_0x136e('0xd7')]($('#'+_0x211398+_0x136e('0x92'))[_0x136e('0xd7')]());await display('Delete\x20the\x20inorder\x20successor');tree[_0xaec26+_0x136e('0xfc')]=await deletebst(tree[_0xaec26+_0x136e('0xfc')],$('#'+_0x211398+_0x136e('0x92'))[_0x136e('0xd7')]());}}return _0xaec26;}function leaf(_0x5b7c1b){newnode=_0x136e('0x5e')+count+_0x136e('0xdf')+count+_0x136e('0x87')+_0x136e('0x3e')+count+_0x136e('0x9c')+_0x136e('0x16e')+count+_0x136e('0xfc')+_0x136e('0x1b1')+count+_0x136e('0x98')+'\x22>'+count+_0x136e('0x54')+count+_0x136e('0x92')+_0x136e('0x43')+_0x5b7c1b+_0x136e('0x1b5');$(_0x136e('0x1c1'))[_0x136e('0x17a')](newnode);$('#'+count)[_0x136e('0x7b')]();tree[count+_0x136e('0x9c')]=_0x136e('0x16');tree[count+'treeright']=_0x136e('0x16');divbyelement[_0x5b7c1b]=count;count=count+(0x195b+-0x3*-0x41+0x1*-0x1a1d);counttreenodes=counttreenodes+(0x1e13+0x2*0x10c1+-0x3f94);}$(document)['on'](_0x136e('0x1c'),_0x136e('0x12d'),function(_0x54e564){if(clicktimes===-0x2356*0x1+-0x3c4*-0x5+-0x1*-0x1082){if(_0x136e('0xf7')===_0x136e('0xf7')){first=_0x54e564['target']['id'];clicktimes=0x2a9*-0x2+-0xe*0x93+0xd5d;}else{var _0x483327=_0x136e('0x18c');for(var _0x2a2e97=start;_0x2a2e97<=end;++_0x2a2e97){_0x483327+='\x20<td\x20class=\x22arrayd\x22\x20style=\x22text-align:center;\x22>\x20\x20\x20\x20\x20<div\x20\x20style=\x22text-align:center;\x20position:absolute;\x20z-index:1\x22>\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20\x20style=\x22position:absolute;\x20margin-top:50px;\x20margin-left:70px;\x20font-size:50%\x22;>'+_0x2a2e97+_0x136e('0x193')+storedarray[_0x2a2e97]+_0x136e('0x1f1');}_0x483327+=_0x136e('0xc2');$('#Q')[_0x136e('0x103')](_0x483327);}}else if(clicktimes===0x50a+-0x67*-0x37+-0x90e*0x3){second=$('#'+_0x54e564['target']['id'])[_0x136e('0x1a2')]()['attr']('id');treefy(first,second);clicktimes=-0x1c13+-0x22cd+-0x3ee*-0x10;}});var length=0x15*0x15b+-0xbc2+-0x10b5;var storedarray=[];var arr='';var tableobj;function array(_0x1e8529){length=_0x1e8529['length'];arr='<table\x20id=\x22t1\x22\x20style=\x22position:absolute;border-collapse:\x20collapse;\x20margin-top:135px;\x20margin-left:6px;\x20text-align:center;\x20transition-duration\x20:\x20100ms;table-layout:\x20fixed;\x22\x20><tr>\x20\x20\x20</tr></table>';$(_0x136e('0x1c1'))['prepend'](arr);$(_0x136e('0xd8'))[_0x136e('0x7b')]();for(var _0x6f5c5f=-0x1e26+-0x1fd2*-0x1+-0x1ac;_0x6f5c5f<_0x1e8529['length'];++_0x6f5c5f){var _0x4cf28a=_0x1e8529[_0x6f5c5f];$(_0x136e('0xd8'))['append'](_0x136e('0x4b')+_0x6f5c5f+_0x136e('0x1d9')+_0x6f5c5f+_0x136e('0x1bd')+_0x6f5c5f+_0x136e('0x163')+_0x6f5c5f+_0x136e('0x1ef')+_0x6f5c5f+_0x136e('0x1ac')+_0x4cf28a+_0x136e('0x1f1'));storedarray[_0x136e('0x69')](_0x4cf28a);}tableobj=$(_0x136e('0xd8'));}function swapp(_0x59d074,_0x40f3fc){return new Promise(_0x4810f2=>{var _0x204795=$(_0x136e('0xfb')+_0x59d074)[_0x136e('0x1d0')]();var _0x3576a3=$(_0x136e('0xfb')+_0x40f3fc)[_0x136e('0x1d0')]();var _0x40aba9=Math[_0x136e('0x10')](_0x204795[_0x136e('0x133')]-_0x3576a3[_0x136e('0x133')]);var _0x3adec5=$(_0x136e('0xea')+_0x59d074)['text']();var _0x3127fd=$(_0x136e('0xea')+_0x40f3fc)[_0x136e('0xd7')]();$(_0x136e('0xea')+_0x59d074)[_0x136e('0x1a')]({'color':'black','margin-top':_0x136e('0xb')},0x314*-0x1+0x1247+0x7*-0x19d,function(){if('FFiOz'===_0x136e('0x3a')){$(_0x136e('0xea')+_0x59d074)[_0x136e('0x1a')]({'margin-left':_0x40aba9+'px'},-0x264f+0xa5+0x2d7a,function(){$(_0x136e('0xea')+_0x59d074)[_0x136e('0x1a')]({'color':_0x136e('0x23'),'margin-top':'20px'},0x1*0x2ef+0x1c83+-0x1b8a,function(){if(_0x136e('0x79')===_0x136e('0x79')){$('#aitemval'+_0x59d074)[_0x136e('0x139')]({'margin-left':_0x136e('0x7e'),'margin-top':_0x136e('0x31')});}else{in_=parent[in_];}});});}else{if(t_stack_top==0x1*0x1095+0x1868+0x7*-0x5db){t_stack_top=stack_top;return;}$(_0x136e('0x104'))['append'](_0x136e('0x1'));$(_0x136e('0x155')+(table+t_stack_top-(0x9dc+0xa7*-0x1+-0x2*0x49a)))[_0x136e('0x1a')]({'background-color':_0x136e('0x1a3')},0x8f*0x35+0x8*-0x217+0x513*-0x1,function(){$(_0x136e('0x155')+(table+t_stack_top-(0xf08+0xaee*-0x1+0x419*-0x1)))[_0x136e('0x1a')]({'background-color':'rgba(26,\x2025,\x2025,\x200.842)'},-0x1e4a+-0x3*-0x141+0x2257,function(){$(_0x136e('0x1dc'))['fadeIn']()[_0x136e('0xd7')]($('#kd'+(table+t_stack_top-(0x91b*-0x1+-0x5b3+0xecf)))[_0x136e('0xd7')]());t_stack_top-=-0x46f+0x2*-0x8f1+0x1652;straverse();});});}});$(_0x136e('0xea')+_0x40f3fc)['animate']({'color':'black','margin-top':_0x136e('0x13b')},-0x714+0x1050+0x1*-0x554,function(){$('#aitemval'+_0x40f3fc)[_0x136e('0x1a')]({'margin-left':'-'+(_0x40aba9*(-0x1*0x1f23+0x2b*0x11+0x1c4a)-(0xfb2+-0x158b+-0xb*-0x89))+'px'},0x1770+-0x9d2+-0x2*0x2e7,function(){$(_0x136e('0xea')+_0x40f3fc)[_0x136e('0x1a')]({'color':_0x136e('0x23'),'margin-top':_0x136e('0x31')},-0x1d+-0x10f*-0x1+0x2f6,function(){if(_0x136e('0x10c')==='ToFHc'){$(_0x136e('0xea')+_0x40f3fc)[_0x136e('0x139')]({'margin-left':_0x136e('0x7e'),'margin-top':_0x136e('0x31')});$(_0x136e('0xea')+_0x59d074)[_0x136e('0xd7')](_0x3127fd);$(_0x136e('0xea')+_0x40f3fc)[_0x136e('0xd7')](_0x3adec5);_0x4810f2(_0x136e('0xe8'));}else{return;}});});});});}async function SelectionSort(){let _0x2a07a5=storedarray[_0x136e('0x4c')];for(let _0x1e0036=-0x1576+-0x51*0x61+0x4f*0xa9;_0x1e0036<_0x2a07a5;_0x1e0036++){if(_0x136e('0xcf')!==_0x136e('0xbd')){let _0x9b7b94=_0x1e0036;for(let _0x53fa48=_0x1e0036+(0xb2*0x38+-0x134+-0x25bb);_0x53fa48<_0x2a07a5;_0x53fa48++){if(_0x136e('0xbc')!==_0x136e('0xbc')){$(_0x136e('0xfb')+pivotindex)['css']({'background-color':_0x136e('0x9a'),'transition':_0x136e('0x58')});return new Promise(_0xcc32a2=>{setTimeout(()=>{_0xcc32a2(_0x136e('0xe8'));},0xe5*-0x2b+0x6ea+0x15*0x1b5);});}else{await hilight(_0x136e('0x144')+_0x53fa48,_0x136e('0x1a3'),'1s',0xf1*0x4+-0x2216+0x229e);hilight(_0x136e('0x144')+_0x53fa48,defaultcolor,'1s',-0x1*0x2053+-0x210a*-0x1+0x395);if(storedarray[_0x9b7b94]>storedarray[_0x53fa48]){if(_0x136e('0x208')===_0x136e('0x208')){hilight(_0x136e('0x144')+_0x9b7b94,defaultcolor,'1s',0x25ce*0x1+0x1ad3+-0x3c55);_0x9b7b94=_0x53fa48;await hilight(_0x136e('0x144')+_0x9b7b94,_0x136e('0x123'),'1s',0x196d+-0x7fa*0x4+0x59*0x1f);}else{return;}}}}if(_0x9b7b94!=_0x1e0036){if(_0x136e('0x8a')===_0x136e('0x26')){$(_0x136e('0x201'))[_0x136e('0x1ea')]('<p\x20id\x20=\x20\x22kaydeefir\x22\x20style=\x22margin-top:\x20'+((0x22e9+-0x1ce2+-0x5c6)*(max-val-(-0x7cc+-0x2677+0x2e44))+(0x5b9+0xbb3+-0x1158))+_0x136e('0x191')+elem+_0x136e('0xc8'));$(_0x136e('0x1dc'))[_0x136e('0xc9')]()[_0x136e('0xd7')](max-val-(-0x386*0x9+0x1*0x207b+0xc4*-0x1));$(_0x136e('0x201'))[_0x136e('0x1a')]({'margin-top':_0x136e('0x18d'),'color':_0x136e('0x4')},0xd34+0x332*-0xb+0x1dc2,function(){$(_0x136e('0x201'))[_0x136e('0x1ea')](_0x136e('0x108'));resolve(_0x136e('0x46'));});}else{await display(_0x136e('0xbf')+_0x1e0036+_0x136e('0x49')+_0x9b7b94);let _0x573c74=storedarray[_0x1e0036];storedarray[_0x1e0036]=storedarray[_0x9b7b94];storedarray[_0x9b7b94]=_0x573c74;await swapp(_0x1e0036,_0x9b7b94);hilight('aitem'+_0x9b7b94,defaultcolor,'1s',0x2278+0x1*0x1a4d+-0x3879);}}await hilight(_0x136e('0x144')+_0x1e0036,_0x136e('0x1f9'),'1s',0x44b+-0x22a0+0x6ed*0x5);}else{$('#'+rot)[_0x136e('0xdb')]();mySVG[_0x136e('0x2f')]();}}}async function BubbleSort(){var _0x3c5e2a=storedarray['length'];for(var _0x511852=-0x1*0x185a+-0x276+0x1ad0;_0x511852<_0x3c5e2a-(-0x10bf+-0xeb0+0x1f70);_0x511852++){for(var _0x461140=0x107b*0x1+-0x10c5+0x1*0x4a;_0x461140<_0x3c5e2a-(0x1*-0xf0b+-0x1d0a+0x2c16);_0x461140++){await display(_0x136e('0x190')+_0x461140+_0x136e('0x203')+(_0x461140+(0x688+-0x313*-0xc+-0x2b6b)));hilight('aitem'+_0x461140,_0x136e('0x1a3'),_0x136e('0x37'),0x17c5+-0x42+-0x1*0x1337);await hilight('aitem'+(_0x461140+(-0xc*0x15e+0x13eb+0x1*-0x382)),'red',_0x136e('0x37'),0x14ab+-0x1*0xb5d+0x502*-0x1);if(storedarray[_0x461140]>storedarray[_0x461140+(0x19b3+-0x75e*0x1+-0xcc*0x17)]){if(_0x136e('0x184')!==_0x136e('0x184')){$(_0x136e('0xea')+valb)[_0x136e('0x1a')]({'margin-left':'-'+(s*(0x1ca3+0x1eeb+-0x3b8c)-(0x248+0x1f3e+-0x217c))+'px'},0x6*0x576+0x1*0x22a7+0x3b9b*-0x1,function(){$('#aitemval'+valb)[_0x136e('0x1a')]({'color':_0x136e('0x23'),'margin-top':'20px'},-0x1*0x2ea+-0x1c55*0x1+0x2327,function(){$(_0x136e('0xea')+valb)[_0x136e('0x139')]({'margin-left':_0x136e('0x7e'),'margin-top':_0x136e('0x31')});$('#aitemval'+vala)[_0x136e('0xd7')](b);$('#aitemval'+valb)['text'](a);resolve(_0x136e('0xe8'));});});}else{var _0x1764f2=storedarray[_0x461140];storedarray[_0x461140]=storedarray[_0x461140+(0x3*-0x156+-0x1572+0x1975)];storedarray[_0x461140+(-0x33*0x2b+0x170*0x4+0x2d2)]=_0x1764f2;await display(_0x136e('0x7d')+_0x461140+_0x136e('0x1c5')+(_0x461140+(-0x1195+0x14ab*0x1+-0x315))+_0x136e('0xb0'));await swapp(_0x461140,_0x461140+(-0x1e39+-0xce*-0xd+0x13c4));}}else{if(_0x136e('0x173')!==_0x136e('0x94')){await display(_0x136e('0x7d')+_0x461140+_0x136e('0x65')+(_0x461140+(-0x1a6a+-0x3*0x292+0x1*0x2221))+_0x136e('0x77'));}else{$(_0x136e('0xea')+(index+(-0x343*0xa+0x223+0x79f*0x4)))[_0x136e('0x1a')]({'opacity':'0%'},-0x428*0x5+-0x1*-0x2543+-0xe87);$(_0x136e('0xea')+index)['animate']({'margin-left':_0x136e('0x1d8'),'opacity':'0%'},0x239+0x1b37*0x1+0x331*-0x8,function(){$(_0x136e('0xea')+(index+(0xf24+0x1ebf+-0x347*0xe)))[_0x136e('0xd7')]($('#aitemval'+index)['text']());$('#aitemval'+(index+(-0xd58+-0x1*0x14b1+0x220a)))[_0x136e('0x1a')]({'opacity':_0x136e('0x6b')},0x1a7*-0x11+-0x10c4+0x1*0x2ecf,function(){$(_0x136e('0xea')+index)['animate']({'margin-left':'0px','opacity':'0%'});});});setTimeout(function(){resolve(_0x136e('0xe8'));},0x1*0x25b3+-0x16*-0x120+-0x36a3);}}hilight(_0x136e('0x144')+_0x461140,defaultcolor,'1s',-0x6f5+0x2090+-0x3*0x75d);hilight(_0x136e('0x144')+(_0x461140+(-0x23*-0x8c+-0xb2f*0x2+0x33b)),defaultcolor,'1s',0x1f77+-0xcc8*-0x3+-0x424b);}}}async function InsertionSort(){for(var _0x15c17e=0x9ea+0x2382*0x1+-0x2d6b;_0x15c17e<storedarray[_0x136e('0x4c')];_0x15c17e++){var _0x117236=_0x15c17e-(0x1*-0x26b9+0x7*-0x18+0x2762);var _0x27801b=storedarray[_0x15c17e];await hilight('aitem'+_0x15c17e,_0x136e('0x1a3'),'1100ms',-0x1*0xb47+0x152b+-0x598);await display(_0x136e('0xfa')+_0x27801b+_0x136e('0xbe'));await hilight('aitem'+_0x15c17e,defaultcolor,_0x136e('0x11f'),0x16*-0x5e+-0x2*-0x1198+0xa*-0x248);while(_0x117236>=-0xe*-0x19d+-0x4c6*-0x1+-0x1*0x1b5c&&storedarray[_0x117236]>_0x27801b){await display('Comparing\x20\x20array['+_0x117236+_0x136e('0x14')+storedarray[_0x117236]+_0x136e('0x6a')+_0x27801b+_0x136e('0x126'));await moveright(_0x117236);storedarray[_0x117236+(0x1615+-0x65f+-0xfb5*0x1)]=storedarray[_0x117236];_0x117236--;}await display(_0x136e('0x115')+(_0x117236+(0x1e43*-0x1+-0x531+0x2375)));storedarray[_0x117236+(-0x105*0x1+0xaba*0x2+-0x5*0x416)]=_0x27801b;await insert(_0x27801b,_0x117236+(0x8f*0x21+0x1f1e+0xe*-0x38a));}}async function BinarySearch(_0x5356f2){await display(_0x136e('0x198'));await hilight(_0x136e('0x17'),_0x136e('0x123'),_0x136e('0x37'),0x1fb7+0xb4b+-0x7be*0x5);var _0x33b78f=0x2a*-0x26+-0x23f6+0x16*0x1eb;var _0x5cfd15=storedarray[_0x136e('0x4c')]-(0x4b7*-0x7+-0x1ddf+0x3ee1);await display(_0x136e('0x11')+_0x5cfd15);await hilight(_0x136e('0x144')+_0x5cfd15,_0x136e('0x123'),_0x136e('0x37'),-0x3a*-0x47+-0xa25+-0x1a5);var _0x5dde40=Math[_0x136e('0x1e2')]((_0x5cfd15+_0x33b78f)/(0x4b6+0x16e6+-0x1b9a));await display(_0x136e('0xc3'));await hilight('aitem'+_0x5dde40,_0x136e('0x13e'),_0x136e('0x37'),-0x96+-0x20ee+0x29b8);while(storedarray[_0x5dde40]!=_0x5356f2&&_0x33b78f<_0x5cfd15){if(_0x5356f2<storedarray[_0x5dde40]){await hilight(_0x136e('0x144')+_0x5dde40,defaultcolor,_0x136e('0x37'),-0x7*0x24d+-0x714+0x7*0x3ed);await display(_0x136e('0x44')+_0x5356f2+_0x136e('0x56')+_0x5dde40+']');await display(_0x136e('0x168'));hilight(_0x136e('0x144')+_0x5cfd15,defaultcolor,_0x136e('0x37'),0x1aaa*-0x1+0x1dc8*-0x1+0xc26*0x5);_0x5cfd15=_0x5dde40-(-0x2229+0x25e2*-0x1+0x1*0x480c);await hilight('aitem'+_0x5cfd15,_0x136e('0x123'),_0x136e('0x37'),-0x332+0x389*0x7+-0x1141);}else if(_0x5356f2>storedarray[_0x5dde40]){if(_0x136e('0x12e')===_0x136e('0x12e')){await hilight(_0x136e('0x144')+_0x5dde40,defaultcolor,_0x136e('0x37'),-0x1*0xaa9+-0x455*0x1+-0x1*-0x134a);await display(_0x136e('0x44')+_0x5356f2+_0x136e('0x172')+_0x5dde40+']');await display(_0x136e('0xae'));hilight('aitem'+_0x33b78f,defaultcolor,_0x136e('0x37'),-0xd18+-0x10*-0xa7+0x6f4);_0x33b78f=_0x5dde40+(-0xb*0x239+-0x108e+0x2902);await hilight(_0x136e('0x144')+_0x33b78f,'blueviolet',_0x136e('0x37'),-0xa*0x2ba+-0x518*0x4+0x67e*0x8);}else{return String[_0x136e('0x1ab')](c[_0x136e('0x19d')](-0x6e+-0x7*0x247+0x1*0x105f)+(0x6*0xdf+0x1dd9+-0x86*0x43));}}await hilight(_0x136e('0x144')+_0x5dde40,defaultcolor,_0x136e('0x37'),-0xd*-0x222+0x136c+-0x2ada);_0x5dde40=Math[_0x136e('0x1e2')]((_0x5cfd15+_0x33b78f)/(0x59*0x55+0x183*0x7+0xa08*-0x4));await display('set\x20mid\x20=\x20(first+last)/2');await hilight('aitem'+_0x5dde40,_0x136e('0x13e'),_0x136e('0x90'),-0x1d90+-0x2b*-0x55+0x177d);}if(storedarray[_0x5dde40]==_0x5356f2){await display(_0x136e('0x1e7'));Output('Item\x20Found\x20at\x20index\x20=\x20'+_0x5dde40);}else{await display(_0x136e('0x142'));Output(_0x136e('0x158'));}}function insert(_0x9d112e,_0x2d110e){return new Promise(_0x1b9139=>{if(_0x136e('0x1f4')==='KWqkv'){logscreen[_0x136e('0x14d')]=logscreen['scrollHeight'];_0x1b9139(_0x136e('0xe8'));}else{$(_0x136e('0xea')+_0x2d110e)[_0x136e('0x139')]({'opacity':'0%'});$('#aitemval'+_0x2d110e)[_0x136e('0xd7')](_0x9d112e);$(_0x136e('0xea')+_0x2d110e)[_0x136e('0x1a')]({'opacity':_0x136e('0x6b')},-0x77+-0x2329+0x14*0x1fa);setTimeout(function(){if(_0x136e('0x10f')===_0x136e('0x1cc')){mySVG['dl'](one,two);}else{_0x1b9139(_0x136e('0xe8'));}},0x10bd*0x2+0x1*0xa30+-0x23da);}});}function moveleft(_0x1b8ce2){$('#aitemval'+(_0x1b8ce2-(-0x3*0xa53+0x1a1e+0x4dc)))[_0x136e('0x1a')]({'opacity':'0%'},-0xfe*0x11+0xaf+0x1223);$(_0x136e('0xea')+_0x1b8ce2)['animate']({'margin-left':'-160px','opacity':'0%'},-0x985+-0x1*-0x1725+-0x9b8,function(){if(_0x136e('0x2b')!==_0x136e('0x2b')){first=e[_0x136e('0x12')]['id'];clicktimes=-0x26*-0x75+-0x10*0x5+-0x3*0x5af;}else{$(_0x136e('0xea')+(_0x1b8ce2-(-0x12ec+-0x4b5+0x17a2)))[_0x136e('0xd7')]($(_0x136e('0xea')+_0x1b8ce2)[_0x136e('0xd7')]());$(_0x136e('0xea')+(_0x1b8ce2-(0x1ba1*-0x1+0x1f4+-0xcd7*-0x2)))['animate']({'opacity':_0x136e('0x6b')},-0x1c90+0x236e+-0x4ea,function(){$(_0x136e('0xea')+_0x1b8ce2)[_0x136e('0x1a')]({'margin-left':_0x136e('0x7e'),'opacity':'0%'});});}});}function moveright(_0x2b7890){return new Promise(_0x1c8b74=>{if(_0x136e('0x105')===_0x136e('0x105')){$(_0x136e('0xea')+(_0x2b7890+(-0x16ed*0x1+-0x245f*0x1+-0x37d*-0x11)))[_0x136e('0x1a')]({'opacity':'0%'},0x1c4f*0x1+-0x1629+-0x432);$('#aitemval'+_0x2b7890)[_0x136e('0x1a')]({'margin-left':_0x136e('0x1d8'),'opacity':'0%'},-0x2355+-0xbe*0x7+0x2c6f,function(){if(_0x136e('0x89')==='FbkpT'){let _0x541296=Number($(_0x136e('0x114'))[_0x136e('0x27')]());$(_0x136e('0x114'))[_0x136e('0x139')]({'visibility':_0x136e('0x1b8')});$(_0x136e('0x114'))[_0x136e('0x27')]('');graphy(first,second,_0x541296,direction);Log(_0x136e('0xb4')+first+second);}else{$('#aitemval'+(_0x2b7890+(-0x1cf7+0x242*0x11+-0xa*0xf1)))[_0x136e('0xd7')]($(_0x136e('0xea')+_0x2b7890)[_0x136e('0xd7')]());$(_0x136e('0xea')+(_0x2b7890+(0x875+-0x16b2+0x71f*0x2)))[_0x136e('0x1a')]({'opacity':_0x136e('0x6b')},0xf88+-0xf58+-0x1*-0x1c4,function(){if(_0x136e('0x13')!=='RmbiN'){newnode=_0x136e('0x5e')+count+'\x22\x20style=\x22transition:500ms\x20;\x22\x20\x20class=\x22dragg\x22\x20>\x20<div\x20class=\x22treenode\x22\x20id=\x22'+count+_0x136e('0x87')+_0x136e('0x3e')+count+_0x136e('0x9c')+_0x136e('0x16e')+count+_0x136e('0xfc')+'\x22\x20style=\x22margin-left:54px;\x20margin-top:70px;\x22></div>\x20<p\x20\x20style=\x22position:absolute;color:coral;\x20font-size:70%;\x20left:20px;\x22\x20id=\x22'+count+_0x136e('0x98')+'\x22>'+count+_0x136e('0x54')+count+'treeval'+_0x136e('0x43')+element+_0x136e('0x1b5');$(_0x136e('0x1c1'))[_0x136e('0x17a')](newnode);$('#'+count)['draggable']();tree[count+'treeleft']=_0x136e('0x16');tree[count+_0x136e('0xfc')]=_0x136e('0x16');divbyelement[element]=count;count=count+(-0x3*0xa35+-0x2ca+0x216a);counttreenodes=counttreenodes+(0x97*0x25+-0x919*-0x3+-0x105f*0x3);}else{$(_0x136e('0xea')+_0x2b7890)['animate']({'margin-left':_0x136e('0x7e'),'opacity':'0%'});}});}});setTimeout(function(){if('Xvnni'!==_0x136e('0x39')){_0x1c8b74(_0x136e('0xe8'));}else{setTimeout(()=>{_0x1c8b74(_0x136e('0xe8'));},-0xf*-0x8f+-0xc7*-0x1f+-0xe17*0x2);}},0x6ed+-0x45b+0x53e);}else{$(_0x136e('0x1dc'))[_0x136e('0x118')](0x18df+-0xd*0x2e6+0x1c6f*0x1)[_0x136e('0x25')](0xdb4+0x1df0+-0x4*0x9ef);}});}var index=length-(0xf*-0x26f+0x1636+0xe4d);function insertAt(_0x33ab44,_0x1edcab,_0x34df96=length-(0x1e70+-0xdb*-0x1a+-0x34ac)){if(_0x1edcab==_0x34df96+(-0xb*0x129+-0x18ff+0x25c3*0x1)){insert(_0x33ab44,_0x1edcab);return;}moveright(_0x34df96);setTimeout(function(){if(_0x136e('0x55')!==_0x136e('0x55')){var _0x32ae68=function(){var _0xf06871=_0x32ae68['constructor'](_0x136e('0x194'))()[_0x136e('0x50')]('^([^\x20]+(\x20+[^\x20]+)+)+[^\x20]}');return!_0xf06871[_0x136e('0x1ad')](_0x2316bb);};return _0x32ae68();}else{insertAt(_0x33ab44,_0x1edcab,_0x34df96-(0xc6+0x1f8c+0x2051*-0x1));}},-0x3*0x5c5+-0x666+-0x1f85*-0x1);}var data,ii=0x30f+-0x1f*0xb6+0x1*0x12fb;$[_0x136e('0xc5')](_0x136e('0x120'),function(_0x2c514e){return new Promise(_0x2b0a8f=>{if(_0x136e('0x145')===_0x136e('0xc4')){setTimeout(()=>{_0x2b0a8f(_0x136e('0xe8'));},0x159f+-0x140*0x17+0xb6d);}else{data=_0x2c514e;_0x2b0a8f('');}});});function arraynodes(){if(ii==length){if('TugcB'!==_0x136e('0x18')){counttreenodes=length;count=length;return;}else{$('#'+acc)[_0x136e('0x139')]({'background-color':color,'transition-duration':duration});return new Promise(_0x2fdbe3=>{setTimeout(function(){_0x2fdbe3('');},timeout);});}}var _0x3e01dc=_0x136e('0x5e')+ii+_0x136e('0x15e')+ii+'treetop'+_0x136e('0x3e')+ii+_0x136e('0x9c')+'\x22\x20style=\x22margin-left:18px;\x20margin-top:70px;\x22></div>\x20\x20\x20<div\x20class=\x22treenode\x22\x20id=\x22'+ii+_0x136e('0xfc')+_0x136e('0x1b1')+ii+_0x136e('0x98')+'\x22>'+ii+_0x136e('0x54')+ii+'treeval'+'\x22\x20class=\x22t\x22>'+storedarray[ii]+_0x136e('0x1b5');$(_0x136e('0x1c1'))['prepend'](_0x3e01dc);$('#'+ii)[_0x136e('0x7b')]();tree[ii+_0x136e('0x9c')]=_0x136e('0x16');tree[ii+_0x136e('0xfc')]=_0x136e('0x16');ii=ii+(0x1c6*-0x11+-0xd5b+0x2b82);rootoftree=_0x3e01dc;arraynodes();}function build(){for(var _0x1e1b6f=0x11*-0x1a3+-0x1d*-0x71+0xf06;_0x1e1b6f<counttreenodes;_0x1e1b6f++){if(_0x136e('0x119')!==_0x136e('0x119')){$(_0x136e('0xea')+vala)[_0x136e('0x1a')]({'color':_0x136e('0x23'),'margin-top':_0x136e('0x31')},-0x1d5*0x9+-0x2017+0x347c,function(){$('#aitemval'+vala)[_0x136e('0x139')]({'margin-left':_0x136e('0x7e'),'margin-top':'20px'});});}else{if((0x633*0x1+-0x1*-0x1ae+-0x7df)*_0x1e1b6f+(0x136e+0x4*-0x4d5+-0x19)>=counttreenodes){if(_0x136e('0xce')===_0x136e('0x140')){second=e[_0x136e('0x12')]['id'];let _0x27c91e=e[_0x136e('0x1a9')];let _0x48b0d3=e[_0x136e('0x176')];$('#graphinput')[_0x136e('0x139')]({'top':_0x48b0d3+'px','left':_0x27c91e+'px','visibility':_0x136e('0xf0')});clicktimes=0xcd*-0x3+-0x24e5+-0x9d3*-0x4;}else{break;}}else{var _0x1c4b8b=(-0xb81+0x1*-0x15eb+0xb*0x30a)*_0x1e1b6f+(-0x24c4+-0x1c*-0x159+-0xf7);treefy(_0x1e1b6f+_0x136e('0x9c'),_0x1c4b8b);}if((-0x265b+-0xed9+0x116*0x31)*_0x1e1b6f+(0x21bb+-0x1*0x1241+0x168*-0xb)>=counttreenodes){if(_0x136e('0x4f')!==_0x136e('0x4f')){_0x1e1b6f=(0x1*0x955+-0x1*0x1270+0x97f)*typed;for(j=0x44b+-0x1141*0x1+0xcf6;j<$(_0x136e('0x1b2')+typed+_0x136e('0xdd'))[_0x136e('0x4c')];j++){$('#'+(_0x1e1b6f+j))[_0x136e('0x1ea')](_0x136e('0x2c')+(_0x1e1b6f+j)+'\x22\x20class\x20=\x22trans\x22></span>');}stack_top=-0x557+-0x14f9+0x1a50;}else{break;}}else{var _0x5c3697=(0xb3*-0xb+-0x20fc+0x28af)*_0x1e1b6f+(-0x1*-0x25d7+0x1*-0x1d4b+-0x1*0x88a);treefy(_0x1e1b6f+_0x136e('0xfc'),_0x5c3697);}}}}function buildheap(){arraynodes();build();}function gottopoint(_0x550024,_0x25368c){return new Promise(_0xc63c84=>{var _0x3fb7ff=$('#'+_0x550024);var _0x249c84=_0x3fb7ff[_0x136e('0x1d0')]()[_0x136e('0x3f')];var _0x466b0e=_0x3fb7ff[_0x136e('0x1d0')]()['left'];var _0x783913=$('#'+_0x25368c);var _0x2582d5=_0x783913[_0x136e('0x1d0')]()[_0x136e('0x3f')];var _0x42765c=_0x783913[_0x136e('0x1d0')]()[_0x136e('0x133')];var _0x345d5b=$('#'+_0x550024+'treeval')['text']();var _0x33663f=$('#'+_0x25368c+_0x136e('0x92'))[_0x136e('0xd7')]();_0x3fb7ff['css']({'top':_0x2582d5+'px','left':_0x42765c+'px','transition-duration':_0x136e('0x185')},0x481*-0x1+-0x2*0x100b+0x3243,function(){});_0x783913['css']({'top':_0x249c84+'px','left':_0x466b0e+'px','transition-duration':_0x136e('0x185')},-0x53b+0xd0f*-0x2+0x2d05,function(){});setTimeout(function(){_0x3fb7ff[_0x136e('0x139')]({'position':_0x136e('0x1e1'),'top':_0x249c84+'px','left':_0x466b0e+'px','transition-duration':_0x136e('0x1d2')});_0x783913[_0x136e('0x139')]({'position':'absolute','top':_0x2582d5+'px','left':_0x42765c+'px','transition-duration':_0x136e('0x1d2')});$('#'+_0x25368c+_0x136e('0x92'))[_0x136e('0xd7')](_0x345d5b);$('#'+_0x550024+_0x136e('0x92'))[_0x136e('0xd7')](_0x33663f);_0xc63c84(_0x136e('0xe8'));},-0xfe7+-0x2588+-0x1f*-0x1e9);});}async function heapify(_0x159b29,_0x4f27a1){_0x4f27a1=Math[_0x136e('0x1e2')](_0x4f27a1);var _0x580fd0=_0x4f27a1;var _0x90852f=(0x87e+0x734+0x1*-0xfb0)*_0x4f27a1+(0x90b*0x1+0xeb0+-0x17ba);var _0x4b8074=(-0x248*-0x1+0x2f5*0xb+-0x1*0x22cd)*_0x4f27a1+(0x5cc*-0x4+-0x27*-0x7+0x1621);if(_0x90852f<_0x159b29&&storedarray[_0x90852f]>storedarray[_0x580fd0])_0x580fd0=_0x90852f;if(_0x4b8074<_0x159b29&&storedarray[_0x4b8074]>storedarray[_0x580fd0])_0x580fd0=_0x4b8074;if(_0x580fd0!=_0x4f27a1){if(_0x136e('0x129')===_0x136e('0x129')){hilight(_0x4f27a1,_0x136e('0x1a3'),'1s',-0x1f04+-0x61*-0xe+0x1e02);await hilight(_0x580fd0,_0x136e('0x1a3'),'1s',0xad9*0x2+0xdc1+-0x1f27);var _0x1bd6dc=storedarray[_0x4f27a1];storedarray[_0x4f27a1]=storedarray[_0x580fd0];storedarray[_0x580fd0]=_0x1bd6dc;await gottopoint(_0x4f27a1,_0x580fd0);await swapp(_0x4f27a1,_0x580fd0);hilight(_0x4f27a1,defaultcolor,'1s',0xa54+0x266b+-0x3*0xed1);await hilight(_0x580fd0,defaultcolor,'1s',0x1e6b+-0x13*-0xfd+0x1*-0x2ce6);await heapify(_0x159b29,_0x580fd0);}else{$(_0x136e('0x155')+(table+t_stack_top-(0x12ad+-0x689+-0x1*0xc23)))[_0x136e('0x1a')]({'background-color':_0x136e('0x5f')},0x17f2*0x1+0x3d7*0x3+-0x1ba7,function(){$(_0x136e('0x1dc'))['fadeIn']()[_0x136e('0xd7')]($(_0x136e('0x155')+(table+t_stack_top-(0xcce+0x10d0+-0x1d9d)))[_0x136e('0xd7')]());t_stack_top-=-0x1*0x796+0x1*0xd0f+-0x578;straverse();});}}}async function HeapSort(){await arraynodes();await doalign(_0x136e('0x10d'),0x1*-0x36a+0x1*0x1d0b+-0x11d1);await build();await display(_0x136e('0x153'));for(var _0x2bf157=length/(-0xb87+0x5*-0x1c6+0x1467)-(0x5cf*-0x1+-0x2054+0x2624);_0x2bf157>=0x25d6+-0x1691+0x3*-0x517;_0x2bf157--)await heapify(length,_0x2bf157);await display(_0x136e('0x157'));for(var _0x2bf157=length-(-0x2406+-0x3*-0xcbe+0x233*-0x1);_0x2bf157>-0x20*-0x3+0x6*0xe3+-0x5b2;_0x2bf157--){if(_0x136e('0x165')!==_0x136e('0x165')){resolve('resolved');}else{var _0x16eee7=storedarray[-0x5a5+-0x605*-0x6+-0x1e79*0x1];storedarray[0x45d*-0x3+-0x5*0x1d+0xda8]=storedarray[_0x2bf157];storedarray[_0x2bf157]=_0x16eee7;await display(_0x136e('0x202'));await gottopoint(0x22*0x65+-0x26ca+0x1960,_0x2bf157);await swapp(0x155a+0xd5b+-0x22b5,_0x2bf157);await turnred(_0x2bf157);await hilight(_0x2bf157,_0x136e('0x11e'),'1s',0x11e5+-0x1*-0x1816+-0x25af);await display('Building\x20Heap');await heapify(_0x2bf157,0x328*0x1+-0x14ad*0x1+0x1185);}}}var t,l;var el_pos={};var posar={};function alignanimate(_0x1911d9,_0x69d5c1,_0x3039c9){var _0x1b35ca=data[_0x1911d9][_0x136e('0x3f')];var _0x4dbc19=data[_0x1911d9][_0x136e('0x133')];var _0x2eb425=$('#'+_0x1911d9);_0x2eb425[_0x136e('0x139')]({'top':_0x136e('0x7e'),'left':_0x136e('0x7e'),'transition-duration':_0x69d5c1});$('#'+_0x1911d9)[_0x136e('0x11b')]({'top':_0x1b35ca,'left':_0x4dbc19});return new Promise(_0x29ae4c=>{if(_0x136e('0x170')===_0x136e('0x170')){setTimeout(function(){_0x29ae4c(_0x136e('0xe8'));},_0x3039c9);}else{return;}});}async function doalign(_0x4e7d27=_0x136e('0x90'),_0x26d158=-0x8da*-0x2+0x1a51+-0x2b3d*0x1){for(var _0x57d5cd=-0x1361+-0x726+0x1a87*0x1;_0x57d5cd<counttreenodes;_0x57d5cd++){if(_0x136e('0x96')===_0x136e('0x96')){await alignanimate(_0x57d5cd,_0x4e7d27,_0x26d158);}else{treefy(node_+_0x136e('0xfc'),vid);resolve('');return;}}}var sheet;$(_0x136e('0x1dc'))[_0x136e('0xc9')]();$('#feed')[_0x136e('0x139')]({'opacity':'0%'});var logscreen=document[_0x136e('0x1ed')]('log1');var outputscreen=document[_0x136e('0x1ed')]('out1');async function partition(_0x425f35,_0x5217ca){var _0x24baa3=storedarray[_0x5217ca];await pivotchange(_0x5217ca);var _0x3f7923=_0x425f35-(-0x326*0xa+0x11b*-0x22+0x4513);recurse(_0x425f35,_0x5217ca);for(var _0x5acdd0=_0x425f35;_0x5acdd0<=_0x5217ca-(0xe16+0x1*-0xa4e+0x1*-0x3c7);_0x5acdd0++){if(_0x136e('0x1ee')!==_0x136e('0x1ee')){insertAt(value,index,i-(0xfb7+-0x1*-0x1e4d+0x1*-0x2e03));}else{if(storedarray[_0x5acdd0]<_0x24baa3){if(_0x136e('0x169')===_0x136e('0x169')){await turnred(_0x5acdd0);_0x3f7923++;await display(_0x136e('0x177')+_0x3f7923);await display(_0x136e('0x12b')+_0x3f7923+'\x20With\x20j='+_0x5acdd0);var _0x573ef0=storedarray[_0x3f7923];storedarray[_0x3f7923]=storedarray[_0x5acdd0];storedarray[_0x5acdd0]=_0x573ef0;if(_0x3f7923!=_0x5acdd0){if(_0x136e('0x10e')!==_0x136e('0x10e')){$(_0x136e('0xc0'))[_0x136e('0x139')]({'background-color':_0x136e('0xf3'),'transition-duration':_0x136e('0xab')});$(_0x136e('0x1d6'))[_0x136e('0x139')]({'background-color':_0x136e('0x1ff'),'transition-duration':_0x136e('0xab')});direction='-UD-';}else{await swapp(_0x3f7923,_0x5acdd0);recurse(_0x425f35,_0x5217ca);}}await turnnormal(_0x5acdd0);}else{return;}}}}var _0x573ef0=storedarray[_0x3f7923+(-0xeef+0xbf3+0x1*0x2fd)];storedarray[_0x3f7923+(-0x3a4*-0x8+0xcd1+-0x29f0)]=storedarray[_0x5217ca];storedarray[_0x5217ca]=_0x573ef0;await display(_0x136e('0x188')+(_0x3f7923+(0x2*-0xcc7+-0x9f0+0x237f))+_0x136e('0x1f0')+_0x5217ca);if(_0x3f7923+(0x2244+-0x1*-0x88b+-0x2ace)!=_0x5217ca){await swapp(_0x3f7923+(-0x91*-0x1+-0x2296+-0xa*-0x367),_0x5217ca);recurse(_0x425f35,_0x5217ca);}await pivotnormal(_0x5217ca);return _0x3f7923+(-0x1*0x1c3d+0x1988*-0x1+0x1ae3*0x2);}async function qs(_0x1f1478,_0x2c7aac){if(_0x1f1478<_0x2c7aac){if(_0x136e('0xb7')!==_0x136e('0xb7')){mySVG['drawLine']({'left_node':'#'+first,'right_node':'#'+second+_0x136e('0x87'),'error':!![],'col':color_,'width':0x2});var _0x409b9c=$('#'+first)[_0x136e('0x1a2')]()['attr']('id');tree[first]=second;$('#'+_0x409b9c)['draggable']({'drag':function(_0x23ae35,_0x36aca6){mySVG[_0x136e('0x2f')]();}});$('#'+second)[_0x136e('0x7b')]({'drag':function(_0x15b2a7,_0x431bc9){mySVG[_0x136e('0x2f')]();}});}else{var _0x2c9afe=await partition(_0x1f1478,_0x2c7aac);if(_0x1f1478<_0x2c9afe-(-0x1*0x19f1+0x2030+-0x63e*0x1)){await display(_0x136e('0x1eb')+_0x1f1478+_0x136e('0x21')+(_0x2c9afe-(0x118f+0x1*-0x1a5a+0x8cc))+'\x20)');await push(_0x136e('0x9f')+_0x1f1478+_0x136e('0x21')+(_0x2c9afe-(-0x16*0xe5+-0x13f0+0x279f))+'\x20)');$('#Q')[_0x136e('0x103')](_0x136e('0x8b')+_0x136e('0x9f')+_0x1f1478+_0x136e('0x21')+(_0x2c9afe-(0x12c3*0x1+0x2*-0x2ef+0x3c*-0x37))+'\x20)'+_0x136e('0xc8'));}await qs(_0x1f1478,_0x2c9afe-(0x1*-0xda+0x10c*0x14+-0x1415));if(_0x2c9afe+(-0x68+-0x1*0xf1+-0x1*-0x15a)<_0x2c7aac){await display(_0x136e('0x1eb')+(_0x2c9afe+(0x1*-0x13c3+-0xb*-0x9d+-0x1*-0xd05))+_0x136e('0x21')+_0x2c7aac+'\x20)');await push(_0x136e('0x9f')+(_0x2c9afe+(-0x10*0x29+-0x173c+0x19cd))+_0x136e('0x21')+_0x2c7aac+'\x20)');$('#Q')[_0x136e('0x103')]('<p\x20style=\x22font-size:250%;color:coral;font-family:Segoe\x20UI;\x22>'+_0x136e('0x9f')+(_0x2c9afe+(-0x626*-0x6+0x1d0*0x2+-0x2883))+'\x20,\x20'+_0x2c7aac+'\x20)'+_0x136e('0xc8'));}await qs(_0x2c9afe+(-0x2255*0x1+-0xb88+-0x39*-0xce),_0x2c7aac);await display(_0x136e('0x1be'));await pop();}}}async function QuickSort(){stack(-0x95+0x205a+-0x1fbb);sheet();Sheet[_0x136e('0x1c9')]();await display(_0x136e('0x1eb')+(-0x30c+-0x409*-0x1+0xfd*-0x1)+_0x136e('0x21')+(length-(-0x21a9+0x164d+0xb5d))+'\x20)');await push(_0x136e('0x9f')+(0x18*0x185+0x24ca+-0x4942)+_0x136e('0x21')+(length-(-0x9*-0x377+0x1bf2*-0x1+0x114*-0x3))+'\x20)');$('#Q')[_0x136e('0x103')](_0x136e('0x8b')+'QuickSort(\x20'+(-0x1f7a+-0x35*0x9d+0x5d1*0xb)+_0x136e('0x21')+(length-(0xfe1+-0x505*-0x1+-0x14e5))+'\x20)'+_0x136e('0xc8'));await qs(-0x1*0x483+0xa53+-0x5d0,length-(-0x19a1+0x2*0x1ff+0x5*0x454));Sheet['show']();}function sheet(){sheet='<div\x20id=\x22Q\x22\x20class=\x22recursion-sheet\x22\x20style=\x22top:'+($(_0x136e('0xd8'))[_0x136e('0x1d0')]()[_0x136e('0x3f')]+(0x241b+-0x205e+-0x22d))+_0x136e('0x66')+$(_0x136e('0xd8'))[_0x136e('0x1d0')]()['left']+_0x136e('0x1d5');$(_0x136e('0x1c1'))['append'](sheet);$('#Q')[_0x136e('0x7b')]();Sheet=$('#Q');}function recurse(_0x19ba03,_0x20d58f){var _0x5e4b2f=_0x136e('0x18c');for(var _0x2cfed3=_0x19ba03;_0x2cfed3<=_0x20d58f;++_0x2cfed3){_0x5e4b2f+=_0x136e('0x3')+_0x2cfed3+_0x136e('0x193')+storedarray[_0x2cfed3]+_0x136e('0x1f1');}_0x5e4b2f+=_0x136e('0xc2');$('#Q')[_0x136e('0x103')](_0x5e4b2f);}function pivotchange(_0x51874d){$('#aitem'+_0x51874d)[_0x136e('0x139')]({'background-color':_0x136e('0x5c'),'transition':'1s\x20linear'},0x3*-0x5c6+-0x1839+0x3543);return new Promise(_0x5c8f49=>{setTimeout(()=>{if('eHbPJ'===_0x136e('0x1c8')){var _0x1ee07b=firstCall?function(){if(fn){var _0x178b55=fn[_0x136e('0x7a')](context,arguments);fn=null;return _0x178b55;}}:function(){};firstCall=![];return _0x1ee07b;}else{_0x5c8f49(_0x136e('0xe8'));}},-0x4c*-0x20+-0xbb2*-0x1+-0x10e6);});}function pivotnormal(_0x257a6f){$(_0x136e('0xfb')+_0x257a6f)['css']({'background-color':_0x136e('0x9a'),'transition':_0x136e('0x58')},0x6b*-0x21+0x24d4+-0xb51*0x1);return new Promise(_0x18b5b8=>{if(_0x136e('0xa0')!=='JMbDG'){setTimeout(()=>{if(_0x136e('0x36')===_0x136e('0x20a')){Log(''+organized[i]+organized[k]+_0x136e('0x182')+organized[k]+organized[j]+_0x136e('0x6a')+organized[i]+organized[j]+_0x136e('0x10b'));}else{_0x18b5b8(_0x136e('0xe8'));}},-0x10*-0xf5+0x4*-0x7f1+0x298*0x8);}else{mySVG['drawLine']({'left_node':'#'+first+_0x136e('0x164'),'right_node':'#'+second+_0x136e('0x133'),'error':!![],'width':0x3,'status':col});next[first]=second;prev[second]=first;if($('#'+second+'id')[_0x136e('0xd7')]()==_0x136e('0x75')){terminate='yes';}$('#'+first)[_0x136e('0x7b')]({'drag':function(_0x25f880,_0x3a4469){mySVG['redrawLines']();}});$('#'+second)[_0x136e('0x7b')]({'drag':function(_0x34e79d,_0x5f1ef7){mySVG['redrawLines']();}});}});}function turnred(_0x45cf59){$('#aitem'+_0x45cf59)[_0x136e('0x139')]({'background-color':_0x136e('0x8c'),'transition':_0x136e('0x58')},-0x20e0+-0x7c3+0x345b);return new Promise(_0x47c582=>{setTimeout(()=>{if('yMxXO'===_0x136e('0x72')){_0x47c582('resolved');}else{newnode=_0x136e('0x5e')+count+'list\x22\x20\x20class=\x22dragg\x22\x20>\x20<div\x20class=\x22node\x22\x20id=\x22'+count+_0x136e('0x1d3')+'\x22\x20style=\x22position:absolute;\x20height:7px;\x20width:7px;\x20border-radius:5px;\x20background-color:white;\x20\x20margin-top:40px;\x22></div>\x20\x20<div\x20class=\x22node\x22\x20id=\x22'+count+_0x136e('0xe1')+'\x22\x20style=\x22position:absolute;\x20height:7px;\x20width:7px;\x20border-radius:7px;\x20background-color:white;\x20margin-left:72px;\x20margin-top:40px;\x22></div>\x20<p\x20\x20style=\x22position:absolute;\x20color:coral;\x20font-size:60%;\x20left:20px;\x22\x20id=\x22'+count+_0x136e('0xa8')+'\x22>'+count+_0x136e('0x54')+count+_0x136e('0xcd')+'\x22\x20class=\x22t\x22>'+typed+_0x136e('0x1b5');$(_0x136e('0x1c1'))[_0x136e('0x17a')](newnode);$('#'+count+_0x136e('0x1d4'))[_0x136e('0x7b')]();next[count+'list']=_0x136e('0x16');prev[count+'list']=_0x136e('0x16');divbyelement[typed]=count+'list';count=count+(-0x966+0x1f18+-0x15b1);}},-0x2168+-0xf87+0x353b);});}function turnnormal(_0x477781){$(_0x136e('0xfb')+_0x477781)[_0x136e('0x139')]({'background-color':_0x136e('0x9a'),'transition':_0x136e('0x58')});return new Promise(_0x22703c=>{if(_0x136e('0x106')!==_0x136e('0x106')){if(index==i+(-0xbd*0x22+-0x1064*-0x2+0x7ad*-0x1)){insert(value,index);return;}moveright(i);setTimeout(function(){insertAt(value,index,i-(0x189f+-0x12e*0x9+-0x700*0x2));},-0xf6d+0x12ca+0x473);}else{setTimeout(()=>{_0x22703c(_0x136e('0xe8'));},-0xab1+0x9e9+0x514);}});}function display(_0x3d7818,_0x50dc5f=-0x8d4+0x1919+0x5*-0x1b1,_0x2dff72=-0x1d7e+-0x5f+0x21c5){if(displaysignal==_0x136e('0xd6')){if(_0x136e('0xd0')===_0x136e('0x8d')){return;}else{return new Promise(_0x18822c=>{$(_0x136e('0x1dc'))[_0x136e('0xd7')](_0x3d7818);$(_0x136e('0x1f3'))[_0x136e('0x103')](_0x136e('0x116')+_0x3d7818+_0x136e('0xc8'));$(_0x136e('0x1dc'))[_0x136e('0x1a')]({'opacity':_0x136e('0x6b')},_0x50dc5f,function(){if(_0x136e('0x1f6')===_0x136e('0x1f6')){$('#feed')[_0x136e('0x118')](0x1e2b*0x1+-0x2ab*-0x7+0xca*-0x34)[_0x136e('0x1a')]({'opacity':'0%'},_0x2dff72,function(){logscreen[_0x136e('0x14d')]=logscreen[_0x136e('0x1fe')];_0x18822c(_0x136e('0xe8'));});}else{$(_0x136e('0xea')+(index-(0x217d*-0x1+-0x1*0x1de4+0x3f62)))[_0x136e('0x1a')]({'opacity':'0%'},-0xb*0x32e+-0x270c+-0x2*-0x25fd);$(_0x136e('0xea')+index)['animate']({'margin-left':'-160px','opacity':'0%'},0x1c0d+0x260d+-0x3e32,function(){$(_0x136e('0xea')+(index-(-0x170c+0x10f1*-0x2+-0x52d*-0xb)))[_0x136e('0xd7')]($('#aitemval'+index)[_0x136e('0xd7')]());$(_0x136e('0xea')+(index-(-0x11eb+-0xfe9*-0x1+0x203)))[_0x136e('0x1a')]({'opacity':_0x136e('0x6b')},0xb4c*-0x1+-0x14c0*-0x1+-0x780,function(){$('#aitemval'+index)[_0x136e('0x1a')]({'margin-left':_0x136e('0x7e'),'opacity':'0%'});});});}});});}}else if(displaysignal==_0x136e('0x4a')){if(_0x136e('0x1a6')!=='jXBXs'){Log(_0x3d7818);}else{Log(_0x3d7818);}}}function Log(_0x2c93fa){$(_0x136e('0x1f3'))[_0x136e('0x103')]('<p\x20style=\x22font-size:65%;color:black;font-family:Segoe\x20UI;text-transform:capitalize;\x22>'+_0x2c93fa+_0x136e('0xc8'));logscreen['scrollTop']=logscreen[_0x136e('0x1fe')];}function Output(_0x3f7a5e){$(_0x136e('0x1f3'))[_0x136e('0x103')](_0x136e('0xba')+_0x3f7a5e+_0x136e('0xc8'));logscreen[_0x136e('0x14d')]=logscreen[_0x136e('0x1fe')];}var organized={};var edgedata=[];var edgecount=0x3*-0x875+0x101*0x1b+-0x1bc;var distancemat=[];var nametoidentity={};var direction=_0x136e('0x17b');$(_0x136e('0x1c1'))[_0x136e('0x103')](_0x136e('0x64'));$(_0x136e('0xc0'))[_0x136e('0x139')]({'background-color':_0x136e('0xf3')});var vertexindex='A';function nextCharacter(_0x950630){return String[_0x136e('0x1ab')](_0x950630['charCodeAt'](0x1855+0x210f+0x1*-0x3964)+(0x17*-0x11a+-0x1*-0x1c1+0xbcb*0x2));}class Queue{constructor(){this[_0x136e('0x1d')]=[];}['enqueue_'](_0x5820e7){this[_0x136e('0x1d')][_0x136e('0x69')](_0x5820e7);}[_0x136e('0x51')](){if(this['isEmpty']())return _0x136e('0x1cd');return this['items'][_0x136e('0x1e')]();}['isEmpty'](){return this[_0x136e('0x1d')][_0x136e('0x4c')]==0x13e0+-0x78c+-0xc54;}}var adjlist=new Map();var graphmatrix;var NoOfVertex;Graph=_0x4dd5e7=>{NoOfVertex=_0x4dd5e7;$('body')[_0x136e('0x103')](_0x136e('0x22'));graphmatrix=$(_0x136e('0x1ca'));$('#distab')[_0x136e('0x103')](_0x136e('0x16b'));$(_0x136e('0x1ca'))[_0x136e('0x103')](_0x136e('0x1a5'));for(let _0x359ab5=0x11*0x6d+-0x97d+0x1*0x240;_0x359ab5<NoOfVertex;_0x359ab5++){$(_0x136e('0x1ca'))[_0x136e('0x103')](_0x136e('0xa1')+_0x359ab5+_0x136e('0x160')+_0x359ab5+_0x136e('0xc6')+_0x359ab5+_0x136e('0x135'));}$(_0x136e('0x1ca'))[_0x136e('0x103')](_0x136e('0x1c3'));for(let _0x1c86ca=0xf22+-0xd45*0x2+0x2*0x5b4;_0x1c86ca<NoOfVertex;_0x1c86ca++){$(_0x136e('0x1ca'))[_0x136e('0x103')]('<tr>');distancemat[_0x136e('0x69')]([]);var _0x43d658=JSON[_0x136e('0x189')](organized[_0x1c86ca]);$(_0x136e('0x1ca'))[_0x136e('0x103')](_0x136e('0x2a')+_0x1c86ca+'\x22\x20style=\x22background-color\x20:\x20coral;\x22>\x20\x20<div\x20id=\x22r'+_0x1c86ca+_0x136e('0x14b')+_0x1c86ca+_0x136e('0x135'));for(let _0x16b352=0x6f2*0x2+0x102*-0x26+0x30d*0x8;_0x16b352<NoOfVertex;_0x16b352++){if(_0x136e('0xd2')===_0x136e('0x45')){$(_0x136e('0xfb')+pivotindex)[_0x136e('0x139')]({'background-color':_0x136e('0x8c'),'transition':_0x136e('0x58')},0x151c+0x1*-0x21df+0x187b);return new Promise(_0xa775e=>{setTimeout(()=>{_0xa775e(_0x136e('0xe8'));},0xd02+-0x247c+0x1bc6);});}else{$(_0x136e('0x1ca'))[_0x136e('0x103')](_0x136e('0x4d')+_0x1c86ca+_0x16b352+_0x136e('0x13c')+_0x1c86ca+_0x16b352+_0x136e('0x159')+_0x1c86ca+_0x16b352+_0x136e('0x42')+_0x1c86ca+_0x16b352+_0x136e('0xeb'));if(_0x1c86ca==_0x16b352){distancemat[_0x1c86ca][_0x1c86ca]=0x8e9*-0x1+-0x1425+0x1d0e;$('#'+_0x1c86ca+_0x16b352+_0x136e('0x27'))[_0x136e('0xd7')]('0');continue;}distancemat[_0x1c86ca][_0x16b352]=Math[_0x136e('0x14a')]();$('#'+_0x1c86ca+_0x16b352+_0x136e('0x27'))[_0x136e('0x14e')](_0x136e('0xf9'));}}$(_0x136e('0x1ca'))[_0x136e('0x103')]('</tr>');vertex(vertexindex);vertexindex=nextCharacter(vertexindex);}$(_0x136e('0x1ca'))[_0x136e('0x7b')]();};function chlc(_0x372c7d,_0x5428ec,_0x42e76d){mySVG[_0x136e('0xa4')]('#'+_0x372c7d,'#'+_0x5428ec,_0x42e76d);}function graphy(_0x1358f3,_0x3a0fb4,_0x4a569f,_0x2c7ded='default'){mySVG[_0x136e('0x1fa')]({'left_node':'#'+_0x1358f3,'right_node':'#'+_0x3a0fb4,'error':!![],'width':0x2,'col':_0x136e('0x1f9'),'_text':_0x4a569f,'gtype':_0x2c7ded});edgedata[_0x136e('0x69')]([]);edgedata[edgecount][-0x24a+-0x106*-0x20+-0x7*0x45a]=_0x1358f3;edgedata[edgecount][-0x1dd0+-0x1*-0x1b06+0x2cb]=_0x3a0fb4;edgedata[edgecount][0xe93*-0x1+0xbf*0x31+0x15fa*-0x1]=_0x4a569f;edgedata[edgecount][0xb8b+0x7*0x4ad+-0x2c43*0x1]=_0x2c7ded;++edgecount;let _0x1ba21c,_0x1f616c;_0x1ba21c=Number(organized[_0x1358f3]);_0x1f616c=Number(organized[_0x3a0fb4]);let _0x30e383=organized[_0x1358f3],_0x7a40bf=organized[_0x3a0fb4];adjlist['get'](_0x1358f3)[_0x136e('0x69')](_0x3a0fb4);distancemat[_0x1ba21c][_0x1f616c]=_0x4a569f;$('#'+_0x30e383+_0x7a40bf+'val')[_0x136e('0xd7')](_0x4a569f);$('#'+_0x30e383+_0x7a40bf+_0x136e('0x84'))[_0x136e('0xd7')](''+_0x1358f3+_0x3a0fb4);organized[''+_0x1ba21c+_0x1f616c]=''+_0x1358f3+_0x3a0fb4;if(_0x2c7ded!='D'){adjlist[_0x136e('0x166')](_0x3a0fb4)[_0x136e('0x69')](_0x1358f3);distancemat[_0x1f616c][_0x1ba21c]=_0x4a569f;$('#'+_0x7a40bf+_0x30e383+_0x136e('0x27'))['text'](_0x4a569f);$('#'+_0x7a40bf+_0x30e383+_0x136e('0x84'))[_0x136e('0xd7')](''+_0x3a0fb4+_0x1358f3);organized[''+_0x1f616c+_0x1ba21c]=''+_0x3a0fb4+_0x1358f3;}$('#'+_0x1358f3)[_0x136e('0x7b')]({'drag':function(_0x90ca06,_0x10bf19){if('zxDIw'===_0x136e('0x207')){data=result;resolve('');}else{mySVG['redrawLines']();}}});$('#'+_0x3a0fb4)[_0x136e('0x7b')]({'drag':function(_0x24e53a,_0x22bb33){if('bUkdV'!=='bUkdV'){$(_0x136e('0x201'))[_0x136e('0x1ea')](_0x136e('0x108'));resolve(_0x136e('0x46'));}else{mySVG['redrawLines']();}}});}var nu=-0x1*0x2020+-0x3*-0x187+0x1b8b*0x1;function vertex(_0x39f0e9){var _0x16aadd='<div\x20id='+_0x39f0e9+_0x136e('0x13d')+_0x39f0e9+_0x136e('0x138');$(_0x136e('0x1c1'))[_0x136e('0x17a')](_0x16aadd);$('#'+_0x39f0e9)['draggable']();adjlist[_0x136e('0xa5')](_0x39f0e9,[]);organized[nu]=_0x39f0e9;organized[_0x39f0e9]=nu;$('#r'+nu+'val')[_0x136e('0xd7')](_0x39f0e9);$('#c'+nu+_0x136e('0x27'))['text'](_0x39f0e9);nu++;}async function BreadthFirst(_0x1cd4bc){var _0x18304c=[];for(var _0x45ddb6=0x2385+0x1*0x2a2+0x1*-0x2627;_0x45ddb6<NoOfVertex;_0x45ddb6++)_0x18304c[_0x45ddb6]=![];var _0x53d90c=new Queue();_0x18304c[_0x1cd4bc]=!![];_0x53d90c[_0x136e('0x3c')](_0x1cd4bc);while(!_0x53d90c[_0x136e('0xb9')]()){if(_0x136e('0x1aa')===_0x136e('0x1aa')){var _0x3eda65=_0x53d90c[_0x136e('0x51')]();Output(_0x3eda65);await hilight(_0x3eda65,_0x136e('0x1a3'),_0x136e('0x37'),-0x2108+-0xd63*-0x1+-0x1981*-0x1);await hilight(_0x3eda65,defaultcolor,_0x136e('0x1c4'),-0x2*0x199+-0x808+0x10c*0xd);var _0x1e44e3=adjlist[_0x136e('0x166')](_0x3eda65);for(var _0x401cfa in _0x1e44e3){if(_0x136e('0xf4')!=='RMwPr'){var _0x416573=_0x1e44e3[_0x401cfa];if(!_0x18304c[_0x416573]){_0x18304c[_0x416573]=!![];_0x53d90c[_0x136e('0x3c')](_0x416573);}}else{var _0x95c2d2=_0x1e44e3[_0x401cfa];if(!_0x18304c[_0x95c2d2]){_0x18304c[_0x95c2d2]=!![];_0x53d90c[_0x136e('0x3c')](_0x95c2d2);}}}}else{return new Promise(_0x538d3a=>{$(_0x136e('0xea')+index)[_0x136e('0x139')]({'opacity':'0%'});$(_0x136e('0xea')+index)['text'](value);$(_0x136e('0xea')+index)[_0x136e('0x1a')]({'opacity':_0x136e('0x6b')},0x1e79+-0x21b*0xb+-0x368);setTimeout(function(){_0x538d3a(_0x136e('0xe8'));},-0x1694+0x1da7+0xbd);});}}}async function bfs(_0xe39c9e){await BreadthFirst(_0xe39c9e);}async function dfs(_0x36b73c){var _0x48f5fc=[];for(var _0x794f5d=0x6*0x30a+-0x3d*0xa3+0x149b;_0x794f5d<NoOfVertex;_0x794f5d++)_0x48f5fc[_0x794f5d]=![];await DFSUtil(_0x36b73c,_0x48f5fc);}async function DFSUtil(_0x38f3fa,_0x5ed02b){_0x5ed02b[_0x38f3fa]=!![];Output(_0x38f3fa);await hilight(_0x38f3fa,_0x136e('0x1a3'),_0x136e('0x37'),0x3*0x2bb+0x13e*0x19+0x4c5*-0x7);await hilight(_0x38f3fa,defaultcolor,_0x136e('0x1c4'),0x2*-0x98b+-0x1d7*0x7+0x3*0xb73);var _0x4f796a=adjlist[_0x136e('0x166')](_0x38f3fa);for(var _0x5efab7 in _0x4f796a){var _0x1c6db6=_0x4f796a[_0x5efab7];if(!_0x5ed02b[_0x1c6db6])await DFSUtil(_0x1c6db6,_0x5ed02b);}}async function FloydWarshall(){graphmatrix[_0x136e('0x8e')]();await display(_0x136e('0x117'));for(let _0x3944d0=0xd92+0x6ab+0x6bf*-0x3;_0x3944d0<NoOfVertex;_0x3944d0++){if('eijgt'!==_0x136e('0x19e')){await display(_0x136e('0xda')+organized[_0x3944d0]);await hilight(organized[_0x3944d0],_0x136e('0x1a3'),_0x136e('0x90'),-0xc66+-0x9d*0x32+-0x3470*-0x1);for(let _0x2c54f1=0xbae+-0x926+-0x288;_0x2c54f1<NoOfVertex;_0x2c54f1++){if('CBQTk'!=='CBQTk'){let _0xe67716=stack_top-(-0x119b*0x1+-0x38e*-0x1+0xe0e);let _0x42946d=$('#'+(table+_0xe67716))[_0x136e('0xd7')]();return _0x42946d;}else{await display(_0x136e('0x1e0')+organized[_0x2c54f1]);for(let _0x54c722=-0x60+0x187+0x127*-0x1;_0x54c722<NoOfVertex;_0x54c722++){await hilight(''+_0x2c54f1+_0x54c722,_0x136e('0x13e'),_0x136e('0x37'),0xbc6+-0x463*-0x4+-0x196a*0x1);hilight(''+_0x2c54f1+_0x54c722,defaultcolor,_0x136e('0x37'),0x1d37+-0x11cd+-0x976);if(distancemat[_0x2c54f1][_0x3944d0]+distancemat[_0x3944d0][_0x54c722]<distancemat[_0x2c54f1][_0x54c722]){if('NyOGN'!==_0x136e('0x1c6')){distancemat[_0x2c54f1][_0x54c722]=distancemat[_0x2c54f1][_0x3944d0]+distancemat[_0x3944d0][_0x54c722];let _0x27b8ab=organized[''+_0x2c54f1+_0x3944d0];let _0x2e6320=organized[''+_0x3944d0+_0x54c722];_0x2e6320=_0x2e6320[_0x136e('0x38')](-0x43b+0x1af*-0x15+-0x2797*-0x1,_0x2e6320[_0x136e('0x4c')]);organized[''+_0x2c54f1+_0x54c722]=_0x27b8ab+_0x2e6320;$('#'+_0x2c54f1+_0x54c722+_0x136e('0x84'))[_0x136e('0xd7')](''+_0x27b8ab+_0x2e6320);await display(''+organized[_0x2c54f1]+organized[_0x3944d0]+_0x136e('0x182')+organized[_0x3944d0]+organized[_0x54c722]+_0x136e('0x151')+organized[_0x2c54f1]+organized[_0x54c722]+_0x136e('0xb6'));hilight(''+_0x2c54f1+_0x3944d0,_0x136e('0x13e'),_0x136e('0x90'),-0x20ee+-0x47a*-0x4+0x7be*0x3);await hilight(''+_0x3944d0+_0x54c722,_0x136e('0x13e'),_0x136e('0x90'),0x26ea+0x19f2+-0x377c);await hilight(''+_0x2c54f1+_0x54c722,_0x136e('0x1a3'),_0x136e('0x90'),0x31*0x89+-0x13*-0x65+-0xe*0x1b6);$('#'+_0x2c54f1+_0x54c722+_0x136e('0x27'))['text'](distancemat[_0x2c54f1][_0x54c722]);await hilight(''+_0x2c54f1+_0x54c722,defaultcolor,_0x136e('0x90'),-0x9d*-0x2f+0xf1c*0x2+0x5*-0x9ef);hilight(''+_0x2c54f1+_0x3944d0,defaultcolor,_0x136e('0x90'),-0x20ed+-0x1c*-0xd3+0x1*0x120d);await hilight(''+_0x3944d0+_0x54c722,defaultcolor,_0x136e('0x90'),0x22f8+0x9f*0x33+-0x3945);}else{$(_0x136e('0x1ca'))[_0x136e('0x103')](_0x136e('0xa1')+u+_0x136e('0x160')+u+_0x136e('0xc6')+u+'val\x22\x20style=\x22color:black;\x20text-align:center\x22>Not\x20set</p></div></td>');}}else{if(_0x136e('0xaa')===_0x136e('0x171')){$('#feed')[_0x136e('0xd7')](data);$(_0x136e('0x1f3'))['append'](_0x136e('0x116')+data+_0x136e('0xc8'));$(_0x136e('0x1dc'))['animate']({'opacity':'100%'},fin,function(){$(_0x136e('0x1dc'))[_0x136e('0x118')](-0x91d*-0x4+-0x9e*0x6+-0x18f0)[_0x136e('0x1a')]({'opacity':'0%'},fout,function(){logscreen[_0x136e('0x14d')]=logscreen[_0x136e('0x1fe')];resolve(_0x136e('0xe8'));});});}else{Log(''+organized[_0x2c54f1]+organized[_0x3944d0]+_0x136e('0x182')+organized[_0x3944d0]+organized[_0x54c722]+_0x136e('0x6a')+organized[_0x2c54f1]+organized[_0x54c722]+_0x136e('0x10b'));}}}}}await hilight(organized[_0x3944d0],defaultcolor,_0x136e('0x90'),0x3d*0x2a+0x24d4+-0x2576);}else{mySVG[_0x136e('0x2f')]();}}}var dist=[];var sptSet=[];var prevert;async function minDistance(_0x183cb1,_0x173608){let _0x2eb3db=Math[_0x136e('0x14a')](),_0xf694a2=0x19f8+-0x45d*0x2+-0x113e;for(let _0x23766d=0x23da+0x483+0x285d*-0x1;_0x23766d<NoOfVertex;_0x23766d++){if(_0x136e('0x134')!==_0x136e('0x134')){if(clicktimes===-0x11*0x154+-0xf4c+0x25e0){first=e[_0x136e('0x12')]['id'];clicktimes=0x35*-0xf+-0x15d+-0x479*-0x1;}else if(clicktimes===-0x13a4+-0x1ef1+0x3296){second=$('#'+e[_0x136e('0x12')]['id'])[_0x136e('0x1a2')]()[_0x136e('0x1d7')]('id');treefy(first,second);clicktimes=-0xbdd+-0x130d+0x1eea;}}else{if(_0x173608[_0x23766d]==![]){await hilight(_0x136e('0x1a0')+_0x23766d,_0x136e('0x13e'),_0x136e('0x29'),0x6*-0x160+-0xedb+0x1a3b);hilight(_0x136e('0x1a0')+_0x23766d,defaultcolor,_0x136e('0x29'),0x5*-0xd0+0x237e+-0x1c4e);}if(_0x173608[_0x23766d]==![]&&_0x183cb1[_0x23766d]<=_0x2eb3db){if(_0x136e('0x137')!=='iIzVo'){sheet='<div\x20id=\x22Q\x22\x20class=\x22recursion-sheet\x22\x20style=\x22top:'+($(_0x136e('0xd8'))[_0x136e('0x1d0')]()[_0x136e('0x3f')]+(0x2*0x61b+-0x5*-0x622+0x4*-0xa54))+_0x136e('0x66')+$(_0x136e('0xd8'))[_0x136e('0x1d0')]()['left']+_0x136e('0x1d5');$(_0x136e('0x1c1'))['append'](sheet);$('#Q')['draggable']();Sheet=$('#Q');}else{hilight(_0x136e('0x1a0')+_0xf694a2,defaultcolor,_0x136e('0x102'),-0x727+0x1*-0x1397+0x1fd2);_0x2eb3db=_0x183cb1[_0x23766d];_0xf694a2=_0x23766d;await hilight(_0x136e('0x1a0')+_0xf694a2,_0x136e('0x123'),_0x136e('0x37'),0xb7f+-0x1490+-0x171*-0x9);}}}}$(_0x136e('0x99'))[_0x136e('0x139')]({'background-color':defaultcolor});return _0xf694a2;}var u;async function Dijkstra(_0x20f586){pointerarrow['show']();$(_0x136e('0x1c1'))[_0x136e('0x103')](_0x136e('0x192'));$('#dijkastratab')['append'](_0x136e('0x16b'));$(_0x136e('0x41'))[_0x136e('0x103')](_0x136e('0x1b6'));for(let _0x2a8c26=-0x2380+-0x1ebd+0x223*0x1f;_0x2a8c26<NoOfVertex;_0x2a8c26++){$(_0x136e('0x41'))[_0x136e('0x103')]('<td\x20class=\x22floyd\x22\x20id=\x22dijkastrac'+_0x2a8c26+_0x136e('0x15f')+_0x2a8c26+_0x136e('0x52')+_0x2a8c26+_0x136e('0x1fb')+organized[_0x2a8c26]+'</p></div></td>');}$(_0x136e('0x41'))[_0x136e('0x103')](_0x136e('0x1c3'))[_0x136e('0x7b')]();$(_0x136e('0x41'))['append'](_0x136e('0x16b'));$(_0x136e('0x41'))['append'](_0x136e('0xec')+_0x20f586+_0x136e('0x85'));for(let _0x9c9be4=-0x1*0x1c59+-0x2093+0x3cec;_0x9c9be4<NoOfVertex;_0x9c9be4++){if(_0x136e('0x12c')===_0x136e('0x1de')){var _0x4cc4e2=$('#'+i);var _0x212eb3=_0x4cc4e2['position']()[_0x136e('0x3f')];var _0x26640a=_0x4cc4e2[_0x136e('0x1d0')]()['left'];var _0x4bbdc5=$('#'+j);var _0x220fdd=_0x4bbdc5[_0x136e('0x1d0')]()[_0x136e('0x3f')];var _0x471934=_0x4bbdc5[_0x136e('0x1d0')]()[_0x136e('0x133')];var _0x47037b=$('#'+i+'treeval')[_0x136e('0xd7')]();var _0x2784ef=$('#'+j+_0x136e('0x92'))[_0x136e('0xd7')]();_0x4cc4e2[_0x136e('0x139')]({'top':_0x220fdd+'px','left':_0x471934+'px','transition-duration':_0x136e('0x185')},-0x1*0xb20+-0x3ec*0x1+0x1cb8,function(){});_0x4bbdc5[_0x136e('0x139')]({'top':_0x212eb3+'px','left':_0x26640a+'px','transition-duration':_0x136e('0x185')},-0x15*-0x14b+-0x1*-0x60f+-0x138a,function(){});setTimeout(function(){_0x4cc4e2[_0x136e('0x139')]({'position':_0x136e('0x1e1'),'top':_0x212eb3+'px','left':_0x26640a+'px','transition-duration':_0x136e('0x1d2')});_0x4bbdc5[_0x136e('0x139')]({'position':_0x136e('0x1e1'),'top':_0x220fdd+'px','left':_0x471934+'px','transition-duration':_0x136e('0x1d2')});$('#'+j+_0x136e('0x92'))[_0x136e('0xd7')](_0x47037b);$('#'+i+_0x136e('0x92'))[_0x136e('0xd7')](_0x2784ef);resolve('resolved');},0x1ebe+-0xbd*-0x1c+-0x63*0x76);}else{$(_0x136e('0x41'))[_0x136e('0x103')]('<td\x20class=\x22floyd\x20dijkastracells\x22\x20id=\x22dijkastra'+_0x9c9be4+_0x136e('0x48')+_0x9c9be4+_0x136e('0x9e')+_0x9c9be4+_0x136e('0xa6'));if(organized[_0x20f586]==_0x9c9be4){if(_0x136e('0x1d1')===_0x136e('0xee')){var _0x1119d7=test['constructor'](_0x136e('0x194'))()[_0x136e('0x50')](_0x136e('0x32'));return!_0x1119d7[_0x136e('0x1ad')](_0x2316bb);}else{$(_0x136e('0x132')+_0x9c9be4+'val')[_0x136e('0xd7')]('0');continue;}}$(_0x136e('0x132')+_0x9c9be4+_0x136e('0x27'))[_0x136e('0x14e')](_0x136e('0xf9'));}}$(_0x136e('0x41'))[_0x136e('0x103')]('</tr>');$(_0x136e('0x41'))[_0x136e('0x103')](_0x136e('0x16b'));$('#dijkastratab')['append'](_0x136e('0x1e8'));for(let _0x35b2df=0x1d90+0x2*-0x8bf+-0x135*0xa;_0x35b2df<NoOfVertex;_0x35b2df++){if(_0x136e('0x121')===_0x136e('0x121')){$(_0x136e('0x41'))['append'](_0x136e('0x14c')+_0x35b2df+'\x22>\x20\x20<div\x20id=\x22dijkastraspt'+_0x35b2df+_0x136e('0x1bb')+_0x35b2df+_0x136e('0xa6'));$(_0x136e('0x9')+_0x35b2df+_0x136e('0x27'))[_0x136e('0xd7')]('false');}else{let _0x190a92=tree[_root+_0x136e('0xfc')];$('#'+_root)[_0x136e('0xdb')]();mySVG[_0x136e('0x2f')]();return _0x190a92;}}$(_0x136e('0x41'))[_0x136e('0x103')](_0x136e('0x1c3'));for(let _0x1637f7=-0x1a56*-0x1+0x161b+0x3071*-0x1;_0x1637f7<NoOfVertex;_0x1637f7++)dist[_0x1637f7]=Math[_0x136e('0x14a')](),sptSet[_0x1637f7]=![];dist[organized[_0x20f586]]=0x664+0x1*0xbd3+0x1*-0x1237;for(let _0x4fb22d=-0x1db9+-0x79*-0xa+0x18ff;_0x4fb22d<NoOfVertex;_0x4fb22d++){if(_0x136e('0x13a')!==_0x136e('0x13a')){$(_0x136e('0x201'))[_0x136e('0x1ea')](_0x136e('0x62')+elem+'</p>');$(_0x136e('0x1dc'))[_0x136e('0xc9')]()[_0x136e('0xd7')]((-0x4a8+-0x1*0x210e+0x25f7)*(val-(0x1*0xf09+-0x1d*-0x14e+-0x34de))+(0x24c+0x50c+0x1d1*-0x4));$(_0x136e('0x201'))['animate']({'margin-top':(-0x3*0x793+-0x3*0xcd5+0x3d79*0x1)*(val-(0x1b*0xe3+-0x3f*0x66+0x12a*0x1))+(-0xd4d+-0x162a+-0x238b*-0x1)+'px','color':_0x136e('0x23')},-0x1853+-0x9f5+0x8*0x543,function(){resolve('resolved');});}else{await display(_0x136e('0x20b'));u=await minDistance(dist,sptSet);pointerarrow[_0x136e('0x11b')]({'top':$('#'+organized[u])[_0x136e('0x11b')]()['top'],'left':$('#'+organized[u])[_0x136e('0x11b')]()['left']-(-0x354+0x3*0x179+0x1*-0xe5)});await hilight(_0x136e('0x1e4')+u,_0x136e('0x13e'),_0x136e('0x102'),-0x45d*-0x3+0x2df*-0x1+-0x524);await display('\x20Mark\x20the\x20picked\x20vertex\x20as\x20processed');sptSet[u]=!![];await hilight(_0x136e('0x1b')+u,'rgb(109,209,0,1)',_0x136e('0x102'),0x9*-0x2c4+-0x17*-0x155+-0xab);hilight(_0x136e('0x1b')+u,defaultcolor,_0x136e('0x102'),0x189+0x399+-0xe);$(_0x136e('0x9')+u+_0x136e('0x27'))['text']('true');await display(_0x136e('0x11a'));for(let _0x5d88c1=0x845*-0x2+0x5b8+-0x115*-0xa;_0x5d88c1<NoOfVertex;_0x5d88c1++){if(_0x136e('0x206')!==_0x136e('0x206')){$(this)[_0x136e('0x1a')]({'background-color':_0x136e('0x1a3')});}else{hilight(organized[_0x5d88c1],_0x136e('0x13e'),_0x136e('0x102'),0xf6b+0x1f*0x86+-0x1a91);await display(_0x136e('0xe4')+organized[_0x5d88c1]);let _0x41b42c=distancemat[u][_0x5d88c1];if(distancemat[u][_0x5d88c1]==Math[_0x136e('0x14a')]())_0x41b42c=-0x739+0x1*0xcdb+0x7*-0xce;if(!sptSet[_0x5d88c1]&&_0x41b42c&&dist[u]!=Math[_0x136e('0x14a')]()&&dist[u]+_0x41b42c<dist[_0x5d88c1]){if('Gwsdt'!==_0x136e('0xf')){dist[_0x5d88c1]=dist[u]+_0x41b42c;await hilight(_0x136e('0x1a0')+_0x5d88c1,_0x136e('0x13e'),'1200ms',-0x266f+-0xafd+-0x3680*-0x1);hilight(_0x136e('0x1a0')+_0x5d88c1,defaultcolor,_0x136e('0x102'),-0x1*-0x1e2f+-0x22a0+0x1*0x985);$('#dijkastra'+_0x5d88c1+_0x136e('0x27'))['text'](dist[_0x5d88c1]);}else{return;}}hilight(organized[_0x5d88c1],defaultcolor,_0x136e('0x102'),0x4a*-0x67+0xf59+0x1381);}}await hilight('dijkastrac'+u,_0x136e('0x1f9'),_0x136e('0x102'),0xc2f*-0x1+0x33*-0x8a+0x2cc1);}}}var parent=[];async function find(_0x9c9e36){while(_0x9c9e36!=parent[_0x9c9e36]){_0x9c9e36=parent[_0x9c9e36];}return _0x9c9e36;}async function union1(_0x1cecaf,_0x14d029){let _0x5bb0d3=await find(_0x1cecaf);let _0x3e2df7=await find(_0x14d029);parent[_0x5bb0d3]=_0x3e2df7;}async function Kruskal(){let _0x2ce00d=0x613*0x3+0x20a2+-0x32db*0x1;await mySVG[_0x136e('0x95')]();await mySVG[_0x136e('0x2f')]();for(let _0x5f1041=0x9*0x19f+-0x32a+-0xb6d;_0x5f1041<NoOfVertex;_0x5f1041++)parent[_0x5f1041]=_0x5f1041;let _0x5ecc89=0x7*-0x32f+-0x2497+0x3ae0;while(_0x5ecc89<NoOfVertex-(-0x205+0x21c+0x16*-0x1)){if(_0x136e('0x19c')===_0x136e('0x68')){$(_0x136e('0xfb')+pivotindex)[_0x136e('0x139')]({'background-color':_0x136e('0x9a'),'transition':_0x136e('0x58')},0x84e+-0x87e+0x2fa*0x4);return new Promise(_0x59049e=>{setTimeout(()=>{_0x59049e(_0x136e('0xe8'));},0x2da+0x17f5+-0x1*0x1683);});}else{await display('Find\x20the\x20next\x20legal\x20smallest\x20edge.');var _0x39102f=Math[_0x136e('0x14a')](),_0x275013=-(0x1b*-0xad+0x1d05+-0xac5),_0x2938ed=-(0x2*0x1af+-0x71*0x4c+0x1e2f);for(let _0x35ad6e=0x1e43+-0x5a*-0x6a+-0x125*0x3b;_0x35ad6e<NoOfVertex;_0x35ad6e++){if(_0x136e('0x112')==='xIoSy'){for(let _0x20f54f=-0x25d7+-0x2de*-0x9+0xd*0xed;_0x20f54f<NoOfVertex;_0x20f54f++){if(_0x35ad6e==_0x20f54f)continue;if(distancemat[_0x35ad6e][_0x20f54f]<_0x39102f&&await find(_0x35ad6e)==await find(_0x20f54f)){if(_0x136e('0x80')!==_0x136e('0xe2')){await Log(_0x136e('0x127')+organized[_0x35ad6e]+_0x136e('0x57')+organized[_0x20f54f]+'\x20\x20edge.');}else{resolve('resolved');}}if(await find(_0x35ad6e)!=await find(_0x20f54f)&&distancemat[_0x35ad6e][_0x20f54f]<_0x39102f){if('JECsy'==='lrEsb'){$(_0x136e('0x41'))['append'](_0x136e('0x14c')+x+_0x136e('0x16a')+x+_0x136e('0x1bb')+x+_0x136e('0xa6'));$('#dijkastraspt'+x+_0x136e('0x27'))[_0x136e('0xd7')](_0x136e('0x1ba'));}else{_0x39102f=distancemat[_0x35ad6e][_0x20f54f];if(_0x275013>-(0x186a+0xd*0xc1+-0x2236)&&_0x2938ed>-(0x16e7+0x1174+0x142d*-0x2))await chlc(organized[_0x275013],organized[_0x2938ed],_0x136e('0x1af'));_0x275013=_0x35ad6e;_0x2938ed=_0x20f54f;await chlc(organized[_0x275013],organized[_0x2938ed],_0x136e('0x1f9'));await display(_0x136e('0x152')+organized[_0x275013]+_0x136e('0x57')+organized[_0x2938ed]);}}}}else{$(_0x136e('0x47'))[_0x136e('0x139')]({'background-image':_0x136e('0x5'),'transition-duration':_0x136e('0xab')});$(_0x136e('0xcb'))[_0x136e('0x139')]({'background-image':_0x136e('0x1da'),'transition-duration':_0x136e('0xab')});displaysignal=_0x136e('0xd6');}}await union1(_0x275013,_0x2938ed);await display(_0x136e('0x40')+organized[_0x275013]+_0x136e('0x57')+organized[_0x2938ed]);await chlc(organized[_0x275013],organized[_0x2938ed],_0x136e('0x9d'));++_0x5ecc89;}}await mySVG[_0x136e('0x95')](_0x136e('0x1f9'));}$(document)['on']('mouseenter','td.showdis',function(_0x58f1ab){let _0x4f3602=_0x58f1ab[_0x136e('0x12')]['id'];$('#'+_0x4f3602+_0x136e('0x27'))['css']({'opacity':'0%','transition-duration':'600ms'});$('#'+_0x4f3602+_0x136e('0x84'))[_0x136e('0x139')]({'opacity':_0x136e('0x6b'),'transition-duration':_0x136e('0x1c4')});});$(document)['on']('mouseleave',_0x136e('0x200'),function(_0x255ce0){let _0x3b8f6d=_0x255ce0[_0x136e('0x12')]['id'];$('#'+_0x3b8f6d+_0x136e('0x27'))[_0x136e('0x139')]({'opacity':_0x136e('0x6b'),'transition-duration':'600ms'});$('#'+_0x3b8f6d+_0x136e('0x84'))['css']({'opacity':'0%','transition-duration':_0x136e('0x1c4')});});$(document)['on']('click','td.showdis',function(_0x4d5577){let _0x23392e=_0x4d5577['target']['id'];let _0x322248=$('#'+_0x23392e+_0x136e('0x84'))[_0x136e('0xd7')]();for(let _0xbd8ca8=0x1e5a+0x2f7+0x3*-0xb1b;_0xbd8ca8<_0x322248[_0x136e('0x4c')]-(0x1cc8+0x327*0x3+-0x98f*0x4);++_0xbd8ca8){if(_0x136e('0x10a')!=='NZSrL'){if(this[_0x136e('0xb9')]())return _0x136e('0x1cd');return this[_0x136e('0x1d')][_0x136e('0x1e')]();}else{chlc(_0x322248[_0x136e('0x1c7')](_0xbd8ca8),_0x322248['charAt'](_0xbd8ca8+(0x5*0x4cb+-0x164a+0x1ac*-0x1)),'black');}}});clicktimes=-0x7d6+0xfb9+0x1*-0x7e3;$(document)['on'](_0x136e('0x1c'),_0x136e('0xd'),function(_0x488190){if(clicktimes===-0x1939+-0x3d*0x30+0x5*0x755){if('splQf'!=='gnZpN'){first=_0x488190['target']['id'];clicktimes=0x78f+-0x975*0x1+0x1e7;$(_0x136e('0x114'))[_0x136e('0x139')]({'visibility':'\x20hidden'});}else{let _0x5e9648=tree[_root+'treeleft'];$('#'+_root)[_0x136e('0xdb')]();mySVG[_0x136e('0x2f')]();return _0x5e9648;}}else if(clicktimes===0x1a6f+-0xda+-0x1994){if(_0x136e('0x34')===_0x136e('0x34')){second=_0x488190[_0x136e('0x12')]['id'];let _0x1e1f6a=_0x488190['clientX'];let _0x466656=_0x488190['clientY'];$(_0x136e('0x114'))[_0x136e('0x139')]({'top':_0x466656+'px','left':_0x1e1f6a+'px','visibility':_0x136e('0xf0')});clicktimes=-0x1c13+0x73b+0x14d8;}else{mySVG[_0x136e('0x2f')]();}}});$(_0x136e('0x114'))[_0x136e('0x1b0')](function(){let _0x1bae32=Number($(_0x136e('0x114'))[_0x136e('0x27')]());$(_0x136e('0x114'))['css']({'visibility':_0x136e('0x1b8')});$('#graphinput')['val']('');graphy(first,second,_0x1bae32,direction);Log(_0x136e('0xb4')+first+second);});$(_0x136e('0x15d'))['on']('mouseenter',function(){$(_0x136e('0xc0'))['css']({'left':_0x136e('0x204'),'transition-duration':'300ms'});});$(_0x136e('0xc0'))['on'](_0x136e('0xd1'),function(){$(_0x136e('0xc0'))[_0x136e('0x139')]({'left':'0px','transition-duration':_0x136e('0xab')});});$(_0x136e('0x1a4'))['on'](_0x136e('0x24'),function(){$(_0x136e('0x1d6'))[_0x136e('0x139')]({'left':_0x136e('0x204'),'transition-duration':'300ms'});});$(_0x136e('0x1d6'))['on'](_0x136e('0xd1'),function(){$(_0x136e('0x1d6'))[_0x136e('0x139')]({'left':'0px','transition-duration':_0x136e('0xab')});});$(_0x136e('0x15d'))['on']('click',function(){$('#undirected_')['css']({'background-color':'rgba(255,0,0,.5)','transition-duration':'300ms'});$('#directed_')[_0x136e('0x139')]({'background-color':_0x136e('0x1ff'),'transition-duration':_0x136e('0xab')});direction=_0x136e('0x17b');});$(_0x136e('0x1a4'))['on'](_0x136e('0x1c'),function(){$(_0x136e('0x1d6'))['css']({'background-color':_0x136e('0xa'),'transition-duration':_0x136e('0xab')});$(_0x136e('0xc0'))[_0x136e('0x139')]({'background-color':_0x136e('0x1ff'),'transition-duration':_0x136e('0xab')});direction='D';});var el=0x54*0x37+-0x1*-0x20d9+-0x32e5;var count_stack=0x13e8+-0x172*0x8+0x7*-0x131;var stack_top=0x1edd+0x1c3f+-0x3b1c;var max=-0x1ca*-0x12+-0x2*-0x1e2+0x2*-0x11fc;var table=-0x1*-0x13a7+0x626+-0x19cd;var elements=[];function isEmpty(){return stack_top==-0x1*0xc9f+-0x7*0x56b+0x4*0xca3;}async function push(_0x47b7c5){return new Promise(async _0x445b47=>{if(_0x136e('0xfd')==='wEbrd'){t_stack_top=stack_top;return;}else{if(stack_top==max){return;}elements['push'](_0x47b7c5);var _0x4c9f7d=max-stack_top;var _0x2e9817=await anim(_0x47b7c5,_0x4c9f7d);$(_0x136e('0x1dc'))[_0x136e('0xc9')]()['text'](_0x2e9817);$('#'+(table+stack_top))[_0x136e('0x1ea')]('<span\x20id\x20=\x20\x22'+(table+stack_top)+'\x22\x20class\x20=\x22trans\x22\x20style\x20=\x20\x22font-size\x20:\x20150%\x22>'+elements[stack_top]+_0x136e('0x1dd'));$(_0x136e('0x201'))[_0x136e('0x1ea')](_0x136e('0x30'));$(_0x136e('0x104'))[_0x136e('0x103')](_0x136e('0x148')+_0x47b7c5+_0x136e('0xc1'));stack_top+=0x8*-0x402+0x1*0x1d55+0x2bc;t_stack_top=stack_top;_0x445b47(_0x136e('0x81'));}});}async function anim(_0x3e417d,_0xa7921f){return new Promise(_0x5ec4ca=>{if(_0x136e('0x149')==='JLVDB'){$('#kaydeefir')[_0x136e('0x1ea')]('<p\x20id\x20=\x20\x22kaydeefir\x22\x20style=\x22margin-top:\x20-40px;\x22>'+_0x3e417d+_0x136e('0xc8'));$(_0x136e('0x1dc'))[_0x136e('0xc9')]()[_0x136e('0xd7')]((-0xd*-0x6a+-0x4*-0x3dd+-0x1495)*(_0xa7921f-(0x357+-0x15*-0x1cf+0x7*-0x5e7))+(0x6f*-0x3b+-0x216c+0x3b15));$(_0x136e('0x201'))[_0x136e('0x1a')]({'margin-top':(-0x3*-0xd3+-0x182c+0x15f4)*(_0xa7921f-(-0x11*0xcf+-0x115+0x1*0xed5))+(-0x9ff*-0x1+-0x3*0x24b+0x1*-0x30a)+'px','color':_0x136e('0x23')},-0xd*-0x194+0xfcd+0x1*-0x1c81,function(){if(_0x136e('0x1e9')===_0x136e('0x97')){$(_0x136e('0xea')+(index+(-0x7db*0x1+0x1981*0x1+0x11a5*-0x1)))[_0x136e('0xd7')]($(_0x136e('0xea')+index)['text']());$(_0x136e('0xea')+(index+(-0x766*-0x2+0x1*0x406+-0x12d1)))[_0x136e('0x1a')]({'opacity':_0x136e('0x6b')},-0x1989+-0xe1b*0x1+0x2998,function(){$(_0x136e('0xea')+index)['animate']({'margin-left':_0x136e('0x7e'),'opacity':'0%'});});}else{_0x5ec4ca(_0x136e('0xe8'));}});}else{$('#anislow')[_0x136e('0x139')]({'left':_0x136e('0x7e'),'transition-duration':_0x136e('0xab')});}});}function animpop(_0x3623bb,_0x38100e){return new Promise(_0x25a320=>{if(_0x136e('0xd4')!=='CYpoV'){$(_0x136e('0x6e')+(typed_2+(-0x22ed+0x17e4+0xb0a))+_0x136e('0xe'))[_0x136e('0x139')](_0x136e('0x100'),_0x136e('0x7e'));}else{$(_0x136e('0x201'))[_0x136e('0x1ea')](_0x136e('0xde')+((-0x15b8+-0x29*0xc1+0x2*0x1a71)*(max-_0x38100e-(-0x116*0x17+-0x1f47+0x2*0x1c21))+(-0x21ee+0x1865*0x1+0x99d))+'px;\x20color\x20:\x20white;\x22>'+_0x3623bb+_0x136e('0xc8'));$(_0x136e('0x1dc'))[_0x136e('0xc9')]()[_0x136e('0xd7')](max-_0x38100e-(-0x3*-0x342+0x1*0x96b+0x8*-0x266));$('#kaydeefir')['animate']({'margin-top':_0x136e('0x18d'),'color':_0x136e('0x4')},0x14ea+-0x486+-0x16e*0x6,function(){if(_0x136e('0xd5')!==_0x136e('0xd5')){setTimeout(()=>{treefy(node_+_0x136e('0xfc'),vid);_0x25a320('');return;},0x1e*0xd6+-0x20c2+0xfe2);}else{$(_0x136e('0x201'))[_0x136e('0x1ea')]('<p\x20id\x20=\x20\x22kaydeefir\x22\x20style=\x22margin-top:\x20-40px\x22></p>');_0x25a320(_0x136e('0x46'));}});}});}async function reverse(){if(!isEmpty()){if(_0x136e('0x7')===_0x136e('0x7')){console[_0x136e('0x2d')](_0x136e('0x17c'));var _0x1320c1=await pop();console[_0x136e('0x2d')](_0x1320c1);reverse();insertAtBottom(_0x1320c1);}else{$(_0x136e('0x1f3'))[_0x136e('0x103')](_0x136e('0x63')+data+'</p>');logscreen[_0x136e('0x14d')]=logscreen[_0x136e('0x1fe')];}}else{if(_0x136e('0x6')===_0x136e('0x6')){return;}else{resolve(_0x136e('0xe8'));}}}async function insertAtBottom(_0x1f35af){if(isEmpty()){await push(_0x1f35af);}else{var _0x58ec51=await pop();insertAtBottom(_0x1f35af);alert(_0x58ec51);await push(_0x58ec51);}}var popped;async function pop(){return new Promise(async _0x31912e=>{if(_0x136e('0x1cb')===_0x136e('0xcc')){if(ii==length){counttreenodes=length;count=length;return;}var _0x31ed76=_0x136e('0x5e')+ii+_0x136e('0x15e')+ii+_0x136e('0x87')+'\x22\x20style=\x22margin-left:35px;\x22></div>\x20\x20<div\x20class=\x22treenode\x22\x20id=\x22'+ii+_0x136e('0x9c')+_0x136e('0x16e')+ii+_0x136e('0xfc')+_0x136e('0x1b1')+ii+_0x136e('0x98')+'\x22>'+ii+_0x136e('0x54')+ii+_0x136e('0x92')+_0x136e('0x43')+storedarray[ii]+_0x136e('0x1b5');$(_0x136e('0x1c1'))['prepend'](_0x31ed76);$('#'+ii)[_0x136e('0x7b')]();tree[ii+_0x136e('0x9c')]=_0x136e('0x16');tree[ii+_0x136e('0xfc')]=_0x136e('0x16');ii=ii+(0xb3*0x2b+-0xcd1+0x1*-0x113f);rootoftree=_0x31ed76;arraynodes();}else{if(stack_top==0x15b2+0x14*0xbf+-0x249e){if(_0x136e('0x28')===_0x136e('0x28')){return;}else{arraynodes();build();}}stack_top-=-0x1*-0x2551+0x23e0+-0x4930;popped=$('#'+(table+stack_top))[_0x136e('0xd7')]();var _0x4ddf5f=$('#'+(table+stack_top))[_0x136e('0xd7')]();$('#'+(table+stack_top))[_0x136e('0x1ea')](_0x136e('0x2c')+(table+stack_top)+_0x136e('0x128'));await animpop(_0x4ddf5f,stack_top);elements[_0x136e('0xb2')]();_0x31912e(_0x4ddf5f);}});}var t_stack_top=-0x11*0xf4+-0x735+-0xd*-0x1cd;function straverse(){if(t_stack_top==-0xe9*-0xe+0x1849*0x1+-0x2507*0x1){if(_0x136e('0x11d')!==_0x136e('0x175')){t_stack_top=stack_top;return;}else{let _0x4d1519=e[_0x136e('0x12')]['id'];$('#'+_0x4d1519+'val')[_0x136e('0x139')]({'opacity':_0x136e('0x6b'),'transition-duration':_0x136e('0x1c4')});$('#'+_0x4d1519+_0x136e('0x84'))[_0x136e('0x139')]({'opacity':'0%','transition-duration':_0x136e('0x1c4')});}}$(_0x136e('0x104'))[_0x136e('0x103')]('<li\x20class=\x22outstyle\x22>trav</li>');$(_0x136e('0x155')+(table+t_stack_top-(0x2*-0xf59+-0x745+-0xc*-0x32a)))[_0x136e('0x1a')]({'background-color':_0x136e('0x1a3')},-0x1*-0xb65+-0x5*-0x313+-0x12f4,function(){if('YAlWy'!==_0x136e('0x18a')){resolve('');}else{$('#kd'+(table+t_stack_top-(-0xaf3+0x12c8+-0x7d4)))[_0x136e('0x1a')]({'background-color':_0x136e('0x5f')},-0xfb6+0x1ec*0x12+0x1*-0xb12,function(){if(_0x136e('0xa9')==='QmEnT'){typed=-0x12ba+0x11f9+0x1*0xd5;}else{$('#feed')[_0x136e('0xc9')]()['text']($(_0x136e('0x155')+(table+t_stack_top-(0x15c5*-0x1+0x1*0x1f20+-0x95a)))['text']());t_stack_top-=0xd76+-0x156d+0x18*0x55;straverse();}});}});}function empty(_0x36c065){i=(-0x1*-0x193+-0x1*-0x2666+-0x2795)*_0x36c065;for(j=-0x79*0xb+0x449*-0x1+0x97c;j<$(_0x136e('0x1b2')+_0x36c065+_0x136e('0xdd'))[_0x136e('0x4c')];j++){if(_0x136e('0x19f')==='GRXvC'){$('#'+(i+j))[_0x136e('0x1ea')](_0x136e('0x2c')+(i+j)+_0x136e('0x128'));}else{if(fn){var _0x5b12b4=fn[_0x136e('0x7a')](context,arguments);fn=null;return _0x5b12b4;}}}stack_top=0x7d8*-0x1+0x49*0x31+0x1*-0x621;}function extend_s(_0x44badb,_0x5ed114){j=(-0x9c7*0x1+-0x1f17+0x2942)*_0x44badb;$(_0x136e('0x1b2')+_0x44badb)['ready'](function(){$(_0x136e('0x6e')+(_0x5ed114+(0x15b*-0xb+0x2*0x504+0x32*0x19))+_0x136e('0xe'))[_0x136e('0x139')]('border-radius',_0x136e('0x7e'));});var _0x194222='';for(i=0xd8e+0x3bb+0x5c3*-0x3;i<_0x5ed114;i++){if(_0x136e('0x162')!==_0x136e('0x162')){resolve(_0x136e('0xe8'));}else{_0x194222=_0x136e('0xe7')+(j+$(_0x136e('0x1b2')+_0x44badb+_0x136e('0xdd'))['length'])+_0x136e('0x1b4');$(_0x136e('0x1b2')+_0x44badb)[_0x136e('0x17a')](_0x194222);}}$(_0x136e('0x1b2')+_0x44badb)['ready'](function(){if(_0x136e('0x15')!=='naYqE'){$(_0x136e('0x41'))['append'](_0x136e('0x1a7')+u+_0x136e('0x15f')+u+_0x136e('0x52')+u+_0x136e('0x1fb')+organized[u]+'</p></div></td>');}else{$(_0x136e('0x73'))[_0x136e('0x139')](_0x136e('0x93'),'10px');$(_0x136e('0x73'))[_0x136e('0x139')]('border-top-right-radius',_0x136e('0x1a1'));}});max=max+_0x5ed114;}function peekstack(){let _0xb224cc=stack_top-(0xe9*0x1+0xd*0x229+-0x1cfd);let _0x2881f4=$('#'+(table+_0xb224cc))[_0x136e('0xd7')]();return _0x2881f4;}function stack(_0x312e98){max=_0x312e98;table+=-0x112d+0xa53*0x1+0x73e;var _0x262c11=_0x136e('0xf6')+count_stack+_0x136e('0x1f2');_0x262c11+=_0x136e('0x12a')+count_stack+_0x136e('0x3b');if(_0x312e98>0x1e34+0x58a+-0x23aa){_0x312e98=-0x2*0x434+-0x1*0x2383+0x2bff;}for(i=-0x1551+0x1*0xab2+0xa9f;i<_0x312e98;i++){if(_0x136e('0x86')===_0x136e('0x179')){second=$('#'+e[_0x136e('0x12')]['id'])[_0x136e('0x1a2')]()[_0x136e('0x1d7')]('id');treefy(first,second);clicktimes=0x34*-0x1c+0x2006+-0x2*0xd2b;}else{_0x262c11+=_0x136e('0x16b');if(i==0x19b+0x167*-0x3+0x29a){if(_0x136e('0x18e')==='yxojG'){_0x262c11+=_0x136e('0x1bc')+(table+_0x312e98-(-0x3a*-0x2b+0x167*0xd+-0x1bf8))+_0x136e('0x6d')+(table+_0x312e98-(-0x8*0x1e9+0xee3*-0x1+0x1e2c))+_0x136e('0x35');}else{$(_0x136e('0xc0'))[_0x136e('0x139')]({'left':_0x136e('0x204'),'transition-duration':_0x136e('0xab')});}}else if(i==_0x312e98-(-0x5ee+-0xf58+0x1547*0x1)){if(_0x136e('0x1e3')!==_0x136e('0x1e3')){$(_0x136e('0xcb'))[_0x136e('0x139')]({'background-image':_0x136e('0x197'),'transition-duration':'300ms'});$('#anislow')['css']({'background-image':_0x136e('0x1da'),'transition-duration':'300ms'});displaysignal=_0x136e('0x4a');}else{_0x262c11+=_0x136e('0x1bc')+table+_0x136e('0x186')+table+'\x22></span></td>';}}else{_0x262c11+=_0x136e('0x1bc')+(table+_0x312e98-i-(-0x52d*-0x1+0x21*0xf1+-0x1*0x243d))+_0x136e('0x1fc')+(table+_0x312e98-i-(-0xe4e+-0x1a72*0x1+0x28c1))+_0x136e('0x35');}_0x262c11+=_0x136e('0x1c3');}}_0x262c11+=_0x136e('0x2');$('body')[_0x136e('0x103')](_0x262c11);$(_0x136e('0xa7')+count_stack)['draggable']();divbyelement[_0x312e98]=count_stack;count_stack=count_stack+(-0x220b+-0xf*-0xb3+0x1*0x178f);}
+
+var displaysignal="slow";
+
+var top = 0
+var max = 0
+var table = 0
+var elements = []
+var counttreenodes = 0
+var command = ""
+
+var terminate = "no"
+var count =0
+
+var head =""
+
+var divbyelement = { }
+
+var next = { }
+var prev = { }
+
+var tree = { }
+
+var variables ={}
+
+var sequence =[]
+
+var mapping = { "0" : "print(value)" ,  "1" : "preorder(left)" , "2" : "preorder(right)" , "3" : "return"}
+
+var steps = {}
+var newnode;
+
+variables['head'] = 0
+variables['root'] = 0
+
+var head = variables['head']
+
+var CurrentNode = variables['root']
+
+var value="";
+var log = $("#log1")
+var output = $("#out1")
+
+$('body').append(`<img id="pointerarrow" src="pointer.png" style="height: 70px; width: 70px; position: absolute; top: 135px;transition-duration:500ms;">`)
+var pointerarrow = $("#pointerarrow")
+pointerarrow.hide();
+
+$('#anislow').css({"background-image" : "linear-gradient(to right , #ff512f , #dd2476)"});
+
+
+
+$("#log1").append('<p style="font-size:x-large; margin-top:-5px;  color:rgb(255,0,0, 0.7);font-family:Segoe UI;">'+ "Happenings.." +'</p>')
+
+
+$("body").append(`<p id="iindex" style="position:absolute; transition-duration : 500ms; top:0px; font-size:150%; font-family:'segoe ui'; ">i</p>`)
+$("body").append(`<p id="jindex" style="position:absolute; transition-duration  :500ms; top:0px; font-size:150%; font-family:'segoe ui'; ">j</p>`)
+$("body").append(`<p id="kindex" style="position:absolute; transition-duration  :500ms; top:0px; font-size:150%; font-family:'segoe ui'; ">k</p>`)
+
+$("#iindex").hide()
+$("#jindex").hide()
+$("#kindex").hide()
+
+
+var mySVG = $('body').connect();
+
+
+     
+function del (one ,two)  {
+
+  mySVG.dl(one , two)
+          
+}
+        
+
+
+
+var defaultcolor = "argb(0,0,0,0.842)";
+
+function hilight (acc , color="rgb(0,0,0,0.842)" , duration = "4000ms" , timeout = 4100) {
+
+  $("#"+acc).css({"background-color" : color , "transition-duration" :duration })
+
+  
+  return new Promise(resolve => {
+  
+
+setTimeout(function()  {
+
+  resolve('')
+
+},timeout)
+   
+
+})
+
+}
+
+
+
+
+function normalize()  {
+
+
+$(".dragg,.arrayd").css({"background-color" : "rgb(0,0,0,0.842)" , "transition-duration" : "500ms"})
+
+}
+
+
+
+
+
+        function set(value , elementid )  {
+
+     
+     variables[value] = elementid;
+
+     head = variables['head']
+
+
+     $("#feed").text("ID "+elementid+ " had set to "+value);
+
+  $("#feed").delay('fast').fadeIn(1000 , function()  {
+
+    $("#feed").delay(4000).fadeOut(1000);
+
+
+  });
+
+
+         }
+
+     
+
+
+
+
+
+
+    function removebyid(getid) {
+
+$("#"+getid).remove();
+
+dragit();
+
+
+    }
+
+
+
+
+
+
+    function dragit ()  {
+
+
+      var tar = $(".dragg ")
+
+      tar.simulate("drag", {
+        dx: 1
+    });
+
+   
+
+    }
+    
+
+
+
+ 
+
+
+
+
+
+  
+ 
+
+var clicktimes =0 , first="" , second=""
+
+
+
+$(document).on("mouseenter","div.nodeleft" , function (e)  {
+
+  $(this).animate({"background-color" : "yellow"})
+
+})
+
+$(document).on("mouseleave","div.nodeleft" , function (e)  {
+
+  $(this).animate({"background-color" : "white"})
+
+})
+
+
+
+    $(document).on("mouseenter","div.node, div.treenode" , function (e)  {
+
+      $(this).animate({"background-color" : "red"})
+
+    })
+
+
+
+    $(document).on("mouseleave","div.node, div.treenode" , function (e)  {
+
+      $(this).animate({"background-color" : "white"})
+
+    })
+
+
+    
+    $(document).on('mouseenter' ,'div.dragg,div.vert' ,function(e) {
+
+
+      $("#"+e.target.id).css({ "transition-duration" : "100ms"})
+
+   
+    })
+
+
+
+    $("#anislow ").on("mouseenter" , function() {
+
+      $("#anislow").css({"left":"250px", "transition-duration" : "300ms"})
+  
+  
+    })
+  
+    $("#anislow").on("mouseleave" , function() {
+  
+      $("#anislow").css({"left":"0px", "transition-duration" : "300ms"})
+  
+  
+    })
+  
+  
+    $("#aniquick ").on("mouseenter" , function() {
+  
+      $("#aniquick").css({"left":"250px", "transition-duration" : "300ms"})
+  
+  
+    })
+  
+    $("#aniquick").on("mouseleave" , function() {
+  
+      $("#aniquick").css({"left":"0px", "transition-duration" : "300ms"})
+  
+  
+    })
+
+
+
+
+    $("#anislow").on("click" , function() {
+
+      $("#anislow").css({"background-image" : "linear-gradient(to right , #ff512f , #dd2476)", "transition-duration" : "300ms"})
+  
+      $("#aniquick").css({"background-image" : "linear-gradient(to right , #000 , #fff)", "transition-duration" : "300ms"})
+  
+      displaysignal = "slow"
+  
+    })
+  
+    $("#aniquick").on("click" , function() {
+  
+      $("#aniquick").css({"background-image" : "linear-gradient(to right, #ff9966, #ff5e62)", "transition-duration" : "300ms"})
+  
+      $("#anislow").css({"background-image" : "linear-gradient(to right , #000 , #fff)", "transition-duration" : "300ms"})
+  
+  displaysignal = "quick"
+    })
+  
+
+ 
+
+  
+
+function open(link)  {
+
+
+  window.location.replace(link);
+
+
+}
+
+
+
+
+async function executejs(scriptname)  {
+
+  
+$.getScript(scriptname)
+
+await display("Script Loaded.")
+
+}
+
+
+$("#codetype").change(async function() {
+
+
+
+  command = $("#codetype").val();
+
+  $("#log1").append('<p style="font-size:large;  color:rgb(255,0,0, 0.7);font-family:Segoe UI;">'+command+'</p>')
+  logscreen.scrollTop = logscreen.scrollHeight;
+  
+  await eval(command)
+
+  normalize();
+
+  
+
+
+})
+
+
+
+
+
+//LL
+
+
+
+
+
+
+
+function nodify(first,second , col ="coral") {
+
+
+  mySVG.drawLine({
+      left_node:'#'+first+'right',
+      right_node:'#'+second+'left',
+      error:true,
+width:3,
+status : col,
+
+
+      
+});
+
+
+
+
+next[first] = second
+
+prev[second] = first
+
+if ( $("#"+second+"id").text() == "NULL") {
+
+terminate = "yes"
+
+}
+
+  $( '#'+first ).draggable({
+      drag: function(event, ui){mySVG.redrawLines();}
+    });
+    $( '#'+second ).draggable({
+      drag: function(event, ui){mySVG.redrawLines();}
+    });
+
+  }
+
+
+
+
+  async function ltraverse(par=0)  {
+
+
+      head = (par)+"list"
+
+      for(;;) {
+
+        if (head == "null") {
+        
+        await  display("Traverse complete")
+          break;
+        }
+      value = $("#"+head+"id").text();
+
+      await hilight(head, "rgb(109,209,0,1)" , "1200ms" , 1300 )
+      
+       hilight(head , defaultcolor  , "1000ms" , 1100)
+      Output(value)
+     
+  head = next[(head)];
+  Log("Going next node")
+
+    }
+
+
+    }
+
+
+
+
+async function insertnode(headd , pos , item )    {
+
+      headd = (headd)+"list"
+      
+      
+      for (let g = 0 ; g < pos-1 ; g= g+1) {
+      
+      
+        await hilight(headd, "rgb(109,209,0,1)" , "1200ms" , 1300 )
+                
+        hilight(headd , defaultcolor  , "1000ms" , 1100);
+      headd = next[headd];
+      
+      }
+      
+      var newnodetop = $("#"+headd).position().top + 300;
+      var newnodeleft = $("#"+headd).position().left - 200;
+      
+      var address = Math.ceil( Math.random() * 999)
+      
+   var   newnode = '<div id="'+address+'list"  class="dragg" > <div class="node" id="'+ address+"listleft" +'" style="position:absolute; height:7px; width:7px; border-radius:5px; background-color:white;  margin-top:40px;"></div>  <div class="node" id="'+ address+"listright" +'" style="position:absolute; height:7px; width:7px; border-radius:7px; background-color:white; margin-left:72px; margin-top:40px;"></div> <p  style="position:absolute; color:coral; font-size:60%; left:20px;" id="'+ address+"listbottom" +'">'+address +'</p>    <p  id="'+ address+"listid" +'" class="t">'+item+'</p>   </div>';
+      
+      
+      $("body").prepend(newnode);
+      
+      $("#"+address+"list").draggable()
+      
+        $("#"+address+"list").animate({ "top" : (newnodetop)+"px" , "left" : (newnodeleft)+"px" , "transition-duration":"1500ms" }, 1500 , async function() {
+      
+      
+      
+      
+          await display("Detaching the node")
+          del("#"+prev[headd]+"right" , "#"+(headd)+"left")
+          mySVG.redrawLines();
+          await display("Attaching previous node to the newnode")
+          nodify((prev[headd]) , (address)+"list")
+          await display("Attaching new node to the next node")
+          nodify( (address)+"list" , headd)
+        
+      
+          
+          
+      
+        })
+      
+       }     
+      
+         
+      
+      
+      
+async   function deletenode(rot , val) {
+      
+            rot = (rot)+"list";
+      
+            await display("searching for target node")
+      
+      for (;;) {
+      
+      if ($("#"+rot+"id").text() == val) {
+       
+        await hilight(rot , "green")
+        await  display("Target node found")
+        break;
+      
+      }
+      
+      await hilight(rot, "red" , "1200ms" , 1300 )
+                
+        hilight(rot , defaultcolor  , "1000ms" , 1100);
+      
+      rot = next[rot];
+      
+      
+      
+      }
+      
+      await display("Setting  next[prev-node] = next[target-node]")
+      
+      nodify(prev[rot] , next[rot])
+      
+      
+      await display("Deleting target node")
+      
+      $("#"+ rot).css({"border-style":"dashed"})
+      await hilight(rot , "white")
+      
+      await $("#"+ rot).css({"opacity":"50%" , "transition-duration" : "2s"} )
+      
+      setTimeout(function()  {
+        
+        $("#"+ rot).remove()
+      
+        mySVG.redrawLines();
+      
+      } , 1500)
+      
+      
+          }
+
+          
+          
+        function addnode(typed) {
+
+
+              newnode = '<div id="'+count+'list"  class="dragg" > <div class="nodeleft" id="'+ count+"listleft" +'" style="position:absolute; height:7px; width:7px; border-radius:5px; background-color:white;  margin-top:40px;"></div>  <div class="node" id="'+ count+"listright" +'" style="position:absolute; height:7px; width:7px; border-radius:7px; background-color:white; margin-left:72px; margin-top:40px;"></div> <p  style="position:absolute; color:coral; font-size:60%; left:20px;" id="'+ count+"listbottom" +'">'+count +'</p>    <p  id="'+ count+"listid" +'" class="t">'+typed+'</p>   </div>';
+           
+         
+        
+             $("body").prepend(newnode);
+       
+            
+             
+             $("#"+count+"list").draggable();
+       
+             next[(count)+"list"] = "null"
+             prev[(count)+"list"] = "null"
+             
+       
+             divbyelement[typed] = (count)+"list";
+       
+             count = count +1;
+       
+           }
+       
+      
+
+           $(document).on("click","div.node,div.nodeleft" , function (e)  {
+
+  
+    
+              if (clicktimes === 0) {
+        
+              first=  $('#'+e.target.id).parent().attr("id");
+        
+              clicktimes = 1;
+        
+              }
+        
+              else if (clicktimes === 1) {
+        
+        second = $('#'+e.target.id).parent().attr("id");
+        
+        nodify(first,second)
+        
+        clicktimes = 0;
+        
+              }
+        
+            })
+
+            
+            
+              
+
+//TREE
+
+
+
+
+
+
+function treefy(first,second ,color_ = "coral") {
+
+
+  mySVG.drawLine({
+    left_node:'#'+first,
+    right_node:'#'+second+'treetop',
+    error:true,
+    col : color_,
+    width:2,
+      
+  });
+
+  var par = $("#"+first).parent().attr("id");
+
+  tree[first] = second ;
+
+
+      $( '#'+par ).draggable({
+          drag: function(event, ui){mySVG.redrawLines();}
+        });
+        $( '#'+second ).draggable({
+          drag: function(event, ui){mySVG.redrawLines();}
+        });
+
+      }
+
+
+
+
+async function  preorder(CurrentNode) {
+
+
+if (CurrentNode == "null") {
+
+  return ;
+
+}
+
+
+  await hilight(CurrentNode , "red", "500ms"  ,700)
+  Output($("#"+CurrentNode+"treeval").text())
+  await display("Going left of " + CurrentNode )
+  await preorder(tree[CurrentNode+"treeleft"])
+  await display("Going right of " + CurrentNode )
+  await preorder(tree[CurrentNode+"treeright"])
+  await display("returning from " + CurrentNode )
+  await hilight(CurrentNode , "rgba(75,0,130, 0.842)", "500ms"  ,700)
+  
+
+}
+
+
+async function  inorder(CurrentNode ) {
+
+  if (CurrentNode == "null") {
+
+    return;
+
+  }
+
+  
+  await display("Going left of " + CurrentNode )
+  await inorder(tree[CurrentNode+"treeleft"])
+  await hilight(CurrentNode , "red" , "500ms"  ,700)
+  Output($("#"+CurrentNode+"treeval").text())
+  await display("Going right of " + CurrentNode )
+  await inorder(tree[CurrentNode+"treeright"])
+  await display("returning from " + CurrentNode )
+  await hilight(CurrentNode , "rgba(75,0,130, 0.842)" , "500ms"  ,700)
+  
+
+
+}
+
+
+
+async function  postorder(CurrentNode ) {
+
+  if (CurrentNode == "null") {
+
+    return;
+
+  }
+
+  await display("Going left of " + CurrentNode )
+  await postorder(tree[CurrentNode+"treeleft"])
+  await display("Going right of " + CurrentNode )
+  await postorder(tree[CurrentNode+"treeright"])
+  await hilight(CurrentNode , "red", "500ms"  ,700)
+  Output($("#"+CurrentNode+"treeval").text())
+  await display("returning from " + CurrentNode )
+  await hilight(CurrentNode , "rgba(75,0,130, 0.842)", "500ms"  ,700)
+
+
+}
+
+
+
+
+async function preorderstack(root_) 
+{ 
+    // Base Case 
+    if (root_ == "null") 
+       return; 
+  
+    stack(10)
+    pointerarrow.show();
+   await push(root_); 
+  
+  
+    while (isEmpty() == false) 
+    { 
+        
+        await display(`Pop element from stack and print`);
+        await pop();
+        let curr = popped; 
+        pointerarrow.css({ "top" : `${($("#"+curr).offset().top+50)}px` , "left" : `${($("#"+curr).offset().left-50)}px` , "transition-duration" : "300ms"})
+        
+        await hilight(curr, "rgb(109,209,0,1)" , "1200ms" , 1300 )
+                hilight(curr, defaultcolor , "1200ms" , 1300 )
+
+        Output($("#"+curr+"treeval").text())
+  
+
+
+        await display(` Push right and left children of the popped node to stack`);
+
+        if (tree[curr+"treeright"] != "null")  {
+
+          await hilight(tree[curr+"treeright"], "blueviolet" , "1200ms" , 1300 )
+                hilight(tree[curr+"treeright"], defaultcolor , "1200ms" , 1300 )
+
+          await  push(tree[curr+"treeright"]);
+        } 
+        if (tree[curr+"treeleft"] != "null")  {
+
+          await hilight(tree[curr+"treeleft"], "blueviolet" , "1200ms" , 1300 )
+                hilight(tree[curr+"treeleft"], defaultcolor , "1200ms" , 1300 )
+          await  push(tree[curr+"treeleft"]); 
+
+        }
+    } 
+
+    pointerarrow.hide();
+}
+
+
+
+
+async function inorderstack(root_) 
+{ 
+    stack(10);
+    let curr = root_; 
+
+    pointerarrow.show();
+  
+    while (curr != "null" || isEmpty() == false) 
+    { 
+        
+           await display("Reach the left most Node of the current Node");
+        while (curr !=  "null") 
+        { 
+      
+          if (curr != "null") pointerarrow.css({ "top" : `${($("#"+curr).offset().top+25)}px` , "left" : `${($("#"+curr).offset().left-60)}px` , "transition-duration" : "300ms"})
+
+          
+
+          await hilight(curr, "blueviolet" , "1200ms" , 1300 )
+                hilight(curr, defaultcolor , "1200ms" , 1300 )
+
+
+                await display("Push current node into stack.");
+          
+          
+          await  push(curr); 
+          curr = tree[`${curr}treeleft`]; 
+
+   
+
+        } 
+  
+        await display("end of left subtree");
+        await display("pop element from stack and print");
+        
+       await pop(); 
+        curr = popped;
+
+        pointerarrow.css({ "top" : `${($("#"+curr).offset().top+25)}px` , "left" : `${($("#"+curr).offset().left-60)}px` , "transition-duration" : "300ms"})
+
+        await display(`Current node = ${popped} (popped element)`);
+        await hilight(curr, "rgb(109,209,0,1)" , "1200ms" , 1300 )
+        hilight(curr, defaultcolor , "1200ms" , 1300 )
+    
+       Output( $("#"+curr+"treeval").text())
+  
+       await display("Left sub tree completed. Now, going right subtree");
+     
+       
+           curr = tree[`${curr}treeright`]; 
+  
+    } /* end of while */
+
+    pointerarrow.hide();
+
+} 
+
+
+
+async function postorderstack(root_) 
+{ 
+    // Check for empty tree 
+      pointerarrow.show();
+     stack(10); 
+     do { 
+        // Move to leftmost node 
+        while (root_ != "null") 
+        { 
+            await display(`Push root's right child and then root to stack.`)
+            if (tree[root_+"treeright"] != "null") {
+              pointerarrow.css({ "top" : `${($("#"+tree[root_+"treeright"]).offset().top+50)}px` , "left" : `${($("#"+tree[root_+"treeright"]).offset().left-50)}px` , "transition-duration" : "300ms"})
+
+              await hilight(tree[root_+"treeright"], "blueviolet" , "1200ms" , 1300 )
+                    hilight(tree[root_+"treeright"], defaultcolor , "1200ms" , 1300 )
+            await push(tree[root_+"treeright"]); 
+
+            }
+            pointerarrow.css({ "top" : `${($("#"+root_).offset().top+50)}px` , "left" : `${($("#"+root_).offset().left-50)}px` , "transition-duration" : "300ms"})
+
+            await hilight(root_, "blueviolet" , "1200ms" , 1300 )
+                    hilight(root_, defaultcolor , "1200ms" , 1300 )
+            await  push(root_); 
+  
+         
+            await display(`Set root as root's left child`)  
+            root_ = tree[root_+"treeleft"] 
+        } 
+  
+        await display(`Pop an item from stack and set it as root`)      
+        await pop(); 
+        root_ = popped;
+
+  
+        await display("If the popped item has a right child and itsnotprocessed, then it processed before root")
+        
+        if (tree[root_+"treeright"] != "null" && peekstack() == tree[root_+"treeright"]) 
+        { 
+
+         await display("remove right child from stack")
+          await  pop();  // remove right child from stack 
+
+          await display("push root back to stack")
+          await  push(root_);  // push root back to stack 
+
+          await display("change root so that the right child is processed next")
+            root_ = tree[root_+"treeright"]; // change root so that the right  
+                                // child is processed next 
+        } 
+        else  // Else print root's data and set root as NULL 
+        { 
+
+          pointerarrow.css({ "top" : `${($("#"+root_).offset().top+50)}px` , "left" : `${($("#"+root_).offset().left-50)}px` , "transition-duration" : "300ms"})
+
+          await hilight(root_, "rgb(109,209,0,1)" , "1200ms" , 1300 )
+                hilight(root_, defaultcolor , "1200ms" , 1300 )
+            Output( $(`#${root_}treeval`).text()); 
+            root_ = "null"; 
+        } 
+    } while ( isEmpty() == false);
+
+    pointerarrow.hide();
+} 
+
+
+
+
+
+async function insertbst(node_, key_) { 
+
+
+  if ($(`#${node_}`).length == 0)  {
+
+    await display("Tree Empty. Adding root node.");
+    let vid =count;
+     leaf(key_); 
+     $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : "2000ms linear"})
+     $(`#${vid}`).animate({ "top" : "0px", "left" : "43%"})
+     
+     return;
+  }
+
+
+  await hilight(node_, "rgb(109,209,0,1)" , "1200ms" , 1300 )
+  hilight(node_, defaultcolor , "1200ms" , 1300 )
+
+
+
+  /* Otherwise, recur down the tree */
+  if (key_ <  parseInt( $(`#${node_}treeval`).text() , 10) ) {
+
+          if (tree[`${node_}treeleft`] == "null") {
+
+            await display("Correct place to insert the element = CurrentNode->left")
+      let vid = count;
+      leaf(key_);
+   $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : "2000ms"})
+   $(`#${vid}`).offset({top: ($("#"+node_).offset().top+130 ) , left :($("#"+node_).offset().left-150) })
+
+
+      return new Promise(resolve => {
+
+
+        setTimeout(()=> {
+          treefy(`${node_}treeleft` ,vid)
+          resolve('')
+          return;
+         },2100)
+          
+
+
+      })
+   
+      
+    
+           }
+
+           Log("Item smaller then current node, going left")
+
+  await insertbst(tree[`${node_}treeleft`], key_);
+
+    
+  }
+ 
+ 
+  else if (key_ >  parseInt( $(`#${node_}treeval`).text() , 10) )  {
+
+
+             if (tree[`${node_}treeright`] == "null") {
+
+              await display("Correct place to insert the element = CurrentNode->right")
+      let vid = count;
+      leaf(key_);
+
+
+      $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : "2000ms"})
+      $(`#${vid}`).offset({top: ($("#"+node_).offset().top+130 ) , left :($("#"+node_).offset().left+150) })
+
+
+      return new Promise(resolve => {
+
+
+        setTimeout(()=> {
+          treefy(`${node_}treeright` ,vid)
+          resolve('')
+          return;
+         },2100)
+          
+
+
+      })
+    
+               }
+
+
+               Log("Item larger then current node, going right")
+               await   insertbst(tree[`${node_}treeright`], key_); 
+
+    
+  }
+  
+} 
+
+
+
+async function searchbst(ro , item) {
+
+
+await hilight(ro, "rgb(109,209,0,1)" , "1200ms" , 1300 )
+
+
+  if ( $('#'+ro+'treeval').text() == item) {
+
+   await  hilight(ro,"red")
+    await display("Item found.")
+
+    return;
+
+  }
+
+  if (    ro  == "null"   ) {
+
+    return;
+
+  }
+
+   if (     parseInt(   $('#'+ro+'treeval').text() ,  10  )   > item     ) {
+
+    
+    await display("Item is smaller than "+ $('#'+ro+'treeval').text() + " Going Left") 
+   await searchbst(tree[ro+"treeleft"], item)
+
+  }
+
+
+  if (     parseInt(   $('#'+ro+'treeval').text() ,  10  )   < item     ) {
+
+    await display("Item is larger than "+ $('#'+ro+'treeval').text() + " Going Right") 
+  await  searchbst(tree[ro+"treeright"], item)
+
+  }
+
+
+
+}
+
+
+
+async function  minValueNode( node) 
+{ 
+    let current = node; 
+  
+    /* loop down to find the leftmost leaf */
+    while ( tree[`${current}treeleft`] != "null")  {
+
+      await hilight(current, "red" , "1200ms" , 1300 )
+      hilight(current, defaultcolor , "1200ms" , 1300 )
+
+        current = tree[`${current}treeleft`]; 
+
+    }
+
+    await hilight(current, "red" , "1200ms" , 1300 )
+    hilight(current, defaultcolor , "1200ms" , 1300 )
+  
+    return current; 
+} 
+
+
+
+
+async function deletebst( _root , _key) 
+{ 
+
+  await hilight(_root, "rgb(109,209,0,1)" , "1200ms" , 1300 )
+    hilight(_root, defaultcolor , "1200ms" , 1300 )
+  
+  
+    // base case f
+    if (_root == "null") return _root; 
+
+ 
+    // If the _key to be deleted is smaller than the _root's _key, 
+    // then it lies in left subtree 
+    if (_key < parseInt(  $('#'+_root+"treeval").text() , 10) )  {
+      
+       tree[_root+`treeleft`] = await deletebst(tree[_root+`treeleft`], _key); 
+
+       treefy(_root+`treeleft`, tree[_root+`treeleft`])
+    }
+    // If the _key to be deleted is greater than the _root's _key, 
+    // then it lies in right subtree 
+    else if (_key > parseInt( $('#'+_root+"treeval").text() , 10))  {
+
+    tree[_root+`treeright`] = await deletebst(tree[_root+`treeright`], _key); 
+
+    treefy(_root+`treeright`, tree[_root+`treeright`])
+    }
+
+
+    
+    else
+    { 
+        // node with only one child or no child 
+        if (tree[`${_root}treeleft`] == "null") 
+        { 
+            let temp = tree[`${_root}treeright`]; 
+           $("#"+_root).remove();
+           mySVG.redrawLines();
+            return temp; 
+        } 
+        else if (tree[`${_root}treeright`] == "null") 
+        { 
+            let temp = tree[`${_root}treeleft`]; 
+         
+            $("#"+_root).remove();
+           mySVG.redrawLines();
+            return temp; 
+        } 
+  
+        // node with two children: Get the inorder successor (smallest 
+        // in the right subtree) 
+  
+        await display("getting Inorder Successor to replace");
+
+        let temp = await minValueNode(tree[`${_root}treeright`]); 
+
+        
+        // Copy the inorder successor's content to this node 
+        await display("Copy the inorder successor's content to this node");
+        $('#'+_root+"treeval").text(  $('#'+temp+"treeval").text() );
+  
+        // Delete the inorder successor 
+        await display("Delete the inorder successor");
+        tree[`${_root}treeright`] = await deletebst(tree[`${_root}treeright`], $('#'+temp+"treeval").text()); 
+    } 
+    return _root; 
+
+    
+} 
+
+
+
+
+
+function leaf(element) {
+
+   newnode = '<div id="'+count+'" style="transition:500ms ;"  class="dragg" > <div class="treenode" id="'+ count+"treetop" +'" style="margin-left:35px;"></div>  <div class="treenode" id="'+ count+"treeleft" +'" style="margin-left:18px; margin-top:70px;"></div>   <div class="treenode" id="'+ count+"treeright" +'" style="margin-left:54px; margin-top:70px;"></div> <p  style="position:absolute;color:coral; font-size:70%; left:20px;" id="'+ count+"bottom" +'">'+count +'</p>    <p  id="'+ count+"treeval" +'" class="t">'+element+'</p>   </div>';
+
+
+  $("body").prepend(newnode)
+  $("#"+count).draggable();
+
+  tree[count+"treeleft"] = "null"
+  tree[count+"treeright"] = "null"
+
+  divbyelement[element] = count
+
+  count = count +1;
+  counttreenodes = counttreenodes + 1;
+
+
+}
+
+
+
+$(document).on("click","div.treenode" , function (e)  {
+
+
+    
+  if (clicktimes === 0) {
+
+  first=  e.target.id;
+
+  clicktimes = 1;
+
+  }
+
+  else if (clicktimes === 1) {
+
+second = $('#'+e.target.id).parent().attr("id");
+
+
+treefy(first,second)
+
+
+
+clicktimes = 0;
+
+  }
+
+})
+
+
+
+  //array
+
+  var length =0
+
+  var storedarray = []
+  
+  var arr = ''
+  
+  var tableobj
+  
+  function array (typed)  {
+  
+  
+  
+  
+    length = typed.length 
+  
+       arr = '<table id="t1" style="position:absolute;border-collapse: collapse; margin-top:235px; margin-left:100px; text-align:center; transition-duration : 100ms;table-layout: fixed;" >'
+    
+      $("body").prepend(arr);
+    
+      $("#t1").draggable();
+    
+  
+      $("#t1").append("<tr>");
+    
+    
+      for (var i = 0 ; i < typed.length ; ++i)  {
+  
+        var r =typed[i]
+    
+    $("#t1").append(' <td id="aitem'+ i+'" class="arrayd" style="text-align:center; min-width:70px;">     <div id="aitemdiv'+ i+'"  style="text-align:center; position:absolute; z-index:1">         <p id="aitemindex'+i +'" style="position:absolute; color:coral; margin-top:67px; margin-left:35px; font-size:37%";>'+i+'</p>             <p id= "aitemval'+i +'" class="arrayitem">'+ r +'</p>                        </div>  </td>')
+    storedarray.push(r)
+  
+  
+      }
+      $("#t1").append("<tr>");
+      $("#t1").append("</table>");
+  
+      tableobj = $("#t1")
+    
+      $("#iindex").show()
+      $("#jindex").show()
+      $("#kindex").show()
+    
+    }
+  
+  
+   function temparray (sn ,cellid)  {
+  
+  let tableid= `t${Math.ceil (Math.random()*10)}${ Math.ceil( Math.random()*10)}`
+  
+  
+    let ar = `<table id="${tableid}" style="position:absolute;border-collapse: collapse; margin-top:535px; margin-left:100px; text-align:center; transition-duration : 100ms;table-layout: fixed;" ><tr>   </tr></table>`
+    
+    $("body").prepend(ar);
+  
+    $("#"+tableid).draggable( {
+    });
+  
+  
+  
+    for (let i = 0 ; i < sn ; ++i)  {
+  
+  
+  
+  $("#"+tableid).append(`<td id="${cellid}item${i}" class="arrayd" style="text-align:center; min-width:70px;">     <div id="${cellid}itemdiv${i}"  style="text-align:center; position:absolute; z-index:1">         <p id="${cellid}itemindex${i}" style="position:absolute; color:coral; margin-top:67px; margin-left:35px; font-size:37%";>${i}</p>             <p id= "${cellid}itemval${i}" class="arrayitem">0</p>                        </div>  </td>`)
+  
+  
+    }
+  
+    tableobj = $("#"+tableid)
+  
+    return tableobj;
+  
+  }
+  
+  
+  
+  
+    function swapp( vala,valb) {
+  
+      return new Promise(resolve => {
+  var x =   $("#aitem"+vala).position()
+  
+  var y =   $("#aitem" + valb).position()
+  
+  var s = Math.abs(x.left  - y.left)
+  
+  var a = $("#aitemval" +vala).text() 
+  var b = $("#aitemval" +valb).text()
+  
+  
+  
+  
+  
+  $("#aitemval"+vala).animate({
+  
+    "color" : "black",
+    "margin-top" : "170px"
+    
+    
+    } ,1000, function()  {
+  
+  
+      $("#aitemval"+vala).animate({
+  
+        "margin-left" : s+"px"
+        
+        
+        } ,2000, function()  {
+        
+        
+          $("#aitemval"+vala).animate({
+        
+            "color" : "white",
+            "margin-top" : "20px"
+            
+            
+            },1000 , function ()  {
+  
+              $("#aitemval"+vala).css({"margin-left" :"0px" ,"margin-top" :"20px" })
+  
+  
+            })
+            
+        
+        
+        })
+  
+  
+  
+  
+    })
+  
+  
+  
+  
+  
+  
+  
+    $("#aitemval"+valb).animate({
+  
+      "color" : "black",
+      "margin-top" : "-105px"
+      
+      
+      }, 1000 , function()  {
+    
+    
+        $("#aitemval"+valb).animate({
+    
+          "margin-left" : "-"+(s*2 - 10)+"px"
+          
+          
+          
+          },2000 , function()  {
+          
+          
+            $("#aitemval"+valb).animate({
+          
+              "color" : "white",
+              "margin-top" : "20px"
+              
+              
+              } ,1000 , function ()  {
+  
+                $("#aitemval"+valb).css({"margin-left" :"0px" , "margin-top" :"20px"  })
+  
+                $("#aitemval"+vala).text(b) 
+                $("#aitemval"+valb).text(a) 
+  
+                
+  
+                resolve('resolved');
+  
+              })
+              
+          
+          
+          })
+    
+    
+    
+    
+      })
+  
+  
+  
+  
+    });
+  
+  
+  
+    }
+  
+  
+  
+  
+  async  function SelectionSort() {
+      let len = storedarray.length;
+      for (let isel = 0; isel < len; isel++) {
+          let min = isel;
+          
+        
+          for (let jsel = isel + 1; jsel < len; jsel++) {
+           
+            await ij(isel , jsel);
+  
+            await hilight("aitem"+(jsel) , "red",  "1s" , 1100)
+            hilight("aitem"+(jsel),  defaultcolor ,  "1s" , 1100 )
+              if (storedarray[min] > storedarray[jsel]) {
+                 hilight("aitem"+(min) ,  defaultcolor ,  "1s" , 1100)
+                  min = jsel;
+              await   hilight("aitem"+(min) , "blueviolet", "1s" , 1100)
+              }
+          }
+          if (min != isel) {
+            await  display("Swapping index " + isel + " with index" + min)
+              let tmp = storedarray[isel];
+              storedarray[isel] = storedarray[min];
+              storedarray[min] = tmp;
+              await swapp(isel ,min )
+              hilight("aitem"+(min) , defaultcolor ,  "1s" , 1100)
+              
+          }
+          await hilight("aitem"+(isel) , "coral"  ,  "1s" , 1100)
+      }
+   
+  }
+  
+  
+  
+  
+  
+   
+    async  function BubbleSort(){
+  
+      var lene = storedarray.length;
+      
+      $("#iindex").text("j")
+      $("#jindex").text("j+1")
+  
+      for (let i=0; i < lene-1; i++){
+          for (let j=0; j < lene-i-1; j++){
+            await ij(j , j+1);
+            await display('Comparing index j=' + (j) + ' and j+1=' + (j+1) ) 
+            hilight("aitem"+(j) , "red" , "1000ms" , 1100)  
+                await hilight("aitem"+(j+1), "red" , "1000ms" , 1100) 
+              if (storedarray[j] > storedarray[j+1]){
+                var temp = storedarray[j];
+                storedarray[j] = storedarray[j+1];
+                storedarray[j+1] = temp;
+                await display('Element array['+ (j) +'] > array[' + (j+1)+ '] , Swapping')
+                
+               await swapp(j,j+1)
+               
+              }
+              
+              else {
+                await display('Element array['+ (j) +'] < array[' + (j+1)+ '] , Skip')  
+              }
+              hilight("aitem"+(j) , defaultcolor, '1s' , 900)  
+               hilight("aitem"+(j+1) ,defaultcolor,'1s' , 900)
+          }
+      }
+  
+      $("#iindex").text("i").hide()
+      $("#jindex").text("j").hide()
+  }
+  
+  
+  
+  async function InsertionSort() {
+    for (var i1 = 1; i1 < storedarray.length; i1++) {
+      var j1 = i1 - 1
+      var temp = storedarray[i1]
+     await hilight(`aitem${i1}` , "red" ,"1100ms",1100)
+      
+      await display('Inserting '+ (temp)  +' to correct index')
+      await hilight(`aitem${i1}` , defaultcolor ,"1100ms",1100)
+        
+      while (j1 >= 0 && storedarray[j1] > temp) {
+  
+        await display('Comparing  array[' + (j1) + '] => '+ (storedarray[j1])  + ' > ' + (temp) + '.Move element to right.');
+        await moveright(j1);
+        storedarray[j1 + 1] = storedarray[j1];
+        j1--;
+        
+      }
+      await display('Correct place at index = ' + (j1+1) )
+      storedarray[j1+1] = temp
+  
+      await insert(temp ,j1+1 );
+    
+    }
+   
+  }
+  
+  
+  async function merge( l,  m,  r) 
+  { 
+      let i, j, k; 
+      let n1 = Math.floor( m - l + 1); 
+      let n2 = Math.floor( r - m); 
+    
+      /* create temp arrays */
+      let L = [], R = [];
+    
+      let Larrgraphics = await temparray(n1, "l");
+      let Rarrgraphics = await temparray(n2, "r");
+      
+      let parentarrayoffset = ($("#t1").offset());
+      $(Larrgraphics).offset({top: parentarrayoffset.top+200})
+      $(Rarrgraphics).offset({top:parentarrayoffset.top+340})
+  
+      $("#iindex").show();
+    $("#jindex").hide();
+      /* Copy data to temp arrays L[] and R[] */
+      for (i = 0; i < n1; i++) {
+  
+  
+          L[i] = storedarray[l + i];
+          await I(i,"l")
+       await   insert(storedarray[l + i] , i , "l")
+          
+          
+      }
+  
+  
+      $("#jindex").show();
+      $("#iindex").hide();
+      for (j = 0; j < n2; j++)  {
+  
+          R[j] = storedarray[m + 1 + j];
+          await J(j,"r")
+       await   insert(storedarray[m + 1 + j] , j , "r")
+  
+          
+      }
+  
+      $("#jindex").show();
+      $("#iindex").show();
+    
+      /* Merge the temp arrays back into arr[l..r]*/
+      i = 0; // Initial index of first subarray 
+      j = 0; // Initial index of second subarray 
+      k = l; // Initial index of merged subarray 
+      I(0,"l")
+      J(0,"r")
+      while (i < n1 && j < n2) { 
+          if (L[i] <= R[j]) { 
+            await I(i , "l")
+            storedarray[k] = L[i]; 
+        await hilight(`litem${i}` , "red" , "800ms",800)
+        await hilight(`litem${i}` , defaultcolor , "800ms",800)
+        await K(k, "a")
+            await   insert(L[i] , k , "a")
+              i++; 
+          } 
+          else { 
+            storedarray[k] = R[j]; 
+            await J(j, "r")
+            await hilight(`ritem${j}` , "red" , "800ms",800)
+        await hilight(`ritem${j}` , defaultcolor , "800ms",800)
+       
+        await K(k, "a")
+             await   insert(R[j] , k , "a")
+              j++; 
+          } 
+          k++; 
+      } 
+    
+      /* Copy the remaining elements of L[], if there 
+         are any */
+      while (i < n1) { 
+       
+        storedarray[k] = L[i]; 
+        await I(i , "l")
+        await hilight(`litem${i}` , "red" , "800ms",800)
+        await hilight(`litem${i}` , defaultcolor , "800ms",800)
+        await K(k, "a")
+      await  insert(L[i] , k , "a")
+          i++; 
+          k++; 
+      } 
+    
+      /* Copy the remaining elements of R[], if there 
+         are any */
+      while (j < n2) { 
+        
+        storedarray[k] = R[j];
+        await J(j, "r")
+        await hilight(`ritem${j}` , "red" , "800ms",800)
+        await hilight(`ritem${j}` , defaultcolor , "800ms",800)
+        await K(k, "a")
+        await   insert(R[j] , k , "a")
+          j++; 
+          k++; 
+      } 
+  
+  
+      Larrgraphics.remove()
+      Rarrgraphics.remove()
+  
+  
+  } 
+    
+  /* l is for left index and r is right index of the 
+     sub-array of arr to be sorted */
+  async function ms(  l,  r) 
+  { 
+      if (l < r) { 
+          // Same as (l+sr)/2, but avoids overflow for 
+          // large l and h 
+          let m = Math.floor (l + (r - l) / 2); 
+    
+       
+         await ms( l, m); 
+         
+         await ms( m + 1, r); 
+         await cutoutarray(l,r)
+         await merge( l, m, r); 
+  
+      } 
+  } 
+  
+  
+   async function MergeSort()  {
+  
+  
+   await  ms (0 , storedarray.length-1)
+  
+     $("#iindex").hide()
+     $("#jindex").hide()
+     $("#kindex").hide()
+  
+  
+  }
+  
+  
+  
+  
+  
+  
+  
+  async function BinarySearch(value){
+  
+    $("#kindex").text("mid").show();
+  
+    await display( 'set first = 0')
+    await hilight("aitem0", "blueviolet" , "1000ms" , 1100)
+    var firstIndex  = 0
+  
+    I(firstIndex ,  "a" )
+  
+    var    lastIndex   = storedarray.length - 1
+  
+    J(lastIndex ,  "a" )
+  
+        await display( 'set last = '+lastIndex)
+        await hilight("aitem"+(lastIndex), "blueviolet" , "1000ms" , 1100)
+  
+     var   middleIndex = Math.floor((lastIndex + firstIndex)/2);
+     K(middleIndex ,  "a" )
+        await display( 'set mid = (first+last)/2')
+        await hilight("aitem"+(middleIndex), "rgb(109,209,0,1)", "1000ms" , 2100)
+  
+  
+  
+  
+    while(storedarray[middleIndex] != value && firstIndex < lastIndex)
+    {
+       
+       if (value < storedarray[middleIndex])
+        {
+          
+          await hilight("aitem"+(middleIndex) , defaultcolor , "1000ms" , 1100)
+           await display( 'search item '+ value +' is smaller array[' + middleIndex + ']')
+           await display( 'set last = mid-1')
+            hilight("aitem"+lastIndex ,  defaultcolor , "1000ms" , 1100)
+            lastIndex = middleIndex - 1;
+            J(lastIndex ,  "a" )
+            await hilight("aitem"+lastIndex , "blueviolet" ,  "1000ms" , 1100)
+        } 
+      else if (value > storedarray[middleIndex])
+        {
+          await hilight("aitem"+(middleIndex) ,defaultcolor ,  "1000ms" , 1100)
+          await display( 'search item '+ value +' is larger array[' + middleIndex + ']')
+           await display( 'set first = mid+1')
+            hilight("aitem"+firstIndex ,defaultcolor ,  "1000ms" , 1100)
+            firstIndex = middleIndex + 1;
+            I(firstIndex ,  "a" )
+            await hilight("aitem"+firstIndex , "blueviolet" ,  "1000ms" , 1100)
+        }
+      
+        await hilight("aitem"+(middleIndex),defaultcolor ,  "1000ms" , 1100)
+        middleIndex = Math.floor((lastIndex + firstIndex)/2);
+        await display( 'set mid = (first+last)/2')
+        K(middleIndex ,  "a" )
+        await hilight("aitem"+(middleIndex), "rgb(109,209,0,1)" ,  "2000ms" , 2100)
+    
+    }
+  
+  if (storedarray[middleIndex] == value){
+  
+    await display( 'Item Found' )
+    Output('Item Found at index = ' + middleIndex)
+  }
+  
+  else{
+  
+    await display( 'Item Doesnt exist' )
+    Output('Item Doesnt exist return -1')
+  }
+  
+  
+  }
+  
+  
+     function insert(value ,index , cellid="a") {
+  
+      return new Promise ( resolve => {
+      $(`#${cellid}itemval${index}`).css({opacity:"0%"})
+  
+      $(`#${cellid}itemval${index}`).text(value)
+  
+      $(`#${cellid}itemval${index}`).animate({opacity:"100%"} , 1000)
+  
+  
+      setTimeout (function()  {
+  
+        resolve('resolved')
+            },1000)
+            
+  
+      })
+  
+    }
+  
+  
+  
+    function moveleft(index)  {
+  
+      $("#aitemval"+(index-1)).animate({opacity:"0%"} , 500)
+  
+      $("#aitemval"+(index)).animate({"margin-left":"-160px" , "opacity":"0%" },1000 ,function()  {
+  
+          $("#aitemval"+(index-1)).text($("#aitemval"+(index)).text())
+  
+          $("#aitemval"+(index-1)).animate({"opacity":"100%"} , 500 , function()  {
+  
+            $("#aitemval"+(index)).animate({"margin-left":"0px" , "opacity":"0%" })
+    
+          })
+      })
+  
+  
+  }
+  
+  function moveright(index)  {
+  
+    return new Promise ( resolve => {
+  
+    $("#aitemval"+(index+1)).animate({opacity:"0%"} , 500)
+  
+    $("#aitemval"+(index)).animate({"margin-left":"90px" , "opacity":"0%" },1000 ,function()  {
+  
+        $("#aitemval"+(index+1)).text($("#aitemval"+(index)).text())
+  
+        $("#aitemval"+(index+1)).animate({"opacity":"100%"} , 500 , function()  {
+  
+          $("#aitemval"+(index)).animate({"margin-left":"0px" , "opacity":"0%" })
+  
+        })
+  
+       
+    })
+  
+  
+    setTimeout (function()  {
+  
+      resolve('resolved')
+          },2000)
+          
+  
+    })
+  
+  }
+  
+  
+  var index = length-2
+  
+  
+  function insertAt(value ,index , i =length-2) {
+  
+  if (index == i+1 ) {
+    insert(value ,index)
+    return;
+  }
+  
+  moveright(i);
+    
+  setTimeout( function()  {
+  
+  
+    insertAt(value , index , i-1)
+  
+  }, 2000);
+  
+  
+    
+    }
+    
+  
+  
+  //Heap
+
+
+
+
+
+  function arraynodes() 
+  { 
+  
+      if ( ii == length ) {
+          counttreenodes = length;
+          count =length;
+          return;
+      
+    
+       }
+  
+      var newnode = '<div id="'+ii+'"  class="dragg" > <div class="treenode" id="'+ ii+"treetop" +'" style="margin-left:35px;"></div>  <div class="treenode" id="'+ ii+"treeleft" +'" style="margin-left:18px; margin-top:70px;"></div>   <div class="treenode" id="'+ ii+"treeright" +'" style="margin-left:54px; margin-top:70px;"></div> <p  style="position:absolute;color:coral; font-size:70%; left:20px;" id="'+ ii+"bottom" +'">'+ii +'</p>    <p  id="'+ ii+"treeval" +'" class="t">'+storedarray[ii]+'</p>   </div>';
+  
+      $("body").prepend(newnode)
+        $("#"+ii).draggable();
+      
+  
+        tree[ii+"treeleft"] = "null"
+        tree[ii+"treeright"] = "null"
+    ii = ii + 1
+        rootoftree = newnode
+        arraynodes()
+  
+  } 
+  
+  
+  
+  function build() 
+  { 
+  
+     
+  
+      for (var  i =0 ;  i < counttreenodes ; i++)  {
+  
+  
+  if ( (2*(i))+1 >= counttreenodes ) {
+      break;
+  }
+  
+  else {
+  
+      var leftc = (2*(i))+1;
+  
+      treefy(i+"treeleft" , leftc)
+  
+  }
+  
+  if ( (2*(i))+2 >= counttreenodes ) {
+      break;
+  }
+  
+  else {
+  
+      var rightc = (2*(i))+2;
+  
+      treefy(i+"treeright" , rightc)
+  
+  }
+  
+  
+  
+      }
+  
+  
+  
+  
+  }  
+  
+  function buildheap()  {
+  
+      arraynodes();
+  
+      build();
+  
+  }
+  
+  
+  function gottopoint (i,j)   {
+  
+  
+      return new Promise(resolve => {
+  
+  
+      var element1 = $("#"+i);
+      var top1 = element1.position().top;
+      var left1 = element1.position().left;
+  
+  
+      var  element2 = $("#"+j);
+      var top2 = element2.position().top;
+      var left2 = element2.position().left;
+  
+      var  element1text = $("#"+i+"treeval").text();
+      var  element2text = $("#"+j+"treeval").text();
+  
+      element1.css({ "top": (top2)+"px", "left": (left2)+"px" ,"transition-duration" :"1500ms" },3500, function() {
+  
+  
+      })
+  
+      element2.css({ "top": (top1)+"px", "left": (left1)+"px","transition-duration" :"1500ms" } , 3500, function() {
+  
+  
+      })
+     
+  
+      setTimeout(function() {
+  
+        element1.css({"position" : "absolute" , "top": (top1)+"px", "left": (left1)+"px" ,"transition-duration" :"0ms"})
+  
+         element2.css({"position" : "absolute" , "top": (top2)+"px", "left": (left2)+"px" ,"transition-duration" :"0ms"})
+  
+         $("#"+j+"treeval").text(element1text)
+         $("#"+i+"treeval").text(element2text);
+  
+         resolve('resolved')
+  
+      },1480)
+  
+  
+  
+  
+  
+      })
+  
+  
+  
+  
+  }
+  
+  
+    
+  
+  
+  
+  
+  
+  
+  // Heapsort
+  
+  
+  async function heapify( len,  ind) 
+  { 
+      ind = Math.floor(ind)
+      var largest = ind; // Initialize largest as root 
+      var l = 2*ind + 1; // left = 2*i + 1 
+      var r = 2*ind + 2; // right = 2*i + 2 
+    
+      
+      // If left child is larger than root 
+      if (l < len && storedarray[l] > storedarray[largest]) 
+          largest = l; 
+    
+      // If right child is larger than largest so far 
+      if (r < len && storedarray[r] > storedarray[largest]) 
+          largest = r; 
+    
+      // If largest is not root 
+      if (largest != ind) 
+      { 
+           hilight(ind , "red" , "1s" ,1100)
+        //  swap(st[ind], st[largest]); 
+        await hilight(largest , "red" , "1s" ,1100)
+          var te = storedarray[ind];
+          storedarray[ind] = storedarray[largest];
+          storedarray[largest] = te;
+  
+       await   gottopoint(ind ,largest)
+       await swapp(ind,largest)
+        hilight(ind , defaultcolor , "1s" ,1100)
+       await hilight(largest , defaultcolor , "1s" ,1100)
+    
+          // Recursively heapify the affected sub-tree 
+      await    heapify(len, largest); 
+      } 
+  } 
+    
+  // main function to do heap sort 
+  async function HeapSort() 
+  { 
+     await arraynodes()
+      await doalign("400ms" , 2000)
+     await build()
+      // Build heap (rearrange array) 
+      await display('Building Heap')
+      for (var ind = length / 2 - 1; ind >= 0; ind--) 
+      await   heapify(length, ind); 
+    
+      await display('Heap Built')
+      // One by one extract an element from heap 
+      for (var ind=length-1; ind>0; ind--) 
+      { 
+          // Move current root to end 
+       //   swap(st[0], st[ind]); 
+  
+          var te = storedarray[0];
+          storedarray[0] = storedarray[ind];
+          storedarray[ind] = te;
+          await display('Swap last element with root node')
+          await  gottopoint(0 ,ind)
+          await swapp(0,ind)
+          await turnred(ind)
+          await hilight(ind, "purple" ,"1s" ,1100)
+    
+          // call max heapify on the reduced heap 
+          await display('Building Heap')
+          await   heapify( ind, 0); 
+      } 
+  } 
+  
+  
+  
+  var t , l
+  var el_pos = { }
+  
+  var posar = {}
+  
+  var data 
+  
+  function alignanimate(d , duration_ , timeout_)  {
+  
+  
+      var tt = data[d]["top"];
+      var ll = data[d]["left"];
+  
+  var ff = $("#"+d)
+  
+      ff.css({"transition-duration" : "2000ms" , "left" :"0px" ,"top" :"0px"})
+  
+      ff.offset({top:tt , left :ll})
+      
+  
+  
+  return new Promise (resolve => {
+  
+    
+      
+      setTimeout(function() {
+        
+  resolve('resolved')
+      },timeout_)
+  
+  
+  
+  
+  })
+  
+  }
+  
+  
+   async function doalign(duration_="3000ms" , timeout_=200)  {
+  
+    
+  for ( var d=0 ; d < counttreenodes ; d++ ) {
+  
+     
+  
+    await   alignanimate(d , duration_ , timeout_);
+  }
+  
+  
+  
+  
+  
+  }
+
+
+
+
+//QuickSort
+
+
+
+
+
+var sheet;
+
+$("#feed").fadeIn()
+$("#feed").css({"opacity" : "0%"})
+
+var logscreen = document.getElementById("log1");
+var outputscreen = document.getElementById("out1");
+
+
+function K( _k,  cellid )  {
+
+
+    return new Promise (resolve => {
+    
+        let kpos = $(`#${cellid}item${_k}`).offset();
+
+      
+      $("#kindex").offset({top : (kpos.top)+100, left : (kpos.left)+45 });
+
+      
+      
+      
+      setTimeout(function() {
+      
+      
+      resolve('')
+      
+      },400)
+      
+      
+      })
+
+
+}
+
+function I(_i , cellid="l" ) {
+
+    return new Promise (resolve => {
+    
+        let ipos = $(`#${cellid}item${_i}`).offset();
+        
+    $("#iindex").offset({top : (ipos.top)+100, left : (ipos.left)+45 });
+    setTimeout(function() {
+    
+    
+    resolve('')
+    
+    },400)
+    
+    
+    })
+    
+}
+
+
+
+function J(_j , cellid="r" ) {
+
+    return new Promise (resolve => {
+    
+        let jpos = $(`#${cellid}item${_j}`).offset();
+        
+        $("#jindex").offset({top : (jpos.top)+100, left : (jpos.left)+55 });
+    setTimeout(function() {
+    
+    
+    resolve('')
+    
+    },400)
+    
+    
+    })
+    
+}
+
+
+
+
+
+function ij(_i ,_j  , cellid="a" , cellid1 = "a") {
+
+    return new Promise (resolve => {
+    
+        let ipos = $(`#${cellid}item${_i}`).offset();
+        let jpos = $(`#${cellid1}item${_j}`).offset();
+    
+    $("#iindex").offset({top : (ipos.top)+100, left : (ipos.left)+45 });
+    $("#jindex").offset({top : (jpos.top)+100, left : (jpos.left)+55 });
+    
+    
+    
+    setTimeout(function() {
+    
+    
+    resolve('')
+    
+    },400)
+    
+    
+    })
+    
+     }
+
+
+
+async function partition ( low,  high)  
+{  
+    var pivot = storedarray[high]; // pivot  
+   await pivotchange(high);
+    var qi = (low - 1); // Index of smaller element  
+   // recurse(low , high)
+  
+    for (var qj = low; qj <= high - 1; qj++)  
+    {  
+        if (qi >= 0 && qj >= 0 ) await ij(qi,qj);
+ 
+        // If current element is smaller than the pivot  
+        if (storedarray[qj] < pivot)  
+        {  
+          
+            await turnred(qj)
+            qi++; // increment index of smaller element
+            await ij(qi,qj);
+            await display('Incremenet i;  i='+qi)  
+            await display("Swapping index i="+ qi +" With j="+qj )
+            var qtemp = storedarray[qi]
+            storedarray[qi] = storedarray[qj]
+            storedarray[qj] = qtemp
+        if(qi != qj)   {
+            
+            await ij(qi,qj);
+            await swapp(qi , qj);
+     //       recurse(low , high)
+        }
+        await turnnormal(qj)
+        }   
+    }  
+    var qtemp = storedarray[qi+1]
+            storedarray[qi+1] = storedarray[high]
+            storedarray[high] = qtemp
+            await display("Swapping index i+1 ="+ (qi+1) +" With pivot="+high )
+            if(qi+1 != high)  { 
+                await ij(qi+1,high);
+                await swapp(qi+1 , high);
+
+            }
+            await pivotnormal(high);
+    return (qi + 1);  
+}  
+  
+/* The main function that implements QuickSort  
+arr[] --> Array to be sorted,  
+low --> Starting index,  
+high --> Ending index */
+async function qs(  low,  high)  
+{  
+    if (low < high)  
+    {  
+        /* pi is partitioning index, arr[p] is now  
+        at right place */
+        var pi = await partition(low, high);  
+  
+        // Separately sort elements before  
+        // partition and after partition  
+      
+        if (low < pi-1) {  await display('Calling QuickSort( '+ (low) + ' , ' + (pi-1) + ' )' );
+
+         await push('QuickSort( '+ (low) + ' , ' + (pi-1) + ' )' ); 
+         $('#Q').append('<p style="font-size:250%;color:coral;font-family:Segoe UI;">'+'QuickSort( '+ (low) + ' , ' + (pi-1) + ' )'+'</p>')
+         await cutoutarray(low, pi-1);
+        }
+        await  qs( low, pi - 1);  
+
+        if (pi+1 < high) { await display('Calling QuickSort( '+ (pi+1) + ' , ' + (high) + ' )' );
+        await push('QuickSort( '+ (pi+1) + ' , ' + (high) + ' )' ); 
+        $('#Q').append('<p style="font-size:250%;color:coral;font-family:Segoe UI;">'+'QuickSort( '+ (pi+1) + ' , ' + (high) + ' )'+'</p>')
+        await cutoutarray(pi+1,high);
+    }
+    
+        await  qs( pi + 1, high);  
+        await display('return;' )
+        await pop()
+
+        
+    }  
+}  
+
+
+
+async function QuickSort()  {
+
+if($("#tab1").length == 0) stack(10);
+
+await display('Calling QuickSort( '+ (0) + ' , ' + (length-1) + ' )' )
+await push('QuickSort( '+ (0) + ' , ' + (length-1) + ' )' )
+//$('#Q').append('<p style="font-size:250%;color:coral;font-family:Segoe UI;">'+'QuickSort( '+ (0) + ' , ' + (length-1) + ' )'+'</p>')
+await cutoutarray(0,length-1)
+await qs(0 ,length-1)
+
+
+}
+
+
+async function cutoutarray (start , end)  {
+
+    return new Promise( resolve => {
+
+
+$(".arrayd").css({"background-color" : "rgba(0,0,0,.2)" , transition: "400ms linear"})
+
+
+setTimeout(()=> {
+
+    for (var h = start ; h <= end ; ++h)  {
+
+  
+        $(`#aitem${h}`).css({"background-color" : "rgba(0,0,0,.842)" , transition: "400ms linear"})
+  
+  
+  
+      }
+  
+      resolve('')
+
+
+},470)
+
+})
+
+
+}
+
+
+function sheet ()  {
+
+ sheet = '<div id="Q" class="recursion-sheet" style="top:' + ($("#t1").position().top + 400) + 'px; left:'+  ($("#t1").position().left ) + 'px;">'
+
+$("body").append(sheet)
+$('#Q').draggable()
+
+Sheet = $("#Q")
+
+
+}
+
+
+
+
+function recurse(start , end)  {
+
+
+    var temparr = '<table style="border-collapse: collapse; margin-top:200px; text-align:center; transition-duration : 100ms;table-layout: fixed;" ><tr>'
+  
+
+    for (var h = start ; h <= end ; ++h)  {
+
+  
+      temparr += ' <td class="arrayd" style="text-align:center;">     <div  style="text-align:center; position:absolute; z-index:1">         <p  style="position:absolute; margin-top:50px; margin-left:70px; font-size:50%";>'+h+'</p>             <p style="position:absolute; margin-top:-30px;">'+ storedarray[h] +'</p>                        </div>  </td>';
+
+
+
+    }
+
+
+    temparr += '</tr></table>';
+
+
+
+$('#Q').append(temparr);
+
+}
+
+
+
+function pivotchange(pivotindex)  {
+
+ 
+ $("#aitem"+pivotindex).css({ "background-color" : "rgba(75,0,130, 0.842)" , "transition" : "1s linear"} , 3000 )
+
+    return new Promise (resolve => {
+
+        setTimeout(() => {
+
+            resolve('resolved')
+        
+        
+        },1100)
+
+})
+
+
+}
+
+
+
+
+function pivotnormal(pivotindex)  {
+
+  
+
+ 
+ $("#aitem"+pivotindex).css({ "background-color" : "rgba(0,0,0, 0.842)" , "transition" : "1s linear"} , 3000 )
+
+    return new Promise (resolve => {
+
+        setTimeout(() => {
+
+            resolve('resolved')
+        
+        
+        },1100)
+
+})
+
+}
+
+
+
+
+function turnred(pivotindex)  {
+
+    $("#aitem"+pivotindex).css({ "background-color" : "rgba(255,0,0, 0.91)" , "transition" : "1s linear"} , 3000 )
+
+    return new Promise (resolve => {
+
+        setTimeout(() => {
+
+            resolve('resolved')
+        
+        
+        },1100)
+
+})
+
+ 
+
+
+}
+
+function turnnormal(pivotindex)  {
+
+
+$("#aitem"+pivotindex).css({ "background-color" : "rgba(0,0,0, 0.842)" , "transition" : "1s linear"} )
+
+
+    return new Promise (resolve => {
+
+setTimeout(() => {
+
+    resolve('resolved')
+
+
+},1100)
+
+})
+
+
+}
+
+function display (data , fin= 2000 , fout = 1000)  {
+
+
+    if (displaysignal == "slow") {
+
+return new Promise ( resolve =>  {
+
+    $("#feed").text(data)
+    $("#log1").append('<p style="font-size:65%;color:black;font-family:Segoe UI; text-transform:capitalize;">'+data+'</p>')
+$("#feed").animate({"opacity" : "100%" } , fin , function ()   {
+
+  
+
+$("#feed").delay(2000).animate({"opacity" : "0%" } , fout , function () {
+
+    logscreen.scrollTop = logscreen.scrollHeight
+resolve('resolved')
+})
+
+
+})
+
+})
+    }
+
+    else if (displaysignal == "quick") {
+
+        Log(data);
+
+    }
+
+}
+
+
+
+function Log (data)  {
+
+    $("#log1").append('<p style="font-size:65%;color:black;font-family:Segoe UI;text-transform:capitalize;">'+data+'</p>')
+
+    
+    logscreen.scrollTop = logscreen.scrollHeight;
+
+    }
+
+
+
+function Output (data)  {
+
+$("#log1").append('<br><p style="font-size:x-large; margin-top:-5px;  color:rgb(0,0,255, 0.7);font-family:Segoe UI;text-transform:capitalize;">'+ data +'</p>')                                                                               
+
+logscreen.scrollTop = logscreen.scrollHeight;
+
+
+
+}
+
+
+
+ 
+// Graph
+
+
+    
+var organized = {};
+
+var edgedata = [];
+var edgecount = 0;
+
+var distancemat = [];
+
+var nametoidentity = {};
+
+var direction = "-UD-";
+
+$('body').append(`<input id ="graphinput" type="text" placeholder="Edge Weight"/>`);
+$('#undirected_').css({"background-color" : "rgba(255,0,0,.5)"});
+
+var vertexindex ="A";
+
+function nextCharacter(c) { 
+    return String.fromCharCode(c.charCodeAt(0) + 1); 
+} 
+
+class Queue 
+{ 
+   
+    constructor() 
+    { 
+        this.items = []; 
+    } 
+                  
+    enqueue_(element) 
+{     
+   
+    this.items.push(element); 
+} 
+dequeue_() 
+{ 
+   
+    if(this.isEmpty()) 
+        return "Underflow"; 
+    return this.items.shift(); 
+} 
+isEmpty() 
+{ 
+
+    return this.items.length == 0; 
+} 
+   
+} 
+
+
+
+
+
+var adjlist = new Map();
+var graphmatrix;
+
+var NoOfVertex;
+
+ Graph = (t) => {
+
+  NoOfVertex = t;
+
+  $("body").append (`<table id="distab" style ="position:absolute; transition:100ms linear; top:135px" ></table>`);
+
+  graphmatrix = $("#distab")
+
+  $("#distab").append("<tr>");
+
+  $("#distab").append( `<td class="floyd" id="rw" style="background-color : rgba(255,255,255,0);">  <div id="crwdiv" style="z-index:1; text-align:center;"></div></td>`);
+
+
+  for (let u =0 ; u < NoOfVertex ; u++)  {
+
+    $("#distab").append( `<td class="floyd" id="c${(u)}" style="background-color : coral;">  <div id="c${(u)}div" style="z-index:1; text-align:center;"> <p id="c${(u)}val" style="color:black; text-align:center">Not set</p></div></td>`);
+
+  }
+  $("#distab").append("</tr>");
+
+
+  for (let y = 0 ; y < NoOfVertex ; y++) {
+
+    $("#distab").append("<tr>");
+    distancemat.push([])
+
+    var rowlabel = JSON.stringify( organized[y]);
+
+
+    
+    $("#distab").append( `<td class="floyd" id="r${(y)}" style="background-color : coral;">  <div id="r${(y)}div" style="z-index:1; text-align:center;"> <p id="r${(y)}val" style="color:black; text-align:center">Not set</p></div></td>`);
+
+    for (let x = 0 ; x < NoOfVertex ; x++) {
+
+        $("#distab").append( `<td class="floyd showdis" id="${(y)}${(x)}">  <div id="${(y)}${(x)}div" style="z-index:1; text-align:center;"> <p id="${(y)}${(x)}val" style="color:coral; text-align:center"></p>     <p id="${(y)}${(x)}distance" style=" margin-top:-37px; color:coral; text-align:center; opacity:0%;"></p>  </div></td>`);
+
+     
+        if (y == x ) {
+            distancemat[y][y] = 0;
+            $(`#${(y)}${(x)}val`).text("0")
+            continue;
+        }
+
+    distancemat[y][x] = Math.min();
+    $(`#${(y)}${(x)}val`).html('&#8734;')
+    }
+
+    $("#distab").append("</tr>")
+
+
+vertex(vertexindex)
+
+vertexindex = nextCharacter(vertexindex)
+
+
+
+}
+
+$("#distab").draggable();
+
+
+
+
+
+ }
+
+
+
+ function chlc(start_ , end_ ,ac)  {
+
+
+mySVG.changecolor (`#${start_}` ,`#${end_}` , ac);
+
+
+ }
+
+
+
+
+function graphy (id1 , id2 , distance , graphtype = "default")  {
+
+   
+    mySVG.drawLine({
+       left_node:'#'+id1,
+        right_node:'#'+id2,
+        error:true,
+        width:2,
+        col : "coral",
+        _text : distance,
+        gtype : graphtype,
+     
+          
+      });
+    
+edgedata.push([])
+
+edgedata[edgecount][0] = id1;
+edgedata[edgecount][1] = id2;
+edgedata[edgecount][2] = distance;
+edgedata[edgecount][3] = graphtype;
+
+++edgecount;
+
+
+      let a , b;
+    
+      a = Number(organized[id1] )
+      b = Number( organized[id2] )
+
+
+     let set_to_table1 = organized[id1], set_to_table2 = organized[id2];
+
+      adjlist.get(id1).push(id2);
+
+      distancemat[a][b] = distance;
+      
+      $(`#${(set_to_table1)}${(set_to_table2)}val`).text(distance)
+      
+      $(`#${set_to_table1}${set_to_table2}distance`).text(`${id1}${id2}`)
+
+      organized[`${a}${b}`] = `${id1}${id2}`
+
+
+      if (graphtype != "D") {
+      adjlist.get(id2).push(id1);
+      distancemat[b][a] = distance;
+      $(`#${(set_to_table2)}${(set_to_table1)}val`).text(distance)
+      $(`#${set_to_table2}${set_to_table1}distance`).text(`${id2}${id1}`)
+      organized[`${b}${a}`] = `${id2}${id1}`
+
+      }
+
+    
+          $( '#'+id1 ).draggable({
+              drag: function(event, ui){mySVG.redrawLines();}
+            });
+            $( '#'+id2 ).draggable({
+              drag: function(event, ui){mySVG.redrawLines();}
+            });
+    
+    
+        }
+    
+
+
+var nu =0;
+
+
+function vertex (label) {
+
+
+var vertice = `<div id=${label} class="vert"> <p id=${label}name class="ver-label"> ${label}</p></div>`;
+
+$("body").prepend(vertice)
+
+$(`#${label}`).draggable();
+
+
+adjlist.set(label , []);
+
+organized[nu] = label;
+
+organized[label] =nu;
+
+$(`#r${nu}val`).text(label)
+$(`#c${nu}val`).text(label)
+
+nu++;
+
+
+
+
+}
+
+
+async function BreadthFirst(startingNode) { 
+  
+    // create a visited array 
+    var visited = []; 
+    for (var g = 0; g < NoOfVertex; g++) 
+        visited[g] = false; 
+  
+    // Create an object for queue 
+    var q = new Queue(); 
+  
+    // add the starting node to the queue 
+    visited[startingNode] = true; 
+    q.enqueue_(startingNode); 
+  
+    // loop until queue is element 
+    while (!q.isEmpty()) { 
+        // get the element from the queue 
+        var getQueueElement = q.dequeue_(); 
+  
+        // passing the current vertex to callback funtion 
+     //   console.log(getQueueElement); 
+        Output(getQueueElement)
+        await hilight(getQueueElement , "red" , "1000ms" , 1500) 
+        await hilight(getQueueElement , defaultcolor, "600ms" , 610) 
+
+  
+        // get the adjacent list for current vertex 
+        var get_List = adjlist.get(getQueueElement); 
+  
+        // loop through the list and add the element to the 
+        // queue if it is not processed yet 
+        for (var ie in get_List) { 
+            var neigh = get_List[ie]; 
+  
+            if (!visited[neigh]) { 
+                visited[neigh] = true; 
+                q.enqueue_(neigh); 
+            } 
+        } 
+    } 
+} 
+
+async function bfs (S)  {
+
+    await BreadthFirst(S);
+}
+
+
+
+async function dfs(startingNode) 
+{ 
+  
+    var visited = []; 
+    for (var ic = 0; ic < NoOfVertex; ic++) 
+        visited[ic] = false; 
+  
+ await   DFSUtil(startingNode, visited); 
+} 
+  
+// Recursive function which process and explore 
+// all the adjacent vertex of the vertex with which it is called 
+async function  DFSUtil(vert, visited) 
+{ 
+    visited[vert] = true; 
+  //  console.log(vert);
+    Output(vert)
+        await hilight(vert , "red" , "1000ms" , 1500) 
+        await hilight(vert , defaultcolor, "600ms" , 610)  
+  
+    var get_neighbours = adjlist.get(vert); 
+  
+    for (var ix in get_neighbours) { 
+        var get_elem = get_neighbours[ix]; 
+        if (!visited[get_elem]) 
+           await DFSUtil(get_elem, visited); 
+    } 
+} 
+
+
+async function FloydWarshall()   {
+
+
+    graphmatrix.show();
+
+await display("Pick all vertices as transit one by one")
+
+    for (let k = 0; k < NoOfVertex; k++)  
+    {  
+        // Pick all vertices as source one by one 
+        await display(`Transit vertex = ${organized[k]}`) 
+        await hilight(organized[k] , "red" , "2000ms" , 2400)
+        
+
+        
+        for (let i = 0; i < NoOfVertex; i++)  
+        {  
+            // Pick all vertices as destination for the  
+            // above picked source
+            await display(`Source = ${organized[i]}`) 
+
+         
+         
+         
+               for (let j = 0; j < NoOfVertex; j++)  
+                 {  
+                // If vertex k is on the shortest path from  
+                // i to j, then update the value of dist[i][j] 
+                await hilight(`${i}${j}` , "rgb(109,209,0,1)" , "1000ms" , 1000)
+                      hilight(`${i}${j}` , defaultcolor , "1000ms" , 500) 
+
+                if (distancemat[i][k] + distancemat[k][j] < distancemat[i][j]) { 
+                distancemat[i][j] = distancemat[i][k] + distancemat[k][j];
+            
+                let sliceddistance1 = organized[`${i}${k}`];
+                let sliceddistance2 = organized[`${k}${j}`];
+
+                sliceddistance2 = sliceddistance2.slice(1,sliceddistance2.length)
+
+                organized[`${i}${j}`] = sliceddistance1 + sliceddistance2;
+                
+                $(`#${i}${j}distance`).text(`${sliceddistance1}${sliceddistance2}`)
+
+ 
+              await  display(`${organized[i]}${organized[k]} + ${organized[k]}${organized[j]} < ${organized[i]}${organized[j]},Update.`)
+                       hilight(`${i}${k}` , "rgb(109,209,0,1)" , "2000ms" , 2100)
+                 await hilight(`${k}${j}` , "rgb(109,209,0,1)" , "2000ms" , 2400)
+               
+
+                await hilight(`${(i)}${(j)}` , "red" , "2000ms" , 2500)
+                $(`#${(i)}${(j)}val`).text(distancemat[i][j])
+                await hilight(`${(i)}${(j)}` , defaultcolor , "2000ms" , 2400)
+
+
+
+                hilight(`${i}${k}` , defaultcolor , "2000ms" , 2100)
+                await hilight(`${k}${j}` , defaultcolor , "2000ms" , 2400)
+
+
+                }
+                
+                else {
+             Log(`${organized[i]}${organized[k]} + ${organized[k]}${organized[j]} > ${organized[i]}${organized[j]}, Dont change.`)
+
+                }
+
+            }  
+
+         
+        }
+        await hilight(organized[k] , defaultcolor , "2000ms" , 2400)  
+    }  
+  
+
+}
+
+
+var dist =[]; 
+  
+var sptSet =[]; 
+
+var prevert;
+
+
+async function minDistance(dist, sptSet) 
+{ 
+    // Initialize min value 
+    let min = Math.min() , min_index=0; 
+  
+    for (let v = 0; v < NoOfVertex; v++) {
+
+        if (sptSet[v] == false){
+        await hilight(`dijkastra${v}`, "rgb(109,209,0,1)" , "800ms" , 800 )
+        hilight(`dijkastra${v}`, defaultcolor , "800ms" , 800 )
+        }
+        if (sptSet[v] == false && dist[v] <= min)  {
+        
+           
+            
+      hilight(`dijkastra${min_index}`, defaultcolor , "1200ms" , 1300 )
+            min = dist[v]
+            min_index = v
+        await    hilight(`dijkastra${min_index}`, "blueviolet" , "1000ms" , 1000 )
+
+    }
+
+    }
+  
+    $(".dijkastracells").css({"background-color" : defaultcolor})
+    return min_index; 
+} 
+var u;
+// A utility function to print the constructed distance arra
+// Function that implements Dijkstra's single source shortest path algorithm 
+// for a graph represented using adjacency matrix representation 
+async function Dijkstra( src) { 
+
+    
+pointerarrow.show();
+
+    $("body").append (`<table id="dijkastratab" style ="position:absolute; transition:100ms linear; top:200px" ></table>`);
+
+    $("#dijkastratab").append("<tr>");
+    
+    $("#dijkastratab").append( `<td class="floyd" id="dijkastrarw" style="background-color : rgba(0,0,0,0.5);">  <div id="dijkastracrwdiv" style="z-index:1; text-align:center;"></div></td>`);
+    
+    
+    for (let u =0 ; u < NoOfVertex ; u++)  {
+    
+      $("#dijkastratab").append( `<td class="floyd" id="dijkastrac${(u)}" style="background-color : coral;">  <div id="dijkastrac${(u)}div" style="z-index:1; text-align:center;"> <p id="dijkastrac${(u)}val" style="color:black; text-align:center">${organized[u]}</p></div></td>`);
+    
+    }
+    
+    $("#dijkastratab").append("</tr>").draggable();
+
+    $("#dijkastratab").append("<tr>");
+
+    $("#dijkastratab").append( `<td class="floyd" id="dijkastrarow" style="background-color : coral;">  <div id="dijkastrarowdiv" style="z-index:1; text-align:center;"> <p id="dijkastrarowval" style="color:black; text-align:center">${src}</p></div></td>`);
+
+    for (let x = 0 ; x < NoOfVertex ; x++) {
+
+        $("#dijkastratab").append( `<td class="floyd dijkastracells" id="dijkastra${(x)}">  <div id="dijkastra${(x)}div" style="z-index:1; text-align:center;"> <p id="dijkastra${(x)}val" style="color:coral; text-align:center"></p>  </div></td>`);
+
+     
+        if (organized[src] == x ) {
+            $(`#dijkastra${(x)}val`).text("0")
+            continue;
+        }
+
+    $(`#dijkastra${(x)}val`).html('&#8734;')
+    }
+
+    $("#dijkastratab").append("</tr>");
+
+    $("#dijkastratab").append("<tr>");
+
+
+    $("#dijkastratab").append( `<td class="floyd" id="dijkastraspt" style="background-color : coral;">  <div id="dijkastrasptdiv" style="z-index:1; text-align:center;"> <p id="dijkastrasptval" style="color:black; text-align:center">Processed?</p></div></td>`);
+
+    for (let x = 0 ; x < NoOfVertex ; x++) {
+
+        $("#dijkastratab").append( `<td class="floyd dijkastracells" id="dijkastraspt${(x)}">  <div id="dijkastraspt${(x)}div" style="z-index:1; text-align:center;"> <p id="dijkastraspt${(x)}val" style="color:coral; text-align:center"></p>  </div></td>`);
+
+    
+    $(`#dijkastraspt${(x)}val`).text('false')
+    }
+
+    $("#dijkastratab").append("</tr>");
+
+
+    // Initialize all distances as INFINITE and stpSet[] as false 
+    for (let i = 0; i < NoOfVertex; i++) 
+        dist[i] = Math.min(), sptSet[i] = false; 
+
+    // Distance of source vertex from itself is always 0 
+      dist[organized[src]] = 0; 
+  
+    // Find shortest path for all vertices 
+    for (let count = 0; count < NoOfVertex ; count++) { 
+         
+        await display(`Pick the minimum distance vertex from the set of vertices not yet processed.`)
+         
+      
+         u = await minDistance(dist, sptSet); 
+
+
+            pointerarrow.offset({top : ($("#"+organized[u]).offset().top) , left : ($("#"+organized[u]).offset().left-50)} )
+       
+      
+        await hilight(`dijkastrac${(u)}` , "rgb(109,209,0,1)" , "1200ms" , 1300 )
+  
+        await display(` Mark the picked vertex as processed`)
+        sptSet[u] = true;
+        await hilight(`dijkastraspt${(u)}` , "rgb(109,209,0,1)" , "1200ms" , 1300 )
+              hilight(`dijkastraspt${(u)}` , defaultcolor , "1200ms" , 1300 )
+        $(`#dijkastraspt${(u)}val`).text('true') 
+  
+        await display(` Update dist value of the adjacent vertices of the picked vertex.`)
+
+        for (let v = 0; v < NoOfVertex; v++) {
+
+             hilight( organized[v] , "rgb(109,209,0,1)" , "1200ms" , 1300 )
+              
+            await display(`Current picked Vertex ${organized[v]}`)
+
+           let gval = distancemat[u][v];
+           if (distancemat[u][v] == Math.min()) gval =0;
+          
+            if (!sptSet[v] && gval && dist[u] != Math.min() && dist[u] + gval < dist[v])  {
+                dist[v] = dist[u] + gval;
+
+                
+                await hilight(`dijkastra${v}`, "rgb(109,209,0,1)" , "1200ms" , 1300 )
+                 hilight(`dijkastra${v}`, defaultcolor , "1200ms" , 1300 )
+
+                $(`#dijkastra${v}val`).text(dist[v]);
+
+            }
+            hilight( organized[v] , defaultcolor , "1200ms" , 1300 )
+        }
+
+        await hilight(`dijkastrac${(u)}` , "coral" , "1200ms" , 1300 )
+    } 
+  
+} 
+
+
+
+
+
+
+
+var parent = []; 
+  
+// Find set of vertex i 
+async function find( in_) 
+{ 
+  
+    while ( in_ != parent[in_])  {
+
+       
+        in_ = parent[in_]; 
+    }
+    return in_; 
+} 
+  
+// Does union of i and j. It returns 
+// false if i and j are already in same 
+// set. 
+async function union1(in_,  jn_) 
+{ 
+    let a = await find(in_); 
+    let b = await find(jn_); 
+    parent[a] = b; 
+} 
+  
+// Finds MST using Kruskal's algorithm 
+async function Kruskal() 
+{ 
+    let mincost = 0; // Cost of min MST. 
+    await mySVG.kruskalize()
+  await mySVG.redrawLines();
+
+    // Initialize sets of disjoint sets. 
+    for (let i = 0; i < NoOfVertex; i++) 
+        parent[i] = i; 
+  
+    // Include minimum weight edges one by one 
+    let edge_count = 0; 
+    
+    while (edge_count < NoOfVertex - 1) { 
+        await display("Find the next legal smallest edge.")
+        var min = Math.min(), a = -1, b = -1; 
+        for (let i = 0; i < NoOfVertex; i++) { 
+            for (let j = 0; j < NoOfVertex; j++) {
+
+                if (i ==j)continue;
+
+
+                if ( distancemat[i][j] < min && await find(i) == await find(j) )  {
+
+                    await Log(`Discard ${organized[i]} <--> ${organized[j]}  edge.`);
+
+                }
+
+                if ( await find(i) != await find(j) && distancemat[i][j] < min) { 
+
+                 
+                   
+                    min = distancemat[i][j]; 
+
+                   if (a >-1 && b > -1) await  chlc(organized[a] , organized[b] , "rgb(0,0,0,0.11)")
+
+                    a = i; 
+                    b = j; 
+
+                  await  chlc(organized[a] , organized[b] , "coral");
+
+                    await display(`Next smaller unprocessed edge : <br>${organized[a]} <--> ${organized[b]}`);
+
+                    
+                } 
+
+
+            } 
+        } 
+  
+        await  union1(a, b); 
+
+        await display(`The smallest unprocessed edge : <br>${organized[a]} <--> ${organized[b]}`)
+    
+    await  chlc(organized[a] , organized[b] , "blue")
+      
+    ++edge_count;
+    } 
+
+    await mySVG.kruskalize("coral")
+
+    
+} 
+
+
+
+
+
+
+
+
+
+$(document).on('mouseenter' , 'td.showdis' , function(e) {
+
+
+    let texttoupid = e.target.id;
+
+$(`#${texttoupid}val`).css({"opacity" : "0%" , "transition-duration": "600ms"})
+
+$(`#${texttoupid}distance`).css({"opacity" : "100%" , "transition-duration": "600ms"})
+
+
+})
+
+$(document).on('mouseleave' , 'td.showdis' , function(e) {
+
+
+    let texttoupid = e.target.id;
+
+$(`#${texttoupid}val`).css({ "opacity" : "100%" , "transition-duration": "600ms"})
+
+$(`#${texttoupid}distance`).css({"opacity" : "0%" , "transition-duration": "600ms"})
+    
+
+})
+
+
+
+$(document).on('click' , 'td.showdis' , function(e) {
+
+    let texttoupid = e.target.id;
+
+    let path_ =   $(`#${texttoupid}distance`).text();
+
+    for (let i = 0 ; i < path_.length-1 ; ++i)  {
+
+
+        chlc (path_.charAt(i) , path_.charAt(i+1)  ,"black")
+    }
+ 
+
+
+
+})
+
+
+
+
+clicktimes = 0
+
+
+$(document).on("click","div.vert" , function (e)  {
+
+
+      
+    if (clicktimes === 0) {
+
+
+        if ($(e.target).parent("div.vert").length) {
+
+            
+
+            first=  $("#"+e.target.id).parent().attr("id");
+
+           
+        }
+
+    else  first=  e.target.id;
+
+    clicktimes = 1;
+    $("#graphinput").css({"visibility" : " hidden"})
+
+    }
+
+    else if (clicktimes === 1) {
+
+        if ($(e.target).parent("div.vert").length) {
+        
+            second =  $(e.target).parent().attr("id");
+
+        }
+
+
+        else  second=  e.target.id;
+
+let mousex = e.clientX;
+let mousey = e.clientY;
+
+$("#graphinput").css({ "top" :`${mousey}px`, "left" :`${mousex}px`  , "visibility" : "visible"})
+
+//graphy(first,second,0)
+
+
+
+clicktimes = 0;
+
+    }
+
+  })
+
+
+  $("#graphinput").change( function()  {
+
+let weight = Number( $("#graphinput").val())
+
+$("#graphinput").css({"visibility" : " hidden"})
+
+$("#graphinput").val("")
+
+    graphy(first,second,weight ,direction)
+
+    Log(`Add edge ${first}${second}`)
+
+
+  })
+
+  $("#undirected_ ").on("mouseenter" , function() {
+
+    $("#undirected_").css({"left":"250px", "transition-duration" : "300ms"})
+
+
+  })
+
+  $("#undirected_").on("mouseleave" , function() {
+
+    $("#undirected_").css({"left":"0px", "transition-duration" : "300ms"})
+
+
+  })
+
+
+  $("#directed_ ").on("mouseenter" , function() {
+
+    $("#directed_").css({"left":"250px", "transition-duration" : "300ms"})
+
+
+  })
+
+  $("#directed_").on("mouseleave" , function() {
+
+    $("#directed_").css({"left":"0px", "transition-duration" : "300ms"})
+
+
+  })
+
+
+
+
+
+  // click events
+
+
+
+  $("#undirected_ ").on("click" , function() {
+
+    $("#undirected_").css({"background-color" : "rgba(255,0,0,.5)", "transition-duration" : "300ms"})
+
+    $("#directed_").css({"background-color" : "rgba(0,0,0,.5)", "transition-duration" : "300ms"})
+
+    direction = "-UD-"
+
+  })
+
+  $("#directed_ ").on("click" , function() {
+
+    $("#directed_").css({"background-color" : "rgba(0,0,255,.5)", "transition-duration" : "300ms"})
+
+    $("#undirected_").css({"background-color" : "rgba(0,0,0,.5)", "transition-duration" : "300ms"})
+
+    direction = "D"
+  })
+
+
+
+
+// Stack
+
+/*
+var $ = jQuery = require('jquery')
+require('jquery-ui-dist/jquery-ui')
+require('jquery-ui-dist/jquery.connectingLine')
+
+var {dialog} = require('electron').remote
+*/
+
+var el = 0;
+var count_stack = 1;
+var stack_top = 0;
+var max = 0;
+var table = 0;
+var elements = [];
+
+
+function isEmpty(){
+  return stack_top == 0;
+}
+
+
+
+    
+async function push(typed){
+
+  return new Promise(async resolve => {
+
+      if (stack_top == max){
+        return;
+      }
+      
+
+       elements.push(typed);
+       var ms = max-stack_top
+
+      var prom = await anim(typed,ms);
+      $("#feed").fadeIn().text(prom)
+      
+        $("#"+(table+stack_top)).replaceWith('<span id = "'+ (table+stack_top) +'" class ="trans" style = "font-size : 150%">' +  elements[stack_top] + '</span>');
+      //alert(elements.length);
+      $("#kaydeefir").replaceWith('<p id = "kaydeefir" style="margin-top: -40px;"></p>')
+      $("#output-screen").append('<li class="outstyle"> push'+ typed +'/</li>')
+      /*
+      $(document).ready(function(){
+        $("#"+(table+stack_top-1)).ready(function(){
+          $("#"+(table+stack_top-1)).css("font-size","150%");
+        });
+      });
+      */
+      
+      //alert(typed);
+      stack_top += 1;
+      t_stack_top = stack_top
+      resolve("push resolved");
+
+    });
+
+    }
+    
+
+
+async function anim(elem,val){
+
+  return new Promise(resolve => {
+$("#kaydeefir").replaceWith('<p id = "kaydeefir" style="margin-top: -40px;">'+elem +'</p>')
+
+
+$("#feed").fadeIn().text(65*(val-1)+20)
+
+  $("#kaydeefir").animate({
+    "margin-top" : (65*(val-1)+20)+"px",
+    "color" : "white"
+    
+    },2000,function() {
+   
+   resolve('resolved')
+  });
+  
+  });
+
+}
+
+
+
+
+function animpop(elem,val){
+
+  return new Promise(resolve =>{ 
+  $("#kaydeefir").replaceWith('<p id = "kaydeefir" style="margin-top: '+(65*(max-val-1)+20)+'px; color : white;">'+elem +'</p>')
+  
+  
+  $("#feed").fadeIn().text(max-val-1)
+  
+    $("#kaydeefir").animate({
+      "margin-top" : "-40px",
+      "color" : "black"
+      
+      },2000,function(){
+        $("#kaydeefir").replaceWith('<p id = "kaydeefir" style="margin-top: -40px"></p>');
+        resolve("resoved");
+      });
+    
+      
+    });
+  }
+
+
+
+
+
+
+
+
+
+async function reverse(){
+
+
+  
+
+
+ if (!isEmpty()){
+  console.log("tes");
+  var temp = await pop();
+  
+  console.log(temp)
+   reverse();
+   insertAtBottom(temp);
+   
+
+ }
+ else{
+   return;
+ }
+  
+  
+}
+async function insertAtBottom(param){
+  if(isEmpty()){
+    await push(param);
+    
+  }
+  else{
+    var t_mp = await pop();
+    
+    insertAtBottom(param);
+    alert(t_mp);
+    await push(t_mp);
+    
+  }
+}
+
+var popped;
+
+   async function pop(){
+      
+      return new Promise(async resolve => {
+  if (stack_top == 0){
+    return;
+  }
+  
+  stack_top -= 1;
+  popped = $('#'+(table+stack_top)).text()
+
+  //Output(popped );
+  //$("#feed").fadeIn().text(stack_top)
+  
+  var ret = $("#"+(table+stack_top)).text();
+  $("#"+(table+stack_top)).replaceWith('<span id = "'+ (table+stack_top) +'" class ="trans"></span>');
+  await animpop(ret,stack_top);
+
+ 
+  //await?
+  elements.pop()
+   //alert(stack_top);
+//document.getElementById("0").innerHTML += '<td class = "stack" id = "0" style = "color : white; vertical-align: stack_top; border-bottom-left-radius : 0px;border-bottom-right-radius : 0px;">' + typed + '</td>';
+
+
+
+resolve(ret);
+//alert(typed);
+
+
+})
+
+
+
+}
+var t_stack_top = 0
+
+function straverse(){
+  if(t_stack_top == 0){
+    t_stack_top = stack_top
+    
+    return
+  }
+  
+  //alert(table+t_stack_top)
+  $("#output-screen").append('<li class="outstyle">trav</li>')
+  $("#kd"+(table+t_stack_top-1)).animate({"background-color" :"red" },2000 , function ()  {
+    $("#kd"+(table+t_stack_top-1)).animate({"background-color" :"rgba(26, 25, 25, 0.842)"  },2000 , function()  {
+      
+      
+      $("#feed").fadeIn().text($("#kd"+(table+t_stack_top-1)).text())
+      t_stack_top -= 1;
+      straverse();
+    })
+  })
+
+  
+
+}
+
+
+function empty(typed){
+
+i = 100*typed
+
+for(j=0;j<$("#tb"+typed+" tr").length;j++){
+
+  $("#"+(i+j)).replaceWith('<span id = "'+ (i+j) +'" class ="trans"></span>');
+
+
+
+}
+stack_top = 0
+}
+
+
+function extend_s(typed,typed_2){
+  j = 100*typed
+  $("#tb"+typed).ready(function(){
+    $("tr:nth-child("+(typed_2+1)+") td").css("border-radius","0px");
+  });
+  var ext = ""
+
+  for(i=0; i<typed_2; i++){
+
+    ext = '<tr><td class = "kaydee"  style = "color : white; border-radius : 0px;"><span id = "'+(j+$("#tb"+typed+ " tr").length)+'"></span></td></tr>';
+    $("#tb"+typed).prepend(ext)
+  }
+  $("#tb"+typed).ready(function(){
+    $("tr:first td").css("border-top-left-radius","10px");
+    $("tr:first td").css("border-top-right-radius","10px");
+    });
+  
+
+  max = max + typed_2
+}
+
+
+
+function peekstack(){
+
+  let poss= stack_top -1;
+  let pp = $('#'+(table+poss)).text();
+  return  pp;
+}
+
+
+
+
+
+    function stack(typed) {
+
+
+
+
+        max = typed
+        table += 100
+
+
+
+      var stack = '<div style="position : absolute; margin-top: 200px; z-index:1; transition-duration : 100ms; width:500px;" id="tab'+count_stack+'"  class="stack"> <p id = "kaydeefir" style="margin-top: -40px;  " ></p>';
+
+      stack += '<table class = "stack"  id="tb'+count_stack+'" style="border-collapse: collapse;  transition-duration : 100ms;">'
+
+            if(typed > 20){
+                typed = 20;
+            }
+for(i=0; i<typed; i++){
+    
+    stack += '<tr>';
+        if(i==0){
+            stack += '<td class = "kaydee" id = "kd'+(table+typed-1)+'"  style = "color : white;  border-bottom-left-radius : 0px;border-bottom-right-radius : 0px;"><span id = "'+(table+typed-1)+'"></span></td>';
+        }
+        else if(i == typed-1){
+            stack += '<td class = "kaydee" id = "kd'+table+'"  style = "color : white;  border-top-left-radius : 0px;border-top-right-radius : 0px;"><span id = "'+table+'"></span></td>';
+
+        }
+        else{
+            stack += '<td class = "kaydee" id = "kd'+(table + typed - i - 1)+'" style = "color : white;border-radius : 0px;"><span id = "'+(table + typed - i - 1)+'"></span></td>';
+        }
+
+    
+    stack += '</tr>';
+}
+
+stack += "</table></div>"
+
+$('body').prepend(stack);
+
+
+
+
+
+
+
+      //$(".area").prepend(stack)
+      $("#tab"+count_stack).draggable();
+
+      
+
+      divbyelement[typed] = count_stack
+
+      count_stack = count_stack +1;
+
+    }
+
+
+  
+
+  
+    //Modded
+
+
+
+
+    
+
+function createleaves(nnodes) {
+
+
+  for (let i = 0 ; i < nnodes.length ; ++i) {
+  
+  
+  leaf( nnodes[i])
+  
+  }
+  
+  
+  counttreenodes = i;
+  
+  if (i > 30) {
+  
+      counttreenodes = 30;
+  }
+  
+  
+  }
+  
+  
+  function createnodes(nnodes) {
+  
+  
+      for (let i = 0 ; i < nnodes.length ; ++i) {
+  
+  
+          addnode( nnodes[i])
+          
+          }
+          
+      
+      
+      
+      }
+      
+  
+   async   function traverse()  {
+  
+  
+  
+  for (var t = 0 ; t < storedarray.length ; t++) {
+  
+       
+      await  hilight("aitem"+(t) , "rgb(109,209,0,1)" , "500ms",700)
+      hilight("aitem"+(t) , defaultcolor , "500ms" , 700)
+      Output(storedarray[t])
+  
+  }
+  
+  
+  
+      }
+  
+  
+      async   function search(item)  {
+  
+  
+  
+          for (var t = 0 ; t < storedarray.length ; t++) {
+          
+              if  (item == storedarray[t]) {
+  
+                  await  hilight("aitem"+(t) , "rgb(255,0,0,1)" , "6000ms",6500)
+                  Output("Found at index " + t)
+                  break;
+              }
+  
+              await  hilight("aitem"+(t) , "rgb(109,209,0,1)" , "500ms",700)
+              hilight("aitem"+(t) , defaultcolor , "500ms" , 700)
+            
+          
+          }
+          
+          
+          
+              }
+    
+
+
+
+
+
