@@ -1,5 +1,4 @@
 
-
 var displaysignal="slow";
 
 var top = 0
@@ -50,6 +49,16 @@ $('#anislow').css({"background-image" : "linear-gradient(to right , #ff512f , #d
 
 
 $("#log1").append('<p style="font-size:x-large; margin-top:-5px;  color:rgb(255,0,0, 0.7);font-family:Segoe UI;">'+ "Happenings.." +'</p>')
+
+
+$("body").append(`<p id="iindex" style="position:absolute; transition-duration : 500ms; top:0px; font-size:150%; font-family:'segoe ui'; ">i</p>`)
+$("body").append(`<p id="jindex" style="position:absolute; transition-duration  :500ms; top:0px; font-size:150%; font-family:'segoe ui'; ">j</p>`)
+$("body").append(`<p id="kindex" style="position:absolute; transition-duration  :500ms; top:0px; font-size:150%; font-family:'segoe ui'; ">k</p>`)
+
+$("#iindex").hide()
+$("#jindex").hide()
+$("#kindex").hide()
+
 
 var mySVG = $('body').connect();
 
@@ -169,6 +178,19 @@ var clicktimes =0 , first="" , second=""
 
 
 
+$(document).on("mouseenter","div.nodeleft" , function (e)  {
+
+  $(this).animate({"background-color" : "yellow"})
+
+})
+
+$(document).on("mouseleave","div.nodeleft" , function (e)  {
+
+  $(this).animate({"background-color" : "white"})
+
+})
+
+
 
     $(document).on("mouseenter","div.node, div.treenode" , function (e)  {
 
@@ -252,6 +274,14 @@ var clicktimes =0 , first="" , second=""
 
   
 
+function open(link)  {
+
+
+  window.location.replace(link);
+
+
+}
+
 
 
 
@@ -286,7 +316,9 @@ $("#codetype").change(async function() {
 
 
 
+
 //LL
+
 
 
 
@@ -296,15 +328,15 @@ $("#codetype").change(async function() {
 function nodify(first,second , col ="coral") {
 
 
-    mySVG.drawLine({
-        left_node:'#'+first+'right',
-        right_node:'#'+second+'left',
-        error:true,
-  width:3,
-  status : col,
- 
+  mySVG.drawLine({
+      left_node:'#'+first+'right',
+      right_node:'#'+second+'left',
+      error:true,
+width:3,
+status : col,
 
-        
+
+      
 });
 
 
@@ -320,207 +352,205 @@ terminate = "yes"
 
 }
 
-    $( '#'+first ).draggable({
-        drag: function(event, ui){mySVG.redrawLines();}
-      });
-      $( '#'+second ).draggable({
-        drag: function(event, ui){mySVG.redrawLines();}
-      });
+  $( '#'+first ).draggable({
+      drag: function(event, ui){mySVG.redrawLines();}
+    });
+    $( '#'+second ).draggable({
+      drag: function(event, ui){mySVG.redrawLines();}
+    });
+
+  }
+
+
+
+
+  async function ltraverse(par=0)  {
+
+
+      head = (par)+"list"
+
+      for(;;) {
+
+        if (head == "null") {
+        
+        await  display("Traverse complete")
+          break;
+        }
+      value = $("#"+head+"id").text();
+
+      await hilight(head, "rgb(109,209,0,1)" , "1200ms" , 1300 )
+      
+       hilight(head , defaultcolor  , "1000ms" , 1100)
+      Output(value)
+     
+  head = next[(head)];
+  Log("Going next node")
+
+    }
+
 
     }
 
 
 
 
-    async function ltraverse(par=0)  {
-
-
-        head = (par)+"list"
-
-        for(;;) {
-
-          if (head == "null") {
-          
-          await  display("Traverse complete")
-            break;
-          }
-        value = $("#"+head+"id").text();
-
-        await hilight(head, "rgb(109,209,0,1)" , "1200ms" , 1300 )
-        
-         hilight(head , defaultcolor  , "1000ms" , 1100)
-        Output(value)
-       
-    head = next[(head)];
-    Log("Going next node")
-  
-      }
-
-
-      }
-
-
-
-
 async function insertnode(headd , pos , item )    {
 
-        headd = (headd)+"list"
-        
-        
-        for (let g = 0 ; g < pos-1 ; g= g+1) {
-        
-        
-          await hilight(headd, "rgb(109,209,0,1)" , "1200ms" , 1300 )
-                  
-          hilight(headd , defaultcolor  , "1000ms" , 1100);
-        headd = next[headd];
-        
-        }
-        
-        var newnodetop = $("#"+headd).position().top + 300;
-        var newnodeleft = $("#"+headd).position().left - 200;
-        
-        var address = Math.ceil( Math.random() * 999)
-        
-     var   newnode = '<div id="'+address+'list"  class="dragg" > <div class="node" id="'+ address+"listleft" +'" style="position:absolute; height:7px; width:7px; border-radius:5px; background-color:white;  margin-top:40px;"></div>  <div class="node" id="'+ address+"listright" +'" style="position:absolute; height:7px; width:7px; border-radius:7px; background-color:white; margin-left:72px; margin-top:40px;"></div> <p  style="position:absolute; color:coral; font-size:60%; left:20px;" id="'+ address+"listbottom" +'">'+address +'</p>    <p  id="'+ address+"listid" +'" class="t">'+item+'</p>   </div>';
-        
-        
-        $("body").prepend(newnode);
-        
-        $("#"+address+"list").draggable()
-        
-          $("#"+address+"list").animate({ "top" : (newnodetop)+"px" , "left" : (newnodeleft)+"px" , "transition-duration":"1500ms" }, 1500 , async function() {
-        
-        
-        
-        
-            await display("Detaching the node")
-            del("#"+prev[headd]+"right" , "#"+(headd)+"left")
-            mySVG.redrawLines();
-            await display("Attaching previous node to the newnode")
-            nodify((prev[headd]) , (address)+"list")
-            await display("Attaching new node to the next node")
-            nodify( (address)+"list" , headd)
-          
-        
-            
-            
-        
-          })
-        
-         }     
-        
-           
-        
-        
-        
-async   function deletenode(rot , val) {
-        
-              rot = (rot)+"list";
-        
-              await display("searching for target node")
-        
-        for (;;) {
-        
-        if ($("#"+rot+"id").text() == val) {
-         
-          await hilight(rot , "green")
-          await  display("Target node found")
-          break;
-        
-        }
-        
-        await hilight(rot, "red" , "1200ms" , 1300 )
-                  
-          hilight(rot , defaultcolor  , "1000ms" , 1100);
-        
-        rot = next[rot];
-        
-        
-        
-        }
-        
-        await display("Setting  next[prev-node] = next[target-node]")
-        
-        nodify(prev[rot] , next[rot])
-        
-        
-        await display("Deleting target node")
-        
-        $("#"+ rot).css({"border-style":"dashed"})
-        await hilight(rot , "white")
-        
-        await $("#"+ rot).css({"opacity":"50%" , "transition-duration" : "2s"} )
-        
-        setTimeout(function()  {
-          
-          $("#"+ rot).remove()
-        
-          mySVG.redrawLines();
-        
-        } , 1500)
-        
-        
-            }
-
-            
-            
-          function addnode(typed) {
-
-
-                newnode = '<div id="'+count+'list"  class="dragg" > <div class="node" id="'+ count+"listleft" +'" style="position:absolute; height:7px; width:7px; border-radius:5px; background-color:white;  margin-top:40px;"></div>  <div class="node" id="'+ count+"listright" +'" style="position:absolute; height:7px; width:7px; border-radius:7px; background-color:white; margin-left:72px; margin-top:40px;"></div> <p  style="position:absolute; color:coral; font-size:60%; left:20px;" id="'+ count+"listbottom" +'">'+count +'</p>    <p  id="'+ count+"listid" +'" class="t">'+typed+'</p>   </div>';
-             
-           
-          
-               $("body").prepend(newnode);
-         
-              
-               
-               $("#"+count+"list").draggable();
-         
-               next[(count)+"list"] = "null"
-               prev[(count)+"list"] = "null"
-               
-         
-               divbyelement[typed] = (count)+"list";
-         
-               count = count +1;
-         
-             }
-         
-        
-
-             $(document).on("click","div.node" , function (e)  {
-
-    
+      headd = (headd)+"list"
       
-                if (clicktimes === 0) {
+      
+      for (let g = 0 ; g < pos-1 ; g= g+1) {
+      
+      
+        await hilight(headd, "rgb(109,209,0,1)" , "1200ms" , 1300 )
+                
+        hilight(headd , defaultcolor  , "1000ms" , 1100);
+      headd = next[headd];
+      
+      }
+      
+      var newnodetop = $("#"+headd).position().top + 300;
+      var newnodeleft = $("#"+headd).position().left - 200;
+      
+      var address = Math.ceil( Math.random() * 999)
+      
+   var   newnode = '<div id="'+address+'list"  class="dragg" > <div class="node" id="'+ address+"listleft" +'" style="position:absolute; height:7px; width:7px; border-radius:5px; background-color:white;  margin-top:40px;"></div>  <div class="node" id="'+ address+"listright" +'" style="position:absolute; height:7px; width:7px; border-radius:7px; background-color:white; margin-left:72px; margin-top:40px;"></div> <p  style="position:absolute; color:coral; font-size:60%; left:20px;" id="'+ address+"listbottom" +'">'+address +'</p>    <p  id="'+ address+"listid" +'" class="t">'+item+'</p>   </div>';
+      
+      
+      $("body").prepend(newnode);
+      
+      $("#"+address+"list").draggable()
+      
+        $("#"+address+"list").animate({ "top" : (newnodetop)+"px" , "left" : (newnodeleft)+"px" , "transition-duration":"1500ms" }, 1500 , async function() {
+      
+      
+      
+      
+          await display("Detaching the node")
+          del("#"+prev[headd]+"right" , "#"+(headd)+"left")
+          mySVG.redrawLines();
+          await display("Attaching previous node to the newnode")
+          nodify((prev[headd]) , (address)+"list")
+          await display("Attaching new node to the next node")
+          nodify( (address)+"list" , headd)
+        
+      
           
-                first=  $('#'+e.target.id).parent().attr("id");
           
-                clicktimes = 1;
-          
-                }
-          
-                else if (clicktimes === 1) {
-          
-          second = $('#'+e.target.id).parent().attr("id");
-          
-          nodify(first,second)
-          
-          clicktimes = 0;
-          
-                }
-          
-              })
+      
+        })
+      
+       }     
+      
+         
+      
+      
+      
+async   function deletenode(rot , val) {
+      
+            rot = (rot)+"list";
+      
+            await display("searching for target node")
+      
+      for (;;) {
+      
+      if ($("#"+rot+"id").text() == val) {
+       
+        await hilight(rot , "green")
+        await  display("Target node found")
+        break;
+      
+      }
+      
+      await hilight(rot, "red" , "1200ms" , 1300 )
+                
+        hilight(rot , defaultcolor  , "1000ms" , 1100);
+      
+      rot = next[rot];
+      
+      
+      
+      }
+      
+      await display("Setting  next[prev-node] = next[target-node]")
+      
+      nodify(prev[rot] , next[rot])
+      
+      
+      await display("Deleting target node")
+      
+      $("#"+ rot).css({"border-style":"dashed"})
+      await hilight(rot , "white")
+      
+      await $("#"+ rot).css({"opacity":"50%" , "transition-duration" : "2s"} )
+      
+      setTimeout(function()  {
+        
+        $("#"+ rot).remove()
+      
+        mySVG.redrawLines();
+      
+      } , 1500)
+      
+      
+          }
 
-              
-              
           
+          
+        function addnode(typed) {
+
+
+              newnode = '<div id="'+count+'list"  class="dragg" > <div class="nodeleft" id="'+ count+"listleft" +'" style="position:absolute; height:7px; width:7px; border-radius:5px; background-color:white;  margin-top:40px;"></div>  <div class="node" id="'+ count+"listright" +'" style="position:absolute; height:7px; width:7px; border-radius:7px; background-color:white; margin-left:72px; margin-top:40px;"></div> <p  style="position:absolute; color:coral; font-size:60%; left:20px;" id="'+ count+"listbottom" +'">'+count +'</p>    <p  id="'+ count+"listid" +'" class="t">'+typed+'</p>   </div>';
+           
+         
+        
+             $("body").prepend(newnode);
+       
+            
+             
+             $("#"+count+"list").draggable();
+       
+             next[(count)+"list"] = "null"
+             prev[(count)+"list"] = "null"
+             
+       
+             divbyelement[typed] = (count)+"list";
+       
+             count = count +1;
+       
+           }
+       
+      
+
+           $(document).on("click","div.node,div.nodeleft" , function (e)  {
+
+  
+    
+              if (clicktimes === 0) {
+        
+              first=  $('#'+e.target.id).parent().attr("id");
+        
+              clicktimes = 1;
+        
+              }
+        
+              else if (clicktimes === 1) {
+        
+        second = $('#'+e.target.id).parent().attr("id");
+        
+        nodify(first,second)
+        
+        clicktimes = 0;
+        
+              }
+        
+            })
+
+            
+            
+              
 
 //TREE
-
-
 
 
 
@@ -530,40 +560,40 @@ async   function deletenode(rot , val) {
 function treefy(first,second ,color_ = "coral") {
 
 
-    mySVG.drawLine({
-      left_node:'#'+first,
-      right_node:'#'+second+'treetop',
-      error:true,
-      col : color_,
-      width:2,
-        
-    });
-  
-    var par = $("#"+first).parent().attr("id");
-  
-    tree[first] = second ;
-  
-  
-        $( '#'+par ).draggable({
-            drag: function(event, ui){mySVG.redrawLines();}
-          });
-          $( '#'+second ).draggable({
-            drag: function(event, ui){mySVG.redrawLines();}
-          });
-  
-        }
-  
+  mySVG.drawLine({
+    left_node:'#'+first,
+    right_node:'#'+second+'treetop',
+    error:true,
+    col : color_,
+    width:2,
+      
+  });
+
+  var par = $("#"+first).parent().attr("id");
+
+  tree[first] = second ;
+
+
+      $( '#'+par ).draggable({
+          drag: function(event, ui){mySVG.redrawLines();}
+        });
+        $( '#'+second ).draggable({
+          drag: function(event, ui){mySVG.redrawLines();}
+        });
+
+      }
+
 
 
 
 async function  preorder(CurrentNode) {
 
-  
-  if (CurrentNode == "null") {
 
-    return ;
+if (CurrentNode == "null") {
 
-  }
+  return ;
+
+}
 
 
   await hilight(CurrentNode , "red", "500ms"  ,700)
@@ -574,506 +604,506 @@ async function  preorder(CurrentNode) {
   await preorder(tree[CurrentNode+"treeright"])
   await display("returning from " + CurrentNode )
   await hilight(CurrentNode , "rgba(75,0,130, 0.842)", "500ms"  ,700)
-    
+  
 
 }
 
 
 async function  inorder(CurrentNode ) {
 
-    if (CurrentNode == "null") {
-  
-      return;
-  
-    }
-  
-    
-    await display("Going left of " + CurrentNode )
-    await inorder(tree[CurrentNode+"treeleft"])
-    await hilight(CurrentNode , "red" , "500ms"  ,700)
-    Output($("#"+CurrentNode+"treeval").text())
-    await display("Going right of " + CurrentNode )
-    await inorder(tree[CurrentNode+"treeright"])
-    await display("returning from " + CurrentNode )
-    await hilight(CurrentNode , "rgba(75,0,130, 0.842)" , "500ms"  ,700)
-    
-  
-  
+  if (CurrentNode == "null") {
+
+    return;
+
   }
+
+  
+  await display("Going left of " + CurrentNode )
+  await inorder(tree[CurrentNode+"treeleft"])
+  await hilight(CurrentNode , "red" , "500ms"  ,700)
+  Output($("#"+CurrentNode+"treeval").text())
+  await display("Going right of " + CurrentNode )
+  await inorder(tree[CurrentNode+"treeright"])
+  await display("returning from " + CurrentNode )
+  await hilight(CurrentNode , "rgba(75,0,130, 0.842)" , "500ms"  ,700)
+  
+
+
+}
 
 
 
 async function  postorder(CurrentNode ) {
 
-    if (CurrentNode == "null") {
-  
-      return;
-  
-    }
-  
-    await display("Going left of " + CurrentNode )
-    await postorder(tree[CurrentNode+"treeleft"])
-    await display("Going right of " + CurrentNode )
-    await postorder(tree[CurrentNode+"treeright"])
-    await hilight(CurrentNode , "red")
-    Output($("#"+CurrentNode+"treeval").text())
-    await display("returning from " + CurrentNode )
-    await hilight(CurrentNode , "rgba(75,0,130, 0.842)")
-  
-  
+  if (CurrentNode == "null") {
+
+    return;
+
   }
 
+  await display("Going left of " + CurrentNode )
+  await postorder(tree[CurrentNode+"treeleft"])
+  await display("Going right of " + CurrentNode )
+  await postorder(tree[CurrentNode+"treeright"])
+  await hilight(CurrentNode , "red", "500ms"  ,700)
+  Output($("#"+CurrentNode+"treeval").text())
+  await display("returning from " + CurrentNode )
+  await hilight(CurrentNode , "rgba(75,0,130, 0.842)", "500ms"  ,700)
 
 
-
- async function preorderstack(root_) 
-  { 
-      // Base Case 
-      if (root_ == "null") 
-         return; 
-    
-      stack(10)
-      pointerarrow.show();
-     await push(root_); 
-    
-    
-      while (isEmpty() == false) 
-      { 
-          
-          await display(`Pop element from stack and print`);
-          await pop();
-          let curr = popped; 
-          pointerarrow.css({ "top" : `${($("#"+curr).offset().top+50)}px` , "left" : `${($("#"+curr).offset().left-50)}px` , "transition-duration" : "300ms"})
-          
-          await hilight(curr, "rgb(109,209,0,1)" , "1200ms" , 1300 )
-                  hilight(curr, defaultcolor , "1200ms" , 1300 )
-
-          Output($("#"+curr+"treeval").text())
-    
-
-
-          await display(` Push right and left children of the popped node to stack`);
-
-          if (tree[curr+"treeright"] != "null")  {
-
-            await hilight(tree[curr+"treeright"], "blueviolet" , "1200ms" , 1300 )
-                  hilight(tree[curr+"treeright"], defaultcolor , "1200ms" , 1300 )
-
-            await  push(tree[curr+"treeright"]);
-          } 
-          if (tree[curr+"treeleft"] != "null")  {
-
-            await hilight(tree[curr+"treeleft"], "blueviolet" , "1200ms" , 1300 )
-                  hilight(tree[curr+"treeleft"], defaultcolor , "1200ms" , 1300 )
-            await  push(tree[curr+"treeleft"]); 
-
-          }
-      } 
-
-      pointerarrow.hide();
-  }
+}
 
 
 
 
-  async function inorderstack(root_) 
-  { 
-      stack(10);
-      let curr = root_; 
-
-      pointerarrow.show();
-    
-      while (curr != "null" || isEmpty() == false) 
-      { 
-          
-             await display("Reach the left most Node of the current Node");
-          while (curr !=  "null") 
-          { 
+async function preorderstack(root_) 
+{ 
+    // Base Case 
+    if (root_ == "null") 
+       return; 
+  
+    stack(10)
+    pointerarrow.show();
+   await push(root_); 
+  
+  
+    while (isEmpty() == false) 
+    { 
         
-            if (curr != "null") pointerarrow.css({ "top" : `${($("#"+curr).offset().top+50)}px` , "left" : `${($("#"+curr).offset().left-50)}px` , "transition-duration" : "300ms"})
+        await display(`Pop element from stack and print`);
+        await pop();
+        let curr = popped; 
+        pointerarrow.css({ "top" : `${($("#"+curr).offset().top+50)}px` , "left" : `${($("#"+curr).offset().left-50)}px` , "transition-duration" : "300ms"})
+        
+        await hilight(curr, "rgb(109,209,0,1)" , "1200ms" , 1300 )
+                hilight(curr, defaultcolor , "1200ms" , 1300 )
 
-            
-
-            await hilight(curr, "blueviolet" , "1200ms" , 1300 )
-                  hilight(curr, defaultcolor , "1200ms" , 1300 )
+        Output($("#"+curr+"treeval").text())
+  
 
 
-                  await display("Push current node into stack.");
-            
-            
-            await  push(curr); 
-            curr = tree[`${curr}treeleft`]; 
+        await display(` Push right and left children of the popped node to stack`);
 
-     
+        if (tree[curr+"treeright"] != "null")  {
 
-          } 
-    
-          await display("end of left subtree");
-          await display("pop element from stack and print");
-          
-         await pop(); 
-          curr = popped;
+          await hilight(tree[curr+"treeright"], "blueviolet" , "1200ms" , 1300 )
+                hilight(tree[curr+"treeright"], defaultcolor , "1200ms" , 1300 )
 
-          pointerarrow.css({ "top" : `${($("#"+curr).offset().top+50)}px` , "left" : `${($("#"+curr).offset().left-50)}px` , "transition-duration" : "300ms"})
+          await  push(tree[curr+"treeright"]);
+        } 
+        if (tree[curr+"treeleft"] != "null")  {
 
-          await display(`Current node = ${popped} (popped element)`);
-          await hilight(curr, "rgb(109,209,0,1)" , "1200ms" , 1300 )
-          hilight(curr, defaultcolor , "1200ms" , 1300 )
+          await hilight(tree[curr+"treeleft"], "blueviolet" , "1200ms" , 1300 )
+                hilight(tree[curr+"treeleft"], defaultcolor , "1200ms" , 1300 )
+          await  push(tree[curr+"treeleft"]); 
+
+        }
+    } 
+
+    pointerarrow.hide();
+}
+
+
+
+
+async function inorderstack(root_) 
+{ 
+    stack(10);
+    let curr = root_; 
+
+    pointerarrow.show();
+  
+    while (curr != "null" || isEmpty() == false) 
+    { 
+        
+           await display("Reach the left most Node of the current Node");
+        while (curr !=  "null") 
+        { 
       
-         Output( $("#"+curr+"treeval").text())
-    
-         await display("Left sub tree completed. Now, going right subtree");
-       
-         
-             curr = tree[`${curr}treeright`]; 
-    
-      } /* end of while */
+          if (curr != "null") pointerarrow.css({ "top" : `${($("#"+curr).offset().top+25)}px` , "left" : `${($("#"+curr).offset().left-60)}px` , "transition-duration" : "300ms"})
 
-      pointerarrow.hide();
-
-  } 
-
-
-
- async function postorderstack(root_) 
-  { 
-      // Check for empty tree 
-        pointerarrow.show();
-       stack(10); 
-       do { 
-          // Move to leftmost node 
-          while (root_ != "null") 
-          { 
-              await display(`Push root's right child and then root to stack.`)
-              if (tree[root_+"treeright"] != "null") {
-                pointerarrow.css({ "top" : `${($("#"+tree[root_+"treeright"]).offset().top+50)}px` , "left" : `${($("#"+tree[root_+"treeright"]).offset().left-50)}px` , "transition-duration" : "300ms"})
-
-                await hilight(tree[root_+"treeright"], "blueviolet" , "1200ms" , 1300 )
-                      hilight(tree[root_+"treeright"], defaultcolor , "1200ms" , 1300 )
-              await push(tree[root_+"treeright"]); 
-
-              }
-              pointerarrow.css({ "top" : `${($("#"+root_).offset().top+50)}px` , "left" : `${($("#"+root_).offset().left-50)}px` , "transition-duration" : "300ms"})
-
-              await hilight(root_, "blueviolet" , "1200ms" , 1300 )
-                      hilight(root_, defaultcolor , "1200ms" , 1300 )
-              await  push(root_); 
-    
-           
-              await display(`Set root as root's left child`)  
-              root_ = tree[root_+"treeleft"] 
-          } 
-    
-          await display(`Pop an item from stack and set it as root`)      
-          await pop(); 
-          root_ = popped;
-
-    
-          await display("If the popped item has a right child and itsnotprocessed, then it processed before root")
           
-          if (tree[root_+"treeright"] != "null" && peekstack() == tree[root_+"treeright"]) 
-          { 
 
-           await display("remove right child from stack")
-            await  pop();  // remove right child from stack 
+          await hilight(curr, "blueviolet" , "1200ms" , 1300 )
+                hilight(curr, defaultcolor , "1200ms" , 1300 )
 
-            await display("push root back to stack")
-            await  push(root_);  // push root back to stack 
 
-            await display("change root so that the right child is processed next")
-              root_ = tree[root_+"treeright"]; // change root so that the right  
-                                  // child is processed next 
-          } 
-          else  // Else print root's data and set root as NULL 
-          { 
+                await display("Push current node into stack.");
+          
+          
+          await  push(curr); 
+          curr = tree[`${curr}treeleft`]; 
 
+   
+
+        } 
+  
+        await display("end of left subtree");
+        await display("pop element from stack and print");
+        
+       await pop(); 
+        curr = popped;
+
+        pointerarrow.css({ "top" : `${($("#"+curr).offset().top+25)}px` , "left" : `${($("#"+curr).offset().left-60)}px` , "transition-duration" : "300ms"})
+
+        await display(`Current node = ${popped} (popped element)`);
+        await hilight(curr, "rgb(109,209,0,1)" , "1200ms" , 1300 )
+        hilight(curr, defaultcolor , "1200ms" , 1300 )
+    
+       Output( $("#"+curr+"treeval").text())
+  
+       await display("Left sub tree completed. Now, going right subtree");
+     
+       
+           curr = tree[`${curr}treeright`]; 
+  
+    } /* end of while */
+
+    pointerarrow.hide();
+
+} 
+
+
+
+async function postorderstack(root_) 
+{ 
+    // Check for empty tree 
+      pointerarrow.show();
+     stack(10); 
+     do { 
+        // Move to leftmost node 
+        while (root_ != "null") 
+        { 
+            await display(`Push root's right child and then root to stack.`)
+            if (tree[root_+"treeright"] != "null") {
+              pointerarrow.css({ "top" : `${($("#"+tree[root_+"treeright"]).offset().top+50)}px` , "left" : `${($("#"+tree[root_+"treeright"]).offset().left-50)}px` , "transition-duration" : "300ms"})
+
+              await hilight(tree[root_+"treeright"], "blueviolet" , "1200ms" , 1300 )
+                    hilight(tree[root_+"treeright"], defaultcolor , "1200ms" , 1300 )
+            await push(tree[root_+"treeright"]); 
+
+            }
             pointerarrow.css({ "top" : `${($("#"+root_).offset().top+50)}px` , "left" : `${($("#"+root_).offset().left-50)}px` , "transition-duration" : "300ms"})
 
-            await hilight(root_, "rgb(109,209,0,1)" , "1200ms" , 1300 )
-                  hilight(root_, defaultcolor , "1200ms" , 1300 )
-              Output( $(`#${root_}treeval`).text()); 
-              root_ = "null"; 
-          } 
-      } while ( isEmpty() == false);
-
-      pointerarrow.hide();
-  } 
-
-
-
-
-
-  async function insertbst(node_, key_) { 
-
-
-    if ($(`#${node_}`).length == 0)  {
-
-      await display("Tree Empty. Adding root node.");
-      let vid =count;
-       leaf(key_); 
-       $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : "2000ms linear"})
-       $(`#${vid}`).animate({ "top" : "0px", "left" : "43%"})
-       
-       return;
-    }
-
-
-    await hilight(node_, "rgb(109,209,0,1)" , "1200ms" , 1300 )
-    hilight(node_, defaultcolor , "1200ms" , 1300 )
-
-
- 
-    /* Otherwise, recur down the tree */
-    if (key_ <  parseInt( $(`#${node_}treeval`).text() , 10) ) {
-
-            if (tree[`${node_}treeleft`] == "null") {
-
-              await display("Correct place to insert the element = CurrentNode->left")
-        let vid = count;
-        leaf(key_);
-     $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : "2000ms"})
-     $(`#${vid}`).offset({top: ($("#"+node_).offset().top+130 ) , left :($("#"+node_).offset().left-150) })
-
-
-        return new Promise(resolve => {
-
-
-          setTimeout(()=> {
-            treefy(`${node_}treeleft` ,vid)
-            resolve('')
-            return;
-           },2100)
-            
-
-
-        })
-     
-        
-      
-             }
-
-             Log("Item smaller then current node, going left")
-
-    await insertbst(tree[`${node_}treeleft`], key_);
-
-      
-    }
-   
-   
-    else if (key_ >  parseInt( $(`#${node_}treeval`).text() , 10) )  {
-
-
-               if (tree[`${node_}treeright`] == "null") {
-
-                await display("Correct place to insert the element = CurrentNode->right")
-        let vid = count;
-        leaf(key_);
-
-
-        $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : "2000ms"})
-        $(`#${vid}`).offset({top: ($("#"+node_).offset().top+130 ) , left :($("#"+node_).offset().left+150) })
-
-
-        return new Promise(resolve => {
-
-
-          setTimeout(()=> {
-            treefy(`${node_}treeright` ,vid)
-            resolve('')
-            return;
-           },2100)
-            
-
-
-        })
-      
-                 }
-
-
-                 Log("Item larger then current node, going right")
-                 await   insertbst(tree[`${node_}treeright`], key_); 
-
-      
-    }
-    
-} 
+            await hilight(root_, "blueviolet" , "1200ms" , 1300 )
+                    hilight(root_, defaultcolor , "1200ms" , 1300 )
+            await  push(root_); 
   
+         
+            await display(`Set root as root's left child`)  
+            root_ = tree[root_+"treeleft"] 
+        } 
+  
+        await display(`Pop an item from stack and set it as root`)      
+        await pop(); 
+        root_ = popped;
+
+  
+        await display("If the popped item has a right child and itsnotprocessed, then it processed before root")
+        
+        if (tree[root_+"treeright"] != "null" && peekstack() == tree[root_+"treeright"]) 
+        { 
+
+         await display("remove right child from stack")
+          await  pop();  // remove right child from stack 
+
+          await display("push root back to stack")
+          await  push(root_);  // push root back to stack 
+
+          await display("change root so that the right child is processed next")
+            root_ = tree[root_+"treeright"]; // change root so that the right  
+                                // child is processed next 
+        } 
+        else  // Else print root's data and set root as NULL 
+        { 
+
+          pointerarrow.css({ "top" : `${($("#"+root_).offset().top+50)}px` , "left" : `${($("#"+root_).offset().left-50)}px` , "transition-duration" : "300ms"})
+
+          await hilight(root_, "rgb(109,209,0,1)" , "1200ms" , 1300 )
+                hilight(root_, defaultcolor , "1200ms" , 1300 )
+            Output( $(`#${root_}treeval`).text()); 
+            root_ = "null"; 
+        } 
+    } while ( isEmpty() == false);
+
+    pointerarrow.hide();
+} 
+
+
+
+
+
+async function insertbst(node_, key_) { 
+
+
+  if ($(`#${node_}`).length == 0)  {
+
+    await display("Tree Empty. Adding root node.");
+    let vid =count;
+     leaf(key_); 
+     $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : "2000ms linear"})
+     $(`#${vid}`).animate({ "top" : "0px", "left" : "43%"})
+     
+     return;
+  }
+
+
+  await hilight(node_, "rgb(109,209,0,1)" , "1200ms" , 1300 )
+  hilight(node_, defaultcolor , "1200ms" , 1300 )
+
+
+
+  /* Otherwise, recur down the tree */
+  if (key_ <  parseInt( $(`#${node_}treeval`).text() , 10) ) {
+
+          if (tree[`${node_}treeleft`] == "null") {
+
+            await display("Correct place to insert the element = CurrentNode->left")
+      let vid = count;
+      leaf(key_);
+   $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : "2000ms"})
+   $(`#${vid}`).offset({top: ($("#"+node_).offset().top+130 ) , left :($("#"+node_).offset().left-150) })
+
+
+      return new Promise(resolve => {
+
+
+        setTimeout(()=> {
+          treefy(`${node_}treeleft` ,vid)
+          resolve('')
+          return;
+         },2100)
+          
+
+
+      })
+   
+      
+    
+           }
+
+           Log("Item smaller then current node, going left")
+
+  await insertbst(tree[`${node_}treeleft`], key_);
+
+    
+  }
+ 
+ 
+  else if (key_ >  parseInt( $(`#${node_}treeval`).text() , 10) )  {
+
+
+             if (tree[`${node_}treeright`] == "null") {
+
+              await display("Correct place to insert the element = CurrentNode->right")
+      let vid = count;
+      leaf(key_);
+
+
+      $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : "2000ms"})
+      $(`#${vid}`).offset({top: ($("#"+node_).offset().top+130 ) , left :($("#"+node_).offset().left+150) })
+
+
+      return new Promise(resolve => {
+
+
+        setTimeout(()=> {
+          treefy(`${node_}treeright` ,vid)
+          resolve('')
+          return;
+         },2100)
+          
+
+
+      })
+    
+               }
+
+
+               Log("Item larger then current node, going right")
+               await   insertbst(tree[`${node_}treeright`], key_); 
+
+    
+  }
+  
+} 
+
 
 
 async function searchbst(ro , item) {
 
 
-  await hilight(ro, "rgb(109,209,0,1)" , "1200ms" , 1300 )
+await hilight(ro, "rgb(109,209,0,1)" , "1200ms" , 1300 )
 
-  
-    if ( $('#'+ro+'treeval').text() == item) {
-  
-     await  hilight(ro,"red")
-      await display("Item found.")
-  
-      return;
-  
-    }
-  
-    if (    ro  == "null"   ) {
-  
-      return;
-  
-    }
-  
-     if (     parseInt(   $('#'+ro+'treeval').text() ,  10  )   > item     ) {
-  
-      
-      await display("Item is smaller than "+ $('#'+ro+'treeval').text() + " Going Left") 
-     await searchbst(tree[ro+"treeleft"], item)
-  
-    }
-  
-  
-    if (     parseInt(   $('#'+ro+'treeval').text() ,  10  )   < item     ) {
-  
-      await display("Item is larger than "+ $('#'+ro+'treeval').text() + " Going Right") 
-    await  searchbst(tree[ro+"treeright"], item)
-  
-    }
-  
-  
-  
+
+  if ( $('#'+ro+'treeval').text() == item) {
+
+   await  hilight(ro,"red")
+    await display("Item found.")
+
+    return;
+
+  }
+
+  if (    ro  == "null"   ) {
+
+    return;
+
+  }
+
+   if (     parseInt(   $('#'+ro+'treeval').text() ,  10  )   > item     ) {
+
+    
+    await display("Item is smaller than "+ $('#'+ro+'treeval').text() + " Going Left") 
+   await searchbst(tree[ro+"treeleft"], item)
+
+  }
+
+
+  if (     parseInt(   $('#'+ro+'treeval').text() ,  10  )   < item     ) {
+
+    await display("Item is larger than "+ $('#'+ro+'treeval').text() + " Going Right") 
+  await  searchbst(tree[ro+"treeright"], item)
+
   }
 
 
 
-  async function  minValueNode( node) 
-  { 
-      let current = node; 
-    
-      /* loop down to find the leftmost leaf */
-      while ( tree[`${current}treeleft`] != "null")  {
+}
+
+
+
+async function  minValueNode( node) 
+{ 
+    let current = node; 
   
-        await hilight(current, "red" , "1200ms" , 1300 )
-        hilight(current, defaultcolor , "1200ms" , 1300 )
-  
-          current = tree[`${current}treeleft`]; 
-  
-      }
-  
+    /* loop down to find the leftmost leaf */
+    while ( tree[`${current}treeleft`] != "null")  {
+
       await hilight(current, "red" , "1200ms" , 1300 )
       hilight(current, defaultcolor , "1200ms" , 1300 )
-    
-      return current; 
-  } 
-  
-  
-  
-  
-  async function deletebst( _root , _key) 
-  { 
-  
-    await hilight(_root, "rgb(109,209,0,1)" , "1200ms" , 1300 )
-      hilight(_root, defaultcolor , "1200ms" , 1300 )
-    
-    
-      // base case f
-      if (_root == "null") return _root; 
-  
-   
-      // If the _key to be deleted is smaller than the _root's _key, 
-      // then it lies in left subtree 
-      if (_key < parseInt(  $('#'+_root+"treeval").text() , 10) )  {
-        
-         tree[_root+`treeleft`] = await deletebst(tree[_root+`treeleft`], _key); 
-  
-         treefy(_root+`treeleft`, tree[_root+`treeleft`])
-      }
-      // If the _key to be deleted is greater than the _root's _key, 
-      // then it lies in right subtree 
-      else if (_key > parseInt( $('#'+_root+"treeval").text() , 10))  {
-  
-      tree[_root+`treeright`] = await deletebst(tree[_root+`treeright`], _key); 
-  
-      treefy(_root+`treeright`, tree[_root+`treeright`])
-      }
-  
-  
-      
-      else
-      { 
-          // node with only one child or no child 
-          if (tree[`${_root}treeleft`] == "null") 
-          { 
-              let temp = tree[`${_root}treeright`]; 
-             $("#"+_root).remove();
-             mySVG.redrawLines();
-              return temp; 
-          } 
-          else if (tree[`${_root}treeright`] == "null") 
-          { 
-              let temp = tree[`${_root}treeleft`]; 
-           
-              $("#"+_root).remove();
-             mySVG.redrawLines();
-              return temp; 
-          } 
-    
-          // node with two children: Get the inorder successor (smallest 
-          // in the right subtree) 
-    
-          await display("getting Inorder Successor to replace");
-  
-          let temp = await minValueNode(tree[`${_root}treeright`]); 
-  
-          
-          // Copy the inorder successor's content to this node 
-          await display("Copy the inorder successor's content to this node");
-          $('#'+_root+"treeval").text(  $('#'+temp+"treeval").text() );
-    
-          // Delete the inorder successor 
-          await display("Delete the inorder successor");
-          tree[`${_root}treeright`] = await deletebst(tree[`${_root}treeright`], $('#'+temp+"treeval").text()); 
-      } 
-      return _root; 
-  
-      
-  } 
-  
 
-
-
-
-  function leaf(element) {
-
-     newnode = '<div id="'+count+'" style="transition:500ms ;"  class="dragg" > <div class="treenode" id="'+ count+"treetop" +'" style="margin-left:35px;"></div>  <div class="treenode" id="'+ count+"treeleft" +'" style="margin-left:18px; margin-top:70px;"></div>   <div class="treenode" id="'+ count+"treeright" +'" style="margin-left:54px; margin-top:70px;"></div> <p  style="position:absolute;color:coral; font-size:70%; left:20px;" id="'+ count+"bottom" +'">'+count +'</p>    <p  id="'+ count+"treeval" +'" class="t">'+element+'</p>   </div>';
-
-
-    $("body").prepend(newnode)
-    $("#"+count).draggable();
-
-    tree[count+"treeleft"] = "null"
-    tree[count+"treeright"] = "null"
-
-    divbyelement[element] = count
-
-    count = count +1;
-    counttreenodes = counttreenodes + 1;
-
-
-  }
-
-
-
-  $(document).on("click","div.treenode" , function (e)  {
-
-
-      
-    if (clicktimes === 0) {
-
-    first=  e.target.id;
-
-    clicktimes = 1;
+        current = tree[`${current}treeleft`]; 
 
     }
 
-    else if (clicktimes === 1) {
+    await hilight(current, "red" , "1200ms" , 1300 )
+    hilight(current, defaultcolor , "1200ms" , 1300 )
+  
+    return current; 
+} 
+
+
+
+
+async function deletebst( _root , _key) 
+{ 
+
+  await hilight(_root, "rgb(109,209,0,1)" , "1200ms" , 1300 )
+    hilight(_root, defaultcolor , "1200ms" , 1300 )
+  
+  
+    // base case f
+    if (_root == "null") return _root; 
+
+ 
+    // If the _key to be deleted is smaller than the _root's _key, 
+    // then it lies in left subtree 
+    if (_key < parseInt(  $('#'+_root+"treeval").text() , 10) )  {
+      
+       tree[_root+`treeleft`] = await deletebst(tree[_root+`treeleft`], _key); 
+
+       treefy(_root+`treeleft`, tree[_root+`treeleft`])
+    }
+    // If the _key to be deleted is greater than the _root's _key, 
+    // then it lies in right subtree 
+    else if (_key > parseInt( $('#'+_root+"treeval").text() , 10))  {
+
+    tree[_root+`treeright`] = await deletebst(tree[_root+`treeright`], _key); 
+
+    treefy(_root+`treeright`, tree[_root+`treeright`])
+    }
+
+
+    
+    else
+    { 
+        // node with only one child or no child 
+        if (tree[`${_root}treeleft`] == "null") 
+        { 
+            let temp = tree[`${_root}treeright`]; 
+           $("#"+_root).remove();
+           mySVG.redrawLines();
+            return temp; 
+        } 
+        else if (tree[`${_root}treeright`] == "null") 
+        { 
+            let temp = tree[`${_root}treeleft`]; 
+         
+            $("#"+_root).remove();
+           mySVG.redrawLines();
+            return temp; 
+        } 
+  
+        // node with two children: Get the inorder successor (smallest 
+        // in the right subtree) 
+  
+        await display("getting Inorder Successor to replace");
+
+        let temp = await minValueNode(tree[`${_root}treeright`]); 
+
+        
+        // Copy the inorder successor's content to this node 
+        await display("Copy the inorder successor's content to this node");
+        $('#'+_root+"treeval").text(  $('#'+temp+"treeval").text() );
+  
+        // Delete the inorder successor 
+        await display("Delete the inorder successor");
+        tree[`${_root}treeright`] = await deletebst(tree[`${_root}treeright`], $('#'+temp+"treeval").text()); 
+    } 
+    return _root; 
+
+    
+} 
+
+
+
+
+
+function leaf(element) {
+
+   newnode = '<div id="'+count+'" style="transition:500ms ;"  class="dragg" > <div class="treenode" id="'+ count+"treetop" +'" style="margin-left:35px;"></div>  <div class="treenode" id="'+ count+"treeleft" +'" style="margin-left:18px; margin-top:70px;"></div>   <div class="treenode" id="'+ count+"treeright" +'" style="margin-left:54px; margin-top:70px;"></div> <p  style="position:absolute;color:coral; font-size:70%; left:20px;" id="'+ count+"bottom" +'">'+count +'</p>    <p  id="'+ count+"treeval" +'" class="t">'+element+'</p>   </div>';
+
+
+  $("body").prepend(newnode)
+  $("#"+count).draggable();
+
+  tree[count+"treeleft"] = "null"
+  tree[count+"treeright"] = "null"
+
+  divbyelement[element] = count
+
+  count = count +1;
+  counttreenodes = counttreenodes + 1;
+
+
+}
+
+
+
+$(document).on("click","div.treenode" , function (e)  {
+
+
+    
+  if (clicktimes === 0) {
+
+  first=  e.target.id;
+
+  clicktimes = 1;
+
+  }
+
+  else if (clicktimes === 1) {
 
 second = $('#'+e.target.id).parent().attr("id");
 
@@ -1084,155 +1114,136 @@ treefy(first,second)
 
 clicktimes = 0;
 
-    }
+  }
 
-  })
+})
 
 
 
   //array
 
+  var length =0
 
-
+  var storedarray = []
   
-var length =0
-
-var storedarray = []
-
-var arr = ''
-
-var tableobj
-
-function array (typed)  {
-
-
-  length = typed.length 
-
-     arr = '<table id="t1" style="position:absolute;border-collapse: collapse; margin-top:135px; margin-left:6px; text-align:center; transition-duration : 100ms;table-layout: fixed;" ><tr>   </tr></table>'
+  var arr = ''
   
-    $("body").prepend(arr);
+  var tableobj
   
-    $("#t1").draggable();
+  function array (typed)  {
   
   
   
-    for (var i = 0 ; i < typed.length ; ++i)  {
-
-      var r =typed[i]
   
-  $("#t1").append(' <td id="aitem'+ i+'" class="arrayd" style="text-align:center;">     <div id="aitemdiv'+ i+'"  style="text-align:center; position:absolute; z-index:1">         <p id="aitemindex'+i +'" style="position:absolute; color:coral; margin-top:67px; margin-left:35px; font-size:37%";>'+i+'</p>             <p id= "aitemval'+i +'" class="arrayitem">'+ r +'</p>                        </div>  </td>')
-  storedarray.push(r)
-
-
+    length = typed.length 
+  
+       arr = '<table id="t1" style="position:absolute;border-collapse: collapse; margin-top:235px; margin-left:100px; text-align:center; transition-duration : 100ms;table-layout: fixed;" >'
+    
+      $("body").prepend(arr);
+    
+      $("#t1").draggable();
+    
+  
+      $("#t1").append("<tr>");
+    
+    
+      for (var i = 0 ; i < typed.length ; ++i)  {
+  
+        var r =typed[i]
+    
+    $("#t1").append(' <td id="aitem'+ i+'" class="arrayd" style="text-align:center; min-width:70px;">     <div id="aitemdiv'+ i+'"  style="text-align:center; position:absolute; z-index:1">         <p id="aitemindex'+i +'" style="position:absolute; color:coral; margin-top:67px; margin-left:35px; font-size:37%";>'+i+'</p>             <p id= "aitemval'+i +'" class="arrayitem">'+ r +'</p>                        </div>  </td>')
+    storedarray.push(r)
+  
+  
+      }
+      $("#t1").append("<tr>");
+      $("#t1").append("</table>");
+  
+      tableobj = $("#t1")
+    
+      $("#iindex").show()
+      $("#jindex").show()
+      $("#kindex").show()
+    
     }
-
-    tableobj = $("#t1")
   
-
+  
+   function temparray (sn ,cellid)  {
+  
+  let tableid= `t${Math.ceil (Math.random()*10)}${ Math.ceil( Math.random()*10)}`
+  
+  
+    let ar = `<table id="${tableid}" style="position:absolute;border-collapse: collapse; margin-top:535px; margin-left:100px; text-align:center; transition-duration : 100ms;table-layout: fixed;" ><tr>   </tr></table>`
+    
+    $("body").prepend(ar);
+  
+    $("#"+tableid).draggable( {
+    });
+  
+  
+  
+    for (let i = 0 ; i < sn ; ++i)  {
+  
+  
+  
+  $("#"+tableid).append(`<td id="${cellid}item${i}" class="arrayd" style="text-align:center; min-width:70px;">     <div id="${cellid}itemdiv${i}"  style="text-align:center; position:absolute; z-index:1">         <p id="${cellid}itemindex${i}" style="position:absolute; color:coral; margin-top:67px; margin-left:35px; font-size:37%";>${i}</p>             <p id= "${cellid}itemval${i}" class="arrayitem">0</p>                        </div>  </td>`)
+  
+  
+    }
+  
+    tableobj = $("#"+tableid)
+  
+    return tableobj;
+  
   }
-
-
-
-
-
-
-
-  function swapp( vala,valb) {
-
-    return new Promise(resolve => {
-var x =   $("#aitem"+vala).position()
-
-var y =   $("#aitem" + valb).position()
-
-var s = Math.abs(x.left  - y.left)
-
-var a = $("#aitemval" +vala).text() 
-var b = $("#aitemval" +valb).text()
-
-
-
-
-
-$("#aitemval"+vala).animate({
-
-  "color" : "black",
-  "margin-top" : "170px"
   
   
-  } ,1000, function()  {
-
-
-    $("#aitemval"+vala).animate({
-
-      "margin-left" : s+"px"
-      
-      
-      } ,2000, function()  {
-      
-      
-        $("#aitemval"+vala).animate({
-      
-          "color" : "white",
-          "margin-top" : "20px"
-          
-          
-          },1000 , function ()  {
-
-            $("#aitemval"+vala).css({"margin-left" :"0px" ,"margin-top" :"20px" })
-
-
-          })
-          
-      
-      
-      })
-
-
-
-
-  })
-
-
-
-
-
-
-
-  $("#aitemval"+valb).animate({
-
+  
+  
+    function swapp( vala,valb) {
+  
+      return new Promise(resolve => {
+  var x =   $("#aitem"+vala).position()
+  
+  var y =   $("#aitem" + valb).position()
+  
+  var s = Math.abs(x.left  - y.left)
+  
+  var a = $("#aitemval" +vala).text() 
+  var b = $("#aitemval" +valb).text()
+  
+  
+  
+  
+  
+  $("#aitemval"+vala).animate({
+  
     "color" : "black",
-    "margin-top" : "-105px"
+    "margin-top" : "170px"
     
     
-    }, 1000 , function()  {
+    } ,1000, function()  {
   
   
-      $("#aitemval"+valb).animate({
+      $("#aitemval"+vala).animate({
   
-        "margin-left" : "-"+(s*2 - 10)+"px"
+        "margin-left" : s+"px"
         
         
+        } ,2000, function()  {
         
-        },2000 , function()  {
         
-        
-          $("#aitemval"+valb).animate({
+          $("#aitemval"+vala).animate({
         
             "color" : "white",
             "margin-top" : "20px"
             
             
-            } ,1000 , function ()  {
-
-              $("#aitemval"+valb).css({"margin-left" :"0px" , "margin-top" :"20px"  })
-
-              $("#aitemval"+vala).text(b) 
-              $("#aitemval"+valb).text(a) 
-
-              
-
-              resolve('resolved');
-
+            },1000 , function ()  {
+  
+              $("#aitemval"+vala).css({"margin-left" :"0px" ,"margin-top" :"20px" })
+  
+  
             })
             
         
@@ -1243,591 +1254,764 @@ $("#aitemval"+vala).animate({
   
   
     })
-
-
-
-
-  });
-
-
-
-  }
-
-
-
-
-
-
-async  function SelectionSort() {
-    let len = storedarray.length;
-    for (let isel = 0; isel < len; isel++) {
-        let min = isel;
+  
+  
+  
+  
+  
+  
+  
+    $("#aitemval"+valb).animate({
+  
+      "color" : "black",
+      "margin-top" : "-105px"
       
-        for (let jsel = isel + 1; jsel < len; jsel++) {
-         
-          await hilight("aitem"+(jsel) , "red",  "1s" , 1100)
-          hilight("aitem"+(jsel),  defaultcolor ,  "1s" , 1100 )
-            if (storedarray[min] > storedarray[jsel]) {
-               hilight("aitem"+(min) ,  defaultcolor ,  "1s" , 1100)
-                min = jsel;
-            await   hilight("aitem"+(min) , "blueviolet", "1s" , 1100)
-            }
-        }
-        if (min != isel) {
-          await  display("Swapping index " + isel + " with index" + min)
-            let tmp = storedarray[isel];
-            storedarray[isel] = storedarray[min];
-            storedarray[min] = tmp;
-            await swapp(isel ,min )
-            hilight("aitem"+(min) , defaultcolor ,  "1s" , 1100)
-            
-        }
-        await hilight("aitem"+(isel) , "coral"  ,  "1s" , 1100)
-    }
- 
-}
-
-
-
-
-  //bubblesort
-
-
-/*
-
-async   function BubbleSort()   {
-
-      if (p == length-1 )  { 
-  iter = iter + 1
-        p =0
-      }
-
-      if (iter == length )  { 
- 
-        return;
-      }
-
-      if (parseInt( $("#aitemval"+(p)).text() , 10) > parseInt( $("#aitemval"+(p+1)).text() , 10)) {
-     
-      await swapp(p,p+1);
-  
-
-      }
-
-
-      p = p+1;
-
-
-      BubbleSort();
-  
-
-
-    }
-  
-*/
- 
-  async  function BubbleSort(){
-
-    var lene = storedarray.length;
-    
-    for (var i=0; i < lene-1; i++){
-        for (var j=0; j < lene-1; j++){
-          await display('Comparing index j=' + (j) + ' and j+1=' + (j+1) ) 
-          hilight("aitem"+(j) , "red" , "1000ms" , 1100)  
-              await hilight("aitem"+(j+1), "red" , "1000ms" , 1100) 
-            if (storedarray[j] > storedarray[j+1]){
-              var temp = storedarray[j];
-              storedarray[j] = storedarray[j+1];
-              storedarray[j+1] = temp;
-              await display('Element array['+ (j) +'] > array[' + (j+1)+ '] , Swapping')
-              
-             await swapp(j,j+1)
-             
-            }
-            
-            else {
-              await display('Element array['+ (j) +'] < array[' + (j+1)+ '] , Skip')  
-            }
-            hilight("aitem"+(j) , defaultcolor, '1s' , 900)  
-             hilight("aitem"+(j+1) ,defaultcolor,'1s' , 900)
-        }
-    }
-}
-
-
-
-async function InsertionSort() {
-  for (var i1 = 1; i1 < storedarray.length; i1++) {
-    var j1 = i1 - 1
-    var temp = storedarray[i1]
-   await hilight(`aitem${i1}` , "red" ,"1100ms",1100)
-    
-    await display('Inserting '+ (temp)  +' to correct index')
-    await hilight(`aitem${i1}` , defaultcolor ,"1100ms",1100)
       
-    while (j1 >= 0 && storedarray[j1] > temp) {
-
-      await display('Comparing  array[' + (j1) + '] => '+ (storedarray[j1])  + ' > ' + (temp) + '.Move element to right.');
-      await moveright(j1);
-      storedarray[j1 + 1] = storedarray[j1];
-      j1--;
-      
-    }
-    await display('Correct place at index = ' + (j1+1) )
-    storedarray[j1+1] = temp
-
-    await insert(temp ,j1+1 );
-  
-  }
- 
-}
-
-
-async function BinarySearch(value){
-  await display( 'set first = 0')
-  await hilight("aitem0", "blueviolet" , "1000ms" , 1100)
-  var firstIndex  = 0
-
-  var    lastIndex   = storedarray.length - 1
-
-      await display( 'set last = '+lastIndex)
-      await hilight("aitem"+(lastIndex), "blueviolet" , "1000ms" , 1100)
-
-   var   middleIndex = Math.floor((lastIndex + firstIndex)/2);
-      await display( 'set mid = (first+last)/2')
-      await hilight("aitem"+(middleIndex), "rgb(109,209,0,1)", "1000ms" , 2100)
-
-
-
-
-  while(storedarray[middleIndex] != value && firstIndex < lastIndex)
-  {
- 
-     if (value < storedarray[middleIndex])
-      {
-        await hilight("aitem"+(middleIndex) , defaultcolor , "1000ms" , 1100)
-         await display( 'search item '+ value +' is smaller array[' + middleIndex + ']')
-         await display( 'set last = mid-1')
-          hilight("aitem"+lastIndex ,  defaultcolor , "1000ms" , 1100)
-          lastIndex = middleIndex - 1;
-          await hilight("aitem"+lastIndex , "blueviolet" ,  "1000ms" , 1100)
-      } 
-    else if (value > storedarray[middleIndex])
-      {
-        await hilight("aitem"+(middleIndex) ,defaultcolor ,  "1000ms" , 1100)
-        await display( 'search item '+ value +' is larger array[' + middleIndex + ']')
-         await display( 'set first = mid+1')
-          hilight("aitem"+firstIndex ,defaultcolor ,  "1000ms" , 1100)
-          firstIndex = middleIndex + 1;
-          await hilight("aitem"+firstIndex , "blueviolet" ,  "1000ms" , 1100)
-      }
+      }, 1000 , function()  {
     
-      await hilight("aitem"+(middleIndex),defaultcolor ,  "1000ms" , 1100)
-      middleIndex = Math.floor((lastIndex + firstIndex)/2);
-      await display( 'set mid = (first+last)/2')
-      await hilight("aitem"+(middleIndex), "rgb(109,209,0,1)" ,  "2000ms" , 2100)
-  
-  }
-
-if (storedarray[middleIndex] == value){
-
-  await display( 'Item Found' )
-  Output('Item Found at index = ' + middleIndex)
-}
-
-else{
-
-  await display( 'Item Doesnt exist' )
-  Output('Item Doesnt exist return -1')
-}
-
-
-}
-
-
-   function insert(value ,index) {
-
-    return new Promise ( resolve => {
-    $("#aitemval"+index).css({opacity:"0%"})
-
-    $("#aitemval"+index).text(value)
-
-    $("#aitemval"+index).animate({opacity:"100%"} , 1000)
-
-
-    setTimeout (function()  {
-
-      resolve('resolved')
-          },2000)
+    
+        $("#aitemval"+valb).animate({
+    
+          "margin-left" : "-"+(s*2 - 10)+"px"
           
-
-    })
-
+          
+          
+          },2000 , function()  {
+          
+          
+            $("#aitemval"+valb).animate({
+          
+              "color" : "white",
+              "margin-top" : "20px"
+              
+              
+              } ,1000 , function ()  {
+  
+                $("#aitemval"+valb).css({"margin-left" :"0px" , "margin-top" :"20px"  })
+  
+                $("#aitemval"+vala).text(b) 
+                $("#aitemval"+valb).text(a) 
+  
+                
+  
+                resolve('resolved');
+  
+              })
+              
+          
+          
+          })
+    
+    
+    
+    
+      })
+  
+  
+  
+  
+    });
+  
+  
+  
+    }
+  
+  
+  
+  
+  async  function SelectionSort() {
+      let len = storedarray.length;
+      for (let isel = 0; isel < len; isel++) {
+          let min = isel;
+          
+        
+          for (let jsel = isel + 1; jsel < len; jsel++) {
+           
+            await ij(isel , jsel);
+  
+            await hilight("aitem"+(jsel) , "red",  "1s" , 1100)
+            hilight("aitem"+(jsel),  defaultcolor ,  "1s" , 1100 )
+              if (storedarray[min] > storedarray[jsel]) {
+                 hilight("aitem"+(min) ,  defaultcolor ,  "1s" , 1100)
+                  min = jsel;
+              await   hilight("aitem"+(min) , "blueviolet", "1s" , 1100)
+              }
+          }
+          if (min != isel) {
+            await  display("Swapping index " + isel + " with index" + min)
+              let tmp = storedarray[isel];
+              storedarray[isel] = storedarray[min];
+              storedarray[min] = tmp;
+              await swapp(isel ,min )
+              hilight("aitem"+(min) , defaultcolor ,  "1s" , 1100)
+              
+          }
+          await hilight("aitem"+(isel) , "coral"  ,  "1s" , 1100)
+      }
+   
   }
-
-
-
-  function moveleft(index)  {
-
-    $("#aitemval"+(index-1)).animate({opacity:"0%"} , 500)
-
-    $("#aitemval"+(index)).animate({"margin-left":"-160px" , "opacity":"0%" },1000 ,function()  {
-
-        $("#aitemval"+(index-1)).text($("#aitemval"+(index)).text())
-
-        $("#aitemval"+(index-1)).animate({"opacity":"100%"} , 500 , function()  {
-
+  
+  
+  
+  
+  
+   
+    async  function BubbleSort(){
+  
+      var lene = storedarray.length;
+      
+      $("#iindex").text("j")
+      $("#jindex").text("j+1")
+  
+      for (let i=0; i < lene-1; i++){
+          for (let j=0; j < lene-i-1; j++){
+            await ij(j , j+1);
+            await display('Comparing index j=' + (j) + ' and j+1=' + (j+1) ) 
+            hilight("aitem"+(j) , "red" , "1000ms" , 1100)  
+                await hilight("aitem"+(j+1), "red" , "1000ms" , 1100) 
+              if (storedarray[j] > storedarray[j+1]){
+                var temp = storedarray[j];
+                storedarray[j] = storedarray[j+1];
+                storedarray[j+1] = temp;
+                await display('Element array['+ (j) +'] > array[' + (j+1)+ '] , Swapping')
+                
+               await swapp(j,j+1)
+               
+              }
+              
+              else {
+                await display('Element array['+ (j) +'] < array[' + (j+1)+ '] , Skip')  
+              }
+              hilight("aitem"+(j) , defaultcolor, '1s' , 900)  
+               hilight("aitem"+(j+1) ,defaultcolor,'1s' , 900)
+          }
+      }
+  
+      $("#iindex").text("i").hide()
+      $("#jindex").text("j").hide()
+  }
+  
+  
+  
+  async function InsertionSort() {
+    for (var i1 = 1; i1 < storedarray.length; i1++) {
+      var j1 = i1 - 1
+      var temp = storedarray[i1]
+     await hilight(`aitem${i1}` , "red" ,"1100ms",1100)
+      
+      await display('Inserting '+ (temp)  +' to correct index')
+      await hilight(`aitem${i1}` , defaultcolor ,"1100ms",1100)
+        
+      while (j1 >= 0 && storedarray[j1] > temp) {
+  
+        await display('Comparing  array[' + (j1) + '] => '+ (storedarray[j1])  + ' > ' + (temp) + '.Move element to right.');
+        await moveright(j1);
+        storedarray[j1 + 1] = storedarray[j1];
+        j1--;
+        
+      }
+      await display('Correct place at index = ' + (j1+1) )
+      storedarray[j1+1] = temp
+  
+      await insert(temp ,j1+1 );
+    
+    }
+   
+  }
+  
+  
+  async function merge( l,  m,  r) 
+  { 
+      let i, j, k; 
+      let n1 = Math.floor( m - l + 1); 
+      let n2 = Math.floor( r - m); 
+    
+      /* create temp arrays */
+      let L = [], R = [];
+    
+      let Larrgraphics = await temparray(n1, "l");
+      let Rarrgraphics = await temparray(n2, "r");
+      
+      let parentarrayoffset = ($("#t1").offset());
+      $(Larrgraphics).offset({top: parentarrayoffset.top+200})
+      $(Rarrgraphics).offset({top:parentarrayoffset.top+340})
+  
+      $("#iindex").show();
+    $("#jindex").hide();
+      /* Copy data to temp arrays L[] and R[] */
+      for (i = 0; i < n1; i++) {
+  
+  
+          L[i] = storedarray[l + i];
+          await I(i,"l")
+       await   insert(storedarray[l + i] , i , "l")
+          
+          
+      }
+  
+  
+      $("#jindex").show();
+      $("#iindex").hide();
+      for (j = 0; j < n2; j++)  {
+  
+          R[j] = storedarray[m + 1 + j];
+          await J(j,"r")
+       await   insert(storedarray[m + 1 + j] , j , "r")
+  
+          
+      }
+  
+      $("#jindex").show();
+      $("#iindex").show();
+    
+      /* Merge the temp arrays back into arr[l..r]*/
+      i = 0; // Initial index of first subarray 
+      j = 0; // Initial index of second subarray 
+      k = l; // Initial index of merged subarray 
+      I(0,"l")
+      J(0,"r")
+      while (i < n1 && j < n2) { 
+          if (L[i] <= R[j]) { 
+            await I(i , "l")
+            storedarray[k] = L[i]; 
+        await hilight(`litem${i}` , "red" , "800ms",800)
+        await hilight(`litem${i}` , defaultcolor , "800ms",800)
+        await K(k, "a")
+            await   insert(L[i] , k , "a")
+              i++; 
+          } 
+          else { 
+            storedarray[k] = R[j]; 
+            await J(j, "r")
+            await hilight(`ritem${j}` , "red" , "800ms",800)
+        await hilight(`ritem${j}` , defaultcolor , "800ms",800)
+       
+        await K(k, "a")
+             await   insert(R[j] , k , "a")
+              j++; 
+          } 
+          k++; 
+      } 
+    
+      /* Copy the remaining elements of L[], if there 
+         are any */
+      while (i < n1) { 
+       
+        storedarray[k] = L[i]; 
+        await I(i , "l")
+        await hilight(`litem${i}` , "red" , "800ms",800)
+        await hilight(`litem${i}` , defaultcolor , "800ms",800)
+        await K(k, "a")
+      await  insert(L[i] , k , "a")
+          i++; 
+          k++; 
+      } 
+    
+      /* Copy the remaining elements of R[], if there 
+         are any */
+      while (j < n2) { 
+        
+        storedarray[k] = R[j];
+        await J(j, "r")
+        await hilight(`ritem${j}` , "red" , "800ms",800)
+        await hilight(`ritem${j}` , defaultcolor , "800ms",800)
+        await K(k, "a")
+        await   insert(R[j] , k , "a")
+          j++; 
+          k++; 
+      } 
+  
+  
+      Larrgraphics.remove()
+      Rarrgraphics.remove()
+  
+  
+  } 
+    
+  /* l is for left index and r is right index of the 
+     sub-array of arr to be sorted */
+  async function ms(  l,  r) 
+  { 
+      if (l < r) { 
+          // Same as (l+sr)/2, but avoids overflow for 
+          // large l and h 
+          let m = Math.floor (l + (r - l) / 2); 
+    
+       
+         await ms( l, m); 
+         
+         await ms( m + 1, r); 
+         await cutoutarray(l,r)
+         await merge( l, m, r); 
+  
+      } 
+  } 
+  
+  
+   async function MergeSort()  {
+  
+  
+   await  ms (0 , storedarray.length-1)
+  
+     $("#iindex").hide()
+     $("#jindex").hide()
+     $("#kindex").hide()
+  
+  
+  }
+  
+  
+  
+  
+  
+  
+  
+  async function BinarySearch(value){
+  
+    $("#kindex").text("mid").show();
+  
+    await display( 'set first = 0')
+    await hilight("aitem0", "blueviolet" , "1000ms" , 1100)
+    var firstIndex  = 0
+  
+    I(firstIndex ,  "a" )
+  
+    var    lastIndex   = storedarray.length - 1
+  
+    J(lastIndex ,  "a" )
+  
+        await display( 'set last = '+lastIndex)
+        await hilight("aitem"+(lastIndex), "blueviolet" , "1000ms" , 1100)
+  
+     var   middleIndex = Math.floor((lastIndex + firstIndex)/2);
+     K(middleIndex ,  "a" )
+        await display( 'set mid = (first+last)/2')
+        await hilight("aitem"+(middleIndex), "rgb(109,209,0,1)", "1000ms" , 2100)
+  
+  
+  
+  
+    while(storedarray[middleIndex] != value && firstIndex < lastIndex)
+    {
+       
+       if (value < storedarray[middleIndex])
+        {
+          
+          await hilight("aitem"+(middleIndex) , defaultcolor , "1000ms" , 1100)
+           await display( 'search item '+ value +' is smaller array[' + middleIndex + ']')
+           await display( 'set last = mid-1')
+            hilight("aitem"+lastIndex ,  defaultcolor , "1000ms" , 1100)
+            lastIndex = middleIndex - 1;
+            J(lastIndex ,  "a" )
+            await hilight("aitem"+lastIndex , "blueviolet" ,  "1000ms" , 1100)
+        } 
+      else if (value > storedarray[middleIndex])
+        {
+          await hilight("aitem"+(middleIndex) ,defaultcolor ,  "1000ms" , 1100)
+          await display( 'search item '+ value +' is larger array[' + middleIndex + ']')
+           await display( 'set first = mid+1')
+            hilight("aitem"+firstIndex ,defaultcolor ,  "1000ms" , 1100)
+            firstIndex = middleIndex + 1;
+            I(firstIndex ,  "a" )
+            await hilight("aitem"+firstIndex , "blueviolet" ,  "1000ms" , 1100)
+        }
+      
+        await hilight("aitem"+(middleIndex),defaultcolor ,  "1000ms" , 1100)
+        middleIndex = Math.floor((lastIndex + firstIndex)/2);
+        await display( 'set mid = (first+last)/2')
+        K(middleIndex ,  "a" )
+        await hilight("aitem"+(middleIndex), "rgb(109,209,0,1)" ,  "2000ms" , 2100)
+    
+    }
+  
+  if (storedarray[middleIndex] == value){
+  
+    await display( 'Item Found' )
+    Output('Item Found at index = ' + middleIndex)
+  }
+  
+  else{
+  
+    await display( 'Item Doesnt exist' )
+    Output('Item Doesnt exist return -1')
+  }
+  
+  
+  }
+  
+  
+     function insert(value ,index , cellid="a") {
+  
+      return new Promise ( resolve => {
+      $(`#${cellid}itemval${index}`).css({opacity:"0%"})
+  
+      $(`#${cellid}itemval${index}`).text(value)
+  
+      $(`#${cellid}itemval${index}`).animate({opacity:"100%"} , 1000)
+  
+  
+      setTimeout (function()  {
+  
+        resolve('resolved')
+            },1000)
+            
+  
+      })
+  
+    }
+  
+  
+  
+    function moveleft(index)  {
+  
+      $("#aitemval"+(index-1)).animate({opacity:"0%"} , 500)
+  
+      $("#aitemval"+(index)).animate({"margin-left":"-160px" , "opacity":"0%" },1000 ,function()  {
+  
+          $("#aitemval"+(index-1)).text($("#aitemval"+(index)).text())
+  
+          $("#aitemval"+(index-1)).animate({"opacity":"100%"} , 500 , function()  {
+  
+            $("#aitemval"+(index)).animate({"margin-left":"0px" , "opacity":"0%" })
+    
+          })
+      })
+  
+  
+  }
+  
+  function moveright(index)  {
+  
+    return new Promise ( resolve => {
+  
+    $("#aitemval"+(index+1)).animate({opacity:"0%"} , 500)
+  
+    $("#aitemval"+(index)).animate({"margin-left":"90px" , "opacity":"0%" },1000 ,function()  {
+  
+        $("#aitemval"+(index+1)).text($("#aitemval"+(index)).text())
+  
+        $("#aitemval"+(index+1)).animate({"opacity":"100%"} , 500 , function()  {
+  
           $("#aitemval"+(index)).animate({"margin-left":"0px" , "opacity":"0%" })
   
         })
-    })
-
-
-}
-
-function moveright(index)  {
-
-  return new Promise ( resolve => {
-
-  $("#aitemval"+(index+1)).animate({opacity:"0%"} , 500)
-
-  $("#aitemval"+(index)).animate({"margin-left":"90px" , "opacity":"0%" },1000 ,function()  {
-
-      $("#aitemval"+(index+1)).text($("#aitemval"+(index)).text())
-
-      $("#aitemval"+(index+1)).animate({"opacity":"100%"} , 500 , function()  {
-
-        $("#aitemval"+(index)).animate({"margin-left":"0px" , "opacity":"0%" })
-
-      })
-
-     
-  })
-
-
-  setTimeout (function()  {
-
-    resolve('resolved')
-        },2000)
-        
-
-  })
-
-}
-
-
-var index = length-2
-
-
-function insertAt(value ,index , i =length-2) {
-
-if (index == i+1 ) {
-  insert(value ,index)
-  return;
-}
-
-moveright(i);
   
-setTimeout( function()  {
-
-
-  insertAt(value , index , i-1)
-
-}, 2000);
-
-
+       
+    })
+  
+  
+    setTimeout (function()  {
+  
+      resolve('resolved')
+          },2000)
+          
+  
+    })
   
   }
   
-
+  
+  var index = length-2
+  
+  
+  function insertAt(value ,index , i =length-2) {
+  
+  if (index == i+1 ) {
+    insert(value ,index)
+    return;
+  }
+  
+  moveright(i);
+    
+  setTimeout( function()  {
+  
+  
+    insertAt(value , index , i-1)
+  
+  }, 2000);
+  
+  
+    
+    }
+    
+  
+  
   //Heap
 
 
 
 
 
-  var data,ii=0;
-
-  $.getJSON("Alignment.json", function(result){
+  function arraynodes() 
+  { 
   
-      return new Promise ( resolve => {
+      if ( ii == length ) {
+          counttreenodes = length;
+          count =length;
+          return;
+      
+    
+       }
   
-          data = result;
+      var newnode = '<div id="'+ii+'"  class="dragg" > <div class="treenode" id="'+ ii+"treetop" +'" style="margin-left:35px;"></div>  <div class="treenode" id="'+ ii+"treeleft" +'" style="margin-left:18px; margin-top:70px;"></div>   <div class="treenode" id="'+ ii+"treeright" +'" style="margin-left:54px; margin-top:70px;"></div> <p  style="position:absolute;color:coral; font-size:70%; left:20px;" id="'+ ii+"bottom" +'">'+ii +'</p>    <p  id="'+ ii+"treeval" +'" class="t">'+storedarray[ii]+'</p>   </div>';
   
-          resolve('')
+      $("body").prepend(newnode)
+        $("#"+ii).draggable();
+      
+  
+        tree[ii+"treeleft"] = "null"
+        tree[ii+"treeright"] = "null"
+    ii = ii + 1
+        rootoftree = newnode
+        arraynodes()
+  
+  } 
+  
+  
+  
+  function build() 
+  { 
+  
+     
+  
+      for (var  i =0 ;  i < counttreenodes ; i++)  {
+  
+  
+  if ( (2*(i))+1 >= counttreenodes ) {
+      break;
+  }
+  
+  else {
+  
+      var leftc = (2*(i))+1;
+  
+      treefy(i+"treeleft" , leftc)
+  
+  }
+  
+  if ( (2*(i))+2 >= counttreenodes ) {
+      break;
+  }
+  
+  else {
+  
+      var rightc = (2*(i))+2;
+  
+      treefy(i+"treeright" , rightc)
+  
+  }
+  
+  
+  
+      }
+  
+  
+  
+  
+  }  
+  
+  function buildheap()  {
+  
+      arraynodes();
+  
+      build();
+  
+  }
+  
+  
+  function gottopoint (i,j)   {
+  
+  
+      return new Promise(resolve => {
+  
+  
+      var element1 = $("#"+i);
+      var top1 = element1.position().top;
+      var left1 = element1.position().left;
+  
+  
+      var  element2 = $("#"+j);
+      var top2 = element2.position().top;
+      var left2 = element2.position().left;
+  
+      var  element1text = $("#"+i+"treeval").text();
+      var  element2text = $("#"+j+"treeval").text();
+  
+      element1.css({ "top": (top2)+"px", "left": (left2)+"px" ,"transition-duration" :"1500ms" },3500, function() {
+  
+  
       })
+  
+      element2.css({ "top": (top1)+"px", "left": (left1)+"px","transition-duration" :"1500ms" } , 3500, function() {
+  
+  
+      })
+     
+  
+      setTimeout(function() {
+  
+        element1.css({"position" : "absolute" , "top": (top1)+"px", "left": (left1)+"px" ,"transition-duration" :"0ms"})
+  
+         element2.css({"position" : "absolute" , "top": (top2)+"px", "left": (left2)+"px" ,"transition-duration" :"0ms"})
+  
+         $("#"+j+"treeval").text(element1text)
+         $("#"+i+"treeval").text(element2text);
+  
+         resolve('resolved')
+  
+      },1480)
+  
+  
+  
+  
+  
+      })
+  
+  
+  
+  
+  }
+  
+  
+    
+  
+  
+  
+  
+  
+  
+  // Heapsort
+  
+  
+  async function heapify( len,  ind) 
+  { 
+      ind = Math.floor(ind)
+      var largest = ind; // Initialize largest as root 
+      var l = 2*ind + 1; // left = 2*i + 1 
+      var r = 2*ind + 2; // right = 2*i + 2 
+    
       
-    });
-  
-
-
-function arraynodes() 
-{ 
-
-    if ( ii == length ) {
-        counttreenodes = length;
-        count =length;
-        return;
+      // If left child is larger than root 
+      if (l < len && storedarray[l] > storedarray[largest]) 
+          largest = l; 
     
-  
-     }
-
-    var newnode = '<div id="'+ii+'"  class="dragg" > <div class="treenode" id="'+ ii+"treetop" +'" style="margin-left:35px;"></div>  <div class="treenode" id="'+ ii+"treeleft" +'" style="margin-left:18px; margin-top:70px;"></div>   <div class="treenode" id="'+ ii+"treeright" +'" style="margin-left:54px; margin-top:70px;"></div> <p  style="position:absolute;color:coral; font-size:70%; left:20px;" id="'+ ii+"bottom" +'">'+ii +'</p>    <p  id="'+ ii+"treeval" +'" class="t">'+storedarray[ii]+'</p>   </div>';
-
-    $("body").prepend(newnode)
-      $("#"+ii).draggable();
+      // If right child is larger than largest so far 
+      if (r < len && storedarray[r] > storedarray[largest]) 
+          largest = r; 
     
-
-      tree[ii+"treeleft"] = "null"
-      tree[ii+"treeright"] = "null"
-  ii = ii + 1
-      rootoftree = newnode
-      arraynodes()
-
-} 
-
-
-
-function build() 
-{ 
-
-   
-
-    for (var  i =0 ;  i < counttreenodes ; i++)  {
-
-
-if ( (2*(i))+1 >= counttreenodes ) {
-    break;
-}
-
-else {
-
-    var leftc = (2*(i))+1;
-
-    treefy(i+"treeleft" , leftc)
-
-}
-
-if ( (2*(i))+2 >= counttreenodes ) {
-    break;
-}
-
-else {
-
-    var rightc = (2*(i))+2;
-
-    treefy(i+"treeright" , rightc)
-
-}
-
-
-
-    }
-
-
-
-
-}  
-
-function buildheap()  {
-
-    arraynodes();
-
-    build();
-
-}
-
-
-function gottopoint (i,j)   {
-
-
-    return new Promise(resolve => {
-
-
-    var element1 = $("#"+i);
-    var top1 = element1.position().top;
-    var left1 = element1.position().left;
-
-
-    var  element2 = $("#"+j);
-    var top2 = element2.position().top;
-    var left2 = element2.position().left;
-
-    var  element1text = $("#"+i+"treeval").text();
-    var  element2text = $("#"+j+"treeval").text();
-
-    element1.css({ "top": (top2)+"px", "left": (left2)+"px" ,"transition-duration" :"1500ms" },3500, function() {
-
-
-    })
-
-    element2.css({ "top": (top1)+"px", "left": (left1)+"px","transition-duration" :"1500ms" } , 3500, function() {
-
-
-    })
-   
-
-    setTimeout(function() {
-
-      element1.css({"position" : "absolute" , "top": (top1)+"px", "left": (left1)+"px" ,"transition-duration" :"0ms"})
-
-       element2.css({"position" : "absolute" , "top": (top2)+"px", "left": (left2)+"px" ,"transition-duration" :"0ms"})
-
-       $("#"+j+"treeval").text(element1text)
-       $("#"+i+"treeval").text(element2text);
-
-       resolve('resolved')
-
-    },1480)
-
-
-
-
-
-    })
-
-
-
-
-}
-
-
+      // If largest is not root 
+      if (largest != ind) 
+      { 
+           hilight(ind , "red" , "1s" ,1100)
+        //  swap(st[ind], st[largest]); 
+        await hilight(largest , "red" , "1s" ,1100)
+          var te = storedarray[ind];
+          storedarray[ind] = storedarray[largest];
+          storedarray[largest] = te;
   
-
-
-
-
-
-
-// Heapsort
-
-
-async function heapify( len,  ind) 
-{ 
-    ind = Math.floor(ind)
-    var largest = ind; // Initialize largest as root 
-    var l = 2*ind + 1; // left = 2*i + 1 
-    var r = 2*ind + 2; // right = 2*i + 2 
-  
+       await   gottopoint(ind ,largest)
+       await swapp(ind,largest)
+        hilight(ind , defaultcolor , "1s" ,1100)
+       await hilight(largest , defaultcolor , "1s" ,1100)
     
-    // If left child is larger than root 
-    if (l < len && storedarray[l] > storedarray[largest]) 
-        largest = l; 
-  
-    // If right child is larger than largest so far 
-    if (r < len && storedarray[r] > storedarray[largest]) 
-        largest = r; 
-  
-    // If largest is not root 
-    if (largest != ind) 
-    { 
-         hilight(ind , "red" , "1s" ,1100)
-      //  swap(st[ind], st[largest]); 
-      await hilight(largest , "red" , "1s" ,1100)
-        var te = storedarray[ind];
-        storedarray[ind] = storedarray[largest];
-        storedarray[largest] = te;
-
-     await   gottopoint(ind ,largest)
-     await swapp(ind,largest)
-      hilight(ind , defaultcolor , "1s" ,1100)
-     await hilight(largest , defaultcolor , "1s" ,1100)
-  
-        // Recursively heapify the affected sub-tree 
-    await    heapify(len, largest); 
-    } 
-} 
-  
-// main function to do heap sort 
-async function HeapSort() 
-{ 
-   await arraynodes()
-    await doalign("400ms" , 2000)
-   await build()
-    // Build heap (rearrange array) 
-    await display('Building Heap')
-    for (var ind = length / 2 - 1; ind >= 0; ind--) 
-    await   heapify(length, ind); 
-  
-    await display('Heap Built')
-    // One by one extract an element from heap 
-    for (var ind=length-1; ind>0; ind--) 
-    { 
-        // Move current root to end 
-     //   swap(st[0], st[ind]); 
-
-        var te = storedarray[0];
-        storedarray[0] = storedarray[ind];
-        storedarray[ind] = te;
-        await display('Swap last element with root node')
-        await  gottopoint(0 ,ind)
-        await swapp(0,ind)
-        await turnred(ind)
-        await hilight(ind, "purple" ,"1s" ,1100)
-  
-        // call max heapify on the reduced heap 
-        await display('Building Heap')
-        await   heapify( ind, 0); 
-    } 
-} 
-
-
-
-var t , l
-var el_pos = { }
-
-var posar = {}
-
-function alignanimate(d , duration_ , timeout_)  {
-
-
-    var top_ = data[d]["top"];
-    var left_ = data[d]["left"];
-
-var ff = $("#"+d)
-
-ff.css({"top" : "0px" , "left" : "0px" ,"transition-duration" : duration_})
-$("#"+d).offset({top:top_ , left:left_})
-
-return new Promise (resolve => {
-
-  
+          // Recursively heapify the affected sub-tree 
+      await    heapify(len, largest); 
+      } 
+  } 
     
-    setTimeout(function() {
+  // main function to do heap sort 
+  async function HeapSort() 
+  { 
+     await arraynodes()
+      await doalign("400ms" , 2000)
+     await build()
+      // Build heap (rearrange array) 
+      await display('Building Heap')
+      for (var ind = length / 2 - 1; ind >= 0; ind--) 
+      await   heapify(length, ind); 
+    
+      await display('Heap Built')
+      // One by one extract an element from heap 
+      for (var ind=length-1; ind>0; ind--) 
+      { 
+          // Move current root to end 
+       //   swap(st[0], st[ind]); 
+  
+          var te = storedarray[0];
+          storedarray[0] = storedarray[ind];
+          storedarray[ind] = te;
+          await display('Swap last element with root node')
+          await  gottopoint(0 ,ind)
+          await swapp(0,ind)
+          await turnred(ind)
+          await hilight(ind, "purple" ,"1s" ,1100)
+    
+          // call max heapify on the reduced heap 
+          await display('Building Heap')
+          await   heapify( ind, 0); 
+      } 
+  } 
+  
+  
+  
+  var t , l
+  var el_pos = { }
+  
+  var posar = {}
+  
+  var data 
+  
+  function alignanimate(d , duration_ , timeout_)  {
+  
+  
+      var tt = data[d]["top"];
+      var ll = data[d]["left"];
+  
+  var ff = $("#"+d)
+  
+      ff.css({"transition-duration" : "2000ms" , "left" :"0px" ,"top" :"0px"})
+  
+      ff.offset({top:tt , left :ll})
       
-resolve('resolved')
-    },timeout_)
-
-
-
-
-})
-
-}
-
-
- async function doalign(duration_="2000ms" , timeout_=200)  {
-
   
-for ( var d=0 ; d < counttreenodes ; d++ ) {
-
-   
-
-  await   alignanimate(d , duration_ , timeout_);
-}
-
-
-
-
-
-}
-
+  
+  return new Promise (resolve => {
+  
+    
+      
+      setTimeout(function() {
+        
+  resolve('resolved')
+      },timeout_)
+  
+  
+  
+  
+  })
+  
+  }
+  
+  
+   async function doalign(duration_="3000ms" , timeout_=200)  {
+  
+    
+  for ( var d=0 ; d < counttreenodes ; d++ ) {
+  
+     
+  
+    await   alignanimate(d , duration_ , timeout_);
+  }
+  
+  
+  
+  
+  
+  }
 
 
 
 
 //QuickSort
-
 
 
 
@@ -1842,15 +2026,112 @@ var logscreen = document.getElementById("log1");
 var outputscreen = document.getElementById("out1");
 
 
+function K( _k,  cellid )  {
+
+
+    return new Promise (resolve => {
+    
+        let kpos = $(`#${cellid}item${_k}`).offset();
+
+      
+      $("#kindex").offset({top : (kpos.top)+100, left : (kpos.left)+45 });
+
+      
+      
+      
+      setTimeout(function() {
+      
+      
+      resolve('')
+      
+      },400)
+      
+      
+      })
+
+
+}
+
+function I(_i , cellid="l" ) {
+
+    return new Promise (resolve => {
+    
+        let ipos = $(`#${cellid}item${_i}`).offset();
+        
+    $("#iindex").offset({top : (ipos.top)+100, left : (ipos.left)+45 });
+    setTimeout(function() {
+    
+    
+    resolve('')
+    
+    },400)
+    
+    
+    })
+    
+}
+
+
+
+function J(_j , cellid="r" ) {
+
+    return new Promise (resolve => {
+    
+        let jpos = $(`#${cellid}item${_j}`).offset();
+        
+        $("#jindex").offset({top : (jpos.top)+100, left : (jpos.left)+55 });
+    setTimeout(function() {
+    
+    
+    resolve('')
+    
+    },400)
+    
+    
+    })
+    
+}
+
+
+
+
+
+function ij(_i ,_j  , cellid="a" , cellid1 = "a") {
+
+    return new Promise (resolve => {
+    
+        let ipos = $(`#${cellid}item${_i}`).offset();
+        let jpos = $(`#${cellid1}item${_j}`).offset();
+    
+    $("#iindex").offset({top : (ipos.top)+100, left : (ipos.left)+45 });
+    $("#jindex").offset({top : (jpos.top)+100, left : (jpos.left)+55 });
+    
+    
+    
+    setTimeout(function() {
+    
+    
+    resolve('')
+    
+    },400)
+    
+    
+    })
+    
+     }
+
+
+
 async function partition ( low,  high)  
 {  
     var pivot = storedarray[high]; // pivot  
    await pivotchange(high);
     var qi = (low - 1); // Index of smaller element  
-    recurse(low , high)
+   // recurse(low , high)
   
     for (var qj = low; qj <= high - 1; qj++)  
     {  
+        if (qi >= 0 && qj >= 0 ) await ij(qi,qj);
  
         // If current element is smaller than the pivot  
         if (storedarray[qj] < pivot)  
@@ -1858,14 +2139,17 @@ async function partition ( low,  high)
           
             await turnred(qj)
             qi++; // increment index of smaller element
+            await ij(qi,qj);
             await display('Incremenet i;  i='+qi)  
             await display("Swapping index i="+ qi +" With j="+qj )
             var qtemp = storedarray[qi]
             storedarray[qi] = storedarray[qj]
             storedarray[qj] = qtemp
         if(qi != qj)   {
+            
+            await ij(qi,qj);
             await swapp(qi , qj);
-            recurse(low , high)
+     //       recurse(low , high)
         }
         await turnnormal(qj)
         }   
@@ -1874,8 +2158,10 @@ async function partition ( low,  high)
             storedarray[qi+1] = storedarray[high]
             storedarray[high] = qtemp
             await display("Swapping index i+1 ="+ (qi+1) +" With pivot="+high )
-            if(qi+1 != high)  { await swapp(qi+1 , high);
-                recurse(low , high)
+            if(qi+1 != high)  { 
+                await ij(qi+1,high);
+                await swapp(qi+1 , high);
+
             }
             await pivotnormal(high);
     return (qi + 1);  
@@ -1900,13 +2186,14 @@ async function qs(  low,  high)
 
          await push('QuickSort( '+ (low) + ' , ' + (pi-1) + ' )' ); 
          $('#Q').append('<p style="font-size:250%;color:coral;font-family:Segoe UI;">'+'QuickSort( '+ (low) + ' , ' + (pi-1) + ' )'+'</p>')
+         await cutoutarray(low, pi-1);
         }
         await  qs( low, pi - 1);  
 
         if (pi+1 < high) { await display('Calling QuickSort( '+ (pi+1) + ' , ' + (high) + ' )' );
         await push('QuickSort( '+ (pi+1) + ' , ' + (high) + ' )' ); 
         $('#Q').append('<p style="font-size:250%;color:coral;font-family:Segoe UI;">'+'QuickSort( '+ (pi+1) + ' , ' + (high) + ' )'+'</p>')
-
+        await cutoutarray(pi+1,high);
     }
     
         await  qs( pi + 1, high);  
@@ -1918,19 +2205,49 @@ async function qs(  low,  high)
 }  
 
 
+
 async function QuickSort()  {
 
-stack(10)
-sheet()
-Sheet.hide();
+if($("#tab1").length == 0) stack(10);
+
 await display('Calling QuickSort( '+ (0) + ' , ' + (length-1) + ' )' )
 await push('QuickSort( '+ (0) + ' , ' + (length-1) + ' )' )
-$('#Q').append('<p style="font-size:250%;color:coral;font-family:Segoe UI;">'+'QuickSort( '+ (0) + ' , ' + (length-1) + ' )'+'</p>')
+//$('#Q').append('<p style="font-size:250%;color:coral;font-family:Segoe UI;">'+'QuickSort( '+ (0) + ' , ' + (length-1) + ' )'+'</p>')
+await cutoutarray(0,length-1)
 await qs(0 ,length-1)
-Sheet.show();
+
 
 }
 
+
+async function cutoutarray (start , end)  {
+
+    return new Promise( resolve => {
+
+
+$(".arrayd").css({"background-color" : "rgba(0,0,0,.2)" , transition: "400ms linear"})
+
+
+setTimeout(()=> {
+
+    for (var h = start ; h <= end ; ++h)  {
+
+  
+        $(`#aitem${h}`).css({"background-color" : "rgba(0,0,0,.842)" , transition: "400ms linear"})
+  
+  
+  
+      }
+  
+      resolve('')
+
+
+},470)
+
+})
+
+
+}
 
 
 function sheet ()  {
@@ -1944,6 +2261,8 @@ Sheet = $("#Q")
 
 
 }
+
+
 
 
 function recurse(start , end)  {
@@ -2119,8 +2438,6 @@ logscreen.scrollTop = logscreen.scrollHeight;
 // Graph
 
 
-
-
     
 var organized = {};
 
@@ -2183,7 +2500,7 @@ var NoOfVertex;
 
   NoOfVertex = t;
 
-  $("body").append (`<table id="distab" style ="position:absolute; transition:100ms linear; top:200px" ></table>`);
+  $("body").append (`<table id="distab" style ="position:absolute; transition:100ms linear; top:135px" ></table>`);
 
   graphmatrix = $("#distab")
 
@@ -2330,7 +2647,7 @@ var nu =0;
 function vertex (label) {
 
 
-var vertice = `<div id=${label} class="vert"> <p class="ver-label"> ${label}</p></div>`;
+var vertice = `<div id=${label} class="vert"> <p id=${label}name class="ver-label"> ${label}</p></div>`;
 
 $("body").prepend(vertice)
 
@@ -2817,7 +3134,17 @@ $(document).on("click","div.vert" , function (e)  {
       
     if (clicktimes === 0) {
 
-    first=  e.target.id;
+
+        if ($(e.target).parent("div.vert").length) {
+
+            
+
+            first=  $("#"+e.target.id).parent().attr("id");
+
+           
+        }
+
+    else  first=  e.target.id;
 
     clicktimes = 1;
     $("#graphinput").css({"visibility" : " hidden"})
@@ -2826,7 +3153,14 @@ $(document).on("click","div.vert" , function (e)  {
 
     else if (clicktimes === 1) {
 
-second = e.target.id
+        if ($(e.target).parent("div.vert").length) {
+        
+            second =  $(e.target).parent().attr("id");
+
+        }
+
+
+        else  second=  e.target.id;
 
 let mousex = e.clientX;
 let mousey = e.clientY;
@@ -2916,16 +3250,17 @@ $("#graphinput").val("")
   })
 
 
-  // save Graph
-
-
-
 
 
 // Stack
 
+/*
+var $ = jQuery = require('jquery')
+require('jquery-ui-dist/jquery-ui')
+require('jquery-ui-dist/jquery.connectingLine')
 
-
+var {dialog} = require('electron').remote
+*/
 
 var el = 0;
 var count_stack = 1;
@@ -3218,7 +3553,7 @@ for(i=0; i<typed; i++){
 
 stack += "</table></div>"
 
-$('body').append(stack);
+$('body').prepend(stack);
 
 
 
@@ -3226,7 +3561,7 @@ $('body').append(stack);
 
 
 
-      //$("body").prepend(stack)
+      //$(".area").prepend(stack)
       $("#tab"+count_stack).draggable();
 
       
@@ -3239,9 +3574,93 @@ $('body').append(stack);
 
 
   
-    //Queue
+
+  
+    //Modded
 
 
+
+
+    
+
+function createleaves(nnodes) {
+
+
+  for (let i = 0 ; i < nnodes.length ; ++i) {
+  
+  
+  leaf( nnodes[i])
+  
+  }
+  
+  
+  counttreenodes = i;
+  
+  if (i > 30) {
+  
+      counttreenodes = 30;
+  }
+  
+  
+  }
+  
+  
+  function createnodes(nnodes) {
+  
+  
+      for (let i = 0 ; i < nnodes.length ; ++i) {
+  
+  
+          addnode( nnodes[i])
+          
+          }
+          
+      
+      
+      
+      }
+      
+  
+   async   function traverse()  {
+  
+  
+  
+  for (var t = 0 ; t < storedarray.length ; t++) {
+  
+       
+      await  hilight("aitem"+(t) , "rgb(109,209,0,1)" , "500ms",700)
+      hilight("aitem"+(t) , defaultcolor , "500ms" , 700)
+      Output(storedarray[t])
+  
+  }
+  
+  
+  
+      }
+  
+  
+      async   function search(item)  {
+  
+  
+  
+          for (var t = 0 ; t < storedarray.length ; t++) {
+          
+              if  (item == storedarray[t]) {
+  
+                  await  hilight("aitem"+(t) , "rgb(255,0,0,1)" , "6000ms",6500)
+                  Output("Found at index " + t)
+                  break;
+              }
+  
+              await  hilight("aitem"+(t) , "rgb(109,209,0,1)" , "500ms",700)
+              hilight("aitem"+(t) , defaultcolor , "500ms" , 700)
+            
+          
+          }
+          
+          
+          
+              }
     
 
 
