@@ -17,7 +17,7 @@ position: fixed;
 height: 20%;
 height: 20%;
 left: 10px;
-z-index: -2;
+z-index: 99;
 
 
 
@@ -260,6 +260,24 @@ arsig =0;
 }
 
 
+if (scrollpos >= 4130)  {
+
+
+    $(".dev").css({"opacity" : "100%" , "top" : "400px" , "transition-duration" : "1000ms"})
+
+
+
+}
+if (scrollpos < 4130)  {
+
+
+$(".dev").css({"opacity" : "0%" , "top" : "200px" , "transition-duration" : "1000ms"})
+
+
+
+}
+
+
 
 })
 
@@ -475,7 +493,7 @@ $("#kindex").hide();
 
 
 
-<div id="treeddiv" class = "titles" style="position: absolute; text-align: center;top: 1200px; ;background-color: rgba(0, 0, 0, 0.5);height: 400px; width: 100%;">
+<div id="treeddiv" class = "titles" style="position: absolute; text-align: center;top: 1200px; ;background-color: rgba(107, 107, 107);height: 400px; width: 100%;">
 
     <p id="treeddiv-label"  style="position: relative; font-family: 'Thin'  ; font-size: 800%; top:-50px">Tree</p>
 
@@ -485,7 +503,7 @@ $("#kindex").hide();
 
 
 
-<div id="arraydiv" class = "titles" style="position: absolute; text-align: center;top: 1888px; ;background-color: rgba(0, 0, 0, 0.5);height: 400px; width: 100%;">
+<div id="arraydiv" class = "titles" style="position: absolute; text-align: center;top: 1888px; ;background-color: rgb(255, 127, 80);height: 400px; width: 100%;">
 
     <p id="arraydiv-label"   style="position: relative; font-family: 'Thin'  ; font-size: 800%; top:-50px">Array</p>
 
@@ -494,7 +512,7 @@ $("#kindex").hide();
 </div>
 
 
-<div id="listdiv" class = "titles" style="position: absolute; text-align: center;top: 2708px; ;background-color: rgba(0, 0, 0, 0.5);height: 400px; width: 100%;">
+<div id="listdiv" class = "titles" style="position: absolute; text-align: center;top: 2708px; ;background-color: rgba(255, 0, 0, 0.699);height: 400px; width: 100%;">
 
     <p id="listdiv-label"   style="position: relative; font-family: 'Thin'  ; font-size: 800%; top:-50px">Linked list</p>
 
@@ -504,7 +522,7 @@ $("#kindex").hide();
 
 
 
-<div id="graphdiv" class = "titles" style="position: absolute; text-align: center;top: 3750px; ;background-color: rgba(0, 0, 0, 0.5);height: 400px; width: 100%;">
+<div id="graphdiv" class = "titles" style="position: absolute; text-align: center;top: 3750px; ;background-color: rgba(23, 199, 0, 0.74);height: 400px; width: 100%;">
 
     <p id="graphdiv-label"   style="position: relative; font-family: 'Thin'  ; font-size: 800%; top:-50px">Graph</p>
 
@@ -524,14 +542,14 @@ $("#kindex").hide();
 
     <div id="vertline" style="position:relative; height: 300px; width: 1px; background-color: rgba(0,0,0,0.4); left:50%;"></div>
 
-    <div id = "dev1" style="position: absolute; top: 400px; height:200px ; width: 200px; background-color: rgba(255,255,255,0);left:27%;">
+    <div id = "dev1" class="dev" style="position: absolute; opacity: 0%; top: 0px; height:200px ; width: 200px; background-color: rgba(255,255,255,0);left:27%;">
 
         <p class="con"><strong> Anoop Singh </strong></p>
         <p  style="font-family: 'segoe ui'; font-size: larger;">(IN) +91-9910141424 </p>
         <p  style="font-family: 'segoe ui'; font-size: larger;" >therain0605@gmail.com</p>
 
     </div>
-    <div id = "dev2" style="position: absolute; top: 400px; height:200px ; width: 200px; background-color: rgba(255,255,255,0);right:27%;">
+    <div id = "dev2" class = "dev" style="position: absolute; opacity: 0%; top: 0px; height:200px ; width: 200px; background-color: rgba(255,255,255,0);right:27%;">
 
         <p class="con"><strong> Kshitij Dhama </strong></p>
         <p  style="font-family: 'segoe ui'; font-size: larger;">(IN) +91-9468880505 </p>
