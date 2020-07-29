@@ -306,7 +306,7 @@ $("#codetype").change(async function() {
   
   await eval(command)
 
-  normalize();
+  await normalize();
 
   
 
@@ -1739,7 +1739,16 @@ clicktimes = 0;
   //Heap
 
 
+var ii=0 , data;
 
+
+$.getJSON("Alignment.json" , function(result) {
+
+
+  data = result
+
+
+})
 
 
   function arraynodes() 
@@ -1959,8 +1968,7 @@ clicktimes = 0;
   
   var posar = {}
   
-  var data 
-  
+
   function alignanimate(d , duration_ , timeout_)  {
   
   
@@ -3584,9 +3592,9 @@ $('body').prepend(stack);
     
 
 function createleaves(nnodes) {
+  let  i;
 
-
-  for (let i = 0 ; i < nnodes.length ; ++i) {
+  for ( i = 0 ; i < nnodes.length ; ++i) {
   
   
   leaf( nnodes[i])
