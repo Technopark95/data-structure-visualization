@@ -28,6 +28,7 @@ var mapping = { "0" : "print(value)" ,  "1" : "preorder(left)" , "2" : "preorder
 
 var steps = {}
 var newnode;
+var infoclick = 0;
 
 variables['head'] = 0
 variables['root'] = 0
@@ -269,6 +270,103 @@ $(document).on("mouseleave","div.nodeleft" , function (e)  {
   displaysignal = "quick"
     })
   
+
+   
+
+    $("#infotab").on("mouseenter" , function() {
+
+      $("#infos").css({"left":"250px", "transition-duration" : "300ms"})
+  
+  
+    })
+  
+
+    $("#infotab").on("mouseleave" , function() {
+  
+      $("#infos").css({"left":"0px", "transition-duration" : "300ms"})
+  
+  
+    })
+
+  
+
+
+
+    $("#listofcommand").hide();
+ 
+    $("#infotab").on("click" , function() {
+
+
+      if (infoclick == 0 ) {
+      
+      let codebox = $("#codetype").position();
+
+      $("#infotab").css({top:codebox.top+140})
+      $("#infotab").off("mouseleave")
+      $("#listofcommand").show();
+      setTimeout(()=> {
+
+$("#listofcommand").css({"opacity" : "100%","z-index" : "5" , transition : "300ms"} )
+
+      },100)
+      
+
+      
+      infoclick = 1;
+
+    }
+
+    else {
+
+
+  
+      $("#infotab").on("mouseleave" , function() {
+  
+        $("#infos").css({"left":"0px", "transition-duration" : "300ms"})
+    
+      })
+
+      $("#listofcommand").css({"opacity" : "0%","z-index" : "0" , transition : "300ms"} )
+  
+      setTimeout(()=> {
+        $("#infotab").css({top:"53%"});
+        $("#listofcommand").hide();
+      },100)
+
+
+
+      infoclick = 0;
+
+
+    }
+  
+  
+    })
+
+
+    $(document).on("click" , "p.acchead" , function(e) {
+
+
+      let dsname = "#"+e.target.id+ "data";
+
+    
+      if ($(dsname).is(":hidden") == true)  {
+
+        $(dsname).show()
+
+
+      }
+
+      else {
+
+        $(dsname).hide()
+
+      }
+
+
+
+
+    })
 
  
 
