@@ -158,7 +158,11 @@ this.kruskalize =function (_cl = "rgb(0,0,0,0.08)")  {
 					$(option.right_node).each(function(index, value) {
 						_left_node = $(option.left_node);
 						_right_node = $(value);
-						if (_left_node.offset().left >= _right_node.offset().left /*&& option.gtype != "D"*/ ) {
+
+
+
+					
+						 if (_left_node.offset().left >= _right_node.offset().left /*&& option.gtype != "D"*/ ) {
 						
 							_tmp = _left_node;
 							_left_node = _right_node;
@@ -168,11 +172,21 @@ this.kruskalize =function (_cl = "rgb(0,0,0,0.08)")  {
 
 						}
 
+						let dax = (_right_node.offset().left+ _right_node.width()/2) - (_left_node.offset().left+ _left_node.width()/2);
+						let day = (_right_node.offset().top+ _right_node.height()/2) - (_left_node.offset().top+ _left_node.height()/2);
+						let dangle = Math.atan2(day ,dax);
+
+						let rightx = (_right_node.width()/2) * Math.cos( 135+dangle) + (_right_node.offset().left+ _right_node.width()/2) ;
+						let righty  = (_right_node.height()/2) * Math.sin(135+dangle) + (_right_node.offset().top + (_right_node.height() / 2)) ;
+
+						let leftx = (_left_node.width()/2) * Math.cos( dangle) + (_left_node.offset().left+ _left_node.width()/2) ;
+						let lefty  = (_left_node.height()/2) * Math.sin(dangle) + (_left_node.offset().top + (_left_node.height() / 2)) ;
+
 						//Get Left point and Right Point
-						_left.x = _left_node.offset().left + _left_node.outerWidth();
-						_left.y = _left_node.offset().top + (_left_node.outerHeight() / 2);
-						_right.x = _right_node.offset().left;
-						_right.y = _right_node.offset().top + (_right_node.outerHeight() / 2);
+						_left.x = leftx
+						_left.y = lefty
+						_right.x = rightx
+						_right.y = righty
 
 
 						    
@@ -236,10 +250,13 @@ this.kruskalize =function (_cl = "rgb(0,0,0,0.08)")  {
   
 					}
 					
+
 						_ctx.stroke();
 
 						
 f = 0;
+
+						_ctx.font = "20px Segoe ui";
 						_ctx.fillText(option._text,(_right.x +_left.x)/2 ,( _right.y + _left.y)/2);
 
 				});
