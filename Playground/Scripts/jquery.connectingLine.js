@@ -238,7 +238,7 @@ this.kruskalize =function (_cl = "rgb(0,0,0,0.08)")  {
 
 
    if (option.gtype == "D") {
-						let headlen = 40; // length of head in pixels
+						let headlen = 25; // length of head in pixels
 						var dx = Number(ele2_x) - Number(ele1_x);
 						let dy = ele2_y - ele1_y;
 						let angle = Math.atan2(dy, dx);
