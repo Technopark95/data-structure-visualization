@@ -291,7 +291,7 @@ $(document).on("mouseleave","div.nodeleft" , function (e)  {
   
 
 
-
+    $(".autohide").hide();
     $("#listofcommand").hide();
  
     $("#infotab").on("click" , function() {
