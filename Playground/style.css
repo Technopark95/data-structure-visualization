@@ -5,6 +5,8 @@ body
 
   height: 100in;
   width: 50in;
+
+  font-family: segoe ui;
   
 
 
@@ -207,6 +209,7 @@ width: 0;
 width: 7px;
   height: 7px;
 }
+
 ::-webkit-scrollbar-thumb {
   background: grey; 
   border-radius: 10px;
@@ -333,7 +336,7 @@ cursor: default;
   text-align: center;
 
   border-style: none;
-  background-color: rgba(0, 0, 0,0.7);
+  background-color: rgba(255, 255, 255,0.5);
 
  color: coral;
 
@@ -342,10 +345,16 @@ cursor: default;
  visibility: hidden;
 }
 
+#graphinput:focus{
+  outline: none;
+  text-decoration: none;
+}
+
+
 
 #undirected_ {
 position: absolute;
-
+left: 0;
   background-color: rgba(0, 0, 0, 0.5);
   width: 300px;
   height: 60px;
@@ -353,8 +362,6 @@ position: absolute;
   transition-duration: "1000ms";
   cursor: initial;
   backdrop-filter: blur(5px);
-  top:0 ; 
-    left:0;
 }
 
 #directed_  {
@@ -362,6 +369,7 @@ position: absolute;
 
   position: absolute;
 top: 60px;
+left: 0;
   background-color: rgba(0, 0, 0, 0.5);
   width: 300px;
   height: 60px;
@@ -369,40 +377,23 @@ top: 60px;
   transition-duration: "1000ms";
   cursor: initial;
   backdrop-filter: blur(5px);
-  
-    left:0;
 
 }
 
 
-
-#infos {
-     position: absolute;
-  
-    background-color: black;
-    width: 350px;
-    height: 60px;
-    text-align: center;
-    transition-duration: "1000ms";
-    cursor: initial;
-    border-radius: 100px;
-  }
 
 
 
 
 #anislow {
   position: absolute;
-  
+  left: 0;
     background-image: linear-gradient(to right , #000 , #fff);
     width: 300px;
     height: 60px;
     text-align: center;
     transition-duration: "1000ms";
     cursor: initial;
-    top:0 ; 
-    left:0;
-    
   }
 
   
@@ -411,7 +402,7 @@ top: 60px;
   
     position: absolute;
     top: 60px;
-    left:0;
+    left: 0;
     background-image: linear-gradient(to right, #000 , #fff);
     width: 300px;
     height: 60px;
@@ -446,6 +437,22 @@ position: absolute;
   }
 
 
+  
+#infos {
+  position: absolute;
+
+ background-color: black;
+ width: 350px;
+ height: 60px;
+ text-align: center;
+ transition-duration: "1000ms";
+ cursor: initial;
+ border-radius: 100px;
+}
+
+
+  
+
   #listofcommand {
 
 
@@ -454,13 +461,20 @@ position: absolute;
     background-color: rgba(255, 255, 255, 0.432);
     top: 200px;
     height: 70%;
-    width:300px; 
-    max-width:300px; 
+    width:350px; 
+    max-width:350px; 
     z-index: 0; 
     opacity: 0%;
     backdrop-filter : blur(10px); 
     border-radius: 6px;
   }
+
+
+  #listofcommand::-webkit-scrollbar {
+
+    width: 4px;
+      height: 1px;
+    }
 
 
   .infomega{
@@ -482,3 +496,39 @@ max-height: 0;
       transition: max-height 1s;
 
     }
+
+
+
+    .postfixcss {
+      
+
+      display:inline-block;
+  
+       position:relative;
+        height:70px;
+        width:70px; 
+        overflow-x: visible;
+        background-color:rgba(0,0,0,.842);
+        text-align: center;
+        color: coral;
+vertical-align: middle;
+        font-size: 140%;
+        opacity: 0%;
+        
+    }
+
+    
+
+.uncaps::first-letter{
+
+
+  text-transform: capitalize;
+}
+
+
+#exptext::first-letter {
+
+  text-transform: lowercase;
+
+}
+
