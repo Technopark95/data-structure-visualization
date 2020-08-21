@@ -3,6 +3,13 @@ body
 	padding:0px;
 	margin:0px;
 
+  height: 100in;
+  width: 50in;
+
+  font-family: segoe ui;
+  
+
+
 }
   .dragg { 
     
@@ -30,7 +37,7 @@ body
     
     width: 70px;
   
-   height: 100px;
+   height: 70px;
   
    padding: 0.5em;  
   
@@ -202,6 +209,7 @@ width: 0;
 width: 7px;
   height: 7px;
 }
+
 ::-webkit-scrollbar-thumb {
   background: grey; 
   border-radius: 10px;
@@ -240,7 +248,7 @@ width: 7px;
   vertical-align: middle; 
   left:50% ;
   top: 50%; 
-  transform: translate(-50%, -50%) scale(.6,.6); 
+  transform: translate(-50%, -50%) scale(.55,.55); 
   opacity: 13%;
  
 
@@ -275,7 +283,7 @@ text-align: center;
   margin-top: 135px;
   transition: linear 100ms;
   text-align: center;
-  
+  cursor: default;
   
 
 }
@@ -285,7 +293,7 @@ text-align: center;
 color: coral;
 font-size: 150%;
 z-index: -1s;
-
+cursor: default;
 }
 
 
@@ -328,7 +336,7 @@ z-index: -1s;
   text-align: center;
 
   border-style: none;
-  background-color: rgba(0, 0, 0,0.7);
+  background-color: rgba(255, 255, 255,0.5);
 
  color: coral;
 
@@ -337,10 +345,16 @@ z-index: -1s;
  visibility: hidden;
 }
 
+#graphinput:focus{
+  outline: none;
+  text-decoration: none;
+}
+
+
 
 #undirected_ {
 position: absolute;
-
+left: 0;
   background-color: rgba(0, 0, 0, 0.5);
   width: 300px;
   height: 60px;
@@ -355,6 +369,7 @@ position: absolute;
 
   position: absolute;
 top: 60px;
+left: 0;
   background-color: rgba(0, 0, 0, 0.5);
   width: 300px;
   height: 60px;
@@ -372,7 +387,7 @@ top: 60px;
 
 #anislow {
   position: absolute;
-  
+  left: 0;
     background-image: linear-gradient(to right , #000 , #fff);
     width: 300px;
     height: 60px;
@@ -387,6 +402,7 @@ top: 60px;
   
     position: absolute;
     top: 60px;
+    left: 0;
     background-image: linear-gradient(to right, #000 , #fff);
     width: 300px;
     height: 60px;
@@ -419,3 +435,100 @@ position: absolute;
 
 
   }
+
+
+  
+#infos {
+  position: absolute;
+
+ background-color: black;
+ width: 350px;
+ height: 60px;
+ text-align: center;
+ transition-duration: "1000ms";
+ cursor: initial;
+ border-radius: 100px;
+}
+
+
+  
+
+  #listofcommand {
+
+
+    position: fixed; 
+    overflow: auto;
+    background-color: rgba(255, 255, 255, 0.432);
+    top: 200px;
+    height: 70%;
+    width:350px; 
+    max-width:350px; 
+    z-index: 0; 
+    opacity: 0%;
+    backdrop-filter : blur(10px); 
+    border-radius: 6px;
+  }
+
+
+  #listofcommand::-webkit-scrollbar {
+
+    width: 4px;
+      height: 1px;
+    }
+
+
+  .infomega{
+
+    font-family: segoe ui;
+  }
+
+  .acchead {
+
+    color: coral;
+
+    font-size: x-large;
+
+    cursor: default;
+    }
+
+    .heightani {
+max-height: 0;
+      transition: max-height 1s;
+
+    }
+
+
+
+    .postfixcss {
+      
+
+      display:inline-block;
+  
+       position:relative;
+        height:70px;
+        width:70px; 
+        overflow-x: visible;
+        background-color:rgba(0,0,0,.842);
+        text-align: center;
+        color: coral;
+vertical-align: middle;
+        font-size: 140%;
+        opacity: 0%;
+        
+    }
+
+    
+
+.uncaps::first-letter{
+
+
+  text-transform: capitalize;
+}
+
+
+#exptext::first-letter {
+
+  text-transform: lowercase;
+
+}
+
