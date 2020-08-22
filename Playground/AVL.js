@@ -56,7 +56,7 @@ function height(N)
 
     r = x;
 
-if (unbalparent != undefined) {
+
     if ( parseInt( $(`#${unbalparent}treeval`).text() ,10)   <  parseInt($(`#${x}treeval`).text(),10) )  {
       treefy(unbalparent+"treeright" , x)
       del(`#${unbalparent}treeright` , `#${y}treetop`);
@@ -70,7 +70,7 @@ if (unbalparent != undefined) {
         mySVG.redrawLines();
       }
 
-    }
+    
 
     return x;  
 
