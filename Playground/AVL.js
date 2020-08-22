@@ -118,7 +118,7 @@ else tree[x+"treeright" ] = T2;
     // Return new root 
     r = y;
 
-    if (unbalparent != undefined) {
+    
     if ( parseInt( $(`#${unbalparent}treeval`).text() ,10)   <  parseInt($(`#${x}treeval`).text(),10) )  {
     treefy(unbalparent+"treeright" , y)
     del(`#${unbalparent}treeright` , `#${x}treetop`);
@@ -131,7 +131,7 @@ else tree[x+"treeright" ] = T2;
       del(`#${unbalparent}treeleft` , `#${x}treetop`);
       mySVG.redrawLines();
     }
-  }
+  
 
     return y;  
 }  
