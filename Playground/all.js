@@ -19,6 +19,7 @@ var next = { }
 var prev = { }
 
 var tree = { }
+var parent = {}
 
 var variables ={}
 
@@ -670,6 +671,7 @@ function treefy(first,second ,color_ = "coral") {
   var par = $("#"+first).parent().attr("id");
 
   tree[first] = second ;
+  parent[second] = par;
 
 
       $( '#'+par ).draggable({
@@ -2485,19 +2487,19 @@ setTimeout(() => {
 function display (data , fin= 2000 , fout = 1000)  {
 
 
-    if (displaysignal == "slow") {
+  if (displaysignal == "slow") {
 
 return new Promise ( resolve =>  {
 
-    $("#feed").text(data)
-    $("#log1").append('<p style="font-size:65%;color:black;font-family:Segoe UI; text-transform:capitalize;">'+data+'</p>')
+  $("#feed").html(data)
+  $("#log1").append('<p class="uncaps" style="font-size:65%;color:black;font-family:Segoe UI;">'+data+'</p>')
 $("#feed").animate({"opacity" : "100%" } , fin , function ()   {
 
-  
 
-$("#feed").delay(2000).animate({"opacity" : "0%" } , fout , function () {
 
-    logscreen.scrollTop = logscreen.scrollHeight
+$("#feed").delay(fin).animate({"opacity" : "0%" } , fout , function () {
+
+  logscreen.scrollTop = logscreen.scrollHeight
 resolve('resolved')
 })
 
@@ -2505,13 +2507,13 @@ resolve('resolved')
 })
 
 })
-    }
+  }
 
-    else if (displaysignal == "quick") {
+  else if (displaysignal == "quick") {
 
-        Log(data);
+      Log(data);
 
-    }
+  }
 
 }
 
@@ -2519,24 +2521,27 @@ resolve('resolved')
 
 function Log (data)  {
 
-    $("#log1").append('<p style="font-size:65%;color:black;font-family:Segoe UI;text-transform:capitalize;">'+data+'</p>')
+  $("#log1").append('<p class="uncaps" style="font-size:65%;color:black;font-family:Segoe UI;">'+data+'</p>')
 
-    
-    logscreen.scrollTop = logscreen.scrollHeight;
+  
+  logscreen.scrollTop = logscreen.scrollHeight;
 
-    }
+  }
 
 
 
 function Output (data)  {
 
-$("#log1").append('<br><p style="font-size:x-large; margin-top:-5px;  color:rgb(0,0,255, 0.7);font-family:Segoe UI;text-transform:capitalize;">'+ data +'</p>')                                                                               
+$("#log1").append('<br><p style="font-size:x-large; margin-top:-5px;  color:rgb(0,0,255, 0.7);font-family:Segoe UI;">'+ data +'</p>')                                                                               
 
 logscreen.scrollTop = logscreen.scrollHeight;
 
 
 
 }
+
+
+
 
 
 
