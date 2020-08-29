@@ -3361,6 +3361,120 @@ $("#graphinput").val("")
   })
 
 
+  
+
+ var graphdata;
+
+ async function importgraph(name,pass)  {
+
+   let gname = `${name}.json`;
+
+  
+
+
+   $.post("https://graphicalstructure.000webhostapp.com/loadprocess.php" , {filesig : name , oop : pass} , function(res,stat)  {
+
+console.log(res)
+if (res == "FAILED") {
+ display ("Password not correct.Try Again.");
+ return;
+}
+
+
+     graphdata = JSON.parse(res);
+
+
+
+  
+
+   NoOfVertex= graphdata["Nodes"];
+
+   Graph(NoOfVertex);
+
+   Log(`Graph(${NoOfVertex})`)
+
+   graphmatrix.hide();
+
+   for (let ver = 0 ; ver < NoOfVertex ; ++ver)  {
+
+   let tt = graphdata[organized[ver]]["top"];
+   let ll = graphdata[organized[ver]]["left"];
+
+   let ff = $("#"+organized[ver])
+
+   ff.offset({top:tt , left :ll})
+
+
+   }
+
+
+   
+   let edgeinfo = graphdata["Edge"];
+   let noofedge = edgeinfo.length;
+
+   for (let ed = 0 ; ed < noofedge ; ++ed)  {
+
+       
+       graphy(edgeinfo[ed][0] ,edgeinfo[ed][1] ,edgeinfo[ed][2] ,edgeinfo[ed][3] );
+
+       Log(`Add edge ${edgeinfo[ed][0]}${edgeinfo[ed][1]}`)
+   
+   
+       }
+
+     })
+
+
+}
+
+
+function exportgraph(name , pass) {
+
+   let posar ={};
+let el_pos = {};
+
+
+
+el_pos["Nodes"] = NoOfVertex;
+
+el_pos["encryption"] = pass;
+
+   for ( let sig = 0 ; sig < NoOfVertex ; sig = sig +1) {
+   
+   
+     t = $("#"+organized[sig]).offset().top
+     l = $("#"+organized[sig]).offset().left
+     
+       posar['top'] = t;
+       posar['left'] = l;
+   
+       el_pos[organized[sig]] = posar
+   
+       posar = {}
+   
+}
+
+el_pos["Edge"] = edgedata;
+
+   
+   var jsonstring = JSON.stringify(el_pos ,null , 4)
+   
+
+   $.post("https://graphicalstructure.000webhostapp.com/process.php" , {filesig : name , content : jsonstring} , function(res)  {
+
+
+     display(res)
+
+
+
+   })
+  
+
+
+
+   
+   }
+
 
 
 // Stack
