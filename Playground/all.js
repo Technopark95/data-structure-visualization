@@ -3374,7 +3374,6 @@ $("#graphinput").val("")
 
    $.post("https://graphicalstructure.000webhostapp.com/loadprocess.php" , {filesig : name , oop : pass} , function(res,stat)  {
 
-console.log(res)
 if (res == "FAILED") {
  display ("Password not correct.Try Again.");
  return;
