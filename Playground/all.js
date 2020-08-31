@@ -369,6 +369,45 @@ $("#listofcommand").css({"opacity" : "100%","z-index" : "5" , transition : "300m
 
     })
 
+
+
+
+
+
+    
+
+
+  $(".commandcopy").mouseenter(function(e)  {
+
+    $(e.target).css({ "font-size" : "130%" , "transition" : "300ms"})
+    
+    
+    
+    
+      })
+    
+    
+      $(".commandcopy").mouseleave(function(e)  {
+    
+        $(e.target).css({"border" : "none" , "font-size" : "100%"})
+        
+        
+        
+        
+          })
+    
+    
+     $(".commandcopy").click(function(e)  {
+    
+      let com = $(e.target).text();
+    
+     
+      $("#codetype").val(com);
+            
+            
+      })
+        
+    
  
 
   

@@ -532,3 +532,8 @@ vertical-align: middle;
 
 }
 
+.commandcopy {
+
+
+  cursor: default;
+}
