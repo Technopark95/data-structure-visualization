@@ -433,23 +433,24 @@ await display("Script Loaded.")
 }
 
 
-$("#codetype").change(async function() {
+$("#codetype").keypress(async function(e) {
 
 
-
-  command = $("#codetype").val();
-
-  $("#log1").append('<p style="font-size:large;  color:rgb(255,0,0, 0.7);font-family:Segoe UI;">'+command+'</p>')
-  logscreen.scrollTop = logscreen.scrollHeight;
+  if (e.which == 13) {
   
-  await eval(command)
-
-  await normalize();
-
+    command = $("#codetype").val();
   
-
-
-})
+    $("#log1").append('<p style="font-size:large;  color:rgb(255,0,0, 0.7);font-family:Segoe UI;">'+command+'</p>')
+    logscreen.scrollTop = logscreen.scrollHeight;
+    
+    await eval(command)
+  
+    normalize();
+  
+    
+  }
+  
+  })
 
 
 
