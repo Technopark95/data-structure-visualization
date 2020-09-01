@@ -409,7 +409,80 @@ $("#listofcommand").css({"opacity" : "100%","z-index" : "5" , transition : "300m
         
     
  
+      function waitforme(ms) {
 
+        return new Promise( resolve =>  {
+        
+        setTimeout(()=>{ resolve('')},ms)
+        
+        })
+        
+        }
+
+
+
+        
+function pqueue () {
+
+
+
+  $("body").append(`<div id="postqueue" style="position:absolute;bottom:100px;left:100px;min-width:100%;"></div>`)
+  
+  
+  $("#postqueue").draggable()
+  
+  }
+
+
+  var queuefront=200;
+  var queuerear = 200;
+
+
+function qins (symbol) {
+
+return new Promise( resolve => {
+  
+
+  
+  $("#postqueue").prepend(`<div id="pq${queuerear}" class="PSTACK postfixcss"><p style="position:relative;">${symbol}</p></div>`)
+  
+  $(`#pq${queuerear}`).animate({"opacity" : "100%"} ,500 , ()=> {
+
+      queuerear--;
+resolve('');
+
+  })
+
+
+
+
+})
+}
+
+
+function qout()  {
+
+  return new Promise( resolve => {
+      
+  
+  
+  $(`#pq${queuefront}`).animate({left : "+=300" , opacity: "0%"},700, ()=> {
+  
+      let y = $(`#pq${queuefront}`).text();
+  $(`#pq${queuefront}`).remove();
+
+
+  --queuefront;
+
+  resolve('')
+return y;
+
+  
+  })
+  
+  })
+  
+  }
   
 
 function open(link)  {
@@ -2824,44 +2897,52 @@ nu++;
 
 async function BreadthFirst(startingNode) { 
   
-    // create a visited array 
-    var visited = []; 
-    for (var g = 0; g < NoOfVertex; g++) 
-        visited[g] = false; 
-  
-    // Create an object for queue 
-    var q = new Queue(); 
-  
-    // add the starting node to the queue 
-    visited[startingNode] = true; 
-    q.enqueue_(startingNode); 
-  
-    // loop until queue is element 
-    while (!q.isEmpty()) { 
-        // get the element from the queue 
-        var getQueueElement = q.dequeue_(); 
-  
-        // passing the current vertex to callback funtion 
-     //   console.log(getQueueElement); 
-        Output(getQueueElement)
-        await hilight(getQueueElement , "red" , "1000ms" , 1500) 
-        await hilight(getQueueElement , defaultcolor, "600ms" , 610) 
+  // create a visited array
+  pqueue();
 
-  
-        // get the adjacent list for current vertex 
-        var get_List = adjlist.get(getQueueElement); 
-  
-        // loop through the list and add the element to the 
-        // queue if it is not processed yet 
-        for (var ie in get_List) { 
-            var neigh = get_List[ie]; 
-  
-            if (!visited[neigh]) { 
-                visited[neigh] = true; 
-                q.enqueue_(neigh); 
-            } 
-        } 
-    } 
+  var visited = []; 
+  for (var g = 0; g < NoOfVertex; g++) 
+      visited[g] = false; 
+
+  // Create an object for queue 
+  var q = new Queue(); 
+
+  // add the starting node to the queue 
+  visited[startingNode] = true; 
+  q.enqueue_(startingNode); 
+ await qins(startingNode);
+ await waitforme(800);
+
+  // loop until queue is element 
+  while (!q.isEmpty()) { 
+      // get the element from the queue 
+      var getQueueElement = q.dequeue_(); 
+      await qout();
+      await waitforme(800);
+
+      // passing the current vertex to callback funtion 
+   //   console.log(getQueueElement); 
+      Output(getQueueElement)
+      await hilight(getQueueElement , "red" , "1000ms" , 1500) 
+      await hilight(getQueueElement , defaultcolor, "600ms" , 610) 
+
+
+      // get the adjacent list for current vertex 
+      var get_List = adjlist.get(getQueueElement); 
+
+      // loop through the list and add the element to the 
+      // queue if it is not processed yet 
+      for (var ie in get_List) { 
+          var neigh = get_List[ie]; 
+
+          if (!visited[neigh]) { 
+              visited[neigh] = true; 
+              q.enqueue_(neigh);
+              await qins(neigh);
+              await waitforme(800); 
+          } 
+      } 
+  } 
 } 
 
 async function bfs (S)  {
