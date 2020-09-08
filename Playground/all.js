@@ -3490,21 +3490,26 @@ $("#graphinput").val("")
 
 
 
-var servertime = 0;
-
-  $(document).ajaxStart( async function()  {
-
-
-  await waitforme(100);
-
-  console.log(servertime);
-
-++servertime;
+  var servertime = 0;
 
 
 
+  var serv;
+  $(document).ajaxStart(  function()  {
 
-  })
+    $("body").append(`<img style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%) ;z-index: 20; height:40%;" id="loaderx" src="loader-3.gif">`)
+
+   
+
+    
+    })
+
+    
+    $(document).ajaxComplete(function(){
+
+    $("#loaderx").remove();
+
+   });
   
 
  var graphdata;
