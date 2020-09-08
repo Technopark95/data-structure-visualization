@@ -62,6 +62,7 @@ $("#jindex").hide()
 $("#kindex").hide()
 
 
+
 var mySVG = $('body').connect();
 
 
@@ -510,6 +511,8 @@ $("#codetype").keypress(async function(e) {
 
 
   if (e.which == 13) {
+
+    
   
     command = $("#codetype").val();
   
@@ -1930,16 +1933,20 @@ clicktimes = 0;
   function insertAt(value ,index , i =length-2) {
   
   if (index == i+1 ) {
+    storedarray[index] = value;
     insert(value ,index)
     return;
   }
+
+  storedarray[i+1] = storedarray[i];
   
   moveright(i);
     
   setTimeout( function()  {
   
-  
+    
     insertAt(value , index , i-1)
+
   
   }, 2000);
   
@@ -3482,6 +3489,22 @@ $("#graphinput").val("")
   })
 
 
+
+var servertime = 0;
+
+  $(document).ajaxStart( async function()  {
+
+
+  await waitforme(100);
+
+  console.log(servertime);
+
+++servertime;
+
+
+
+
+  })
   
 
  var graphdata;
