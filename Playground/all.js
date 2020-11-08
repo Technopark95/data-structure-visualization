@@ -1,6 +1,6 @@
 
 var displaysignal="slow";
-
+var infoclick = 0;
 var top = 0
 var max = 0
 var table = 0
