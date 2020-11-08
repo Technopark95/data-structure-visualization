@@ -12,7 +12,7 @@ var terminate = "no"
 var count =0
 
 var head =""
-
+var stats= 0;
 var divbyelement = { }
 
 var next = { }
@@ -29,7 +29,6 @@ var mapping = { "0" : "print(value)" ,  "1" : "preorder(left)" , "2" : "preorder
 
 var steps = {}
 var newnode;
-var infoclick = 0;
 
 variables['head'] = 0
 variables['root'] = 0
@@ -62,7 +61,6 @@ $("#jindex").hide()
 $("#kindex").hide()
 
 
-
 var mySVG = $('body').connect();
 
 
@@ -72,17 +70,57 @@ function del (one ,two)  {
   mySVG.dl(one , two)
           
 }
-        
+     
+
+function pauser ()  {
+
+
+
+  return new Promise( resolve => {
+              
+    $("#pl").click(function() {
+    
+      $("#pa").css('filter' , 'blur(0px)');
+      $("#pl").css('filter' , 'blur(5px)');
+        $("#pl").off("click");
+    
+    
+    stats = 0 ;
+    resolve("reolved");
+    
+    
+    })
+    
+    
+    
+    })
+
+
+}
+
+
+$("#pa").click(function()  {
+
+
+  stats =1;
+  
+  $("#pa").css('filter' , 'blur(5px)');
+  $("#pl").css('filter' , 'blur(0px)');
+  
+  
+  })
+
 
 
 
 var defaultcolor = "argb(0,0,0,0.842)";
 
-function hilight (acc , color="rgb(0,0,0,0.842)" , duration = "4000ms" , timeout = 4100) {
+async function hilight (acc , color="rgb(0,0,0,0.842)" , duration = "4000ms" , timeout = 4100) {
 
   $("#"+acc).css({"background-color" : color , "transition-duration" :duration })
 
-  
+  if (stats == 1  ) await pauser();
+
   return new Promise(resolve => {
   
 
@@ -439,7 +477,10 @@ function pqueue () {
   var queuerear = 200;
 
 
-function qins (symbol) {
+async function qins (symbol) {
+
+
+  if (stats == 1  ) await pauser();
 
 return new Promise( resolve => {
   
@@ -461,8 +502,10 @@ resolve('');
 }
 
 
-function qout()  {
+async function qout()  {
 
+
+  if (stats == 1  ) await pauser();
   return new Promise( resolve => {
       
   
@@ -1416,8 +1459,9 @@ clicktimes = 0;
   
   
   
-    function swapp( vala,valb) {
+ async   function swapp( vala,valb) {
   
+  if (stats == 1  ) await pauser();
       return new Promise(resolve => {
   var x =   $("#aitem"+vala).position()
   
@@ -1856,8 +1900,9 @@ clicktimes = 0;
   }
   
   
-     function insert(value ,index , cellid="a") {
+    async function insert(value ,index , cellid="a") {
   
+      if (stats == 1  ) await pauser();
       return new Promise ( resolve => {
       $(`#${cellid}itemval${index}`).css({opacity:"0%"})
   
@@ -1896,8 +1941,9 @@ clicktimes = 0;
   
   }
   
-  function moveright(index)  {
+  async function moveright(index)  {
   
+    if (stats == 1  ) await pauser();
     return new Promise ( resolve => {
   
     $("#aitemval"+(index+1)).animate({opacity:"0%"} , 500)
@@ -1929,31 +1975,26 @@ clicktimes = 0;
   
   var index = length-2
   
-  
-  function insertAt(value ,index , i =length-2) {
-  
-  if (index == i+1 ) {
-    storedarray[index] = value;
-    insert(value ,index)
-    return;
-  }
+  async function  insertAt (value , index)  {
 
-  storedarray[i+1] = storedarray[i];
+    for (let i = length-2 ; i >=0 ; --i)  {
   
-  moveright(i);
-    
-  setTimeout( function()  {
+      if (index == i+1 ) {
+        storedarray[index] = value;
+        insert(value ,index)
+        return;
+      }
+      
+      storedarray[i+1] = storedarray[i];
+     await moveright(i);
   
-    
-    insertAt(value , index , i-1)
-
   
-  }, 2000);
-  
-  
-    
     }
-    
+  
+  
+  
+    }
+  
   
   
   //Heap
@@ -2048,8 +2089,9 @@ $.getJSON("Alignment.json" , function(result) {
   }
   
   
-  function gottopoint (i,j)   {
+  async function gottopoint (i,j)   {
   
+    if (stats == 1  ) await pauser();
   
       return new Promise(resolve => {
   
@@ -2369,13 +2411,14 @@ async function partition ( low,  high)
             qi++; // increment index of smaller element
             await ij(qi,qj);
             await display('Incremenet i;  i='+qi)  
-            await display("Swapping index i="+ qi +" With j="+qj )
+         
             var qtemp = storedarray[qi]
             storedarray[qi] = storedarray[qj]
             storedarray[qj] = qtemp
         if(qi != qj)   {
             
             await ij(qi,qj);
+            await display("Swapping index i="+ qi +" With j="+qj )
             await swapp(qi , qj);
      //       recurse(low , high)
         }
@@ -2385,9 +2428,10 @@ async function partition ( low,  high)
     var qtemp = storedarray[qi+1]
             storedarray[qi+1] = storedarray[high]
             storedarray[high] = qtemp
-            await display("Swapping index i+1 ="+ (qi+1) +" With pivot="+high )
+            
             if(qi+1 != high)  { 
                 await ij(qi+1,high);
+                await display("Swapping index i+1 ="+ (qi+1) +" With pivot="+high )
                 await swapp(qi+1 , high);
 
             }
@@ -2519,11 +2563,12 @@ $('#Q').append(temparr);
 
 
 
-function pivotchange(pivotindex)  {
+async function pivotchange(pivotindex)  {
 
  
  $("#aitem"+pivotindex).css({ "background-color" : "rgba(75,0,130, 0.842)" , "transition" : "1s linear"} , 3000 )
 
+ if (stats == 1  ) await pauser();
     return new Promise (resolve => {
 
         setTimeout(() => {
@@ -2541,13 +2586,14 @@ function pivotchange(pivotindex)  {
 
 
 
-function pivotnormal(pivotindex)  {
+async function pivotnormal(pivotindex)  {
 
   
 
  
  $("#aitem"+pivotindex).css({ "background-color" : "rgba(0,0,0, 0.842)" , "transition" : "1s linear"} , 3000 )
 
+ if (stats == 1  ) await pauser();
     return new Promise (resolve => {
 
         setTimeout(() => {
@@ -2564,10 +2610,11 @@ function pivotnormal(pivotindex)  {
 
 
 
-function turnred(pivotindex)  {
+async function turnred(pivotindex)  {
 
     $("#aitem"+pivotindex).css({ "background-color" : "rgba(255,0,0, 0.91)" , "transition" : "1s linear"} , 3000 )
 
+    if (stats == 1  ) await pauser();
     return new Promise (resolve => {
 
         setTimeout(() => {
@@ -2584,12 +2631,12 @@ function turnred(pivotindex)  {
 
 }
 
-function turnnormal(pivotindex)  {
+async function turnnormal(pivotindex)  {
 
 
 $("#aitem"+pivotindex).css({ "background-color" : "rgba(0,0,0, 0.842)" , "transition" : "1s linear"} )
 
-
+if (stats == 1  ) await pauser();
     return new Promise (resolve => {
 
 setTimeout(() => {
@@ -2604,7 +2651,7 @@ setTimeout(() => {
 
 }
 
-function display (data , fin= 2000 , fout = 1000)  {
+async function display (data , fin= 2000 , fout = 1000)  {
 
 
   if (displaysignal == "slow") {
@@ -2613,9 +2660,9 @@ return new Promise ( resolve =>  {
 
   $("#feed").html(data)
   $("#log1").append('<p class="uncaps" style="font-size:65%;color:black;font-family:Segoe UI;">'+data+'</p>')
-$("#feed").animate({"opacity" : "100%" } , fin , function ()   {
+$("#feed").animate({"opacity" : "100%" } , fin , async function ()   {
 
-
+  if (stats == 1  ) await pauser();
 
 $("#feed").delay(fin).animate({"opacity" : "0%" } , fout , function () {
 
@@ -2632,6 +2679,7 @@ resolve('resolved')
   else if (displaysignal == "quick") {
 
       Log(data);
+      if (stats == 1  ) await pauser();
 
   }
 
@@ -4117,7 +4165,10 @@ $("#poststack").draggable()
 var stackelement=0;
 
 
-function pins (symbol) {
+async function pins (symbol) {
+
+
+  if (stats == 1  ) await pauser();
 
 return new Promise( resolve => {
   
@@ -4138,8 +4189,9 @@ resolve('');
 })
 }
 
-function pout()  {
+async function pout()  {
 
+  if (stats == 1  ) await pauser();
 return new Promise( resolve => {
   
 --stackelement;
