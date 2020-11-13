@@ -532,3 +532,32 @@ vertical-align: middle;
 
 }
 
+
+
+.trie {
+  position: absolute;
+    height: 45px;
+    width : 45px;
+    border-radius: 100%;
+    background-color:rgba(0, 0, 0, 0.842); 
+    font-family: Segoe UI;
+    position: absolute;
+    margin-top: 135px;
+    transition: linear 100ms;
+    text-align: center;
+    cursor: default;
+    
+    
+  }
+  
+  
+  .trie-label {
+  
+    position: absolute;
+    color: coral;
+    font-size: 100%;
+    z-index: -1s;
+    cursor: default;
+    left: 17px;
+  top:-5px;
+    }
