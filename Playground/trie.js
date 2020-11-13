@@ -145,10 +145,10 @@ else {
 
 }
 
-
+/*
 trieinsert("ANOOP",100);
 trieinsert("ANOQW",200);
 trieinsert("HANDSOME",213);
-trieinsert("HANDJOB",345);
+trieinsert("HANSO",345);
 trieinsert("HANKAKU",3134);
-
+*/
