@@ -108,8 +108,11 @@ async function triesearch(key)   {
     
       if ( $("#"+next).length == 1 ) {
          
+
+        let col = $("#"+next).css("background-color");
+
         await hilight(next , "rgb(109,209,0,1)", "700ms",800)
-              hilight(next , defaultcolor,"700ms",800 )
+              hilight(next , col,"700ms",800 )
 
       }
 
