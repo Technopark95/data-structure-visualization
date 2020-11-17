@@ -117,7 +117,7 @@ var defaultcolor = "argb(0,0,0,0.842)";
 
 async function hilight (acc , color="rgb(0,0,0,0.842)" , duration = "4000ms" , timeout = 4100) {
 
-  $("#"+acc).css({"background-color" : color , "transition-duration" :duration })
+  $("#"+acc).css({"background-color" : color , "transition" :duration })
 
   if (stats == 1  ) await pauser();
 
