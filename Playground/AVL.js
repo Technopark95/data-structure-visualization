@@ -2,6 +2,7 @@
 
 var r = 0;
 
+
 function height(N)  
 {  
     if (N == "null") return 0;  
@@ -22,7 +23,29 @@ function height(N)
   
     let x =  tree[`${y}treeleft`] /*  y->left;   */
     let T2 = tree[`${x}treeright`]  /* x->right;  */
+
+ 
+      if ( parseInt( $(`#${unbalparent}treeval`).text() ,10)   <  parseInt($(`#${x}treeval`).text(),10) )  {
+        treefy(unbalparent+"treeright" , x)
+        del(`#${unbalparent}treeright` , `#${y}treetop`);
+        mySVG.redrawLines();
+        }
+    
+        else {
+    
+          treefy(unbalparent+"treeleft" , x)
+          del(`#${unbalparent}treeleft` , `#${y}treetop`);
+          mySVG.redrawLines();
+        }
   
+      
+  
+        let ypos = $("#"+y).offset();
+        let xpos = $("#"+x).offset();
+        let T2pos = $("#"+T2).offset();
+    
+        SyncMoveBranch(x, Math.abs(ypos.left-xpos.left),-150);
+    
   
 
      del(`#${y}treeleft` , `#${x}treetop`);
@@ -33,6 +56,7 @@ function height(N)
    if (T2 != "null"){ 
        treefy(y+"treeleft" , T2)
        del(`#${x}treeright` , `#${T2}treetop`);
+     
     mySVG.redrawLines();
 
 
@@ -56,21 +80,8 @@ function height(N)
 
     r = x;
 
-
-    if ( parseInt( $(`#${unbalparent}treeval`).text() ,10)   <  parseInt($(`#${x}treeval`).text(),10) )  {
-      treefy(unbalparent+"treeright" , x)
-      del(`#${unbalparent}treeright` , `#${y}treetop`);
-      mySVG.redrawLines();
-      }
-  
-      else {
-  
-        treefy(unbalparent+"treeleft" , x)
-        del(`#${unbalparent}treeleft` , `#${y}treetop`);
-        mySVG.redrawLines();
-      }
-
-    
+    SyncMoveBranch(y,Math.abs(ypos.left-xpos.left), 150);
+    if (T2!="null") SyncMoveBranch(T2,Math.abs(T2pos.left - ypos.left), 0);
 
     return x;  
 
@@ -90,6 +101,30 @@ function leftRotate(x)
     let y = tree[`${x}treeright`];
     let T2 = tree[`${y}treeleft`];  
   
+
+
+       
+    if ( parseInt( $(`#${unbalparent}treeval`).text() ,10)   <  parseInt($(`#${x}treeval`).text(),10) )  {
+      treefy(unbalparent+"treeright" , y)
+      del(`#${unbalparent}treeright` , `#${x}treetop`);
+      mySVG.redrawLines();
+      }
+  
+      else {
+  
+        treefy(unbalparent+"treeleft" , y)
+        del(`#${unbalparent}treeleft` , `#${x}treetop`);
+        mySVG.redrawLines();
+      }
+
+
+
+      let ypos = $("#"+y).offset();
+      let xpos = $("#"+x).offset();
+    
+      SyncMoveBranch(y, -Math.abs(ypos.left-xpos.left),-150);
+    
+    
     
     // Perform rotation  
     del(`#${x}treeright` , `#${y}treetop`);
@@ -118,20 +153,8 @@ else tree[x+"treeright" ] = T2;
     // Return new root 
     r = y;
 
+    SyncMoveBranch(x,-Math.abs(ypos.left-xpos.left), 150);
     
-    if ( parseInt( $(`#${unbalparent}treeval`).text() ,10)   <  parseInt($(`#${x}treeval`).text(),10) )  {
-    treefy(unbalparent+"treeright" , y)
-    del(`#${unbalparent}treeright` , `#${x}treetop`);
-    mySVG.redrawLines();
-    }
-
-    else {
-
-      treefy(unbalparent+"treeleft" , y)
-      del(`#${unbalparent}treeleft` , `#${x}treetop`);
-      mySVG.redrawLines();
-    }
-  
 
     return y;  
 }  
@@ -169,8 +192,8 @@ async function insertavl(node_, key_) {
     }
 
 
-    await hilight(node_, "rgb(109,209,0,1)" , "1200ms" , 1300 )
-    hilight(node_, defaultcolor , "1200ms" , 1300 )
+    await hilight(node_, "rgb(109,209,0,1)" , "1200ms linear" , 1300 )
+    hilight(node_, defaultcolor , "1200ms linear" , 1300 )
 
 
  
@@ -222,7 +245,7 @@ async function insertavl(node_, key_) {
         avl(key_);
 
 
-        $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : "0ms"})
+        $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : "0ms linear"})
         $(`#${vid}`).offset({top: ($("#"+node_).offset().top+150 ) , left :($("#"+node_).offset().left+80) })
 
 
@@ -256,6 +279,7 @@ async function insertavl(node_, key_) {
 
 
 
+
     let balance =  getBalance(node_);  
 
    // Output("balance" + balance + "  node  "+ node_ )
@@ -272,10 +296,13 @@ async function insertavl(node_, key_) {
 
     if (balance > 1 && key_ <  parseInt( leftkey , 10))   {
     
-
     
-        let returned= rightRotate(node_);  
+          await hilight(node_ , "red","400ms",500);
+          await display("Red node is unbalanced");
+        let returned= rightRotate(node_); 
         
+        await hilight(node_ , defaultcolor,"400ms",500);
+
         return returned;
 
     }
@@ -284,10 +311,11 @@ async function insertavl(node_, key_) {
     if (balance < -1 && key_ > parseInt( rightkey ,10))   {
    
      
- 
+      await hilight(node_ , "red","400ms",500);
+      await display("Red node is unbalanced");
         let returned= leftRotate(node_); 
 
-
+        await hilight(node_ , defaultcolor,"400ms",500);
 
         return returned;  
 
@@ -299,9 +327,12 @@ async function insertavl(node_, key_) {
     {  
 
     
-  
+      await hilight(tree[`${node_}treeleft`] , "red","400ms",500);
+      await display("Red node is unbalanced");
 
         let newnodeleft = leftRotate(tree[`${node_}treeleft`]);
+
+        await hilight(tree[`${node_}treeleft`] , defaultcolor,"400ms",500);
 
         let optiona = tree[`${node_}treeleft`];
 
@@ -309,9 +340,14 @@ async function insertavl(node_, key_) {
 
          treefy(`${node_}treeleft`, newnodeleft);
 
-        return rightRotate(node_);  
+         await hilight(node_ , "red","400ms",500);
+      await display("Red node is unbalanced");
 
 
+        let returned = rightRotate(node_);  
+
+        await hilight(node_ , defaultcolor,"400ms",500);
+        return returned;
         
     }  
   
@@ -319,17 +355,31 @@ async function insertavl(node_, key_) {
     if (balance < -1 && key_ < parseInt( rightkey,10))  
     {  
 
+      await hilight(tree[`${node_}treeright`] , "red","400ms",500);
+      await display("Red node is unbalanced");
 
      
      
         let newnoderight = rightRotate(tree[`${node_}treeright`]);
- let optiona = tree[`${node_}treeright`];
+
+        await hilight(tree[`${node_}treeright`] , defaultcolor,"400ms",500);
+
+        let optiona = tree[`${node_}treeright`];
 
         del(`#${node_}treeright` , `#${optiona}treetop`);
 
         treefy(`${node_}treeright`, newnoderight);
 
-        return leftRotate(node_);  
+
+        await hilight(node_ , "red","400ms",500);
+        await display("Red node is unbalanced");
+  
+  
+        let returned= leftRotate(node_);  
+
+        await hilight(node_ , defaultcolor,"400ms",500);
+
+        return returned;
     }  
 
 
@@ -359,7 +409,7 @@ function avl(element) {
    count = count +1;
    counttreenodes = counttreenodes + 1;
 
-
+return count;
  }
 
 
@@ -368,15 +418,22 @@ function avl(element) {
  
 
 // Level-order-traverse
+var AVLpostleft = [], AVLposttop =[];
+AVLpostleft[0] = 1900;
+AVLposttop[0] = 150;
+
 
 async function  printLevel(root_,  level)
 {
  
+
 	if (root_ == "null")
 		return false;
 
 	if (level == 1)
 	{
+
+    if(stats == 1) await pauser();
   //  Output( $('#'+root_+"treeval").text());
     
   let lefttarget = tree[`${root_}treeleft`];
@@ -389,11 +446,18 @@ async function  printLevel(root_,  level)
 
   if (lefttarget != "null" ) {
 
-  //chlc(`${root_}treeleft` , `${lefttarget}treetop` , "rgba(0,0,0,0)")
+
+
+ // mySVG.hidep(`#${root_}treeleft` , `#${lefttarget}treetop` , "rgba(0,0,0,0)")
   
+//await slidenode(lefttarget , rootoffset.left - (110), rootoffset.top  )
 
- $(`#${lefttarget}`).offset({"top" : `${rootoffset.top+150}` , "left" : `${ rootoffset.left - (110)}` })
+AVLposttop[lefttarget] =  AVLposttop[root_] +150;  
+AVLpostleft[lefttarget] =  AVLpostleft[root_]  - ( 110 * (height(lefttarget)) )
 
+ $(`#${lefttarget}`).offset({"top" : `${AVLposttop[lefttarget]}` , "left" : `${ AVLpostleft[lefttarget] }` })
+
+ /*
     await new Promise ( resolve => {
 
 setTimeout(()=> {
@@ -403,15 +467,26 @@ setTimeout(()=> {
 },1000)
 
     })
-
+*/
    
   }
+  
 
   if (righttarget != "null" ) {
 
-   // chlc(`${root_}treeright` , `${lefttarget}treetop` , "rgba(0,0,0,0)")
-  $(`#${righttarget}`).offset({"top" : `${rootoffset.top+150}` ,  "left" : `${ rootoffset.left+ (height(righttarget)*130)}`})
+ //await slidenode(righttarget , rootoffset.left+ (height(righttarget)*130), rootoffset.top  )
+
+ AVLposttop[righttarget] =  AVLposttop[root_] +150; 
+ 
+ AVLpostleft[righttarget] =  AVLpostleft[root_]  + ( 110 * (height(righttarget)) )
+
+ 
+ //mySVG.hidep(`#${root_}treeright` , `#${righttarget}treetop` , "rgba(0,0,0,0)") 
+ 
+ $(`#${righttarget}`).offset({"top" : `${AVLposttop[righttarget]}` ,  "left" : `${AVLpostleft[righttarget]}`})
      
+
+/*
     await new Promise( resolve => {
 
     
@@ -423,12 +498,9 @@ setTimeout(()=> {
      
          })
 
-
+*/
   }
-  //mySVG.kruskalize("coral");
-
-
-
+ 
 
 		// return true if at-least one node is present at given level
 		return true;
@@ -440,29 +512,59 @@ setTimeout(()=> {
 	return left || right;
 }
 
+
+
+
 // Function to print level order traversal of given binary tree
 async function BalanceAll( root_)
 {
 	// start from level 1 -- till height of the tree
-	let level = 1;
+  let level = 1;
 
 	// run till printLevel() returns false
-	while ( await printLevel(root_, level))
+	while ( await printLevel(root_, level)) {
+
+
+  
     level++;
+
+
+
+  }
     
-
-
-    setTimeout( mySVG.redrawLines , 100);
 
     
 }
 
+async function redraw  ()  {
+
+ mySVG.redrawLines();
+
+}
+
+
+
+
+let redrawevent; 
+
+
+
+ 
 async function InsertAVL (jj,h) {
 
-await insertavl(jj,h);
+    redrawevent= setInterval(redraw , 50);
 
-setTimeout(await BalanceAll(r), 100);
+    await insertavl(jj,h);
 
+    AVLpostleft[r] = 1900;
+    AVLposttop[r] = 150;
+
+    await waitforme(1000);
+    await BalanceAll(r);
+
+    await waitforme(4000);
+
+    clearInterval(redrawevent)
 
 
 }
