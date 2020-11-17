@@ -16,7 +16,7 @@ function height(N)
 
 
 
- function rightRotate(y)  
+ async function rightRotate(y)  
 {  
    let unbalparent = parent[y];
 
@@ -47,7 +47,6 @@ function height(N)
         SyncMoveBranch(x, Math.abs(ypos.left-xpos.left),-150);
     
   
-
      del(`#${y}treeleft` , `#${x}treetop`);
     mySVG.redrawLines();
     // Perform rotation  
@@ -83,6 +82,7 @@ function height(N)
     SyncMoveBranch(y,Math.abs(ypos.left-xpos.left), 150);
     if (T2!="null") SyncMoveBranch(T2,Math.abs(T2pos.left - ypos.left), 0);
 
+    
     return x;  
 
     // Return new root  
@@ -297,11 +297,11 @@ async function insertavl(node_, key_) {
     if (balance > 1 && key_ <  parseInt( leftkey , 10))   {
     
     
-          await hilight(node_ , "red","400ms",500);
+          await hilight(node_ , "red","1200ms linear",1300);
           await display("Red node is unbalanced");
-        let returned= rightRotate(node_); 
+        let returned= await rightRotate(node_); 
         
-        await hilight(node_ , defaultcolor,"400ms",500);
+        await hilight(node_ , defaultcolor,"1200ms linear",1300);
 
         return returned;
 
@@ -311,11 +311,11 @@ async function insertavl(node_, key_) {
     if (balance < -1 && key_ > parseInt( rightkey ,10))   {
    
      
-      await hilight(node_ , "red","400ms",500);
+      await hilight(node_ , "red","1200ms linear",1300);
       await display("Red node is unbalanced");
-        let returned= leftRotate(node_); 
+        let returned= await leftRotate(node_); 
 
-        await hilight(node_ , defaultcolor,"400ms",500);
+        await hilight(node_ , defaultcolor,"1200ms linear",1300);
 
         return returned;  
 
@@ -327,43 +327,46 @@ async function insertavl(node_, key_) {
     {  
 
     
-      await hilight(tree[`${node_}treeleft`] , "red","400ms",500);
+      await hilight(tree[`${node_}treeleft`] , "red","1200ms linear",1300);
       await display("Red node is unbalanced");
+      await hilight(tree[`${node_}treeleft`] , defaultcolor,"1200ms linear",1300);
 
-        let newnodeleft = leftRotate(tree[`${node_}treeleft`]);
+        let newnodeleft = await leftRotate(tree[`${node_}treeleft`]);
 
-        await hilight(tree[`${node_}treeleft`] , defaultcolor,"400ms",500);
-
+        await waitforme(2000);
+       
         let optiona = tree[`${node_}treeleft`];
 
         del (`#${node_}treeleft` , `#${optiona}treetop`);
 
          treefy(`${node_}treeleft`, newnodeleft);
 
-         await hilight(node_ , "red","400ms",500);
+      await hilight(node_ , "red","1200ms linear",1300);
       await display("Red node is unbalanced");
+      await hilight(node_ , defaultcolor,"1200ms linear",1300);
 
+   
+        let returned = await rightRotate(node_);  
 
-        let returned = rightRotate(node_);  
-
-        await hilight(node_ , defaultcolor,"400ms",500);
+        
         return returned;
         
     }  
   
+
+
     // Right Left Case  
     if (balance < -1 && key_ < parseInt( rightkey,10))  
     {  
 
-      await hilight(tree[`${node_}treeright`] , "red","400ms",500);
+      await hilight(tree[`${node_}treeright`] , "red","1200ms linear",1300);
       await display("Red node is unbalanced");
+      await hilight(tree[`${node_}treeright`] , defaultcolor,"1200ms linear",1300);
 
      
-     
-        let newnoderight = rightRotate(tree[`${node_}treeright`]);
+        let newnoderight = await rightRotate(tree[`${node_}treeright`]);
 
-        await hilight(tree[`${node_}treeright`] , defaultcolor,"400ms",500);
-
+        await waitforme(2000);
         let optiona = tree[`${node_}treeright`];
 
         del(`#${node_}treeright` , `#${optiona}treetop`);
@@ -371,14 +374,14 @@ async function insertavl(node_, key_) {
         treefy(`${node_}treeright`, newnoderight);
 
 
-        await hilight(node_ , "red","400ms",500);
+        await hilight(node_ , "red","1200ms linear",1300);
         await display("Red node is unbalanced");
-  
-  
-        let returned= leftRotate(node_);  
+       await hilight(node_ , defaultcolor,"1200ms linear",1300);
 
-        await hilight(node_ , defaultcolor,"400ms",500);
+        
+        let returned= await leftRotate(node_);  
 
+        
         return returned;
     }  
 
