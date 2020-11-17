@@ -1089,6 +1089,49 @@ async function postorderstack(root_)
 } 
 
 
+function movebranch(ID,leftpx=0,toppx=0)   {
+
+
+  $(ID).animate({"left" : "+="+leftpx ,"top" : "+="+toppx})
+  
+  
+  
+  }
+
+  var wholebranch = "";
+
+  function returnwholebranch(noderoot)  {
+
+
+
+    if (noderoot == "null") {
+  
+      return;
+  
+    }
+  
+
+  wholebranch = wholebranch + "#"+noderoot+",";
+
+returnwholebranch(tree[`${noderoot}treeleft`]);
+returnwholebranch(tree[`${noderoot}treeright`]);
+
+  }
+
+  function SyncMoveBranch(noderoot,leftpx=0,toppx=0)   {
+
+    returnwholebranch(noderoot);
+
+    let branch = wholebranch.slice(0,wholebranch.length-1);
+
+    movebranch(branch , leftpx,toppx);
+
+    wholebranch= "";
+
+
+
+
+  }
 
 
 
