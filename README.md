@@ -1,9 +1,25 @@
 # Graphical Structure
-Data Structure and Algorithms visualization
+
+Graphical Structure is a Data structures and algorithms visualization web platform with interactive animations.
+
+## Website Link
+
+Homepage - [Graphical Structure](https://graphicalstructure.codes)
+Playground - [Graphical Structure Playground](https://graphicalstructure.codes/Playground)
 
 
-live at 
+## Usage
 
-https://graphicalstructure.codes/Playground
+```python
+1. Write the command on <Code Here> section in the playground.
+2. Many Commands are given in the info section.
+3. Click the Commands and it will get copy and pasted automatically, then hit ENTER to make it work.
+```
 
-email - therain0605@gmail.com
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+[Apache license 2.0](https://www.apache.org/licenses/LICENSE-2.0)
