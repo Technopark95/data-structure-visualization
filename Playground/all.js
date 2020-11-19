@@ -1,7 +1,7 @@
 
 /*
 
-Copyright 2020 Anoop Singh
+Copyright 2020 Copyright 2020 Anoop Singh, Graphical Structure
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
