@@ -30,7 +30,7 @@ function height(N)
 }  
   
 
-
+var maxheight= 0;
 
 
 
@@ -46,14 +46,14 @@ function height(N)
       if ( parseInt( $(`#${unbalparent}treeval`).text() ,10)   <  parseInt($(`#${x}treeval`).text(),10) )  {
         treefy(unbalparent+"treeright" , x)
         del(`#${unbalparent}treeright` , `#${y}treetop`);
-        mySVG.redrawLines();
+        
         }
     
         else {
     
           treefy(unbalparent+"treeleft" , x)
           del(`#${unbalparent}treeleft` , `#${y}treetop`);
-          mySVG.redrawLines();
+        
         }
   
       
@@ -66,7 +66,7 @@ function height(N)
     
   
      del(`#${y}treeleft` , `#${x}treetop`);
-    mySVG.redrawLines();
+    
     // Perform rotation  
     treefy(x+"treeright" , y)   /* x->right = y;  */ 
    
@@ -74,7 +74,7 @@ function height(N)
        treefy(y+"treeleft" , T2)
        del(`#${x}treeright` , `#${T2}treetop`);
      
-    mySVG.redrawLines();
+    
 
 
 }
@@ -125,20 +125,21 @@ function leftRotate(x)
     if ( parseInt( $(`#${unbalparent}treeval`).text() ,10)   <  parseInt($(`#${x}treeval`).text(),10) )  {
       treefy(unbalparent+"treeright" , y)
       del(`#${unbalparent}treeright` , `#${x}treetop`);
-      mySVG.redrawLines();
+       
       }
   
       else {
   
         treefy(unbalparent+"treeleft" , y)
         del(`#${unbalparent}treeleft` , `#${x}treetop`);
-        mySVG.redrawLines();
+         
       }
 
 
 
       let ypos = $("#"+y).offset();
       let xpos = $("#"+x).offset();
+      let T2pos = $("#"+T2).offset();
     
       SyncMoveBranch(y, -Math.abs(ypos.left-xpos.left),-150);
     
@@ -146,13 +147,13 @@ function leftRotate(x)
     
     // Perform rotation  
     del(`#${x}treeright` , `#${y}treetop`);
-    mySVG.redrawLines();
+     
     treefy(y+"treeleft" , x)
 
     if (T2 != "null"){ 
       treefy(x+"treeright" , T2) 
       del(`#${y}treeleft` , `#${T2}treetop`);
-   mySVG.redrawLines();
+    
 
 
 }
@@ -172,6 +173,7 @@ else tree[x+"treeright" ] = T2;
     r = y;
 
     SyncMoveBranch(x,-Math.abs(ypos.left-xpos.left), 150);
+    if (T2!="null") SyncMoveBranch(T2,-Math.abs(T2pos.left - xpos.left), 0);
     
 
     return y;  
@@ -474,7 +476,7 @@ async function  printLevel(root_,  level)
 //await slidenode(lefttarget , rootoffset.left - (110), rootoffset.top  )
 
 AVLposttop[lefttarget] =  AVLposttop[root_] +150;  
-AVLpostleft[lefttarget] =  AVLpostleft[root_]  - ( 110 * (height(lefttarget)) )
+AVLpostleft[lefttarget] =  AVLpostleft[root_]  - ( 50 * Math.pow( 2, height(lefttarget)) )
 
  $(`#${lefttarget}`).offset({"top" : `${AVLposttop[lefttarget]}` , "left" : `${ AVLpostleft[lefttarget] }` })
 
@@ -499,7 +501,7 @@ setTimeout(()=> {
 
  AVLposttop[righttarget] =  AVLposttop[root_] +150; 
  
- AVLpostleft[righttarget] =  AVLpostleft[root_]  + ( 110 * (height(righttarget)) )
+ AVLpostleft[righttarget] =  AVLpostleft[root_]  + ( 50 * Math.pow( 2, height(righttarget)) )
 
  
  //mySVG.hidep(`#${root_}treeright` , `#${righttarget}treetop` , "rgba(0,0,0,0)") 
@@ -579,6 +581,8 @@ async function InsertAVL (jj,h) {
 
     AVLpostleft[r] = 1900;
     AVLposttop[r] = 150;
+
+    maxheight = height(r);
 
     await waitforme(1000);
     await BalanceAll(r);
