@@ -62,7 +62,7 @@ var maxheight= 0;
         let xpos = $("#"+x).offset();
         let T2pos = $("#"+T2).offset();
     
-        SyncMoveBranch(x, Math.abs(ypos.left-xpos.left),-150);
+        SyncMoveBranch(x, Math.abs(ypos.left-xpos.left),-120);
     
   
      del(`#${y}treeleft` , `#${x}treetop`);
@@ -97,7 +97,7 @@ var maxheight= 0;
 
     r = x;
 
-    SyncMoveBranch(y,Math.abs(ypos.left-xpos.left), 150);
+    SyncMoveBranch(y,Math.abs(ypos.left-xpos.left), 120);
     if (T2!="null") SyncMoveBranch(T2,Math.abs(T2pos.left - ypos.left), 0);
 
     
@@ -141,7 +141,7 @@ function leftRotate(x)
       let xpos = $("#"+x).offset();
       let T2pos = $("#"+T2).offset();
     
-      SyncMoveBranch(y, -Math.abs(ypos.left-xpos.left),-150);
+      SyncMoveBranch(y, -Math.abs(ypos.left-xpos.left),-120);
     
     
     
@@ -172,7 +172,7 @@ else tree[x+"treeright" ] = T2;
     // Return new root 
     r = y;
 
-    SyncMoveBranch(x,-Math.abs(ypos.left-xpos.left), 150);
+    SyncMoveBranch(x,-Math.abs(ypos.left-xpos.left), 120);
     if (T2!="null") SyncMoveBranch(T2,-Math.abs(T2pos.left - xpos.left), 0);
     
 
@@ -475,7 +475,7 @@ async function  printLevel(root_,  level)
   
 //await slidenode(lefttarget , rootoffset.left - (110), rootoffset.top  )
 
-AVLposttop[lefttarget] =  AVLposttop[root_] +150;  
+AVLposttop[lefttarget] =  AVLposttop[root_] +120;  
 AVLpostleft[lefttarget] =  AVLpostleft[root_]  - ( 50 * Math.pow( 2, height(lefttarget)) )
 
  $(`#${lefttarget}`).offset({"top" : `${AVLposttop[lefttarget]}` , "left" : `${ AVLpostleft[lefttarget] }` })
@@ -499,7 +499,7 @@ setTimeout(()=> {
 
  //await slidenode(righttarget , rootoffset.left+ (height(righttarget)*130), rootoffset.top  )
 
- AVLposttop[righttarget] =  AVLposttop[root_] +150; 
+ AVLposttop[righttarget] =  AVLposttop[root_] +120; 
  
  AVLpostleft[righttarget] =  AVLpostleft[root_]  + ( 50 * Math.pow( 2, height(righttarget)) )
 
