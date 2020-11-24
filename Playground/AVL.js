@@ -597,3 +597,6 @@ async function InsertAVL (jj,h) {
 
 
 //            insertavl(0,65)
+
+
+document.body.style.zoom = "80%";
