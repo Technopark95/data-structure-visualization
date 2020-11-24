@@ -597,5 +597,3 @@ async function InsertAVL (jj,h) {
 
 
 //            insertavl(0,65)
-
-
