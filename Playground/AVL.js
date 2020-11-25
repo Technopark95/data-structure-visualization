@@ -62,7 +62,7 @@ var maxheight= 0;
         let xpos = $("#"+x).offset();
         let T2pos = $("#"+T2).offset();
     
-        SyncMoveBranch(x, Math.abs(ypos.left-xpos.left),-120);
+        SyncMoveBranch(x, Math.abs(ypos.left-xpos.left),-90);
     
   
      del(`#${y}treeleft` , `#${x}treetop`);
@@ -97,7 +97,7 @@ var maxheight= 0;
 
     r = x;
 
-    SyncMoveBranch(y,Math.abs(ypos.left-xpos.left), 120);
+    SyncMoveBranch(y,Math.abs(ypos.left-xpos.left), 90);
     if (T2!="null") SyncMoveBranch(T2,Math.abs(T2pos.left - ypos.left), 0);
 
     
@@ -141,7 +141,7 @@ function leftRotate(x)
       let xpos = $("#"+x).offset();
       let T2pos = $("#"+T2).offset();
     
-      SyncMoveBranch(y, -Math.abs(ypos.left-xpos.left),-120);
+      SyncMoveBranch(y, -Math.abs(ypos.left-xpos.left),-90);
     
     
     
@@ -172,7 +172,7 @@ else tree[x+"treeright" ] = T2;
     // Return new root 
     r = y;
 
-    SyncMoveBranch(x,-Math.abs(ypos.left-xpos.left), 120);
+    SyncMoveBranch(x,-Math.abs(ypos.left-xpos.left), 90);
     if (T2!="null") SyncMoveBranch(T2,-Math.abs(T2pos.left - xpos.left), 0);
     
 
@@ -226,7 +226,7 @@ async function insertavl(node_, key_) {
         let vid = count;
       await  avl(key_);
      $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : "0ms"})
-     $(`#${vid}`).offset({top: ($("#"+node_).offset().top+150 ) , left :($("#"+node_).offset().left-110) })
+     $(`#${vid}`).offset({top: ($("#"+node_).offset().top+90 ) , left :($("#"+node_).offset().left-110) })
 
 
         await new Promise(resolve => {
@@ -266,7 +266,7 @@ async function insertavl(node_, key_) {
 
 
         $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : "0ms linear"})
-        $(`#${vid}`).offset({top: ($("#"+node_).offset().top+150 ) , left :($("#"+node_).offset().left+80) })
+        $(`#${vid}`).offset({top: ($("#"+node_).offset().top+90 ) , left :($("#"+node_).offset().left+80) })
 
 
         await new Promise(resolve => {
@@ -418,7 +418,7 @@ return node_;
 
 function avl(element) {
 
-    newnode = '<div id="'+count+'" style="transition:200ms;"  class="dragg" > <div class="treenode" id="'+ count+"treetop" +'" style="margin-left:35px;"></div>  <div class="treenode" id="'+ count+"treeleft" +'" style="margin-left:18px; margin-top:70px;"></div>   <div class="treenode" id="'+ count+"treeright" +'" style="margin-left:54px; margin-top:70px;"></div> <p  style="position:absolute;color:coral; font-size:70%; left:20px;" id="'+ count+"bottom" +'">'+count +'</p>   <div style="position:absolute; text-align:center; top:65px; left:38px;height:1px; width:20px;"><p  style="color:white; font-size:70%; " id="'+ count+"height" +'">'+"1" +'</p></div>   <p  id="'+ count+"treeval" +'" class="t">'+element+'</p>   </div>';
+    newnode = '<div id="'+count+'" style="transition:200ms;transform:scale(.8,.8);"  class="dragg" > <div class="treenode" id="'+ count+"treetop" +'" style="margin-left:35px;"></div>  <div class="treenode" id="'+ count+"treeleft" +'" style="margin-left:18px; margin-top:70px;"></div>   <div class="treenode" id="'+ count+"treeright" +'" style="margin-left:54px; margin-top:70px;"></div> <p  style="position:absolute;color:coral; font-size:70%; left:20px;" id="'+ count+"bottom" +'">'+count +'</p>   <div style="position:absolute; text-align:center; top:65px; left:38px;height:1px; width:20px;"><p  style="color:white; font-size:70%; " id="'+ count+"height" +'">'+"1" +'</p></div>   <p  id="'+ count+"treeval" +'" class="t">'+element+'</p>   </div>';
 
 
    $("body").prepend(newnode)
@@ -475,7 +475,7 @@ async function  printLevel(root_,  level)
   
 //await slidenode(lefttarget , rootoffset.left - (110), rootoffset.top  )
 
-AVLposttop[lefttarget] =  AVLposttop[root_] +120;  
+AVLposttop[lefttarget] =  AVLposttop[root_] +90;  
 AVLpostleft[lefttarget] =  AVLpostleft[root_]  - ( 50 * Math.pow( 2, height(lefttarget)) )
 
  $(`#${lefttarget}`).offset({"top" : `${AVLposttop[lefttarget]}` , "left" : `${ AVLpostleft[lefttarget] }` })
@@ -499,7 +499,7 @@ setTimeout(()=> {
 
  //await slidenode(righttarget , rootoffset.left+ (height(righttarget)*130), rootoffset.top  )
 
- AVLposttop[righttarget] =  AVLposttop[root_] +120; 
+ AVLposttop[righttarget] =  AVLposttop[root_] +90; 
  
  AVLpostleft[righttarget] =  AVLpostleft[root_]  + ( 50 * Math.pow( 2, height(righttarget)) )
 
