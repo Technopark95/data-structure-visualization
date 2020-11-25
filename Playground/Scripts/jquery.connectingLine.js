@@ -73,8 +73,6 @@ this.kruskalize =function (_cl = "rgb(0,0,0,0.08)")  {
 
 	_lines.splice(y,1);
 
-	break;
-
  }
 			}
 			
