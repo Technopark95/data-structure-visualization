@@ -779,5 +779,12 @@ async function DeleteAVL (h) {
 }
 
 
+async function SearchAVL(h)  {
+
+await searchbst(r,h);
+
+
+}
+
 
 //            insertavl(0,65)
