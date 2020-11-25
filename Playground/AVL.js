@@ -413,6 +413,171 @@ return node_;
 } 
   
 
+async function deleteavl( _root , _key) 
+{ 
+
+  await hilight(_root, "rgb(109,209,0,1)" , "1200ms" , 1300 )
+    hilight(_root, defaultcolor , "1200ms" , 1300 )
+  
+  
+    // base case f
+    if (_root == "null") return _root; 
+
+ 
+    // If the _key to be deleted is smaller than the _root's _key, 
+    // then it lies in left subtree 
+    if (_key < parseInt(  $('#'+_root+"treeval").text() , 10) )  {
+      
+       tree[_root+`treeleft`] = await deleteavl(tree[_root+`treeleft`], _key); 
+
+       treefy(_root+`treeleft`, tree[_root+`treeleft`])
+    }
+    // If the _key to be deleted is greater than the _root's _key, 
+    // then it lies in right subtree 
+    else if (_key > parseInt( $('#'+_root+"treeval").text() , 10))  {
+
+    tree[_root+`treeright`] = await deleteavl(tree[_root+`treeright`], _key); 
+
+    treefy(_root+`treeright`, tree[_root+`treeright`])
+    }
+
+
+    
+    else
+    { 
+        // node with only one child or no child 
+        if (tree[`${_root}treeleft`] == "null") 
+        { 
+            let temp = tree[`${_root}treeright`]; 
+           $("#"+_root).remove();
+           return temp;
+         
+        } 
+        else if (tree[`${_root}treeright`] == "null") 
+        { 
+            let temp = tree[`${_root}treeleft`]; 
+         
+            $("#"+_root).remove();
+
+
+            return temp;
+           
+        } 
+
+        else {
+
+        
+  
+        // node with two children: Get the inorder successor (smallest 
+        // in the right subtree) 
+  
+        await display("getting Inorder Successor to replace");
+
+        let temp = await minValueNode(tree[`${_root}treeright`]); 
+
+        
+        // Copy the inorder successor's content to this node 
+        await display("Copy the inorder successor's content to this node");
+        $('#'+_root+"treeval").text(  $('#'+temp+"treeval").text() );
+  
+        // Delete the inorder successor 
+        await display("Delete the inorder successor");
+        tree[`${_root}treeright`] = await deleteavl(tree[`${_root}treeright`], $('#'+temp+"treeval").text()); 
+    } 
+
+  }
+
+
+
+  // STEP 2: UPDATE HEIGHT OF THE CURRENT NODE  
+ let nodeheight = 1 + Math.max(height(tree[`${_root}treeleft`]), height(tree[`${_root}treeright`]));  
+
+  $(`#${_root}height`).text(nodeheight)
+
+// STEP 3: GET THE BALANCE FACTOR OF  
+// THIS NODE (to check whether this  
+// node became unbalanced)  
+let balance = getBalance(_root);  
+
+// If this node becomes unbalanced,  
+// then there are 4 cases  
+
+
+
+
+// Left Left Case  
+if (balance > 1 &&  getBalance(tree[`${_root}treeleft`]) >= 0)   {
+
+  console.log("LEFT LEFT")
+  let returned= await rightRotate(_root);  
+
+  return returned;
+
+}
+
+// Right Right Case  
+if (balance < -1 &&  getBalance(tree[`${_root}treeright`]) <= 0)  {
+  console.log("RIGHT RIGHT")
+  let returned = await leftRotate(_root);  
+  return returned;
+}
+
+// Left Right Case  
+if (balance > 1 &&  getBalance(tree[`${_root}treeleft`]) < 0)  {  
+  
+  console.log("LEFT RIGHT")
+  let newnodeleft = await leftRotate(tree[`${_root}treeleft`]); 
+  
+  
+  let optiona = tree[`${_root}treeleft`];
+
+  del (`#${_root}treeleft` , `#${optiona}treetop`);
+
+  treefy(`${_root}treeleft`, newnodeleft);
+
+
+  let returned = await rightRotate(_root);  
+
+  return returned;
+
+}  
+
+
+
+// Right Left Case  
+if (balance < -1 &&  getBalance(tree[`${_root}treeright`]) > 0)  {  
+ 
+  console.log("RIGHT LEFT")
+  let newnoderight = await rightRotate(tree[`${_root}treeright`]);
+  
+  let optiona = tree[`${_root}treeright`];
+
+  del(`#${_root}treeright` , `#${optiona}treetop`);
+
+  treefy(`${_root}treeright`, newnoderight);
+  
+  let returned= await leftRotate(_root);  
+
+        
+  return returned;
+}  
+
+r= _root;
+
+
+return _root;
+}  
+
+
+
+
+
+
+
+    
+
+
+
 
 
 
@@ -573,16 +738,14 @@ let redrawevent;
 
 
  
-async function InsertAVL (jj,h) {
+async function InsertAVL (h) {
 
     redrawevent= setInterval(redraw , 50);
 
-    await insertavl(jj,h);
+    await insertavl(r,h);
 
     AVLpostleft[r] = 1900;
     AVLposttop[r] = 150;
-
-    maxheight = height(r);
 
     await waitforme(1000);
     await BalanceAll(r);
@@ -590,6 +753,27 @@ async function InsertAVL (jj,h) {
     await waitforme(4000);
 
     clearInterval(redrawevent)
+
+
+}
+
+
+
+async function DeleteAVL (h) {
+
+  redrawevent= setInterval(redraw , 50);
+
+  await deleteavl(r,h);
+
+  AVLpostleft[r] = 1900;
+  AVLposttop[r] = 150;
+
+  await waitforme(1000);
+  await BalanceAll(r);
+
+  await waitforme(4000);
+
+  clearInterval(redrawevent)
 
 
 }
