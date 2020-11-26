@@ -194,7 +194,7 @@ $.getJSON("Alignment.json" , function(result) {
   async function HeapSort() 
   { 
      await arraynodes()
-      await doalign("400ms" , 2000)
+      await doalign()
      await build()
       // Build heap (rearrange array) 
       await display('Building Heap')
