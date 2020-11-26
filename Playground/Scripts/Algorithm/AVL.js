@@ -430,7 +430,8 @@ async function deleteavl( _root , _key)
       
       tree[_root+`treeleft`] = await deleteavl(tree[_root+`treeleft`], _key); 
 
-     if (dothetreefy == 1) { treefy(_root+`treeleft`, tree[_root+`treeleft`]); dothetreefy =0;}
+     if (dothetreefy == 1) { treefy(_root+`treeleft`, tree[_root+`treeleft`]); }
+     
 
     }
     // If the _key to be deleted is greater than the _root's _key, 
@@ -439,7 +440,7 @@ async function deleteavl( _root , _key)
 
       tree[_root+`treeright`]=   await deleteavl(tree[_root+`treeright`], _key); 
 
-    if (dothetreefy == 1) {treefy(_root+`treeright`, tree[_root+`treeright`]); dothetreefy =0; }
+    if (dothetreefy == 1) {treefy(_root+`treeright`, tree[_root+`treeright`]);  }
 
     }
 
@@ -452,7 +453,7 @@ async function deleteavl( _root , _key)
         { 
             let temp = tree[`${_root}treeright`]; 
            $("#"+_root).remove();
- dothetreefy =1;
+           dothetreefy =1;
            return temp;
          
         } 
@@ -486,7 +487,10 @@ async function deleteavl( _root , _key)
   
         // Delete the inorder successor 
         await display("Delete the inorder successor");
+          dothetreefy=1;
         tree[`${_root}treeright`] = await deleteavl(tree[`${_root}treeright`], $('#'+temp+"treeval").text()); 
+
+        treefy(`${_root}treeright`,tree[`${_root}treeright`])
     } 
 
   }
