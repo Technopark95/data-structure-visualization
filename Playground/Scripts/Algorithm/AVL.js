@@ -411,6 +411,7 @@ return node_;
     
 } 
   
+var dothetreefy = 0;
 
 async function deleteavl( _root , _key) 
 { 
@@ -427,17 +428,19 @@ async function deleteavl( _root , _key)
     // then it lies in left subtree 
     if (_key < parseInt(  $('#'+_root+"treeval").text() , 10) )  {
       
-       tree[_root+`treeleft`] = await deleteavl(tree[_root+`treeleft`], _key); 
+      tree[_root+`treeleft`] = await deleteavl(tree[_root+`treeleft`], _key); 
 
-       treefy(_root+`treeleft`, tree[_root+`treeleft`])
+     if (dothetreefy == 1) { treefy(_root+`treeleft`, tree[_root+`treeleft`]); dothetreefy =0;}
+
     }
     // If the _key to be deleted is greater than the _root's _key, 
     // then it lies in right subtree 
     else if (_key > parseInt( $('#'+_root+"treeval").text() , 10))  {
 
-    tree[_root+`treeright`] = await deleteavl(tree[_root+`treeright`], _key); 
+      tree[_root+`treeright`]=   await deleteavl(tree[_root+`treeright`], _key); 
 
-    treefy(_root+`treeright`, tree[_root+`treeright`])
+    if (dothetreefy == 1) {treefy(_root+`treeright`, tree[_root+`treeright`]); dothetreefy =0; }
+
     }
 
 
@@ -449,6 +452,7 @@ async function deleteavl( _root , _key)
         { 
             let temp = tree[`${_root}treeright`]; 
            $("#"+_root).remove();
+ dothetreefy =1;
            return temp;
          
         } 
@@ -456,6 +460,7 @@ async function deleteavl( _root , _key)
         { 
             let temp = tree[`${_root}treeleft`]; 
          
+            dothetreefy =1;
             $("#"+_root).remove();
 
 
