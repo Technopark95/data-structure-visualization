@@ -1,0 +1,158 @@
+
+
+let triemap = new Map();
+
+let triecounter = -1
+
+
+function triefy (id1 , id2 , distance , graphtype = "default")  {
+
+   
+    mySVG.drawLine({
+       left_node:'#'+id1,
+        right_node:'#'+id2,
+        error:true,
+        width:2,
+        col : "coral",
+   
+      });
+
+
+      
+      $( '#'+id1 ).draggable({
+        drag: function(event, ui){mySVG.redrawLines();}
+      });
+      $( '#'+id2 ).draggable({
+        drag: function(event, ui){mySVG.redrawLines();}
+      });
+
+
+    }
+
+
+
+
+function trienode(label ,ID)  {
+
+
+
+if (triecounter == -1 )   {
+
+
+let trienn = `<div id=trieroot class="trie"> <p id=trierootname class="trie-label">#</p></div>`;
+
+$("body").prepend(trienn);
+
+$("#"+"trieroot").draggable();
+
+++triecounter;
+}
+
+
+var trienn = `<div id=${ID} class="trie"> <p id=${ID}name class="trie-label"> ${label}</p>  <p id=${ID}status class="trie-label" style="display:none;"> 0</p> <p id=${ID}value class="trie-label" style="display:none;"> 0</p> </div>`;
+
+
+$("body").prepend(trienn);
+
+$("#"+ID).draggable();
+
+
+}
+
+
+function trieinsert( key ,value=0) 
+{ 
+    let current = "trieroot"; 
+
+    let next= ""
+  
+    for (let i = 0; i < key.length; i++) 
+    { 
+        
+        next = next + key.charAt(i);
+
+      
+        if ( $("#"+next).length == 0 ) {
+
+            trienode(key.charAt(i) , next);
+
+            triefy(current , next);
+
+        }
+  
+        current= next;
+    } 
+  
+    // mark last node as leaf 
+    $("#"+next).css({"background-color":"rgba(75,0,130, 0.842)"})
+    $("#"+next+"status").text("1");
+    $("#"+next+"value").text(value);
+} 
+
+
+
+async function triesearch(key)   {
+
+
+  let current = "trieroot"; 
+
+  let next= ""
+
+  let flag=0;
+
+  for (let i = 0; i < key.length; i++) 
+  { 
+      
+      next = next + key.charAt(i);
+
+    
+      if ( $("#"+next).length == 1 ) {
+         
+        let col = $("#"+next).css("background-color");
+
+        await hilight(next , "rgb(109,209,0,1)", "700ms",800)
+              hilight(next , col,"700ms",800 )
+
+      }
+
+      else {
+
+      
+        break;
+      } 
+      
+
+      current= next;
+  } 
+
+if ($("#"+next+"status").text()  == "1")   {
+  $("#"+next).css({"background-color":"rgba(75,0,130, 0.842)"})
+  
+  $(".trie").css('transition','linear 100ms')
+
+await display ("String exist");
+return 1;
+
+}
+else {
+  await display ("String doesnt exist");
+  
+  $(".trie").css('transition','linear 100ms')
+
+  return 0;
+
+
+}
+
+
+
+}
+
+/*
+trieinsert("ANOOP",100);
+trieinsert("ANOQW",200);
+trieinsert("HANDSOME",213);
+trieinsert("HANDJOB",345);
+trieinsert("HANKAKU",3134);
+
+*/
