@@ -194,8 +194,6 @@ async function insertavl(node_, key_) {
 
     if ($(`#${node_}`).length == 0)  {
 
-      await display("due to the space-issues, you are in the middle of the document screen for AVL tree opeartion.");
-      await display("please scroll back to leftmost to use other algorithms.");
       await display("Tree Empty. Adding root node.");
       let vid =count;
      await  avl(key_); 
@@ -205,6 +203,7 @@ async function insertavl(node_, key_) {
        let bodyy = $(document);
 
        bodyy.scrollLeft(1200)
+       bodyy.scrollTop(0)
 
 
 
