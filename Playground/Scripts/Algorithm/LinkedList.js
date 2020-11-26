@@ -175,6 +175,8 @@ async   function deletenode(rot , val) {
             
           function addnode(typed) {
 
+  $(document).scrollLeft(0)
+  $(document).scrollTop(0)
 
                 newnode = '<div id="'+count+'list"  class="dragg" > <div class="nodeleft" id="'+ count+"listleft" +'" style="position:absolute; height:7px; width:7px; border-radius:5px; background-color:white;  margin-top:40px;"></div>  <div class="node" id="'+ count+"listright" +'" style="position:absolute; height:7px; width:7px; border-radius:7px; background-color:white; margin-left:72px; margin-top:40px;"></div> <p  style="position:absolute; color:coral; font-size:60%; left:20px;" id="'+ count+"listbottom" +'">'+count +'</p>    <p  id="'+ count+"listid" +'" class="t">'+typed+'</p>   </div>';
              

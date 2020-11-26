@@ -125,6 +125,9 @@ var NoOfVertex;
 
  Graph = (t) => {
 
+    $(document).scrollLeft(0)
+  $(document).scrollTop(0)
+  
   NoOfVertex = t;
 
   $("body").append (`<table id="distab" style ="position:absolute; transition:100ms linear; top:135px" ></table>`);
@@ -911,6 +914,10 @@ $("#graphinput").val("")
  var graphdata;
 
  async function importgraph(name,pass)  {
+
+
+    $(document).scrollLeft(0)
+    $(document).scrollTop(0)
 
    let gname = `${name}.json`;
 

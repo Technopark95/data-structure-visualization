@@ -62,6 +62,9 @@ $("#"+ID).draggable();
 
 function trieinsert( key ,value=0) 
 { 
+
+  $(document).scrollLeft(0)
+  $(document).scrollTop(0)
     let current = "trieroot"; 
 
     let next= ""

@@ -2,6 +2,9 @@
 
 function createleaves(nnodes) {
 
+    $(document).scrollLeft(0)
+    $(document).scrollTop(0)
+
 let i = 0 
 for (; i < nnodes.length ; ++i) {
 
@@ -25,6 +28,8 @@ if (i > 30) {
 
 function createnodes(nnodes) {
 
+    $(document).scrollLeft(0)
+  $(document).scrollTop(0)
 
     for (let i = 0 ; i < nnodes.length ; ++i) {
 
