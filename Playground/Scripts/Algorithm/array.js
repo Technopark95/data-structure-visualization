@@ -10,7 +10,8 @@ var tableobj
 function array (typed)  {
 
 
-
+  $(document).scrollLeft(0)
+  $(document).scrollTop(0)
 
   length = typed.length 
 
