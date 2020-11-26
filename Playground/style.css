@@ -527,11 +527,6 @@ vertical-align: middle;
 }
 
 
-#exptext::first-letter {
-
-  text-transform: lowercase;
-
-}
 
 .commandcopy {
 

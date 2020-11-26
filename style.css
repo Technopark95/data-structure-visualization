@@ -528,9 +528,11 @@ vertical-align: middle;
 
 #exptext::first-letter {
 
-  text-transform: lowercase;
+  text-transform: uppercase;
 
 }
+
+
 
 
 
