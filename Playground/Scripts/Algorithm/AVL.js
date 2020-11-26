@@ -430,7 +430,7 @@ async function deleteavl( _root , _key)
       
       tree[_root+`treeleft`] = await deleteavl(tree[_root+`treeleft`], _key); 
 
-     if (dothetreefy == 1) { treefy(_root+`treeleft`, tree[_root+`treeleft`]); }
+     if (dothetreefy == 1) { treefy(_root+`treeleft`, tree[_root+`treeleft`]); dothetreefy =0;}
      
 
     }
@@ -440,7 +440,7 @@ async function deleteavl( _root , _key)
 
       tree[_root+`treeright`]=   await deleteavl(tree[_root+`treeright`], _key); 
 
-    if (dothetreefy == 1) {treefy(_root+`treeright`, tree[_root+`treeright`]);  }
+    if (dothetreefy == 1) {treefy(_root+`treeright`, tree[_root+`treeright`]); dothetreefy=0; }
 
     }
 
