@@ -419,7 +419,7 @@ async function deleteavl( _root , _key)
   await hilight(_root, "rgb(109,209,0,1)" , "1200ms" , 1300 )
     hilight(_root, defaultcolor , "1200ms" , 1300 )
   
-  
+
     // base case f
     if (_root == "null") return _root; 
 
@@ -430,6 +430,7 @@ async function deleteavl( _root , _key)
       
       tree[_root+`treeleft`] = await deleteavl(tree[_root+`treeleft`], _key); 
 
+    
      if (dothetreefy == 1) { treefy(_root+`treeleft`, tree[_root+`treeleft`]); dothetreefy =0;}
      
 
@@ -439,7 +440,7 @@ async function deleteavl( _root , _key)
     else if (_key > parseInt( $('#'+_root+"treeval").text() , 10))  {
 
       tree[_root+`treeright`]=   await deleteavl(tree[_root+`treeright`], _key); 
-
+      
     if (dothetreefy == 1) {treefy(_root+`treeright`, tree[_root+`treeright`]); dothetreefy=0; }
 
     }
@@ -454,6 +455,7 @@ async function deleteavl( _root , _key)
             let temp = tree[`${_root}treeright`]; 
            $("#"+_root).remove();
            dothetreefy =1;
+           r = temp
            return temp;
          
         } 
@@ -462,8 +464,9 @@ async function deleteavl( _root , _key)
             let temp = tree[`${_root}treeleft`]; 
          
             dothetreefy =1;
+           
             $("#"+_root).remove();
-
+         r = temp;
 
             return temp;
            
@@ -479,6 +482,7 @@ async function deleteavl( _root , _key)
         await display("getting Inorder Successor to replace");
 
         let temp = await minValueNode(tree[`${_root}treeright`]); 
+
 
         
         // Copy the inorder successor's content to this node 
@@ -574,6 +578,7 @@ r= _root;
 
 
 return _root;
+
 }  
 
 
