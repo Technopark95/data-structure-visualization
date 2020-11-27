@@ -19,7 +19,7 @@ Copyright 2020 Anoop Singh, Graphical Structure
 */
 
 var r = 0;
-
+var cter = 0
 
 function height(N)  
 {  
@@ -197,9 +197,9 @@ async function insertavl(node_, key_) {
       await display("Tree Empty. Adding root node.");
       let vid =count;
      await  avl(key_); 
-       $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : "2000ms"})
+       $(`#${vid}`).css({ "top" : "0px", "left" : "0px"})
        $(`#${vid}`).animate({ "top" : "0px", "left" : "1900px"})
-
+       $(`#${vid}`).css("transition","1200ms linear")
        let bodyy = $(document);
 
        bodyy.scrollLeft(1200)
@@ -416,8 +416,8 @@ var dothetreefy = 0;
 async function deleteavl( _root , _key) 
 { 
 
-  await hilight(_root, "rgb(109,209,0,1)" , "1200ms" , 1300 )
-    hilight(_root, defaultcolor , "1200ms" , 1300 )
+  await hilight(_root, "rgb(109,209,0,1)" , "1200ms linear" , 1300 )
+    hilight(_root, defaultcolor , "1200ms linear" , 1300 )
   
 
     // base case f
@@ -520,8 +520,12 @@ let balance = getBalance(_root);
 // Left Left Case  
 if (balance > 1 &&  getBalance(tree[`${_root}treeleft`]) >= 0)   {
 
-  console.log("LEFT LEFT")
+
+  await hilight(_root , "red","1200ms linear",1300);
+          await display("Red node is unbalanced");
   let returned= await rightRotate(_root);  
+
+  await hilight(_root , defaultcolor,"1200ms linear",1300);
 
   return returned;
 
@@ -529,24 +533,42 @@ if (balance > 1 &&  getBalance(tree[`${_root}treeleft`]) >= 0)   {
 
 // Right Right Case  
 if (balance < -1 &&  getBalance(tree[`${_root}treeright`]) <= 0)  {
-  console.log("RIGHT RIGHT")
+
+
+  await hilight(_root , "red","1200ms linear",1300);
+  await display("Red node is unbalanced");
+
   let returned = await leftRotate(_root);  
+
+  await hilight(_root , defaultcolor,"1200ms linear",1300);
+
   return returned;
+
+
 }
 
 // Left Right Case  
 if (balance > 1 &&  getBalance(tree[`${_root}treeleft`]) < 0)  {  
-  
-  console.log("LEFT RIGHT")
+
+
+  await hilight(tree[`${_root}treeleft`] , "red","1200ms linear",1300);
+  await display("Red node is unbalanced");
+  await hilight(tree[`${_root}treeleft`] , defaultcolor,"1200ms linear",1300);
+
+
   let newnodeleft = await leftRotate(tree[`${_root}treeleft`]); 
   
-  
+  await waitforme(2000);
+
   let optiona = tree[`${_root}treeleft`];
 
   del (`#${_root}treeleft` , `#${optiona}treetop`);
 
   treefy(`${_root}treeleft`, newnodeleft);
 
+  await hilight(_root , "red","1200ms linear",1300);
+      await display("Red node is unbalanced");
+      await hilight(_root , defaultcolor,"1200ms linear",1300);
 
   let returned = await rightRotate(_root);  
 
@@ -559,15 +581,25 @@ if (balance > 1 &&  getBalance(tree[`${_root}treeleft`]) < 0)  {
 // Right Left Case  
 if (balance < -1 &&  getBalance(tree[`${_root}treeright`]) > 0)  {  
  
-  console.log("RIGHT LEFT")
+  await hilight(tree[`${_root}treeright`] , "red","1200ms linear",1300);
+  await display("Red node is unbalanced");
+  await hilight(tree[`${_root}treeright`] , defaultcolor,"1200ms linear",1300);
+
+ 
   let newnoderight = await rightRotate(tree[`${_root}treeright`]);
   
+  await waitforme(2000);
   let optiona = tree[`${_root}treeright`];
 
   del(`#${_root}treeright` , `#${optiona}treetop`);
 
   treefy(`${_root}treeright`, newnoderight);
   
+  await hilight(_root , "red","1200ms linear",1300);
+  await display("Red node is unbalanced");
+ await hilight(_root , defaultcolor,"1200ms linear",1300);
+
+
   let returned= await leftRotate(_root);  
 
         
@@ -740,6 +772,7 @@ async function BalanceAll( root_)
 async function redraw  ()  {
 
  mySVG.redrawLines();
+ cter++;
 
 }
 
@@ -752,6 +785,8 @@ let redrawevent;
 
  
 async function InsertAVL (h) {
+
+
 
     redrawevent= setInterval(redraw , 50);
 

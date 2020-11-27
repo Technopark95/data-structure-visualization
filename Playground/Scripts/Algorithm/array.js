@@ -630,20 +630,22 @@ setTimeout( function()  {
 
  async function  insertAt (value , index)  {
 
-  for (let i = length-2 ; i >=0 ; --i)  {
+  for (let i = length-2 ; i >=index ; --i)  {
 
-    if (index == i+1 ) {
-      storedarray[index] = value;
-      insert(value ,index)
-      return;
-    }
-    
     storedarray[i+1] = storedarray[i];
    await moveright(i);
 
 
   }
 
+
+
+    storedarray[index] = value;
+    insert(value ,index)
+ 
+
+
+  
 
 
   }

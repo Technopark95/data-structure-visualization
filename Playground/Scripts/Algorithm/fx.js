@@ -371,8 +371,7 @@ if (e.which == 13) {
   
   await eval(command)
 
-  normalize();
-
+  
   
 }
 
