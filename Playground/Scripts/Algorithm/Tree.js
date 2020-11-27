@@ -559,6 +559,7 @@ async function searchbst(ro , item) {
           // Delete the inorder successor 
           await display("Delete the inorder successor");
           tree[`${_root}treeright`] = await deletebst(tree[`${_root}treeright`], $('#'+temp+"treeval").text()); 
+          treefy(`${_root}treeright`,tree[`${_root}treeright`])
       } 
       return _root; 
   
