@@ -177,7 +177,9 @@ data = {"0":{"top":138,"left":643},"1":{"top":247,"left":326},"2":{"top":247,"le
           storedarray[largest] = te;
   
        await   gottopoint(ind ,largest)
+       
        await swapp(ind,largest)
+
         hilight(ind , defaultcolor , "1s" ,1100)
        await hilight(largest , defaultcolor , "1s" ,1100)
     
