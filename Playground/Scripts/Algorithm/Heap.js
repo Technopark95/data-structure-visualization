@@ -40,9 +40,9 @@ async function HEAPIFY2( n,  i)
             await hilight(parent , "red" ,"1s" ,1100)            
 
 
-             gottopoint(i ,parent)
+            await gottopoint(i ,parent)
 
-             await swapp(parent, i)
+           //  await swapp(parent, i)
 
          await   waitforme(500);
 
