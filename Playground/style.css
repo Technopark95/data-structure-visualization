@@ -572,7 +572,7 @@ vertical-align: middle;
 
 .slider {
   -webkit-appearance: none;
-  width: 300px;
+  width: 200px;
   height: 3px;
   border-radius: 3px;
   background: linear-gradient(to right, gray, black);
