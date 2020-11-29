@@ -18,7 +18,7 @@ Copyright 2020 Anoop Singh, Graphical Structure
 
 
 */
-
+var arrayflag = 0;
 async function HEAPIFY2( n,  i) 
 { 
     
@@ -40,7 +40,9 @@ async function HEAPIFY2( n,  i)
             await hilight(parent , "red" ,"1s" ,1100)            
 
 
-            await gottopoint(i ,parent)
+             gottopoint(i ,parent)
+
+             await swapp(parent, i)
 
          await   waitforme(500);
 
@@ -58,7 +60,7 @@ async function HEAPIFY2( n,  i)
     
 } 
 
-
+/*
 
 async function heapify1( len,  ind) 
   { 
@@ -98,13 +100,24 @@ async function heapify1( len,  ind)
       } 
   } 
 
-
+*/
 async function insertheap(value)   {
 
 leaf(value);
 storedarray[count-1] = value;
 
 await doalign();
+
+if (arrayflag == 0)  {
+
+    let h = []
+    for (let c = 0 ;c <31 ; c++) h[c] = 0
+
+    array(h);
+
+    arrayflag =1 ;
+}
+await insert(value , count-1)
 
 
 if (count != 0)  {
@@ -143,11 +156,12 @@ async function deleteheap()
     // Replace root with first element 
     storedarray[0] = lastElement; 
 
-
+   
      hilight((count-1) , "red" ,"1s" ,1100)  
      await hilight(0 , "red" ,"1s" ,1100) 
      
      await   gottopoint((count-1) ,0)
+     await swapp(0,count-1)
 
      await   waitforme(500);
 
@@ -162,7 +176,7 @@ async function deleteheap()
      count = count - 1; 
   
     // heapify the root node 
-  await  heapify1(count, 0); 
+  await  heapify(count, 0); 
 
   return result;
 
@@ -170,7 +184,7 @@ async function deleteheap()
 
 
 async function createheap(elements)  {
-
+    arrayflag = 1;
     array(elements);
     arraynodes()
     await doalign("2000ms",0)
@@ -179,7 +193,7 @@ async function createheap(elements)  {
     // Build heap (rearrange array) 
     await display('Building Heap')
     for (var ind = length / 2 - 1; ind >= 0; ind--) 
-    await   heapify1(length, ind); 
+    await   heapify(length, ind); 
 
 
 }
