@@ -19,7 +19,7 @@ Copyright 2020 Anoop Singh, Graphical Structure
 */
 
 var r = 0;
-var cter = 0
+
 
 function height(N)  
 {  
@@ -772,7 +772,7 @@ async function BalanceAll( root_)
 async function redraw  ()  {
 
  mySVG.redrawLines();
- cter++;
+ 
 
 }
 
