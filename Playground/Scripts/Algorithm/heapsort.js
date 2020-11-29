@@ -123,12 +123,12 @@ data = {"0":{"top":138,"left":643},"1":{"top":247,"left":326},"2":{"top":247,"le
       var  element1text = $("#"+i+"treeval").text();
       var  element2text = $("#"+j+"treeval").text();
   
-      element1.css({ "top": (top2)+"px", "left": (left2)+"px" ,"transition-duration" :"1500ms" },3500, function() {
+      element1.css({ "top": (top2)+"px", "left": (left2)+"px" ,"transition" : speed+"ms linear" },3500, function() {
   
   
       })
   
-      element2.css({ "top": (top1)+"px", "left": (left1)+"px","transition-duration" :"1500ms" } , 3500, function() {
+      element2.css({ "top": (top1)+"px", "left": (left1)+"px","transition" :speed+"ms linear" } , 3500, function() {
   
   
       })
@@ -145,7 +145,7 @@ data = {"0":{"top":138,"left":643},"1":{"top":247,"left":326},"2":{"top":247,"le
   
          resolve('resolved')
   
-      },1480)
+      },speed+80)
   
   
   
