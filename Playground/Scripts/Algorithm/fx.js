@@ -80,7 +80,7 @@ $("#iindex").hide()
 $("#jindex").hide()
 $("#kindex").hide()
 
-
+var speed =0; 
 
 var mySVG = $('body').connect();
 
@@ -90,6 +90,20 @@ function del (one ,two)  {
 
   mySVG.dl(one , two)
           
+}
+
+
+
+
+var slider = document.getElementById("animation-speed");
+
+speed = 2020- 2000*(slider.value/100);
+
+
+slider.oninput = function() {
+
+  speed = 2020- 2000*(this.value/100);
+
 }
      
 
@@ -139,7 +153,7 @@ var defaultcolor = "argb(0,0,0,0.842)";
 async function hilight (acc , color="rgb(0,0,0,0.842)" , duration = "4000ms" , timeout = 4100) {
 
 
-  $("#"+acc).css({"background-color" : color , "transition" :duration })
+  $("#"+acc).css({"background-color" : color , "transition" :speed+"ms linear" })
   if (stats == 1  ) await pauser();
 
   
@@ -150,7 +164,7 @@ setTimeout(function()  {
 
   resolve('')
 
-},timeout)
+},speed+80)
    
 
 })
