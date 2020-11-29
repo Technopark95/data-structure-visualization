@@ -105,7 +105,7 @@ leaf(value);
 storedarray[count-1] = value;
 
 await doalign();
-redrawevent= setInterval(redraw , 50);
+
 
 if (count != 0)  {
 
@@ -124,9 +124,10 @@ if (count != 0)  {
     
 }
 
-await waitforme(2500);
 
-clearInterval(redrawevent)
+await waitforme(1500);
+mySVG.redrawLines();
+await waitforme(500);
 await HEAPIFY2(count, count-1)
 
 }
@@ -135,6 +136,7 @@ await HEAPIFY2(count, count-1)
 
 async function deleteheap() 
 { 
+    let result = storedarray[0];
     // Get the last element 
     let lastElement = storedarray[count-1]; 
   
@@ -161,4 +163,23 @@ async function deleteheap()
   
     // heapify the root node 
   await  heapify1(count, 0); 
+
+  return result;
+
 } 
+
+
+async function createheap(elements)  {
+
+    array(elements);
+    arraynodes()
+    await doalign("2000ms",0)
+    await waitforme(2000);
+    build()
+    // Build heap (rearrange array) 
+    await display('Building Heap')
+    for (var ind = length / 2 - 1; ind >= 0; ind--) 
+    await   heapify1(length, ind); 
+
+
+}
