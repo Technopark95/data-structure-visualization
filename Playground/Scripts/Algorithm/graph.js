@@ -95,7 +95,7 @@ return new Promise( resolve => {
     
     $("#postqueue").prepend(`<div id="pq${queuerear}" class="PSTACK postfixcss"><p style="position:relative;">${symbol}</p></div>`);
 
-    $(`#pq${queuerear}`).animate({"opacity" : "100%"} ,500 , ()=> {
+    $(`#pq${queuerear}`).animate({"opacity" : "100%"} ,speed , ()=> {
 
         queuerear--;
 resolve('');
@@ -116,7 +116,7 @@ async function qout()  {
         
     
     
-    $(`#pq${queuefront}`).animate({left : "+=300" , opacity: "0%"},700, ()=> {
+    $(`#pq${queuefront}`).animate({left : "+=300" , opacity: "0%"},speed, ()=> {
     
         let y = $(`#pq${queuefront}`).text();
     $(`#pq${queuefront}`).remove();
@@ -639,16 +639,16 @@ pointerarrow.show();
 
 
 
-var parent = []; 
+var parent1 = []; 
   
 // Find set of vertex i 
 async function find( in_) 
 { 
   
-    while ( in_ != parent[in_])  {
+    while ( in_ != parent1[in_])  {
 
        
-        in_ = parent[in_]; 
+        in_ = parent1[in_]; 
     }
     return in_; 
 } 
@@ -660,7 +660,7 @@ async function union1(in_,  jn_)
 { 
     let a = await find(in_); 
     let b = await find(jn_); 
-    parent[a] = b; 
+    parent1[a] = b; 
 } 
   
 // Finds MST using Kruskal's algorithm 
@@ -672,7 +672,7 @@ async function Kruskal()
 
     // Initialize sets of disjoint sets. 
     for (let i = 0; i < NoOfVertex; i++) 
-        parent[i] = i; 
+        parent1[i] = i; 
   
     // Include minimum weight edges one by one 
     let edge_count = 0; 
