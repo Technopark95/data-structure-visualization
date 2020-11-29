@@ -301,7 +301,7 @@ async function  postorder(CurrentNode ) {
 
 function movebranch(ID,leftpx=0,toppx=0)   {
 
- 
+ $(".dragg").css("transition" , speed+"ms linear")
   
   $(ID).animate({"left" : "+="+leftpx ,"top" : "+="+toppx})
   
