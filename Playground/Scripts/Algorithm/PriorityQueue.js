@@ -49,6 +49,8 @@ async function ChangePriority( i,  p)
 await hilight(i , "red" , "1200ms linear" ,1300);
     $(`#${i}treeval`).text(p);
 
+    await insert(p , i)
+
 await hilight(i , defaultcolor , "1200ms linear" ,1300);
   
     if (p > oldp) { 
@@ -75,6 +77,8 @@ async function RemovePriorityQueue( i)
   
     await hilight(i , "red" , "1200ms linear" ,1300);
     $(`#${i}treeval`).text(storedarray[i]);
+
+    await insert( storedarray[i],i)
 
 await hilight(i , defaultcolor , "1200ms linear" ,1300);
 

@@ -42,7 +42,7 @@ async function HEAPIFY2( n,  i)
 
             await gottopoint(i ,parent)
 
-           //  await swapp(parent, i)
+             await swapp(parent, i)
 
          await   waitforme(500);
 
