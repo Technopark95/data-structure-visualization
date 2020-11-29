@@ -102,7 +102,7 @@ return new Promise( resolve => {
     
     $("#poststack").append(`<div id="ps${stackelement}" class="PSTACK postfixcss"><p style="position:relative;">${symbol}</p></div>`)
     
-    $(`#ps${stackelement}`).animate({"opacity" : "100%"} ,500 , ()=> {
+    $(`#ps${stackelement}`).animate({"opacity" : "100%"} ,speed , ()=> {
 
 stackelement++;
 resolve('');
@@ -122,7 +122,7 @@ return new Promise( resolve => {
     
 --stackelement;
 
-$(`#ps${stackelement}`).animate({left : "+=300" , opacity: "0%"},700, ()=> {
+$(`#ps${stackelement}`).animate({left : "+=300" , opacity: "0%"},speed, ()=> {
 
 $(`#ps${stackelement}`).remove();
 
