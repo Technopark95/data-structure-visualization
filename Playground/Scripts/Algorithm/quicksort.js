@@ -220,6 +220,7 @@ await push('QuickSort( '+ (0) + ' , ' + (length-1) + ' )' )
 await cutoutarray(0,length-1)
 await qs(0 ,length-1)
 
+await normalize()
 
 }
 
@@ -298,7 +299,7 @@ $('#Q').append(temparr);
 async function pivotchange(pivotindex)  {
 
  
- $("#aitem"+pivotindex).css({ "background-color" : "rgba(75,0,130, 0.842)" , "transition" : "1s linear"} , 3000 )
+ $("#aitem"+pivotindex).css({ "background-color" : "rgba(75,0,130, 0.842)" , "transition" : speed+"ms linear"} , 3000 )
  if (stats == 1  ) await pauser();
     return new Promise (resolve => {
 
@@ -307,7 +308,7 @@ async function pivotchange(pivotindex)  {
             resolve('resolved')
         
         
-        },1100)
+        },speed+80)
 
 })
 
@@ -322,7 +323,7 @@ async function pivotnormal(pivotindex)  {
   
 
  
- $("#aitem"+pivotindex).css({ "background-color" : "rgba(0,0,0, 0.842)" , "transition" : "1s linear"} , 3000 )
+ $("#aitem"+pivotindex).css({ "background-color" : "rgba(0,0,0, 0.842)" , "transition" :speed+"ms linear"} , 3000 )
  if (stats == 1  ) await pauser();
     return new Promise (resolve => {
 
@@ -331,7 +332,7 @@ async function pivotnormal(pivotindex)  {
             resolve('resolved')
         
         
-        },1100)
+        },speed+80)
 
 })
 
@@ -342,7 +343,7 @@ async function pivotnormal(pivotindex)  {
 
 async function turnred(pivotindex)  {
 
-    $("#aitem"+pivotindex).css({ "background-color" : "rgba(255,0,0, 0.91)" , "transition" : "1s linear"} , 3000 )
+    $("#aitem"+pivotindex).css({ "background-color" : "rgba(255,0,0, 0.91)" , "transition" : speed+"ms linear"} , 3000 )
     if (stats == 1  ) await pauser();
     return new Promise (resolve => {
 
@@ -351,7 +352,7 @@ async function turnred(pivotindex)  {
             resolve('resolved')
         
         
-        },1100)
+        },speed+80)
 
 })
 
@@ -363,7 +364,7 @@ async function turnred(pivotindex)  {
 async function turnnormal(pivotindex)  {
 
 
-$("#aitem"+pivotindex).css({ "background-color" : "rgba(0,0,0, 0.842)" , "transition" : "1s linear"} )
+$("#aitem"+pivotindex).css({ "background-color" : "rgba(0,0,0, 0.842)" , "transition" : speed+"ms linear"} )
 
 if (stats == 1  ) await pauser();
     return new Promise (resolve => {
@@ -373,7 +374,7 @@ setTimeout(() => {
     resolve('resolved')
 
 
-},1100)
+},speed+80)
 
 })
 
@@ -382,36 +383,9 @@ setTimeout(() => {
 
 async function display (data , fin= 2000 , fout = 1000)  {
 
-
-    if (displaysignal == "slow") {
-
-return new Promise ( resolve =>  {
-
-    $("#feed").html(data)
-    $("#log1").append('<p class="uncaps" style="font-size:65%;color:black;font-family:Segoe UI;">'+data+'</p>')
-$("#feed").animate({"opacity" : "100%" } , fin , async function ()   {
-
-    if (stats == 1  ) await pauser();
-
-$("#feed").delay(fin).animate({"opacity" : "0%" } , fout , function () {
-
-    logscreen.scrollTop = logscreen.scrollHeight
-resolve('resolved')
-})
-
-
-})
-
-})
-    }
-
-    else if (displaysignal == "quick") {
-
-
         Log(data);
         if (stats == 1  ) await pauser();
 
-    }
 
 }
 
