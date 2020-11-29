@@ -26,8 +26,12 @@ function rightChild(val)
 
 
 
-function getMax() 
+async function getMax() 
 { 
+
+    await hilight(0 , "red","1200ms linear" , 1300);
+
+    Output(storedarray[0])
   
     return storedarray[0]; 
 } 
