@@ -124,7 +124,7 @@ $("#aitemval"+vala).animate({
   "margin-top" : "170px"
   
   
-  } ,1000, function()  {
+  } ,speed, function()  {
 
 
     $("#aitemval"+vala).animate({
@@ -132,7 +132,7 @@ $("#aitemval"+vala).animate({
       "margin-left" : s+"px"
       
       
-      } ,2000, function()  {
+      } ,speed, function()  {
       
       
         $("#aitemval"+vala).animate({
@@ -141,7 +141,7 @@ $("#aitemval"+vala).animate({
           "margin-top" : "20px"
           
           
-          },1000 , function ()  {
+          },speed , function ()  {
 
             $("#aitemval"+vala).css({"margin-left" :"0px" ,"margin-top" :"20px" })
 
@@ -169,7 +169,7 @@ $("#aitemval"+vala).animate({
     "margin-top" : "-105px"
     
     
-    }, 1000 , function()  {
+    }, speed , function()  {
   
   
       $("#aitemval"+valb).animate({
@@ -178,7 +178,7 @@ $("#aitemval"+vala).animate({
         
         
         
-        },2000 , function()  {
+        },speed , function()  {
         
         
           $("#aitemval"+valb).animate({
@@ -187,7 +187,7 @@ $("#aitemval"+vala).animate({
             "margin-top" : "20px"
             
             
-            } ,1000 , function ()  {
+            } ,speed , function ()  {
 
               $("#aitemval"+valb).css({"margin-left" :"0px" , "margin-top" :"20px"  })
 
@@ -559,13 +559,13 @@ else{
 
     $(`#${cellid}itemval${index}`).text(value)
 
-    $(`#${cellid}itemval${index}`).animate({opacity:"100%"} , 1000)
+    $(`#${cellid}itemval${index}`).animate({opacity:"100%"} , speed)
 
 
     setTimeout (function()  {
 
       resolve('resolved')
-          },1000)
+          },speed+80)
           
 
     })
@@ -576,13 +576,13 @@ else{
 
   function moveleft(index)  {
 
-    $("#aitemval"+(index-1)).animate({opacity:"0%"} , 500)
+    $("#aitemval"+(index-1)).animate({opacity:"0%"} , speed)
 
-    $("#aitemval"+(index)).animate({"margin-left":"-160px" , "opacity":"0%" },1000 ,function()  {
+    $("#aitemval"+(index)).animate({"margin-left":"-160px" , "opacity":"0%" },speed ,function()  {
 
         $("#aitemval"+(index-1)).text($("#aitemval"+(index)).text())
 
-        $("#aitemval"+(index-1)).animate({"opacity":"100%"} , 500 , function()  {
+        $("#aitemval"+(index-1)).animate({"opacity":"100%"} , speed , function()  {
 
           $("#aitemval"+(index)).animate({"margin-left":"0px" , "opacity":"0%" })
   
@@ -598,13 +598,13 @@ async function moveright(index)  {
 
   return new Promise ( resolve => {
 
-  $("#aitemval"+(index+1)).animate({opacity:"0%"} , 500)
+  $("#aitemval"+(index+1)).animate({opacity:"0%"} , speed)
 
-  $("#aitemval"+(index)).animate({"margin-left":"90px" , "opacity":"0%" },1000 ,function()  {
+  $("#aitemval"+(index)).animate({"margin-left":"90px" , "opacity":"0%" },speed*2 ,function()  {
 
       $("#aitemval"+(index+1)).text($("#aitemval"+(index)).text())
 
-      $("#aitemval"+(index+1)).animate({"opacity":"100%"} , 500 , function()  {
+      $("#aitemval"+(index+1)).animate({"opacity":"100%"} , speed , function()  {
 
         $("#aitemval"+(index)).animate({"margin-left":"0px" , "opacity":"0%" })
 
@@ -617,7 +617,7 @@ async function moveright(index)  {
   setTimeout (function()  {
 
     resolve('resolved')
-        },2000)
+        },speed*4)
         
 
   })
