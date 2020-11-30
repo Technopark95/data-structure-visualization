@@ -84,7 +84,7 @@ $("#listofcommand").css({"opacity" : "100%","z-index" : "5" , transition : "300m
     $("#listofcommand").css({"opacity" : "0%","z-index" : "0" , transition : "300ms"} )
 
     setTimeout(()=> {
-      $("#infotab").css({top:"53%"});
+      $("#infotab").css({top:"40%"});
       $("#listofcommand").hide();
     },100)
 
