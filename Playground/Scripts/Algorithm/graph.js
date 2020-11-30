@@ -698,12 +698,16 @@ async function Kruskal()
                    
                     min = distancemat[i][j]; 
 
-                   if (a >-1 && b > -1) await  chlc(organized[a] , organized[b] , "rgb(0,0,0,0.11)")
+                   if (a >-1 && b > -1) { await  chlc(organized[a] , organized[b] , "rgb(0,0,0,0.11)")
+                   await waitforme(speed)
+                }
 
                     a = i; 
                     b = j; 
 
                   await  chlc(organized[a] , organized[b] , "coral");
+
+                  await waitforme(speed)
 
                     await display(`Next smaller unprocessed edge : <br>${organized[a]} <--> ${organized[b]}`);
 
@@ -719,6 +723,8 @@ async function Kruskal()
         await display(`The smallest unprocessed edge : <br>${organized[a]} <--> ${organized[b]}`)
     
     await  chlc(organized[a] , organized[b] , "blue")
+    await waitforme(speed)
+
       
     ++edge_count;
     } 

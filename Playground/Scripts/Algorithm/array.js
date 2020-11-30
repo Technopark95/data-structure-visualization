@@ -617,7 +617,7 @@ async function moveright(index)  {
   setTimeout (function()  {
 
     resolve('resolved')
-        },speed*4)
+        },speed*4+100)
         
 
   })
