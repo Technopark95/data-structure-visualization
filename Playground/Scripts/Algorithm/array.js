@@ -608,16 +608,18 @@ async function moveright(index)  {
 
         $("#aitemval"+(index)).animate({"margin-left":"0px" , "opacity":"0%" })
 
+        
+  setTimeout (function()  {
+
+    resolve('resolved')
+        },speed+100)
+
       })
 
      
   })
 
 
-  setTimeout (function()  {
-
-    resolve('resolved')
-        },speed*4+100)
         
 
   })
