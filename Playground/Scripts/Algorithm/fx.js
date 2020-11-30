@@ -96,6 +96,8 @@ function del (one ,two)  {
 
 
 var slider = document.getElementById("animation-speed");
+var slowsymbol = document.getElementById("slowiden");
+var fastsymbol = document.getElementById("fastiden");
 
 speed = 2020- 2000*(slider.value/100);
 
@@ -103,6 +105,9 @@ speed = 2020- 2000*(slider.value/100);
 slider.oninput = function() {
 
   speed = 2020- 2000*(this.value/100);
+
+  fastsymbol.style.opacity = this.value+"%"
+  slowsymbol.style.opacity = (100 - this.value)+"%"
 
 }
      
