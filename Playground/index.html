@@ -255,7 +255,7 @@
   
   
   
-    <div >
+    <div id="avll">
   
       <p class = "acchead"  id="avltreeacc" style="background-color: rgba(0, 0, 0, 0.123);">AVL Tree</p>
   
@@ -489,7 +489,19 @@
 <script src="trie.js"></script>
 <script src="LCS.js"></script>
 -->
+<script>
 
+
+var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+		var element = document.getElementById('text');
+		if (isMobile) {
+        document.body.style.zoom=1.8;
+        
+        document.getElementById("avll").style.display = "none";
+		} else {
+		
+		}
+</script>
 <script src="Scripts/Algorithm/fx.js"></script>
 <script src="Scripts/Algorithm/info.js"></script>
 <script src="Scripts/Algorithm/Tree.js"></script>
