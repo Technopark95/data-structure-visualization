@@ -279,9 +279,11 @@ edgedata[edgecount][3] = graphtype;
 
     
           $( '#'+id1 ).draggable({
+              start: function(event,ui) {if(event.shiftKey) return false;},
               drag: function(event, ui){mySVG.redrawLines();}
             });
             $( '#'+id2 ).draggable({
+            start: function(event,ui) {if(event.shiftKey) return false;},
               drag: function(event, ui){mySVG.redrawLines();}
             });
     
@@ -300,7 +302,9 @@ var vertice = `<div id=${label} class="vert"> <p id=${label}name class="ver-labe
 
 $("body").prepend(vertice)
 
-$(`#${label}`).draggable();
+$(`#${label}`).draggable({
+    start: function(event,ui) {if(event.shiftKey) return false;}
+  });
 
 
 adjlist.set(label , []);
@@ -790,7 +794,7 @@ $(document).on('click' , 'td.showdis' , function(e) {
 
 clicktimes = 0
 
-
+/*
 $(document).on("click","div.vert" , function (e)  {
 
 
@@ -839,6 +843,8 @@ clicktimes = 0;
     }
 
   })
+
+  */
 
 
   $("#graphinput").change( function()  {
@@ -921,7 +927,7 @@ $("#graphinput").val("")
   var serv;
   $(document).ajaxStart(  function()  {
 
-    $("body").append(`<img style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%) ;z-index: 20; height:40%;" id="loaderx" src="loader-3.gif">`)
+    $("body").append(`<img style="position: fixed;top: 50%;left: 50%;transform: translate(-50%,-50%) ;z-index: 20; height:40%;" id="loaderx" src="loader-3.gif">`)
 
    
 
