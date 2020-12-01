@@ -49,7 +49,7 @@ var mapping = { "0" : "print(value)" ,  "1" : "preorder(left)" , "2" : "preorder
 
 var steps = {}
 var newnode;
-
+var drawflag = false;
 variables['head'] = 0
 variables['root'] = 0
 
@@ -399,6 +399,7 @@ await display("Script Loaded.")
 
 $("#codetype").keypress(async function(e) {
 
+  
 
 if (e.which == 13) {
 
