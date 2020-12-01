@@ -8,6 +8,8 @@ body
   width: 50in;
 
   font-family: segoe ui;
+
+  user-select: none;
   
 
 
