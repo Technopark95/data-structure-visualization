@@ -41,7 +41,12 @@ function treefy(first,second ,color_ = "coral") {
   
   
         $( '#'+par ).draggable({
-            drag: function(event, ui){mySVG.redrawLines();}
+            drag: function(event, ui){
+              
+              
+              mySVG.redrawLines();
+            
+            }
           });
           $( '#'+second ).draggable({
             drag: function(event, ui){mySVG.redrawLines();}
