@@ -37,7 +37,7 @@ var linemap = {};
 		var _parent = param || document;
 
 		//Initialize Canvas object
-		_canvas = $('<canvas/>')
+		_canvas = $('<canvas id="cav1"/>')
 			.attr('width', $(_parent).width())
 			.attr('height', $(_parent).height());
 		$('body').append(_canvas);
@@ -125,10 +125,11 @@ this.kruskalize =function (_cl = "rgb(0,0,0,0.08)")  {
 		//This Function is used to connect two different div with a dotted line.
 		this.connect = function(option) {
 			_ctx = _canvas[0].getContext('2d');
+			 
 			
 			_ctx.beginPath();
 			try {
-				var _color;
+				var _color="coral";
 				var _dash;
 				var _id;
 				var _left = new Object(); //This will store _left elements offset  
@@ -296,6 +297,7 @@ f = 0;
 			_me.redrawLines();
 		});
 		this.redrawLines = function() {
+			if (_lines.length == 0) return;
 			_ctx.clearRect(0, 0, $(_parent).width(), $(_parent).height());
 			_lines.forEach(function(entry) {
 				entry.resize = true;
