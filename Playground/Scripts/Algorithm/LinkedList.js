@@ -20,14 +20,14 @@ Copyright 2020 Anoop Singh, Graphical Structure
 
 */
 
-function nodify(first,second , color_ = "black") {
+function nodify(first,second , color_ = "coral") {
 
 
     mySVG.drawLine({
         left_node:'#'+first+'right',
         right_node:'#'+second+'left',
         error:true,
-  width:3,
+  width:2,
   col : color_,
  
 
@@ -48,10 +48,14 @@ terminate = "yes"
 }
 
     $( '#'+first ).draggable({
-        drag: function(event, ui){mySVG.redrawLines();}
+      
+        drag: function(event, ui){mySVG.redrawLines();},
+        cancel: ".node,.nodeleft"
       });
+
       $( '#'+second ).draggable({
-        drag: function(event, ui){mySVG.redrawLines();}
+        drag: function(event, ui){mySVG.redrawLines();},
+        cancel:".node,.nodeleft"
       });
 
     }
@@ -191,13 +195,15 @@ async   function deletenode(rot , val) {
             }
 
             
-            
+            let xp    =0;  
           function addnode(typed) {
 
   $(document).scrollLeft(0)
   $(document).scrollTop(0)
 
-                newnode = '<div id="'+count+'list"  class="dragg" > <div class="nodeleft" id="'+ count+"listleft" +'" style="position:absolute; height:7px; width:7px; border-radius:5px; background-color:white;  margin-top:40px;"></div>  <div class="node" id="'+ count+"listright" +'" style="position:absolute; height:7px; width:7px; border-radius:7px; background-color:white; margin-left:72px; margin-top:40px;"></div> <p  style="position:absolute; color:coral; font-size:60%; left:20px;" id="'+ count+"listbottom" +'">'+count +'</p>    <p  id="'+ count+"listid" +'" class="t">'+typed+'</p>   </div>';
+ xp = xp+ 110;
+
+                newnode = '<div id="'+count+'list"  class="dragg" style= left:'+xp+'px;> <div class="nodeleft" id="'+ count+"listleft" +'" style="position:absolute; height:7px; width:7px; border-radius:5px; background-color:white;  margin-top:40px;"></div>  <div class="node" id="'+ count+"listright" +'" style="position:absolute; height:7px; width:7px; border-radius:7px; background-color:white; margin-left:72px; margin-top:40px;"></div> <p  style="position:absolute; color:coral; font-size:60%; left:20px;" id="'+ count+"listbottom" +'">'+count +'</p>    <p  id="'+ count+"listid" +'" class="t">'+typed+'</p>   </div>';
              
            
           
@@ -205,7 +211,9 @@ async   function deletenode(rot , val) {
          
               
                
-               $("#"+count+"list").draggable();
+               $("#"+count+"list").draggable({
+                cancel: ".node,.nodeleft"
+              });
          
                next[(count)+"list"] = "null"
                prev[(count)+"list"] = "null"
@@ -224,6 +232,8 @@ async   function deletenode(rot , val) {
     
       
                 if (clicktimes === 0) {
+
+                  drawflag = false;
           
                 first=  $('#'+e.target.id).parent().attr("id");
           
@@ -233,6 +243,8 @@ async   function deletenode(rot , val) {
           
                 else if (clicktimes === 1) {
           
+
+                  drawflag = true;
           second = $('#'+e.target.id).parent().attr("id");
           
           nodify(first,second)
