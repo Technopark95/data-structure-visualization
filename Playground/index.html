@@ -355,7 +355,7 @@
   
   
   
-    <div >
+    <div id="grappph">
   
   
   
@@ -496,14 +496,14 @@ var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 		var element = document.getElementById('text');
 		if (isMobile) {
         document.body.style.zoom=1.8;
-        
+        alert("To enjoy full visualization switch to desktop.")
+         document.getElementById("grappph").style.display = "none";
         document.getElementById("avll").style.display = "none";
 		} else {
 		
 		}
 </script>
 <script src="Scripts/Algorithm/fx.js"></script>
-<script src="Scripts/Algorithm/lineshandle.js"></script>
 <script src="Scripts/Algorithm/info.js"></script>
 <script src="Scripts/Algorithm/Tree.js"></script>
 <script src="Scripts/Algorithm/LinkedList.js"></script>
