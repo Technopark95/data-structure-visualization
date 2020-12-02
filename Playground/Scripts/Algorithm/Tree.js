@@ -302,59 +302,96 @@ async function  postorder(CurrentNode ) {
 
 
  
+  // Level-order-traverse
+var AVLpostleft = [], AVLposttop =[];
+AVLpostleft[0] = 1900;
+AVLposttop[0] = 150;
 
 
-function movebranch(ID,leftpx=0,toppx=0)   {
+async function  printLevel(root_,  level)
+{
+ 
 
- $(".dragg").css("transition" , speed+"ms linear")
-  
-  $(ID).animate({"left" : "+="+leftpx ,"top" : "+="+toppx})
-  
-  
-  
+	if (root_ == "null")
+		return false;
+
+	if (level == 1)
+	{
+
+    if(stats == 1) await pauser();
+  //  Output( $('#'+root_+"treeval").text());
+    
+  let lefttarget = tree[`${root_}treeleft`];
+  let righttarget = tree[`${root_}treeright`];
+
+
+
+
+  let rootoffset = $("#"+root_).offset()
+
+  if (lefttarget != "null" ) {
+
+AVLposttop[lefttarget] =  AVLposttop[root_] +90;  
+AVLpostleft[lefttarget] =  AVLpostleft[root_]  - ( 50 * Math.pow( 2, height(lefttarget)) )
+
+ $(`#${lefttarget}`).offset({"top" : `${AVLposttop[lefttarget]}` , "left" : `${ AVLpostleft[lefttarget] }` })
+
+   
   }
-
-  var wholebranch = "";
-
-  function returnwholebranch(noderoot)  {
-
-
-
-    if (noderoot == "null") {
-  
-      return;
-  
-    }
   
 
-  wholebranch = wholebranch + "#"+noderoot+",";
-
-returnwholebranch(tree[`${noderoot}treeleft`]);
-returnwholebranch(tree[`${noderoot}treeright`]);
-
-  }
-
-  function SyncMoveBranch(noderoot,leftpx=0,toppx=0)   {
-
-    returnwholebranch(noderoot);
-
-    let branch = wholebranch.slice(0,wholebranch.length-1);
+  if (righttarget != "null" ) {
 
 
-    movebranch(branch , leftpx,toppx);
 
-    wholebranch= "";
+ AVLposttop[righttarget] =  AVLposttop[root_] +90; 
+ 
+ AVLpostleft[righttarget] =  AVLpostleft[root_]  + ( 50 * Math.pow( 2, height(righttarget)) )
 
-
+ 
+ 
+ 
+ $(`#${righttarget}`).offset({"top" : `${AVLposttop[righttarget]}` ,  "left" : `${AVLpostleft[righttarget]}`})
+     
 
 
   }
+ 
+
+		// return true if at-least one node is present at given level
+		return true;
+	}
+
+	let left = await printLevel(   tree[`${root_}treeleft`], level - 1);
+	let right = await printLevel( tree[`${root_}treeright`], level - 1);
+
+	return left || right;
+}
+
+
+
+
+// Function to print level order traversal of given binary tree
+async function BalanceAll( root_)
+{
+	// start from level 1 -- till height of the tree
+  let level = 1;
+
+	// run till printLevel() returns false
+	while ( await printLevel(root_, level)) {
 
 
   
+    level++;
 
 
-//slidenode('2',100,200)
+
+  }
+    
+
+    
+}
+
 
   async function insertbst(node_, key_) { 
 
