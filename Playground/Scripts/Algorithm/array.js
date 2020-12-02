@@ -195,8 +195,12 @@ $("#aitemval"+vala).animate({
               $("#aitemval"+valb).text(a) 
 
               
+              setTimeout(()=> {
 
-              resolve('resolved');
+               resolve('resolved');
+
+              },speed)
+              
 
             })
             
