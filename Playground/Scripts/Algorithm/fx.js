@@ -84,7 +84,13 @@ var speed =0;
 
 var mySVG = $('body').connect();
 
+if (!isMobile){
 
+  var script = document.createElement('script');
+  script.src = "Scripts/Algorithm/lineshandle.js";
+document.head.appendChild(script)
+
+}
      
 function del (one ,two)  {
 
