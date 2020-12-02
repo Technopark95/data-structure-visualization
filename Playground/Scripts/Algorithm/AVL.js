@@ -336,7 +336,7 @@ async function insertavl(node_, key_) {
       await display("Red node is unbalanced");
         let returned= await leftRotate(node_); 
 
-    await BalanceAll(node_);
+   
 
         await hilight(node_ , defaultcolor,"1200ms linear",1300);
 
