@@ -62,7 +62,7 @@ var maxheight= 0;
         let xpos = $("#"+x).offset();
         let T2pos = $("#"+T2).offset();
     
-        SyncMoveBranch(x, Math.abs(ypos.left-xpos.left),-90);
+     //   SyncMoveBranch(x, Math.abs(ypos.left-xpos.left),-90);
     
   
      del(`#${y}treeleft` , `#${x}treetop`);
@@ -97,8 +97,8 @@ var maxheight= 0;
 
     r = x;
 
-    SyncMoveBranch(y,Math.abs(ypos.left-xpos.left), 90);
-    if (T2!="null") SyncMoveBranch(T2,Math.abs(T2pos.left - ypos.left), 0);
+ //   SyncMoveBranch(y,Math.abs(ypos.left-xpos.left), 90);
+ //   if (T2!="null") SyncMoveBranch(T2,Math.abs(T2pos.left - ypos.left), 0);
 
     
     return x;  
@@ -141,7 +141,7 @@ function leftRotate(x)
       let xpos = $("#"+x).offset();
       let T2pos = $("#"+T2).offset();
     
-      SyncMoveBranch(y, -Math.abs(ypos.left-xpos.left),-90);
+   //   SyncMoveBranch(y, -Math.abs(ypos.left-xpos.left),-90);
     
     
     
@@ -172,8 +172,8 @@ else tree[x+"treeright" ] = T2;
     // Return new root 
     r = y;
 
-    SyncMoveBranch(x,-Math.abs(ypos.left-xpos.left), 90);
-    if (T2!="null") SyncMoveBranch(T2,-Math.abs(T2pos.left - xpos.left), 0);
+  //  SyncMoveBranch(x,-Math.abs(ypos.left-xpos.left), 90);
+  //  if (T2!="null") SyncMoveBranch(T2,-Math.abs(T2pos.left - xpos.left), 0);
     
 
     return y;  
@@ -319,6 +319,8 @@ async function insertavl(node_, key_) {
           await hilight(node_ , "red","1200ms linear",1300);
           await display("Red node is unbalanced");
         let returned= await rightRotate(node_); 
+
+      
         
         await hilight(node_ , defaultcolor,"1200ms linear",1300);
 
@@ -333,6 +335,8 @@ async function insertavl(node_, key_) {
       await hilight(node_ , "red","1200ms linear",1300);
       await display("Red node is unbalanced");
         let returned= await leftRotate(node_); 
+
+    await BalanceAll(node_);
 
         await hilight(node_ , defaultcolor,"1200ms linear",1300);
 
@@ -352,6 +356,8 @@ async function insertavl(node_, key_) {
 
         let newnodeleft = await leftRotate(tree[`${node_}treeleft`]);
 
+        await BalanceAll(node_);
+
         await waitforme(2000);
        
         let optiona = tree[`${node_}treeleft`];
@@ -367,7 +373,7 @@ async function insertavl(node_, key_) {
    
         let returned = await rightRotate(node_);  
 
-        
+       
         return returned;
         
     }  
@@ -385,6 +391,7 @@ async function insertavl(node_, key_) {
      
         let newnoderight = await rightRotate(tree[`${node_}treeright`]);
 
+        await BalanceAll(node_);
         await waitforme(2000);
         let optiona = tree[`${node_}treeright`];
 
@@ -399,7 +406,7 @@ async function insertavl(node_, key_) {
 
         
         let returned= await leftRotate(node_);  
-
+       
         
         return returned;
     }  
@@ -407,6 +414,7 @@ async function insertavl(node_, key_) {
 
 
     r = node_
+    
 return node_;
     
 } 
@@ -647,128 +655,6 @@ return count;
 
 
 
-
- 
-
-// Level-order-traverse
-var AVLpostleft = [], AVLposttop =[];
-AVLpostleft[0] = 1900;
-AVLposttop[0] = 150;
-
-
-async function  printLevel(root_,  level)
-{
- 
-
-	if (root_ == "null")
-		return false;
-
-	if (level == 1)
-	{
-
-    if(stats == 1) await pauser();
-  //  Output( $('#'+root_+"treeval").text());
-    
-  let lefttarget = tree[`${root_}treeleft`];
-  let righttarget = tree[`${root_}treeright`];
-
-
-
-
-  let rootoffset = $("#"+root_).offset()
-
-  if (lefttarget != "null" ) {
-
-
-
- // mySVG.hidep(`#${root_}treeleft` , `#${lefttarget}treetop` , "rgba(0,0,0,0)")
-  
-//await slidenode(lefttarget , rootoffset.left - (110), rootoffset.top  )
-
-AVLposttop[lefttarget] =  AVLposttop[root_] +90;  
-AVLpostleft[lefttarget] =  AVLpostleft[root_]  - ( 50 * Math.pow( 2, height(lefttarget)) )
-
- $(`#${lefttarget}`).offset({"top" : `${AVLposttop[lefttarget]}` , "left" : `${ AVLpostleft[lefttarget] }` })
-
- /*
-    await new Promise ( resolve => {
-
-setTimeout(()=> {
-  mySVG.redrawLines();
- resolve('');
-
-},1000)
-
-    })
-*/
-   
-  }
-  
-
-  if (righttarget != "null" ) {
-
- //await slidenode(righttarget , rootoffset.left+ (height(righttarget)*130), rootoffset.top  )
-
- AVLposttop[righttarget] =  AVLposttop[root_] +90; 
- 
- AVLpostleft[righttarget] =  AVLpostleft[root_]  + ( 50 * Math.pow( 2, height(righttarget)) )
-
- 
- //mySVG.hidep(`#${root_}treeright` , `#${righttarget}treetop` , "rgba(0,0,0,0)") 
- 
- $(`#${righttarget}`).offset({"top" : `${AVLposttop[righttarget]}` ,  "left" : `${AVLpostleft[righttarget]}`})
-     
-
-/*
-    await new Promise( resolve => {
-
-    
-     setTimeout(()=> {
-      mySVG.redrawLines();
-   resolve('');
-     
-     },1000)
-     
-         })
-
-*/
-  }
- 
-
-		// return true if at-least one node is present at given level
-		return true;
-	}
-
-	let left = await printLevel(   tree[`${root_}treeleft`], level - 1);
-	let right = await printLevel( tree[`${root_}treeright`], level - 1);
-
-	return left || right;
-}
-
-
-
-
-// Function to print level order traversal of given binary tree
-async function BalanceAll( root_)
-{
-	// start from level 1 -- till height of the tree
-  let level = 1;
-
-	// run till printLevel() returns false
-	while ( await printLevel(root_, level)) {
-
-
-  
-    level++;
-
-
-
-  }
-    
-
-    
-}
-
 async function redraw  ()  {
 
  mySVG.redrawLines();
@@ -795,7 +681,10 @@ async function InsertAVL (h) {
     AVLpostleft[r] = 1900;
     AVLposttop[r] = 150;
 
-    await waitforme(1000);
+    $(`#${r}`).offset({"top" : `${150}` , "left" : `${ 1900 }` })
+
+    $(".dragg").css("transition" , speed+"ms linear");
+  
     await BalanceAll(r);
 
     await waitforme(4000);
