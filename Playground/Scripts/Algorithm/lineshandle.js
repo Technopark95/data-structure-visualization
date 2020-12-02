@@ -45,6 +45,10 @@ const drawLine = (e) => {
 
 const mouseDownListener = (e) => {
 
+   if (e.shiftKey ==false) {
+      return false;
+   }
+
 
    if ($(e.target).parent("div.vert").length) {
 
@@ -57,7 +61,7 @@ const mouseDownListener = (e) => {
 else  first=  e.target.id;
 
 
-if (document.getElementById(first).classList[0] != "vert" || e.shiftKey == false) {
+if (document.getElementById(first).classList[0] != "vert") {
 
    return false;
    }
@@ -89,6 +93,13 @@ const mouseMoveListener = (event) => {
 const mouseupListener = (e) => {
 
 
+   if (e.shiftKey ==false) {
+      isDrawStart = false;
+      clearCanvas();
+      mySVG.redrawLines();
+      return false;
+   }
+
 
    if ($(e.target).parent("div.vert").length) {     
       second =  $(e.target).parent().attr("id");
@@ -98,19 +109,18 @@ const mouseupListener = (e) => {
   else  second=  e.target.id;
 
 
-  if (document.getElementById(second).classList[0] != "vert" ||  e.shiftKey == false) {
+  if (document.getElementById(second).classList[0] != "vert") {
    isDrawStart = false;
    clearCanvas();
    mySVG.redrawLines();
-
    return false;
    }
    
 
  
 
-let mousex = e.clientX;
-let mousey = e.clientY;
+let mousex = e.clientX+70;
+let mousey = e.clientY+70;
 
 $("#graphinput").css({ "top" :`${mousey}px`, "left" :`${mousex}px`  , "visibility" : "visible"})
 $("#graphinput").focus();
