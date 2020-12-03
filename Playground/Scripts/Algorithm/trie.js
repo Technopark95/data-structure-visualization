@@ -19,9 +19,43 @@ Copyright 2020 Anoop Singh, Graphical Structure
 
 */
 
-let triemap = new Map();
+var triemap = [];
 
 let triecounter = -1
+var ani = "yes";
+
+var leftcord= 0;
+var topcord =0;
+
+function arrangetries(gotobject)  {
+
+  let i =0;
+
+
+  let strtocompare = gotobject["string"];
+
+  for ( i = triemap.length-1 ; i >=0 ; --i)  {
+
+    let strarray = triemap[i]["string"].localeCompare(strtocompare)
+
+if (strarray == 1 ) {
+
+  triemap[i+1] = triemap[i];
+
+   
+}
+
+else break;
+
+   
+  }
+
+
+
+return i+1;
+
+
+}
 
 
 function triefy (id1 , id2 , distance , graphtype = "default")  {
@@ -65,10 +99,14 @@ $("body").prepend(trienn);
 $("#"+"trieroot").draggable();
 
 ++triecounter;
+
+$(document).scrollLeft(0)
+  $(document).scrollTop(0)
+
 }
 
 
-var trienn = `<div id=${ID} class="trie"> <p id=${ID}name class="trie-label"> ${label}</p>  <p id=${ID}status class="trie-label" style="display:none;"> 0</p> <p id=${ID}value class="trie-label" style="display:none;"> 0</p> </div>`;
+var trienn = `<div id=${ID} class="trie" > <p id=${ID}name class="trie-label"> ${label}</p>  <p id=${ID}status class="trie-label" style="display:none;"> 0</p> <p id=${ID}value class="trie-label" style="display:none;"> 0</p> </div>`;
 
 
 $("body").prepend(trienn);
@@ -79,39 +117,11 @@ $("#"+ID).draggable();
 }
 
 
-function trieinsert( key ,value=0) 
-{ 
-
-  $(document).scrollLeft(0)
-  $(document).scrollTop(0)
-    let current = "trieroot"; 
-
-    let next= ""
-  
-    for (let i = 0; i < key.length; i++) 
-    { 
-        
-        next = next + key.charAt(i);
-
-      
-        if ( $("#"+next).length == 0 ) {
-
-            trienode(key.charAt(i) , next);
-
-            triefy(current , next);
-
-        }
-  
-        current= next;
-    } 
-  
-    // mark last node as leaf 
-    $("#"+next).css({"background-color":"rgba(75,0,130, 0.842)"})
-    $("#"+next+"status").text("1");
-    $("#"+next+"value").text(value);
-} 
 
 
+
+
+var commoncounter = 0;
 
 async function triesearch(key)   {
 
@@ -129,11 +139,22 @@ async function triesearch(key)   {
 
     
       if ( $("#"+next).length == 1 ) {
+
+        if (ani ==  "no")  {
+
+          ++commoncounter;
+        }
          
+        if (ani == "yes")  {
+
+        
         let col = $("#"+next).css("background-color");
 
         await hilight(next , "rgb(109,209,0,1)", "700ms",800)
               hilight(next , col,"700ms",800 )
+
+        }
+
 
       }
 
@@ -147,7 +168,12 @@ async function triesearch(key)   {
       current= next;
   } 
 
+  if (ani == "yes" )  {
+
+  
 if ($("#"+next+"status").text()  == "1")   {
+
+
   $("#"+next).css({"background-color":"rgba(75,0,130, 0.842)"})
   
   $(".trie").css('transition','linear 100ms')
@@ -166,9 +192,99 @@ else {
 
 }
 
-
+  }
 
 }
+
+
+
+
+
+async function trieinsert( key ,value=0) 
+{ 
+
+  $(".trie").css('transition' , speed+"ms linear");
+  redrawevent= setInterval(redraw , 50);
+
+  ani = "no";
+
+  triesearch(key);
+
+  console.log(commoncounter);
+  let storedindex
+
+  let substr = key.substring(commoncounter,key.length)
+
+  if(commoncounter != key.length) {
+
+     let objtoinsert = { "string"  : key , "substr" : key+"-"+substr }
+
+     storedindex= arrangetries(objtoinsert);
+
+  triemap[storedindex] = objtoinsert;
+
+leftcord=200*storedindex+1;
+
+  }
+
+
+  for ( let i = triemap.length-1 ; i >=storedindex ; --i)  {
+
+
+    $("."+triemap[i]["substr"]).css({left:200+(50*i)})
+  
+  }
+
+
+  
+    let current = "trieroot"; 
+
+    let next= ""
+
+  
+    for (let i = 0; i < key.length; i++) 
+    { 
+        
+        next = next + key.charAt(i);
+
+        ++topcord;
+      
+        if ( $("#"+next).length == 0 ) {
+
+       
+            trienode(key.charAt(i) , next);
+
+            $("#"+next).css({"left":200+(50*storedindex) , "top" : (70*topcord) })
+
+          
+            document.getElementById(next).classList.add(key+"-"+substr)
+ 
+
+            triefy(current , next);
+
+        }
+  
+        current= next;
+    } 
+
+    // mark last node as leaf 
+    $("#"+next).css({"background-color":"rgba(75,0,130, 0.842)"})
+    $("#"+next+"status").text("1");
+    $("#"+next+"value").text(value);
+
+    commoncounter = 0;
+    ani="yes"
+
+      
+topcord= 0;
+
+await waitforme (speed+100);
+
+clearInterval(redrawevent);
+
+
+} 
+
 
 /*
 trieinsert("ANOOP",100);
