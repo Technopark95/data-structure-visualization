@@ -774,6 +774,8 @@ $(`#${texttoupid}distance`).css({"opacity" : "0%" , "transition-duration": "600m
 
 $(document).on('click' , 'td.showdis' , function(e) {
 
+mySVG.kruskalize();
+
     let texttoupid = e.target.id;
 
     let path_ =   $(`#${texttoupid}distance`).text();
