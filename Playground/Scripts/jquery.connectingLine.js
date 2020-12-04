@@ -181,8 +181,8 @@ this.kruskalize =function (_cl = "rgb(0,0,0,0.08)")  {
 
 
 
-					
-						 if (_left_node.offset().left >= _right_node.offset().left /*&& option.gtype != "D"*/ ) {
+					/*
+						 if (_left_node.offset().left >= _right_node.offset().left  ) {
 						
 							_tmp = _left_node;
 							_left_node = _right_node;
@@ -191,6 +191,8 @@ this.kruskalize =function (_cl = "rgb(0,0,0,0.08)")  {
 							f=1;
 
 						}
+
+						*/
 
 						let dax = (_right_node.offset().left+ _right_node.width()/2) - (_left_node.offset().left+ _left_node.width()/2);
 						let day = (_right_node.offset().top+ _right_node.height()/2) - (_left_node.offset().top+ _left_node.height()/2);
@@ -222,6 +224,7 @@ this.kruskalize =function (_cl = "rgb(0,0,0,0.08)")  {
 								option._text = ""
 							}
 
+							/*
 						if (option.gtype == "D" && f == 1) {
 
 
@@ -231,6 +234,8 @@ this.kruskalize =function (_cl = "rgb(0,0,0,0.08)")  {
 							ele1_y = _right.y;
 							
 						}
+
+						*/
 
 						//Create a group
 						//var g = _canvas.group({strokeWidth: 2, strokeDashArray:_dash}); 	
