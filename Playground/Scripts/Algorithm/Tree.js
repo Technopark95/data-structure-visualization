@@ -45,11 +45,14 @@ function treefy(first,second ,color_ = "coral") {
               
               
               mySVG.redrawLines();
+
+             // mySVG.Splaylines();
             
             }
           });
           $( '#'+second ).draggable({
-            drag: function(event, ui){mySVG.redrawLines();}
+            drag: function(event, ui){mySVG.redrawLines();
+            }
           });
   
         }
