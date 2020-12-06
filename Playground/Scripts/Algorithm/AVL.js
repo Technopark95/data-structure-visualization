@@ -56,11 +56,7 @@ var maxheight= 0;
         
         }
   
-      
-  
-        let ypos = $("#"+y).offset();
-        let xpos = $("#"+x).offset();
-        let T2pos = $("#"+T2).offset();
+    
     
      //   SyncMoveBranch(x, Math.abs(ypos.left-xpos.left),-90);
     
@@ -136,11 +132,6 @@ function leftRotate(x)
       }
 
 
-
-      let ypos = $("#"+y).offset();
-      let xpos = $("#"+x).offset();
-      let T2pos = $("#"+T2).offset();
-    
    //   SyncMoveBranch(y, -Math.abs(ypos.left-xpos.left),-90);
     
     
