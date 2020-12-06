@@ -151,7 +151,7 @@ this.kruskalize =function (_cl = "rgb(0,0,0,0.08)")  {
 
 					//To decide colour of the line
 				
-							_color = option.col;
+							_color = option.col || "coral";
 							
 							_ctx.font = "30px Segoe UI";
 
@@ -299,16 +299,37 @@ f = 0;
 
 		//It will redraw all line when screen resizes
 		$(window).resize(function() {
-			_me.redrawLines();
+			_me.Splaylines();
 		});
+
 		this.redrawLines = function() {
 			if (_lines.length == 0) return;
+
+			
 			_ctx.clearRect(0, 0, $(_parent).width(), $(_parent).height());
 			_lines.forEach(function(entry) {
 				entry.resize = true;
 				_me.connect(entry);
 			});
 		};
+
+
+		this.Splaylines = function() {
+			if (tree.length == 0) return;
+
+			_ctx.clearRect(0, 0, $(_parent).width(), $(_parent).height());
+
+			for (let source in tree) {
+
+				let destination = tree[source];
+				if(destination != "null")
+				_me.connect({left_node:"#"+source , right_node:"#"+destination+"treetop"})
+
+			  }
+
+
+		};
+
 		return this;
 	};
 }(jQuery));
