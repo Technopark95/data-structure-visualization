@@ -41,7 +41,7 @@ data = {"0":{"top":138,"left":643},"1":{"top":247,"left":326},"2":{"top":247,"le
       var newnode = '<div id="'+ii+'"  class="dragg" > <div class="treenode" id="'+ ii+"treetop" +'" style="margin-left:35px;"></div>  <div class="treenode" id="'+ ii+"treeleft" +'" style="margin-left:18px; margin-top:70px;"></div>   <div class="treenode" id="'+ ii+"treeright" +'" style="margin-left:54px; margin-top:70px;"></div> <p  style="position:absolute;color:coral; font-size:70%; left:20px;" id="'+ ii+"bottom" +'">'+ii +'</p>    <p  id="'+ ii+"treeval" +'" class="t">'+storedarray[ii]+'</p>   </div>';
   
       $("body").prepend(newnode)
-        $("#"+ii).draggable();
+        
       
   
         tree[ii+"treeleft"] = "null"
@@ -143,6 +143,7 @@ data = {"0":{"top":138,"left":643},"1":{"top":247,"left":326},"2":{"top":247,"le
          $("#"+j+"treeval").text(element1text)
          $("#"+i+"treeval").text(element2text);
   
+         mySVG.redrawLines();
          resolve('resolved')
   
       },speed+80)
@@ -257,7 +258,7 @@ data = {"0":{"top":138,"left":643},"1":{"top":247,"left":326},"2":{"top":247,"le
   
   var ff = $("#"+d)
   
-      ff.css({"transition-duration" : "2000ms" , "left" :"0px" ,"top" :"0px"})
+      ff.css({"transition-duration" : speed+"ms" , "left" :"0px" ,"top" :"0px"})
   
       ff.offset({top:tt , left :ll})
       
@@ -270,7 +271,7 @@ data = {"0":{"top":138,"left":643},"1":{"top":247,"left":326},"2":{"top":247,"le
       setTimeout(function() {
         
   resolve('resolved')
-      },timeout_)
+      },0)
   
   
   
