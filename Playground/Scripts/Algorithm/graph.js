@@ -146,6 +146,16 @@ var NoOfVertex;
 
     $(document).scrollLeft(0)
   $(document).scrollTop(0)
+
+  
+if (!isMobile){
+
+    var script = document.createElement('script');
+    script.src = "Scripts/Algorithm/lineshandle.js";
+  document.head.appendChild(script)
+  
+  }
+       
   
   NoOfVertex = t;
 
