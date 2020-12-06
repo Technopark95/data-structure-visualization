@@ -89,8 +89,6 @@ if (document.getElementById(first).classList[0] != "vert") {
    }
    
 
-
-clicktimes = 1;
 $("#graphinput").css({"visibility" : " hidden"})
  
 
