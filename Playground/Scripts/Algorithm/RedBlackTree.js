@@ -88,7 +88,7 @@ async function fixViolation(_root, pt)
             if ( (uncle_pt != "null" || uncle_pt != undefined) && $("#"+uncle_pt+"col").text() == "red") 
             { 
 
-                console.log( "1  1")
+              //  console.log( "1  1")
                 $("#"+grand_parent_pt+"col").text("red")
                 $("#"+grand_parent_pt).css("background-color","red")
                 await waitforme(speed+30)
@@ -199,6 +199,7 @@ async function fixViolation(_root, pt)
 
 } 
 
+var direc = 0
 function rbInsert(rbroot, pt) 
 { 
     /* If the tree is empty, return a new node */
@@ -206,7 +207,6 @@ function rbInsert(rbroot, pt)
 
         let newpt =  pt;
         rbroot = newpt;
-        $("#"+rbroot).css({"left":"1900px"})
         return newpt;
   
     }
@@ -218,13 +218,16 @@ function rbInsert(rbroot, pt)
 
         let leftt =  tree[rbroot+"treeleft"];
         rbparent[leftt] = rbroot; 
+        direc = -50;
     } 
     else if (parseInt( $("#"+pt+"treeval").text(),10) > parseInt( $("#"+rbroot+"treeval").text(),10)) 
     { 
         tree[rbroot+"treeright"] = rbInsert(tree[rbroot+"treeright"], pt); 
     
+
         let rightt =  tree[rbroot+"treeright"];
         rbparent[rightt] = rbroot;
+        direc = 50;
 
     } 
   
@@ -274,7 +277,11 @@ return count;
     // Do a normal BST insert 
    rbroot  =  await rbInsert(rbroot, pt); 
 
+   if (rbparent[pt] != undefined)
+   $(`#${pt}`).offset({"top" : `${$("#"+rbparent[pt]).offset().top+150}` , "left" : `${$("#"+rbparent[pt]).offset().left+direc}` })
     // fix Red Black Tree violations 
+
+    await waitforme(speed)
 
     redrawevent= setInterval(redrawsplay , 50);
 
