@@ -218,7 +218,7 @@ function rbInsert(rbroot, pt)
 
         let leftt =  tree[rbroot+"treeleft"];
         rbparent[leftt] = rbroot; 
-        direc = -50;
+        
     } 
     else if (parseInt( $("#"+pt+"treeval").text(),10) > parseInt( $("#"+rbroot+"treeval").text(),10)) 
     { 
@@ -227,7 +227,7 @@ function rbInsert(rbroot, pt)
 
         let rightt =  tree[rbroot+"treeright"];
         rbparent[rightt] = rbroot;
-        direc = 50;
+        
 
     } 
   
@@ -266,6 +266,11 @@ return count;
  async function RBTreeinsert(data) 
 { 
 
+ 
+
+    redrawevent= setInterval(redrawsplay , 50);
+
+    
     if ($("#"+rbroot).length == 0)  {
 
         $(document).scrollLeft(1200)
@@ -273,19 +278,24 @@ return count;
     }
 
     let pt = RBnode(data) -1; 
+
+    $(".dragg").css("transition" , speed+"ms linear");
+
   
     // Do a normal BST insert 
    rbroot  =  await rbInsert(rbroot, pt); 
 
    if (rbparent[pt] != undefined)
-   $(`#${pt}`).offset({"top" : `${$("#"+rbparent[pt]).offset().top+150}` , "left" : `${$("#"+rbparent[pt]).offset().left+direc}` })
+    if (parseInt( $("#"+pt+"treeval").text(),10) > parseInt( $("#"+rbparent[pt]+"treeval").text(),10))
+      $(`#${pt}`).offset({"top" : `${$("#"+rbparent[pt]).offset().top+150}` , "left" : `${$("#"+rbparent[pt]).offset().left+100}` })
+    else
+      $(`#${pt}`).offset({"top" : `${$("#"+rbparent[pt]).offset().top+150}` , "left" : `${$("#"+rbparent[pt]).offset().left-100}` })
+
     // fix Red Black Tree violations 
 
-    await waitforme(speed)
+    await waitforme(speed+30)
 
-    redrawevent= setInterval(redrawsplay , 50);
-
-    
+ 
 
     await  fixViolation(rbroot, pt); 
 
@@ -296,8 +306,7 @@ return count;
 
     $(`#${rbroot}`).offset({"top" : `${150}` , "left" : `${ 1900 }` })
 
-    $(".dragg").css("transition" , speed+"ms linear");
-
+   
    await BalanceAll(rbroot);
 
    await waitforme (3000);
