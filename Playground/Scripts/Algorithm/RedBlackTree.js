@@ -25,29 +25,33 @@ Copyright 2020 Anoop Singh, Graphical Structure
 var rbroot=0;
 var rbparent ={}
 
+
 async function swapcolor (tparent,tgrandparent)  {
     
 
     let parentptcolor = $("#"+tparent+"col").text();
+  
     let gparentptcolor = $("#"+tgrandparent+"col").text();
 
     let parentanicolor = $("#"+tparent).css("background-color");
+   
     let gparentanicolor = $("#"+tgrandparent).css("background-color");
 
     $("#"+tparent+"col").text(gparentptcolor);
-    await waitforme(speed+30);
+  
     $("#"+tgrandparent+"col").text(parentptcolor);
 
     $("#"+tparent).css({"background-color" : gparentanicolor});
 
-    await waitforme(speed+30);
+
     $("#"+tgrandparent).css({"background-color" : parentanicolor} );
 
 
-    await waitforme(speed)
+    await waitforme(speed+30);
+  
 }
- 
-function RBTreerotateLeft( pt) 
+
+async function RBTreerotateLeft( pt) 
 { 
     let pt_right =  tree[pt+"treeright"];// pt->right; 
   
@@ -67,7 +71,7 @@ function RBTreerotateLeft( pt)
     rbparent[pt] = pt_right; 
 } 
   
-function RBTreerotateRight( pt) 
+async function RBTreerotateRight( pt) 
 { 
     let pt_left = tree[pt+"treeleft"];
   
@@ -143,9 +147,9 @@ async function fixViolation(_root, pt)
                 /* Case : 3 
                    pt is left child of its rbparent 
                    Right-rotation required */
-                   RBTreerotateRight( grand_parent_pt); 
+                  RBTreerotateRight( grand_parent_pt); 
                
-                   swapcolor(parent_pt , grand_parent_pt)
+                  await swapcolor(parent_pt , grand_parent_pt)
                
                    pt = parent_pt; 
             } 
@@ -197,12 +201,12 @@ async function fixViolation(_root, pt)
                 /* Case : 3 
                    pt is right child of its rbparent 
                    Left-rotation required */
-                   RBTreerotateLeft( grand_parent_pt); 
+               RBTreerotateLeft( grand_parent_pt); 
 
                   //console.log(`${$("#"+parent_pt).css("background-color")}  ${$("#"+grand_parent_pt).css("background-color")}`)
 
                  
-                swapcolor(parent_pt , grand_parent_pt)
+              await  swapcolor(parent_pt , grand_parent_pt)
 
 
                 pt = parent_pt; 
@@ -214,16 +218,16 @@ async function fixViolation(_root, pt)
 
 
 
-    
+    await waitforme(speed);
   
-     $("#"+_root+"col").text("black")
-     $("#"+_root).css("background-color",defaultcolor)
+     $("#"+rbroot+"col").text("black")
+     $("#"+rbroot).css("background-color",defaultcolor)
 
 
 } 
 
 var direc = 0
-function rbInsert(rbroot, pt) 
+async function rbInsert(rbroot, pt) 
 { 
     /* If the tree is empty, return a new node */
     if ( $("#"+rbroot).length== 0)  {
@@ -237,7 +241,7 @@ function rbInsert(rbroot, pt)
     /* Otherwise, recur down the tree */
     if ( parseInt( $("#"+pt+"treeval").text(),10) < parseInt( $("#"+rbroot+"treeval").text(),10)) 
     { 
-        tree[rbroot+"treeleft"]  = rbInsert(tree[rbroot+"treeleft"], pt); 
+        tree[rbroot+"treeleft"]  = await rbInsert(tree[rbroot+"treeleft"], pt); 
 
         let leftt =  tree[rbroot+"treeleft"];
         rbparent[leftt] = rbroot; 
@@ -245,7 +249,7 @@ function rbInsert(rbroot, pt)
     } 
     else if (parseInt( $("#"+pt+"treeval").text(),10) > parseInt( $("#"+rbroot+"treeval").text(),10)) 
     { 
-        tree[rbroot+"treeright"] = rbInsert(tree[rbroot+"treeright"], pt); 
+        tree[rbroot+"treeright"] = await rbInsert(tree[rbroot+"treeright"], pt); 
     
 
         let rightt =  tree[rbroot+"treeright"];
