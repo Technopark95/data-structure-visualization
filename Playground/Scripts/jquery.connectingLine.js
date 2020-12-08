@@ -340,7 +340,7 @@ f = 0;
 
 				let destination = next[source];
 				if(destination != "null")
-				_me.connect({left_node:"#"+source , right_node:"#"+destination})
+				_me.connect({left_node:"#"+source , right_node:"#"+destination , col:"black" ,style:"dashed"})
 
 			  }
 
