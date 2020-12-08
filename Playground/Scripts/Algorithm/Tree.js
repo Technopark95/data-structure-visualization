@@ -335,7 +335,7 @@ async function  printLevel(root_,  level)
   if (lefttarget != "null" ) {
 
 AVLposttop[lefttarget] =  AVLposttop[root_] +90;  
-AVLpostleft[lefttarget] =  AVLpostleft[root_]  - ( 50 * Math.pow( 2, height(lefttarget)) )
+AVLpostleft[lefttarget] =  AVLpostleft[root_]  - ( 20 * Math.pow( 2, height(lefttarget)) )
 
  $(`#${lefttarget}`).offset({"top" : `${AVLposttop[lefttarget]}` , "left" : `${ AVLpostleft[lefttarget] }` })
 
@@ -349,7 +349,7 @@ AVLpostleft[lefttarget] =  AVLpostleft[root_]  - ( 50 * Math.pow( 2, height(left
 
  AVLposttop[righttarget] =  AVLposttop[root_] +90; 
  
- AVLpostleft[righttarget] =  AVLpostleft[root_]  + ( 50 * Math.pow( 2, height(righttarget)) )
+ AVLpostleft[righttarget] =  AVLpostleft[root_]  + ( 20 * Math.pow( 2, height(righttarget)) )
 
  
  
