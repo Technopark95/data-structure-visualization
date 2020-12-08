@@ -216,7 +216,7 @@ async function insertavl(node_, key_) {
         let vid = count;
       await  avl(key_);
      $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : "0ms"})
-     $(`#${vid}`).offset({top: ($("#"+node_).offset().top+90 ) , left :($("#"+node_).offset().left-110) })
+     $(`#${vid}`).offset({top: ($("#"+node_).offset().top+90 ) , left :($("#"+node_).offset().left-40) })
 
 
         await new Promise(resolve => {
@@ -256,7 +256,7 @@ async function insertavl(node_, key_) {
 
 
         $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : "0ms linear"})
-        $(`#${vid}`).offset({top: ($("#"+node_).offset().top+90 ) , left :($("#"+node_).offset().left+80) })
+        $(`#${vid}`).offset({top: ($("#"+node_).offset().top+90 ) , left :($("#"+node_).offset().left+40) })
 
 
         await new Promise(resolve => {
