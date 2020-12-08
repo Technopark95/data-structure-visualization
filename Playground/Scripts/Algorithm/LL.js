@@ -1,10 +1,31 @@
 
 
+/*
+
+Copyright 2020 Anoop Singh, Graphical Structure
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+
+
+*/
+
 
 var next ={};
 var prev ={};
 
 var head_ref ="null" ;
+var tail_ref ="null";
 
 let redrawlistevent;
 
@@ -23,6 +44,11 @@ function addnode(typed,posi="uni") {
   
   if (posi == "uni")  xp = (count+1)*140;
   else xp = 140;
+
+  if (head_ref== "null")  {
+
+    xp = 140;
+  }
   
    newnode = '<div id="'+count+'"  class="dragg" style= left:'+xp+'px;top:150px;> <p  style="position:absolute; color:coral; font-size:60%; left:20px;" id="'+ count+"listbottom" +'">'+count +'</p>    <p  id="'+ count+"val" +'" class="t">'+typed+'</p>   </div>';
                
@@ -49,6 +75,7 @@ function addnode(typed,posi="uni") {
 
 async function prependlist( new_data) 
 { 
+    jQuery("#codetype").attr("disabled", "disabled");
 
     redrawlistevent = setInterval(redrawlist , 50);
 
@@ -61,6 +88,11 @@ async function prependlist( new_data)
  
     /* 3. Make next of new node as head and previous as NULL */
 
+    if (head_ref == "null" || head_ref == undefined)  {
+
+        tail_ref = new_node;
+    }
+
     next[new_node] = head_ref; 
  
     prev[new_node] = "null"
@@ -71,10 +103,14 @@ async function prependlist( new_data)
  
     /* 5. move the head to point to the new node */
     head_ref = new_node; 
+    next["headref"] = head_ref;
+
 
     await waitforme (speed+400);
 
    clearInterval(redrawlistevent)
+   jQuery("#codetype").removeAttr("disabled");
+
 } 
 
 
@@ -104,6 +140,7 @@ async function appendlist( new_data)
        
         prev[new_node] = "null"
         head_ref = new_node; 
+        tail_ref = new_node;
         return; 
     } 
  
@@ -111,10 +148,14 @@ async function appendlist( new_data)
     while ( next[last] != "null" )  last= next[last]
  
     /* 6. Change the next of last node */
+    let lastoffset = $("#"+last).offset()
     next[last] = new_node
  
     /* 7. Make last node as previous of new node */
     prev[newnode] = last;
+    tail_ref = new_node;
+
+    $("#"+new_node).offset({left : lastoffset.left+140})
 
     mySVG.Listlines();
  
@@ -237,12 +278,124 @@ Log("Going next node")
 
   }
 
-mySVG.connect();
-appendlist(1)
-appendlist(2)
-appendlist(3)
-appendlist(14)
-appendlist(231)
-appendlist(313)
-appendlist(131)
-mySVG.Listlines();
+
+var pushsignal = 0;
+
+  async function pushlist(val)  {
+
+   // redrawlistevent = setInterval(redrawlist , 50);
+
+    if (pushsignal == 0)  {
+
+        newnode = '<div id="'+"headref"+'"  class="pointers" style= left:'+50+'px;top:150px;>     <p  class="t" style="color:black;">'+"Top"+'</p>   </div>';
+               
+             
+        $("body").prepend(newnode);
+
+        $("#headref").draggable({
+            drag: function(event,ui) {mySVG.Listlines();}
+        });
+  
+        next[count] = "null"; 
+
+        prev[count] = "null"
+
+        pushsignal =1;
+    }
+
+    
+
+await prependlist(val)
+
+
+
+
+  }
+
+
+
+  async function poplist()
+{
+    
+    redrawlistevent = setInterval(redrawlist , 50);
+    $(".dragg").css("transition" , speed+"ms linear");
+if( head_ref == "null")
+Log("Underflow ERROR");
+else{
+let temp = head_ref;
+Output($("#"+temp+"val").text())
+head_ref = next[temp] // After popping, make the next node as TOP
+next["headref"] = next[temp]
+$("#"+temp).remove();
+
+$(".dragg").animate({"left":"-=140px"})
+
+await waitforme(speed+400);
+
+clearInterval(redrawlistevent)
+
+}}
+
+
+
+
+async function enqueuelist(x) 
+{ 
+
+    if (pushsignal == 0) {
+        
+        newnode = '<div id="'+"headref"+'"  class="pointers" style= left:'+50+'px;top:150px;>     <p  class="t" style="color:black;">'+"Front"+'</p>   </div>';
+               
+             
+        $("body").prepend(newnode);
+
+        newnode = '<div id="'+"tailref"+'"  class="pointers" style= right:'+350+'px;top:400px;>     <p  class="t" style="color:black;">'+"Rear"+'</p>   </div>';
+               
+             
+        $("body").prepend(newnode);
+
+        $("#headref,#tailref").draggable({
+            drag: function(event,ui) {mySVG.Listlines();}
+        });
+  
+        next[count] = "null"; 
+
+        prev[count] = "null"
+
+        pushsignal =1;
+
+    }
+    // Create a new LL node 
+    await appendlist(x)
+    next["tailref"] = tail_ref;
+    next["headref"] = head_ref;
+
+    mySVG.Listlines();
+  
+} 
+
+
+async function dequeuelist() 
+{ 
+
+    // Create a new LL node 
+    await poplist()
+    next["tailref"] = tail_ref;
+    next["headref"] = head_ref;
+    mySVG.Listlines();
+  
+} 
+
+
+
+
+
+// mySVG.connect();
+// appendlist(1)
+// appendlist(2)
+// appendlist(3)
+// appendlist(14)
+// appendlist(231)
+// appendlist(313)
+// appendlist(131)
+// mySVG.Listlines();
