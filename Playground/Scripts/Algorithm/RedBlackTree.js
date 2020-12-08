@@ -314,9 +314,9 @@ return count;
 
    if (rbparent[pt] != undefined)
     if (parseInt( $("#"+pt+"treeval").text(),10) > parseInt( $("#"+rbparent[pt]+"treeval").text(),10))
-      $(`#${pt}`).offset({"top" : `${$("#"+rbparent[pt]).offset().top+150}` , "left" : `${$("#"+rbparent[pt]).offset().left+100}` })
+      $(`#${pt}`).offset({"top" : `${$("#"+rbparent[pt]).offset().top+90}` , "left" : `${$("#"+rbparent[pt]).offset().left+40}` })
     else
-      $(`#${pt}`).offset({"top" : `${$("#"+rbparent[pt]).offset().top+150}` , "left" : `${$("#"+rbparent[pt]).offset().left-100}` })
+      $(`#${pt}`).offset({"top" : `${$("#"+rbparent[pt]).offset().top+90}` , "left" : `${$("#"+rbparent[pt]).offset().left-40}` })
 
     // fix Red Black Tree violations 
 
