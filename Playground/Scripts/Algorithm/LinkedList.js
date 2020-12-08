@@ -196,6 +196,7 @@ async   function deletenode(rot , val) {
 
             
             let xp    =0;  
+            
           function addnode(typed) {
 
   $(document).scrollLeft(0)
