@@ -287,6 +287,9 @@ var pushsignal = 0;
 
     if (pushsignal == 0)  {
 
+        $(document).scrollTop(0)
+        $(document).scrollLeft(0)
+
         newnode = '<div id="'+"headref"+'"  class="pointers" style= left:'+50+'px;top:150px;>     <p  class="t" style="color:black;">'+"Top"+'</p>   </div>';
                
              
@@ -301,6 +304,7 @@ var pushsignal = 0;
         prev[count] = "null"
 
         pushsignal =1;
+
     }
 
     
@@ -343,6 +347,9 @@ async function enqueuelist(x)
 { 
 
     if (pushsignal == 0) {
+
+        $(document).scrollTop(0)
+        $(document).scrollLeft(0)
         
         newnode = '<div id="'+"headref"+'"  class="pointers" style= left:'+50+'px;top:150px;>     <p  class="t" style="color:black;">'+"Front"+'</p>   </div>';
                
