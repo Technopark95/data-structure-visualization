@@ -72,9 +72,9 @@ $('#anislow').css({"background-image" : "linear-gradient(to right , #ff512f , #d
 $("#log1").append('<p style="font-size:x-large; margin-top:-5px;  color:rgb(255,0,0, 0.7);font-family:Segoe UI;">'+ "Happenings.." +'</p>')
 
 
-$("body").append(`<p id="iindex" style="position:absolute; transition-duration : 500ms; top:0px; font-size:150%; font-family:'segoe ui'; ">i</p>`)
-$("body").append(`<p id="jindex" style="position:absolute; transition-duration  :500ms; top:0px; font-size:150%; font-family:'segoe ui'; ">j</p>`)
-$("body").append(`<p id="kindex" style="position:absolute; transition-duration  :500ms; top:0px; font-size:150%; font-family:'segoe ui'; ">k</p>`)
+$("body").append(`<p id="iindex" style="position:absolute; transition-duration : 500ms; top:-200px; font-size:150%; font-family:'segoe ui'; ">i</p>`)
+$("body").append(`<p id="jindex" style="position:absolute; transition-duration  :500ms; top:-200px; font-size:150%; font-family:'segoe ui'; ">j</p>`)
+$("body").append(`<p id="kindex" style="position:absolute; transition-duration  :500ms; top:-200px; font-size:150%; font-family:'segoe ui'; ">k</p>`)
 
 $("#iindex").hide()
 $("#jindex").hide()

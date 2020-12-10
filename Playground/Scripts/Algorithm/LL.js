@@ -320,7 +320,7 @@ await prependlist(val)
 
   async function poplist()
 {
-    
+    jQuery("#codetype").attr("disabled", "disabled");
     redrawlistevent = setInterval(redrawlist , 50);
     $(".dragg").css("transition" , speed+"ms linear");
 if( head_ref == "null")
@@ -334,11 +334,17 @@ $("#"+temp).remove();
 
 $(".dragg").animate({"left":"-=140px"})
 
+
+}
+
 await waitforme(speed+400);
+
+jQuery("#codetype").removeAttr("disabled");
 
 clearInterval(redrawlistevent)
 
-}}
+
+}
 
 
 
