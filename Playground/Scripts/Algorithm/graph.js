@@ -39,34 +39,6 @@ function nextCharacter(c) {
     return String.fromCharCode(c.charCodeAt(0) + 1); 
 } 
 
-class Queue 
-{ 
-   
-    constructor() 
-    { 
-        this.items = []; 
-    } 
-                  
-    enqueue_(element) 
-{     
-   
-    this.items.push(element); 
-} 
-dequeue_() 
-{ 
-   
-    if(this.isEmpty()) 
-        return "Underflow"; 
-    return this.items.shift(); 
-} 
-isEmpty() 
-{ 
-
-    return this.items.length == 0; 
-} 
-   
-} 
-
 
 
 function pqueue () {

@@ -304,12 +304,160 @@ async function  postorder(CurrentNode ) {
   } 
 
 
+
+
+  class QNode { 
+    
+    constructor(d) 
+    { 
+        this.data = d; 
+        this.next = null; 
+    } 
+}; 
+  
+class Q { 
+   
+    constructor() 
+    { 
+        this.front = this.rear = null; 
+    } 
+  
+     enQueue( x) 
+    { 
+  
+        // Create a new LL node 
+        let temp = new QNode(x); 
+  
+        // If queue is empty, then 
+        // new node is front and rear both 
+        if (this.rear == null) { 
+          this.front = this.rear = temp; 
+            return; 
+        } 
+  
+        // Add the new node at 
+        // the end of queue and change rear 
+        this.rear.next = temp; 
+        this.rear = temp; 
+    } 
+  
+    // Function to remove 
+    // a key from given queue q 
+     deQueue() 
+    { 
+        // If queue is empty, return NULL. 
+        if (this.front == null) 
+            return; 
+  
+        // Store previous front and 
+        // move front one node ahead 
+        let temp = this.front; 
+        this.front = this.front.next; 
+  
+        // If front becomes NULL, then 
+        // change rear also as NULL 
+        if (this.front == null) 
+        this.rear = null; 
+  
+        
+    } 
+
+
+    isEmpty() 
+    { 
+        // If queue is empty, return NULL. 
+        return this.front == null
+ 
+        
+    } 
+
+
+}; 
+
+
+
+
  
   // Level-order-traverse
 var AVLpostleft = [], AVLposttop =[];
 AVLpostleft[0] = 1900;
 AVLposttop[0] = 150;
 
+
+
+function BalanceAll(_node)
+{
+    // Base Case
+    if ($("#"+_node).length == 0)  return;
+ 
+    // Create an empty queue for level order traversal
+    let q = new Q();
+ 
+    // Enqueue Root and initialize height
+    q.enQueue(_node);
+ 
+    
+
+    while (q.isEmpty() == false)
+    {
+        // Print front of queue and remove it from queue
+        let root_ = (q.front).data;
+       
+    //  Output( $('#'+root_+"treeval").text());
+      
+    let lefttarget = tree[`${root_}treeleft`];
+    let righttarget = tree[`${root_}treeright`];
+  
+  
+  
+  
+    let rootoffset = $("#"+root_).offset()
+  
+    if (lefttarget != "null" ) {
+  
+  AVLposttop[lefttarget] =  AVLposttop[root_] +90;  
+  AVLpostleft[lefttarget] =  AVLpostleft[root_]  - ( 20 * Math.pow( 2, height(lefttarget)) )
+  
+   $(`#${lefttarget}`).offset({"top" : `${AVLposttop[lefttarget]}` , "left" : `${ AVLpostleft[lefttarget] }` })
+  
+     
+    }
+    
+  
+    if (righttarget != "null" ) {
+  
+  
+  
+   AVLposttop[righttarget] =  AVLposttop[root_] +90; 
+   
+   AVLpostleft[righttarget] =  AVLpostleft[root_]  + ( 20 * Math.pow( 2, height(righttarget)) )
+  
+   
+   
+   
+   $(`#${righttarget}`).offset({"top" : `${AVLposttop[righttarget]}` ,  "left" : `${AVLpostleft[righttarget]}`})
+       
+  
+  
+    }
+       
+        q.deQueue();
+ 
+        /* Enqueue left child */
+        if (tree[root_+"treeleft"] != "null")
+            q.enQueue(tree[root_+"treeleft"]);
+ 
+        /*Enqueue right child */
+        if (tree[root_+"treeright"] != "null")
+            q.enQueue(tree[root_+"treeright"]);
+    }
+
+
+}
+
+
+
+/*
 
 async function  printLevel(root_,  level)
 {
@@ -394,6 +542,60 @@ async function BalanceAll( root_)
 
     
 }
+
+*/
+
+var leftheight = []
+var rightheight = []
+
+var heightpernode=0;
+var heightpernode1=0;
+
+function calcleftheight( _root)
+{
+    // Base case: empty tree has height 0
+    if ($("#"+_root).length ==0)
+        return 0;
+ 
+    // recur for left and right subtree and consider maximum depth
+  
+    
+    calcleftheight(tree[_root+"treeright"])
+
+      heightpernode= 1+calcleftheight(tree[_root+"treeleft"])
+
+
+     leftheight[_root] = heightpernode
+   
+    return heightpernode;
+    
+}
+
+function calcrightheight( _root)
+{
+    // Base case: empty tree has height 0
+    if ($("#"+_root).length ==0)
+        return 0;
+ 
+    // recur for left and right subtree and consider maximum depth
+  
+    
+ 
+    calcrightheight(tree[_root+"treeleft"])
+
+   heightpernode= 1+ calcrightheight(tree[_root+"treeright"])
+
+   
+     rightheight[_root] = heightpernode
+   
+    
+    
+     return heightpernode;
+
+}
+
+
+
 
 
   async function insertbst(node_, key_) { 
