@@ -334,9 +334,9 @@ return count;
     $(`#${rbroot}`).offset({"top" : `${150}` , "left" : `${ 1900 }` })
 
    
-   await BalanceAll(rbroot);
+    BalanceAll(rbroot);
 
-   await waitforme (3000);
+   await waitforme (speed+100);
 
     clearInterval(redrawevent)
 

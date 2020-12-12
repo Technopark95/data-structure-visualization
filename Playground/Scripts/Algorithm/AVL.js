@@ -676,9 +676,9 @@ async function InsertAVL (h) {
 
     $(".dragg").css("transition" , speed+"ms linear");
   
-    await BalanceAll(r);
+   BalanceAll(r);
 
-    await waitforme(4000);
+    await waitforme(speed+100);
 
     clearInterval(redrawevent)
 
@@ -697,9 +697,9 @@ async function DeleteAVL (h) {
   AVLposttop[r] = 150;
 
   await waitforme(1000);
-  await BalanceAll(r);
+   BalanceAll(r);
 
-  await waitforme(4000);
+  await waitforme(speed+100);
 
   clearInterval(redrawevent)
 
