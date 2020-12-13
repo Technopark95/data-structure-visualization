@@ -710,7 +710,7 @@ function calcrightheight( _root)
               await display("Correct place to insert the element = CurrentNode->left")
         let vid = count;
         leaf(key_);
-     $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : "2000ms"})
+     $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : speed+"ms linear"})
      $(`#${vid}`).offset({top: ($("#"+node_).offset().top+90 ) , left :($("#"+node_).offset().left-40) })
 
 
@@ -721,7 +721,7 @@ function calcrightheight( _root)
             treefy(`${node_}treeleft` ,vid)
             resolve('')
             return;
-           },2100)
+           },speed+100)
             
 
 
@@ -749,7 +749,7 @@ function calcrightheight( _root)
         leaf(key_);
 
 
-        $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : "2000ms"})
+        $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : speed+"ms linear"})
         $(`#${vid}`).offset({top: ($("#"+node_).offset().top+90 ) , left :($("#"+node_).offset().left+40) })
 
 
@@ -760,7 +760,7 @@ function calcrightheight( _root)
             treefy(`${node_}treeright` ,vid)
             resolve('')
             return;
-           },2100)
+           },speed+100)
             
 
 
@@ -975,7 +975,7 @@ await waitforme (speed+100);
 
   
 
-     newnode = '<div id="'+count+'" style="transition:1200ms ;transform:scale(.8,.8);"  class="dragg" > <div class="treenode" id="'+ count+"treetop" +'" style="margin-left:35px;"></div>  <div class="treenode" id="'+ count+"treeleft" +'" style="margin-left:18px; margin-top:70px;"></div>   <div class="treenode" id="'+ count+"treeright" +'" style="margin-left:54px; margin-top:70px;"></div> <p  style="position:absolute;color:coral; font-size:70%; left:20px;" id="'+ count+"bottom" +'">'+count +'</p>    <p  id="'+ count+"treeval" +'" class="t">'+element+'</p>   </div>';
+     newnode = '<div id="'+count+'" style="transition:1200ms ;transform:scale(.8,.8);left:1250px;top:150px;"  class="dragg" > <div class="treenode" id="'+ count+"treetop" +'" style="margin-left:35px;"></div>  <div class="treenode" id="'+ count+"treeleft" +'" style="margin-left:18px; margin-top:70px;"></div>   <div class="treenode" id="'+ count+"treeright" +'" style="margin-left:54px; margin-top:70px;"></div> <p  style="position:absolute;color:coral; font-size:70%; left:20px;" id="'+ count+"bottom" +'">'+count +'</p>    <p  id="'+ count+"treeval" +'" class="t">'+element+'</p>   </div>';
 
 
     $("body").prepend(newnode)

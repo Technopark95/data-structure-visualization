@@ -188,9 +188,8 @@ async function insertavl(node_, key_) {
       await display("Tree Empty. Adding root node.");
       let vid =count;
      await  avl(key_); 
-       $(`#${vid}`).css({ "top" : "0px", "left" : "0px"})
-       $(`#${vid}`).animate({ "top" : "0px", "left" : "1900px"})
-       $(`#${vid}`).css("transition","1200ms linear")
+     $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : "2000ms linear"})
+     $(`#${vid}`).animate({ "top" : "0px", "left" : "1900px"})
        let bodyy = $(document);
 
        bodyy.scrollLeft(1200)
@@ -215,7 +214,7 @@ async function insertavl(node_, key_) {
               await display("Correct place to insert the element = CurrentNode->left")
         let vid = count;
       await  avl(key_);
-     $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : "0ms"})
+     $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : speed+"ms linear"})
      $(`#${vid}`).offset({top: ($("#"+node_).offset().top+90 ) , left :($("#"+node_).offset().left-40) })
 
 
@@ -227,7 +226,7 @@ async function insertavl(node_, key_) {
             
             resolve('')
             
-           },500)
+           },speed+100)
             
 
 
@@ -255,7 +254,7 @@ async function insertavl(node_, key_) {
         avl(key_);
 
 
-        $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : "0ms linear"})
+        $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : speed+"ms linear"})
         $(`#${vid}`).offset({top: ($("#"+node_).offset().top+90 ) , left :($("#"+node_).offset().left+40) })
 
 
@@ -267,7 +266,7 @@ async function insertavl(node_, key_) {
             
             resolve('')
             
-           },500)
+           },speed+100)
             
 
 
@@ -349,7 +348,7 @@ async function insertavl(node_, key_) {
 
         await BalanceAll(node_);
 
-        await waitforme(2000);
+        await waitforme(speed+100);
        
         let optiona = tree[`${node_}treeleft`];
 
@@ -383,7 +382,7 @@ async function insertavl(node_, key_) {
         let newnoderight = await rightRotate(tree[`${node_}treeright`]);
 
         await BalanceAll(node_);
-        await waitforme(2000);
+        await waitforme(speed+100);
         let optiona = tree[`${node_}treeright`];
 
         del(`#${node_}treeright` , `#${optiona}treetop`);
@@ -627,7 +626,7 @@ return _root;
 
 function avl(element) {
 
-    newnode = '<div id="'+count+'" style="transition:200ms;transform:scale(.8,.8);"  class="dragg" > <div class="treenode" id="'+ count+"treetop" +'" style="margin-left:35px;"></div>  <div class="treenode" id="'+ count+"treeleft" +'" style="margin-left:18px; margin-top:70px;"></div>   <div class="treenode" id="'+ count+"treeright" +'" style="margin-left:54px; margin-top:70px;"></div> <p  style="position:absolute;color:coral; font-size:70%; left:20px;" id="'+ count+"bottom" +'">'+count +'</p>   <div style="position:absolute; text-align:center; top:65px; left:38px;height:1px; width:20px;"><p  style="color:white; font-size:70%; " id="'+ count+"height" +'">'+"1" +'</p></div>   <p  id="'+ count+"treeval" +'" class="t">'+element+'</p>   </div>';
+    newnode = '<div id="'+count+'" style="transition:200ms;transform:scale(.8,.8);left:1250px;top:150px;"  class="dragg" > <div class="treenode" id="'+ count+"treetop" +'" style="margin-left:35px;"></div>  <div class="treenode" id="'+ count+"treeleft" +'" style="margin-left:18px; margin-top:70px;"></div>   <div class="treenode" id="'+ count+"treeright" +'" style="margin-left:54px; margin-top:70px;"></div> <p  style="position:absolute;color:coral; font-size:70%; left:20px;" id="'+ count+"bottom" +'">'+count +'</p>   <div style="position:absolute; text-align:center; top:65px; left:38px;height:1px; width:20px;"><p  style="color:white; font-size:70%; " id="'+ count+"height" +'">'+"1" +'</p></div>   <p  id="'+ count+"treeval" +'" class="t">'+element+'</p>   </div>';
 
 
    $("body").prepend(newnode)
