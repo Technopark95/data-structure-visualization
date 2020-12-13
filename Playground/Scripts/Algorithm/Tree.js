@@ -376,6 +376,15 @@ class Q {
 
 
 
+async function redraw  ()  {
+
+  mySVG.redrawLines();
+  
+ 
+ }
+ 
+ 
+
 
  
   // Level-order-traverse
@@ -766,10 +775,7 @@ function calcrightheight( _root)
       
     }
 
-    calcleftheight(0);
-    calcrightheight(0);
-
-    BalanceBST(0);
+    
     
 } 
   
@@ -912,6 +918,47 @@ async function searchbst(ro , item) {
       
   } 
   
+
+  async function InsertBST (value) {
+
+await insertbst(0, value);
+
+let redrawev = setInterval(redraw,50);
+
+$(".dragg").css("transition" , speed+"ms linear");
+
+await waitforme (speed+100);
+
+calcleftheight(0);
+  calcrightheight(0);
+    BalanceBST(0);
+  await waitforme (speed+200);
+
+  clearInterval(redrawev)
+
+  }
+
+
+  async function DeleteBST (value) {
+
+    await deletebst(0, value);
+
+    let redrawev = setInterval(redraw,50);
+
+    $(".dragg").css("transition" , speed+"ms linear");
+
+await waitforme (speed+100);
+
+    await waitforme (speed+100);
+    
+    calcleftheight(0);
+      calcrightheight(0);
+        BalanceBST(0);
+        await waitforme (speed+200);
+
+  clearInterval(redrawev)
+    
+      }
 
 
 
