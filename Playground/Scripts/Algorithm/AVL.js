@@ -646,13 +646,6 @@ return count;
 
 
 
-async function redraw  ()  {
-
- mySVG.redrawLines();
- 
-
-}
-
 
 
 
