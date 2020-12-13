@@ -932,7 +932,7 @@ await waitforme (speed+100);
 calcleftheight(0);
   calcrightheight(0);
     BalanceBST(0);
-  await waitforme (speed+200);
+  await waitforme (speed+100);
 
   clearInterval(redrawev)
 
@@ -959,6 +959,14 @@ await waitforme (speed+100);
   clearInterval(redrawev)
     
       }
+
+
+      async function SearchBST (value) {
+
+        await searchbst(0, value);
+    
+       
+          }
 
 
 
