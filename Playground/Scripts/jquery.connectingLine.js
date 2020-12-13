@@ -166,7 +166,7 @@ this.kruskalize =function (_cl = "rgb(0,0,0,0.08)")  {
 							break;
 
 						case 'dotted':
-							_dash = [4, 2];
+							_dash = [2, 2];
 							break;
 
 						default:
