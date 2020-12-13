@@ -456,6 +456,77 @@ function BalanceAll(_node)
 }
 
 
+function BalanceBST(_node)
+{
+    // Base Case
+    if ($("#"+_node).length == 0)  return;
+ 
+    // Create an empty queue for level order traversal
+    let q = new Q();
+ 
+    // Enqueue Root and initialize height
+    q.enQueue(_node);
+ 
+    
+
+    while (q.isEmpty() == false)
+    {
+        // Print front of queue and remove it from queue
+        let root_ = (q.front).data;
+       
+    //  Output( $('#'+root_+"treeval").text());
+      
+    let lefttarget = tree[`${root_}treeleft`];
+    let righttarget = tree[`${root_}treeright`];
+  
+  
+  
+  
+    let rootoffset = $("#"+root_).offset()
+  
+    if (lefttarget != "null" ) {
+  
+  AVLposttop[lefttarget] =  AVLposttop[root_] +90;  
+  AVLpostleft[lefttarget] =  AVLpostleft[root_]  - ( 20 * Math.pow( 2, rightheight[lefttarget]) )
+  
+   $(`#${lefttarget}`).offset({"top" : `${AVLposttop[lefttarget]}` , "left" : `${ AVLpostleft[lefttarget] }` })
+  
+     
+    }
+    
+  
+    if (righttarget != "null" ) {
+  
+  
+  
+   AVLposttop[righttarget] =  AVLposttop[root_] +90; 
+   
+   AVLpostleft[righttarget] =  AVLpostleft[root_]  + ( 20 * Math.pow( 2, leftheight[righttarget]) )
+  
+   
+   
+   
+   $(`#${righttarget}`).offset({"top" : `${AVLposttop[righttarget]}` ,  "left" : `${AVLpostleft[righttarget]}`})
+       
+  
+  
+    }
+       
+        q.deQueue();
+ 
+        /* Enqueue left child */
+        if (tree[root_+"treeleft"] != "null")
+            q.enQueue(tree[root_+"treeleft"]);
+ 
+        /*Enqueue right child */
+        if (tree[root_+"treeright"] != "null")
+            q.enQueue(tree[root_+"treeright"]);
+    }
+
+
+}
+
+
 
 /*
 
@@ -607,7 +678,11 @@ function calcrightheight( _root)
       let vid =count;
        leaf(key_); 
        $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : "2000ms linear"})
-       $(`#${vid}`).animate({ "top" : "0px", "left" : "43%"})
+       $(`#${vid}`).animate({ "top" : "0px", "left" : "1900px"})
+
+       $(document).scrollLeft(1200)
+       $(document).scrollTop(0)
+
        
        return;
     }
@@ -627,7 +702,7 @@ function calcrightheight( _root)
         let vid = count;
         leaf(key_);
      $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : "2000ms"})
-     $(`#${vid}`).offset({top: ($("#"+node_).offset().top+130 ) , left :($("#"+node_).offset().left-150) })
+     $(`#${vid}`).offset({top: ($("#"+node_).offset().top+90 ) , left :($("#"+node_).offset().left-40) })
 
 
         return new Promise(resolve => {
@@ -666,7 +741,7 @@ function calcrightheight( _root)
 
 
         $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : "2000ms"})
-        $(`#${vid}`).offset({top: ($("#"+node_).offset().top+130 ) , left :($("#"+node_).offset().left+150) })
+        $(`#${vid}`).offset({top: ($("#"+node_).offset().top+90 ) , left :($("#"+node_).offset().left+40) })
 
 
         return new Promise(resolve => {
@@ -690,6 +765,11 @@ function calcrightheight( _root)
 
       
     }
+
+    calcleftheight(0);
+    calcrightheight(0);
+
+    BalanceBST(0);
     
 } 
   
@@ -838,8 +918,7 @@ async function searchbst(ro , item) {
 
   function leaf(element) {
 
-    $(document).scrollLeft(0)
-  $(document).scrollTop(0)
+  
 
      newnode = '<div id="'+count+'" style="transition:1200ms ;transform:scale(.8,.8);"  class="dragg" > <div class="treenode" id="'+ count+"treetop" +'" style="margin-left:35px;"></div>  <div class="treenode" id="'+ count+"treeleft" +'" style="margin-left:18px; margin-top:70px;"></div>   <div class="treenode" id="'+ count+"treeright" +'" style="margin-left:54px; margin-top:70px;"></div> <p  style="position:absolute;color:coral; font-size:70%; left:20px;" id="'+ count+"bottom" +'">'+count +'</p>    <p  id="'+ count+"treeval" +'" class="t">'+element+'</p>   </div>';
 
