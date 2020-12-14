@@ -292,11 +292,13 @@ async function Splayi( k)
 
 async function  Splaysearch(key)  {
 
+     redrawevent= setInterval(redrawsplay , 50);
+
+
+
     await Splays(key);
 
-    redrawevent= setInterval(redrawsplay , 50);
-
-
+   
     AVLpostleft[newroot] = 1900;
     AVLposttop[newroot] = 150;
 
@@ -316,10 +318,10 @@ async function  Splaysearch(key)  {
 async function Splayinsert (key)  {
 
 
-    await Splayi(key);
-
     redrawevent= setInterval(redrawsplay , 50);
 
+
+    await Splayi(key);
 
 
     AVLpostleft[newroot] = 1900;
