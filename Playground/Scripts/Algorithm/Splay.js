@@ -22,96 +22,24 @@ Copyright 2020 Anoop Singh, Graphical Structure
 */
 
 
-async function  splayprintLevel(root_,  level)
-{
- 
-
-	if (root_ == "null")
-		return false;
-
-	if (level == 1)
-	{
-
-    if(stats == 1) await pauser();
-  //  Output( $('#'+root_+"treeval").text());
-    
-  let lefttarget = tree[`${root_}treeleft`];
-  let righttarget = tree[`${root_}treeright`];
-
-
-
-
-  let rootoffset = $("#"+root_).offset()
-
-  if (lefttarget != "null" ) {
-
-AVLposttop[lefttarget] =  AVLposttop[root_] +90;  
-AVLpostleft[lefttarget] =  AVLpostleft[root_]  - ( 60 * height(lefttarget))
-
- $(`#${lefttarget}`).offset({"top" : `${AVLposttop[lefttarget]}` , "left" : `${ AVLpostleft[lefttarget] }` })
-
-   
-  }
-  
-
-  if (righttarget != "null" ) {
-
-
-
- AVLposttop[righttarget] =  AVLposttop[root_] +90; 
- 
- AVLpostleft[righttarget] =  AVLpostleft[root_]  + ( 60 *  height(righttarget) )
-
- 
- 
- 
- $(`#${righttarget}`).offset({"top" : `${AVLposttop[righttarget]}` ,  "left" : `${AVLpostleft[righttarget]}`})
-     
-
-
-  }
- 
-
-		// return true if at-least one node is present at given level
-		return true;
-	}
-
-	let left = await splayprintLevel(   tree[`${root_}treeleft`], level - 1);
-	let right = await splayprintLevel( tree[`${root_}treeright`], level - 1);
-
-	return left || right;
-}
-
-
-
-
-// Function to print level order traversal of given binary tree
-async function splayBalanceAll( root_)
-{
-	// start from level 1 -- till height of the tree
-  let level = 1;
-
-	// run till printLevel() returns false
-	while ( await splayprintLevel(root_, level)) {
-
-
-  
-    level++;
-
-
-
-  }
-    
-
-    
-}
-
-
-
 var newroot=0;
 
-function splayrightRotate(x)  
+async function balancenodes()   {
+
+    calcleftheight(newroot)
+    calcrightheight(newroot)
+    BalanceBST(newroot)
+    
+    
+}
+
+async function splayrightRotate(x)  
 {  
+
+    await hilight(x ,  "red");
+    
+   await hilight(x);
+
    // node *y = x->left;  
     let y = tree[x+"treeleft"]
    // x->left = y->right;
@@ -125,14 +53,21 @@ function splayrightRotate(x)
     let nodeheighty = 1 + Math.max(height(tree[`${y}treeleft`]), height(tree[`${y}treeright`]));
     $(`#${y}height`).text(nodeheighty)
 
+    
+
     return y;  
 }  
   
 // A utility function to left  
 // rotate subtree rooted with x  
 // See the diagram given above.  
-function splayleftRotate(x)  
+async function splayleftRotate(x)  
 {  
+
+    await hilight(x ,  "red");
+    
+    await hilight(x);
+
   //  node *y = x->right;
     let y = tree[x+"treeright"]  
    // x->right = y->left;  
@@ -156,7 +91,7 @@ function splayleftRotate(x)
 // brings the last accessed item at  
 // root. This function modifies the 
 // tree and returns the new root  
-function splay(node_,  key)  
+async function splay(node_,  key)  
 {  
     // Base cases: node_ is NULL or 
     // key is present at node_  
@@ -176,11 +111,11 @@ function splay(node_,  key)
             // key as node_ of left-left  
            let left = tree[node_+"treeleft"];
            
-           tree[left+"treeleft"] = splay(tree[left+"treeleft"], key);  
+           tree[left+"treeleft"] = await splay(tree[left+"treeleft"], key);  
   
             // Do first rotation for node_,  
             // second rotation is done after else  
-            node_ = splayrightRotate(node_);  
+            node_ = await splayrightRotate(node_);  
         }  
         else if (parseInt( $("#"+tree[node_+"treeleft"]+"treeval").text(),10) < key) // Zig-Zag (Left Right)  
         {  
@@ -188,16 +123,16 @@ function splay(node_,  key)
             // the key as node_ of left-right
             let left = tree[node_+"treeleft"];
 
-            tree[left+"treeright"] = splay(tree[left+"treeright"], key);  
+            tree[left+"treeright"] = await splay(tree[left+"treeright"], key);  
   
             // Do first rotation for node_->left  
             if (tree[left+"treeright"] != "null")  
-               tree[node_+"treeleft"] = splayleftRotate(tree[node_+"treeleft"]);  
+               tree[node_+"treeleft"] = await splayleftRotate(tree[node_+"treeleft"]);  
         }  
   
         
         // Do second rotation for node_  
-        return (tree[node_+"treeleft"] == "null")? node_: splayrightRotate(node_);  
+        return (tree[node_+"treeleft"] == "null")? node_: await splayrightRotate(node_);  
     }  
     else // Key lies in right subtree  
     {  
@@ -210,23 +145,23 @@ function splay(node_,  key)
         if ( parseInt( $("#"+right+"treeval").text(),10) > key)  
         {  
             // Bring the key as node_ of right-left  
-            tree[right+"treeleft"] = splay(tree[right+"treeleft"], key);  
+            tree[right+"treeleft"] = await splay(tree[right+"treeleft"], key);  
   
             // Do first rotation for node_->right  
             if (tree[right+"treeleft"] != "null")  
-            tree[node_+"treeright"] = splayrightRotate(tree[node_+"treeright"]);  
+            tree[node_+"treeright"] = await splayrightRotate(tree[node_+"treeright"]);  
         }  
         else if (parseInt( $("#"+right+"treeval").text(),10) < key)// Zag-Zag (Right Right)  
         {  
             // Bring the key as node_ of  
             // right-right and do first rotation  
-            tree[right+"treeright"] = splay(tree[right+"treeright"] , key);  
-            node_ = splayleftRotate(node_);  
+            tree[right+"treeright"] = await splay(tree[right+"treeright"] , key);  
+            node_ = await splayleftRotate(node_);  
         }  
   
 
         // Do second rotation for node_  
-        return (tree[node_+"treeright"] == "null")? node_: splayleftRotate(node_);  
+        return (tree[node_+"treeright"] == "null")? node_: await splayleftRotate(node_);  
     }  
 
 
@@ -292,7 +227,7 @@ return count;
 
 async function Splays( key)  
 {  
-  newroot = splay(newroot, key);  
+  newroot = await splay(newroot, key);  
 
     mySVG.Splaylines();
 
@@ -316,7 +251,7 @@ async function Splayi( k)
     }
   
     // Bring the closest leaf node to newroot  
-    newroot = splay(newroot, k);  
+    newroot = await splay(newroot, k);  
 
    
     // If key is already present, then return  
@@ -362,8 +297,6 @@ async function  Splaysearch(key)  {
 
     redrawevent= setInterval(redrawsplay , 50);
 
-    calcheight(newroot)
-
 
     AVLpostleft[newroot] = 1900;
     AVLposttop[newroot] = 150;
@@ -372,9 +305,9 @@ async function  Splaysearch(key)  {
 
     $(".dragg").css("transition" , speed+"ms linear");
 
-   await splayBalanceAll(newroot);
+   await balancenodes(newroot);
 
-   await waitforme (3000);
+   await waitforme (speed+100);
 
     clearInterval(redrawevent)
 
@@ -388,7 +321,6 @@ async function Splayinsert (key)  {
 
     redrawevent= setInterval(redrawsplay , 50);
 
-    calcheight(newroot)
 
 
     AVLpostleft[newroot] = 1900;
@@ -398,7 +330,7 @@ async function Splayinsert (key)  {
 
     $(".dragg").css("transition" , speed+"ms linear");
 
-   await splayBalanceAll(newroot);
+    await balancenodes(newroot);
 
    await waitforme (3000);
 
