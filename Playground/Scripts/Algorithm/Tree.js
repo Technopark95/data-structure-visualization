@@ -496,7 +496,7 @@ function BalanceBST(_node)
     if (lefttarget != "null" ) {
   
   AVLposttop[lefttarget] =  AVLposttop[root_] +90;  
-  AVLpostleft[lefttarget] =  AVLpostleft[root_]  - ( 20 * Math.pow( 2, rightheight[lefttarget]) )
+  AVLpostleft[lefttarget] =  AVLpostleft[root_]  - ( 30 * Math.pow( 2, rightheight[lefttarget]) )
   
    $(`#${lefttarget}`).offset({"top" : `${AVLposttop[lefttarget]}` , "left" : `${ AVLpostleft[lefttarget] }` })
   
@@ -510,7 +510,7 @@ function BalanceBST(_node)
   
    AVLposttop[righttarget] =  AVLposttop[root_] +90; 
    
-   AVLpostleft[righttarget] =  AVLpostleft[root_]  + ( 20 * Math.pow( 2, leftheight[righttarget]) )
+   AVLpostleft[righttarget] =  AVLpostleft[root_]  + ( 30 * Math.pow( 2, leftheight[righttarget]) )
   
    
    
@@ -675,6 +675,13 @@ function calcrightheight( _root)
 }
 
 
+async function balancenodes(startnode)   {
+
+  calcleftheight(startnode)
+  calcrightheight(startnode)
+  BalanceBST(startnode)
+  
+}
 
 
 
@@ -711,7 +718,7 @@ function calcrightheight( _root)
         let vid = count;
         leaf(key_);
      $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : speed+"ms linear"})
-     $(`#${vid}`).offset({top: ($("#"+node_).offset().top+90 ) , left :($("#"+node_).offset().left-40) })
+     $(`#${vid}`).offset({top: ($("#"+node_).offset().top+90 ) , left :($("#"+node_).offset().left-60) })
 
 
         return new Promise(resolve => {
@@ -750,7 +757,7 @@ function calcrightheight( _root)
 
 
         $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : speed+"ms linear"})
-        $(`#${vid}`).offset({top: ($("#"+node_).offset().top+90 ) , left :($("#"+node_).offset().left+40) })
+        $(`#${vid}`).offset({top: ($("#"+node_).offset().top+90 ) , left :($("#"+node_).offset().left+60) })
 
 
         return new Promise(resolve => {
