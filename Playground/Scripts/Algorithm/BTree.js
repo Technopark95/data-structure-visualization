@@ -165,7 +165,7 @@ return bheight;
 
          $("#"+root_).offset({left: 130+  ti*60*Math.pow(2,bheights[root_]) , top : 150 *(bheight-bheights[root_]+1)})
 
-         console.log(ti,bheights[root_])
+         
          
          ti = ti+2;
 
@@ -310,7 +310,7 @@ function insertNonFull(targ , k)
     // Initialize index as index of rightmost element 
     let iter = parseInt( document.getElementById(targ+"n").innerHTML) - 1 
   
-    console.log(targ, "",iter)
+   
   
 
     // If this is a leaf node 
@@ -328,7 +328,7 @@ function insertNonFull(targ , k)
             iter--; 
         } 
   
-       // console.log("    ",iter+1);
+     
         
         document.getElementById(targ+"keys"+(iter+1)).innerHTML = k;
        
@@ -360,7 +360,6 @@ function insertNonFull(targ , k)
                 iter++; 
         } 
 
-    //    console.log(targ+"c"+iter)
         insertNonFull( BTree[targ+"c"+iter] ,k); 
     } 
 
