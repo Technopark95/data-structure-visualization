@@ -371,6 +371,9 @@ var xx =0;
     
     
 async function btreeinsert( k)  {
+
+  document.getElementById("codetype").setAttribute("disabled" , "disabled")
+  
     
 redrawevent = setInterval(redrawBtreelines,50);
 
@@ -425,7 +428,8 @@ redrawevent = setInterval(redrawBtreelines,50);
 
 clearInterval(redrawevent)
 
-
+document.getElementById("codetype").removeAttribute("disabled")
+  
 
     
 }
