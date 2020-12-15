@@ -69,6 +69,9 @@ async function RBTreerotateLeft( pt)
   
     tree[pt_right+"treeleft"] = pt; 
     rbparent[pt] = pt_right; 
+
+
+
 } 
   
 async function RBTreerotateRight( pt) 
@@ -89,6 +92,8 @@ async function RBTreerotateRight( pt)
   
     tree[pt_left+"treeright"] = pt; 
     rbparent[pt] = pt_left; 
+
+  
 } 
 
 
@@ -147,7 +152,7 @@ async function fixViolation(_root, pt)
                 /* Case : 3 
                    pt is left child of its rbparent 
                    Right-rotation required */
-                  RBTreerotateRight( grand_parent_pt); 
+                     RBTreerotateRight( grand_parent_pt); 
                
                   await swapcolor(parent_pt , grand_parent_pt)
                
@@ -193,7 +198,7 @@ async function fixViolation(_root, pt)
                 { 
 
                  //   console.log( "2 2 1")
-                    RBTreerotateRight( parent_pt); 
+                   RBTreerotateRight( parent_pt); 
                     pt = parent_pt; 
                     parent_pt = rbparent[pt]; 
                 } 
@@ -227,6 +232,7 @@ async function fixViolation(_root, pt)
 } 
 
 var direc = 0
+var delcopy = 0 ;
 async function rbInsert(rbroot, pt) 
 { 
     /* If the tree is empty, return a new node */
@@ -236,7 +242,9 @@ async function rbInsert(rbroot, pt)
         rbroot = newpt;
         return newpt;
   
-    }
+    } 
+
+   
        
     /* Otherwise, recur down the tree */
     if ( parseInt( $("#"+pt+"treeval").text(),10) < parseInt( $("#"+rbroot+"treeval").text(),10)) 
@@ -254,9 +262,12 @@ async function rbInsert(rbroot, pt)
 
         let rightt =  tree[rbroot+"treeright"];
         rbparent[rightt] = rbroot;
-        
-
+    
     } 
+
+ 
+
+  
   
     /* return the (unchanged) node pointer */
     return rbroot; 
@@ -295,10 +306,10 @@ return count;
 
  
 
-    redrawevent= setInterval(redrawsplay , 50);
-
-    
+   
     if ($("#"+rbroot).length == 0)  {
+
+        
 
         $(document).scrollLeft(1200)
         $(document).scrollTop(0)
@@ -306,11 +317,14 @@ return count;
 
     let pt = RBnode(data) -1; 
 
+
     $(".dragg").css("transition" , speed+"ms linear");
 
   
     // Do a normal BST insert 
    rbroot  =  await rbInsert(rbroot, pt); 
+
+
 
    if (rbparent[pt] != undefined)
     if (parseInt( $("#"+pt+"treeval").text(),10) > parseInt( $("#"+rbparent[pt]+"treeval").text(),10))
@@ -320,9 +334,14 @@ return count;
 
     // fix Red Black Tree violations 
 
+ 
+
+    if (rbparent[pt] != undefined)
     await waitforme(speed+30)
 
- 
+    redrawevent= setInterval(redrawsplay , 50);
+
+    
 
     await  fixViolation(rbroot, pt); 
 
