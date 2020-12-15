@@ -299,7 +299,10 @@ f = 0;
 
 		//It will redraw all line when screen resizes
 		$(window).resize(function() {
+			_me.redrawLines();
 			_me.Splaylines();
+			_me.Blines();
+			//_me.Listlines();
 		});
 
 		this.redrawLines = function() {
@@ -341,6 +344,23 @@ f = 0;
 				let destination = next[source];
 				if(destination != "null")
 				_me.connect({left_node:"#"+source , right_node:"#"+destination , col:"black" ,style:"dashed"})
+
+			  }
+
+
+		};
+
+
+		this.Blines = function() {
+			if (BTree.length == 0) return;
+
+			_ctx.clearRect(0, 0, $(_parent).width(), $(_parent).height());
+
+			for (let source in BTree) {
+
+				let destination = BTree[source];
+				if(destination != "null")
+				_me.connect({left_node:"#"+source , right_node:"#"+destination+"top" })
 
 			  }
 
