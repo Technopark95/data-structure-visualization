@@ -37,21 +37,21 @@ let btreenode = `<div id=${count} class="btnode"><p style="display:none;" id=${c
 
 
 
-   $("#"+count).append(`<div style="width:30px;height:10px;top:-6px;position:absolute;text-align:center;left:15px;"><p id=${count}keys0 class="btnode-text" style="color:white;"></p></div>`);
+   $("#"+count).append(`<div style="width:30px;height:10px;top:-6px;position:absolute;text-align:center;left:15px;"><p id=${count}keys0 class="btnode-text" ></p></div>`);
    
 
    child1 = `<div  id=${count}c1 style="position:absolute; height:5px; width:5px; border-radius:5px; background-color:${"white"};left:47px;top:13px;"></div>`
    $("#"+count).append(child1);
    
 
-   $("#"+count).append(`<div style="width:30px;height:10px;top:-6px;position:absolute;text-align:center;left:55px;"><p id=${count}keys1 class="btnode-text" style="color:white;"></p></div>`);
+   $("#"+count).append(`<div style="width:30px;height:10px;top:-6px;position:absolute;text-align:center;left:55px;"><p id=${count}keys1 class="btnode-text" ></p></div>`);
    
 
    child1 = `<div  id=${count}c2 style="position:absolute; height:5px; width:5px; border-radius:5px; background-color:${"white"};left:88px;top:13px;"></div>`
    $("#"+count).append(child1);
    
 
-   $("#"+count).append(`<div style="width:30px;height:10px;top:-6px;position:absolute;text-align:center;left:95px;"><p id=${count}keys2 class="btnode-text" style="color:white;"></p></div>`);
+   $("#"+count).append(`<div style="width:30px;height:10px;top:-6px;position:absolute;text-align:center;left:95px;"><p id=${count}keys2 class="btnode-text" ></p></div>`);
    
 
    child1 = `<div  id=${count}c3 style="position:absolute; height:5px; width:5px; border-radius:5px; background-color:${"white"};left:129px;top:13px;"></div>`
@@ -447,7 +447,7 @@ async function btraverse(ttt=rot)
     { 
       
       await hilight(ttt,"red");
-             hilight(ttt,defaultcolor);
+             hilight(ttt,"rgba(0,0,0,0)");
 
         // If this is not leaf, then before printing key[bh], 
         // traverse the subtree rooted with child C[bh]. 
@@ -485,7 +485,7 @@ async function btsearch(item ,ttt=rot )
     { 
       
       await hilight(ttt,"red");
-             hilight(ttt,defaultcolor);
+             hilight(ttt,"rgba(0,0,0,0)");
 
         // If this is not leaf, then before printing key[bh], 
         // traverse the subtree rooted with child C[bh]. 
