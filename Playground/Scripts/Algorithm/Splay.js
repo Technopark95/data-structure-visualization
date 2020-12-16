@@ -317,6 +317,7 @@ async function  Splaysearch(key)  {
 
 async function Splayinsert (key)  {
 
+    
 
     redrawevent= setInterval(redrawsplay , 50);
 
@@ -337,6 +338,7 @@ async function Splayinsert (key)  {
 
     clearInterval(redrawevent)
 
+  
 
 
 }
