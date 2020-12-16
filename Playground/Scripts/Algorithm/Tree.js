@@ -790,14 +790,19 @@ async function balancenodes(startnode)   {
 
 async function searchbst(ro , item) {
 
+let precolor = document.getElementById(ro).style.backgroundColor;
 
   await hilight(ro, "rgb(109,209,0,1)" , "1200ms" , 1300 )
+
+     hilight(ro, precolor , "1200ms" , 1300 )
 
   
     if ( $('#'+ro+'treeval').text() == item) {
   
      await  hilight(ro,"red")
       await display("Item found.")
+
+    await  hilight(ro, precolor , "1200ms" , 1300 )
   
       return;
   
