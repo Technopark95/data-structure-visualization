@@ -18,7 +18,13 @@ Copyright 2020 Anoop Singh, Graphical Structure
 
 
 */
+
+
+
 var arrayflag = 0;
+
+
+
 async function HEAPIFY2( n,  i) 
 { 
     
@@ -60,50 +66,31 @@ async function HEAPIFY2( n,  i)
     
 } 
 
-/*
+function heapleaf(element) {
 
-async function heapify1( len,  ind) 
-  { 
-      ind = Math.floor(ind)
-      var largest = ind; // Initialize largest as root 
-      var l = 2*ind + 1; // left = 2*i + 1 
-      var r = 2*ind + 2; // right = 2*i + 2 
-    
-      
-      // If left child is larger than root 
-      if (l < len && storedarray[l] > storedarray[largest]) 
-          largest = l; 
-    
-      // If right child is larger than largest so far 
-      if (r < len && storedarray[r] > storedarray[largest]) 
-          largest = r; 
-    
-      // If largest is not root 
-      if (largest != ind) 
-      { 
-           hilight(ind , "red" , "1s" ,1100)
-        //  swap(st[ind], st[largest]); 
-        await hilight(largest , "red" , "1s" ,1100)
-          var te = storedarray[ind];
-          storedarray[ind] = storedarray[largest];
-          storedarray[largest] = te;
   
-       await   gottopoint(ind ,largest)
 
-       await   waitforme(500);
-       
-        hilight(ind , defaultcolor , "1s" ,1100)
-       await hilight(largest , defaultcolor , "1s" ,1100)
-    
-          // Recursively heapify the affected sub-tree 
-      await    heapify1(len, largest); 
-      } 
-  } 
+    newnode = '<div id="'+count+'" style="transition:1200ms ;left:1250px;top:150px;"  class="dragg" > <div class="treenode" id="'+ count+"treetop" +'" style="margin-left:35px;"></div>  <div class="treenode" id="'+ count+"treeleft" +'" style="margin-left:18px; margin-top:70px;"></div>   <div class="treenode" id="'+ count+"treeright" +'" style="margin-left:54px; margin-top:70px;"></div> <p  style="position:absolute;color:coral; font-size:70%; left:20px;" id="'+ count+"bottom" +'">'+count +'</p>    <p  id="'+ count+"treeval" +'" class="t">'+element+'</p>   </div>';
 
-*/
+
+   $("body").prepend(newnode)
+   $("#"+count).draggable();
+
+   tree[count+"treeleft"] = "null"
+   tree[count+"treeright"] = "null"
+
+   divbyelement[element] = count
+
+   count = count +1;
+   counttreenodes = counttreenodes + 1;
+
+
+ }
+
+
 async function insertheap(value)   {
 
-leaf(value);
+heapleaf(value);
 storedarray[count-1] = value;
 
 await doalign();
