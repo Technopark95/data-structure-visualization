@@ -23,6 +23,48 @@ Copyright 2020 Anoop Singh, Graphical Structure
   var L = [];
   var lcs = []; 
 
+
+  function maketable(X,Y,m,n)   {
+
+
+    $("body").append(`<table id="lcstable" style ="position:absolute; transition:100ms linear; top:135px" ></table>`);
+
+    $("#lcstable").append("<tr>");
+  
+    $("#lcstable").append( `<td class="floyd" id="rwlcs" style="background-color : rgba(255,255,255,0);">  <div id="crwlcsdiv" style="z-index:1; text-align:center;"></div></td>`);
+  
+  
+    for (let u =0 ; u <=n ; u++)  {
+  
+      $("#lcstable").append( `<td class="floyd" id="lcs${(u)}" style="background-color : coral;">  <div id="lcs${(u)}div" style="z-index:1; text-align:center;"> <p id="lcs${(u)}val" style="color:black; text-align:center;position:absolute;left:30px;">${Y.charAt(u-1)}</p></div></td>`);
+  
+    }
+   
+  
+    for (let y = 0 ; y <= m ; y++) {
+  
+      $("#lcstable").append("<tr>");
+   
+      $("#lcstable").append( `<td class="floyd" id="lcsr${(y)}" style="background-color : coral;">  <div id="lcsr${(y)}div" style="z-index:1; text-align:center;"> <p id="lcsr${(y)}val" style="color:black; text-align:center;position:absolute;left:35px;">${X.charAt(y-1)}</p></div></td>`);
+  
+      for (let x = 0 ; x <= n ; x++) {
+  
+          $("#lcstable").append( `<td class="floyd" id="lcs${(y)}-${(x)}">  <div id="lcs${(y)}-${(x)}div" style="z-index:1; text-align:center;"> <p id="lcs${(y)}-${(x)}val" style="color:coral; text-align:center">${"-"}</p>  </div></td>`);
+  
+       
+      }
+  
+   $("#lcstable").append("</tr>");
+  }
+  
+     $("#lcstable").append("</table>");
+      $("#lcstable").draggable();
+         
+  
+
+
+  }
+
 async function LongestCommonSubseq(X="",Y="" )  
 {  
 
@@ -36,41 +78,7 @@ async function LongestCommonSubseq(X="",Y="" )
 
     let i, j;  
 
-    
-  $("body").append(`<table id="lcstable" style ="position:absolute; transition:100ms linear; top:135px" ></table>`);
-
-  $("#lcstable").append("<tr>");
-
-  $("#lcstable").append( `<td class="floyd" id="rwlcs" style="background-color : rgba(255,255,255,0);">  <div id="crwlcsdiv" style="z-index:1; text-align:center;"></div></td>`);
-
-
-  for (let u =0 ; u <=n ; u++)  {
-
-    $("#lcstable").append( `<td class="floyd" id="lcs${(u)}" style="background-color : coral;">  <div id="lcs${(u)}div" style="z-index:1; text-align:center;"> <p id="lcs${(u)}val" style="color:black; text-align:center;position:absolute;left:30px;">${Y.charAt(u-1)}</p></div></td>`);
-
-  }
- 
-
-  for (let y = 0 ; y <= m ; y++) {
-
-    $("#lcstable").append("<tr>");
- 
-    $("#lcstable").append( `<td class="floyd" id="lcsr${(y)}" style="background-color : coral;">  <div id="lcsr${(y)}div" style="z-index:1; text-align:center;"> <p id="lcsr${(y)}val" style="color:black; text-align:center;position:absolute;left:35px;">${X.charAt(y-1)}</p></div></td>`);
-
-    for (let x = 0 ; x <= n ; x++) {
-
-        $("#lcstable").append( `<td class="floyd" id="lcs${(y)}-${(x)}">  <div id="lcs${(y)}-${(x)}div" style="z-index:1; text-align:center;"> <p id="lcs${(y)}-${(x)}val" style="color:coral; text-align:center">${"-"}</p>  </div></td>`);
-
-     
-    }
-
- $("#lcstable").append("</tr>");
-}
-
-   $("#lcstable").append("</table>");
-    $("#lcstable").draggable();
-       
-
+    maketable(X,Y,m,n);
 
 
     for (i = 0; i <= m; i++)  
@@ -157,11 +165,84 @@ await display ("Hilighting the sequence.")
    } 
   
     
-
-
-
-
 }  
   
+
+
+async function LongestCommonSubstr(X="",Y="")  {
+
+  let lengthofLCstr = 0 , row=0 , col=0,resultStr=0;
+
+
+  let m = X.length;
+  let n = Y.length;
+ 
+  for (let f = 0 ; f <= m;f++ )  {
+
+      L.push([])
+  }
+
+  let i, j;  
+
+  maketable(X,Y,m,n);
+
+
+  for (i = 0; i <= m; i++)  
+  {  
+      for (j = 0; j <= n; j++)  
+      {  
+      if (i == 0 || j == 0)  {
+            L[i][j] = 0;  
+              await hilight(`lcs${i}-${j}` , "rgba(109,209,0,1)" , "300ms", 400 )
+            $("#lcs"+`${i}-${j}val`).text("0")
+              await hilight(`lcs${i}-${j}` , defaultcolor , "300ms", 400 )
+      } 
+        
+    
+      else if (X[i - 1] == Y[j - 1])   {
+          L[i][j] = L[i - 1][j - 1] + 1;
+
+          if (lengthofLCstr < L[i][j]) {
+            lengthofLCstr = L[i][j];
+            row = i;
+            col = j;
+        }
+                       hilight(`lcs${i-1}-${j-1}` , "rgba(109,209,0,1)" , "300ms", 400 )
+               await   hilight(`lcs${i}-${j}` , "rgba(255,0,0,1)" , "300ms", 400 )
+          $("#lcs"+`${i}-${j}val`).text(`${L[i][j]}`)
+
+                       hilight(`lcs${i-1}-${j-1}` ,defaultcolor , "300ms", 400 )
+               await   hilight(`lcs${i}-${j}` , defaultcolor , "300ms", 400 )
+
+
+      }  
+    
+      else {
+          L[i][j] = 0; 
+
+          
+               await hilight(`lcs${i}-${j}` , "rgba(255,0,0,1)" , "300ms", 400 )
+
+          $("#lcs"+`${i}-${j}val`).text(`${L[i][j]}`)
+
+            await hilight(`lcs${i}-${j}` , defaultcolor , "300ms", 400 )
+
+      }
+      }  
+  }  
+    
+  await display ("Hilighting the substring.")
+
+
+  while (L[row][col] != 0) {
+    resultStr[--lengthofLCstr] = X[row - 1]; 
+    $(`#lcs${row}-${col}val`).css("color" , "black");
+    await   hilight(`lcs${row}-${col}` , "rgba(109,209,0,1)" , "300ms", 400 );
+    row--;
+    col--;
+}
+
+
+}
 
 //LongestCommonSubseq("XMJYAUZ","MZJAWXU")
