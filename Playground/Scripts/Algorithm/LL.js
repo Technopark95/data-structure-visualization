@@ -75,7 +75,7 @@ function addnode(typed,posi="uni") {
 
 async function prependlist( new_data) 
 { 
-    jQuery("#codetype").attr("disabled", "disabled");
+    
 
     redrawlistevent = setInterval(redrawlist , 50);
 
@@ -109,7 +109,7 @@ async function prependlist( new_data)
     await waitforme (speed+400);
 
    clearInterval(redrawlistevent)
-   jQuery("#codetype").removeAttr("disabled");
+  
 
 } 
 
@@ -320,7 +320,7 @@ await prependlist(val)
 
   async function poplist()
 {
-    jQuery("#codetype").attr("disabled", "disabled");
+    
     redrawlistevent = setInterval(redrawlist , 50);
     $(".dragg").css("transition" , speed+"ms linear");
 if( head_ref == "null")
@@ -339,7 +339,7 @@ $(".dragg").animate({"left":"-=140px"})
 
 await waitforme(speed+400);
 
-jQuery("#codetype").removeAttr("disabled");
+
 
 clearInterval(redrawlistevent)
 
