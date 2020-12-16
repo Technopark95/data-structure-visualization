@@ -431,8 +431,9 @@ await display("Script Loaded.")
 $("#codetype").keypress(async function(e) {
 
   
-
 if (e.which == 13) {
+
+  document.getElementById("codetype").setAttribute("disabled","disabled");
 
   command = $("#codetype").val();
 
@@ -441,6 +442,7 @@ if (e.which == 13) {
   
   await eval(command)
 
+  document.getElementById("codetype").removeAttribute("disabled");
   
   
 }
