@@ -655,7 +655,7 @@ let redrawevent;
  
 async function InsertAVL (h) {
 
-
+  
 
     redrawevent= setInterval(redraw , 50);
 
@@ -674,12 +674,16 @@ async function InsertAVL (h) {
 
     clearInterval(redrawevent)
 
+  
+
 
 }
 
 
 
 async function DeleteAVL (h) {
+
+  
 
   redrawevent= setInterval(redraw , 50);
 
