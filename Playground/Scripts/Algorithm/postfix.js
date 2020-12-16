@@ -204,30 +204,12 @@ function prec( c)
                 st.pop(); 
                 await pout();
 
-             await new Promise(resolve => {
-
- setTimeout(()=> {
-
-    resolve('')
-
- },500)
-
-
-             })
+                await waitforme(speed+100)
 
                ns += c; 
                $(Expressive).append(c)
 
-               await new Promise(resolve => {
-
-                setTimeout(()=> {
-               
-                   resolve('')
-               
-                },500)
-               
-               
-                            })
+               await waitforme(speed+100)
             } 
 
             if(st.top() == '(') 
@@ -237,16 +219,7 @@ function prec( c)
                 st.pop(); 
                 await   pout();
 
-                await new Promise(resolve => {
-
-                    setTimeout(()=> {
-                   
-                       resolve('')
-                   
-                    },500)
-                   
-                   
-                                })
+                await waitforme(speed+100)
             } 
         } 
           
@@ -258,30 +231,12 @@ function prec( c)
                 st.pop(); 
                 await  pout();
 
-                await new Promise(resolve => {
-
-                    setTimeout(()=> {
-                   
-                       resolve('')
-                   
-                    },500)
-                   
-                   
-                                })
+                await waitforme(speed+100)
                 
                 ns += c; 
                 $(Expressive).append(c)
 
-                await new Promise(resolve => {
-
-                    setTimeout(()=> {
-                   
-                       resolve('')
-                   
-                    },500)
-                   
-                   
-                                })
+                await waitforme(speed+100)
             } 
             st.push(s.charAt(i));
             await  pins(s.charAt(i)) 
