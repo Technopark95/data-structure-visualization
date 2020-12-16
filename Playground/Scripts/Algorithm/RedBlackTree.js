@@ -305,7 +305,6 @@ return count;
 { 
 
  
-
    
     if ($("#"+rbroot).length == 0)  {
 
@@ -358,9 +357,6 @@ return count;
    await waitforme (speed+100);
 
     clearInterval(redrawevent)
-
-
-
 
 
 } 
