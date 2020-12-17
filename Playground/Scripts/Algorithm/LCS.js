@@ -245,4 +245,115 @@ async function LongestCommonSubstr(X="",Y="")  {
 
 }
 
+
+
+async function shifting()   {
+
+ let n = document.getElementById('fibnval')
+ let n_1= document.getElementById('fibn1val')
+ let n_2= document.getElementById('fibn2val')
+
+ n.style.transition = speed+"ms linear";
+n_1.style.transition = speed+"ms linear";
+n_2.style.transition = speed+"ms linear";
+
+
+ n_2.style.opacity = "0%";
+
+ await waitforme(speed+50);
+
+ n.style.left = "-78px";
+ n_1.style.left = "-78px";
+
+await waitforme(speed+300);
+
+if (stats == 1  ) await pauser();
+
+n.style.transition = speed+"ms linear";
+n_1.style.transition = "0ms linear";
+n_2.style.transition = "0ms linear";
+
+n.style.left = "0px";
+n_1.style.left = "0px";
+
+n_2.style.opacity = "100%";
+  
+
+
+n_2.innerHTML = n_1.innerHTML;
+n_1.innerHTML = n.innerHTML;
+n.innerHTML =parseInt( n_2.innerHTML)+parseInt(n_1.innerHTML);
+
+
+ hilight(n_1.parentElement.parentElement.id , "red")
+ await  hilight(n_2.parentElement.parentElement.id , "red")
+
+
+ hilight(n_1.parentElement.parentElement.id )
+ await    hilight(n_2.parentElement.parentElement.id )
+
+
+
+}
+
+
+
+
+async function  Fibonacci(N) {
+
+N=N-1;
+
+  $("body").append(`<table id="fibtable" style ="position:absolute; transition:100ms linear; top:135px" ></table>`);
+
+  $("#fibtable").append("<tr style='max-height:60px;'>");
+
+
+
+  $("#fibtable").append( `<td class="floyd" id="fibtop0" style="background-color : coral; ">  <div id="fibtop1div" style=" z-index:1; text-align:center;  max-height:10px;"> <p id="fibtop0val" style="z-index:3;color:black;max-height:5px;">-</p></div></td>`);
+
+    $("#fibtable").append( `<td class="floyd" id="fibtop1" style="background-color : coral;">  <div id="fibtop1div" style="z-index:1; text-align:center;max-height:10px;"> <p id="fibtop1val" style="z-index:3;color:black;max-height:5px;">n-2</p></div></td>`);
+
+    $("#fibtable").append( `<td class="floyd" id="fibtop2" style="background-color : coral;">  <div id="fibtop2div" style="z-index:1; text-align:center;max-height:10px;;"> <p id="fibtop2val" style="z-index:3;color:black;max-height:5px; ">n-1</p></div></td>`);
+
+    $("#fibtable").append( `<td class="floyd" id="fibtop3" style="background-color : coral;">  <div id="fibtop3div" style="z-index:1; text-align:center;max-height:10px;"> <p id="fibtop3val" style="z-index:3;color:black;max-height:5px; ">n</p></div></td>`);
+
+
+
+    $("#fibtable").append("<tr>");
+ 
+    $("#fibtable").append( `<td class="floyd" id="fibr" style="background-color : coral;">  <div id="fibr1div" style="z-index:1; text-align:center;"> <p id="fibr1val" style="color:black;">Fib</p></div></td>`);
+
+ 
+        $("#fibtable").append( `<td class="floyd" id="fibn2" style="overflow-y:visible;">  <div id="fibn2div" style="z-index:3; text-align:center;position:absolute;"> <p id="fibn2val"  style="position:absolute;color:coral;z-index:5; transition:${speed}ms linear;">0</p>  </div></td>`);
+
+        $("#fibtable").append( `<td class="floyd" id="fibn1" style="overflow-y:visible;" >  <div id="fibn1div" style="z-index:3; text-align:center;position:absolute;"> <p id="fibn1val"  style="position:absolute;color:coral;z-index:5;transition:${speed}ms linear; ">1</p>  </div></td>`);
+
+        $("#fibtable").append( `<td class="floyd" id="fibn" style="overflow-y:visible;">  <div id="fibndiv" style="z-index:3; text-align:center;position:absolute;"> <p id="fibnval"  style="position:absolute;color:coral;z-index:5;transition:${speed}ms linear; ">1</p>  </div></td>`);
+
+
+ $("#fibtable").append("</tr>");
+
+
+   $("#fibtable").append("</table>");
+    $("#fibtable").draggable();
+       
+
+document.getElementById('fibn2val').style.top = "0px"
+document.getElementById('fibn1val').style.top = "0px"
+document.getElementById('fibnval').style.top = "0px"
+document.getElementById('fibn2val').style.left = "0px"
+document.getElementById('fibn1val').style.left = "0px"
+document.getElementById('fibnval').style.left = "0px"
+
+
+while(N--) {
+
+ await shifting();
+
+
+}
+
+
+}
+
 //LongestCommonSubseq("XMJYAUZ","MZJAWXU")
