@@ -331,6 +331,8 @@ $(document).on("mouseleave","div.nodeleft" , function (e)  {
     })
 
 
+    /*
+
 
     $("#anislow ").on("mouseenter" , function() {
 
@@ -385,7 +387,7 @@ $(document).on("mouseleave","div.nodeleft" , function (e)  {
   
 
  
-
+*/
 
 
 function translation(r)  {
