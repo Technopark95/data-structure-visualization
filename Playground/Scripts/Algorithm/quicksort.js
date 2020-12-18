@@ -231,6 +231,10 @@ await push('QuickSort( '+ (0) + ' , ' + (length-1) + ' )' )
 await cutoutarray(0,length-1)
 await qs(0 ,length-1)
 
+$("#iindex").text("i").hide()
+$("#jindex").text("j").hide()
+
+
 await normalize()
 
 }
