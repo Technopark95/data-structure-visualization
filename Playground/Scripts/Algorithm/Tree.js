@@ -547,7 +547,7 @@ var heightpernode1=0;
 function calcleftheight( _root)
 {
     // Base case: empty tree has height 0
-    if ($("#"+_root).length ==0)
+    if (document.getElementById(_root) ==null)
         return 0;
  
     // recur for left and right subtree and consider maximum depth
@@ -567,7 +567,7 @@ function calcleftheight( _root)
 function calcrightheight( _root)
 {
     // Base case: empty tree has height 0
-    if ($("#"+_root).length ==0)
+    if (document.getElementById(_root) ==null)
         return 0;
  
     // recur for left and right subtree and consider maximum depth
@@ -601,7 +601,7 @@ async function balancenodes(startnode)   {
   async function insertbst(node_, key_) { 
 
 
-    if ($(`#${node_}`).length == 0)  {
+    if (document.getElementById(node_) ==null)  {
 
       await display("Tree Empty. Adding root node.");
       let vid =count;
