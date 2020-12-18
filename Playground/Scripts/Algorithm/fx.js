@@ -35,7 +35,7 @@ var prev = { }
 var tree = { }
 var parent = {}
 
-//var divbyelement = { }
+var divbyelement = { }
 
 //var variables ={}
 
@@ -61,10 +61,6 @@ var output = $("#out1")
 $('body').append(`<img id="pointerarrow" src="pointer.png" style="height: 70px; width: 70px; position: absolute; top: 135px;transition-duration:500ms;">`)
 var pointerarrow = $("#pointerarrow")
 pointerarrow.hide();
-
-$('#anislow').css({"background-image" : "linear-gradient(to right , #ff512f , #dd2476)"});
-
-
 
 $("#log1").append('<p style="font-size:x-large; margin-top:-5px;  color:rgb(255,0,0, 0.7);font-family:Segoe UI;">'+ "Happenings.." +'</p>')
 
@@ -192,45 +188,6 @@ $(".dragg,.arrayd").css({"background-color" : "rgb(0,0,0,0.842)" , "transition-d
 
 
 
-
-        function set(value , elementid )  {
-
-     
-     variables[value] = elementid;
-
-     head = variables['head']
-
-
-     $("#feed").text("ID "+elementid+ " had set to "+value);
-
-  $("#feed").delay('fast').fadeIn(1000 , function()  {
-
-    $("#feed").delay(4000).fadeOut(1000);
-
-
-  });
-
-
-         }
-
-     
-
-
-
-
-
-
-    function removebyid(getid) {
-
-$("#"+getid).remove();
-
-dragit();
-
-
-    }
-
-
-
     
 class Queue 
 { 
@@ -259,31 +216,6 @@ isEmpty()
 } 
    
 } 
-
-
-
-
-
-
-
-    function dragit ()  {
-
-
-      var tar = $(".dragg ")
-
-      tar.simulate("drag", {
-        dx: 1
-    });
-
-   
-
-    }
-    
-
-
-
- 
-
 
 
 
@@ -334,73 +266,8 @@ $(document).on("mouseleave","div.nodeleft" , function (e)  {
     })
 
 
-    /*
 
 
-    $("#anislow ").on("mouseenter" , function() {
-
-      $("#anislow").css({"left":"250px", "transition-duration" : "300ms"})
-  
-  
-    })
-  
-    $("#anislow").on("mouseleave" , function() {
-  
-      $("#anislow").css({"left":"0px", "transition-duration" : "300ms"})
-  
-  
-    })
-  
-  
-    $("#aniquick ").on("mouseenter" , function() {
-  
-      $("#aniquick").css({"left":"250px", "transition-duration" : "300ms"})
-  
-  
-    })
-  
-    $("#aniquick").on("mouseleave" , function() {
-  
-      $("#aniquick").css({"left":"0px", "transition-duration" : "300ms"})
-  
-  
-    })
-
-
-
-
-    $("#anislow").on("click" , function() {
-
-      $("#anislow").css({"background-image" : "linear-gradient(to right , #ff512f , #dd2476)", "transition-duration" : "300ms"})
-  
-      $("#aniquick").css({"background-image" : "linear-gradient(to right , #000 , #fff)", "transition-duration" : "300ms"})
-  
-      displaysignal = "slow"
-  
-    })
-  
-    $("#aniquick").on("click" , function() {
-  
-      $("#aniquick").css({"background-image" : "linear-gradient(to right, #ff9966, #ff5e62)", "transition-duration" : "300ms"})
-  
-      $("#anislow").css({"background-image" : "linear-gradient(to right , #000 , #fff)", "transition-duration" : "300ms"})
-  
-  displaysignal = "quick"
-    })
-  
-
- 
-*/
-
-
-function translation(r)  {
-
-
-$(`#${r}`).css({"transform":"translate(50px,50px)"});
-
-
-}
-  
 
 function open(link)  {
 
@@ -409,8 +276,6 @@ function open(link)  {
 
 
 }
-
-
 
 
 
@@ -444,18 +309,5 @@ if (e.which == 13) {
 }
 
 })
-
-
-/*
-addnode(123);
-addnode(1);
-addnode(45);
-addnode(34);
-
-nodify("0list" , "1list")
-nodify("1list" , "2list")
-nodify("2list" , "3list")
-*/
-
 
 
