@@ -93,7 +93,7 @@ $("#feed").fadeIn().text(65*(val-1)+20)
     "margin-top" : (65*(val-1)+20)+"px",
     "color" : "white"
     
-    },2000,function() {
+    },speed+400,function() {
    
    resolve('resolved')
   });
@@ -117,7 +117,7 @@ function animpop(elem,val){
       "margin-top" : "-40px",
       "color" : "black"
       
-      },2000,function(){
+      },speed+400,function(){
         $("#kaydeefir").replaceWith('<p id = "kaydeefir" style="margin-top: -40px"></p>');
         resolve("resoved");
       });
