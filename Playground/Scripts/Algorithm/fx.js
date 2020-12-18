@@ -106,7 +106,7 @@ var slider = document.getElementById("animation-speed");
 var slowsymbol = document.getElementById("slowiden");
 var fastsymbol = document.getElementById("fastiden");
 
-speed = 2020- 2000*(slider.value/100);
+speed = 2010- 2000*(slider.value/100);
 
 
 slider.oninput = function() {
