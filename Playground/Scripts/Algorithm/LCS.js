@@ -27,7 +27,7 @@ Copyright 2020 Anoop Singh, Graphical Structure
   function maketable(X,Y,m,n)   {
 
 
-    $("body").append(`<table id="lcstable" style ="position:absolute; transition:100ms linear; top:135px" ></table>`);
+    $("body").append(`<table id="lcstable" style ="position:absolute; transition:100ms linear; top:135px;left:200px;" ></table>`);
 
     $("#lcstable").append("<tr>");
   
@@ -87,6 +87,7 @@ async function LongestCommonSubseq(X="",Y="" )
         {  
         if (i == 0 || j == 0)  {
               L[i][j] = 0;  
+              Log(`if i = 0 or j = 0 then set L[i][j] = 0 `)
                 await hilight(`lcs${i}-${j}` , "rgba(109,209,0,1)" , "300ms", 400 )
               $("#lcs"+`${i}-${j}val`).text("0")
                 await hilight(`lcs${i}-${j}` , defaultcolor , "300ms", 400 )
@@ -95,6 +96,8 @@ async function LongestCommonSubseq(X="",Y="" )
       
         else if (X[i - 1] == Y[j - 1])   {
             L[i][j] = L[i - 1][j - 1] + 1;
+
+            Log(`if s1[${i-1}] = s2[${j-1}] (${X[i - 1]} == ${Y[j - 1]} ) same then  L[i-1][j-1] + 1 -> L[i][j]`)
                          hilight(`lcs${i-1}-${j-1}` , "rgba(109,209,0,1)" , "300ms", 400 )
                  await   hilight(`lcs${i}-${j}` , "rgba(255,0,0,1)" , "300ms", 400 )
             $("#lcs"+`${i}-${j}val`).text(`${L[i][j]}`)
@@ -107,6 +110,8 @@ async function LongestCommonSubseq(X="",Y="" )
       
         else {
             L[i][j] = Math.max(L[i - 1][j], L[i][j - 1]); 
+
+            Log(`Select max from L[i - 1][j] and L[i][j - 1] -> L[i][j]`)
 
               hilight(`lcs${i-1}-${j}` , "purple" , "300ms", 400 )
                  await   hilight(`lcs${i}-${j-1}` , "purple" , "300ms", 400 )
@@ -193,6 +198,7 @@ async function LongestCommonSubstr(X="",Y="")  {
       {  
       if (i == 0 || j == 0)  {
             L[i][j] = 0;  
+            Log("set L[i][j] = 0 ")
               await hilight(`lcs${i}-${j}` , "rgba(109,209,0,1)" , "300ms", 400 )
             $("#lcs"+`${i}-${j}val`).text("0")
               await hilight(`lcs${i}-${j}` , defaultcolor , "300ms", 400 )
@@ -201,6 +207,8 @@ async function LongestCommonSubstr(X="",Y="")  {
     
       else if (X[i - 1] == Y[j - 1])   {
           L[i][j] = L[i - 1][j - 1] + 1;
+
+          Log("Add 1 to diagnol element, L[i-1][j-1] + 1 -> L[i][j]")
 
           if (lengthofLCstr < L[i][j]) {
             lengthofLCstr = L[i][j];
@@ -219,7 +227,8 @@ async function LongestCommonSubstr(X="",Y="")  {
     
       else {
           L[i][j] = 0; 
-
+ 
+          Log("set L[i][j] = 0")
           
                await hilight(`lcs${i}-${j}` , "rgba(255,0,0,1)" , "300ms", 400 )
 
@@ -281,9 +290,12 @@ n_2.style.opacity = "100%";
 
 
 n_2.innerHTML = n_1.innerHTML;
+Log("set Fib[n-2] = Fib[n-1]")
 n_1.innerHTML = n.innerHTML;
+Log("set Fib[n-1] = Fib[n]")
 n.innerHTML =parseInt( n_2.innerHTML)+parseInt(n_1.innerHTML);
-
+Log("set Fib[n] = Fib[n-2] + Fib[n-1]")
+Log(`${ n_2.innerHTML} + ${ n_1.innerHTML} = ${n.innerHTML}`)
 
  hilight(n_1.parentElement.parentElement.id , "red")
  await  hilight(n_2.parentElement.parentElement.id , "red")
@@ -300,16 +312,17 @@ n.innerHTML =parseInt( n_2.innerHTML)+parseInt(n_1.innerHTML);
 
 
 async function  Fibonacci(N) {
-
+  let cN = N;
 N=N-1;
 
-  $("body").append(`<table id="fibtable" style ="position:absolute; transition:100ms linear; top:135px" ></table>`);
+
+  $("body").append(`<table id="fibtable" style ="position:absolute; transition:100ms linear; top:235px;left:40%;" ></table>`);
 
   $("#fibtable").append("<tr style='max-height:60px;'>");
 
 
 
-  $("#fibtable").append( `<td class="floyd" id="fibtop0" style="background-color : coral; ">  <div id="fibtop1div" style=" z-index:1; text-align:center;  max-height:10px;"> <p id="fibtop0val" style="z-index:3;color:black;max-height:5px;">-</p></div></td>`);
+  $("#fibtable").append( `<td class="floyd" id="fibtop0" style="background-color : coral; ">  <div id="fibtop1div" style=" z-index:1; text-align:center;  max-height:10px;"> <p id="fibtop0val" style="z-index:3;color:black;max-height:5px;">Fib</p></div></td>`);
 
     $("#fibtable").append( `<td class="floyd" id="fibtop1" style="background-color : coral;">  <div id="fibtop1div" style="z-index:1; text-align:center;max-height:10px;"> <p id="fibtop1val" style="z-index:3;color:black;max-height:5px;">n-2</p></div></td>`);
 
@@ -321,7 +334,7 @@ N=N-1;
 
     $("#fibtable").append("<tr>");
  
-    $("#fibtable").append( `<td class="floyd" id="fibr" style="background-color : coral;">  <div id="fibr1div" style="z-index:1; text-align:center;"> <p id="fibr1val" style="color:black;">Fib</p></div></td>`);
+    $("#fibtable").append( `<td class="floyd" id="fibr" style="background-color : coral;">  <div id="fibr1div" style="z-index:1; text-align:center;"> <p id="fibr1val" style="color:black;">Data</p></div></td>`);
 
  
         $("#fibtable").append( `<td class="floyd" id="fibn2" style="overflow-y:visible;">  <div id="fibn2div" style="z-index:3; text-align:center;position:absolute;"> <p id="fibn2val"  style="position:absolute;color:coral;z-index:5; transition:${speed}ms linear;">0</p>  </div></td>`);
@@ -346,12 +359,17 @@ document.getElementById('fibn1val').style.left = "0px"
 document.getElementById('fibnval').style.left = "0px"
 
 
+Log(`${document.getElementById('fibn2val').innerHTML} + ${ document.getElementById('fibn1val').innerHTML} = ${document.getElementById('fibnval').innerHTML}`)
+
+
 while(N--) {
 
  await shifting();
 
-
 }
+
+
+Output(`Fib[${cN}] = ${document.getElementById('fibnval').innerHTML}`)
 
 
 }
