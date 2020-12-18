@@ -682,60 +682,44 @@ async function moveright(index)  {
 
   if (stats == 1  ) await pauser();
 
-  return new Promise ( resolve => {
+  let elemp1 = document.getElementById("aitemval"+(index+1));
+  let elem = document.getElementById("aitemval"+(index));
 
-  $("#aitemval"+(index+1)).animate({opacity:"0%"} , speed)
+  elem.style.left = "0px";
 
-  $("#aitemval"+(index)).animate({"margin-left":"90px" , "opacity":"0%" },speed*2 ,function()  {
+await waitforme(50);
 
-      $("#aitemval"+(index+1)).text($("#aitemval"+(index)).text())
+  let elemtext = elem.innerHTML;
+  let elemp1text = elemp1.innerHTML;
 
-      $("#aitemval"+(index+1)).animate({"opacity":"100%"} , speed , function()  {
+  elem.style.transition = speed+"ms linear";
+  elemp1.style.transition = speed+"ms linear";
 
-        $("#aitemval"+(index)).animate({"margin-left":"0px" , "opacity":"0%" })
+  elemp1.style.opacity = "0%";
+  elem.style.left = "94px";
 
-        
-  setTimeout (function()  {
+  await waitforme(speed+100);
 
-    resolve('resolved')
-        },speed+100)
+  elem.style.transition = "0ms";
+  elemp1.style.transition ="0ms";
 
-      })
-
-     
-  })
+  elem.innerHTML = elemp1text;
+  elemp1.innerHTML = elemtext;
 
 
-        
+ elemp1.style.opacity = "100%";
+ elem.style.left = "0px";
+ elem.style.opacity = "0%";
 
-  })
+ await waitforme(50);
+
 
 }
 
 
 var index = length-2
 
-/*
 
-async function insertAt(value ,index , i =length-2) {
-
-  if (stats == 1  ) await pauser();
-
-
-
-  
-setTimeout( function()  {
-
-
-  insertAt(value , index , i-1)
-
-}, 2000);
-
-
-  
-  }
-  
-*/
 
  async function  insertAt (value , index)  {
 
