@@ -77,6 +77,8 @@ var speed =0;
 
 var mySVG = $('body').connect();
 
+var pausebtn = document.getElementById("pa");
+var playbtn = document.getElementById("pl");
 
 
 function waitforme(ms) {
@@ -123,19 +125,23 @@ function pauser ()  {
 
   return new Promise( resolve => {
               
-    $("#pl").click(function() {
-    
-      $("#pa").css('filter' , 'blur(0px)');
-      $("#pl").css('filter' , 'blur(5px)');
-        $("#pl").off("click");
-    
-    
-    stats = 0 ;
-    resolve("reolved");
-    
-    
-    })
-    
+playbtn.addEventListener("click",function()  {
+
+  
+  pausebtn.style.filter = "blur(0px)";
+  playbtn.style.filter = "blur(5px)";
+
+  playbtn.removeEventListener("click",function() {});
+
+
+stats = 0 ;
+resolve("reolved");
+
+
+
+})
+
+ 
     
     
     })
@@ -143,18 +149,15 @@ function pauser ()  {
 
 }
 
-
-$("#pa").click(function()  {
-
+pausebtn.addEventListener("click",function()  {
 
   stats =1;
-  
-  $("#pa").css('filter' , 'blur(5px)');
-  $("#pl").css('filter' , 'blur(0px)');
-  
-  
-  })
 
+  pausebtn.style.filter = "blur(5px)";
+  playbtn.style.filter = "blur(0px)";
+  
+
+})
 
 
 
