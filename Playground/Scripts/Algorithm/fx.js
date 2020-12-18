@@ -20,42 +20,39 @@ Copyright 2020 Anoop Singh, Graphical Structure
 */
 
 var displaysignal="slow";
-
 var top = 0
 var max = 0
 var table = 0
 var elements = []
 var counttreenodes = 0
 var command = ""
-
 var terminate = "no"
 var count =0
-
 var head =""
 var stats= 0;
-var divbyelement = { }
-
 var next = { }
 var prev = { }
-
 var tree = { }
 var parent = {}
 
-var variables ={}
+//var divbyelement = { }
 
-var sequence =[]
+//var variables ={}
 
-var mapping = { "0" : "print(value)" ,  "1" : "preorder(left)" , "2" : "preorder(right)" , "3" : "return"}
+//var sequence =[]
+
+//var mapping = { "0" : "print(value)" ,  "1" : "preorder(left)" , "2" : "preorder(right)" , "3" : "return"}
+//variables['head'] = 0
+//variables['root'] = 0
+
+//var head = variables['head']
+
+//var CurrentNode = variables['root']
 
 var steps = {}
 var newnode;
 var drawflag = false;
-variables['head'] = 0
-variables['root'] = 0
 
-var head = variables['head']
-
-var CurrentNode = variables['root']
 
 var value="";
 var log = $("#log1")
@@ -83,6 +80,19 @@ $("#kindex").hide()
 var speed =0; 
 
 var mySVG = $('body').connect();
+
+
+
+function waitforme(ms) {
+
+  return new Promise( resolve =>  {
+  
+  setTimeout(()=>{ resolve('')},ms)
+  
+  })
+  
+  }
+  
 
 
 function del (one ,two)  {
@@ -152,26 +162,19 @@ $("#pa").click(function()  {
 
 
 
-var defaultcolor = "argb(0,0,0,0.842)";
+var defaultcolor = "rgba(0,0,0,0.842)";
 
 async function hilight (acc , color="rgb(0,0,0,0.842)" , duration = "4000ms" , timeout = 4100) {
 
+  let coloring = document.getElementById(acc);
 
-  $("#"+acc).css({"background-color" : color , "transition" :speed+"ms linear" })
+  coloring.style.backgroundColor = color;
+  coloring.style.transition = speed+"ms linear";
+
   if (stats == 1  ) await pauser();
 
-  
-  return new Promise(resolve => {
-  
+  await waitforme(speed+80);
 
-setTimeout(function()  {
-
-  resolve('')
-
-},speed+80)
-   
-
-})
 
 }
 
@@ -407,15 +410,6 @@ function open(link)  {
 
 }
 
-function waitforme(ms) {
-
-return new Promise( resolve =>  {
-
-setTimeout(()=>{ resolve('')},ms)
-
-})
-
-}
 
 
 
