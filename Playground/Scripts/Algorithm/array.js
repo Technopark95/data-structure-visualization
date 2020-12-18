@@ -330,6 +330,9 @@ async  function SelectionSort() {
         }
         await hilight("aitem"+(isel) , "coral"  ,  "1s" , 1100)
     }
+
+    $("#iindex").text("i").hide()
+    $("#jindex").text("j").hide()
  
 }
 
@@ -407,6 +410,9 @@ async function InsertionSort() {
     await insert(temp ,j1+1 );
   
   }
+
+  $("#iindex").text("i").hide()
+  $("#jindex").text("j").hide()
  
 }
 
