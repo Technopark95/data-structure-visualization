@@ -322,14 +322,14 @@ async function BreadthFirst(startingNode) {
   visited[startingNode] = true; 
   q.enqueue_(startingNode); 
  await qins(startingNode);
- await waitforme(800);
+ await waitforme(speed);
 
   // loop until queue is element 
   while (!q.isEmpty()) { 
       // get the element from the queue 
       var getQueueElement = q.dequeue_(); 
       await qout();
-      await waitforme(800);
+      await waitforme(speed);
 
       // passing the current vertex to callback funtion 
    //   console.log(getQueueElement); 
@@ -350,7 +350,7 @@ async function BreadthFirst(startingNode) {
               visited[neigh] = true; 
               q.enqueue_(neigh);
               await qins(neigh);
-              await waitforme(800); 
+              await waitforme(speed); 
           } 
       } 
   } 
