@@ -133,12 +133,17 @@ async function swapp(vala,valb)  {
   ele2.style.top = "-100px";
 
   await waitforme(speed+30)
+
+  ele1.style.transition = speed+"ms";
+  ele2.style.transition = speed+"ms";
   
    ele1.style.left =  94*(valb-vala)+"px";
    ele2.style.left = -94*(valb-vala)+"px";
 
   await waitforme(speed+30)
 
+  ele1.style.transition = speed+"ms";
+  ele2.style.transition = speed+"ms";
   ele1.style.top ="0px";
   ele1.style.color = "white";
   ele2.style.top ="0px";
