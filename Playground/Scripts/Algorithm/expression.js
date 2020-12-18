@@ -22,17 +22,10 @@ Copyright 2020 Anoop Singh, Graphical Structure
    
    
 var lefthand = 500;
-var tophand = 150;
+
 var expresstionstack = new Stack();
 
 var symboltopointer = {}
-
-let maxdepth = Math.max();
-
-let posarrayleft = [];
-let posarraytop = [];
-
-
 
 async function expressiontree(s) {
 
