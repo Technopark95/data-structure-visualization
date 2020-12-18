@@ -28,7 +28,7 @@ let i = 0
 for (; i < nnodes.length ; ++i) {
 
 
-leaf( nnodes[i])
+heapleaf( nnodes[i])
 
 }
 
