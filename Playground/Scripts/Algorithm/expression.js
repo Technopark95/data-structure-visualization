@@ -21,6 +21,8 @@ Copyright 2020 Anoop Singh, Graphical Structure
    
    
    
+var lefthand = 500;
+var tophand = 150;
 var expresstionstack = new Stack();
 
 var symboltopointer = {}
@@ -30,79 +32,13 @@ let maxdepth = Math.max();
 let posarrayleft = [];
 let posarraytop = [];
 
-function getDepth(node, depth)
-{
-    if (node != "null")
-    {
-       // node.depth = depth;
-       
-        if (maxdepth < depth) {
-
-         maxdepth = depth;
-        }
-        getDepth(tree[`${node}treeleft`], depth + 1); // left sub-tree
-        getDepth(tree[`${node}treeright`], depth + 1); // right sub-tree
-    }
-
-  
-}
-
-
-
-function updateDepth(node, depth)
-{
-    if (node != "null")
-    {
-       // node.depth = depth;
-       
-        $(`#${node}height`).text((maxdepth-depth));
-
-        updateDepth(tree[`${node}treeleft`], depth + 1); // left sub-tree
-        updateDepth(tree[`${node}treeright`], depth + 1); // right sub-tree
-    }
-
-  
-}
-
-
-
-function ggg (nod) {
-
-
- let parentheight  =  height(nod);
- let leftchild = tree[`${nod}treeleft`];
- let rightchild = tree[`${nod}treeright`];
-
- 
- let heightleftchild = height(leftchild);
- let heightrightchild = height(rightchild);
-
- let nodeoffset = $(`#${nod}`).offset();
-
-
- $(`#${leftchild}`).offset({ top: nodeoffset.top+130  , left : nodeoffset.left - ((heightleftchild + parentheight)*50) })
- $(`#${rightchild}`).offset({ top: nodeoffset.top+130  , left : nodeoffset.left  + ((heightrightchild + parentheight)*50) })
-
-
-}
-
-function alignexpressontree(nod)   {
-
-if (nod == "null") {
-
- return;
-}
-
- ggg(nod);
- alignexpressontree(tree[`${nod}treeleft`]); // left sub-tree
- alignexpressontree(tree[`${nod}treeright`]); // right sub-tree
-
-
-}
 
 
 async function expressiontree(s) {
 
+    redrawevent = setInterval(redraw,50)
+
+  
  var st = new Stack()
  st.push('N'); 
  
@@ -187,17 +123,20 @@ async function expressiontree(s) {
 
      symboltopointer[PostFixed.charAt(i)] = i;
      avl(PostFixed.charAt(i));
-     $("#"+i).offset({top : 5000+120 , left:2000})
+     $("#"+i).offset({top : 140 , left:400})
 
 
 
 
  }
 
+ $(".dragg").css({"top":"0px" , "left":"0px","transition":speed+'ms linear'})
+
+ await waitforme(50);
 
 
-$(document).scrollTop(5000);
-$(document).scrollLeft(1600);
+$(document).scrollTop(0);
+$(document).scrollLeft(0);
 
 let pos=0;
 
@@ -208,8 +147,6 @@ let copyy = [];
 
 
 for (let i = 0 ; i < PostFixed.length ; ++i)  {
-
-
 
  if ((PostFixed.charAt(i) >= 'a' && PostFixed.charAt(i) <= 'z')||(PostFixed.charAt(i) >= 'A' && PostFixed.charAt(i) <= 'Z')) {
 
@@ -235,10 +172,24 @@ for (let i = 0 ; i < PostFixed.length ; ++i)  {
 let oper =  i;
 
 
+
 treefy(`${oper}treeleft`  ,  leftelement );
 treefy(`${oper}treeright` , rightelement );
 
-    expresstionstack.push(oper);
+AVLpostleft[oper] = lefthand;
+AVLposttop[oper] = 150;
+
+
+$("#"+oper).offset({left:lefthand , top:"150"})
+
+lefthand = lefthand + 50;
+
+calcheight(oper)
+BalanceAll(oper)
+
+await waitforme(speed+50);
+
+expresstionstack.push(oper);
 
 
 
@@ -251,20 +202,7 @@ treefy(`${oper}treeright` , rightelement );
 
 }
 
-let topnode =  expresstionstack.top();
-
-$("#"+topnode).offset({left:2300})
-getDepth(topnode , 0);
-
-updateDepth(topnode,0);
-
-
-for (let uu = 0 ; uu <= maxdepth ; ++uu) {
-alignexpressontree(topnode);
-
-await waitforme(500);
-}
-
+clearInterval(redrawevent)
 
 mySVG.redrawLines();
 
