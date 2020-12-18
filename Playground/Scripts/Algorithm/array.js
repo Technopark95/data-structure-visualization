@@ -158,7 +158,6 @@ await waitforme(speed+50)
 }
 
 
-array([34,21,5,1,23,10,4])
 
 
 
