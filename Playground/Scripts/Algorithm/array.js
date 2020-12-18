@@ -97,9 +97,73 @@ $("#"+tableid).append(`<td id="${cellid}item${i}" class="arrayd" style="text-ali
 }
 
 
+async function swapp(vala,valb)  {
+
+  if (vala > valb) {
+
+    [vala ,valb] = [valb,vala]
+
+  }
+
+  document.getElementById("aitemval"+vala).style.top = "0px"
+  document.getElementById("aitemval"+vala).style.left = "0px"
+  document.getElementById("aitemval"+valb).style.top = "0px"
+document.getElementById("aitemval"+valb).style.left = "0px"
+ await waitforme(100)
+
+  let ele1 ,ele2;
+
+  ele1 = document.getElementById("aitemval"+vala);
+  ele2 = document.getElementById("aitemval"+valb);
+
+  let text1 = ele1.innerHTML;
+  let text2 = ele2.innerHTML;
+
+  ele1.style.transition = speed+"ms";
+  ele2.style.transition = speed+"ms";
+
+  ele1.style.color = "black";
+  ele1.style.top = "100px";
+  ele2.style.color = "black";
+  ele2.style.top = "-100px";
+
+  await waitforme(speed+30)
+  
+   ele1.style.left =  94*(valb-vala)+"px";
+   ele2.style.left = -94*(valb-vala)+"px";
+
+  await waitforme(speed+30)
+
+  ele1.style.top ="0px";
+  ele1.style.color = "white";
+  ele2.style.top ="0px";
+  ele2.style.color = "white";
+  
+  await waitforme(speed+30)
+
+  ele1.style.transition = "0ms";
+  ele2.style.transition = "0ms";
+
+  ele1.style.top = "0px";
+  ele1.style.left = "0px";
+  ele2.style.top = "0px";
+  ele2.style.left = "0px";
+
+  ele2.innerHTML = text1
+  ele1.innerHTML = text2
 
 
- async function swapp( vala,valb) {
+await waitforme(speed+50)
+
+}
+
+
+array([34,21,5,1,23,10,4])
+
+
+
+
+ async function old_swapp( vala,valb) {
 
 
     if (stats == 1  ) await pauser();
