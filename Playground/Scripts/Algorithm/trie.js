@@ -92,7 +92,7 @@ function trienode(label ,ID)  {
 if (triecounter == -1 )   {
 
 
-let trienn = `<div id=trieroot class="trie"> <p id=trierootname class="trie-label">#</p></div>`;
+let trienn = `<div id=trieroot class="trie" style="top:0px;left:400px;"> <p id=trierootname class="trie-label">#</p></div>`;
 
 $("body").prepend(trienn);
 
@@ -235,6 +235,8 @@ leftcord=200*storedindex+1;
   
   }
 
+  if(document.getElementById("trieroot") !=null)
+  await waitforme(speed+10)
 
   
     let current = "trieroot"; 
@@ -256,11 +258,12 @@ leftcord=200*storedindex+1;
 
             $("#"+next).css({"left":200+(50*storedindex) , "top" : (70*topcord) })
 
-          
             document.getElementById(next).classList.add(key+"-"+substr)
- 
 
             triefy(current , next);
+            await waitforme(speed+100);
+    
+
 
         }
   
