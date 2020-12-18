@@ -250,45 +250,23 @@ data = {"0":{"top":138,"left":643},"1":{"top":247,"left":326},"2":{"top":247,"le
   var posar = {}
   
 
-  function alignanimate(d , duration_ , timeout_)  {
-  
-  
-      var tt = data[d]["top"];
-      var ll = data[d]["left"];
-  
-  var ff = $("#"+d)
-  
-      ff.css({"transition-duration" : speed+"ms" , "left" :"0px" ,"top" :"0px"})
-  
-      ff.offset({top:tt , left :ll})
-      
-  
-  
-  return new Promise (resolve => {
-  
-    
-      
-      setTimeout(function() {
-        
-  resolve('resolved')
-      },0)
-  
-  
-  
-  
-  })
-  
-  }
-  
-  
-   async function doalign(duration_="3000ms" , timeout_=200)  {
+async function doalign(duration_="3000ms" , timeout_=200)  {
   
     
   for ( var d=0 ; d < counttreenodes ; d++ ) {
   
-     
-  
-    await   alignanimate(d , duration_ , timeout_);
+
+    let tt = data[d]["top"];
+    let ll = data[d]["left"];
+
+     let ff = document.getElementById(d);
+     ff.style.position= "absolute";
+     ff.style.transitionDuration= speed+"ms";
+     ff.style.top=(tt-138)+"px";
+     ff.style.left=ll+"px";
+
+
+    
   }
   
   
