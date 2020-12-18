@@ -211,10 +211,10 @@ data = {"0":{"top":138,"left":643},"1":{"top":247,"left":326},"2":{"top":247,"le
   // main function to do heap sort 
   async function HeapSort() 
   { 
-     await arraynodes()
-      await doalign("2000ms",0)
-      await waitforme(2000);
-     await build()
+      arraynodes()
+      await doalign()
+      await waitforme(speed+50);
+      build()
       // Build heap (rearrange array) 
       await display('Building Heap')
       for (var ind = length / 2 - 1; ind >= 0; ind--) 
@@ -252,6 +252,8 @@ data = {"0":{"top":138,"left":643},"1":{"top":247,"left":326},"2":{"top":247,"le
 
 async function doalign(duration_="3000ms" , timeout_=200)  {
   
+    $(".dragg").css({"top":"0px" , "left" :"0px", "transition": speed+'ms linear'})
+    await waitforme(30);
     
   for ( var d=0 ; d < counttreenodes ; d++ ) {
   
@@ -260,8 +262,6 @@ async function doalign(duration_="3000ms" , timeout_=200)  {
     let ll = data[d]["left"];
 
      let ff = document.getElementById(d);
-     ff.style.position= "absolute";
-     ff.style.transitionDuration= speed+"ms";
      ff.style.top=(tt-138)+"px";
      ff.style.left=ll+"px";
 
@@ -269,8 +269,8 @@ async function doalign(duration_="3000ms" , timeout_=200)  {
     
   }
   
-  
-  
+ 
   
   
   }
+
