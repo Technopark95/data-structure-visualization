@@ -31,6 +31,7 @@ var outputscreen = document.getElementById("out1");
 
 function K( _k,  cellid )  {
 
+    document.getElementById("kindex").style.transition = speed+"ms linear";
 
     return new Promise (resolve => {
     
@@ -47,7 +48,7 @@ function K( _k,  cellid )  {
       
       resolve('')
       
-      },400)
+      },speed)
       
       
       })
@@ -56,6 +57,9 @@ function K( _k,  cellid )  {
 }
 
 function I(_i , cellid="l" ) {
+
+    document.getElementById("iindex").style.transition = speed+"ms linear";
+
 
     return new Promise (resolve => {
     
@@ -67,7 +71,7 @@ function I(_i , cellid="l" ) {
     
     resolve('')
     
-    },400)
+    },speed)
     
     
     })
@@ -77,6 +81,9 @@ function I(_i , cellid="l" ) {
 
 
 function J(_j , cellid="r" ) {
+
+
+    document.getElementById("jindex").style.transition = speed+"ms linear";
 
     return new Promise (resolve => {
     
@@ -88,7 +95,7 @@ function J(_j , cellid="r" ) {
     
     resolve('')
     
-    },400)
+    },speed)
     
     
     })
@@ -100,6 +107,10 @@ function J(_j , cellid="r" ) {
 
 
 function ij(_i ,_j  , cellid="a" , cellid1 = "a") {
+
+
+    document.getElementById("iindex").style.transition = speed+"ms linear";
+    document.getElementById("jindex").style.transition = speed+"ms linear";
 
     return new Promise (resolve => {
     
@@ -116,7 +127,7 @@ function ij(_i ,_j  , cellid="a" , cellid1 = "a") {
     
     resolve('')
     
-    },400)
+    },speed)
     
     
     })
