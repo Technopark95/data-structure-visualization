@@ -252,8 +252,8 @@ data = {"0":{"top":138,"left":643},"1":{"top":247,"left":326},"2":{"top":247,"le
 
 async function doalign(duration_="3000ms" , timeout_=200)  {
   
-    $(".dragg").css({"top":"0px" , "left" :"0px", "transition": speed+'ms linear'})
-    await waitforme(30);
+    
+
     
   for ( var d=0 ; d < counttreenodes ; d++ ) {
   
