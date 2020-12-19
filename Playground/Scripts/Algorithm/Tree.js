@@ -606,8 +606,8 @@ async function balancenodes(startnode)   {
       await display("Tree Empty. Adding root node.");
       let vid =count;
        leaf(key_); 
-       $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : "2000ms linear"})
-       $(`#${vid}`).animate({ "top" : "0px", "left" : "1900px"})
+     //  $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : "2000ms linear"})
+       $(`#${vid}`).css({ "top" : "0px", "left" : "1900px"})
 
        $(document).scrollLeft(1200)
        $(document).scrollTop(0)
@@ -630,7 +630,7 @@ async function balancenodes(startnode)   {
               await display("Correct place to insert the element = CurrentNode->left")
         let vid = count;
         leaf(key_);
-     $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : speed+"ms linear"})
+     $(`#${vid}`).css({ "transition" : speed+"ms linear"})
      $(`#${vid}`).offset({top: ($("#"+node_).offset().top+90 ) , left :($("#"+node_).offset().left-60) })
 
 
@@ -669,7 +669,7 @@ async function balancenodes(startnode)   {
         leaf(key_);
 
 
-        $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : speed+"ms linear"})
+        $(`#${vid}`).css({ "transition" : speed+"ms linear"})
         $(`#${vid}`).offset({top: ($("#"+node_).offset().top+90 ) , left :($("#"+node_).offset().left+60) })
 
 
