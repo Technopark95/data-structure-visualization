@@ -302,7 +302,7 @@ codehere.addEventListener("keypress" , async function(e)  {
   
     command = codehere.value;
 
-    document.getElementById("log1").appendChild("beforeend",'<p style="font-size:large;  color:rgb(255,0,0, 0.7);font-family:Segoe UI;">'+command+'</p>')
+    document.getElementById("log1").insertAdjacentHTML("beforeend",'<p style="font-size:large;  color:rgb(255,0,0, 0.7);font-family:Segoe UI;">'+command+'</p>')
 
     logscreen.scrollTop = logscreen.scrollHeight;
     
