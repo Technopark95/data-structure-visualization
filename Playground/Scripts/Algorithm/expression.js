@@ -132,8 +132,7 @@ async function expressiontree(s) {
 
 
  }
- await waitforme(speed);
-
+ 
 
  $(".dragg").css({"top":"0px" , "left":"0px","transition":speed+'ms linear'})
  await waitforme(50);
