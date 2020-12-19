@@ -213,7 +213,7 @@ async function insertavl(node_, key_) {
               await display("Correct place to insert the element = CurrentNode->left")
         let vid = count;
       await  avl(key_);
-     $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : speed+"ms linear"})
+     $(`#${vid}`).css({ "transition" : speed+"ms linear"})
      $(`#${vid}`).offset({top: ($("#"+node_).offset().top+90 ) , left :($("#"+node_).offset().left-40) })
 
 
@@ -253,7 +253,7 @@ async function insertavl(node_, key_) {
         avl(key_);
 
 
-        $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : speed+"ms linear"})
+        $(`#${vid}`).css({ "transition" : speed+"ms linear"})
         $(`#${vid}`).offset({top: ($("#"+node_).offset().top+90 ) , left :($("#"+node_).offset().left+40) })
 
 
