@@ -271,8 +271,8 @@ n_2.style.transition = speed+"ms linear";
 
  await waitforme(speed+50);
 
- n.style.left = "-78px";
- n_1.style.left = "-78px";
+ n.style.left = "-77px";
+ n_1.style.left = "-77px";
 
 await waitforme(speed+300);
 
@@ -337,11 +337,11 @@ N=N-1;
     $("#fibtable").append( `<td class="floyd" id="fibr" style="background-color : coral;">  <div id="fibr1div" style="z-index:1; text-align:center;"> <p id="fibr1val" style="color:black;">Data</p></div></td>`);
 
  
-        $("#fibtable").append( `<td class="floyd" id="fibn2" style="overflow-y:visible;">  <div id="fibn2div" style="z-index:3; text-align:center;position:absolute;"> <p id="fibn2val"  style="position:absolute;color:coral;z-index:5; transition:${speed}ms linear;">0</p>  </div></td>`);
+        $("#fibtable").append( `<td class="floyd" id="fibn2" style="overflow-y:visible;">  <div id="fibn2div" style="z-index:3; text-align:center;position:absolute;"> <p id="fibn2val"  style="position:absolute;color:coral;z-index:5;top:0;left:0; transition:${speed}ms linear;">0</p>  </div></td>`);
 
-        $("#fibtable").append( `<td class="floyd" id="fibn1" style="overflow-y:visible;" >  <div id="fibn1div" style="z-index:3; text-align:center;position:absolute;"> <p id="fibn1val"  style="position:absolute;color:coral;z-index:5;transition:${speed}ms linear; ">1</p>  </div></td>`);
+        $("#fibtable").append( `<td class="floyd" id="fibn1" style="overflow-y:visible;" >  <div id="fibn1div" style="z-index:3; text-align:center;position:absolute;"> <p id="fibn1val"  style="position:absolute;color:coral;z-index:5;top:0;left:0;transition:${speed}ms linear; ">1</p>  </div></td>`);
 
-        $("#fibtable").append( `<td class="floyd" id="fibn" style="overflow-y:visible;">  <div id="fibndiv" style="z-index:3; text-align:center;position:absolute;"> <p id="fibnval"  style="position:absolute;color:coral;z-index:5;transition:${speed}ms linear; ">1</p>  </div></td>`);
+        $("#fibtable").append( `<td class="floyd" id="fibn" style="overflow-y:visible;">  <div id="fibndiv" style="z-index:3; text-align:center;position:absolute;"> <p id="fibnval"  style="position:absolute;color:coral;z-index:5;top:0;left:0;transition:${speed}ms linear; ">1</p>  </div></td>`);
 
 
  $("#fibtable").append("</tr>");
@@ -350,14 +350,6 @@ N=N-1;
    $("#fibtable").append("</table>");
     $("#fibtable").draggable();
        
-
-document.getElementById('fibn2val').style.top = "0px"
-document.getElementById('fibn1val').style.top = "0px"
-document.getElementById('fibnval').style.top = "0px"
-document.getElementById('fibn2val').style.left = "0px"
-document.getElementById('fibn1val').style.left = "0px"
-document.getElementById('fibnval').style.left = "0px"
-
 
 Log(`${document.getElementById('fibn2val').innerHTML} + ${ document.getElementById('fibn1val').innerHTML} = ${document.getElementById('fibnval').innerHTML}`)
 
