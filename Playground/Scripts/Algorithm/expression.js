@@ -115,28 +115,37 @@ async function expressiontree(s) {
  for (let i =0 ; i < PostFixed.length ; ++i)   {
 
      symboltopointer[PostFixed.charAt(i)] = i;
-     avl(PostFixed.charAt(i));
-     $("#"+i).offset({top : 140 , left:400})
+  
 
+     newnode = '<div id="'+count+'" style="transition:200ms;transform:scale(.8,.8);left:0px;top:0px;"  class="dragg" > <div class="treenode" id="'+ count+"treetop" +'" style="margin-left:35px;"></div>  <div class="treenode" id="'+ count+"treeleft" +'" style="margin-left:18px; margin-top:70px;"></div>   <div class="treenode" id="'+ count+"treeright" +'" style="margin-left:54px; margin-top:70px;"></div> <p  style="position:absolute;color:coral; font-size:70%; left:20px;" id="'+ count+"bottom" +'">'+count +'</p>   <div style="position:absolute; text-align:center; top:65px; left:38px;height:1px; width:20px;"><p  style="color:white;margin-top:-2px;margin-left:-15px; font-size:50%; " id="'+ count+"height" +'">'+"1" +'</p></div>   <p  id="'+ count+"treeval" +'" class="t">'+PostFixed.charAt(i)+'</p>   </div>';
+
+
+     $("body").prepend(newnode)
+     $("#"+count).draggable();
+  
+     tree[count+"treeleft"] = "null"
+     tree[count+"treeright"] = "null"
+  
+     divbyelement[element] = count
+  
+     count = count +1;
+     counttreenodes = counttreenodes + 1;
+  
 
 
 
  }
+ await waitforme(speed);
+
 
  $(".dragg").css({"top":"0px" , "left":"0px","transition":speed+'ms linear'})
-
  await waitforme(50);
+
 
 
 $(document).scrollTop(0);
 $(document).scrollLeft(0);
 
-let pos=0;
-
-let felementh = 5000+screen.height-400;
-let felementw = 2000;
-
-let copyy = [];
 
 
 for (let i = 0 ; i < PostFixed.length ; ++i)  {
