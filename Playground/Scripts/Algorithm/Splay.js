@@ -242,7 +242,7 @@ async function Splayi( k)
     if ($("#"+newroot).length ==0)  {
         
        newroot = splaynode(k)-1; 
-       $("#"+newroot).css({"left":"1900px"})
+       $("#"+newroot).css({"left":"1900px",top:"0px",transition:speed+"ms linear"})
        $(document).scrollLeft(1200)
        $(document).scrollTop(0)
        return newroot;
@@ -334,7 +334,7 @@ async function Splayinsert (key)  {
 
     await balancenodes(newroot);
 
-   await waitforme (3000);
+   await waitforme (speed+100);
 
     clearInterval(redrawevent)
 
