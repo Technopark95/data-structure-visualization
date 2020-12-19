@@ -19,160 +19,180 @@ Copyright 2020 Anoop Singh, Graphical Structure
 
 */
 
+var infotabelement = document.getElementById("infotab");
+var commandlistelement = document.getElementById("listofcommand");
 
-
-//$(".autohide").hide();
 
 var infoclick = 0;
 
-$(".autohide").hide();
 
-$("#infotab").on("mouseenter" , function() {
+let x = document.getElementsByClassName("autohide");
+let ie;
+for (ie = 0; ie < x.length; ie++) {
+  x[ie].style.display = "none";
+}
 
-    $("#infos").css({"left":"250px", "transition-duration" : "300ms"})
 
+
+function leaveinfotab ()  {
+  document.getElementById("infos").style.transition = "300ms";
+  document.getElementById("infos").style.left = "0px";
+  
+}
+
+infotabelement.addEventListener("mouseenter" , () => {
+
+    document.getElementById("infos").style.transition = "300ms";
+    document.getElementById("infos").style.left = "250px";
 
   })
 
 
-  $("#infotab").on("mouseleave" , function() {
 
-    $("#infos").css({"left":"0px", "transition-duration" : "300ms"})
-
-
-  })
+ infotabelement.addEventListener("mouseleave" , leaveinfotab)
 
 
 
 
+  commandlistelement.style.display = "none";
 
-  $("#listofcommand").hide();
-
-  $("#infotab").on("click" , function() {
-
-
+  infotabelement.addEventListener("click" , () => {
 
     if (infoclick == 0 ) {
     
-    let codebox = $("#codetype").position();
+      let codebox = document.getElementById("codetype").style.top;
+  
+      infotabelement.style.top = parseInt(codebox+140)+"px";
 
-    $("#infotab").css({top:codebox.top+140})
-    $("#infotab").off("mouseleave")
-    $("#listofcommand").show();
-    setTimeout(()=> {
+      infotabelement.removeEventListener("mouseleave",leaveinfotab)
 
-$("#listofcommand").css({"opacity" : "100%","z-index" : "5" , transition : "300ms"} )
+      commandlistelement.style.display = "";
 
-    },100)
-    
+      setTimeout(()=> {
+  
+  commandlistelement.style.transition= "300ms";
+  commandlistelement.style.opacity= "100%";
+  commandlistelement.style.zIndex= "5";
+  
+      },100)
+      
+  
+      
+      infoclick = 1;
+  
+    }
 
-    
-    infoclick = 1;
 
+
+    else {
+
+
+
+      infotabelement.addEventListener("mouseleave", leaveinfotab)
+
+  commandlistelement.style.transition= "300ms";
+  commandlistelement.style.opacity= "0%";
+  commandlistelement.style.zIndex= "0";
+
+  
+
+      setTimeout(()=> {
+        infotabelement.style.top = "40%";
+        commandlistelement.style.display = "none"
+
+      },100)
+  
+  
+
+  
+      infoclick = 0;
+  
+      
+  
+    }
+
+
+
+
+
+
+  })
+
+
+
+
+function clickondatastructure (e)   {
+
+  let dsname = e.target.id+ "data";
+
+  let dsnameelement = document.getElementById(dsname);
+
+  if (dsnameelement.style.display == "none")  {
+    dsnameelement.style.display = "";
   }
 
   else {
 
-
-
-    $("#infotab").on("mouseleave" , function() {
-
-      $("#infos").css({"left":"0px", "transition-duration" : "300ms"})
-  
-    })
-
-    $("#listofcommand").css({"opacity" : "0%","z-index" : "0" , transition : "300ms"} )
-
-    setTimeout(()=> {
-      $("#infotab").css({top:"40%"});
-      $("#listofcommand").hide();
-    },100)
-
-
-
-    infoclick = 0;
-
-
+    dsnameelement.style.display = "none";
   }
 
 
-  })
+}
+
+let x11 = document.getElementsByClassName("acchead");
+
+for (ie = 0; ie < x11.length; ie++) {
+
+  x11[ie].addEventListener("click" , clickondatastructure)
 
 
-  $(document).on("click" , "p.acchead" , function(e) {
-
-
-    let dsname = "#"+e.target.id+ "data";
-
-  
-    if ($(dsname).is(":hidden") == true)  {
-
-      $(dsname).show();
-
-
-    }
-
-    else {
-
-      $(dsname).hide();
-
-    }
+}
 
 
 
+ x11 = document.getElementsByClassName("commandcopy");
 
-  })
+for (ie = 0; ie < x11.length; ie++) {
 
+  x11[ie].addEventListener("mouseenter" , (e)=> {
 
- async function movett(r,a,b){
-   
-  $("#"+r).css({"top":`${a}px` , left : `${b}px` ,"transition-duration" : "300ms"})
-
-
-await new Promise(resolve => {
-setTimeout(()=> {
-
- mySVG.redrawLines();
- resolve('')
-
-},350)
-  
-})
-   
-    
-
-  }
-
-
-
-
-  $(".commandcopy").mouseenter(function(e)  {
-
-$(e.target).css({ "font-size" : "130%" , "transition" : "300ms"})
-
-
+(e.target).style.transition = '300ms';
+(e.target).style.fontSize = '130%';
 
 
   })
 
 
-  $(".commandcopy").mouseleave(function(e)  {
-
-    $(e.target).css({"border" : "none" , "font-size" : "100%"})
-    
-    
-    
-    
-      })
+}
 
 
- $(".commandcopy").click(function(e)  {
+for (ie = 0; ie < x11.length; ie++) {
 
-  let com = $(e.target).text();
+  x11[ie].addEventListener("mouseleave" , (e)=> {
 
- 
-  $("#codetype").val(com);
-        
-        
+(e.target).style.border = 'none';
+(e.target).style.fontSize = '100%';
+
+
   })
-    
+
+
+}
+
+
+
+
+for (ie = 0; ie < x11.length; ie++) {
+
+  x11[ie].addEventListener("click" , (e)=> {
+
+    let com =  (e.target).innerHTML;
+
+    document.getElementById("codetype").value= com;
+
+
+  })
+
+
+}
+
