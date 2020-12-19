@@ -109,8 +109,6 @@ async function expressiontree(s) {
 
  let PostFixed = ns;
 
- Log(PostFixed)
-
 
  for (let i =0 ; i < PostFixed.length ; ++i)   {
 
@@ -173,7 +171,7 @@ for (let i = 0 ; i < PostFixed.length ; ++i)  {
   
 let oper =  i;
 
-
+if (stats == 1  ) await pauser();
 
 treefy(`${oper}treeleft`  ,  leftelement );
 treefy(`${oper}treeright` , rightelement );
@@ -207,6 +205,10 @@ expresstionstack.push(oper);
 clearInterval(redrawevent)
 
 mySVG.redrawLines();
+
+
+Log(PostFixed)
+
 
 }
 
