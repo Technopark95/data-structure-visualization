@@ -76,7 +76,7 @@ $("#kindex").hide()
 var speed =0; 
 
 var mySVG = $('body').connect();
-
+var playbuttonclick;
 var pausebtn = document.getElementById("pa");
 var playbtn = document.getElementById("pl");
 
@@ -126,7 +126,7 @@ function pauser ()  {
   return new Promise( resolve => {
 
 
-   let playbuttonclick = function  ()   {
+    playbuttonclick  = function  ()   {
 
       pausebtn.style.filter = "blur(0px)";
       playbtn.style.filter = "blur(5px)";
@@ -137,7 +137,7 @@ function pauser ()  {
     resolve("reolved");
     
     }
-    
+
               
 playbtn.addEventListener("click",playbuttonclick)
 
@@ -291,25 +291,31 @@ await display("Script Loaded.")
 }
 
 
-$("#codetype").keypress(async function(e) {
+var codehere = document.getElementById("codetype") ;
+
+codehere.addEventListener("keypress" , async function(e)  {
 
   
-if (e.which == 13) {
+  if (e.which == 13) {
 
-  document.getElementById("codetype").setAttribute("disabled","disabled");
-
-  command = $("#codetype").val();
-
-  $("#log1").append('<p style="font-size:large;  color:rgb(255,0,0, 0.7);font-family:Segoe UI;">'+command+'</p>')
-  logscreen.scrollTop = logscreen.scrollHeight;
+    codehere.setAttribute("disabled","disabled");
   
-  await eval(command)
+    command = codehere.value;
 
-  document.getElementById("codetype").removeAttribute("disabled");
+    document.getElementById("log1").appendChild("beforeend",'<p style="font-size:large;  color:rgb(255,0,0, 0.7);font-family:Segoe UI;">'+command+'</p>')
+
+    logscreen.scrollTop = logscreen.scrollHeight;
+    
+    await eval(command)
   
-  
-}
+    codehere.removeAttribute("disabled");
+    
+    
+  }
+
+
 
 })
+
 
 
