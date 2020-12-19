@@ -76,7 +76,7 @@ $("#kindex").hide()
 var speed =0; 
 
 var mySVG = $('body').connect();
-var playbuttonclick;
+
 var pausebtn = document.getElementById("pa");
 var playbtn = document.getElementById("pl");
 
@@ -126,7 +126,7 @@ function pauser ()  {
   return new Promise( resolve => {
 
 
-    playbuttonclick  = function  ()   {
+    let playbuttonclick  = function  ()   {
 
       pausebtn.style.filter = "blur(0px)";
       playbtn.style.filter = "blur(5px)";
