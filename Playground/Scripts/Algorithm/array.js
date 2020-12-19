@@ -48,7 +48,7 @@ function array (typed)  {
   
     for (var i = 0 ; i < typed.length ; ++i)  {
 
-      var r =typed[i]
+      let r =typed[i]
   
   $("#t1").append(' <td id="aitem'+ i+'" class="arrayd" style="text-align:center; min-width:70px;">     <div id="aitemdiv'+ i+'"  style="text-align:center; position:absolute; z-index:1">         <p id="aitemindex'+i +'" style="position:absolute; color:coral; margin-top:67px; margin-left:35px; font-size:37%";>'+i+'</p>             <p id= "aitemval'+i +'" class="arrayitem">'+ r +'</p>                        </div>  </td>')
   storedarray.push(r)
@@ -115,13 +115,6 @@ async function swapp(vala,valb)  {
   ele2 = document.getElementById("aitemval"+valb);
   let text1 = ele1.innerHTML;
   let text2 = ele2.innerHTML;
-
-  ele1.style.top = "0px"
-  ele1.style.left = "0px"
-  ele2.style.top = "0px"
-  ele2.style.left = "0px"
- await waitforme(100)
-
 
 
   ele1.style.transition = speed+"ms";
@@ -684,10 +677,6 @@ async function moveright(index)  {
 
   let elemp1 = document.getElementById("aitemval"+(index+1));
   let elem = document.getElementById("aitemval"+(index));
-
-  elem.style.left = "0px";
-
-await waitforme(50);
 
   let elemtext = elem.innerHTML;
   let elemp1text = elemp1.innerHTML;
