@@ -124,25 +124,24 @@ function pauser ()  {
 
 
   return new Promise( resolve => {
-              
-playbtn.addEventListener("click",function()  {
-
-  
-  pausebtn.style.filter = "blur(0px)";
-  playbtn.style.filter = "blur(5px)";
-
-  playbtn.removeEventListener("click",function() {});
 
 
-stats = 0 ;
-resolve("reolved");
+   let playbuttonclick = function  ()   {
 
-
-
-})
-
- 
+      pausebtn.style.filter = "blur(0px)";
+      playbtn.style.filter = "blur(5px)";
     
+      playbtn.removeEventListener("click",playbuttonclick);
+    
+    stats = 0 ;
+    resolve("reolved");
+    
+    }
+    
+              
+playbtn.addEventListener("click",playbuttonclick)
+
+
     
     })
 
