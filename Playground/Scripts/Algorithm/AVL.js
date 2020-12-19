@@ -186,10 +186,9 @@ async function insertavl(node_, key_) {
     if ($(`#${node_}`).length == 0)  {
 
       await display("Tree Empty. Adding root node.");
-      let vid =count;
+
      await  avl(key_); 
-     $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : "2000ms linear"})
-     $(`#${vid}`).animate({ "top" : "0px", "left" : "1900px"})
+    
        let bodyy = $(document);
 
        bodyy.scrollLeft(1200)
@@ -636,7 +635,7 @@ function avl(element) {
    tree[count+"treeright"] = "null"
 
    divbyelement[element] = count
-   $("#"+count).css({"top":"0px" , "left" :"0px", "transition": speed+'ms linear'})
+ 
    count = count +1;
    counttreenodes = counttreenodes + 1;
 

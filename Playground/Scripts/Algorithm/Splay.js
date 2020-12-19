@@ -196,8 +196,6 @@ function splaynode(element) {
 
    divbyelement[element] = count
 
-   $("#"+count).css({"top":"0px" , "left" :"0px", "transition": speed+'ms linear'})
-
    count = count +1;
    counttreenodes = counttreenodes + 1;
 
