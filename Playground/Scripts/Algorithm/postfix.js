@@ -80,7 +80,7 @@ function pstack () {
 
 
 
-$("body").append(`<div id="poststack" style="position:absolute;top:250px;left:100px;min-width:100%;"><p style="display:inline-block; margin-right:50px; font-size:150%;">Stack -></p></div>`)
+$("body").append(`<div id="poststack" style="position:absolute;top:250px;left:${document.documentElement.scrollLeft+100}px;min-width:100%;"><p style="display:inline-block; margin-right:50px; font-size:150%;">Stack -></p></div>`)
 
 
 $("#poststack").draggable()
@@ -252,11 +252,11 @@ function prec( c)
 
 
 
-function postfix(exp) {
+async function postfix(exp) {
 
 pstack();
 finalexp();
-infixToPostfix(exp)
+await infixToPostfix(exp)
 
 }
 
