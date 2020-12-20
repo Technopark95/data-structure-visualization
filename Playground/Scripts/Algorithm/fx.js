@@ -300,6 +300,8 @@ codehere.addEventListener("keypress" , async function(e)  {
 
     codehere.setAttribute("disabled","disabled");
   
+    document.body.insertAdjacentHTML("beforeend" , `<img id = "animationplay" src="813.gif"  style= "position:fixed; right:300px;bottom: 50px;width: 50px;"/>`)
+
     command = codehere.value;
 
     document.getElementById("log1").insertAdjacentHTML("beforeend",'<p style="font-size:large;  color:rgb(255,0,0, 0.7);font-family:Segoe UI;">'+command+'</p>')
@@ -310,6 +312,7 @@ codehere.addEventListener("keypress" , async function(e)  {
   
     codehere.removeAttribute("disabled");
     
+    document.getElementById("animationplay").remove();
     
   }
 
