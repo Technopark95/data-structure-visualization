@@ -55,23 +55,24 @@ var drawflag = false;
 
 
 var value="";
-var log = $("#log1")
-var output = $("#out1")
+var log = document.getElementById("log1")
+var output = document.getElementById("out1")
 
-$('body').append(`<img id="pointerarrow" src="pointer.png" style="height: 70px; width: 70px; position: absolute; top: 135px;transition-duration:500ms;">`)
-var pointerarrow = $("#pointerarrow")
-pointerarrow.hide();
+document.body.insertAdjacentHTML("afterbegin",`<img id="pointerarrow" src="pointer.png" style="height: 70px; width: 70px; position: absolute; top: 135px;transition-duration:500ms;">`)
+var pointerarrow = document.getElementById("pointerarrow")
+pointerarrow.style.display="none";
 
-$("#log1").append('<p style="font-size:x-large; margin-top:-5px;  color:rgb(255,0,0, 0.7);font-family:Segoe UI;">'+ "Happenings.." +'</p>')
+log.insertAdjacentHTML("afterbegin",'<p style="font-size:x-large; margin-top:-5px;  color:rgb(255,0,0, 0.7);font-family:Segoe UI;">'+ "Happenings.." +'</p>')
 
 
-$("body").append(`<p id="iindex" style="position:absolute; transition-duration : 500ms; top:-200px; font-size:150%; font-family:'segoe ui'; ">i</p>`)
-$("body").append(`<p id="jindex" style="position:absolute; transition-duration  :500ms; top:-200px; font-size:150%; font-family:'segoe ui'; ">j</p>`)
-$("body").append(`<p id="kindex" style="position:absolute; transition-duration  :500ms; top:-200px; font-size:150%; font-family:'segoe ui'; ">k</p>`)
+document.body.insertAdjacentHTML("afterbegin",`<p id="iindex" style="position:absolute; transition-duration : 500ms; top:-200px; font-size:150%; font-family:'segoe ui'; ">i</p>`)
+document.body.insertAdjacentHTML("afterbegin",`<p id="jindex" style="position:absolute; transition-duration  :500ms; top:-200px; font-size:150%; font-family:'segoe ui'; ">j</p>`)
+document.body.insertAdjacentHTML("afterbegin",`<p id="kindex" style="position:absolute; transition-duration  :500ms; top:-200px; font-size:150%; font-family:'segoe ui'; ">k</p>`)
 
-$("#iindex").hide()
-$("#jindex").hide()
-$("#kindex").hide()
+document.getElementById("iindex").style.display = "none"
+document.getElementById("jindex").style.display = "none"
+document.getElementById("kindex").style.display = "none"
+
 
 var speed =0; 
 
@@ -179,14 +180,14 @@ async function hilight (acc , color="rgb(0,0,0,0.842)" , duration = "4000ms" , t
 
 
 
-
+/*
 function normalize()  {
 
 
 $(".dragg,.arrayd").css({"background-color" : "rgb(0,0,0,0.842)" , "transition-duration" : "500ms"})
 
 }
-
+*/
 
 
 
@@ -227,11 +228,12 @@ isEmpty()
 
 var clicktimes =0 , first="" , second=""
 
-
+/*
 
 $(document).on("mouseenter","div.nodeleft" , function (e)  {
 
   $(this).animate({"background-color" : "yellow"})
+  t
 
 })
 
@@ -267,7 +269,7 @@ $(document).on("mouseleave","div.nodeleft" , function (e)  {
    
     })
 
-
+*/
 
 
 
@@ -283,8 +285,10 @@ function open(link)  {
 
 async function executejs(scriptname)  {
 
-  
-$.getScript(scriptname)
+
+  let newscript = document.createElement('script');
+  newscript.src = scriptname;
+document.head.appendChild(newscript)
 
 await display("Script Loaded.")
 
@@ -322,13 +326,11 @@ codehere.addEventListener("keypress" , async function(e)  {
 
           console.log(err.message);
 
-          document.getElementById("log1").removeChild(document.getElementById("log1").lastChild)
+         log.removeChild(log.lastChild)
 
       }
 
-      else {
-     
-      }
+      
   }
 
    
