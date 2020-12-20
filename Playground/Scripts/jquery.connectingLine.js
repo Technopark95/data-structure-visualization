@@ -99,28 +99,29 @@ this.kruskalize =function (_cl = "rgb(0,0,0,0.08)")  {
 			
 		
 		};
+		
 
-		this.drawAllLine = function(option) {
+		// this.drawAllLine = function(option) {
 
-			/*Mandatory Fields------------------
-			left_selector = '.class',
-			data_attribute = 'data-right',
-			*/
+		// 	/*Mandatory Fields------------------
+		// 	left_selector = '.class',
+		// 	data_attribute = 'data-right',
+		// 	*/
 
-			if (option.left_selector != '' && typeof option.left_selector !== 'undefined' && $(option.left_selector).length > 0) {
-				$(option.left_selector).each(function(index) {
-					var option2 = new Object();
-					$.extend(option2, option);
-					option2.left_node = $(this).attr('id');
+		// 	if (option.left_selector != '' && typeof option.left_selector !== 'undefined' && $(option.left_selector).length > 0) {
+		// 		$(option.left_selector).each(function(index) {
+		// 			var option2 = new Object();
+		// 			$.extend(option2, option);
+		// 			option2.left_node = $(this).attr('id');
 					
-					option2.right_node = $(this).data(option.data_attribute);
-					if (option2.right_node != '' && typeof option2.right_node !== 'undefined') {
-						_me.drawLine(option2);
+		// 			option2.right_node = $(this).data(option.data_attribute);
+		// 			if (option2.right_node != '' && typeof option2.right_node !== 'undefined') {
+		// 				_me.drawLine(option2);
 
-					}
-				});
-			}
-		};
+		// 			}
+		// 		});
+		// 	}
+		// };
 
 		//This Function is used to connect two different div with a dotted line.
 		this.connect = function(option) {
@@ -175,24 +176,11 @@ this.kruskalize =function (_cl = "rgb(0,0,0,0.08)")  {
 					}
 
 					//If left_node is actually right side, following code will switch elements.
-					$(option.right_node).each(function(index, value) {
+				
 						_left_node = $(option.left_node);
-						_right_node = $(value);
+						_right_node = $(option.right_node);
 
 
-
-					/*
-						 if (_left_node.offset().left >= _right_node.offset().left  ) {
-						
-							_tmp = _left_node;
-							_left_node = _right_node;
-							_right_node = _tmp;
-
-							f=1;
-
-						}
-
-						*/
 
 						let dax = (_right_node.offset().left+ _right_node.width()/2) - (_left_node.offset().left+ _left_node.width()/2);
 						let day = (_right_node.offset().top+ _right_node.height()/2) - (_left_node.offset().top+ _left_node.height()/2);
@@ -284,7 +272,7 @@ f = 0;
 						_ctx.font = "20px Segoe ui";
 						_ctx.fillText(option._text,(_right.x +_left.x)/2 ,( _right.y + _left.y)/2);
 
-				});
+				
 
 				
 
