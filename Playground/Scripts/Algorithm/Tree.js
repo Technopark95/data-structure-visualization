@@ -185,7 +185,7 @@ async function  postorder(CurrentNode ) {
             
     }
 
-
+document.getElementById("postqueue").remove();
 }
 
 
