@@ -128,6 +128,68 @@ async function  postorder(CurrentNode ) {
   }
 
 
+ async function levelorder(_node)
+{
+    // Base Case
+    if ($("#"+_node).length == 0)  return;
+ 
+    // Create an empty queue for level order traversal
+    let q = new Q();
+    pqueue();
+    // Enqueue Root and initialize height
+    q.enQueue(_node);
+
+   await qins(_node);
+ 
+    
+
+    while (q.isEmpty() == false)
+    {
+        // Print front of queue and remove it from queue
+        let root_ = (q.front).data;
+       
+     Output( $('#'+root_+"treeval").text());
+  
+  
+  
+        q.deQueue();
+        await  qout();
+ 
+        let leftchild = tree[root_+"treeleft"];
+        let rightchild = tree[root_+"treeright"];
+        
+
+
+
+        if (leftchild != "null") {
+          let leftchildcolor = document.getElementById(leftchild).style.backgroundColor;
+          q.enQueue(leftchild);
+          await   qins(leftchild);
+        await  hilight(leftchild , "red")
+       await   hilight(leftchild ,leftchildcolor )
+        }
+            
+ 
+        /*Enqueue right child */
+        if (rightchild != "null") {
+
+          let rightchildcolor = document.getElementById(rightchild).style.backgroundColor;
+
+        q.enQueue(rightchild);
+        await qins(rightchild);
+
+        await  hilight(rightchild , "red")
+        await  hilight(rightchild ,rightchildcolor )
+
+        }
+            
+    }
+
+
+}
+
+
+
 
 
  async function preorderstack(root_) 
