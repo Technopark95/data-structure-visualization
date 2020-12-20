@@ -58,7 +58,7 @@ async function push(typed){
       var prom = await anim(typed,ms);
       $("#feed").fadeIn().text(prom)
       
-        $("#"+(table+stack_top)).replaceWith('<span id = "'+ (table+stack_top) +'" class ="trans" style = "font-size : 150%">' +  elements[stack_top] + '</span>');
+        $("#"+(table+stack_top)).replaceWith('<span id = "'+ (table+stack_top) +'" class ="trans" style = "font-size : 100%">' +  elements[stack_top] + '</span>');
       //alert(elements.length);
       $("#kaydeefir").replaceWith('<p id = "kaydeefir" style="margin-top: -40px;"></p>')
       $("#output-screen").append('<li class="outstyle"> push'+ typed +'/</li>')
@@ -90,7 +90,7 @@ $("#kaydeefir").replaceWith('<p id = "kaydeefir" style="margin-top: -40px;">'+el
 $("#feed").fadeIn().text(65*(val-1)+20)
 
   $("#kaydeefir").animate({
-    "margin-top" : (65*(val-1)+20)+"px",
+    "margin-top" : (34*(val-1)+20)+"px",
     "color" : "white"
     
     },speed+400,function() {
@@ -108,7 +108,7 @@ $("#feed").fadeIn().text(65*(val-1)+20)
 function animpop(elem,val){
 
   return new Promise(resolve =>{ 
-  $("#kaydeefir").replaceWith('<p id = "kaydeefir" style="margin-top: '+(65*(max-val-1)+20)+'px; color : white;">'+elem +'</p>')
+  $("#kaydeefir").replaceWith('<p id = "kaydeefir" style="margin-top: '+(34*(max-val-1)+20)+'px; color : white;">'+elem +'</p>')
   
   
   $("#feed").fadeIn().text(max-val-1)
@@ -292,7 +292,7 @@ function peekstack(){
 
 
 
-      var stack = '<div style="position : absolute; margin-top: 200px; z-index:1; transition-duration : 100ms; width:500px;" id="tab'+count_stack+'"  class="stack"> <p id = "kaydeefir" style="margin-top: -40px;  " ></p>';
+      var stack = '<div style="position : absolute; top: 200px; left:100px; z-index:1; transition-duration : 100ms; width:500px;" id="tab'+count_stack+'"  class="stack"> <p id = "kaydeefir" style="margin-top: -40px;  " ></p>';
 
       stack += '<table class = "stack"  id="tb'+count_stack+'" style="border-collapse: collapse;  transition-duration : 100ms;">'
 
