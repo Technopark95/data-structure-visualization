@@ -57,7 +57,7 @@ let btreenode = `<div id=${count} class="btnode"><p style="display:none;" id=${c
    child1 = `<div  id=${count}c3 style="position:absolute; height:5px; width:5px; border-radius:5px; background-color:${"white"};left:129px;top:13px;"></div>`
    $("#"+count).append(child1);
    
-   child1 = `<div  id=${count}top style="position:absolute; height:5px; width:5px; border-radius:5px; background-color:${defaultcolor};left:67px;top:0px;"></div>`
+   child1 = `<div  id=${count}top style="position:absolute; height:5px; width:5px; border-radius:5px; background-color:${"white"};left:67px;top:0px;"></div>`
    $("#"+count).append(child1);
 
    //$("#"+count).append(`<div style="display:none;width:30px;height:10px;top:-6px;position:absolute;text-align:center;left:95px;"><p id=${count}keys3 class="btnode-text" style="color:white;">0</p></div>`);
@@ -473,70 +473,49 @@ async function btraverse(ttt=rot)
 }
 
 
-let getout = 0;
-async function btsearch(item ,ttt=rot ) 
+
+async function btreesearch(k,x=rot) 
 { 
 
-    // There are n keys and n+1 children, traverse through n keys 
-    // and first n children 
-    let bh; 
-    for (bh = 0; bh < document.getElementById(ttt+"n").innerHTML; bh++) 
-    { 
+
+  await hilight(x,"red");
+  hilight(x,"rgba(0,0,0,0)");
+
+
+
+    // Find the first key greater than or equal to k 
+    let i = 0; 
+    while (i < parseInt(document.getElementById(x+"n").innerHTML) && k > parseInt(document.getElementById(x+"keys"+i).innerHTML)) {
+      await hilight(x+"keys"+i,"green");
+      hilight(x+"keys"+i, "rgba(0,0,0,0)");
+    
+  i++; 
+
+    }
       
-      await hilight(ttt,"red");
-             hilight(ttt,"rgba(0,0,0,0)");
-
-        // If this is not leaf, then before printing key[bh], 
-        // traverse the subtree rooted with child C[bh]. 
-        if (document.getElementById(ttt+"leaf").innerHTML == "false") 
-      await  btsearch( item,BTree[ttt+"c"+bh]); 
-            
-
-      
-      if ( parseInt(document.getElementById(ttt+"keys"+bh).innerHTML) == item) {
-        Output("Item Exists.")
-        getout=1;
-        break;
-
-      }
-
-      if (getout ==1) {
-
-        return;
-      }
-          
-     //   Output(document.getElementById(ttt+"keys"+bh).innerHTML)
-
-        await hilight(ttt+"keys"+bh,"green");
-             hilight(ttt+"keys"+bh,"rgba(0,0,0,0)");
-
-       
-    } 
   
-    // Print the subtree rooted with last child 
-    if (document.getElementById(ttt+"leaf").innerHTML == "false") {
+    // If the found key is equal to k, return this node 
+    if ( parseInt(document.getElementById(x+"keys"+i).innerHTML) == k)  {
+
+      Output("Element exist.");
+return; 
+
+    }
         
   
-      await   btsearch(item,BTree[ttt+"c"+bh]); 
-          
-    } 
-    
+    // If key is not found here and this is a leaf node 
+    if (document.getElementById(x+"leaf").innerHTML == "true")  {
 
-    
-    
-}
-
-async function btreesearch(item)  {
-
-  getout = 0;
-
-await btsearch(item);
+  
+        return "null"; 
+    }
+    // Go to the appropriate child 
+    return btreesearch(k,BTree[x+"c"+i]); 
+} 
+  
 
 
-getout = 0;
 
-
-}
 
 
 /*
