@@ -360,7 +360,7 @@ f = 0;
 
 				let destination = BTree[source];
 				if(destination != "null")
-				_me.connect({left_node:"#"+source , right_node:"#"+destination+"top" })
+				_me.connect({left_node:"#"+source , right_node:"#"+destination+"top",gtype:"D" })
 
 			  }
 
