@@ -486,8 +486,7 @@ async function btreesearch(k,x=rot)
     // Find the first key greater than or equal to k 
     let i = 0; 
     while (i < parseInt(document.getElementById(x+"n").innerHTML) && k > parseInt(document.getElementById(x+"keys"+i).innerHTML)) {
-      await hilight(x+"keys"+i,"green");
-      hilight(x+"keys"+i, "rgba(0,0,0,0)");
+  
     
   i++; 
 
@@ -496,6 +495,9 @@ async function btreesearch(k,x=rot)
   
     // If the found key is equal to k, return this node 
     if ( parseInt(document.getElementById(x+"keys"+i).innerHTML) == k)  {
+
+      await hilight(x+"keys"+i,"green");
+      hilight(x+"keys"+i, "rgba(0,0,0,0)");
 
       Output("Element exist.");
 return; 
@@ -510,7 +512,7 @@ return;
         return "null"; 
     }
     // Go to the appropriate child 
-    return btreesearch(k,BTree[x+"c"+i]); 
+    return await btreesearch(k,BTree[x+"c"+i]); 
 } 
   
 
