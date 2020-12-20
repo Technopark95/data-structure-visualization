@@ -234,28 +234,44 @@ return bheight;
 
 
 
-function splitChild( x ,  splitindex) 
+async function splitChild( x ,  splitindex) 
 { 
+
+
+
+
     let y =  BTree[x+"c"+splitindex]
     
     let z =  BTreeNode("true"); 
    
+  Log("Split the node");
+  BLevel(rot)
+  await waitforme (speed+100);
 
 
     document.getElementById(z+"leaf").innerHTML = document.getElementById(y+"leaf").innerHTML
     
    
-
     document.getElementById(z+"n").innerHTML =1
   
+    Log("Copy the data into new node the node");
     
     for (let j = 0; j < 1; j++) {
 
+       hilight(z+"keys"+j , "red");
+      await hilight(y+"keys"+(j+2) , "green");
       document.getElementById(z+"keys"+j).innerHTML = document.getElementById(y+"keys"+(j+2)).innerHTML;
+
+      hilight(z+"keys"+j , "rgba(0,0,0,0)");
+      await hilight(y+"keys"+(j+2) , "rgba(0,0,0,0)");
+
       document.getElementById(y+"keys"+(j+2)).innerHTML="";
+
+      await waitforme(speed)
 
     } 
     
+    Log("Move the child into new node the node");
     
   
     if (document.getElementById(y+"leaf").innerHTML == "false") 
@@ -283,29 +299,46 @@ function splitChild( x ,  splitindex)
    
     for (let j = parseInt( document.getElementById(x+"n").innerHTML)-1; j >= splitindex; j--) {
 
+      hilight(x+"keys"+(j) , "red");
+      await hilight(x+"keys"+(j+1) , "green");
       
        document.getElementById(x+"keys"+(j+1)).innerHTML = document.getElementById(x+"keys"+(j)).innerHTML;
+
+    hilight(x+"keys"+(j) , "rgba(0,0,0,0)");
+       await hilight(x+"keys"+(j+1) , "rgba(0,0,0,0)");
+
+       
+
        document.getElementById(x+"keys"+(j)).innerHTML = "";
+
+       await waitforme(speed)
 
 
     }
        
+    hilight(y+"keys1" , "red");
+    await hilight(x+"keys"+(splitindex) , "green");
     
     document.getElementById(x+"keys"+(splitindex)).innerHTML = document.getElementById(y+"keys1").innerHTML;
+
+  hilight(y+"keys1"  , "rgba(0,0,0,0)");
+    await hilight(x+"keys"+(splitindex) , "rgba(0,0,0,0)");
+
+
     document.getElementById(y+"keys1").innerHTML = "";
 
-
+    await waitforme(speed)
+  
 
        ++document.getElementById(x+"n").innerHTML
-
-        
         document.getElementById(y+"n").innerHTML =1;
+
    
 } 
 
 
 
-function insertNonFull(targ , k) 
+async function insertNonFull(targ , k) 
 { 
     // Initialize index as index of rightmost element 
     let iter = parseInt( document.getElementById(targ+"n").innerHTML) - 1 
@@ -328,10 +361,20 @@ function insertNonFull(targ , k)
             iter--; 
         } 
   
+
+
+        await hilight(targ+"keys"+(iter+1) , "red");
+    
      
         
         document.getElementById(targ+"keys"+(iter+1)).innerHTML = k;
+
+        
+        await hilight(targ+"keys"+(iter+1) , "rgba(0,0,0,0)");
+    
        
+        await waitforme(speed)
+  
 
         
         ++document.getElementById(targ+"n").innerHTML
@@ -351,7 +394,7 @@ function insertNonFull(targ , k)
         if (parseInt( document.getElementById(xchildi+"n").innerHTML) == 3) 
         { 
             // If the child is full, then split it 
-            splitChild( targ,iter); 
+          await  splitChild( targ,iter); 
   
             // After split, the middle key of C[iter] goes up and 
             // C[iter] is splitted into two.  See which of the two 
@@ -360,7 +403,7 @@ function insertNonFull(targ , k)
                 iter++; 
         } 
 
-        insertNonFull( BTree[targ+"c"+iter] ,k); 
+       await insertNonFull( BTree[targ+"c"+iter] ,k); 
     } 
 
     iter = 0;
@@ -371,9 +414,7 @@ var xx =0;
     
 async function btreeinsert( k)  {
 
-  document.getElementById("codetype").setAttribute("disabled" , "disabled")
-  
-    
+
 redrawevent = setInterval(redrawBtreelines,50);
 
    xx= rot;
@@ -396,9 +437,9 @@ redrawevent = setInterval(redrawBtreelines,50);
         { 
             
             let s =  BTreeNode("false");
-       
-
+      
             rot = s; 
+
          
             document.getElementById(s+"leaf").innerHTML = "false";
 
@@ -406,14 +447,14 @@ redrawevent = setInterval(redrawBtreelines,50);
 
             BTree[`${s}c${0}`] = xx;
   
-            splitChild(s, 0); 
+           await splitChild(s, 0); 
 
-            insertNonFull(s,k); 
+           await insertNonFull(s,k); 
    
         } 
         else {
          
-        insertNonFull(xx,k); 
+      await  insertNonFull(xx,k); 
       
       }
     } 
@@ -427,8 +468,6 @@ redrawevent = setInterval(redrawBtreelines,50);
 
 clearInterval(redrawevent)
 
-document.getElementById("codetype").removeAttribute("disabled")
-  
 
     
 }
