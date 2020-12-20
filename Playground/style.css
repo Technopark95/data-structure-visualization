@@ -634,8 +634,8 @@ vertical-align: middle;
 
 .btnode {
 position: absolute;
-top:300px;
-left:200px;
+top:150px;
+left:20px;
 height: 30px;
 width: 140px;
 max-width: 500px;
