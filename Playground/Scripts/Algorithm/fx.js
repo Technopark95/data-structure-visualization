@@ -300,7 +300,7 @@ codehere.addEventListener("keypress" , async function(e)  {
 
     codehere.setAttribute("disabled","disabled");
   
-    document.body.insertAdjacentHTML("beforeend" , `<img id = "animationplay" src="813.gif"  style= "position:fixed; right:300px;bottom: 50px;width: 50px;"/>`)
+    document.body.insertAdjacentHTML("beforeend" , `<img id = "animationplay" src="813.gif"  style= "position:fixed; right:300px;bottom: 50px;width: 50px;z-index:-1"/>`)
 
     command = codehere.value;
 
