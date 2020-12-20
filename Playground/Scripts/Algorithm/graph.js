@@ -45,7 +45,7 @@ function pqueue () {
 
 
 
-    $("body").append(`<div id="postqueue" style="position:absolute;bottom:100px;left:100px;min-width:100%;"></div>`)
+    $("body").append(`<div id="postqueue" style="position:absolute;bottom:100px;left:${document.documentElement.scrollLeft+100}px;min-width:100%;"><p style=" font-size:150%;position:absolute;top:-80px;">Queue</p></div>`)
     
     
     $("#postqueue").draggable()
