@@ -299,6 +299,8 @@ codehere.addEventListener("keypress" , async function(e)  {
   if (e.which == 13) {
 
     codehere.setAttribute("disabled","disabled");
+
+    
   
     document.body.insertAdjacentHTML("beforeend" , `<img id = "animationplay" src="813.gif"  style= "position:fixed; right:300px;bottom: 50px;width: 50px;z-index:-1"/>`)
 
@@ -308,11 +310,24 @@ codehere.addEventListener("keypress" , async function(e)  {
 
     logscreen.scrollTop = logscreen.scrollHeight;
     
-    await eval(command)
+
+    try {
+      await eval(command)
+  } 
   
-    codehere.removeAttribute("disabled");
+  catch (err) {
+      if (err instanceof SyntaxError) {
+
     
-    document.getElementById("animationplay").remove();
+          console.log(err.message);
+      }
+  }
+
+   
+  codehere.removeAttribute("disabled");
+  document.getElementById("animationplay").remove();
+  
+ 
     
   }
 
