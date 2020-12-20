@@ -36,7 +36,7 @@ function array (typed)  {
 
   length = typed.length 
 
-     arr = '<table id="t1" style="position:absolute;border-collapse: collapse; margin-top:235px; margin-left:100px; text-align:center; transition-duration : 100ms;table-layout: fixed;" >'
+     arr = '<table id="t1" style=" z-index: 1;position:absolute;border-collapse: collapse; margin-top:235px; margin-left:100px; text-align:center; transition-duration : 100ms;table-layout: fixed;" >'
   
     $("body").prepend(arr);
   
