@@ -32,7 +32,7 @@ let btreenode = `<div id=${count} class="btnode"><p style="display:none;" id=${c
 
    $("body").prepend(btreenode);
 
-   let child1 = `<div  id=${count}c0 style="position:absolute; height:5px; width:5px; border-radius:5px; background-color:${"white"};left:5px;top:13px;"></div>`
+   let child1 = `<div  id=${count}c0 style="position:absolute; height:5px; width:5px; border-radius:5px; background-color:${"rgba(0,0,0,0)"};left:5px;top:13px;"></div>`
    $("#"+count).append(child1);
 
 
@@ -40,24 +40,24 @@ let btreenode = `<div id=${count} class="btnode"><p style="display:none;" id=${c
    $("#"+count).append(`<div style="width:30px;height:10px;top:-6px;position:absolute;text-align:center;left:15px;"><p id=${count}keys0 class="btnode-text" ></p></div>`);
    
 
-   child1 = `<div  id=${count}c1 style="position:absolute; height:5px; width:5px; border-radius:5px; background-color:${"white"};left:47px;top:13px;"></div>`
+   child1 = `<div  id=${count}c1 style="position:absolute; height:5px; width:5px; border-radius:5px; background-color:${"rgba(0,0,0,0)"};left:47px;top:13px;"></div>`
    $("#"+count).append(child1);
    
 
    $("#"+count).append(`<div style="width:30px;height:10px;top:-6px;position:absolute;text-align:center;left:55px;"><p id=${count}keys1 class="btnode-text" ></p></div>`);
    
 
-   child1 = `<div  id=${count}c2 style="position:absolute; height:5px; width:5px; border-radius:5px; background-color:${"white"};left:88px;top:13px;"></div>`
+   child1 = `<div  id=${count}c2 style="position:absolute; height:5px; width:5px; border-radius:5px; background-color:${"rgba(0,0,0,0)"};left:88px;top:13px;"></div>`
    $("#"+count).append(child1);
    
 
    $("#"+count).append(`<div style="width:30px;height:10px;top:-6px;position:absolute;text-align:center;left:95px;"><p id=${count}keys2 class="btnode-text" ></p></div>`);
    
 
-   child1 = `<div  id=${count}c3 style="position:absolute; height:5px; width:5px; border-radius:5px; background-color:${"white"};left:129px;top:13px;"></div>`
+   child1 = `<div  id=${count}c3 style="position:absolute; height:5px; width:5px; border-radius:5px; background-color:${"rgba(0,0,0,0)"};left:129px;top:13px;"></div>`
    $("#"+count).append(child1);
    
-   child1 = `<div  id=${count}top style="position:absolute; height:5px; width:5px; border-radius:5px; background-color:${"white"};left:67px;top:0px;"></div>`
+   child1 = `<div  id=${count}top style="position:absolute; height:5px; width:5px; border-radius:5px; background-color:${"rgba(0,0,0,0)"};left:67px;top:0px;"></div>`
    $("#"+count).append(child1);
 
    //$("#"+count).append(`<div style="display:none;width:30px;height:10px;top:-6px;position:absolute;text-align:center;left:95px;"><p id=${count}keys3 class="btnode-text" style="color:white;">0</p></div>`);
@@ -369,11 +369,11 @@ async function insertNonFull(targ , k)
         
         document.getElementById(targ+"keys"+(iter+1)).innerHTML = k;
 
-        
+
         await hilight(targ+"keys"+(iter+1) , "rgba(0,0,0,0)");
     
        
-        await waitforme(speed)
+        await waitforme(100)
   
 
         
