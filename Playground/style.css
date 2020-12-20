@@ -27,8 +27,8 @@ body
     font-family: Segoe UI;
     
     position: absolute;
-    margin-top: 135px;
-    margin-left: 0px;
+  top:0px;
+  left:0px;
     border-radius: 80px;
     z-index: 1;
 
