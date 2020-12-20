@@ -306,20 +306,28 @@ codehere.addEventListener("keypress" , async function(e)  {
 
     command = codehere.value;
 
-    document.getElementById("log1").insertAdjacentHTML("beforeend",'<p style="font-size:large;  color:rgb(255,0,0, 0.7);font-family:Segoe UI;">'+command+'</p>')
 
     logscreen.scrollTop = logscreen.scrollHeight;
     
 
     try {
+      document.getElementById("log1").insertAdjacentHTML("beforeend",'<p style="font-size:large;  color:rgb(255,0,0, 0.7);font-family:Segoe UI;">'+command+'</p>')
+
+
       await eval(command)
   } 
   
   catch (err) {
-      if (err instanceof SyntaxError) {
+      if (err instanceof SyntaxError || err instanceof ReferenceError) {
 
-    
           console.log(err.message);
+
+          document.getElementById("log1").removeChild(document.getElementById("log1").lastChild)
+
+      }
+
+      else {
+     
       }
   }
 
