@@ -50,7 +50,7 @@ function addnode(typed,posi="uni") {
     xp = 140;
   }
   
-   newnode = '<div id="'+count+'"  class="dragg" style= left:'+xp+'px;top:150px;> <p  style="position:absolute; color:coral; font-size:60%; left:20px;" id="'+ count+"listbottom" +'">'+count +'</p>    <p  id="'+ count+"val" +'" class="t">'+typed+'</p>   </div>';
+   newnode = '<div id="'+count+'"  class="dragg" style= left:'+xp+'px;top:270px;> <p  style="position:absolute; color:coral; font-size:60%; left:20px;" id="'+ count+"listbottom" +'">'+count +'</p>    <p  id="'+ count+"val" +'" class="t">'+typed+'</p>   </div>';
                
              
             
