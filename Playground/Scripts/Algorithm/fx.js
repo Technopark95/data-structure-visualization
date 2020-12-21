@@ -69,9 +69,13 @@ document.body.insertAdjacentHTML("afterbegin",`<p id="iindex" style="position:ab
 document.body.insertAdjacentHTML("afterbegin",`<p id="jindex" style="position:absolute; transition-duration  :500ms; top:-200px; font-size:150%; font-family:'segoe ui'; ">j</p>`)
 document.body.insertAdjacentHTML("afterbegin",`<p id="kindex" style="position:absolute; transition-duration  :500ms; top:-200px; font-size:150%; font-family:'segoe ui'; ">k</p>`)
 
-document.getElementById("iindex").style.display = "none"
-document.getElementById("jindex").style.display = "none"
-document.getElementById("kindex").style.display = "none"
+let ipointer = document.getElementById("iindex")
+let jpointer =document.getElementById("jindex")
+let kpointer =document.getElementById("kindex")
+
+ipointer.style.display = "none";
+jpointer.style.display = "none";
+ikpointer.style.display = "none";
 
 
 var speed =0; 
