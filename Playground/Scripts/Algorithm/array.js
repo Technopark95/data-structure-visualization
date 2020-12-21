@@ -28,7 +28,11 @@ var arr = ''
 
 var tableobj
 
-    var tabledata ;
+var tabledata ;
+let tablelement;
+
+
+
 function array (typed)  {
 
 window.scrollTo(0,0)
@@ -39,6 +43,9 @@ window.scrollTo(0,0)
      arr = '<table id="t1" style=" z-index: 1;position:absolute;border-collapse: collapse; margin-top:235px; margin-left:100px; text-align:center; transition-duration : 100ms;table-layout: fixed;" ></table>'
   
     document.body.insertAdjacentHTML("afterbegin",arr);
+
+
+    let tablelement = document.getElementById("t1")
 
 
     $("#t1").draggable();
@@ -57,7 +64,7 @@ window.scrollTo(0,0)
   
       tabledata.innerHTML += '<div id="aitemdiv'+ i+'"  style="text-align:center; position:absolute; z-index:1">         <p id="aitemindex'+i +'" style="position:absolute; color:coral; margin-top:67px; margin-left:35px; font-size:37%";>'+i+'</p>             <p id= "aitemval'+i +'" class="arrayitem">'+ r +'</p>                        </div>'
   
-      document.getElementById("t1").appendChild(tabledata);
+      tablelement.appendChild(tabledata);
 
       storedarray.push(r)
 
@@ -78,11 +85,14 @@ window.scrollTo(0,0)
 let tableid= `t${Math.ceil (Math.random()*10)}${ Math.ceil( Math.random()*10)}`
 
 
+
   let ar = `<table id="${tableid}" style="position:absolute;border-collapse: collapse; margin-top:535px; margin-left:100px; text-align:center; transition-duration : 100ms;table-layout: fixed;" ><tr>   </tr></table>`
   
   document.body.insertAdjacentHTML("afterbegin",ar);
 
   $("#"+tableid).draggable();
+
+ tablelement = document.getElementById(tableid)
 
 
 
@@ -98,7 +108,7 @@ tabledata.className = "arrayd";
 
 tabledata.innerHTML += `<div id="${cellid}itemdiv${i}"  style="text-align:center; position:absolute; z-index:1">         <p id="${cellid}itemindex${i}" style="position:absolute; color:coral; margin-top:67px; margin-left:35px; font-size:37%";>${i}</p>             <p id= "${cellid}itemval${i}" class="arrayitem">0</p>                        </div>`
 
-document.getElementById(tableid).appendChild(tabledata);
+tablelement.appendChild(tabledata);
 
   }
 
