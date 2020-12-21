@@ -28,41 +28,47 @@ var arr = ''
 
 var tableobj
 
+    var tabledata ;
 function array (typed)  {
 
+window.scrollTo(0,0)
 
-  $(document).scrollLeft(0)
-  $(document).scrollTop(0)
 
   length = typed.length 
 
-     arr = '<table id="t1" style=" z-index: 1;position:absolute;border-collapse: collapse; margin-top:235px; margin-left:100px; text-align:center; transition-duration : 100ms;table-layout: fixed;" >'
+     arr = '<table id="t1" style=" z-index: 1;position:absolute;border-collapse: collapse; margin-top:235px; margin-left:100px; text-align:center; transition-duration : 100ms;table-layout: fixed;" ></table>'
   
-    $("body").prepend(arr);
-  
-    $("#t1").draggable();
-  
+    document.body.insertAdjacentHTML("afterbegin",arr);
 
-    $("#t1").append("<tr>");
-  
+
+    $("#t1").draggable();
   
     for (var i = 0 ; i < typed.length ; ++i)  {
 
       let r =typed[i]
-  
-  $("#t1").append(' <td id="aitem'+ i+'" class="arrayd" style="text-align:center; min-width:70px;">     <div id="aitemdiv'+ i+'"  style="text-align:center; position:absolute; z-index:1">         <p id="aitemindex'+i +'" style="position:absolute; color:coral; margin-top:67px; margin-left:35px; font-size:37%";>'+i+'</p>             <p id= "aitemval'+i +'" class="arrayitem">'+ r +'</p>                        </div>  </td>')
-  storedarray.push(r)
 
+      tabledata = document.createElement("td");
+      
+      tabledata.style.cssText = "text-align:center; min-width:70px";
+
+      tabledata.id= "aitem"+i;
+
+      tabledata.className = "arrayd";
+  
+      tabledata.innerHTML += '<div id="aitemdiv'+ i+'"  style="text-align:center; position:absolute; z-index:1">         <p id="aitemindex'+i +'" style="position:absolute; color:coral; margin-top:67px; margin-left:35px; font-size:37%";>'+i+'</p>             <p id= "aitemval'+i +'" class="arrayitem">'+ r +'</p>                        </div>'
+  
+      document.getElementById("t1").appendChild(tabledata);
+
+      storedarray.push(r)
 
     }
-    $("#t1").append("<tr>");
-    $("#t1").append("</table>");
+
 
     tableobj = $("#t1")
   
-    $("#iindex").show()
-    $("#jindex").show()
-    $("#kindex").show()
+    ipointer.style.display = "";
+    jpointer.style.display = "";
+    kpointer.style.display = "";
   
   }
 
@@ -74,19 +80,25 @@ let tableid= `t${Math.ceil (Math.random()*10)}${ Math.ceil( Math.random()*10)}`
 
   let ar = `<table id="${tableid}" style="position:absolute;border-collapse: collapse; margin-top:535px; margin-left:100px; text-align:center; transition-duration : 100ms;table-layout: fixed;" ><tr>   </tr></table>`
   
-  $("body").prepend(ar);
+  document.body.insertAdjacentHTML("afterbegin",ar);
 
-  $("#"+tableid).draggable( {
-  });
+  $("#"+tableid).draggable();
 
 
 
   for (let i = 0 ; i < sn ; ++i)  {
 
+tabledata = document.createElement("td");
+      
+tabledata.style.cssText = "text-align:center; min-width:70px";
 
+tabledata.id=`${cellid}item${i}`
 
-$("#"+tableid).append(`<td id="${cellid}item${i}" class="arrayd" style="text-align:center; min-width:70px;">     <div id="${cellid}itemdiv${i}"  style="text-align:center; position:absolute; z-index:1">         <p id="${cellid}itemindex${i}" style="position:absolute; color:coral; margin-top:67px; margin-left:35px; font-size:37%";>${i}</p>             <p id= "${cellid}itemval${i}" class="arrayitem">0</p>                        </div>  </td>`)
+tabledata.className = "arrayd";
 
+tabledata.innerHTML += `<div id="${cellid}itemdiv${i}"  style="text-align:center; position:absolute; z-index:1">         <p id="${cellid}itemindex${i}" style="position:absolute; color:coral; margin-top:67px; margin-left:35px; font-size:37%";>${i}</p>             <p id= "${cellid}itemval${i}" class="arrayitem">0</p>                        </div>`
+
+document.getElementById(tableid).appendChild(tabledata);
 
   }
 
@@ -162,135 +174,6 @@ if (stats == 1  ) await pauser();
 
 }
 
-
-
-
-/*
-
- async function old_swapp( vala,valb) {
-
-
-    if (stats == 1  ) await pauser();
-
-    return new Promise(resolve => {
-var x =   $("#aitem"+vala).position()
-
-var y =   $("#aitem" + valb).position()
-
-var s = Math.abs(x.left  - y.left)
-
-var a = $("#aitemval" +vala).text() 
-var b = $("#aitemval" +valb).text()
-
-
-
-
-
-$("#aitemval"+vala).animate({
-
-  "color" : "black",
-  "margin-top" : "170px"
-  
-  
-  } ,speed, function()  {
-
-
-    $("#aitemval"+vala).animate({
-
-      "margin-left" : s+"px"
-      
-      
-      } ,speed, function()  {
-      
-      
-        $("#aitemval"+vala).animate({
-      
-          "color" : "white",
-          "margin-top" : "20px"
-          
-          
-          },speed , function ()  {
-
-            $("#aitemval"+vala).css({"margin-left" :"0px" ,"margin-top" :"20px" })
-
-
-          })
-          
-      
-      
-      })
-
-
-
-
-  })
-
-
-
-
-
-
-
-  $("#aitemval"+valb).animate({
-
-    "color" : "black",
-    "margin-top" : "-105px"
-    
-    
-    }, speed , function()  {
-  
-  
-      $("#aitemval"+valb).animate({
-  
-        "margin-left" : "-"+(s*2 - 10)+"px"
-        
-        
-        
-        },speed , function()  {
-        
-        
-          $("#aitemval"+valb).animate({
-        
-            "color" : "white",
-            "margin-top" : "20px"
-            
-            
-            } ,speed , function ()  {
-
-              $("#aitemval"+valb).css({"margin-left" :"0px" , "margin-top" :"20px"  })
-
-              $("#aitemval"+vala).text(b) 
-              $("#aitemval"+valb).text(a) 
-
-              
-              setTimeout(()=> {
-
-               resolve('resolved');
-
-              },speed)
-              
-
-            })
-            
-        
-        
-        })
-  
-  
-  
-  
-    })
-
-
-
-
-  });
-
-
-
-  }
-
-  */
 
 
 
@@ -653,23 +536,6 @@ else{
 
 
 
-  function moveleft(index)  {
-
-    $("#aitemval"+(index-1)).animate({opacity:"0%"} , speed)
-
-    $("#aitemval"+(index)).animate({"margin-left":"-160px" , "opacity":"0%" },speed ,function()  {
-
-        $("#aitemval"+(index-1)).text($("#aitemval"+(index)).text())
-
-        $("#aitemval"+(index-1)).animate({"opacity":"100%"} , speed , function()  {
-
-          $("#aitemval"+(index)).animate({"margin-left":"0px" , "opacity":"0%" })
-  
-        })
-    })
-
-
-}
 
 async function moveright(index)  {
 
@@ -723,7 +589,7 @@ var index = length-2
 
 
     storedarray[index] = value;
-    insert(value ,index)
+   await insert(value ,index)
  
 
 
