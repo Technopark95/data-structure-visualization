@@ -81,7 +81,7 @@ async function ij(_i ,_j  , cellid="a" , cellid1 = "a") {
 
 
     ipointer.style.transition = speed+"ms linear";
-    jpointer.getElementById("jindex").style.transition = speed+"ms linear";
+    jpointer.style.transition = speed+"ms linear";
 
    
     
