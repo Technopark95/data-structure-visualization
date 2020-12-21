@@ -37,9 +37,7 @@ var linemap = {};
 		var _parent = param || document;
 
 		//Initialize Canvas object
-		_canvas = $('<canvas id="cav1"/>')
-			.attr('width', $(_parent).width())
-			.attr('height', $(_parent).height());
+		_canvas = $('<canvas id="cav1"/>').attr('width', $(_parent).width()).attr('height', $(_parent).height());
 		$('body').append(_canvas);
 
 		this.drawLine = function(option) {
@@ -101,27 +99,6 @@ this.kruskalize =function (_cl = "rgb(0,0,0,0.08)")  {
 		};
 		
 
-		// this.drawAllLine = function(option) {
-
-		// 	/*Mandatory Fields------------------
-		// 	left_selector = '.class',
-		// 	data_attribute = 'data-right',
-		// 	*/
-
-		// 	if (option.left_selector != '' && typeof option.left_selector !== 'undefined' && $(option.left_selector).length > 0) {
-		// 		$(option.left_selector).each(function(index) {
-		// 			var option2 = new Object();
-		// 			$.extend(option2, option);
-		// 			option2.left_node = $(this).attr('id');
-					
-		// 			option2.right_node = $(this).data(option.data_attribute);
-		// 			if (option2.right_node != '' && typeof option2.right_node !== 'undefined') {
-		// 				_me.drawLine(option2);
-
-		// 			}
-		// 		});
-		// 	}
-		// };
 
 		//This Function is used to connect two different div with a dotted line.
 		this.connect = function(option) {
@@ -136,17 +113,7 @@ this.kruskalize =function (_cl = "rgb(0,0,0,0.08)")  {
 				var _left = new Object(); //This will store _left elements offset  
 				var _right = new Object(); //This will store _right elements offset	
 				var _error = (option.error == 'show') || false;
-				/*
-				option = {
-					left_node - Left Element by ID - Mandatory
-					right_node - Right Element ID - Mandatory
-					status - accepted, rejected, modified, (none) - Optional
-					style - (dashed), solid, dotted - Optional	
-					horizantal_gap - (0), Horizantal Gap from original point
-					error - show, (hide) - To show error or not
-					width - (2) - Width of the line
-				}
-				*/
+			
 
 				if (option.left_node != '' && typeof option.left_node !== 'undefined' && option.right_node != '' && typeof option.right_node !== 'undefined' && $(option.left_node).length > 0 && $(option.right_node).length > 0) {
 
@@ -212,23 +179,7 @@ this.kruskalize =function (_cl = "rgb(0,0,0,0.08)")  {
 								option._text = ""
 							}
 
-							/*
-						if (option.gtype == "D" && f == 1) {
-
-
-							ele2_x = _left.x;
-							ele2_y = _left.y;
-							ele1_x = _right.x;
-							ele1_y = _right.y;
-							
-						}
-
-						*/
-
-						//Create a group
-						//var g = _canvas.group({strokeWidth: 2, strokeDashArray:_dash}); 	
-
-						//Draw Line
+						
 						var _gap = option.horizantal_gap || 0;
 
 
