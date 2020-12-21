@@ -258,7 +258,7 @@ function Log (data)  {
 
 function Output (data)  {
 
-$("#log1").append('<br><p style="font-size:x-large; margin-top:-5px;  color:rgb(0,0,255, 0.7);font-family:Segoe UI;">'+ data +'</p>')                                                                               
+$("#log1").append('<br><p style="font-size:large; margin-top:-5px;  color:rgb(0,0,255, 0.7);font-family:consolas;">'+ data +'</p>')                                                                               
 
 logscreen.scrollTop = logscreen.scrollHeight;
 
