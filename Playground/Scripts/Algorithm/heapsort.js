@@ -234,7 +234,7 @@ data = {"0":{"top":138,"left":643},"1":{"top":247,"left":326},"2":{"top":247,"le
           await display('Swap last element with root node')
           await  gottopoint(0 ,ind)
           await swapp(0,ind)
-          await turnred(ind)
+          await hilight("aitem"+ind,"red")
           await hilight(ind, "purple" ,"1s" ,1100)
     
           // call max heapify on the reduced heap 
@@ -263,7 +263,7 @@ async function doalign(duration_="3000ms" , timeout_=200)  {
     let ll = data[d]["left"];
 
      let ff = document.getElementById(d);
-     ff.style.top=(tt-138)+"px";
+     ff.style.top=(tt)+"px";
      ff.style.left=ll+"px";
 
 
