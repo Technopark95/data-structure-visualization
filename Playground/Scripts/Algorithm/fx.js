@@ -75,7 +75,7 @@ let kpointer =document.getElementById("kindex")
 
 ipointer.style.display = "none";
 jpointer.style.display = "none";
-ikpointer.style.display = "none";
+kpointer.style.display = "none";
 
 
 var speed =0; 
