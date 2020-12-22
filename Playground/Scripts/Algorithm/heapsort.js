@@ -131,14 +131,14 @@ data = {"0":{"top":138,"left":643},"1":{"top":247,"left":326},"2":{"top":247,"le
       element2.style.top = top1;
       element2.style.left = left1;
       
-      
+
       await waitforme(speed+100);
 
 
-        element1.style.transition = "0ms linear";
+        element1.style.transition = "0ms linear";        
+        element2.style.transition = "0ms linear";
         element1.style.top = top1;
         element1.style.left = left1;
-        element2.style.transition = "0ms linear";
         element2.style.top = top2;
         element2.style.left = left2;
     
