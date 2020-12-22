@@ -118,7 +118,6 @@ data = {"0":{"top":138,"left":643},"1":{"top":247,"left":326},"2":{"top":247,"le
       let top2 = element2.style.top;
       let left2 = element2.style.left;
 
- 
       let treeval1 = document.getElementById(i+"treeval");
       let treeval2 = document.getElementById(j+"treeval");
   
@@ -127,13 +126,13 @@ data = {"0":{"top":138,"left":643},"1":{"top":247,"left":326},"2":{"top":247,"le
   
       element1.style.transition = speed+"ms linear";
       element2.style.transition = speed+"ms linear";
-
       element1.style.top = top2;
       element1.style.left = left2;
       element2.style.top = top1;
       element2.style.left = left1;
-           
-     await waitforme(speed+100);
+      
+      
+      await waitforme(speed+100);
 
 
         element1.style.transition = "0ms linear";
@@ -269,3 +268,4 @@ async function doalign(duration_="3000ms" , timeout_=200)  {
   
   
   }
+
