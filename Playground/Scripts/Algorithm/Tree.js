@@ -668,8 +668,8 @@ async function balancenodes(startnode)   {
       await display("Tree Empty. Adding root node.");
       let vid =count;
        leaf(key_); 
-     //  $(`#${vid}`).css({ "top" : "0px", "left" : "0px","transition" : "2000ms linear"})
-       $(`#${vid}`).css({ "top" : "0px", "left" : "1900px"})
+      $(`#${vid}`).css({  "left" : "1900px","transition" : "2000ms linear"})
+       
 
        $(document).scrollLeft(1200)
        $(document).scrollTop(0)
