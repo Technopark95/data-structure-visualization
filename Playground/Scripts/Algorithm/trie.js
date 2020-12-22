@@ -295,5 +295,4 @@ trieinsert("ANOQW",200);
 trieinsert("HANDSOME",213);
 trieinsert("HANDJOB",345);
 trieinsert("HANKAKU",3134);
-
 */
