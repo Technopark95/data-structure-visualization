@@ -171,8 +171,7 @@ async function deleteheap()
 async function createheap(elements)  {
     arrayflag = 1;
     array(elements);
-    arraynodes()
-  
+     await  arraynodes()
     doalign()
     await waitforme(speed+100);
     build()
