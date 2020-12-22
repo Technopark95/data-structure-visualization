@@ -54,6 +54,10 @@ function treefy(first,second ,color_ = "coral") {
             drag: function(event, ui){mySVG.redrawLines();
             }
           });
+
+
+
+          
   
         }
   
@@ -965,7 +969,7 @@ await waitforme (speed+100);
      newnode = '<div id="'+count+'" style=" transition:'+ speed+ 'ms linear;transform:scale(.8,.8);left:1250px;top:150px;"  class="dragg" > <div class="treenode" id="'+ count+"treetop" +'" style="margin-left:35px;"></div>  <div class="treenode" id="'+ count+"treeleft" +'" style="margin-left:18px; margin-top:70px;"></div>   <div class="treenode" id="'+ count+"treeright" +'" style="margin-left:54px; margin-top:70px;"></div> <p  style="position:absolute;color:coral; font-size:70%; left:20px;" id="'+ count+"bottom" +'">'+count +'</p>    <p  id="'+ count+"treeval" +'" class="t">'+element+'</p>   </div>';
 
 
-    $("body").prepend(newnode)
+     document.body.insertAdjacentHTML("afterbegin",newnode)
     $("#"+count).draggable();
 
     tree[count+"treeleft"] = "null"
