@@ -125,9 +125,8 @@ if (count != 0)  {
 }
 
 
-await waitforme(1500);
+await waitforme(speed+100);
 mySVG.redrawLines();
-await waitforme(500);
 await HEAPIFY2(count, count-1)
 
 }
