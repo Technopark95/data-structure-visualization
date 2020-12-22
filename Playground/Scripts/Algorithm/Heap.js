@@ -50,7 +50,6 @@ async function HEAPIFY2( n,  i)
 
              await swapp(parent, i)
 
-         await   waitforme(500);
 
        hilight(i , defaultcolor ,"1s" ,1100)
        await hilight(parent , defaultcolor ,"1s" ,1100)
