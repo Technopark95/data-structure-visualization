@@ -33,7 +33,8 @@ async function getMax()
 
     Output(storedarray[0])
   
-    return storedarray[0]; 
+    let y = storedarray[0]
+    return y;
 } 
 
 
@@ -73,7 +74,7 @@ async function ExtractMAX()  {
 
 async function RemovePriorityQueue( i) 
 { 
-    storedarray[i] = getMax() + 1; 
+    storedarray[i] = storedarray[0] + 1; 
   
     await hilight(i , "red" , "1200ms linear" ,1300);
     $(`#${i}treeval`).text(storedarray[i]);
