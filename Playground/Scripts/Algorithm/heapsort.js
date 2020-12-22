@@ -108,53 +108,48 @@ data = {"0":{"top":138,"left":643},"1":{"top":247,"left":326},"2":{"top":247,"le
   
     if (stats == 1  ) await pauser();
   
-      return new Promise(resolve => {
+
+      let element1 = document.getElementById(i)
+      let top1 =  element1.style.top;
+      let left1 = element1.style.left;
   
   
-      var element1 = $("#"+i);
-      var top1 = element1.position().top;
-      var left1 = element1.position().left;
+      let  element2 = document.getElementById(j)
+      let top2 = element2.style.top;
+      let left2 = element2.style.left;
+
+ 
+      let treeval1 = document.getElementById(i+"treeval");
+      let treeval2 = document.getElementById(j+"treeval");
   
+      let  element1text = treeval1.innerHTML
+      let  element2text = treeval2.innerHTML
   
-      var  element2 = $("#"+j);
-      var top2 = element2.position().top;
-      var left2 = element2.position().left;
+      element1.style.transition = speed+"ms linear";
+      element2.style.transition = speed+"ms linear";
+
+      element1.style.top = top2;
+      element1.style.left = left2;
+      element2.style.top = top1;
+      element2.style.left = left1;
+           
+     await waitforme(speed+100);
+
+
+        element1.style.transition = "0ms linear";
+        element1.style.top = top1;
+        element1.style.left = left1;
+        element2.style.transition = "0ms linear";
+        element2.style.top = top2;
+        element2.style.left = left2;
+    
+         treeval2.innerHTML = element1text
+         treeval1.innerHTML = element2text
   
-      var  element1text = $("#"+i+"treeval").text();
-      var  element2text = $("#"+j+"treeval").text();
-  
-      element1.css({ "top": (top2)+"px", "left": (left2)+"px" ,"transition" : speed+"ms linear" },3500, function() {
-  
-  
-      })
-  
-      element2.css({ "top": (top1)+"px", "left": (left1)+"px","transition" :speed+"ms linear" } , 3500, function() {
-  
-  
-      })
-     
-  
-      setTimeout(function() {
-  
-        element1.css({"position" : "absolute" , "top": (top1)+"px", "left": (left1)+"px" ,"transition-duration" :"0ms"})
-  
-         element2.css({"position" : "absolute" , "top": (top2)+"px", "left": (left2)+"px" ,"transition-duration" :"0ms"})
-  
-         $("#"+j+"treeval").text(element1text)
-         $("#"+i+"treeval").text(element2text);
-  
-         mySVG.redrawLines();
-         resolve('resolved')
-  
-      },speed+80)
-  
-  
-  
-  
-  
-      })
-  
-  
+    
+
+         await waitforme(speed+100);
+
   
   
   }
@@ -274,4 +269,3 @@ async function doalign(duration_="3000ms" , timeout_=200)  {
   
   
   }
-
