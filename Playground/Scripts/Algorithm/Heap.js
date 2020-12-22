@@ -172,8 +172,9 @@ async function createheap(elements)  {
     arrayflag = 1;
     array(elements);
     arraynodes()
-    await doalign("2000ms",0)
-    await waitforme(2000);
+  
+    doalign()
+    await waitforme(speed+100);
     build()
     // Build heap (rearrange array) 
     await display('Building Heap')

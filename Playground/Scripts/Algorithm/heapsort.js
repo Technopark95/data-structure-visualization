@@ -27,29 +27,35 @@ data = {"0":{"top":138,"left":643},"1":{"top":247,"left":326},"2":{"top":247,"le
 
 
 
-  function arraynodes() 
+  async function arraynodes() 
   { 
   
-      if ( ii == length ) {
-          counttreenodes = length;
-          count =length;
-          return;
+      while ( ii != length ) {
+        
       
     
-       }
+       
   
-      newnode = '<div id="'+ii+'" style=" transition:'+ speed+ 'ms linear;left:0px;top:0px;"  class="dragg" > <div class="treenode" id="'+ ii+"treetop" +'" style="margin-left:35px;"></div>  <div class="treenode" id="'+ ii+"treeleft" +'" style="margin-left:18px; margin-top:70px;"></div>   <div class="treenode" id="'+ ii+"treeright" +'" style="margin-left:54px; margin-top:70px;"></div> <p  style="position:absolute;color:coral; font-size:70%; left:20px;" id="'+ ii+"bottom" +'">'+ii +'</p>    <p  id="'+ ii+"treeval" +'" class="t">'+storedarray[ii]+'</p>   </div>';
+      newnode = '<div id="'+ii+'" style="left:0;top:0;"  class="dragg" > <div class="treenode" id="'+ ii+"treetop" +'" style="margin-left:35px;"></div>  <div class="treenode" id="'+ ii+"treeleft" +'" style="margin-left:18px; margin-top:70px;"></div>   <div class="treenode" id="'+ ii+"treeright" +'" style="margin-left:54px; margin-top:70px;"></div> <p  style="position:absolute;color:coral; font-size:70%; left:20px;" id="'+ ii+"bottom" +'">'+ii +'</p>    <p  id="'+ ii+"treeval" +'" class="t">'+storedarray[ii]+'</p>   </div>';
   
      document.body.insertAdjacentHTML("afterbegin",newnode)
         
 
+     document.getElementById(ii).style.transition = speed+"ms linear"
   
         tree[ii+"treeleft"] = "null"
         tree[ii+"treeright"] = "null"
     ii = ii + 1
         rootoftree = newnode
-        arraynodes()
-  
+
+      }
+
+
+      counttreenodes = length;
+      count =length;
+
+      await waitforme(speed);
+      
   } 
   
   
@@ -205,9 +211,9 @@ data = {"0":{"top":138,"left":643},"1":{"top":247,"left":326},"2":{"top":247,"le
   // main function to do heap sort 
   async function HeapSort() 
   { 
-      arraynodes()
-      await waitforme(50);
-      await doalign()
+    await  arraynodes()
+     
+        doalign()
       await waitforme(speed+50);
       build()
       // Build heap (rearrange array) 
@@ -245,7 +251,7 @@ data = {"0":{"top":138,"left":643},"1":{"top":247,"left":326},"2":{"top":247,"le
   var posar = {}
   
 
-async function doalign(duration_="3000ms" , timeout_=200)  {
+ function doalign(duration_="3000ms" , timeout_=200)  {
   
     
 
