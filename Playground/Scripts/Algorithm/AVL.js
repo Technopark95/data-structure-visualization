@@ -45,14 +45,14 @@ var maxheight= 0;
  
       if ( parseInt( $(`#${unbalparent}treeval`).text() ,10)   <  parseInt($(`#${x}treeval`).text(),10) )  {
         treefy(unbalparent+"treeright" , x)
-        del(`#${unbalparent}treeright` , `#${y}treetop`);
+        del(`${unbalparent}treeright` , `${y}treetop`);
         
         }
     
         else {
     
           treefy(unbalparent+"treeleft" , x)
-          del(`#${unbalparent}treeleft` , `#${y}treetop`);
+          del(`${unbalparent}treeleft` , `${y}treetop`);
         
         }
   
@@ -61,14 +61,14 @@ var maxheight= 0;
      //   SyncMoveBranch(x, Math.abs(ypos.left-xpos.left),-90);
     
   
-     del(`#${y}treeleft` , `#${x}treetop`);
+     del(`${y}treeleft` , `${x}treetop`);
     
     // Perform rotation  
     treefy(x+"treeright" , y)   /* x->right = y;  */ 
    
    if (T2 != "null"){ 
        treefy(y+"treeleft" , T2)
-       del(`#${x}treeright` , `#${T2}treetop`);
+       del(`${x}treeright` , `${T2}treetop`);
      
     
 
@@ -120,14 +120,14 @@ function leftRotate(x)
        
     if ( parseInt( $(`#${unbalparent}treeval`).text() ,10)   <  parseInt($(`#${x}treeval`).text(),10) )  {
       treefy(unbalparent+"treeright" , y)
-      del(`#${unbalparent}treeright` , `#${x}treetop`);
+      del(`${unbalparent}treeright` , `${x}treetop`);
        
       }
   
       else {
   
         treefy(unbalparent+"treeleft" , y)
-        del(`#${unbalparent}treeleft` , `#${x}treetop`);
+        del(`${unbalparent}treeleft` , `${x}treetop`);
          
       }
 
@@ -137,13 +137,13 @@ function leftRotate(x)
     
     
     // Perform rotation  
-    del(`#${x}treeright` , `#${y}treetop`);
+    del(`${x}treeright` , `${y}treetop`);
      
     treefy(y+"treeleft" , x)
 
     if (T2 != "null"){ 
       treefy(x+"treeright" , T2) 
-      del(`#${y}treeleft` , `#${T2}treetop`);
+      del(`${y}treeleft` , `${T2}treetop`);
     
 
 
@@ -353,7 +353,7 @@ async function insertavl(node_, key_) {
        
         let optiona = tree[`${node_}treeleft`];
 
-        del (`#${node_}treeleft` , `#${optiona}treetop`);
+        del (`${node_}treeleft` , `${optiona}treetop`);
 
          treefy(`${node_}treeleft`, newnodeleft);
 
@@ -386,7 +386,7 @@ async function insertavl(node_, key_) {
         await waitforme(speed+100);
         let optiona = tree[`${node_}treeright`];
 
-        del(`#${node_}treeright` , `#${optiona}treetop`);
+        del(`${node_}treeright` , `${optiona}treetop`);
 
         treefy(`${node_}treeright`, newnoderight);
 
@@ -561,7 +561,7 @@ if (balance > 1 &&  getBalance(tree[`${_root}treeleft`]) < 0)  {
 
   let optiona = tree[`${_root}treeleft`];
 
-  del (`#${_root}treeleft` , `#${optiona}treetop`);
+  del (`${_root}treeleft` , `${optiona}treetop`);
 
   treefy(`${_root}treeleft`, newnodeleft);
 
@@ -590,7 +590,7 @@ if (balance < -1 &&  getBalance(tree[`${_root}treeright`]) > 0)  {
   await waitforme(2000);
   let optiona = tree[`${_root}treeright`];
 
-  del(`#${_root}treeright` , `#${optiona}treetop`);
+  del(`${_root}treeright` , `${optiona}treetop`);
 
   treefy(`${_root}treeright`, newnoderight);
   
