@@ -347,7 +347,7 @@ return count;
     if (rbparent[pt] != undefined)
     await waitforme(speed+30)
 
-    redrawevent= setInterval(redrawsplay , 50);
+    redrawevent = requestAnimationFrame(redrawsplay)
 
     
 
@@ -367,7 +367,7 @@ return count;
 
    await waitforme (speed+100);
 
-    clearInterval(redrawevent)
+    cancelAnimationFrame(redrawevent)
 
 
 } 
