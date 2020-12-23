@@ -26,8 +26,8 @@ function treefy(first,second ,color_ = "coral") {
 
 
     mySVG.drawLine({
-      left_node:'#'+first,
-      right_node:'#'+second+'treetop',
+      left_node:first,
+      right_node:second+'treetop',
       error:true,
       col : color_,
       width:2,
