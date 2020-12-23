@@ -327,10 +327,18 @@ return count;
 
 
    if (rbparent[pt] != undefined)
-    if (parseInt( $("#"+pt+"treeval").text(),10) > parseInt( $("#"+rbparent[pt]+"treeval").text(),10))
-      $(`#${pt}`).offset({"top" : `${$("#"+rbparent[pt]).offset().top+90}` , "left" : `${$("#"+rbparent[pt]).offset().left+40}` })
-    else
-      $(`#${pt}`).offset({"top" : `${$("#"+rbparent[pt]).offset().top+90}` , "left" : `${$("#"+rbparent[pt]).offset().left-40}` })
+    if (parseInt( $("#"+pt+"treeval").text(),10) > parseInt( $("#"+rbparent[pt]+"treeval").text(),10)){
+     
+        document.getElementById(pt).style.top = parseInt( document.getElementById(rbparent[pt]).style.top)+85+"px";
+        document.getElementById(pt).style.left = parseInt( document.getElementById(rbparent[pt]).style.left)+35+"px";
+
+    } 
+    else {
+
+        document.getElementById(pt).style.top = parseInt( document.getElementById(rbparent[pt]).style.top)+85+"px";
+        document.getElementById(pt).style.left = parseInt( document.getElementById(rbparent[pt]).style.left)-35+"px";
+    
+    } 
 
     // fix Red Black Tree violations 
 
@@ -350,8 +358,10 @@ return count;
     AVLpostleft[rbroot] = 1900;
     AVLposttop[rbroot] = 150;
 
-    $(`#${rbroot}`).offset({"top" : `${150}` , "left" : `${ 1900 }` })
+    document.getElementById(rbroot).style.top = 150+"px";
+    document.getElementById(rbroot).style.left = 1905+"px";
 
+    $(".dragg").css("transition" , speed+"ms linear");
    
     BalanceAll(rbroot);
 
