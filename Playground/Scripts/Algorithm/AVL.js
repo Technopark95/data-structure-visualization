@@ -214,7 +214,6 @@ async function insertavl(node_, key_) {
         let vid =  count;
       await  avl(key_);
       let videlement = document.getElementById(vid)
-
       videlement.style.transition = speed+"ms linear";
       videlement.style.top = parseInt( document.getElementById(node_).style.top)+85+"px";
       videlement.style.left = parseInt( document.getElementById(node_).style.left)-35+"px";
@@ -255,7 +254,6 @@ async function insertavl(node_, key_) {
         let vid = count;
         avl(key_);
         let videlement = document.getElementById(vid)
-
         videlement.style.transition = speed+"ms linear";
         videlement.style.top = (parseInt( document.getElementById(node_).style.top)+85)+"px";
         videlement.style.left = (parseInt( document.getElementById(node_).style.left)+35)+"px";
