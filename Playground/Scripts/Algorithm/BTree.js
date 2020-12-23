@@ -91,6 +91,7 @@ function  redrawBtreelines ()  {
 
 mySVG.Blines();
 
+redrawevent = requestAnimationFrame(redrawBtreelines);
 
 }
 
@@ -415,7 +416,7 @@ var xx =0;
 async function btreeinsert( k)  {
 
 
-redrawevent = setInterval(redrawBtreelines,50);
+redrawevent = requestAnimationFrame(redrawBtreelines);
 
    xx= rot;
     
@@ -466,7 +467,7 @@ redrawevent = setInterval(redrawBtreelines,50);
 
     await waitforme (speed+100);
 
-clearInterval(redrawevent)
+cancelAnimationFrame(redrawevent)
 
 
     
