@@ -35,6 +35,7 @@ async function redrawlist  ()  {
 
     mySVG.Listlines();
     
+    redrawlistevent = requestAnimationFrame(redrawlist)
    
    }
 
@@ -77,7 +78,7 @@ async function prependlist( new_data)
 { 
     
 
-    redrawlistevent = setInterval(redrawlist , 50);
+    redrawlistevent = requestAnimationFrame(redrawlist)
 
     $(".dragg").css("transition" , speed+"ms linear");
 
@@ -108,7 +109,7 @@ async function prependlist( new_data)
 
     await waitforme (speed+400);
 
-   clearInterval(redrawlistevent)
+   cancelAnimationFrame(redrawlistevent)
   
 
 } 
@@ -166,7 +167,7 @@ async function appendlist( new_data)
 async function insertafterlist( prev_node, new_data)  
 { 
     
-    redrawlistevent = setInterval(redrawlist , 50);
+    redrawlistevent = requestAnimationFrame(redrawlist)
     /*1. check if the given prev_node is NULL */
     if (prev_node == "null")  
     {  
@@ -208,7 +209,7 @@ $("#"+last).animate({"left":"+=140px"})
 
     await waitforme (speed*4);
 
-   clearInterval(redrawlistevent)
+   cancelAnimationFrame(redrawlistevent)
 
 }  
   
@@ -321,7 +322,7 @@ await prependlist(val)
   async function poplist()
 {
     
-    redrawlistevent = setInterval(redrawlist , 50);
+    redrawlistevent = requestAnimationFrame(redrawlist)
     $(".dragg").css("transition" , speed+"ms linear");
 if( head_ref == "null")
 Log("Underflow ERROR");
@@ -341,7 +342,7 @@ await waitforme(speed+400);
 
 
 
-clearInterval(redrawlistevent)
+cancelAnimationFrame(redrawlistevent)
 
 
 }
