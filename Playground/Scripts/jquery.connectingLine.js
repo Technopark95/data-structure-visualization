@@ -114,9 +114,10 @@ this.kruskalize =function (_cl = "rgb(0,0,0,0.08)")  {
 				var _right = new Object(); //This will store _right elements offset	
 				var _error = (option.error == 'show') || false;
 			
-
-				if (option.left_node != '' && typeof option.left_node !== 'undefined' && option.right_node != '' && typeof option.right_node !== 'undefined' && $(option.left_node).length > 0 && $(option.right_node).length > 0) {
-
+				
+		if ( option.left_node == undefined || option.left_node == "null" || option.right_node == undefined || option.right_node == "null"  ) {
+			return;
+		}
 					//To decide colour of the line
 				
 							_color = option.col || "coral";
@@ -144,20 +145,26 @@ this.kruskalize =function (_cl = "rgb(0,0,0,0.08)")  {
 
 					//If left_node is actually right side, following code will switch elements.
 				
-						_left_node = $(option.left_node);
-						_right_node = $(option.right_node);
+						let _left_node = document.getElementById(option.left_node);
+						let _right_node = document.getElementById(option.right_node);
 
 
+						let clientrectleft = _left_node.getBoundingClientRect();
+						let clientrectright = _right_node.getBoundingClientRect();
+						let leftnodeoffsetx = clientrectleft.left +document.documentElement.scrollLeft;
+						let leftnodeoffsety = clientrectleft.top +document.documentElement.scrollTop;
+						let rightnodeoffsetx = clientrectright.left +document.documentElement.scrollLeft;
+						let rightnodeoffsety = clientrectright.top +document.documentElement.scrollTop;
 
-						let dax = (_right_node.offset().left+ _right_node.width()/2) - (_left_node.offset().left+ _left_node.width()/2);
-						let day = (_right_node.offset().top+ _right_node.height()/2) - (_left_node.offset().top+ _left_node.height()/2);
+						let dax = (rightnodeoffsetx+ _right_node.offsetHeight/2) - (leftnodeoffsetx+ _left_node.offsetWidth/2);
+						let day = (rightnodeoffsety+ _right_node.offsetHeight/2) - (leftnodeoffsety+ _left_node.offsetHeight/2);
 						let dangle = Math.atan2(day ,dax);
 
-						let rightx = (_right_node.width()/2) * Math.cos(135+dangle) + (_right_node.offset().left+ _right_node.width()/2) ;
-						let righty  = (_right_node.height()/2) * Math.sin(135+dangle) + (_right_node.offset().top + (_right_node.height() / 2)) ;
+						let rightx = (_right_node.offsetWidth/2) * Math.cos(135+dangle) + (rightnodeoffsetx+ _right_node.offsetWidth/2) ;
+						let righty  = (_right_node.offsetHeight/2) * Math.sin(135+dangle) + (rightnodeoffsety + (_right_node.offsetHeight / 2)) ;
 
-						let leftx = (_left_node.width()/2) * Math.cos(.05+dangle) + (_left_node.offset().left+ _left_node.width()/2) ;
-						let lefty  = (_left_node.height()/2) * Math.sin(.05+dangle) + (_left_node.offset().top + (_left_node.height() / 2)) ;
+						let leftx = (_left_node.offsetWidth/2) * Math.cos(.05+dangle) + (leftnodeoffsetx+ _left_node.offsetWidth/2) ;
+						let lefty  = (_left_node.offsetHeight/2) * Math.sin(.05+dangle) + (leftnodeoffsety + (_left_node.offsetHeight / 2)) ;
 
 						//Get Left point and Right Point
 						_left.x = leftx
@@ -194,7 +201,9 @@ this.kruskalize =function (_cl = "rgb(0,0,0,0.08)")  {
 
 						if (!_ctx.setLineDash) {
 							_ctx.setLineDash = function() {}
-						} else {
+						} 
+						
+						else {
 							_ctx.setLineDash(_dash);
 						}
 						_ctx.lineWidth = option.width || 2;
@@ -228,9 +237,7 @@ f = 0;
 				
 
 					//option.resize = option.resize || false;
-				} else {
-					if (_error) alert('Mandatory Fields are missing or incorrect');
-				}
+				
 			} catch (err) {
 				if (_error) alert('Mandatory Fields are missing or incorrect');
 			}
@@ -246,13 +253,15 @@ f = 0;
 
 		this.redrawLines = function() {
 			if (_lines.length == 0) return;
-
 			
 			_ctx.clearRect(0, 0, $(_parent).width(), $(_parent).height());
-			_lines.forEach(function(entry) {
-				entry.resize = true;
-				_me.connect(entry);
-			});
+
+				for (let li = 0 ; li < _lines.length ;li++) {
+				
+					_me.connect(_lines[li])
+	
+				  }
+				  
 		};
 
 
@@ -265,7 +274,7 @@ f = 0;
 
 				let destination = tree[source];
 				if(destination != "null")
-				_me.connect({left_node:"#"+source , right_node:"#"+destination+"treetop"})
+				_me.connect({left_node:source , right_node:destination+"treetop"})
 
 			  }
 
@@ -282,7 +291,7 @@ f = 0;
 
 				let destination = next[source];
 				if(destination != "null")
-				_me.connect({left_node:"#"+source , right_node:"#"+destination , col:"black" ,style:"dashed"})
+				_me.connect({left_node:source , right_node:destination , col:"black" ,style:"dashed"})
 
 			  }
 
@@ -299,7 +308,7 @@ f = 0;
 
 				let destination = BTree[source];
 				if(destination != "null")
-				_me.connect({left_node:"#"+source , right_node:"#"+destination+"top",gtype:"D" })
+				_me.connect({left_node:source , right_node:destination+"top",gtype:"D" })
 
 			  }
 
