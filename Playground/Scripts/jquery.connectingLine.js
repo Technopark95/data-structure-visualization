@@ -27,6 +27,13 @@ var _ctx;
 var ele1 , ele2, f=0;
 var lineindex =0;
 var linemap = {};
+var _left = new Object(); //This will store _left elements offset  
+var _right = new Object(); //This will store _right elements offset	
+var _color="coral";
+var _dash;
+var _id;
+
+var _error =false;
 
 (function($) {
 	$.fn.connect = function(param) {
@@ -39,6 +46,9 @@ var linemap = {};
 		//Initialize Canvas object
 		_canvas = $('<canvas id="cav1"/>').attr('width', $(_parent).width()).attr('height', $(_parent).height());
 		$('body').append(_canvas);
+
+		_ctx = _canvas[0].getContext('2d');
+			 
 
 		this.drawLine = function(option) {
 			//It will push line to array.
@@ -102,17 +112,11 @@ this.kruskalize =function (_cl = "rgb(0,0,0,0.08)")  {
 
 		//This Function is used to connect two different div with a dotted line.
 		this.connect = function(option) {
-			_ctx = _canvas[0].getContext('2d');
-			 
+			
 			
 			_ctx.beginPath();
 			try {
-				var _color="coral";
-				var _dash;
-				var _id;
-				var _left = new Object(); //This will store _left elements offset  
-				var _right = new Object(); //This will store _right elements offset	
-				var _error = (option.error == 'show') || false;
+			
 			
 				
 		if ( option.left_node == undefined || option.left_node == "null" || option.right_node == undefined || option.right_node == "null"  ) {
@@ -172,40 +176,20 @@ this.kruskalize =function (_cl = "rgb(0,0,0,0.08)")  {
 						_right.x = rightx
 						_right.y = righty
 
-
-						    
-
 							ele1_x = _left.x;
 							ele1_y = _left.y;
 							ele2_x = _right.x;
 							ele2_y = _right.y;
-
-
 
 							if (option._text == undefined) {
 								option._text = ""
 							}
 
 						
-						var _gap = option.horizantal_gap || 0;
-
-
 						_ctx.moveTo(_left.x, _left.y );
-						if (_gap != 0) {
-							_ctx.lineTo(_left.x + _gap, _left.y);
-							_ctx.lineTo(_right.x - _gap, _right.y);
-							
-						}
+					
 						_ctx.lineTo((_right.x), (_right.y));
 						
-
-						if (!_ctx.setLineDash) {
-							_ctx.setLineDash = function() {}
-						} 
-						
-						else {
-							_ctx.setLineDash(_dash);
-						}
 						_ctx.lineWidth = option.width || 2;
 						_ctx.strokeStyle = _color;
 
