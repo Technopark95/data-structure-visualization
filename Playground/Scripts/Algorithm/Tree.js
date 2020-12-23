@@ -34,8 +34,14 @@ function treefy(first,second ,color_ = "coral") {
         
     });
   
-    var par = $("#"+first).parent().attr("id");
-  
+ //   var par = $("#"+first).parent().attr("id");
+    let par;
+    
+    if (document.getElementById(first) != null){
+      par = document.getElementById(first).parentNode.id
+    }
+
+
     tree[first] = second ;
     parent[second] = par;
   
@@ -75,7 +81,7 @@ async function  preorder(CurrentNode) {
 
 
     await hilight(CurrentNode , "red", "500ms"  ,700)
-    Output($("#"+CurrentNode+"treeval").text())
+    Output( document.getElementById(CurrentNode+"treeval").innerHTML)
     await display("Going left of " + CurrentNode )
     await preorder(tree[CurrentNode+"treeleft"])
     await display("Going right of " + CurrentNode )
@@ -99,7 +105,7 @@ async function  inorder(CurrentNode ) {
     await display("Going left of " + CurrentNode )
     await inorder(tree[CurrentNode+"treeleft"])
     await hilight(CurrentNode , "red" , "500ms"  ,700)
-    Output($("#"+CurrentNode+"treeval").text())
+    Output( document.getElementById(CurrentNode+"treeval").innerHTML)
     await display("Going right of " + CurrentNode )
     await inorder(tree[CurrentNode+"treeright"])
     await display("returning from " + CurrentNode )
@@ -124,7 +130,7 @@ async function  postorder(CurrentNode ) {
     await display("Going right of " + CurrentNode )
     await postorder(tree[CurrentNode+"treeright"])
     await hilight(CurrentNode , "red", "500ms"  ,700)
-    Output($("#"+CurrentNode+"treeval").text())
+    Output( document.getElementById(CurrentNode+"treeval").innerHTML)
     await display("returning from " + CurrentNode )
     await hilight(CurrentNode , "rgba(75,0,130, 0.842)", "500ms"  ,700)
   
@@ -135,7 +141,7 @@ async function  postorder(CurrentNode ) {
  async function levelorder(_node)
 {
     // Base Case
-    if ($("#"+_node).length == 0)  return;
+    if (document.getElementById(_node) == 0)  return;
  
     // Create an empty queue for level order traversal
     let q = new Q();
@@ -152,7 +158,7 @@ async function  postorder(CurrentNode ) {
         // Print front of queue and remove it from queue
         let root_ = (q.front).data;
        
-     Output( $('#'+root_+"treeval").text());
+        Output( document.getElementById(root_+"treeval").innerHTML)
   
   
   
@@ -203,7 +209,7 @@ document.getElementById("postqueue").remove();
          return; 
     
       stack(10)
-      pointerarrow.show();
+      pointerarrow.style.display = "";
      await push(root_); 
     
     
@@ -213,12 +219,16 @@ document.getElementById("postqueue").remove();
           await display(`Pop element from stack and print`);
           await pop();
           let curr = popped; 
-          pointerarrow.css({ "top" : `${($("#"+curr).offset().top+50)}px` , "left" : `${($("#"+curr).offset().left-50)}px` , "transition-duration" : "300ms"})
+  
+          pointerarrow.style.transition = `300ms linear`;
+          pointerarrow.style.top = parseInt(document.getElementById(curr).style.top)+50+"px"
+          pointerarrow.style.left = parseInt(document.getElementById(curr).style.left)-50+"px";
+
           
           await hilight(curr, "rgb(109,209,0,1)" , "1200ms" , 1300 )
                   hilight(curr, defaultcolor , "1200ms" , 1300 )
 
-          Output($("#"+curr+"treeval").text())
+                  Output( document.getElementById(curr+"treeval").innerHTML)
     
 
 
@@ -240,7 +250,7 @@ document.getElementById("postqueue").remove();
           }
       } 
 
-      pointerarrow.hide();
+      pointerarrow.style.display = "none";
   }
 
 
@@ -251,7 +261,7 @@ document.getElementById("postqueue").remove();
       stack(10);
       let curr = root_; 
 
-      pointerarrow.show();
+      pointerarrow.style.display="";
     
       while (curr != "null" || isEmpty() == false) 
       { 
@@ -260,8 +270,13 @@ document.getElementById("postqueue").remove();
           while (curr !=  "null") 
           { 
         
-            if (curr != "null") pointerarrow.css({ "top" : `${($("#"+curr).offset().top+25)}px` , "left" : `${($("#"+curr).offset().left-60)}px` , "transition-duration" : "300ms"})
+            if (curr != "null"){
 
+              pointerarrow.style.transition = `300ms linear`;
+              pointerarrow.style.top = parseInt(document.getElementById(curr).style.top)+25+"px"
+              pointerarrow.style.left = parseInt(document.getElementById(curr).style.left)-60+"px";
+              
+            } 
             
 
             await hilight(curr, "blueviolet" , "1200ms" , 1300 )
@@ -284,13 +299,16 @@ document.getElementById("postqueue").remove();
          await pop(); 
           curr = popped;
 
-          pointerarrow.css({ "top" : `${($("#"+curr).offset().top+25)}px` , "left" : `${($("#"+curr).offset().left-60)}px` , "transition-duration" : "300ms"})
+          pointerarrow.style.transition = `300ms linear`;
+          pointerarrow.style.top = parseInt(document.getElementById(curr).style.top)+25+"px"
+          pointerarrow.style.left = parseInt(document.getElementById(curr).style.left)-60+"px";
+
 
           await display(`Current node = ${popped} (popped element)`);
           await hilight(curr, "rgb(109,209,0,1)" , "1200ms" , 1300 )
           hilight(curr, defaultcolor , "1200ms" , 1300 )
       
-         Output( $("#"+curr+"treeval").text())
+          Output( document.getElementById(curr+"treeval").innerHTML)
     
          await display("Left sub tree completed. Now, going right subtree");
        
@@ -299,7 +317,7 @@ document.getElementById("postqueue").remove();
     
       } /* end of while */
 
-      pointerarrow.hide();
+      pointerarrow.style.display = "none";
 
   } 
 
@@ -308,7 +326,7 @@ document.getElementById("postqueue").remove();
  async function postorderstack(root_) 
   { 
       // Check for empty tree 
-        pointerarrow.show();
+      pointerarrow.style.display = "";
        stack(10); 
        do { 
           // Move to leftmost node 
@@ -316,14 +334,20 @@ document.getElementById("postqueue").remove();
           { 
               await display(`Push root's right child and then root to stack.`)
               if (tree[root_+"treeright"] != "null") {
-                pointerarrow.css({ "top" : `${($("#"+tree[root_+"treeright"]).offset().top+50)}px` , "left" : `${($("#"+tree[root_+"treeright"]).offset().left-50)}px` , "transition-duration" : "300ms"})
+
+                pointerarrow.style.transition = `300ms linear`;
+                pointerarrow.style.top = parseInt(document.getElementById(tree[root_+"treeright"]).style.top)+50+"px"
+                pointerarrow.style.left = parseInt(document.getElementById(tree[root_+"treeright"]).style.left)-50+"px";
 
                 await hilight(tree[root_+"treeright"], "blueviolet" , "1200ms" , 1300 )
                       hilight(tree[root_+"treeright"], defaultcolor , "1200ms" , 1300 )
               await push(tree[root_+"treeright"]); 
 
               }
-              pointerarrow.css({ "top" : `${($("#"+root_).offset().top+50)}px` , "left" : `${($("#"+root_).offset().left-50)}px` , "transition-duration" : "300ms"})
+             
+              pointerarrow.style.transition = `300ms linear`;
+              pointerarrow.style.top = parseInt(document.getElementById(root_).style.top)+50+"px"
+              pointerarrow.style.left = parseInt(document.getElementById(root_).style.left)-50+"px";
 
               await hilight(root_, "blueviolet" , "1200ms" , 1300 )
                       hilight(root_, defaultcolor , "1200ms" , 1300 )
@@ -357,16 +381,18 @@ document.getElementById("postqueue").remove();
           else  // Else print root's data and set root as NULL 
           { 
 
-            pointerarrow.css({ "top" : `${($("#"+root_).offset().top+50)}px` , "left" : `${($("#"+root_).offset().left-50)}px` , "transition-duration" : "300ms"})
+            pointerarrow.style.transition = `300ms linear`;
+            pointerarrow.style.top = parseInt(document.getElementById(root_).style.top)+50+"px"
+            pointerarrow.style.left = parseInt(document.getElementById(root_).style.left)-50+"px";
 
             await hilight(root_, "rgb(109,209,0,1)" , "1200ms" , 1300 )
                   hilight(root_, defaultcolor , "1200ms" , 1300 )
-              Output( $(`#${root_}treeval`).text()); 
+              Output( document.getElementById(root_+"treeval").innerHTML)
               root_ = "null"; 
           } 
       } while ( isEmpty() == false);
 
-      pointerarrow.hide();
+      pointerarrow.style.display = "none";
   } 
 
 
