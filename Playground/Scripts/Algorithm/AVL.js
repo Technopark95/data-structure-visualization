@@ -211,10 +211,13 @@ async function insertavl(node_, key_) {
             if (tree[`${node_}treeleft`] == "null") {
 
               await display("Correct place to insert the element = CurrentNode->left")
-        let vid = count;
+        let vid =  count;
       await  avl(key_);
-     $(`#${vid}`).css({ "transition" : speed+"ms linear"})
-     $(`#${vid}`).offset({top: ($("#"+node_).offset().top+90 ) , left :($("#"+node_).offset().left-40) })
+      let videlement = document.getElementById(vid)
+
+      videlement.style.transition = speed+"ms linear";
+      videlement.style.top = parseInt( document.getElementById(node_).style.top)+85+"px";
+      videlement.style.left = parseInt( document.getElementById(node_).style.left)-35+"px";
 
 
         await new Promise(resolve => {
@@ -251,10 +254,11 @@ async function insertavl(node_, key_) {
                 await display("Correct place to insert the element = CurrentNode->right")
         let vid = count;
         avl(key_);
+        let videlement = document.getElementById(vid)
 
-
-        $(`#${vid}`).css({ "transition" : speed+"ms linear"})
-        $(`#${vid}`).offset({top: ($("#"+node_).offset().top+90 ) , left :($("#"+node_).offset().left+40) })
+        videlement.style.transition = speed+"ms linear";
+        videlement.style.top = (parseInt( document.getElementById(node_).style.top)+85)+"px";
+        videlement.style.left = (parseInt( document.getElementById(node_).style.left)+35)+"px";
 
 
         await new Promise(resolve => {
@@ -663,7 +667,8 @@ async function InsertAVL (h) {
     AVLpostleft[r] = 1900;
     AVLposttop[r] = 150;
 
-    $(`#${r}`).offset({"top" : `${150}` , "left" : `${ 1900 }` })
+    document.getElementById(r).style.top = 150+"px";
+    document.getElementById(r).style.left = 1905+"px";
 
     $(".dragg").css("transition" , speed+"ms linear");
   
