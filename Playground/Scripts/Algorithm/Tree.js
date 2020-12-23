@@ -455,7 +455,7 @@ async function redraw  ()  {
  
   // Level-order-traverse
 var AVLpostleft = [], AVLposttop =[];
-AVLpostleft[0] = 1900;
+AVLpostleft[0] = 1905;
 AVLposttop[0] = 150;
 
 
@@ -463,7 +463,7 @@ AVLposttop[0] = 150;
 function BalanceAll(_node)
 {
     // Base Case
-    if ($("#"+_node).length == 0)  return;
+    if (document.getElementById(_node) == null)  return;
  
     // Create an empty queue for level order traversal
     let q = new Q();
@@ -478,22 +478,19 @@ function BalanceAll(_node)
         // Print front of queue and remove it from queue
         let root_ = (q.front).data;
        
-    //  Output( $('#'+root_+"treeval").text());
+    
       
     let lefttarget = tree[`${root_}treeleft`];
     let righttarget = tree[`${root_}treeright`];
-  
-  
-  
-  
-    let rootoffset = $("#"+root_).offset()
+
   
     if (lefttarget != "null" ) {
   
-  AVLposttop[lefttarget] =  AVLposttop[root_] +90;  
+  AVLposttop[lefttarget] =  AVLposttop[root_] +85;  
   AVLpostleft[lefttarget] =  AVLpostleft[root_]  - ( 20 * Math.pow( 2, height(lefttarget)) )
   
-   $(`#${lefttarget}`).offset({"top" : `${AVLposttop[lefttarget]}` , "left" : `${ AVLpostleft[lefttarget] }` })
+   document.getElementById(lefttarget).style.top = AVLposttop[lefttarget]+"px";
+    document.getElementById(lefttarget).style.left = AVLpostleft[lefttarget]+"px";
   
      
     }
@@ -502,16 +499,17 @@ function BalanceAll(_node)
     if (righttarget != "null" ) {
   
   
-  
-   AVLposttop[righttarget] =  AVLposttop[root_] +90; 
+   AVLposttop[righttarget] =  AVLposttop[root_] +85; 
    
+
    AVLpostleft[righttarget] =  AVLpostleft[root_]  + ( 20 * Math.pow( 2, height(righttarget)) )
+   
+
+    document.getElementById(righttarget).style.top = AVLposttop[righttarget]+"px";
+    document.getElementById(righttarget).style.left = AVLpostleft[righttarget]+"px";
+
   
-   
-   
-   
-   $(`#${righttarget}`).offset({"top" : `${AVLposttop[righttarget]}` ,  "left" : `${AVLpostleft[righttarget]}`})
-       
+
   
   
     }
@@ -534,7 +532,7 @@ function BalanceAll(_node)
 function BalanceBST(_node)
 {
     // Base Case
-    if ($("#"+_node).length == 0)  return;
+    if (document.getElementById(_node) == null)  return;
  
     // Create an empty queue for level order traversal
     let q = new Q();
@@ -549,7 +547,7 @@ function BalanceBST(_node)
         // Print front of queue and remove it from queue
         let root_ = (q.front).data;
        
-    //  Output( $('#'+root_+"treeval").text());
+
       
     let lefttarget = tree[`${root_}treeleft`];
     let righttarget = tree[`${root_}treeright`];
@@ -557,14 +555,14 @@ function BalanceBST(_node)
   
   
   
-    let rootoffset = $("#"+root_).offset()
-  
     if (lefttarget != "null" ) {
   
   AVLposttop[lefttarget] =  AVLposttop[root_] +90;  
   AVLpostleft[lefttarget] =  AVLpostleft[root_]  - ( 30 * Math.pow( 2, rightheight[lefttarget]) )
   
-   $(`#${lefttarget}`).offset({"top" : `${AVLposttop[lefttarget]}` , "left" : `${ AVLpostleft[lefttarget] }` })
+  document.getElementById(lefttarget).style.top = AVLposttop[lefttarget]+"px";
+  document.getElementById(lefttarget).style.left = AVLpostleft[lefttarget]+"px";
+
   
      
     }
@@ -579,10 +577,11 @@ function BalanceBST(_node)
    AVLpostleft[righttarget] =  AVLpostleft[root_]  + ( 30 * Math.pow( 2, leftheight[righttarget]) )
   
    
-   
-   
-   $(`#${righttarget}`).offset({"top" : `${AVLposttop[righttarget]}` ,  "left" : `${AVLpostleft[righttarget]}`})
-       
+  
+   document.getElementById(righttarget).style.top = AVLposttop[righttarget]+"px";
+   document.getElementById(righttarget).style.left = AVLpostleft[righttarget]+"px";
+
+     
   
   
     }
@@ -672,11 +671,11 @@ async function balancenodes(startnode)   {
       await display("Tree Empty. Adding root node.");
       let vid =count;
        leaf(key_); 
-      $(`#${vid}`).css({  "left" : "1900px","transition" : "2000ms linear"})
-       
 
-       $(document).scrollLeft(1200)
-       $(document).scrollTop(0)
+      document.getElementById(vid).style.transition = speed+"ms linear";
+      document.getElementById(vid).style.left = "1900px";
+       
+       window.scrollTo(1200,0)
 
        
        return;
@@ -689,15 +688,17 @@ async function balancenodes(startnode)   {
 
  
     /* Otherwise, recur down the tree */
-    if (key_ <  parseInt( $(`#${node_}treeval`).text() , 10) ) {
+    if (key_ <   parseInt(document.getElementById(node_+"treeval").innerHTML ) ) {
 
             if (tree[`${node_}treeleft`] == "null") {
 
               await display("Correct place to insert the element = CurrentNode->left")
         let vid = count;
         leaf(key_);
-     $(`#${vid}`).css({ "transition" : speed+"ms linear"})
-     $(`#${vid}`).offset({top: ($("#"+node_).offset().top+90 ) , left :($("#"+node_).offset().left-60) })
+        let videlement = document.getElementById(vid)
+      videlement.style.transition = speed+"ms linear";
+      videlement.style.top = parseInt( document.getElementById(node_).style.top)+85+"px";
+      videlement.style.left = parseInt( document.getElementById(node_).style.left)-35+"px";
 
 
         return new Promise(resolve => {
@@ -725,7 +726,7 @@ async function balancenodes(startnode)   {
     }
    
    
-    else if (key_ >  parseInt( $(`#${node_}treeval`).text() , 10) )  {
+    else if (key_ >  parseInt(document.getElementById(node_+"treeval").innerHTML ) )  {
 
 
                if (tree[`${node_}treeright`] == "null") {
@@ -733,10 +734,10 @@ async function balancenodes(startnode)   {
                 await display("Correct place to insert the element = CurrentNode->right")
         let vid = count;
         leaf(key_);
-
-
-        $(`#${vid}`).css({ "transition" : speed+"ms linear"})
-        $(`#${vid}`).offset({top: ($("#"+node_).offset().top+90 ) , left :($("#"+node_).offset().left+60) })
+        let videlement = document.getElementById(vid)
+        videlement.style.transition = speed+"ms linear";
+        videlement.style.top = parseInt( document.getElementById(node_).style.top)+85+"px";
+        videlement.style.left = parseInt( document.getElementById(node_).style.left)+35+"px";
 
 
         return new Promise(resolve => {
@@ -776,7 +777,7 @@ let precolor = document.getElementById(ro).style.backgroundColor;
      hilight(ro, precolor , "1200ms" , 1300 )
 
   
-    if ( $('#'+ro+'treeval').text() == item) {
+    if (  parseInt(document.getElementById(ro+"treeval").innerHTML ) == item) {
   
      await  hilight(ro,"red")
       await display("Item found.")
@@ -793,18 +794,18 @@ let precolor = document.getElementById(ro).style.backgroundColor;
   
     }
   
-     if (     parseInt(   $('#'+ro+'treeval').text() ,  10  )   > item     ) {
+     if (    parseInt(document.getElementById(ro+"treeval").innerHTML )   > item     ) {
   
       
-      await display("Item is smaller than "+ $('#'+ro+'treeval').text() + " Going Left") 
+      await display("Item is smaller than "+ parseInt(document.getElementById(ro+"treeval").innerHTML ) + " Going Left") 
      await searchbst(tree[ro+"treeleft"], item)
   
     }
   
   
-    if (     parseInt(   $('#'+ro+'treeval').text() ,  10  )   < item     ) {
+    if (     parseInt(document.getElementById(ro+"treeval").innerHTML )   < item     ) {
   
-      await display("Item is larger than "+ $('#'+ro+'treeval').text() + " Going Right") 
+      await display("Item is larger than "+ parseInt(document.getElementById(ro+"treeval").innerHTML ) + " Going Right") 
     await  searchbst(tree[ro+"treeright"], item)
   
     }
@@ -851,7 +852,7 @@ let precolor = document.getElementById(ro).style.backgroundColor;
    
       // If the _key to be deleted is smaller than the _root's _key, 
       // then it lies in left subtree 
-      if (_key < parseInt(  $('#'+_root+"treeval").text() , 10) )  {
+      if (_key < parseInt(document.getElementById(_root+"treeval").innerHTML ))  {
         
          tree[_root+`treeleft`] = await deletebst(tree[_root+`treeleft`], _key); 
   
@@ -859,7 +860,7 @@ let precolor = document.getElementById(ro).style.backgroundColor;
       }
       // If the _key to be deleted is greater than the _root's _key, 
       // then it lies in right subtree 
-      else if (_key > parseInt( $('#'+_root+"treeval").text() , 10))  {
+      else if (_key > parseInt(document.getElementById(_root+"treeval").innerHTML ))  {
   
       tree[_root+`treeright`] = await deletebst(tree[_root+`treeright`], _key); 
   
@@ -874,7 +875,7 @@ let precolor = document.getElementById(ro).style.backgroundColor;
           if (tree[`${_root}treeleft`] == "null") 
           { 
               let temp = tree[`${_root}treeright`]; 
-             $("#"+_root).remove();
+             document.getElementById(_root).remove();
              mySVG.redrawLines();
               return temp; 
           } 
@@ -882,7 +883,7 @@ let precolor = document.getElementById(ro).style.backgroundColor;
           { 
               let temp = tree[`${_root}treeleft`]; 
            
-              $("#"+_root).remove();
+              document.getElementById(_root).remove();
              mySVG.redrawLines();
               return temp; 
           } 
@@ -897,11 +898,12 @@ let precolor = document.getElementById(ro).style.backgroundColor;
           
           // Copy the inorder successor's content to this node 
           await display("Copy the inorder successor's content to this node");
-          $('#'+_root+"treeval").text(  $('#'+temp+"treeval").text() );
+
+          document.getElementById(_root+"treeval").innerHTML = document.getElementById(temp+"treeval").innerHTML
     
           // Delete the inorder successor 
           await display("Delete the inorder successor");
-          tree[`${_root}treeright`] = await deletebst(tree[`${_root}treeright`], $('#'+temp+"treeval").text()); 
+          tree[`${_root}treeright`] = await deletebst(tree[`${_root}treeright`],document.getElementById(temp+"treeval").innerHTML); 
           treefy(`${_root}treeright`,tree[`${_root}treeright`])
       } 
       return _root; 
