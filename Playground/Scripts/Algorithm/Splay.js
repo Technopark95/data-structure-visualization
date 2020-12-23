@@ -175,6 +175,7 @@ async function redrawsplay  ()  {
 
     mySVG.Splaylines();
     
+    redrawevent = requestAnimationFrame(redrawsplay)
    
    }
    
@@ -292,7 +293,7 @@ async function Splayi( k)
 
 async function  Splaysearch(key)  {
 
-     redrawevent= setInterval(redrawsplay , 50);
+    redrawevent = requestAnimationFrame(redrawsplay)
 
 
 
@@ -310,7 +311,7 @@ async function  Splaysearch(key)  {
 
    await waitforme (speed+100);
 
-    clearInterval(redrawevent)
+    cancelAnimationFrame(redrawevent)
 
 
 }
@@ -319,7 +320,7 @@ async function Splayinsert (key)  {
 
     
 
-    redrawevent= setInterval(redrawsplay , 50);
+    redrawevent = requestAnimationFrame(redrawsplay)
 
 
     await Splayi(key);
@@ -336,7 +337,7 @@ async function Splayinsert (key)  {
 
    await waitforme (speed+100);
 
-    clearInterval(redrawevent)
+    cancelAnimationFrame(redrawevent)
 
   
 
