@@ -62,8 +62,8 @@ function triefy (id1 , id2 , distance , graphtype = "default")  {
 
    
     mySVG.drawLine({
-       left_node:'#'+id1,
-        right_node:'#'+id2,
+       left_node:id1,
+        right_node:id2,
         error:true,
         width:2,
         col : "coral",
