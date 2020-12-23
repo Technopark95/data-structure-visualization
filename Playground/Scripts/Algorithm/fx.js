@@ -34,7 +34,7 @@ var next = { }
 var prev = { }
 var tree = { }
 var parent = {}
-
+var redrawevent; 
 var divbyelement = { }
 
 //var variables ={}

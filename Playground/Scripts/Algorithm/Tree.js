@@ -472,6 +472,7 @@ async function redraw  ()  {
 
   mySVG.redrawLines();
   
+ redrawevent= requestAnimationFrame(redraw)
  
  }
  

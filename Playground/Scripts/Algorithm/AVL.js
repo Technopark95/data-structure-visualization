@@ -649,16 +649,12 @@ return count;
 
 
 
-let redrawevent; 
-
-
 
  
 async function InsertAVL (h) {
 
   
-
-   redrawevent= setInterval(redraw , 50);
+  redrawevent= requestAnimationFrame(redraw)
 
     await insertavl(r,h);
 
@@ -674,7 +670,7 @@ async function InsertAVL (h) {
 
     await waitforme(speed+100);
 
-    clearInterval(redrawevent)
+    cancelAnimationFrame(redrawevent)
 
   
 
