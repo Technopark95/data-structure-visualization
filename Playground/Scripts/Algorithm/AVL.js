@@ -681,9 +681,8 @@ async function InsertAVL (h) {
 
 async function DeleteAVL (h) {
 
-  
 
-  redrawevent= setInterval(redraw , 50);
+  redrawevent= requestAnimationFrame(redraw)
 
   await deleteavl(r,h);
 
@@ -695,7 +694,7 @@ async function DeleteAVL (h) {
 
   await waitforme(speed+100);
 
-  clearInterval(redrawevent)
+  cancelAnimationFrame(redrawevent)
 
 
 }
