@@ -658,7 +658,7 @@ async function InsertAVL (h) {
 
   
 
-    redrawevent= setInterval(redraw , 50);
+  //  redrawevent= setInterval(redraw , 50);
 
     await insertavl(r,h);
 
@@ -674,7 +674,7 @@ async function InsertAVL (h) {
 
     await waitforme(speed+100);
 
-    clearInterval(redrawevent)
+  //  clearInterval(redrawevent)
 
   
 
