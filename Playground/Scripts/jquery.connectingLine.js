@@ -32,6 +32,20 @@ var _color="coral";
 var _dash;
 var _id;
 
+var clientrectleft
+var clientrectright 
+var leftnodeoffsetx
+var leftnodeoffsety
+var rightnodeoffsetx 
+var rightnodeoffsety 
+var dax 
+var day 
+var dangle
+var rightx 
+var righty  
+var leftx 
+var lefty  
+
 var _error =false;
 
 
@@ -77,7 +91,7 @@ this.kruskalize =function (_cl = "rgb(0,0,0,0.08)")  {
 
 	if (linemap[`${starting}${ending}`] != undefined)  {
 
-        let targg = Number(linemap[`${starting}${ending}`]);
+         targg = Number(linemap[`${starting}${ending}`]);
 		_lines[targg].col =assignedcolor;
 	}
 
@@ -152,26 +166,26 @@ this.kruskalize =function (_cl = "rgb(0,0,0,0.08)")  {
 
 					//If left_node is actually right side, following code will switch elements.
 				
-						let _left_node = document.getElementById(option.left_node);
-						let _right_node = document.getElementById(option.right_node);
+						 _left_node = document.getElementById(option.left_node);
+						 _right_node = document.getElementById(option.right_node);
 
 
-						let clientrectleft = _left_node.getBoundingClientRect();
-						let clientrectright = _right_node.getBoundingClientRect();
-						let leftnodeoffsetx = clientrectleft.left +document.documentElement.scrollLeft;
-						let leftnodeoffsety = clientrectleft.top +document.documentElement.scrollTop;
-						let rightnodeoffsetx = clientrectright.left +document.documentElement.scrollLeft;
-						let rightnodeoffsety = clientrectright.top +document.documentElement.scrollTop;
+						 clientrectleft = _left_node.getBoundingClientRect();
+						 clientrectright = _right_node.getBoundingClientRect();
+						 leftnodeoffsetx = clientrectleft.left +document.documentElement.scrollLeft;
+						 leftnodeoffsety = clientrectleft.top +document.documentElement.scrollTop;
+						 rightnodeoffsetx = clientrectright.left +document.documentElement.scrollLeft;
+						 rightnodeoffsety = clientrectright.top +document.documentElement.scrollTop;
 
-						let dax = (rightnodeoffsetx+ _right_node.offsetHeight/2) - (leftnodeoffsetx+ _left_node.offsetWidth/2);
-						let day = (rightnodeoffsety+ _right_node.offsetHeight/2) - (leftnodeoffsety+ _left_node.offsetHeight/2);
-						let dangle = Math.atan2(day ,dax);
+						 dax = (rightnodeoffsetx+ _right_node.offsetHeight/2) - (leftnodeoffsetx+ _left_node.offsetWidth/2);
+						 day = (rightnodeoffsety+ _right_node.offsetHeight/2) - (leftnodeoffsety+ _left_node.offsetHeight/2);
+						 dangle = Math.atan2(day ,dax);
 
-						let rightx = (_right_node.offsetWidth/2) * Math.cos(135+dangle) + (rightnodeoffsetx+ _right_node.offsetWidth/2) ;
-						let righty  = (_right_node.offsetHeight/2) * Math.sin(135+dangle) + (rightnodeoffsety + (_right_node.offsetHeight / 2)) ;
+						 rightx = (_right_node.offsetWidth/2) * Math.cos(135+dangle) + (rightnodeoffsetx+ _right_node.offsetWidth/2) ;
+						 righty  = (_right_node.offsetHeight/2) * Math.sin(135+dangle) + (rightnodeoffsety + (_right_node.offsetHeight / 2)) ;
 
-						let leftx = (_left_node.offsetWidth/2) * Math.cos(.05+dangle) + (leftnodeoffsetx+ _left_node.offsetWidth/2) ;
-						let lefty  = (_left_node.offsetHeight/2) * Math.sin(.05+dangle) + (leftnodeoffsety + (_left_node.offsetHeight / 2)) ;
+						 leftx = (_left_node.offsetWidth/2) * Math.cos(.05+dangle) + (leftnodeoffsetx+ _left_node.offsetWidth/2) ;
+						 lefty  = (_left_node.offsetHeight/2) * Math.sin(.05+dangle) + (leftnodeoffsety + (_left_node.offsetHeight / 2)) ;
 
 						//Get Left point and Right Point
 						_left.x = leftx
