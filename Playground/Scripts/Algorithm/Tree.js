@@ -475,7 +475,84 @@ async function redraw  ()  {
 
 				for (let li = 0 ; li < _lines.length ;li++) {
 				
-					mySVG.connect(_lines[li])
+            try {
+            
+            
+              
+          if ( _lines[li].left_node == undefined || _lines[li].left_node == "null" || _lines[li].right_node == undefined || _lines[li].right_node == "null"  ) {
+            return;
+          }
+                //To decide colour of the line
+              
+                    _color = _lines[li].col || "coral";
+                    
+                    _ctx.font = "30px Segoe UI";
+      
+                    _dash = [0,0];
+          
+                  let _left_node = document.getElementById(_lines[li].left_node);
+                  let _right_node = document.getElementById(_lines[li].right_node);
+      
+      
+                  let clientrectleft = _left_node.getBoundingClientRect();
+                  let clientrectright = _right_node.getBoundingClientRect();
+                  let leftnodeoffsetx = clientrectleft.left +document.documentElement.scrollLeft;
+                  let leftnodeoffsety = clientrectleft.top +document.documentElement.scrollTop;
+                  let rightnodeoffsetx = clientrectright.left +document.documentElement.scrollLeft;
+                  let rightnodeoffsety = clientrectright.top +document.documentElement.scrollTop;
+      
+                  let dax = (rightnodeoffsetx+ _right_node.offsetHeight/2) - (leftnodeoffsetx+ _left_node.offsetWidth/2);
+                  let day = (rightnodeoffsety+ _right_node.offsetHeight/2) - (leftnodeoffsety+ _left_node.offsetHeight/2);
+                  let dangle = Math.atan2(day ,dax);
+      
+                  let rightx = (_right_node.offsetWidth/2) * Math.cos(135+dangle) + (rightnodeoffsetx+ _right_node.offsetWidth/2) ;
+                  let righty  = (_right_node.offsetHeight/2) * Math.sin(135+dangle) + (rightnodeoffsety + (_right_node.offsetHeight / 2)) ;
+      
+                  let leftx = (_left_node.offsetWidth/2) * Math.cos(.05+dangle) + (leftnodeoffsetx+ _left_node.offsetWidth/2) ;
+                  let lefty  = (_left_node.offsetHeight/2) * Math.sin(.05+dangle) + (leftnodeoffsety + (_left_node.offsetHeight / 2)) ;
+      
+                  //Get Left point and Right Point
+                  _left.x = leftx
+                  _left.y = lefty
+                  _right.x = rightx
+                  _right.y = righty
+      
+                    ele1_x = _left.x;
+                    ele1_y = _left.y;
+                    ele2_x = _right.x;
+                    ele2_y = _right.y;
+      
+                    if (_lines[li]._text == undefined) {
+                      _lines[li]._text = ""
+                    }
+      
+                    _ctx.beginPath();
+                  
+                  _ctx.moveTo(_left.x, _left.y );
+                
+                  _ctx.lineTo((_right.x), (_right.y));
+                  
+                  _ctx.lineWidth = _lines[li].width || 2;
+                  _ctx.strokeStyle = _color;
+      
+                  _ctx.stroke();
+      
+                  
+      f = 0;
+      
+                  _ctx.font = "20px Segoe ui";
+                  _ctx.fillText(_lines[li]._text,(_right.x +_left.x)/2 ,( _right.y + _left.y)/2);
+      
+              
+      
+              
+      
+                //_lines[li].resize = _lines[li].resize || false;
+              
+            } catch (err) {
+              if (_error) alert('Mandatory Fields are missing or incorrect');
+            }
+          
 	
 				  }
   
@@ -494,7 +571,7 @@ AVLposttop[0] = 150;
 
 
 
-function BalanceAll(_node)
+async function BalanceAll(_node)
 {
     // Base Case
     if (document.getElementById(_node) == null)  return;
@@ -563,7 +640,7 @@ function BalanceAll(_node)
 }
 
 
-function BalanceBST(_node)
+async function BalanceBST(_node)
 {
     // Base Case
     if (document.getElementById(_node) == null)  return;
