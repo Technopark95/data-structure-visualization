@@ -19,8 +19,7 @@ Copyright 2020 Anoop Singh, Graphical Structure
 
 */
 
-// Jquery Plugin
-// Plugin to Draw a line between to elements
+
 var _lines = new Array(); //This array will store all lines (option)
 var _canvas = document.createElement('canvas');
 var _ctx;
@@ -115,10 +114,10 @@ this.kruskalize =function (_cl = "rgb(0,0,0,0.08)")  {
 
 
 		//This Function is used to connect two different div with a dotted line.
-		this.connect = function(option) {
+	 this.connect = async function(option) {
 			
 			
-			_ctx.beginPath();
+			
 			try {
 			
 			
@@ -189,6 +188,7 @@ this.kruskalize =function (_cl = "rgb(0,0,0,0.08)")  {
 								option._text = ""
 							}
 
+							_ctx.beginPath();
 						
 						_ctx.moveTo(_left.x, _left.y );
 					
@@ -239,7 +239,7 @@ f = 0;
 			//_me.Listlines();
 		});
 
-		this.redrawLines = function() {
+		this.redrawLines = async function() {
 			if (_lines.length == 0) return;
 			
 			_ctx.clearRect(0, 0,  10000, 4300);
@@ -253,7 +253,7 @@ f = 0;
 		};
 
 
-		this.Splaylines = function() {
+		this.Splaylines = async function() {
 			if (tree.length == 0) return;
 
 			_ctx.clearRect(0, 0,  10000, 4300);
