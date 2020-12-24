@@ -80,7 +80,7 @@ kpointer.style.display = "none";
 
 var speed =0; 
 
-var mySVG = $('body').connect();
+var mySVG = connect();
 
 var pausebtn = document.getElementById("pa");
 var playbtn = document.getElementById("pl");
