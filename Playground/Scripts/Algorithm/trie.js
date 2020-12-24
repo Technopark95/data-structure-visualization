@@ -204,7 +204,7 @@ async function trieinsert( key ,value=0)
 { 
 
   $(".trie").css('transition' , speed+"ms linear");
-  redrawevent= setInterval(redraw , 50);
+  redrawevent= requestAnimationFrame(redraw);
 
   ani = "no";
 
@@ -283,7 +283,7 @@ topcord= 0;
 
 await waitforme (speed+100);
 
-clearInterval(redrawevent);
+cancelAnimationFrame(redrawevent);
 
 
 } 
