@@ -22,7 +22,7 @@ Copyright 2020 Anoop Singh, Graphical Structure
 // Jquery Plugin
 // Plugin to Draw a line between to elements
 var _lines = new Array(); //This array will store all lines (option)
-var _canvas;
+var _canvas = document.createElement('canvas');
 var _ctx;
 var ele1 , ele2, f=0;
 var lineindex =0;
@@ -35,19 +35,23 @@ var _id;
 
 var _error =false;
 
-(function($) {
-	$.fn.connect = function(param) {
+
+	var connect = function() {
 
 		
 		
 		var _me = this;
-		var _parent = param || document;
+	
 
 		//Initialize Canvas object
-		_canvas = $('<canvas id="cav1"/>').attr('width', $(_parent).width()).attr('height', $(_parent).height());
-		$('body').append(_canvas);
 
-		_ctx = _canvas[0].getContext('2d');
+		_canvas.id = "cav1";
+		_canvas.width = 10000;
+		_canvas.height = 4300; 
+		document.body.appendChild(_canvas)
+
+
+		_ctx = _canvas.getContext('2d');
 			 
 
 		this.drawLine = function(option) {
@@ -238,7 +242,7 @@ f = 0;
 		this.redrawLines = function() {
 			if (_lines.length == 0) return;
 			
-			_ctx.clearRect(0, 0, $(_parent).width(), $(_parent).height());
+			_ctx.clearRect(0, 0,  10000, 4300);
 
 				for (let li = 0 ; li < _lines.length ;li++) {
 				
@@ -252,7 +256,7 @@ f = 0;
 		this.Splaylines = function() {
 			if (tree.length == 0) return;
 
-			_ctx.clearRect(0, 0, $(_parent).width(), $(_parent).height());
+			_ctx.clearRect(0, 0,  10000, 4300);
 
 			for (let source in tree) {
 
@@ -269,7 +273,7 @@ f = 0;
 		this.Listlines = function() {
 			if (next.length == 0) return;
 
-			_ctx.clearRect(0, 0, $(_parent).width(), $(_parent).height());
+			_ctx.clearRect(0, 0,  10000, 4300);
 
 			for (let source in next) {
 
@@ -286,7 +290,7 @@ f = 0;
 		this.Blines = function() {
 			if (BTree.length == 0) return;
 
-			_ctx.clearRect(0, 0, $(_parent).width(), $(_parent).height());
+			_ctx.clearRect(0, 0,  10000, 4300);
 
 			for (let source in BTree) {
 
@@ -301,6 +305,4 @@ f = 0;
 
 		return this;
 	};
-}(jQuery));
-
 
