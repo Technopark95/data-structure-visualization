@@ -469,8 +469,15 @@ class Q {
 
 
 async function redraw  ()  {
+	if (_lines.length == 0) return;
+			
+			_ctx.clearRect(0, 0,  10000, 4300);
 
-  mySVG.redrawLines();
+				for (let li = 0 ; li < _lines.length ;li++) {
+				
+					mySVG.connect(_lines[li])
+	
+				  }
   
  redrawevent= requestAnimationFrame(redraw)
  
@@ -943,7 +950,7 @@ let precolor = document.getElementById(ro).style.backgroundColor;
 
 await insertbst(0, value);
 
-let redrawev = setInterval(redraw,50);
+ redrawevent = requestAnimationFrame(redraw);
 
 $(".dragg").css("transition" , speed+"ms linear");
 
@@ -954,7 +961,7 @@ calcleftheight(0);
     BalanceBST(0);
   await waitforme (speed+100);
 
-  clearInterval(redrawev)
+  cancelAnimationFrame(redrawev)
 
   }
 
@@ -963,7 +970,7 @@ calcleftheight(0);
 
     await deletebst(0, value);
 
-    let redrawev = setInterval(redraw,50);
+    redrawevent = requestAnimationFrame(redraw);
 
     $(".dragg").css("transition" , speed+"ms linear");
 
@@ -976,7 +983,7 @@ await waitforme (speed+100);
         BalanceBST(0);
         await waitforme (speed+200);
 
-  clearInterval(redrawev)
+        cancelAnimationFrame(redrawev)
     
       }
 
