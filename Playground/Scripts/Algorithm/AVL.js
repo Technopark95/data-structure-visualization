@@ -199,6 +199,11 @@ async function insertavl(node_, key_) {
        return;
     }
 
+
+    // await hilight(node_, "rgb(109,209,0,1)" , "1200ms linear" , 1300 )
+    // hilight(node_, defaultcolor , "1200ms linear" , 1300 )
+
+
  
     /* Otherwise, recur down the tree */
     if (key_ <  parseInt( $(`#${node_}treeval`).text() , 10) ) {
