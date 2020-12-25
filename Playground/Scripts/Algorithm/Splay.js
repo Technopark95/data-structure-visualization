@@ -173,7 +173,91 @@ async function splay(node_,  key)
 
 async function redrawsplay  ()  {
 
-    mySVG.Splaylines();
+    if (tree.length == 0) return;
+
+    _ctx.clearRect(0, 0,  10000, 4300);
+
+    for (let source in tree) {
+
+        let destination = tree[source];
+        if(destination != "null") {
+
+      //  mySVG.connect({left_node:source , right_node:destination+"treetop"})
+
+      try {
+            
+            
+              
+        if ( source == undefined || source == "null" || destination == undefined || destination == "null"  ) {
+          return;
+        }
+              //To decide colour of the line
+            
+                  
+                  _ctx.font = "30px Segoe UI";
+
+        
+                 _left_node = document.getElementById(source);
+                 _right_node = document.getElementById(destination+"treetop");
+    
+    
+                 clientrectleft = _left_node.getBoundingClientRect();
+                 clientrectright = _right_node.getBoundingClientRect();
+                 leftnodeoffsetx = clientrectleft.left +document.documentElement.scrollLeft;
+                 leftnodeoffsety = clientrectleft.top +document.documentElement.scrollTop;
+                 rightnodeoffsetx = clientrectright.left +document.documentElement.scrollLeft;
+                 rightnodeoffsety = clientrectright.top +document.documentElement.scrollTop;
+    
+                 dax = (rightnodeoffsetx+ _right_node.offsetHeight/2) - (leftnodeoffsetx+ _left_node.offsetWidth/2);
+                 day = (rightnodeoffsety+ _right_node.offsetHeight/2) - (leftnodeoffsety+ _left_node.offsetHeight/2);
+                 dangle = Math.atan2(day ,dax);
+    
+                 rightx = (_right_node.offsetWidth/2) * Math.cos(135+dangle) + (rightnodeoffsetx+ _right_node.offsetWidth/2) ;
+                 righty  = (_right_node.offsetHeight/2) * Math.sin(135+dangle) + (rightnodeoffsety + (_right_node.offsetHeight / 2)) ;
+    
+                 leftx = (_left_node.offsetWidth/2) * Math.cos(.05+dangle) + (leftnodeoffsetx+ _left_node.offsetWidth/2) ;
+                 lefty  = (_left_node.offsetHeight/2) * Math.sin(.05+dangle) + (leftnodeoffsety + (_left_node.offsetHeight / 2)) ;
+    
+                //Get Left point and Right Point
+                _left.x = leftx
+                _left.y = lefty
+                _right.x = rightx
+                _right.y = righty
+    
+                  ele1_x = _left.x;
+                  ele1_y = _left.y;
+                  ele2_x = _right.x;
+                  ele2_y = _right.y;
+    
+
+                  _ctx.beginPath();
+                
+                _ctx.moveTo(_left.x, _left.y );
+              
+                _ctx.lineTo((_right.x), (_right.y));
+                
+                _ctx.lineWidth =  2;
+                _ctx.strokeStyle = _color;
+    
+                _ctx.stroke();
+    
+                
+            
+    
+              //_lines[li].resize = _lines[li].resize || false;
+            
+          } catch (err) {
+            if (_error) alert('Mandatory Fields are missing or incorrect');
+          }
+
+        }
+
+        
+    
+
+              
+
+      }
     
     redrawevent = requestAnimationFrame(redrawsplay)
    

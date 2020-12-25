@@ -1029,6 +1029,7 @@ await insertbst(0, value);
 
  redrawevent = requestAnimationFrame(redraw);
 
+
 $(".dragg").css("transition" , speed+"ms linear");
 
 await waitforme (speed+100);
@@ -1038,7 +1039,7 @@ calcleftheight(0);
     BalanceBST(0);
   await waitforme (speed+100);
 
-  cancelAnimationFrame(redrawev)
+  cancelAnimationFrame(redrawevent)
 
   }
 
@@ -1060,7 +1061,7 @@ await waitforme (speed+100);
         BalanceBST(0);
         await waitforme (speed+200);
 
-        cancelAnimationFrame(redrawev)
+        cancelAnimationFrame(redrawevent)
     
       }
 
