@@ -91,14 +91,21 @@ this.kruskalize =function (_cl = "rgb(0,0,0,0.08)")  {
 
 	if (linemap[`${starting}${ending}`] != undefined)  {
 
-         targg = Number(linemap[`${starting}${ending}`]);
+	   let  targg = parseInt(linemap[`${starting}${ending}`]);
+	   
+	   console.log(targg , starting , ending  , assignedcolor)
 		_lines[targg].col =assignedcolor;
+
+		
 	}
 
 	else {
 
-		let targg = Number(linemap[`${ending}${starting}`]);
+		let targg = parseInt(linemap[`${ending}${starting}`]);
+
+		console.log(targg , starting , ending  , assignedcolor)
 		_lines[targg].col =assignedcolor;
+		
 	}
 
 		
