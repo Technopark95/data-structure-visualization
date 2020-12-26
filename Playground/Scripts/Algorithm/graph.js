@@ -198,7 +198,7 @@ $("#distab").draggable();
  function chlc(start_ , end_ ,ac)  {
 
 
-mySVG.changecolor (`#${start_}` ,`#${end_}` , ac);
+mySVG.changecolor (`${start_}` ,`${end_}` , ac);
 
 
  }
