@@ -689,6 +689,10 @@ async function DeleteAVL (h) {
   AVLpostleft[r] = 1900;
   AVLposttop[r] = 150;
 
+    document.getElementById(r).style.top = 150+"px";
+    document.getElementById(r).style.left = 1905+"px";
+
+    
   await waitforme(1000);
    BalanceAll(r);
 
