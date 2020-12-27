@@ -42,9 +42,24 @@ async function K( _k,  cellid )  {
 
 async function I(_i , cellid="l" ) {
 
+
+    if (_i == -1)  {
+
+        document.getElementById("iindex").style.transition = speed+"ms linear";
+    
+        let ipos = $(`#${cellid}item0`).offset();
+        
+    $("#iindex").offset({top : (ipos.top)+100, left : (ipos.left)-45 });
+   
+
+    await waitforme(speed)
+
+    return;
+
+
+    }
+
     document.getElementById("iindex").style.transition = speed+"ms linear";
-
-
     
         let ipos = $(`#${cellid}item${_i}`).offset();
         
@@ -109,7 +124,10 @@ async function partition ( low,  high)
   
     for (var qj = low; qj <= high - 1; qj++)  
     {  
-        if (qi >= 0 && qj >= 0 ) await ij(qi,qj);
+         await I(qi,"a");
+
+        await J(qj,"a");
+        
  
         // If current element is smaller than the pivot  
         if (storedarray[qj] < pivot)  
@@ -128,7 +146,7 @@ async function partition ( low,  high)
             await ij(qi,qj);
             await display("Swapping index i="+ qi +" With j="+qj )
             await swapp(qi , qj);
-     //       recurse(low , high)
+  
         }
         await hilight("aitem"+qj,defaultcolor)
         }   
