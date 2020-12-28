@@ -846,7 +846,7 @@ $("#graphinput").val("")
   var serv;
   $(document).ajaxStart(  function()  {
 
-    $("body").append(`<img style="position: fixed;top: 50%;left: 50%;transform: translate(-50%,-50%) ;z-index: 20; height:40%;" id="loaderx" src="loader-3.gif">`)
+    $("body").append(`<img style="position: fixed;top: 50%;left: 50%;transform: translate(-50%,-50%) ;z-index: 20; height:40%;" id="loaderx" src="../loader-3.gif">`)
 
    
 
