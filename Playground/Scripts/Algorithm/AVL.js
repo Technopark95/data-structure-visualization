@@ -21,17 +21,6 @@ Copyright 2020 Anoop Singh, Graphical Structure
 var r = 0;
 
 
-function height(N)  
-{  
-    if (N == "null") return 0;  
-
-    
-    return  parseInt( $(`#${N}height`).text(),10);  
-}  
-  
-
-var maxheight= 0;
-
 
 
  async function rightRotate(y)  

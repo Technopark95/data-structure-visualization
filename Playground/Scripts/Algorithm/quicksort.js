@@ -19,10 +19,6 @@ Copyright 2020 Anoop Singh, Graphical Structure
 
 */
 
-var logscreen = document.getElementById("log1");
-var outputscreen = document.getElementById("out1");
-
-
 async function K( _k,  cellid )  {
 
     document.getElementById("kindex").style.transition = speed+"ms linear";
@@ -246,39 +242,6 @@ for (let ie = 0; ie < storedarray.length; ie++) {
       
   
 
-
-
-
-}
-
-
-
-async function display (data , fin= 2000 , fout = 1000)  {
-
-        Log(data);
-        if (stats == 1  ) await pauser();
-
-
-}
-
-
-
-function Log (data)  {
-
-    $("#log1").append('<p class="uncaps" style="font-size:65%;color:black;font-family:Segoe UI;">'+data+'</p>')
-
-    
-    logscreen.scrollTop = logscreen.scrollHeight;
-
-    }
-
-
-
-function Output (data)  {
-
-$("#log1").append('<br><p style="font-size:large; margin-top:-5px;  color:rgb(0,0,255, 0.7);font-family:consolas;">'+ data +'</p>')                                                                               
-
-logscreen.scrollTop = logscreen.scrollHeight;
 
 
 

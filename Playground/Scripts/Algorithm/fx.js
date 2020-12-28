@@ -57,8 +57,12 @@ var drawflag = false;
 var value="";
 var log = document.getElementById("log1")
 var output = document.getElementById("out1")
+var logscreen = document.getElementById("log1");
+var outputscreen = document.getElementById("out1");
 
-document.body.insertAdjacentHTML("afterbegin",`<img id="pointerarrow" src="pointer.png" style="height: 70px; width: 70px; position: absolute; top: 135px;transition-duration:500ms;">`)
+
+
+document.body.insertAdjacentHTML("afterbegin",`<img id="pointerarrow" src="../pointer.png" style="height: 70px; width: 70px; position: absolute; top: 135px;transition-duration:500ms;">`)
 var pointerarrow = document.getElementById("pointerarrow")
 pointerarrow.style.display="none";
 
@@ -82,8 +86,8 @@ var speed =0;
 
 var mySVG = connect();
 
-var pausebtn = document.getElementById("pa");
-var playbtn = document.getElementById("pl");
+var pausebtn = document.getElementById("pause-btn");
+var playbtn = document.getElementById("play-btn");
 
 
 function waitforme(ms) {
@@ -225,6 +229,72 @@ isEmpty()
 } 
 
 
+function pqueue () {
+
+
+
+  $("body").append(`<div id="postqueue" style="position:absolute;bottom:100px;left:${document.documentElement.scrollLeft+100}px;min-width:100%;"><p style=" font-size:150%;position:absolute;top:-80px;">Queue</p></div>`)
+  
+  
+  $("#postqueue").draggable()
+  
+  }
+
+
+  var queuefront=200;
+  var queuerear = 200;
+
+
+async function qins (symbol) {
+
+  if (stats == 1  ) await pauser();
+
+return new Promise( resolve => {
+  
+
+  
+  $("#postqueue").prepend(`<div id="pq${queuerear}" class="PSTACK postfixcss"><p style="position:relative;">${symbol}</p></div>`);
+
+  $(`#pq${queuerear}`).animate({"opacity" : "100%"} ,speed , ()=> {
+
+      queuerear--;
+resolve('');
+
+  })
+
+
+
+
+})
+}
+
+
+async function qout()  {
+
+  if (stats == 1  ) await pauser();
+  return new Promise( resolve => {
+      
+  
+  
+  $(`#pq${queuefront}`).animate({left : "+=300" , opacity: "0%"},speed, ()=> {
+  
+      let y = $(`#pq${queuefront}`).text();
+  $(`#pq${queuefront}`).remove();
+
+
+  --queuefront;
+
+  resolve('')
+return y;
+
+  
+  })
+  
+  })
+  
+  }
+
+
 
 
   
@@ -232,48 +302,114 @@ isEmpty()
 
 var clicktimes =0 , first="" , second=""
 
-/*
+class Stack { 
+  
+  // Array is used to implement stack 
+  constructor() 
+  { 
+      this.items = []; 
+  } 
 
-$(document).on("mouseenter","div.nodeleft" , function (e)  {
+  // Functions to be implemented 
+  // push function 
+push(element) 
+{ 
+  // push element into the items 
+  this.items.push(element); 
+} 
 
-  $(this).animate({"background-color" : "yellow"})
-  t
+
+pop() 
+{ 
+  // return top most element in the stack 
+  // and removes it from the stack 
+  // Underflow if stack is empty 
+  if (this.items.length == 0) 
+      return "Underflow"; 
+  return this.items.pop(); 
+} 
+
+
+
+
+top() 
+{ 
+  // return the top most element from the stack 
+  // but does'nt delete it. 
+  return this.items[this.items.length - 1]; 
+} 
+
+
+isEmpty() 
+{ 
+  // return true if stack is empty 
+  return this.items.length == 0; 
+} 
+
+
+
+} 
+
+
+
+
+function pstack () {
+
+
+
+$("body").append(`<div id="poststack" style="position:absolute;top:250px;left:${document.documentElement.scrollLeft+100}px;min-width:100%;"><p style="display:inline-block; margin-right:50px; font-size:150%;">Stack -></p></div>`)
+
+
+$("#poststack").draggable()
+
+}
+
+
+
+var stackelement=0;
+
+
+async function pins (symbol) {
+
+  if (stats == 1  ) await pauser();
+
+return new Promise( resolve => {
+  
+
+  
+  $("#poststack").append(`<div id="ps${stackelement}" class="PSTACK postfixcss"><p style="position:relative;">${symbol}</p></div>`)
+  
+  $(`#ps${stackelement}`).animate({"opacity" : "100%"} ,speed , ()=> {
+
+stackelement++;
+resolve('');
+
+  })
+
+
+
+
+})
+}
+
+async function pout()  {
+
+  if (stats == 1  ) await pauser();
+return new Promise( resolve => {
+  
+--stackelement;
+
+$(`#ps${stackelement}`).animate({left : "+=300" , opacity: "0%"},speed, ()=> {
+
+$(`#ps${stackelement}`).remove();
+
+resolve('')
 
 })
 
-$(document).on("mouseleave","div.nodeleft" , function (e)  {
-
-  $(this).animate({"background-color" : "white"})
-
 })
 
-
-
-    $(document).on("mouseenter","div.node, div.treenode" , function (e)  {
-
-      $(this).animate({"background-color" : "red"})
-
-    })
-
-
-
-    $(document).on("mouseleave","div.node, div.treenode" , function (e)  {
-
-      $(this).animate({"background-color" : "white"})
-
-    })
-
-
-    
-    $(document).on('mouseenter' ,'div.dragg,div.vert' ,function(e) {
-
-
-      $("#"+e.target.id).css({ "transition-duration" : "100ms"})
-
-   
-    })
-
-*/
+}
 
 
 
@@ -299,6 +435,187 @@ await display("Script Loaded.")
 }
 
 
+
+
+async function display (data , fin= 2000 , fout = 1000)  {
+
+  Log(data);
+  if (stats == 1  ) await pauser();
+
+
+}
+
+
+
+function Log (data)  {
+
+$("#log1").append('<p class="uncaps" style="font-size:65%;color:black;font-family:Segoe UI;">'+data+'</p>')
+
+
+logscreen.scrollTop = logscreen.scrollHeight;
+
+}
+
+
+
+function Output (data)  {
+
+$("#log1").append('<br><p style="font-size:large; margin-top:-5px;  color:rgb(0,0,255, 0.7);font-family:consolas;">'+ data +'</p>')                                                                               
+
+logscreen.scrollTop = logscreen.scrollHeight;
+
+
+
+}
+
+
+
+
+function treefy(first,second ,color_ = "coral") {
+
+
+  mySVG.drawLine({
+    left_node:first,
+    right_node:second+'treetop',
+    error:true,
+    col : color_,
+    width:2,
+      
+  });
+
+//   var par = $("#"+first).parent().attr("id");
+  let par;
+  
+  if (document.getElementById(first) != null){
+    par = document.getElementById(first).parentNode.id
+  }
+
+
+  tree[first] = second ;
+  parent[second] = par;
+
+
+      $( '#'+par ).draggable({
+          drag: function(event, ui){
+            
+            
+            mySVG.redrawLines();
+
+           // mySVG.Splaylines();
+          
+          }
+        });
+        $( '#'+second ).draggable({
+          drag: function(event, ui){mySVG.redrawLines();
+          }
+        });
+
+
+
+        
+
+      }
+
+
+      
+async function redraw  ()  {
+	if (_lines.length == 0) return;
+			
+			_ctx.clearRect(0, 0,  10000, 4300);
+
+				for (let li = 0 ; li < _lines.length ;li++) {
+				
+            try {
+            
+            
+              
+          if ( _lines[li].left_node == undefined || _lines[li].left_node == "null" || _lines[li].right_node == undefined || _lines[li].right_node == "null"  ) {
+            return;
+          }
+                //To decide colour of the line
+              
+                    _color = _lines[li].col || "coral";
+                    
+                    _ctx.font = "30px Segoe UI";
+      
+                    _dash = [0,0];
+          
+                   _left_node = document.getElementById(_lines[li].left_node);
+                   _right_node = document.getElementById(_lines[li].right_node);
+      
+      
+                   clientrectleft = _left_node.getBoundingClientRect();
+                   clientrectright = _right_node.getBoundingClientRect();
+                   leftnodeoffsetx = clientrectleft.left +document.documentElement.scrollLeft;
+                   leftnodeoffsety = clientrectleft.top +document.documentElement.scrollTop;
+                   rightnodeoffsetx = clientrectright.left +document.documentElement.scrollLeft;
+                   rightnodeoffsety = clientrectright.top +document.documentElement.scrollTop;
+      
+                   dax = (rightnodeoffsetx+ _right_node.offsetHeight/2) - (leftnodeoffsetx+ _left_node.offsetWidth/2);
+                   day = (rightnodeoffsety+ _right_node.offsetHeight/2) - (leftnodeoffsety+ _left_node.offsetHeight/2);
+                   dangle = Math.atan2(day ,dax);
+      
+                   rightx = (_right_node.offsetWidth/2) * Math.cos(135+dangle) + (rightnodeoffsetx+ _right_node.offsetWidth/2) ;
+                   righty  = (_right_node.offsetHeight/2) * Math.sin(135+dangle) + (rightnodeoffsety + (_right_node.offsetHeight / 2)) ;
+      
+                   leftx = (_left_node.offsetWidth/2) * Math.cos(.05+dangle) + (leftnodeoffsetx+ _left_node.offsetWidth/2) ;
+                   lefty  = (_left_node.offsetHeight/2) * Math.sin(.05+dangle) + (leftnodeoffsety + (_left_node.offsetHeight / 2)) ;
+      
+                  //Get Left point and Right Point
+                  _left.x = leftx
+                  _left.y = lefty
+                  _right.x = rightx
+                  _right.y = righty
+      
+                    ele1_x = _left.x;
+                    ele1_y = _left.y;
+                    ele2_x = _right.x;
+                    ele2_y = _right.y;
+      
+                    if (_lines[li]._text == undefined) {
+                      _lines[li]._text = ""
+                    }
+      
+                    _ctx.beginPath();
+                  
+                  _ctx.moveTo(_left.x, _left.y );
+                
+                  _ctx.lineTo((_right.x), (_right.y));
+                  
+                  _ctx.lineWidth = _lines[li].width || 2;
+                  _ctx.strokeStyle = _color;
+      
+                  _ctx.stroke();
+      
+                  
+      f = 0;
+      
+                  _ctx.font = "20px Segoe ui";
+                  _ctx.fillText(_lines[li]._text,(_right.x +_left.x)/2 ,( _right.y + _left.y)/2);
+      
+              
+      
+              
+      
+                //_lines[li].resize = _lines[li].resize || false;
+              
+            } catch (err) {
+              if (_error) alert('Mandatory Fields are missing or incorrect');
+            }
+          
+	
+				  }
+  
+ redrawevent= requestAnimationFrame(redraw)
+ 
+ }
+ 
+
+
+
+
+
+
 var codehere = document.getElementById("codetype") ;
 
 codehere.addEventListener("keypress" , async function(e)  {
@@ -310,7 +627,7 @@ codehere.addEventListener("keypress" , async function(e)  {
 
     
   
-    document.body.insertAdjacentHTML("beforeend" , `<img id = "animationplay" src="813.gif"  style= "position:fixed; right:300px;bottom: 50px;width: 50px;z-index:-1"/>`)
+    document.body.insertAdjacentHTML("beforeend" , `<img id = "animationplay" src="../813.gif"  style= "position:fixed; right:300px;bottom: 50px;width: 50px;z-index:-1"/>`)
 
     command = codehere.value;
 

@@ -41,71 +41,6 @@ function nextCharacter(c) {
 
 
 
-function pqueue () {
-
-
-
-    $("body").append(`<div id="postqueue" style="position:absolute;bottom:100px;left:${document.documentElement.scrollLeft+100}px;min-width:100%;"><p style=" font-size:150%;position:absolute;top:-80px;">Queue</p></div>`)
-    
-    
-    $("#postqueue").draggable()
-    
-    }
-
-
-    var queuefront=200;
-    var queuerear = 200;
-
-
-async function qins (symbol) {
-
-    if (stats == 1  ) await pauser();
-
-return new Promise( resolve => {
-    
-
-    
-    $("#postqueue").prepend(`<div id="pq${queuerear}" class="PSTACK postfixcss"><p style="position:relative;">${symbol}</p></div>`);
-
-    $(`#pq${queuerear}`).animate({"opacity" : "100%"} ,speed , ()=> {
-
-        queuerear--;
-resolve('');
-
-    })
-
-
-
-
-})
-}
-
-
-async function qout()  {
-
-    if (stats == 1  ) await pauser();
-    return new Promise( resolve => {
-        
-    
-    
-    $(`#pq${queuefront}`).animate({left : "+=300" , opacity: "0%"},speed, ()=> {
-    
-        let y = $(`#pq${queuefront}`).text();
-    $(`#pq${queuefront}`).remove();
-
-
-    --queuefront;
-
-    resolve('')
-return y;
-
-    
-    })
-    
-    })
-    
-    }
-
 
 
 
@@ -123,7 +58,7 @@ var NoOfVertex;
 if (!isMobile){
 
     var script = document.createElement('script');
-    script.src = "Scripts/Algorithm/lineshandle.js";
+    script.src = "../Scripts/Algorithm/lineshandle.js";
   document.head.appendChild(script)
   
   }

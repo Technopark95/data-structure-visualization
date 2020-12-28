@@ -29,7 +29,7 @@ var infoclick = 0;
 let x = document.getElementsByClassName("autohide");
 let ie;
 for (ie = 0; ie < x.length; ie++) {
-  x[ie].style.display = "none";
+  x[ie].style.display = "";
 }
 
 

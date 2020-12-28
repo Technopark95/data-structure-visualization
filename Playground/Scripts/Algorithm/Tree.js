@@ -21,53 +21,15 @@ Copyright 2020 Anoop Singh, Graphical Structure
 
 
 
-
-function treefy(first,second ,color_ = "coral") {
-
-
-    mySVG.drawLine({
-      left_node:first,
-      right_node:second+'treetop',
-      error:true,
-      col : color_,
-      width:2,
-        
-    });
   
- //   var par = $("#"+first).parent().attr("id");
-    let par;
+ function height(N)  
+{  
+    if (N == "null") return 0;  
+
     
-    if (document.getElementById(first) != null){
-      par = document.getElementById(first).parentNode.id
-    }
-
-
-    tree[first] = second ;
-    parent[second] = par;
+    return  parseInt( $(`#${N}height`).text(),10);  
+}  
   
-  
-        $( '#'+par ).draggable({
-            drag: function(event, ui){
-              
-              
-              mySVG.redrawLines();
-
-             // mySVG.Splaylines();
-            
-            }
-          });
-          $( '#'+second ).draggable({
-            drag: function(event, ui){mySVG.redrawLines();
-            }
-          });
-
-
-
-          
-  
-        }
-  
-
 
 
 async function  preorder(CurrentNode) {
@@ -468,98 +430,6 @@ class Q {
 
 
 
-async function redraw  ()  {
-	if (_lines.length == 0) return;
-			
-			_ctx.clearRect(0, 0,  10000, 4300);
-
-				for (let li = 0 ; li < _lines.length ;li++) {
-				
-            try {
-            
-            
-              
-          if ( _lines[li].left_node == undefined || _lines[li].left_node == "null" || _lines[li].right_node == undefined || _lines[li].right_node == "null"  ) {
-            return;
-          }
-                //To decide colour of the line
-              
-                    _color = _lines[li].col || "coral";
-                    
-                    _ctx.font = "30px Segoe UI";
-      
-                    _dash = [0,0];
-          
-                   _left_node = document.getElementById(_lines[li].left_node);
-                   _right_node = document.getElementById(_lines[li].right_node);
-      
-      
-                   clientrectleft = _left_node.getBoundingClientRect();
-                   clientrectright = _right_node.getBoundingClientRect();
-                   leftnodeoffsetx = clientrectleft.left +document.documentElement.scrollLeft;
-                   leftnodeoffsety = clientrectleft.top +document.documentElement.scrollTop;
-                   rightnodeoffsetx = clientrectright.left +document.documentElement.scrollLeft;
-                   rightnodeoffsety = clientrectright.top +document.documentElement.scrollTop;
-      
-                   dax = (rightnodeoffsetx+ _right_node.offsetHeight/2) - (leftnodeoffsetx+ _left_node.offsetWidth/2);
-                   day = (rightnodeoffsety+ _right_node.offsetHeight/2) - (leftnodeoffsety+ _left_node.offsetHeight/2);
-                   dangle = Math.atan2(day ,dax);
-      
-                   rightx = (_right_node.offsetWidth/2) * Math.cos(135+dangle) + (rightnodeoffsetx+ _right_node.offsetWidth/2) ;
-                   righty  = (_right_node.offsetHeight/2) * Math.sin(135+dangle) + (rightnodeoffsety + (_right_node.offsetHeight / 2)) ;
-      
-                   leftx = (_left_node.offsetWidth/2) * Math.cos(.05+dangle) + (leftnodeoffsetx+ _left_node.offsetWidth/2) ;
-                   lefty  = (_left_node.offsetHeight/2) * Math.sin(.05+dangle) + (leftnodeoffsety + (_left_node.offsetHeight / 2)) ;
-      
-                  //Get Left point and Right Point
-                  _left.x = leftx
-                  _left.y = lefty
-                  _right.x = rightx
-                  _right.y = righty
-      
-                    ele1_x = _left.x;
-                    ele1_y = _left.y;
-                    ele2_x = _right.x;
-                    ele2_y = _right.y;
-      
-                    if (_lines[li]._text == undefined) {
-                      _lines[li]._text = ""
-                    }
-      
-                    _ctx.beginPath();
-                  
-                  _ctx.moveTo(_left.x, _left.y );
-                
-                  _ctx.lineTo((_right.x), (_right.y));
-                  
-                  _ctx.lineWidth = _lines[li].width || 2;
-                  _ctx.strokeStyle = _color;
-      
-                  _ctx.stroke();
-      
-                  
-      f = 0;
-      
-                  _ctx.font = "20px Segoe ui";
-                  _ctx.fillText(_lines[li]._text,(_right.x +_left.x)/2 ,( _right.y + _left.y)/2);
-      
-              
-      
-              
-      
-                //_lines[li].resize = _lines[li].resize || false;
-              
-            } catch (err) {
-              if (_error) alert('Mandatory Fields are missing or incorrect');
-            }
-          
-	
-				  }
-  
- redrawevent= requestAnimationFrame(redraw)
- 
- }
- 
  
 
 
@@ -1074,6 +944,113 @@ await waitforme (speed+100);
           }
 
 
+
+          async function redrawsplay  ()  {
+
+            if (tree.length == 0) return;
+        
+            _ctx.clearRect(0, 0,  10000, 4300);
+        
+            for (let source in tree) {
+        
+                let destination = tree[source];
+                if(destination != "null") {
+        
+              //  mySVG.connect({left_node:source , right_node:destination+"treetop"})
+        
+              try {
+                    
+                    
+                      
+                if ( source == undefined || source == "null" || destination == undefined || destination == "null"  ) {
+                  return;
+                }
+                      //To decide colour of the line
+                    
+                          
+                          _ctx.font = "30px Segoe UI";
+        
+                
+                         _left_node = document.getElementById(source);
+                         _right_node = document.getElementById(destination+"treetop");
+            
+            
+                         clientrectleft = _left_node.getBoundingClientRect();
+                         clientrectright = _right_node.getBoundingClientRect();
+                         leftnodeoffsetx = clientrectleft.left +document.documentElement.scrollLeft;
+                         leftnodeoffsety = clientrectleft.top +document.documentElement.scrollTop;
+                         rightnodeoffsetx = clientrectright.left +document.documentElement.scrollLeft;
+                         rightnodeoffsety = clientrectright.top +document.documentElement.scrollTop;
+            
+                         dax = (rightnodeoffsetx+ _right_node.offsetHeight/2) - (leftnodeoffsetx+ _left_node.offsetWidth/2);
+                         day = (rightnodeoffsety+ _right_node.offsetHeight/2) - (leftnodeoffsety+ _left_node.offsetHeight/2);
+                         dangle = Math.atan2(day ,dax);
+            
+                         rightx = (_right_node.offsetWidth/2) * Math.cos(135+dangle) + (rightnodeoffsetx+ _right_node.offsetWidth/2) ;
+                         righty  = (_right_node.offsetHeight/2) * Math.sin(135+dangle) + (rightnodeoffsety + (_right_node.offsetHeight / 2)) ;
+            
+                         leftx = (_left_node.offsetWidth/2) * Math.cos(.05+dangle) + (leftnodeoffsetx+ _left_node.offsetWidth/2) ;
+                         lefty  = (_left_node.offsetHeight/2) * Math.sin(.05+dangle) + (leftnodeoffsety + (_left_node.offsetHeight / 2)) ;
+            
+                        //Get Left point and Right Point
+                        _left.x = leftx
+                        _left.y = lefty
+                        _right.x = rightx
+                        _right.y = righty
+            
+                          ele1_x = _left.x;
+                          ele1_y = _left.y;
+                          ele2_x = _right.x;
+                          ele2_y = _right.y;
+            
+        
+                          _ctx.beginPath();
+                        
+                        _ctx.moveTo(_left.x, _left.y );
+                      
+                        _ctx.lineTo((_right.x), (_right.y));
+                        
+                        _ctx.lineWidth =  2;
+                        _ctx.strokeStyle = _color;
+            
+                        _ctx.stroke();
+            
+                        
+                    
+            
+                      //_lines[li].resize = _lines[li].resize || false;
+                    
+                  } catch (err) {
+                    if (_error) alert('Mandatory Fields are missing or incorrect');
+                  }
+        
+                }
+        
+                
+            
+        
+                      
+        
+              }
+            
+            redrawevent = requestAnimationFrame(redrawsplay)
+           
+           }
+           
+
+
+           function calcheight( _root)
+ {
+     // Base case: empty tree has height 0
+     if ($("#"+_root).length ==0)
+         return 0;
+  
+     // recur for left and right subtree and consider maximum depth
+     let heightpernode =  1 + Math.max(calcheight(tree[_root+"treeleft"]), calcheight(tree[_root+"treeright"]));
+     $(`#${_root}height`).text(heightpernode)
+     
+     return heightpernode;
+ }
 
 
   function leaf(element) {

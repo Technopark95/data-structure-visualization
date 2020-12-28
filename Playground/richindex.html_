@@ -1,0 +1,935 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <title>Graphical Structure</title>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BK8TV34GJW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BK8TV34GJW');
+</script>
+
+<meta name="description" content="Data Structures And Algorithms Visualisation."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://graphicalstructure.codes/" />
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Graphical Structure">
+<meta property="og:description" content="Data Structures And Algorithms Visualisation.">
+<meta property="og:url" content="https://graphicalstructure.codes">
+<meta property="og:site_name" content="Graphical Structure">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Graphical Structure">
+<meta name="twitter:description" content="Data Structures And Algorithms Visualisation.">
+<script type="application/ld+json" class="rank-math-schema">{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "EducationalOrganization",
+            "@id": "https://graphicalstructure.codes/#organization",
+            "name": "Graphical Structure",
+            "url": "https://graphicalstructure.codes",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://graphicalstructure.codes/Playground/logo1.png"
+            }
+        },
+        {
+            "@type": "WebSite",
+            "@id": "https://graphicalstructure.codes/#website",
+            "url": "https://graphicalstructure.codes",
+            "name": "Graphical Structure",
+            "publisher": {
+                "@id": "https://graphicalstructure.codes#organization"
+            },
+            "inLanguage": "en-US",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://blog.graphicalstructure.codes/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        },
+        {
+            "@type": "CollectionPage",
+            "@id": "https://graphicalstructure.codes/#webpage",
+            "url": "https://graphicalstructure.codes/",
+            "name": "Graphical Structure",
+            "about": {
+                "@id": "https://graphicalstructure.codes/#organization"
+            },
+            "isPartOf": {
+                "@id": "https://graphicalstructure.codes/#website"
+            },
+            "inLanguage": "en-US"
+        }
+    ]
+}</script>
+
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+
+
+<link rel="icon" href="favicon.png" type="image/png" sizes="16x16">
+<link rel="stylesheet" href="stack.css">
+<link rel="stylesheet" href="queue.css">
+<link rel="stylesheet" href="style.css">
+
+<script src="Scripts/jquery.js"></script>
+<script src="Scripts/jquery-ui.js"></script>
+<script src="Scripts/Line.js"></script>
+
+
+</head>
+<body>
+
+ 
+  <input id ="codetype" spellcheck="false" type="text" placeholder="Code here and press Enter >__"/>
+
+
+
+
+<div class="log" id="log1" style="position: fixed;"> 
+
+</div>
+
+<div class="watermark" style="position: fixed;"> 
+
+  <img  src="logo1.png"/>
+
+</div>
+
+
+
+
+
+
+<div class="footer" style="display: none;">
+
+<p id="feed" class="uncaps" style=" opacity:100%; color: black; margin-top: -10px; font-size: 120%; text-shadow: 0 0 3px #FF0000; "></p>
+
+
+</div>
+
+
+<div id="infotab" style="position: absolute; z-index: 0; position: fixed; top: 40%; left: -300px; width: auto; height: auto;transition: 300ms;">
+  
+  <div id="infos"style=" top:0 ; left:0;" ><p style="position: absolute; font-size:xx-large; margin-top:5px; margin-left: 120px; color:coral;font-family:Segoe UI; cursor:default;">Codes();</p><img src="info.png" style="position: absolute;height: 40px; width: 40px; left: 300px; top: 10px;" ></div>
+
+</div>
+
+
+
+<div class="infomega"  id="listofcommand" style="text-align: center;"> 
+
+  
+  <p class = "acchead"  id="arrayacc" style="font-size: 100%; background-color: rgba(0, 0, 0, 0.01); color: #FF0000;">If you want to try different Data Structure after another, reload the page first<br>Happy Coding :)</p>
+  <p style="font-size:80%;">Zoom out : CTRTL -</p>
+  <p style="font-size:80%;">Zoom in  : CTRTL +</p>
+
+  <div >
+
+    <p class = "acchead"  id="arrayacc" style="background-color: rgba(0, 0, 0, 0.123);">Array</p>
+    
+    <div class="autohide" id="arrayaccdata">
+
+      <p  style="font-size: 100%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);">Create array before performing algorithms.</p>
+
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Elements are seperated by commas.</p>
+
+      <div class="commandcopy">
+        <p>array([elements])</p>
+      </div>
+
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Unsorted array.</p>
+
+      <div class="commandcopy">
+        <p>array([34,21,5,1,23,10,4])</p>
+      </div>
+
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Sorted array.</p>
+
+      <div class="commandcopy">
+        <p>array([10,14,34,55,76,87,96,101,145,155,167])</p>
+      </div>
+  
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Traverse the array.</p>
+
+       <div class="commandcopy">
+        <p>traverse()</p>
+      </div>
+  
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Linear search on array.</p>
+
+       <div class="commandcopy">
+        <p>search(item)</p>
+      </div>
+
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Binary search on array.</p>
+
+  
+       <div class="commandcopy">
+        <p>BinarySearch(item)</p>
+      </div>
+
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Insert value in array.</p>
+
+      
+       <div class="commandcopy">
+        <p>insertAt(value , index)</p>
+      </div>
+  
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Sort array using Selectiong Sort technique.</p>
+
+       <div class="commandcopy">
+        <p>SelectionSort()</p>
+      </div>
+  
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Sort array using Bubble Sort (sinking sort) technique.</p>
+
+       <div class="commandcopy">
+        <p>BubbleSort()</p>
+      </div>
+  
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Sort array using Insertion Sort technique.</p>
+
+
+       <div class="commandcopy">
+        <p>InsertionSort()</p>
+      </div>
+  
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Sort array using Quick Sort (partition-exchange sort) technique.</p>
+
+       <div class="commandcopy">
+        <p>QuickSort()</p>
+      </div>
+  
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Sort array using Merge Sort technique.</p>
+
+
+       <div class="commandcopy">
+        <p>MergeSort()</p>
+      </div>
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Sort array using Heap Sort technique.</p>
+
+       <div class="commandcopy">
+        <p>HeapSort()</p>
+      </div>
+  
+  
+    </div>
+  
+    </div>
+  
+  
+  
+  
+  
+    <div >
+  
+      <p class = "acchead" id="llacc" style="background-color: rgba(0, 0, 0, 0.123); ">Linked List</p>
+      <div class="autohide" id="llaccdata">
+
+        <p  style="font-size: 100%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);">You can start with appending or prepending.</p>
+
+        <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Insert value in the beginning of Linked List.</p>
+
+       <div class="commandcopy">
+        <p>prependlist(value)</p>
+      </div>
+
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Insert value in the end of Linked List.</p>
+
+  
+       <div class="commandcopy">
+        <p>appendlist(value)</p>
+      </div>
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Insert value after the node speficied.</p>
+
+      <div class="commandcopy">
+        <p>insertafterlist(node, value)</p>
+      </div>
+
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Delete value from Linked List.</p>
+  
+       <div class="commandcopy">
+        <p>deletelistnode(value)</p>
+      </div>
+  
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Traverse the Linked List.</p>
+
+       <div class="commandcopy">
+        <p>listtraverse()</p>
+      </div>
+      
+      <p class = "acchead"  id="arrayacc" style="font-size: 130%; background-color: rgba(0, 0, 0, 0.01); color: #FF0000;">APIs</p>
+  
+  
+      <div>
+        <p>To connect leftnode->rightnode.</p>
+        <p style="position: relative; margin-top: -15px; font-size: small;  color: rgba(0, 0, 0, 0.589);">nodify('leftnode'+'list' , 'rightnode'+ 'list' , 'color' )</p>
+        <p style="position: relative; margin-top: -10px; font-size: small;  color: rgba(0, 0, 0, 0.589);">Example : nodify('4'+'list' , '21'+ 'list' , 'red' )</p>
+        <p style="position: relative; margin-top: -10px; font-size: small;  color: rgba(0, 0, 0, 0.589);">Example : nodify('7'+'list' , '10'+ 'list' , 'rgba(255 ,103,0,.5)' )</p>
+      </div>
+  
+    </div>
+  
+    </div>
+
+
+    <div >
+  
+      <p class = "acchead" id="sullacc" style="background-color: rgba(0, 0, 0, 0.123); ">Stack using Linked List</p>
+      <div class="autohide" id="sullaccdata">
+
+        <p  style="font-size: 100%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);">You can start with pushing elements.</p>
+
+        <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Push element in the stack.</p>
+
+       <div class="commandcopy">
+        <p>pushlist(value)</p>
+      </div>
+  
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Pop element from stack.</p>
+
+       <div class="commandcopy">
+        <p>poplist(value)</p>
+      </div>
+     
+  
+    </div>
+  
+    </div>
+
+
+    <div >
+  
+      <p class = "acchead" id="qullacc" style="background-color: rgba(0, 0, 0, 0.123); ">Queue using Linked List</p>
+      <div class="autohide" id="qullaccdata">
+
+        <p  style="font-size: 100%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);">You can start with enqueuing elements.</p>
+
+        <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Enqueue/Insert element in queue.</p>
+
+       <div class="commandcopy">
+        <p>enqueuelist(value)</p>
+      </div>
+  
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Dequeue/remove element from queue.</p>
+
+       <div class="commandcopy">
+        <p>dequeuelist()</p>
+      </div>
+     
+  
+    </div>
+  
+    </div>
+  
+  
+  
+  
+    <div >
+  
+      <p class = "acchead"  id="treeacc" style="background-color: rgba(0, 0, 0, 0.123);">Tree</p>
+  
+      <div class="autohide" id="treeaccdata">
+
+      <p  style="font-size: 100%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);">Create leaves and connect them in order to make Tree manually.</p>
+
+      <p  style="font-size: 100%; background-color: rgba(0, 0, 0, 0); color: #FF0000;">To connect Tree-nodes, First, click the parent white node (left/right), then click child's white top node. :)</p>
+  
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Create a tree node.</p>
+
+      <div class="commandcopy">
+        <p>leaf(value)</p>
+      </div>
+  
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Create multiple tree nodes (seperated by commas).</p>
+
+       <div class="commandcopy">
+        <p>createleaves([elements])</p>
+      </div>
+
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Utility function to align all tree nodes in heap-like sequence.</p>
+
+       <div class="commandcopy">
+        <p>doalign()</p>
+      </div>
+
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Utility function to connect all tree nodes in heap-like sequence.</p>
+
+  
+       <div class="commandcopy">
+        <p>build()</p>
+      </div>
+
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Preorder Tree traversal (Node-Left-Right).</p>
+
+       <div class="commandcopy">
+        <p>preorder(root)</p>
+      </div>
+
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Inorder Tree traversal (Left-Node-Right).</p>
+
+  
+       <div class="commandcopy">
+        <p>inorder(root)</p>
+      </div>
+  
+
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Postorder Tree traversal (Left-Right-Node).</p>
+
+       <div class="commandcopy">
+        <p>postorder(root)</p>
+      </div>
+
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Levelorder Tree traversal (Breadth First Traversal) using queue.</p>
+
+      <div class="commandcopy">
+        <p>levelorder(root)</p>
+      </div>
+
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Preorder Tree traversal using stack (Iterative).</p>
+
+  
+       <div class="commandcopy">
+        <p>preorderstack(root)</p>
+      </div>
+
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Inorder Tree traversal using stack (Iterative).</p>
+
+  
+       <div class="commandcopy">
+        <p>inorderstack(root)</p>
+      </div>
+
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Postorder Tree traversal using stack (Iterative).</p>
+
+  
+       <div class="commandcopy">
+        <p>postorderstack(root)</p>
+      </div>
+  
+  
+      <p class = "acchead"  id="arrayacc" style="font-size: 130%; background-color: rgba(0, 0, 0, 0.01); color: #FF0000;">APIs</p>
+  
+      <div>
+        <p>To connect parent-child nodes.</p>
+        <p style="position: relative; margin-top: -15px; font-size: small;  color: rgba(0, 0, 0, 0.589);">treefy('parent'+'tree[left/right]' , 'child' , 'color' )</p>
+        <p style="position: relative; margin-top: -10px; font-size: small;  color: rgba(0, 0, 0, 0.589);">Example : treefy('1'+'treeleft' , '2' , 'coral' )</p>
+        <p style="position: relative; margin-top: -10px; font-size: small;  color: rgba(0, 0, 0, 0.589);">Example : treefy('3'+'treeright' , '5' , 'aqua' )</p>
+      </div>
+  
+   
+  
+    </div>
+  
+    </div>
+
+
+
+    <div >
+  
+      <p class = "acchead"  id="bsttreeacc" style="background-color: rgba(0, 0, 0, 0.123);">Binary search Tree</p>
+  
+      <div class="autohide" id="bsttreeaccdata">
+
+        <p  style="font-size: 100%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);">You can start with inserting elements into <br>  Binary Search Tree.</p>
+
+        <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Insert value in Binary Search Tree.</p>
+
+       <div class="commandcopy">
+        <p>InsertBST(value)</p>
+      </div>
+
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Search for an item in Binary Search Tree.</p>
+
+  
+       <div class="commandcopy">
+        <p>SearchBST(item)</p>
+      </div>
+
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Delete Item from Binary Search Tree.</p>
+
+       <div class="commandcopy">
+        <p>DeleteBST(item)</p>
+      </div>
+  
+  
+    </div>
+  
+    </div>
+  
+  
+  
+  
+    <div id="avll">
+  
+      <p class = "acchead"  id="avltreeacc" style="background-color: rgba(0, 0, 0, 0.123);">AVL Tree</p>
+  
+      <div class="autohide" id="avltreeaccdata">
+        <p  style="font-size: 100%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);">You can start with inserting elements into <br>  AVL Tree.</p>
+
+        <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Insert value in AVL Tree.</p>
+
+  
+       <div class="commandcopy">
+        <p>InsertAVL(value)</p>
+      </div>
+
+        <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Delete Item from AVL Tree.</p>
+
+      <div class="commandcopy">
+        <p>DeleteAVL(value)</p>
+      </div>
+
+        <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Search for an item in AVL Tree.</p>
+
+  
+      <div class="commandcopy">
+        <p>SearchAVL(item)</p>
+      </div>
+  
+    </div>
+  
+    </div>
+
+
+    <div>
+  
+      <p class = "acchead"  id="splaytreeacc" style="background-color: rgba(0, 0, 0, 0.123);">Splay Tree</p>
+  
+      <div class="autohide" id="splaytreeaccdata">
+  
+        <p  style="font-size: 100%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);">You can start with inserting elements into <br>  Splay Tree.</p>
+
+        <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Insert value in Splay Tree.</p>
+
+       <div class="commandcopy">
+        <p>Splayinsert(value)</p>
+      </div>
+
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Search for an item in Splay Tree.</p>
+
+  
+      <div class="commandcopy">
+        <p>Splaysearch(item)</p>
+      </div>
+  
+    </div>
+  
+    </div>
+
+
+    <div>
+  
+      <p class = "acchead"  id="rbtreeacc" style="background-color: rgba(0, 0, 0, 0.123);">Red Black Tree</p>
+  
+      <div class="autohide" id="rbtreeaccdata">
+  
+        <p  style="font-size: 100%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);">You can start with inserting elements into <br>  Red-Black Tree.</p>
+
+        <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Insert value in Red Black Tree.</p>
+
+
+       <div class="commandcopy">
+        <p>RBTreeinsert(value)</p>
+      </div>
+
+            <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Search for an item in Red Black Tree.</p>
+
+  
+      <div class="commandcopy">
+        <p>RBTreesearch(item)</p>
+      </div>
+  
+    </div>
+  
+    </div>
+
+
+
+
+    <div>
+  
+      <p class = "acchead"  id="btreeacc" style="background-color: rgba(0, 0, 0, 0.123);">B Tree</p>
+  
+      <div class="autohide" id="btreeaccdata">
+  
+        <p  style="font-size: 100%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);">You can start with inserting elements into <br>  B Tree.</p>
+
+        <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Insert value in B Tree.</p>
+
+  
+       <div class="commandcopy">
+        <p>btreeinsert(value)</p>
+      </div>
+
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Traverse the B Tree.</p>
+
+      <div class="commandcopy">
+        <p>btraverse()</p>
+      </div>
+  
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Search for an item in B Tree.</p>
+
+      <div class="commandcopy">
+        <p>btreesearch(item)</p>
+      </div>
+  
+    </div>
+  
+    </div>
+
+
+
+  
+  
+    <div >
+  
+      <p class = "acchead" id="heapacc" style="background-color: rgba(0, 0, 0, 0.123); ">Heap</p>
+      <div class="autohide" id="heapaccdata">
+
+        <p  style="font-size: 100%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);">Create heap first, either by createheap or insertheap</p>
+
+        <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Create heap (Elements are seperated by commas).</p>
+
+        <div class="commandcopy">
+          <p>createheap([elements])</p>
+        </div>
+
+        <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Insert element into heap.</p>
+
+       <div class="commandcopy">
+        <p>insertheap(value)</p>
+      </div>
+
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Delete the root of the heap.</p>
+
+      <div class="commandcopy">
+        <p>deleteheap()</p>
+      </div>
+
+  
+    </div>
+  
+    </div>
+  
+  
+    <div >
+  
+      <p class = "acchead" id="pqacc" style="background-color: rgba(0, 0, 0, 0.123); ">Priority Queue</p>
+      <div class="autohide" id="pqaccdata">
+
+        <p  style="font-size: 100%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);">Insert elements into Priority Queue before performing algorithms.</p>
+
+        <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Insert element into Priority Queue.</p>
+
+       <div class="commandcopy">
+        <p>insertPriorityQueue(val)</p>
+      </div>
+
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Extract root from Priority Queue.</p>
+
+
+      <div class="commandcopy">
+        <p>ExtractMAX()</p>
+      </div>
+
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Remove an element by index from Priority Queue.</p>
+
+
+      <div class="commandcopy">
+        <p>RemovePriorityQueue(index)</p>
+      </div>
+
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Get the root value.</p>
+
+
+      <div class="commandcopy">
+        <p>getMax()</p>
+      </div>
+
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Change Priority of an element by index in Priority Queue.</p>
+
+
+      <div class="commandcopy">
+        <p>ChangePriority(index , newval)</p>
+      </div>
+  
+  
+  
+    </div>
+  
+    </div>
+  
+  
+  
+  
+  
+  
+    <div id="grappph">
+  
+  
+  
+      <p class = "acchead"  id="graphacc" style="background-color: rgba(0, 0, 0, 0.123);">Graph</p>
+  
+      <div class="autohide" id="graphaccdata">
+
+     <p  style="font-size: 100%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);">Create graph before performing algorithms<br>Or,you can import graph if saved earlier.</p>
+  
+      <p  style="font-size: 100%; background-color: rgba(0, 0, 0, 0.01); color: #FF0000;">To connect vertices, Press and Hold Shift on source and then drop it on destination then enter the edge weight. :)</p>
+  
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Create vertices.</p>
+
+  
+       <div class="commandcopy">
+        <p>Graph(no-of-vertices)</p>
+      </div>
+
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Breadth-First Search</p>
+
+  
+       <div class="commandcopy">
+        <p>bfs('starting-vertex')</p>
+      </div>
+
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Depth-First Search</p>
+
+  
+       <div class="commandcopy">
+        <p>dfs('starting-vertex')</p>
+      </div>
+
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Single-Source shortest path by Dijkastra's Algorithm</p>
+
+  
+       <div class="commandcopy">
+        <p>Dijkstra('starting-vertex')</p>
+      </div>
+  
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">All pair shortest path by Floyd-Warshall Algorithm</p>
+
+       <div class="commandcopy">
+        <p>FloydWarshall()</p>
+      </div>
+  
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Minimum spanning tree by Kruskal's Algorithm</p>
+
+       <div class="commandcopy">
+        <p>Kruskal()</p>
+      </div>
+
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 40px;">Utility function to import graph saved at graphicalstructure database.</p>
+
+
+    <div class="commandcopy">
+      <p>importgraph("Filename" , "password-to-access")</p>
+    </div>
+
+    <p  style="font-size: 110%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 40px;">Some prebuilt graph that you can import.</p>
+
+
+    <div class="commandcopy">
+      <p>importgraph("Final2" , "rotate")</p>
+    </div>
+    <div class="commandcopy">
+      <p>importgraph("star" , "star")</p>
+    </div>
+
+    <p  style="font-size: 80%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 60px;">Utility function to export graph at graphicalstructure database after you make a graph.</p>
+
+
+    <div class="commandcopy">
+      <p>exportgraph("Filename" , "password-to-protect")</p>
+    </div>
+
+
+
+    <p class = "acchead"  id="arrayacc" style="font-size: 130%; background-color: rgba(0, 0, 0, 0.01); color: #FF0000;">APIs</p>
+
+    <div>
+      <p>To connect 2 vertices.</p>
+      <p style="position: relative; margin-top: -15px; font-size: small;  color: rgba(0, 0, 0, 0.589);">graphy('source' , 'destination' , weight , 'type')</p>
+      <p style="position: relative; margin-top: -15px; font-size: small;  color: rgba(0, 0, 0, 0.589);">Example : graphy('A' , 'B' , 10 , '-UD-')</p>
+      <p style="position: relative; margin-top: -15px; font-size: small;  color: rgba(0, 0, 0, 0.589);">Example : graphy('F' , 'D' , -8 , 'D')</p>
+
+    </div>
+
+
+
+
+  </div>
+
+
+
+  </div>
+
+
+  <div >
+
+    <p class = "acchead" id="trieacc" style="background-color: rgba(0, 0, 0, 0.123); ">Trie</p>
+    <div class="autohide" id="trieaccdata">
+
+      <p  style="font-size: 100%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);">You can start with inserting keys into <br>Trie</p>
+
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Insert a string in Trie.</p>
+
+
+     <div class="commandcopy">
+      <p>trieinsert('key')</p>
+    </div>
+
+    <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Search for a string in Trie.</p>
+
+
+    <div class="commandcopy">
+      <p>triesearch('key')</p>
+    </div>
+
+  
+  </div>
+
+  </div>
+
+
+  <div >
+  
+    <p class = "acchead" id="stackacc" style="background-color: rgba(0, 0, 0, 0.123); ">Shunting-Yard Algorithm</p>
+    <div class="autohide" id="stackaccdata">
+
+      <p  style="font-size: 100%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);">You have to enter a mathematical expression in infix-notation.</p>
+
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Infix-to-Postfix using Shunting-yard Algorithm.</p>
+
+
+     <div class="commandcopy">
+      <p>postfix("infix-expression")</p>
+    </div>
+
+    <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Create a Postfix expression tree by infix input.</p>
+
+
+    <div class="commandcopy">
+      <p>expressiontree("infix-expression")</p>
+    </div>
+
+
+  </div>
+
+  </div>
+
+  <div >
+
+    <p class = "acchead" id="DPacc" style="background-color: rgba(0, 0, 0, 0.123); ">Dynamic Programming</p>
+    <div class="autohide" id="DPaccdata">
+
+      <p  style="font-size: 100%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);">No need to create data structure,you can start with providing valid input in the arguement list.</p>
+
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Find Longest Common Subsequence in 2 string.</p>
+
+    <div class="commandcopy">
+      <p>LongestCommonSubseq("s1","s2")</p>
+    </div>
+
+    <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Find Longest Common Substring in 2 string.</p>
+
+
+    <div class="commandcopy">
+      <p>LongestCommonSubstr("s1","s2")</p>
+    </div>
+
+    <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Find Nth Finbonacci number.</p>
+
+
+    <div class="commandcopy">
+      <p>Fibonacci(N)</p>
+    </div>
+
+    
+
+  
+  </div>
+
+  </div>
+
+
+
+  </div>
+
+
+
+<div id="anispeed" style="z-index: 2;display: none; position: fixed; top: 70%; left: -250px; width: auto; height: auto;">
+  <div id="anislow"><p style="position: absolute; font-size:xx-large; margin-top:10px; margin-left: 110px; color:rgb(0, 0, 0);font-family:Segoe UI; cursor:default;">Slow</p><img src="snail.png" style="position: absolute;height: 40px; width: 40px; left: 255px; top: 10px;" ></div>
+  <div id="aniquick"><p style="position: absolute; font-size:xx-large; margin-top:10px; margin-left: 110px;  color:rgb(0, 0, 0);font-family:Segoe UI; cursor: default;">Quick</p><img src="light.png" style="transform: rotate(15deg); position: absolute;height: 40px; width: 50px; left: 250px; top: 13px;" ></div>
+  </div>
+
+  <div class="slidecontainer" >
+    <img src="fastman.png" id="fastiden" style="width: 20%; position: absolute;top:-100px;left:105px; opacity: .5;"/>
+    <img src="slowman.png" id="slowiden" style="width: 13%; position: absolute;top: 80px;left:115px; opacity: .5;"/>
+    <input type="range" min="1" max="100" value="50" class="slider" id="animation-speed" style="transform: rotate(-90deg);">
+  </div>
+
+<div id="direction" style="z-index: 2; position: fixed; bottom: 30%; left: -250px; width: auto; height: auto;">
+<div id="undirected_"><p style="position: absolute; font-size:xx-large; margin-top:7px; margin-left: 50px; color:rgb(0, 0, 0);font-family:Segoe UI; cursor:default;">Undirected</p><img src="line.png" style="position: absolute;height: 40px; width: 40px; left: 255px; top: 10px;" ></div>
+<div id="directed_"><p style="position: absolute; font-size:xx-large; margin-top:7px; margin-left: 70px;  color:rgb(0, 0, 0);font-family:Segoe UI; cursor: default;">Directed</p><img src="Arrow-right-512.png" style="position: absolute;height: 40px; width: 40px; left: 255px; top: 10px;" ></div>
+
+</div>
+
+<div id="copy"><p id="copyrightname">Anoop Singh, Graphical Structure © 2020</p></div>
+
+<img id = "play-btn" src="playbtn.png"  style= "position:fixed; right:290px;top: 140px;width: 70px; border-radius: 100%; "/>
+<img id = "pause-btn" src="clock.png"  style= "position:fixed; right:200px;top: 140px;width: 70px; border-radius: 100%;"/>
+
+
+<!---
+<script src="all.js"></script>
+<script src="AVL.js"></script>
+<script src="expression.js"></script>
+<script src="trie.js"></script>
+<script src="LCS.js"></script>
+-->
+<script>
+
+
+var isMobile = /iPhone|Android/i.test(navigator.userAgent);
+		var element = document.getElementById('text');
+		if (isMobile) {
+        document.body.style.zoom=1.8;
+        alert("This Web-App is for Desktop only, Avoid using it on Mobile devices.")
+         document.getElementById("grappph").style.display = "none";
+        document.getElementById("avll").style.display = "none";
+		} else {
+		
+		}
+</script>
+<script src="Scripts/Algorithm/fx.js"></script>
+<script src="Scripts/Algorithm/info.js"></script>
+<script src="Scripts/Algorithm/Tree.js"></script>
+<script src="Scripts/Algorithm/LL.js"></script>
+<script src="Scripts/Algorithm/array.js"></script>
+<script src="Scripts/Algorithm/stack.js"></script>
+<script src="Scripts/Algorithm/queue.js"></script>
+<script src="Scripts/Algorithm/heapsort.js"></script>
+<script src="Scripts/Algorithm/moded.js"></script>
+<script src="Scripts/Algorithm/quicksort.js"></script>
+<script src="Scripts/Algorithm/graph.js"></script>
+<script src="Scripts/Algorithm/postfix.js"></script>
+<script src="Scripts/Algorithm/AVL.js"></script>
+<script src="Scripts/Algorithm/trie.js"></script>
+<script src="Scripts/Algorithm/DP.js"></script>
+<script src="Scripts/Algorithm/Heap.js"></script>
+<script src="Scripts/Algorithm/PriorityQueue.js"></script>
+<script src="Scripts/Algorithm/Splay.js"></script>
+<script src="Scripts/Algorithm/expression.js"></script>
+<script src="Scripts/Algorithm/RedBlackTree.js"></script>
+<script src="Scripts/Algorithm/BTree.js"></script>
+</body>
+</html>

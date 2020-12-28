@@ -535,6 +535,8 @@ else{
   Output('Item Doesnt exist return -1')
 }
 
+cutoutarray(0,length-1);
+
 
 }
 
@@ -625,6 +627,47 @@ var index = length-2
   }
 
 
+  
+ async   function traverse()  {
+
+
+
+  for (var t = 0 ; t < storedarray.length ; t++) {
+  
+       
+      await  hilight("aitem"+(t) , "rgb(109,209,0,1)" , "500ms",700)
+      hilight("aitem"+(t) , defaultcolor , "500ms" , 700)
+      Output(storedarray[t])
+  
+  }
+  
+  
+  
+      }
+  
+  
+      async   function search(item)  {
+  
+  
+  
+          for (var t = 0 ; t < storedarray.length ; t++) {
+          
+              if  (item == storedarray[t]) {
+  
+                  await  hilight("aitem"+(t) , "rgb(255,0,0,1)" , "6000ms",6500)
+                  Output("Found at index " + t)
+                  break;
+              }
+  
+              await  hilight("aitem"+(t) , "rgb(109,209,0,1)" , "500ms",700)
+              hilight("aitem"+(t) , defaultcolor , "500ms" , 700)
+            
+          
+          }
+          
+          
+          
+              }
 
 
 
