@@ -188,6 +188,10 @@ if (stats == 1  ) await pauser();
 
 
 async  function SelectionSort() {
+
+  ipointer.style.display = "";
+    jpointer.style.display = "";
+    kpointer.style.display = "";
     let len = storedarray.length;
     for (let isel = 0; isel < len; isel++) {
         let min = isel;
@@ -228,6 +232,10 @@ async  function SelectionSort() {
 
  
   async  function BubbleSort(){
+
+    ipointer.style.display = "";
+    jpointer.style.display = "";
+    kpointer.style.display = "";
 
     var lene = storedarray.length;
     
@@ -271,6 +279,10 @@ async  function SelectionSort() {
 
 
 async function InsertionSort() {
+
+  ipointer.style.display = "";
+    jpointer.style.display = "";
+    kpointer.style.display = "";
   for (var i1 = 1; i1 < storedarray.length; i1++) {
     await I(i1,"a")
     var j1 = i1 - 1
@@ -451,23 +463,27 @@ async function ms(  l,  r)
 
 async function BinarySearch(value){
 
+  ipointer.style.display = "";
+    jpointer.style.display = "";
+    kpointer.style.display = "";
+
   $("#kindex").text("mid").show();
 
   await display( 'set first = 0')
   await hilight("aitem0", "blueviolet" , "1000ms" , 1100)
   var firstIndex  = 0
 
-  I(firstIndex ,  "a" )
+ await I(firstIndex ,  "a" )
 
   var    lastIndex   = storedarray.length - 1
 
-  J(lastIndex ,  "a" )
+ await J(lastIndex ,  "a" )
 
       await display( 'set last = '+lastIndex)
       await hilight("aitem"+(lastIndex), "blueviolet" , "1000ms" , 1100)
 
    var   middleIndex = Math.floor((lastIndex + firstIndex)/2);
-   K(middleIndex ,  "a" )
+ await  K(middleIndex ,  "a" )
       await display( 'set mid = (first+last)/2')
       await hilight("aitem"+(middleIndex), "rgb(109,209,0,1)", "1000ms" , 2100)
 
@@ -485,7 +501,7 @@ async function BinarySearch(value){
          await display( 'set last = mid-1')
           hilight("aitem"+lastIndex ,  defaultcolor , "1000ms" , 1100)
           lastIndex = middleIndex - 1;
-          J(lastIndex ,  "a" )
+        await  J(lastIndex ,  "a" )
           await hilight("aitem"+lastIndex , "blueviolet" ,  "1000ms" , 1100)
       } 
     else if (value > storedarray[middleIndex])
@@ -495,14 +511,14 @@ async function BinarySearch(value){
          await display( 'set first = mid+1')
           hilight("aitem"+firstIndex ,defaultcolor ,  "1000ms" , 1100)
           firstIndex = middleIndex + 1;
-          I(firstIndex ,  "a" )
+      await    I(firstIndex ,  "a" )
           await hilight("aitem"+firstIndex , "blueviolet" ,  "1000ms" , 1100)
       }
     
       await hilight("aitem"+(middleIndex),defaultcolor ,  "1000ms" , 1100)
       middleIndex = Math.floor((lastIndex + firstIndex)/2);
       await display( 'set mid = (first+last)/2')
-      K(middleIndex ,  "a" )
+   await   K(middleIndex ,  "a" )
       await hilight("aitem"+(middleIndex), "rgb(109,209,0,1)" ,  "2000ms" , 2100)
   
   }
