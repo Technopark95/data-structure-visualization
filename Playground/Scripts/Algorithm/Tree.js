@@ -124,7 +124,7 @@ async function  postorder(CurrentNode ) {
         // Print front of queue and remove it from queue
         let root_ = (q.front).data;
 
-        let precolor = document.getElementById(leftchild).style.backgroundColor;
+        let precolor = document.getElementById(root_).style.backgroundColor;
 
         await  hilight(root_ , "red")
         Output( document.getElementById(root_+"treeval").innerHTML)
