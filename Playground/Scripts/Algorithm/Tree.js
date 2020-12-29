@@ -41,6 +41,7 @@ async function  preorder(CurrentNode) {
 
   }
 
+  let precolor = document.getElementById(CurrentNode).style.backgroundColor;
 
     await hilight(CurrentNode , "red", "500ms"  ,700)
     Output( document.getElementById(CurrentNode+"treeval").innerHTML)
@@ -49,7 +50,7 @@ async function  preorder(CurrentNode) {
     await display("Going right of " + CurrentNode )
     await preorder(tree[CurrentNode+"treeright"])
     await display("returning from " + CurrentNode )
-    await hilight(CurrentNode , "rgba(75,0,130, 0.842)", "500ms"  ,700)
+    await hilight(CurrentNode , precolor, "500ms"  ,700)
     
 
 }
@@ -63,15 +64,17 @@ async function  inorder(CurrentNode ) {
   
     }
   
+
     
     await display("Going left of " + CurrentNode )
     await inorder(tree[CurrentNode+"treeleft"])
+    let precolor = document.getElementById(CurrentNode).style.backgroundColor;
     await hilight(CurrentNode , "red" , "500ms"  ,700)
     Output( document.getElementById(CurrentNode+"treeval").innerHTML)
     await display("Going right of " + CurrentNode )
     await inorder(tree[CurrentNode+"treeright"])
     await display("returning from " + CurrentNode )
-    await hilight(CurrentNode , "rgba(75,0,130, 0.842)" , "500ms"  ,700)
+    await hilight(CurrentNode , precolor , "500ms"  ,700)
     
   
   
@@ -91,10 +94,11 @@ async function  postorder(CurrentNode ) {
     await postorder(tree[CurrentNode+"treeleft"])
     await display("Going right of " + CurrentNode )
     await postorder(tree[CurrentNode+"treeright"])
+    let precolor = document.getElementById(CurrentNode).style.backgroundColor;
     await hilight(CurrentNode , "red", "500ms"  ,700)
     Output( document.getElementById(CurrentNode+"treeval").innerHTML)
     await display("returning from " + CurrentNode )
-    await hilight(CurrentNode , "rgba(75,0,130, 0.842)", "500ms"  ,700)
+    await hilight(CurrentNode , precolor, "500ms"  ,700)
   
   
   }
@@ -119,10 +123,12 @@ async function  postorder(CurrentNode ) {
     {
         // Print front of queue and remove it from queue
         let root_ = (q.front).data;
-       
+
+        let precolor = document.getElementById(leftchild).style.backgroundColor;
+
+        await  hilight(root_ , "red")
         Output( document.getElementById(root_+"treeval").innerHTML)
-  
-  
+        await   hilight(root_ ,precolor )
   
         q.deQueue();
         await  qout();
@@ -134,24 +140,20 @@ async function  postorder(CurrentNode ) {
 
 
         if (leftchild != "null") {
-          let leftchildcolor = document.getElementById(leftchild).style.backgroundColor;
+
+          Log("Push Left child")
           q.enQueue(leftchild);
           await   qins(leftchild);
-        await  hilight(leftchild , "red")
-       await   hilight(leftchild ,leftchildcolor )
+        
         }
             
  
         /*Enqueue right child */
         if (rightchild != "null") {
 
-          let rightchildcolor = document.getElementById(rightchild).style.backgroundColor;
-
+          Log("Push Right child")
         q.enQueue(rightchild);
         await qins(rightchild);
-
-        await  hilight(rightchild , "red")
-        await  hilight(rightchild ,rightchildcolor )
 
         }
             
