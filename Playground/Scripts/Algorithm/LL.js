@@ -76,15 +76,23 @@ async function prependlist( new_data)
 
     redrawlistevent = requestAnimationFrame(redrawlist)
 
-    $(".dragg").animate({left : "+=160px" , "transition" : speed+"ms linear"})
-
+    let x = document.getElementsByClassName("dragg");
+    let ie;
+    for (ie = 0; ie < x.length; ie++) {
+        x[ie].style.transition = speed+"ms linear";
+      x[ie].style.left = parseFloat(x[ie].style.left)+160+"px";
+    }
+    
+    
   
     /* 1. allocate node */
     let new_node = addnode(new_data,"no"); 
 
-    $(".dragg").css("transition" , speed+"ms linear");
-
-    
+   
+     x = document.getElementsByClassName("dragg");
+    for (ie = 0; ie < x.length; ie++) {
+        x[ie].style.transition = speed+"ms linear";
+    }
   
  
     /* 3. Make next of new node as head and previous as NULL */
@@ -180,39 +188,44 @@ async function insertafterlist( prev_node, new_data)
         return;  
     }  
   
-  let newoff =  $("#"+next[prev_node]).offset();
+  let newoff =  $("#"+prev_node).offset();
   let last = next[prev_node];
 
     /* 2. allocate new node */
      new_node = addnode(new_data); 
 
+
      $(".dragg").css("transition" , speed+"ms linear");
 
-     $("#"+new_node).offset({left:newoff.left , top: newoff.top+130});
+     $("#"+new_node).offset({left:newoff.left+160 , top: newoff.top+130});
 
-
+ 
     /* 4. Make next of new node as next of prev_node */
     next[new_node] = next[prev_node]
   
     /* 5. move the next of prev_node as new_node */
+   
     next[prev_node] = new_node
 
     await waitforme(speed);
 
    
+    
 
-    $("#"+new_node).offset({left:newoff.left , top: newoff.top});
+    $("#"+new_node).offset({left:newoff.left+160 , top: newoff.top});
 
+    
     while ( next[last] != "null" )  {
 
-$("#"+last).animate({"left":"+=140px"})
+document.getElementById(last).style.left =parseFloat( document.getElementById(last).style.left)+140+"px";
  last= next[last]
 
 
     }
-    $("#"+last).animate({"left":"+=140px"})
 
-    await waitforme (speed*4);
+    document.getElementById(last).style.left =parseFloat( document.getElementById(last).style.left)+140+"px";
+
+    await waitforme (speed+100);
 
    cancelAnimationFrame(redrawlistevent)
 
@@ -338,7 +351,14 @@ head_ref = next[temp] // After popping, make the next node as TOP
 next["headref"] = next[temp]
 $("#"+temp).remove();
 
-$(".dragg").animate({"left":"-=160px"})
+let x = document.getElementsByClassName("dragg");
+let ie;
+for (ie = 0; ie < x.length; ie++) {
+    x[ie].style.transition = speed+"ms linear";
+  x[ie].style.left = parseFloat(x[ie].style.left)-160+"px";
+}
+
+
 
 
 }
@@ -410,7 +430,7 @@ async function dequeuelist()
 
 
 // mySVG.connect();
-// appendlist(1)
+appendlist(1)
 // appendlist(2)
 // appendlist(3)
 // appendlist(14)
