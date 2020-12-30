@@ -43,15 +43,11 @@ function addnode(typed,posi="uni") {
 
   
   
-  if (posi == "uni")  xp = (count+1)*140;
-  else xp = 140;
-
-  if (head_ref== "null")  {
-
-    xp = 140;
-  }
+    xp = 160;
   
-   newnode = '<div id="'+count+'"  class="dragg" style= left:'+xp+'px;top:270px;> <p  style="position:absolute; color:coral; font-size:60%; left:20px;" id="'+ count+"listbottom" +'">'+count +'</p>    <p  id="'+ count+"val" +'" class="t">'+typed+'</p>   </div>';
+  
+  
+   newnode = '<div id="'+count+'"  class="dragg" style= left:'+xp+'px;top:150px;> <p  style="position:absolute; color:coral; font-size:60%; left:20px;" id="'+ count+"listbottom" +'">'+count +'</p>    <p  id="'+ count+"val" +'" class="t">'+typed+'</p>   </div>';
                
              
             
@@ -80,12 +76,16 @@ async function prependlist( new_data)
 
     redrawlistevent = requestAnimationFrame(redrawlist)
 
-    $(".dragg").css("transition" , speed+"ms linear");
+    $(".dragg").animate({left : "+=160px" , "transition" : speed+"ms linear"})
 
-    $(".dragg").animate({left : "+=140px" , "transition" : speed+"ms linear"})
-    
+  
     /* 1. allocate node */
     let new_node = addnode(new_data,"no"); 
+
+    $(".dragg").css("transition" , speed+"ms linear");
+
+    
+  
  
     /* 3. Make next of new node as head and previous as NULL */
 
@@ -105,6 +105,10 @@ async function prependlist( new_data)
     /* 5. move the head to point to the new node */
     head_ref = new_node; 
     next["headref"] = head_ref;
+
+    
+    document.getElementById(new_node).style.top= "250px";
+
 
 
     await waitforme (speed+400);
@@ -142,6 +146,7 @@ async function appendlist( new_data)
         prev[new_node] = "null"
         head_ref = new_node; 
         tail_ref = new_node;
+        document.getElementById(new_node).style.top= "250px";
         return; 
     } 
  
@@ -156,7 +161,7 @@ async function appendlist( new_data)
     prev[newnode] = last;
     tail_ref = new_node;
 
-    $("#"+new_node).offset({left : lastoffset.left+140})
+    $("#"+new_node).offset({left : lastoffset.left+160 , top :250})
 
     mySVG.Listlines();
  
@@ -333,7 +338,7 @@ head_ref = next[temp] // After popping, make the next node as TOP
 next["headref"] = next[temp]
 $("#"+temp).remove();
 
-$(".dragg").animate({"left":"-=140px"})
+$(".dragg").animate({"left":"-=160px"})
 
 
 }
