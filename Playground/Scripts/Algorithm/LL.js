@@ -182,7 +182,7 @@ async function insertafterlist( prev_node, new_data)
     
     redrawlistevent = requestAnimationFrame(redrawlist)
     /*1. check if the given prev_node is NULL */
-    if (prev_node == "null")  
+    if (!document.getElementById(prev_node))  
     {  
         Log("the given previous node cannot be NULL");  
         return;  
@@ -430,7 +430,7 @@ async function dequeuelist()
 
 
 // mySVG.connect();
-appendlist(1)
+// appendlist(1)
 // appendlist(2)
 // appendlist(3)
 // appendlist(14)
