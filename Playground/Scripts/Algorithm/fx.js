@@ -318,6 +318,16 @@ push(element)
   this.items.push(element); 
 } 
 
+length () {
+
+  return this.items.length;
+}
+
+
+clear () {
+
+  this.items = [];
+}
 
 pop() 
 { 
