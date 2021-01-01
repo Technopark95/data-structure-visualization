@@ -19,6 +19,13 @@ Copyright 2020 Anoop Singh, Graphical Structure
 
 */
 
+/*
+var isMobile = /iPhone|Android/i.test(navigator.userAgent);
+		var element = document.getElementById('text');
+		if (isMobile) {
+      window.location.replace("../check.html");
+		}
+*/
 var displaysignal="slow";
 var top = 0
 var max = 0
