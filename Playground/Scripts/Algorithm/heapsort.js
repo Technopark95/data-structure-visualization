@@ -252,13 +252,9 @@ data = {"0":{"top":138,"left":643},"1":{"top":247,"left":326},"2":{"top":247,"le
   
 
  function doalign(duration_="3000ms" , timeout_=200)  {
-  
     
-
-    
-  for ( var d=0 ; d < counttreenodes ; d++ ) {
+  for ( var d=0 ; d < count ; d++ ) {
   
-
     let tt = data[d]["top"];
     let ll = data[d]["left"];
 
@@ -266,8 +262,6 @@ data = {"0":{"top":138,"left":643},"1":{"top":247,"left":326},"2":{"top":247,"le
      ff.style.top=(tt)+"px";
      ff.style.left=ll+"px";
 
-
-    
   }
   
  
