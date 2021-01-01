@@ -89,6 +89,13 @@ function heapleaf(element) {
 
 async function insertheap(value)   {
 
+
+    if (count > 30)   {
+
+        Log("Sorry, the maximum limit is 30");
+        return 
+    }
+
 heapleaf(value);
 storedarray[count-1] = value;
 
