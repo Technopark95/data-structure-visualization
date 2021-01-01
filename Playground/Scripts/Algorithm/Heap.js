@@ -92,7 +92,8 @@ async function insertheap(value)   {
 heapleaf(value);
 storedarray[count-1] = value;
 
-await doalign();
+
+ doalign();
 
 if (arrayflag == 0)  {
 
@@ -103,12 +104,14 @@ if (arrayflag == 0)  {
 
     arrayflag =1 ;
 }
+
+
  insert(value , count-1)
 
+  
+    let parent = Math.floor((count - 1) / 2); 
 
 if (count != 0)  {
-
-    let parent = Math.floor((count - 1) / 2); 
 
     if (count % 2 == 1  )  {
 
@@ -128,12 +131,14 @@ await waitforme(speed+100);
 mySVG.redrawLines();
 await HEAPIFY2(count, count-1)
 
+
+
 }
 
 
 
-async function deleteheap() 
-{ 
+async function deleteheap() { 
+
     let result = storedarray[0];
     // Get the last element 
     let lastElement = storedarray[count-1]; 
