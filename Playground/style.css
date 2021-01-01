@@ -129,8 +129,8 @@ color: coral;
 position: fixed;
 text-decoration:none;
 height: 130px;
-z-index: 0;
-background-color:rgba(0, 0, 0, 0.842);
+z-index: 10;
+background-color:rgb(40,40,40);
 /*box-shadow:  0 0  10px black;*/
 border: none;
 
