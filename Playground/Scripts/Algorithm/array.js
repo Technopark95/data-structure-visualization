@@ -46,7 +46,7 @@ window.scrollTo(0,0)
 
   length = typed.length 
 
-     arr = '<table id="t1" style=" z-index: 1;position:absolute;border-collapse: collapse; margin-top:305px; margin-left:400px; text-align:center; transition-duration : 100ms;table-layout: fixed;" ></table>'
+     arr = '<table id="t1" style=" z-index: 1;position:absolute;border-collapse: collapse; top:305px; left:400px; text-align:center; transition-duration : 100ms;table-layout: fixed;" ></table>'
   
     document.body.insertAdjacentHTML("afterbegin",arr);
 
