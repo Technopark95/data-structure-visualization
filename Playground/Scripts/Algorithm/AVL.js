@@ -661,7 +661,7 @@ async function InsertAVL (h) {
 
     cancelAnimationFrame(redrawevent)
 
-  
+  mySVG.redrawLines();
 
 
 }
