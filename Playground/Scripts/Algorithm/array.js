@@ -31,6 +31,12 @@ var tableobj
 var tabledata ;
 let tablelement;
 
+var ii=0 , data;
+
+
+data = {"0":{"top":138,"left":643},"1":{"top":247,"left":326},"2":{"top":247,"left":992},"3":{"top":406,"left":166},"4":{"top":406,"left":484.8125},"5":{"top":406,"left":815.8250122070312},"6":{"top":406,"left":1124},"7":{"top":538,"left":87},"8":{"top":538,"left":245.83750915527344},"9":{"top":541,"left":399},"10":{"top":538,"left":573},"11":{"top":538,"left":744.1124877929688},"12":{"top":538,"left":900.4125366210938},"13":{"top":538,"left":1052},"14":{"top":538,"left":1192},"15":{"top":703,"left":24},"16":{"top":805,"left":139},"17":{"top":682,"left":200},"18":{"top":804,"left":291},"19":{"top":675,"left":359},"20":{"top":808,"left":447},"21":{"top":666,"left":527},"22":{"top":803,"left":612},"23":{"top":665,"left":696},"24":{"top":799,"left":795},"25":{"top":663,"left":860},"26":{"top":792,"left":950},"27":{"top":664,"left":1009},"28":{"top":784,"left":1090},"29":{"top":666,"left":1149},"30":{"top":781,"left":1240}}
+
+
 
 
 function array (typed)  {
@@ -187,358 +193,173 @@ if (stats == 1  ) await pauser();
 
 
 
-async  function SelectionSort() {
 
-  ipointer.style.display = "";
-    jpointer.style.display = "";
-    kpointer.style.display = "";
-    let len = storedarray.length;
-    for (let isel = 0; isel < len; isel++) {
-        let min = isel;
-        
-      
-        for (let jsel = isel + 1; jsel < len; jsel++) {
-         
-          await ij(isel , jsel);
+async function K( _k,  cellid )  {
 
-          await hilight("aitem"+(jsel) , "red",  "1s" , 1100)
-          hilight("aitem"+(jsel),  defaultcolor ,  "1s" , 1100 )
-            if (storedarray[min] > storedarray[jsel]) {
-               hilight("aitem"+(min) ,  defaultcolor ,  "1s" , 1100)
-                min = jsel;
-            await   hilight("aitem"+(min) , "blueviolet", "1s" , 1100)
-            }
-        }
-        if (min != isel) {
-          await  display("Swapping index " + isel + " with index" + min)
-            let tmp = storedarray[isel];
-            storedarray[isel] = storedarray[min];
-            storedarray[min] = tmp;
-            await swapp(isel ,min )
-            hilight("aitem"+(min) , defaultcolor ,  "1s" , 1100)
-            
-        }
-        await hilight("aitem"+(isel) , "coral"  ,  "1s" , 1100)
-    }
+  document.getElementById("kindex").style.transition = speed+"ms linear";
 
-    $("#iindex").text("i").hide()
-    $("#jindex").text("j").hide()
- 
+
+      let kpos = $(`#${cellid}item${_k}`).offset();
+
+    
+    $("#kindex").offset({top : (kpos.top)+100, left : (kpos.left)+45 });
+
+    
+    await waitforme(speed)
+
+
+
 }
 
+async function I(_i , cellid="l" ) {
 
 
+  if (_i == -1)  {
 
-
- 
-  async  function BubbleSort(){
-
-    ipointer.style.display = "";
-    jpointer.style.display = "";
-    kpointer.style.display = "";
-
-    var lene = storedarray.length;
-    
-    $("#iindex").text("j")
-    $("#jindex").text("j+1")
-
-    for (let i=0; i < lene-1; i++){
-        for (let j=0; j < lene-i-1; j++){
-          await ij(j , j+1);
-          await display('Comparing index j=' + (j) + ' and j+1=' + (j+1) ) 
-          hilight("aitem"+(j) , "red" , "1000ms" , 1100)  
-              await hilight("aitem"+(j+1), "red" , "1000ms" , 1100) 
-            if (storedarray[j] > storedarray[j+1]){
-              var temp = storedarray[j];
-              storedarray[j] = storedarray[j+1];
-              storedarray[j+1] = temp;
-              await display('Element array['+ (j) +'] > array[' + (j+1)+ '] , Swapping')
-              
-             await swapp(j,j+1)
-             
-            }
-            
-            else {
-              await display('Element array['+ (j) +'] < array[' + (j+1)+ '] , Skip')  
-            }
-            hilight("aitem"+(j) , defaultcolor, '1s' , 900)  
-             hilight("aitem"+(j+1) ,defaultcolor,'1s' , 900)
-
-             
-              
-              
-        }
-
-       
-    }
-
-    $("#iindex").text("i").hide()
-    $("#jindex").text("j").hide()
-}
-
-
-
-async function InsertionSort() {
-
-  ipointer.style.display = "";
-    jpointer.style.display = "";
-    kpointer.style.display = "";
-  for (var i1 = 1; i1 < storedarray.length; i1++) {
-    await I(i1,"a")
-    var j1 = i1 - 1
-    var temp = storedarray[i1]
-   await hilight(`aitem${i1}` , "red" ,"1100ms",1100)
-    
-    await display('Inserting '+ (temp)  +' to correct index')
-    await hilight(`aitem${i1}` , defaultcolor ,"1100ms",1100)
-      
-    while (j1 >= 0 && storedarray[j1] > temp) {
-
-      await display('Comparing  array[' + (j1) + '] => '+ (storedarray[j1])  + ' > ' + (temp) + '.Move element to right.');
-      await J(j1 ,"a");
-      await moveright(j1);
-      storedarray[j1 + 1] = storedarray[j1];
-      j1--;
-    
-      
-    }
-    await display('Correct place at index = ' + (j1+1) )
-    storedarray[j1+1] = temp
-
-    await insert(temp ,j1+1 );
+      document.getElementById("iindex").style.transition = speed+"ms linear";
   
+      let ipos = $(`#${cellid}item0`).offset();
+      
+  $("#iindex").offset({top : (ipos.top)+100, left : (ipos.left)-45 });
+ 
+
+  await waitforme(speed)
+
+  return;
+
+
   }
 
-  $("#iindex").text("i").hide()
-  $("#jindex").text("j").hide()
- 
-}
-
-
-async function merge( l,  m,  r) 
-{ 
-    let i, j, k; 
-    let n1 = Math.floor( m - l + 1); 
-    let n2 = Math.floor( r - m); 
+  document.getElementById("iindex").style.transition = speed+"ms linear";
   
-    /* create temp arrays */
-    let L = [], R = [];
-  
-    let Larrgraphics = await temparray(n1, "l");
-    let Rarrgraphics = await temparray(n2, "r");
-    
-    let parentarrayoffset = ($("#t1").offset());
-    $(Larrgraphics).offset({top: parentarrayoffset.top+200})
-    $(Rarrgraphics).offset({top:parentarrayoffset.top+340})
-
-    $("#iindex").show();
-  $("#jindex").hide();
-    /* Copy data to temp arrays L[] and R[] */
-    for (i = 0; i < n1; i++) {
-
-
-        L[i] = storedarray[l + i];
-        await I(i,"l")
-     await   insert(storedarray[l + i] , i , "l")
-        
-        
-    }
-
-
-    $("#jindex").show();
-    $("#iindex").hide();
-    for (j = 0; j < n2; j++)  {
-
-        R[j] = storedarray[m + 1 + j];
-        await J(j,"r")
-     await   insert(storedarray[m + 1 + j] , j , "r")
-
-        
-    }
-
-    $("#jindex").show();
-    $("#iindex").show();
-  
-    /* Merge the temp arrays back into arr[l..r]*/
-    i = 0; // Initial index of first subarray 
-    j = 0; // Initial index of second subarray 
-    k = l; // Initial index of merged subarray 
-    I(0,"l")
-    J(0,"r")
-    while (i < n1 && j < n2) { 
-        if (L[i] <= R[j]) { 
-          await I(i , "l")
-          storedarray[k] = L[i]; 
-      await hilight(`litem${i}` , "red" , "800ms",800)
-      await hilight(`litem${i}` , defaultcolor , "800ms",800)
-      await K(k, "a")
-          await   insert(L[i] , k , "a")
-            i++; 
-        } 
-        else { 
-          storedarray[k] = R[j]; 
-          await J(j, "r")
-          await hilight(`ritem${j}` , "red" , "800ms",800)
-      await hilight(`ritem${j}` , defaultcolor , "800ms",800)
-     
-      await K(k, "a")
-           await   insert(R[j] , k , "a")
-            j++; 
-        } 
-        k++; 
-    } 
-  
-    /* Copy the remaining elements of L[], if there 
-       are any */
-    while (i < n1) { 
-     
-      storedarray[k] = L[i]; 
-      await I(i , "l")
-      await hilight(`litem${i}` , "red" , "800ms",800)
-      await hilight(`litem${i}` , defaultcolor , "800ms",800)
-      await K(k, "a")
-    await  insert(L[i] , k , "a")
-        i++; 
-        k++; 
-    } 
-  
-    /* Copy the remaining elements of R[], if there 
-       are any */
-    while (j < n2) { 
+      let ipos = $(`#${cellid}item${_i}`).offset();
       
-      storedarray[k] = R[j];
-      await J(j, "r")
-      await hilight(`ritem${j}` , "red" , "800ms",800)
-      await hilight(`ritem${j}` , defaultcolor , "800ms",800)
-      await K(k, "a")
-      await   insert(R[j] , k , "a")
-        j++; 
-        k++; 
-    } 
+  $("#iindex").offset({top : (ipos.top)+100, left : (ipos.left)+45 });
+ 
 
-
-    Larrgraphics.remove()
-    Rarrgraphics.remove()
-
-
-} 
+  await waitforme(speed)
   
-/* l is for left index and r is right index of the 
-   sub-array of arr to be sorted */
-async function ms(  l,  r) 
-{ 
-    if (l < r) { 
-        // Same as (l+sr)/2, but avoids overflow for 
-        // large l and h 
-        let m = Math.floor (l + (r - l) / 2); 
+}
+
+
+
+async function J(_j , cellid="r" ) {
+
+
+  document.getElementById("jindex").style.transition = speed+"ms linear";
+
+
   
-     
-       await ms( l, m); 
-       
-       await ms( m + 1, r); 
-       await cutoutarray(l,r)
-       await merge( l, m, r); 
-
-    } 
-} 
+      let jpos = $(`#${cellid}item${_j}`).offset();
+      
+      $("#jindex").offset({top : (jpos.top)+100, left : (jpos.left)+55 });
 
 
- async function MergeSort()  {
-
-
- await  ms (0 , storedarray.length-1)
-
-   $("#iindex").hide()
-   $("#jindex").hide()
-   $("#kindex").hide()
-
-
+      await waitforme(speed)
+  
 }
 
 
 
 
 
+async function ij(_i ,_j  , cellid="a" , cellid1 = "a") {
 
 
-async function BinarySearch(value){
+  ipointer.style.transition = speed+"ms linear";
+  jpointer.style.transition = speed+"ms linear";
 
-  ipointer.style.display = "";
-    jpointer.style.display = "";
-    kpointer.style.display = "";
+ 
+  
+      let ipos = $(`#${cellid}item${_i}`).offset();
+      let jpos = $(`#${cellid1}item${_j}`).offset();
+  
+  $("#iindex").offset({top : (ipos.top)+100, left : (ipos.left)+45 });
+  $("#jindex").offset({top : (jpos.top)+100, left : (jpos.left)+55 });
+  
+  
+  await waitforme(speed)
+  
 
-  $("#kindex").text("mid").show();
-
-  await display( 'set first = 0')
-  await hilight("aitem0", "blueviolet" , "1000ms" , 1100)
-  var firstIndex  = 0
-
- await I(firstIndex ,  "a" )
-
-  var    lastIndex   = storedarray.length - 1
-
- await J(lastIndex ,  "a" )
-
-      await display( 'set last = '+lastIndex)
-      await hilight("aitem"+(lastIndex), "blueviolet" , "1000ms" , 1100)
-
-   var   middleIndex = Math.floor((lastIndex + firstIndex)/2);
- await  K(middleIndex ,  "a" )
-      await display( 'set mid = (first+last)/2')
-      await hilight("aitem"+(middleIndex), "rgb(109,209,0,1)", "1000ms" , 2100)
+  
+   }
 
 
 
+   async function cutoutarray (start , end)  {
 
-  while(storedarray[middleIndex] != value && firstIndex < lastIndex)
-  {
-     
-     if (value < storedarray[middleIndex])
-      {
-        
-        await hilight("aitem"+(middleIndex) , defaultcolor , "1000ms" , 1100)
-         await display( 'search item '+ value +' is smaller array[' + middleIndex + ']')
-         await display( 'set last = mid-1')
-          hilight("aitem"+lastIndex ,  defaultcolor , "1000ms" , 1100)
-          lastIndex = middleIndex - 1;
-        await  J(lastIndex ,  "a" )
-          await hilight("aitem"+lastIndex , "blueviolet" ,  "1000ms" , 1100)
-      } 
-    else if (value > storedarray[middleIndex])
-      {
-        await hilight("aitem"+(middleIndex) ,defaultcolor ,  "1000ms" , 1100)
-        await display( 'search item '+ value +' is larger array[' + middleIndex + ']')
-         await display( 'set first = mid+1')
-          hilight("aitem"+firstIndex ,defaultcolor ,  "1000ms" , 1100)
-          firstIndex = middleIndex + 1;
-      await    I(firstIndex ,  "a" )
-          await hilight("aitem"+firstIndex , "blueviolet" ,  "1000ms" , 1100)
+
+    for (let ie = 0; ie < storedarray.length; ie++) {
+    
+        document.getElementById("aitem"+ie).style.transition = "400ms linear";
+        document.getElementById("aitem"+ie).style.backgroundColor = "rgba(0,0,0,.2)";
+      
       }
     
-      await hilight("aitem"+(middleIndex),defaultcolor ,  "1000ms" , 1100)
-      middleIndex = Math.floor((lastIndex + firstIndex)/2);
-      await display( 'set mid = (first+last)/2')
-   await   K(middleIndex ,  "a" )
-      await hilight("aitem"+(middleIndex), "rgb(109,209,0,1)" ,  "2000ms" , 2100)
+    
+          for (let ie = start; ie <= end; ie++) {
+    
+            document.getElementById("aitem"+ie).style.transition = "400ms linear";
+            document.getElementById("aitem"+ie).style.backgroundColor = "rgba(0,0,0,.842)";
+          
+          }
+          
+        
+    
+    
+    }
+    
+
+
+    
+  async function gottopoint (i,j)   {
+  
+    if (stats == 1  ) await pauser();
+  
+
+      let element1 = document.getElementById(i)
+      let top1 =  element1.style.top;
+      let left1 = element1.style.left;
+  
+  
+      let  element2 = document.getElementById(j)
+      let top2 = element2.style.top;
+      let left2 = element2.style.left;
+
+      let treeval1 = document.getElementById(i+"treeval");
+      let treeval2 = document.getElementById(j+"treeval");
+  
+      let  element1text = treeval1.innerHTML
+      let  element2text = treeval2.innerHTML
+  
+      element1.style.transition = speed+"ms linear";
+      element2.style.transition = speed+"ms linear";
+      element1.style.top = top2;
+      element1.style.left = left2;
+      element2.style.top = top1;
+      element2.style.left = left1;
+      
+
+      await waitforme(speed+100);
+
+
+        element1.style.transition = "0ms linear";        
+        element2.style.transition = "0ms linear";
+        element1.style.top = top1;
+        element1.style.left = left1;
+        element2.style.top = top2;
+        element2.style.left = left2;
+    
+         treeval2.innerHTML = element1text
+         treeval1.innerHTML = element2text
+  
+    
+
+         await waitforme(speed+100);
+
+  
   
   }
-
-if (storedarray[middleIndex] == value){
-
-  await display( 'Item Found' )
-  Output('Item Found at index = ' + middleIndex)
-}
-
-else{
-
-  await display( 'Item Doesnt exist' )
-  Output('Item Doesnt exist return -1')
-}
-
-cutoutarray(0,length-1);
-
-
-}
 
 
  async  function insert(value ,index , cellid="a") {
@@ -595,6 +416,109 @@ async function moveright(index)  {
  elem.style.opacity = "0%";
 
  await waitforme(50);
+
+
+}
+
+
+
+
+async function arraynodes() 
+{ 
+
+    while ( ii != length ) {
+      
+    
+  
+     
+
+    newnode = '<div id="'+ii+'" style="left:0;top:0;"  class="dragg" > <div class="treenode" id="'+ ii+"treetop" +'" style="margin-left:35px;"></div>  <div class="treenode" id="'+ ii+"treeleft" +'" style="margin-left:18px; margin-top:70px;"></div>   <div class="treenode" id="'+ ii+"treeright" +'" style="margin-left:54px; margin-top:70px;"></div> <p  style="position:absolute;color:coral; font-size:70%; left:20px;" id="'+ ii+"bottom" +'">'+ii +'</p>  <p  style="color:white;margin-top:-2px;margin-left:-15px; font-size:50%;display:none;" id="'+ ii+"height" +'">'+"1" +'</p>  <p  id="'+ ii+"treeval" +'" class="t">'+storedarray[ii]+'</p>   </div>';
+
+   document.body.insertAdjacentHTML("afterbegin",newnode)
+      
+
+   document.getElementById(ii).style.transition = speed+"ms linear"
+
+      tree[ii+"treeleft"] = "null"
+      tree[ii+"treeright"] = "null"
+  ii = ii + 1
+      rootoftree = newnode
+
+    }
+
+
+    counttreenodes = length;
+    count =length;
+
+    await waitforme(speed);
+    
+} 
+
+
+
+function build() 
+{ 
+
+  
+    for (var  i =0 ;  i < counttreenodes ; i++)  {
+
+if ( (2*(i))+1 >= counttreenodes ) {
+    break;
+}
+
+else {
+
+    var leftc = (2*(i))+1;
+
+    treefy(i+"treeleft" , leftc)
+
+}
+
+if ( (2*(i))+2 >= counttreenodes ) {
+    break;
+}
+
+else {
+
+    var rightc = (2*(i))+2;
+
+    treefy(i+"treeright" , rightc)
+
+}
+
+
+
+    }
+
+
+
+
+}  
+
+
+
+
+
+var t , l
+var el_pos = { }
+
+var posar = {}
+
+
+function doalign(duration_="3000ms" , timeout_=200)  {
+  
+for ( var d=0 ; d < count ; d++ ) {
+
+  let tt = data[d]["top"];
+  let ll = data[d]["left"];
+
+   let ff = document.getElementById(d);
+   ff.style.top=(tt)+"px";
+   ff.style.left=ll+"px";
+
+}
+
+
 
 
 }
