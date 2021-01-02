@@ -234,7 +234,7 @@ async function deleteheap() {
 
 async function createheap(elements)  {
 
-if (elements.length >30)  {
+if (elements.length >31)  {
 
     Log("Sorry, the maximum limit is 30");
         return 
