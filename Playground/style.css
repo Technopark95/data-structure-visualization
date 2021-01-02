@@ -218,6 +218,8 @@ border: none;
   backdrop-filter: blur(10px);
   z-index: 3;
   right: 0;
+  user-select:text;
+  cursor: default;
 
 
 
@@ -463,6 +465,11 @@ position: absolute;
   }
 
 
+  #infotab {
+
+ z-index: 10!important;
+
+  }
   
 #infos {
   position: absolute;
@@ -474,6 +481,7 @@ position: absolute;
  transition-duration: "1000ms";
  cursor: initial;
  border-radius: 100px;
+
 }
 
 
@@ -595,6 +603,7 @@ vertical-align: middle;
   position: fixed;
   right: 70px;
   top: 330px;
+  z-index: 5;
   
 
 }
