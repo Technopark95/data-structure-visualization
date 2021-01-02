@@ -165,7 +165,7 @@ if (arrayflag == 0)  {
     document.getElementById("0").style.top = 150+"px";
     document.getElementById("0").style.left = 1905+"px";
 
-    document.getElementById("t1").style.left = 1300+"px"
+    document.getElementById("t1").style.left = 1400+"px"
     document.getElementById("t1").style.top = 300+"px"
     
     
@@ -282,8 +282,8 @@ if (elements.length >31)  {
     build()
     window.scrollTo(1300,0);
 
-    document.getElementById("t1").style.left = 1300+"px"
-    document.getElementById("t1").style.top = 300+"px"
+    document.getElementById("t1").style.left = 1400+"px"
+    document.getElementById("t1").style.top = 500+"px"
     
 
     _ctx.clearRect(0, 0,  10000, 4300);
