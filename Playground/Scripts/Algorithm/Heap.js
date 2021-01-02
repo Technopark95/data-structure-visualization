@@ -94,7 +94,7 @@ async function insertheap(value)   {
 
     if (count > 30)   {
 
-        Log("Sorry, the maximum limit is 30");
+        Log("Sorry, the maximum limit is 31");
         return 
     }
 
@@ -236,7 +236,7 @@ async function createheap(elements)  {
 
 if (elements.length >31)  {
 
-    Log("Sorry, the maximum limit is 30");
+    Log("Sorry, the maximum limit is 31");
         return 
 }
     
