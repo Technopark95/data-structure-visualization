@@ -124,7 +124,7 @@ if (arrayflag == 0)  {
  
  if (heapnode==0) {
 
-    window.scrollTo(1200,0);
+    window.scrollTo(1300,0);
     
     document.getElementById("0").style.top = 150+"px";
     document.getElementById("0").style.left = 1905+"px";
@@ -233,15 +233,43 @@ async function deleteheap() {
 
 
 async function createheap(elements)  {
+
+if (elements.length >30)  {
+
+    Log("Sorry, the maximum limit is 30");
+        return 
+}
+    
     arrayflag = 1;
     array(elements);
-     await  arraynodes()
-    doalign()
-    await waitforme(speed+100);
+       arraynodes()
+    
     build()
+    window.scrollTo(1300,0);
+
+    document.getElementById("t1").style.left = 1300+"px"
+    document.getElementById("t1").style.top = 300+"px"
+    
+
+    _ctx.clearRect(0, 0,  10000, 4300);
+    AVLpostleft[0] = 1905;
+    AVLposttop[0] = 150;
+
+    document.getElementById(0).style.top = 150+"px";
+    document.getElementById(0).style.left = 1905+"px";
+
+    calcheight('0')
+    $(".dragg").css("transition" , speed+"ms linear");
+  
+   BalanceAll("0");
+
+   await waitforme(speed+100);
+ mySVG.redrawLines();
     // Build heap (rearrange array) 
     await display('Building Heap')
     for (var ind = length / 2 - 1; ind >= 0; ind--) 
     await   heapify(length, ind); 
+
+    
 
 }
