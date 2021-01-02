@@ -23,7 +23,43 @@ Copyright 2020 Anoop Singh, Graphical Structure
 
 var arrayflag = 0;
 
+async function heapify( len,  ind) 
+{ 
+    ind = Math.floor(ind)
+    var largest = ind; // Initialize largest as root 
+    var l = 2*ind + 1; // left = 2*i + 1 
+    var r = 2*ind + 2; // right = 2*i + 2 
+  
+    
+    // If left child is larger than root 
+    if (l < len && storedarray[l] > storedarray[largest]) 
+        largest = l; 
+  
+    // If right child is larger than largest so far 
+    if (r < len && storedarray[r] > storedarray[largest]) 
+        largest = r; 
+  
+    // If largest is not root 
+    if (largest != ind) 
+    { 
+         hilight(ind , "red" , "1s" ,1100)
+      //  swap(st[ind], st[largest]); 
+      await hilight(largest , "red" , "1s" ,1100)
+        var te = storedarray[ind];
+        storedarray[ind] = storedarray[largest];
+        storedarray[largest] = te;
 
+     await   gottopoint(ind ,largest)
+
+     await swapp(ind,largest)
+
+      hilight(ind , defaultcolor , "1s" ,1100)
+     await hilight(largest , defaultcolor , "1s" ,1100)
+  
+        // Recursively heapify the affected sub-tree 
+    await    heapify(len, largest); 
+    } 
+} 
 
 async function HEAPIFY2( n,  i) 
 { 
@@ -232,7 +268,7 @@ async function deleteheap() {
 } 
 
 
-async function createheap(elements)  {
+async function createheap(elements="")  {
 
 if (elements.length >31)  {
 
@@ -240,9 +276,8 @@ if (elements.length >31)  {
         return 
 }
     
-    arrayflag = 1;
-    array(elements);
-       arraynodes()
+      array(elements);
+     await  arraynodes()
     
     build()
     window.scrollTo(1300,0);
