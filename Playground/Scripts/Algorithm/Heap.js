@@ -299,7 +299,7 @@ if (elements.length >31)  {
    BalanceAll("0");
 
    await waitforme(speed+100);
- mySVG.redrawLines();
+   mySVG.redrawLines();
     // Build heap (rearrange array) 
     await display('Building Heap')
     for (var ind = length / 2 - 1; ind >= 0; ind--) 
