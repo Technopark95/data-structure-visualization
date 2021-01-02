@@ -366,4 +366,99 @@ Output(`Fib[${cN}] = ${document.getElementById('fibnval').innerHTML}`)
 
 }
 
+
+
+
+
+async function PascalTriangle( n) 
+{ 
+
+  if (document.getElementById("lcstable"))
+  document.getElementById("lcstable").remove();
+
+  let pascal  =[]
+
+  $("body").append(`<table id="lcstable" style ="position:absolute; transition:100ms linear; top:135px;left:200px;transform:scale(0.8,0.8);" ></table>`);
+
+  $("#lcstable").append("<tr>");
+
+
+  for (let y = 0 ; y < n ; y++) {
+
+    $("#lcstable").append("<tr>");
+
+    pascal.push([])
+ 
+    for (let x = 0 ; x < n ; x++) {
+
+        $("#lcstable").append( `<td class="floyd" id="lcs${(y)}-${(x)}">  <div id="lcs${(y)}-${(x)}div" style="z-index:1; text-align:center;"> <p id="lcs${(y)}-${(x)}val" style="color:coral; text-align:center">${"-"}</p>  </div></td>`);
+
+     
+    }
+
+ $("#lcstable").append("</tr>");
+}
+
+   $("#lcstable").append("</table>");
+    $("#lcstable").draggable();
+      
+    // An auxiliary array to store  
+    // generated pscal triangle values 
+   
+  
+    // Iterate through every line and  
+    // print integer(s) in it 
+    for (let line = 0; line < n; line++) 
+    { 
+        // Every line has number of integers  
+        // equal to line number 
+        for (let i = 0; i <= line; i++) 
+        { 
+        // First and last values in every row are 1 
+        if (line == i || i == 0)  {
+
+          pascal[line][i] = 1; 
+
+          await hilight(`lcs${line}-${i}` , "rgba(109,209,0,1)" , "300ms", 400 )
+          document.getElementById(`lcs${line}-${i}val`).innerHTML= "1";
+          await hilight(`lcs${line}-${i}` , defaultcolor , "300ms", 400 )
+        }
+            
+        // Other values are sum of values just  
+        // above and left of above 
+        else {
+
+          pascal[line][i] = pascal[line - 1][i - 1] + pascal[line - 1][i];
+
+          hilight(`lcs${line-1}-${i-1}` , "purple" , "300ms", 400 )
+                 await   hilight(`lcs${line-1}-${i}` , "purple" , "300ms", 400 )
+
+
+                 await hilight(`lcs${line}-${i}` , "rgba(109,209,0,1)" , "300ms", 400 )
+
+          document.getElementById(`lcs${line}-${i}val`).innerHTML= pascal[line][i];
+
+          await hilight(`lcs${line}-${i}` , defaultcolor , "300ms", 400 )
+
+          hilight(`lcs${line-1}-${i-1}` ,defaultcolor , "300ms", 400 )
+          await   hilight(`lcs${line-1}-${i}` , defaultcolor , "300ms", 400 )
+
+
+
+        }
+            
+        } 
+       
+    } 
+} 
+  
+// Driver code 
+// int main() 
+// { 
+//     int n = 5; 
+//     printPascal(n); 
+//     return 0; 
+// } 
+
 //LongestCommonSubseq("XMJYAUZ","MZJAWXU")
+
