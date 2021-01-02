@@ -166,7 +166,7 @@ if (arrayflag == 0)  {
     document.getElementById("0").style.left = 1905+"px";
 
     document.getElementById("t1").style.left = 1400+"px"
-    document.getElementById("t1").style.top = 300+"px"
+    document.getElementById("t1").style.top = 500+"px"
     
     
         }
