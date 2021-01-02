@@ -481,7 +481,7 @@ if (storedarray.length >31) {
 }
 
 document.getElementById("t1").style.left = 100+"px"
-document.getElementById("t1").style.top = 310+"px"
+document.getElementById("t1").style.top = 500+"px"
   await  arraynodes()
    
       doalign()
