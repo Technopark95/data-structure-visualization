@@ -536,8 +536,7 @@ function treefy(first,second ,color_ = "coral") {
 
       
 async function redraw  ()  {
-	if (_lines.length == 0) return;
-			
+
 			_ctx.clearRect(0, 0,  10000, 4300);
 
 				for (let li = 0 ; li < _lines.length ;li++) {
