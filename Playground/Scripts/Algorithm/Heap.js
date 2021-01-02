@@ -69,7 +69,7 @@ function heapleaf(element) {
 
   
 
-    newnode = '<div id="'+count+'" style=" transition:'+ speed+ 'ms linear; left:0px; top:150px;"  class="dragg" > <div class="treenode" id="'+ count+"treetop" +'" style="margin-left:35px;"></div>  <div class="treenode" id="'+ count+"treeleft" +'" style="margin-left:18px; margin-top:70px;"></div>   <div class="treenode" id="'+ count+"treeright" +'" style="margin-left:54px; margin-top:70px;"></div> <p  style="position:absolute;color:coral; font-size:70%; left:20px;" id="'+ count+"bottom" +'">'+count +'</p>    <p  id="'+ count+"treeval" +'" class="t">'+element+'</p>   </div>';
+    newnode = '<div id="'+count+'" style=" transition:'+ speed+ 'ms linear; left:0px; left:1250px;top:150px;"  class="dragg" > <div class="treenode" id="'+ count+"treetop" +'" style="margin-left:35px;"></div>  <div class="treenode" id="'+ count+"treeleft" +'" style="margin-left:18px; margin-top:70px;"></div>   <div class="treenode" id="'+ count+"treeright" +'" style="margin-left:54px; margin-top:70px;"></div> <p  style="position:absolute;color:coral; font-size:70%; left:20px;" id="'+ count+"bottom" +'">'+count +'</p>  <p  style="color:white;margin-top:-2px;margin-left:-15px; font-size:50%;display:none;" id="'+ count+"height" +'">'+"1" +'</p>  <p  id="'+ count+"treeval" +'" class="t">'+element+'</p>   </div>';
 
 
    $("body").prepend(newnode)
@@ -84,10 +84,12 @@ function heapleaf(element) {
    counttreenodes = counttreenodes + 1;
 
 
+   return count-1;
  }
 
 
 async function insertheap(value)   {
+
 
 
     if (count > 30)   {
@@ -96,11 +98,15 @@ async function insertheap(value)   {
         return 
     }
 
-heapleaf(value);
-storedarray[count-1] = value;
+    redrawevent= requestAnimationFrame(redraw)
 
 
- doalign();
+let heapnode = heapleaf(value);
+storedarray[heapnode] = value;
+
+
+
+// doalign();
 
 if (arrayflag == 0)  {
 
@@ -113,30 +119,76 @@ if (arrayflag == 0)  {
 }
 
 
- insert(value , count-1)
+ insert(value , heapnode)
+
+ 
+ if (heapnode==0) {
+
+    window.scrollTo(1200,0);
+    
+    document.getElementById("0").style.top = 150+"px";
+    document.getElementById("0").style.left = 1905+"px";
+
+    document.getElementById("t1").style.left = 1300+"px"
+    document.getElementById("t1").style.top = 300+"px"
+    
+    
+        }
+
+
+       
+            
+      let parent = Math.floor((heapnode - 1) / 2); 
 
   
-    let parent = Math.floor((count - 1) / 2); 
+  
+if (heapnode != 0)  {
 
-if (count != 0)  {
+    if (heapnode % 2 == 1  )  {
 
-    if (count % 2 == 1  )  {
+        document.getElementById(heapnode).style.top = parseInt( document.getElementById(parent).style.top)+85+"px";
+        document.getElementById(heapnode).style.left = parseInt( document.getElementById(parent).style.left)-35+"px";
 
-        treefy(`${parent}treeleft` , count )
+        await waitforme(speed+100)
+
+        treefy(`${parent}treeleft` , heapnode )
+
+        
+
     }
 
-    if (count % 2 == 0  )  {
+    if (heapnode % 2 == 0  )  {
 
-        treefy(`${parent}treeright` , count )
+        document.getElementById(heapnode).style.top = parseInt( document.getElementById(parent).style.top)+85+"px";
+        document.getElementById(heapnode).style.left = parseInt( document.getElementById(parent).style.left)+35+"px";
+
+        await waitforme(speed+100)
+
+        treefy(`${parent}treeright` , heapnode )
+
+        
     }
+
+
+    AVLpostleft[0] = 1905;
+    AVLposttop[0] = 150;
+
+    document.getElementById(0).style.top = 150+"px";
+    document.getElementById(0).style.left = 1905+"px";
+
+    calcheight('0')
+    $(".dragg").css("transition" , speed+"ms linear");
+  
+   BalanceAll("0");
 
     
 }
 
 
 await waitforme(speed+100);
-mySVG.redrawLines();
-await HEAPIFY2(count, count-1)
+cancelAnimationFrame(redrawevent)
+
+await HEAPIFY2(heapnode+1, heapnode)
 
 
 
@@ -160,7 +212,7 @@ async function deleteheap() {
      await   gottopoint((count-1) ,0)
      await swapp(0,count-1)
 
-     await   waitforme(500);
+     insert(0 , count-1)
 
      hilight((count-1) , defaultcolor ,"1s" ,1100)  
      await hilight(0 , defaultcolor ,"1s" ,1100) 
