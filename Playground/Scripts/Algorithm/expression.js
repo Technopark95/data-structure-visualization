@@ -29,7 +29,20 @@ var symboltopointer = {}
 
 async function expressiontree(s) {
 
-    redrawevent = setInterval(redraw,50)
+    if (document.getElementById("poststack"))  {
+
+        document.getElementById("poststack").remove();
+        document.getElementById("expression").remove();
+        
+    }
+
+
+    $(".dragg").remove();
+    count = 0;
+    tree={}
+    _lines=[]
+
+    redrawevent = requestAnimationFrame(redraw,50)
 
   
  var st = new Stack()
@@ -115,7 +128,7 @@ async function expressiontree(s) {
      symboltopointer[PostFixed.charAt(i)] = i;
   
 
-     newnode = '<div id="'+count+'" style="transform:scale(.8,.8);left:0px;top:0px;"  class="dragg" > <div class="treenode" id="'+ count+"treetop" +'" style="margin-left:35px;"></div>  <div class="treenode" id="'+ count+"treeleft" +'" style="margin-left:18px; margin-top:70px;"></div>   <div class="treenode" id="'+ count+"treeright" +'" style="margin-left:54px; margin-top:70px;"></div> <p  style="position:absolute;color:coral; font-size:70%; left:20px;" id="'+ count+"bottom" +'">'+count +'</p>   <div style="position:absolute; text-align:center; top:65px; left:38px;height:1px; width:20px;"><p  style="color:white;margin-top:-2px;margin-left:-15px; font-size:50%; " id="'+ count+"height" +'">'+"1" +'</p></div>   <p  id="'+ count+"treeval" +'" class="t">'+PostFixed.charAt(i)+'</p>   </div>';
+     newnode = '<div id="'+count+'" style="transform:scale(.8,.8);left:0px;top:150px;"  class="dragg" > <div class="treenode" id="'+ count+"treetop" +'" style="margin-left:35px;"></div>  <div class="treenode" id="'+ count+"treeleft" +'" style="margin-left:18px; margin-top:70px;"></div>   <div class="treenode" id="'+ count+"treeright" +'" style="margin-left:54px; margin-top:70px;"></div> <p  style="position:absolute;color:coral; font-size:70%; left:20px;" id="'+ count+"bottom" +'">'+count +'</p>   <div style="position:absolute; text-align:center; top:65px; left:38px;height:1px; width:20px;"><p  style="color:white;margin-top:-2px;margin-left:-15px; font-size:50%; " id="'+ count+"height" +'">'+"1" +'</p></div>   <p  id="'+ count+"treeval" +'" class="t">'+PostFixed.charAt(i)+'</p>   </div>';
 
 
      $("body").prepend(newnode)
@@ -134,7 +147,7 @@ async function expressiontree(s) {
  }
  
 
- $(".dragg").css({"top":"0px" , "left":"0px","transition":speed+'ms linear'})
+ $(".dragg").css({"transition":speed+'ms linear'})
  await waitforme(50);
 
 
@@ -200,7 +213,7 @@ expresstionstack.push(oper);
 
 }
 
-clearInterval(redrawevent)
+cancelAnimationFrame(redrawevent)
 
 mySVG.redrawLines();
 
