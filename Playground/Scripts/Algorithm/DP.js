@@ -18,11 +18,33 @@ Copyright 2020 Anoop Singh, Graphical Structure
 
 
 */
-  
-  
-  var L = [];
-  var lcs = []; 
 
+var L = [];
+var lcs = []; 
+
+
+
+
+const clearscreen = function(e)  {
+
+
+    if(document.getElementById("lcstable")) {
+
+      document.getElementById("lcstable").remove();
+ 
+    }
+
+    if(document.getElementById("fibtable")) {
+
+      document.getElementById("fibtable").remove();
+   
+    }
+
+    lcs=[]
+    L =[]
+}
+  
+  
 
   function maketable(X,Y,m,n)   {
 
@@ -67,6 +89,10 @@ Copyright 2020 Anoop Singh, Graphical Structure
 
 async function LongestCommonSubseq(X="",Y="" )  
 {  
+
+clearscreen();
+
+  
 
     let m = X.length;
     let n = Y.length;
@@ -175,6 +201,9 @@ await display ("Hilighting the sequence.")
 
 
 async function LongestCommonSubstr(X="",Y="")  {
+
+  clearscreen();
+
 
   let lengthofLCstr = 0 , row=0 , col=0,resultStr=0;
 
@@ -312,6 +341,9 @@ Log(`${ n_2.innerHTML} + ${ n_1.innerHTML} = ${n.innerHTML}`)
 
 
 async function  Fibonacci(N) {
+
+  clearscreen();
+
   let cN = N;
 N=N-1;
 
@@ -372,6 +404,9 @@ Output(`Fib[${cN}] = ${document.getElementById('fibnval').innerHTML}`)
 
 async function PascalTriangle( n) 
 { 
+
+  clearscreen();
+
 
   if (document.getElementById("lcstable"))
   document.getElementById("lcstable").remove();
