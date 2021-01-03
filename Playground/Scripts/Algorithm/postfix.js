@@ -145,6 +145,7 @@ function prec( c)
 async function postfix(exp) {
 
     $(".dragg").remove();
+    mySVG.redrawLines();
     count = 0;
     tree={}
     _lines=[]
