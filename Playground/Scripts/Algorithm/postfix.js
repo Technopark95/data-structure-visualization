@@ -144,6 +144,10 @@ function prec( c)
 
 async function postfix(exp) {
 
+    $(".dragg").remove();
+    count = 0;
+    tree={}
+    _lines=[]
     
     if (document.getElementById("poststack"))  {
 
