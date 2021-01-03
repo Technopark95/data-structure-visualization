@@ -51,6 +51,8 @@ function prec( c)
  async function infixToPostfix(s) 
 { 
 
+    
+
     let Expressive =$("#exptext");
     var st = new Stack()
     st.push('N'); 
@@ -141,6 +143,15 @@ function prec( c)
 
 
 async function postfix(exp) {
+
+    
+    if (document.getElementById("poststack"))  {
+
+        document.getElementById("poststack").remove();
+        document.getElementById("expression").remove();
+        
+    }
+
 
 pstack();
 finalexp();
