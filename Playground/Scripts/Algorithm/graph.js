@@ -35,40 +35,105 @@ $('#undirected_').css({"background-color" : "rgba(255,0,0,.5)"});
 
 var vertexindex ="A";
 
+
+var adjlist = new Map();
+var graphmatrix,graphmatrixcl;
+
+var NoOfVertex;
+
+var nu =0;
+
+var dist =[]; 
+  
+var sptSet =[]; 
+
+var prevert;
+
+
+var parent1 = []; 
+  
+var graphdata ={};
+
+var u=0;
+
+var floydmatrix=[]
+const cleargraph = function(e)  {
+
+
+    if(document.getElementById("distab")) {
+
+      document.getElementById("distab").remove();
+
+      $(".vert").remove();
+ 
+    }
+
+    NoOfVertex = 0;
+    vertexindex="A"
+
+     organized = {};
+
+ edgedata = [];
+ edgecount = 0;
+
+ distancemat = [];
+
+ nametoidentity = {};
+ nu = 0;
+  dist =[]; 
+  
+ sptSet =[]; 
+
+parent1=[]
+u=0;
+graphdata ={}
+_lines = []
+
+
+  
+}
+
+
+const clearsceen = function(e)  {
+
+    if(document.getElementById("distab")) {
+document.getElementById("distab").remove();
+document.body.appendChild(graphmatrixcl);
+graphmatrixcl.style.display="none"
+
+$("#distab").draggable();
+
+
+    } 
+  
+    if(document.getElementById("postqueue")) document.getElementById("postqueue").remove();
+
+    if(document.getElementById("dijkastratab")) document.getElementById("dijkastratab").remove();
+
+ 
+}
+
+
+
+
 function nextCharacter(c) { 
     return String.fromCharCode(c.charCodeAt(0) + 1); 
 } 
 
-
-
-
-
-
-var adjlist = new Map();
-var graphmatrix;
-
-var NoOfVertex;
+  
 
  Graph = (t) => {
+
+    _ctx.clearRect(0, 0,  10000, 4300);
 
     $(document).scrollLeft(0)
   $(document).scrollTop(0)
 
   
-if (!isMobile){
-
-    var script = document.createElement('script');
-    script.src = "../Scripts/Algorithm/lineshandle.js";
-  document.head.appendChild(script)
-  
-  }
-       
   
   NoOfVertex = t;
 
   $("body").append (`<table id="distab" style ="position:absolute; transition:100ms linear; top:135px" ></table>`);
-
-  graphmatrix = $("#distab")
 
   $("#distab").append("<tr>");
 
@@ -87,8 +152,7 @@ if (!isMobile){
 
     $("#distab").append("<tr>");
     distancemat.push([])
-
-    var rowlabel = JSON.stringify( organized[y]);
+    floydmatrix.push([])
 
 
     
@@ -116,6 +180,7 @@ vertex(vertexindex)
 
 vertexindex = nextCharacter(vertexindex)
 
+document.getElementById("distab").style.display = "none";
 
 
 }
@@ -129,6 +194,17 @@ $("#distab").draggable();
  }
 
 
+ function  copydistintomain()  {
+
+
+
+for (let i = 0 ;i < NoOfVertex ; i++) 
+for (let j = 0 ;j < NoOfVertex ; j++) 
+floydmatrix[i][j] = distancemat[i][j]
+
+
+
+ }
 
  function chlc(start_ , end_ ,ac)  {
 
@@ -204,18 +280,18 @@ edgedata[edgecount][3] = graphtype;
               drag: function(event, ui){mySVG.redrawLines();}
             });
     
+            graphmatrixcl = document.getElementById("distab").cloneNode(true);
     
         }
     
 
 
-var nu =0;
 
 
 function vertex (label) {
 
 
-var vertice = `<div id=${label} class="vert"> <p id=${label}name class="ver-label"> ${label}</p></div>`;
+let vertice = `<div id=${label} class="vert"> <p id=${label}name class="ver-label"> ${label}</p></div>`;
 
 $("body").prepend(vertice)
 
@@ -243,15 +319,17 @@ nu++;
 
 async function BreadthFirst(startingNode) { 
   
+    clearsceen()
+    
   // create a visited array
   pqueue();
 
-  var visited = []; 
-  for (var g = 0; g < NoOfVertex; g++) 
+  let visited = []; 
+  for (let g = 0; g < NoOfVertex; g++) 
       visited[g] = false; 
 
   // Create an object for queue 
-  var q = new Queue(); 
+  let q = new Queue(); 
 
   // add the starting node to the queue 
   visited[startingNode] = true; 
@@ -262,7 +340,7 @@ async function BreadthFirst(startingNode) {
   // loop until queue is element 
   while (!q.isEmpty()) { 
       // get the element from the queue 
-      var getQueueElement = q.dequeue_(); 
+      let getQueueElement = q.dequeue_(); 
       await qout();
       await waitforme(speed);
 
@@ -274,12 +352,12 @@ async function BreadthFirst(startingNode) {
 
 
       // get the adjacent list for current vertex 
-      var get_List = adjlist.get(getQueueElement); 
+      let get_List = adjlist.get(getQueueElement); 
 
       // loop through the list and add the element to the 
       // queue if it is not processed yet 
-      for (var ie in get_List) { 
-          var neigh = get_List[ie]; 
+      for (let ie in get_List) { 
+          let neigh = get_List[ie]; 
 
           if (!visited[neigh]) { 
               visited[neigh] = true; 
@@ -300,9 +378,9 @@ async function bfs (S)  {
 
 async function dfs(startingNode) 
 { 
-  
-    var visited = []; 
-    for (var ic = 0; ic < NoOfVertex; ic++) 
+    clearsceen()
+    let visited = []; 
+    for (let ic = 0; ic < NoOfVertex; ic++) 
         visited[ic] = false; 
   
  await   DFSUtil(startingNode, visited); 
@@ -318,20 +396,25 @@ async function  DFSUtil(vert, visited)
         await hilight(vert , "red" , "1000ms" , 1500) 
         await hilight(vert , defaultcolor, "600ms" , 610)  
   
-    var get_neighbours = adjlist.get(vert); 
+    let get_neighbours = adjlist.get(vert); 
   
-    for (var ix in get_neighbours) { 
-        var get_elem = get_neighbours[ix]; 
+    for (let ix in get_neighbours) { 
+        let get_elem = get_neighbours[ix]; 
         if (!visited[get_elem]) 
            await DFSUtil(get_elem, visited); 
     } 
 } 
 
-
 async function FloydWarshall()   {
 
+    clearsceen()
 
-    graphmatrix.show();
+    graphmatrixcl = document.getElementById("distab").cloneNode(true);
+
+
+    document.getElementById("distab").style.display=""
+
+    copydistintomain();
 
 await display("Pick all vertices as transit one by one")
 
@@ -359,8 +442,8 @@ await display("Pick all vertices as transit one by one")
                 await hilight(`${i}${j}` , "rgb(109,209,0,1)" , "1000ms" , 1000)
                       hilight(`${i}${j}` , defaultcolor , "1000ms" , 500) 
 
-                if (distancemat[i][k] + distancemat[k][j] < distancemat[i][j]) { 
-                distancemat[i][j] = distancemat[i][k] + distancemat[k][j];
+                if (floydmatrix[i][k] + floydmatrix[k][j] < floydmatrix[i][j]) { 
+                floydmatrix[i][j] = floydmatrix[i][k] + floydmatrix[k][j];
             
                 let sliceddistance1 = organized[`${i}${k}`];
                 let sliceddistance2 = organized[`${k}${j}`];
@@ -378,7 +461,7 @@ await display("Pick all vertices as transit one by one")
                
 
                 await hilight(`${(i)}${(j)}` , "red" , "2000ms" , 2500)
-                $(`#${(i)}${(j)}val`).text(distancemat[i][j])
+                $(`#${(i)}${(j)}val`).text(floydmatrix[i][j])
                 await hilight(`${(i)}${(j)}` , defaultcolor , "2000ms" , 2400)
 
 
@@ -403,13 +486,6 @@ await display("Pick all vertices as transit one by one")
   
 
 }
-
-
-var dist =[]; 
-  
-var sptSet =[]; 
-
-var prevert;
 
 
 async function minDistance(dist, sptSet) 
@@ -439,14 +515,15 @@ async function minDistance(dist, sptSet)
     $(".dijkastracells").css({"background-color" : defaultcolor})
     return min_index; 
 } 
-var u;
+
 // A utility function to print the constructed distance arra
 // Function that implements Dijkstra's single source shortest path algorithm 
 // for a graph represented using adjacency matrix representation 
 async function Dijkstra( src) { 
 
+    clearsceen()
     
-pointerarrow.show();
+    pointerarrow.style.display="";
 
     $("body").append (`<table id="dijkastratab" style ="position:absolute; transition:100ms linear; top:200px" ></table>`);
 
@@ -514,7 +591,8 @@ pointerarrow.show();
          u = await minDistance(dist, sptSet); 
 
 
-            pointerarrow.offset({top : ($("#"+organized[u]).offset().top) , left : ($("#"+organized[u]).offset().left-50)} )
+            pointerarrow.style.top = $("#"+organized[u]).offset().top+"px" 
+            pointerarrow.style.left = $("#"+organized[u]).offset().left-50+"px"
        
       
         await hilight(`dijkastrac${(u)}` , "rgb(109,209,0,1)" , "1200ms" , 1300 )
@@ -560,8 +638,6 @@ pointerarrow.show();
 
 
 
-var parent1 = []; 
-  
 // Find set of vertex i 
 async function find( in_) 
 { 
@@ -587,6 +663,8 @@ async function union1(in_,  jn_)
 // Finds MST using Kruskal's algorithm 
 async function Kruskal() 
 { 
+
+    clearsceen()
     let mincost = 0; // Cost of min MST. 
     await mySVG.kruskalize()
   await mySVG.redrawLines();
@@ -600,7 +678,7 @@ async function Kruskal()
     
     while (edge_count < NoOfVertex - 1) { 
         await display("Find the next legal smallest edge.")
-        var min = Math.min(), a = -1, b = -1; 
+        let min = Math.min(), a = -1, b = -1; 
         for (let i = 0; i < NoOfVertex; i++) { 
             for (let j = 0; j < NoOfVertex; j++) {
 
@@ -846,6 +924,8 @@ $("#graphinput").val("")
   var serv;
   $(document).ajaxStart(  function()  {
 
+   
+
     $("body").append(`<img style="position: fixed;top: 50%;left: 50%;transform: translate(-50%,-50%) ;z-index: 20; height:40%;" id="loaderx" src="../loader-3.gif">`)
 
    
@@ -861,10 +941,11 @@ $("#graphinput").val("")
    });
   
 
- var graphdata;
 
  async function importgraph(name,pass)  {
 
+    cleargraph();
+    _ctx.clearRect(0, 0,  10000, 4300);
 
     $(document).scrollLeft(0)
     $(document).scrollTop(0)
@@ -894,7 +975,7 @@ if (res == "FAILED") {
 
    Log(`Graph(${NoOfVertex})`)
 
-   graphmatrix.hide();
+   document.getElementById("distab").style.display = "none";
 
    for (let ver = 0 ; ver < NoOfVertex ; ++ver)  {
 
@@ -925,7 +1006,7 @@ if (res == "FAILED") {
 
      })
 
-
+     
 }
 
 
@@ -958,7 +1039,7 @@ el_pos["encryption"] = pass;
 el_pos["Edge"] = edgedata;
 
    
-   var jsonstring = JSON.stringify(el_pos ,null , 4)
+   let jsonstring = JSON.stringify(el_pos ,null , 4)
    
 
    $.post("https://graphicalstructure.000webhostapp.com/process.php" , {filesig : name , content : jsonstring} , function(res)  {
