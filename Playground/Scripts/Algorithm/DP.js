@@ -426,7 +426,7 @@ async function PascalTriangle( n)
  
     for (let x = 0 ; x < n ; x++) {
 
-        $("#lcstable").append( `<td class="floyd" id="lcs${(y)}-${(x)}">  <div id="lcs${(y)}-${(x)}div" style="z-index:1; text-align:center;"> <p id="lcs${(y)}-${(x)}val" style="color:coral; text-align:center">${"-"}</p>  </div></td>`);
+        $("#lcstable").append( `<td class="floyd" id="lcs${(y)}-${(x)}">  <div id="lcs${(y)}-${(x)}div" style="z-index:1; text-align:center;min-width:70px;"> <p id="lcs${(y)}-${(x)}val" style="color:coral; text-align:center">${"-"}</p>  </div></td>`);
 
      
     }
@@ -455,8 +455,9 @@ async function PascalTriangle( n)
           pascal[line][i] = 1; 
 
           await hilight(`lcs${line}-${i}` , "rgba(109,209,0,1)" , "300ms", 400 )
+          document.getElementById(`lcs${line}-${i}val`).style.color = "black";
           document.getElementById(`lcs${line}-${i}val`).innerHTML= "1";
-          await hilight(`lcs${line}-${i}` , defaultcolor , "300ms", 400 )
+          await hilight(`lcs${line}-${i}` , "coral" , "300ms", 400 )
         }
             
         // Other values are sum of values just  
@@ -465,18 +466,24 @@ async function PascalTriangle( n)
 
           pascal[line][i] = pascal[line - 1][i - 1] + pascal[line - 1][i];
 
-          hilight(`lcs${line-1}-${i-1}` , "purple" , "300ms", 400 )
-                 await   hilight(`lcs${line-1}-${i}` , "purple" , "300ms", 400 )
+          hilight(`lcs${line-1}-${i-1}` , "red" , "300ms", 400 )
+          document.getElementById(`lcs${line-1}-${i-1}val`).style.color = "white";
+          document.getElementById(`lcs${line-1}-${i}val`).style.color = "white";
+                 await   hilight(`lcs${line-1}-${i}` , "red" , "300ms", 400 )
 
 
                  await hilight(`lcs${line}-${i}` , "rgba(109,209,0,1)" , "300ms", 400 )
 
+          document.getElementById(`lcs${line}-${i}val`).style.color = "black";
           document.getElementById(`lcs${line}-${i}val`).innerHTML= pascal[line][i];
+          
 
-          await hilight(`lcs${line}-${i}` , defaultcolor , "300ms", 400 )
-
-          hilight(`lcs${line-1}-${i-1}` ,defaultcolor , "300ms", 400 )
-          await   hilight(`lcs${line-1}-${i}` , defaultcolor , "300ms", 400 )
+          await hilight(`lcs${line}-${i}` , "coral" , "300ms", 400 )
+ document.getElementById(`lcs${line-1}-${i-1}val`).style.color = "black";
+          document.getElementById(`lcs${line-1}-${i}val`).style.color = "black";
+          hilight(`lcs${line-1}-${i-1}` ,"coral" , "300ms", 400 )
+          await   hilight(`lcs${line-1}-${i}` , "coral" , "300ms", 400 )
+         
 
 
 
