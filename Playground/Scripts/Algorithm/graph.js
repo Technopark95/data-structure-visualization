@@ -57,8 +57,31 @@ var graphdata ={};
 var u=0;
 
 var floydmatrix=[]
-const cleargraph = function(e)  {
 
+
+
+
+const clearsceen = function()  {
+
+    if(document.getElementById("distab")) {
+document.getElementById("distab").remove();
+document.body.appendChild(graphmatrixcl);
+graphmatrixcl.style.display="none"
+
+$("#distab").draggable();
+
+
+    } 
+  
+    if(document.getElementById("postqueue")) document.getElementById("postqueue").remove();
+
+    if(document.getElementById("dijkastratab")) document.getElementById("dijkastratab").remove();
+
+ 
+}
+
+
+const cleargraph = function()  {
 
     if(document.getElementById("distab")) {
 
@@ -67,6 +90,9 @@ const cleargraph = function(e)  {
       $(".vert").remove();
  
     }
+if(document.getElementById("postqueue")) document.getElementById("postqueue").remove();
+if(document.getElementById("dijkastratab")) document.getElementById("dijkastratab").remove();
+
 
     NoOfVertex = 0;
     vertexindex="A"
@@ -94,24 +120,6 @@ _lines = []
 }
 
 
-const clearsceen = function(e)  {
-
-    if(document.getElementById("distab")) {
-document.getElementById("distab").remove();
-document.body.appendChild(graphmatrixcl);
-graphmatrixcl.style.display="none"
-
-$("#distab").draggable();
-
-
-    } 
-  
-    if(document.getElementById("postqueue")) document.getElementById("postqueue").remove();
-
-    if(document.getElementById("dijkastratab")) document.getElementById("dijkastratab").remove();
-
- 
-}
 
 
 
@@ -782,7 +790,7 @@ mySVG.kruskalize();
     }
  
 
-
+     mySVG.kruskalize("coral")
 
 })
 
