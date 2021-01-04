@@ -213,12 +213,14 @@ expresstionstack.push(oper);
 
 }
 
-cancelAnimationFrame(redrawevent)
+await waitforme(speed+100);
 
-mySVG.redrawLines();
+cancelAnimationFrame(redrawevent)
 
 
 Log(PostFixed)
+
+mySVG.redrawLines();
 
 
 }
