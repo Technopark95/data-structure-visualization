@@ -652,8 +652,6 @@ async function InsertAVL (h) {
 
     document.getElementById(r).style.top = 150+"px";
     document.getElementById(r).style.left = 1905+"px";
-
-    $(".dragg").css("transition" , speed+"ms linear");
   
    BalanceAll(r);
 
@@ -677,7 +675,6 @@ async function DeleteAVL (h) {
 
   AVLpostleft[r] = 1900;
   AVLposttop[r] = 150;
-  $(".dragg").css("transition" , speed+"ms linear");
 
     document.getElementById(r).style.top = 150+"px";
     document.getElementById(r).style.left = 1905+"px";
@@ -698,6 +695,21 @@ await searchbst(r,h);
 
 
 }
+
+
+
+slider.onchange= function() {
+
+
+  let x = document.getElementsByClassName("dragg");
+  let ie;
+  for (ie = 0; ie < x.length; ie++) {
+    x[ie].style.transition = speed+"ms linear";
+  }
+  
+  
+}
+
 
 
 //            insertavl(0,65)
