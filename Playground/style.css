@@ -656,6 +656,7 @@ background-color: rgba(255, 255, 255, 0);
 border-style: solid;
 border-color: #000;
 border-width: 2px;
+overflow-x: hidden;
 
 }
 
