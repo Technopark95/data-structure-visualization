@@ -466,10 +466,10 @@ async function PascalTriangle( n)
 
           pascal[line][i] = pascal[line - 1][i - 1] + pascal[line - 1][i];
 
-          hilight(`lcs${line-1}-${i-1}` , "red" , "300ms", 400 )
+          hilight(`lcs${line-1}-${i-1}` , "purple" , "300ms", 400 )
           document.getElementById(`lcs${line-1}-${i-1}val`).style.color = "white";
           document.getElementById(`lcs${line-1}-${i}val`).style.color = "white";
-                 await   hilight(`lcs${line-1}-${i}` , "red" , "300ms", 400 )
+                 await   hilight(`lcs${line-1}-${i}` , "purple" , "300ms", 400 )
 
 
                  await hilight(`lcs${line}-${i}` , "rgba(109,209,0,1)" , "300ms", 400 )
