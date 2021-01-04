@@ -2,6 +2,7 @@
 
 async  function SelectionSort() {
 
+  refresharray()
     ipointer.style.display = "";
       jpointer.style.display = "";
       kpointer.style.display = "";
@@ -46,6 +47,7 @@ async  function SelectionSort() {
    
     async  function BubbleSort(){
   
+      refresharray()
       ipointer.style.display = "";
       jpointer.style.display = "";
       kpointer.style.display = "";
@@ -92,6 +94,8 @@ async  function SelectionSort() {
   
   
   async function InsertionSort() {
+
+    refresharray()
   
     ipointer.style.display = "";
       jpointer.style.display = "";
@@ -258,12 +262,19 @@ async  function SelectionSort() {
   
    async function MergeSort()  {
   
-  
+    refresharray()
+
+    ipointer.innerHTML = "i"
+    jpointer.innerHTML = "j"
+    kpointer.innerHTML = "k"
+    ipointer.style.display = ""
+    jpointer.style.display = ""
+    kpointer.style.display = ""
    await  ms (0 , storedarray.length-1)
   
-     $("#iindex").hide()
-     $("#jindex").hide()
-     $("#kindex").hide()
+   ipointer.style.display = "none"
+   jpointer.style.display = "none"
+   kpointer.style.display = "none"
   
   
   }
@@ -275,7 +286,8 @@ async  function SelectionSort() {
   
   
   async function BinarySearch(value){
-  
+
+ 
     ipointer.style.display = "";
       jpointer.style.display = "";
       kpointer.style.display = "";
@@ -448,7 +460,14 @@ async function qs(  low,  high)
 
 async function QuickSort()  {
 
+
+refresharray()
 if( document.getElementById("tab1") == null) stack(10);
+
+document.getElementById("tab1").style.display=""
+
+       ipointer.style.display = "";
+      jpointer.style.display = "";
 
 await display('Calling QuickSort( '+ (0) + ' , ' + (length-1) + ' )' )
 await push('QuickSort( '+ (0) + ' , ' + (length-1) + ' )' )
@@ -461,8 +480,9 @@ jpointer.innerHTML = "j";
 ipointer.style.display = "none";
 jpointer.style.display = "none";
 
-
 await cutoutarray(0,length-1)
+
+document.getElementById("tab1").style.display="none"
 
 }
 
@@ -472,6 +492,8 @@ await cutoutarray(0,length-1)
 // main function to do heap sort 
 async function HeapSort() 
 { 
+
+  refresharray()
 
 if (storedarray.length >31) {
 
