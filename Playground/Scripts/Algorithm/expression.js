@@ -49,8 +49,6 @@ async function evaluat(exproot)
     if (tree[exproot+'treeleft'] == "null" || tree[exproot+'treeright'] == "null") return;
 
    
-   Log(`${exproot} ${tree[exproot+'treeleft']}  ${tree[exproot+'treeright']}`)
-
    let l_val = tree[exproot+'treeleft']
    let r_val = tree[exproot+'treeright']
 
@@ -66,6 +64,9 @@ async function evaluat(exproot)
 
        await hilight(r_val , "red");
 
+
+        document.getElementById(l_val).style.zIndex = "-1";
+        document.getElementById(r_val).style.zIndex = "-1";
        
        document.getElementById(l_val).style.top = parseInt( document.getElementById(exproot).style.top)+"px"
        document.getElementById(l_val).style.left = parseInt( document.getElementById(exproot).style.left)+"px"
@@ -100,7 +101,8 @@ async function evaluat(exproot)
 
        await hilight(r_val , "red");
 
-       
+       document.getElementById(l_val).style.zIndex = "-1";
+        document.getElementById(r_val).style.zIndex = "-1";
        document.getElementById(l_val).style.top = parseInt( document.getElementById(exproot).style.top)+"px"
        document.getElementById(l_val).style.left = parseInt( document.getElementById(exproot).style.left)+"px"
 
@@ -132,7 +134,10 @@ async function evaluat(exproot)
 
        await hilight(r_val , "red");
 
-       
+
+
+        document.getElementById(l_val).style.zIndex = "-1";
+        document.getElementById(r_val).style.zIndex = "-1";
        document.getElementById(l_val).style.top = parseInt( document.getElementById(exproot).style.top)+"px"
        document.getElementById(l_val).style.left = parseInt( document.getElementById(exproot).style.left)+"px"
 
@@ -163,7 +168,8 @@ async function evaluat(exproot)
 
        await hilight(r_val , "red");
 
-       
+       document.getElementById(l_val).style.zIndex = "-1";
+        document.getElementById(r_val).style.zIndex = "-1";
        document.getElementById(l_val).style.top = parseInt( document.getElementById(exproot).style.top)+"px"
        document.getElementById(l_val).style.left = parseInt( document.getElementById(exproot).style.left)+"px"
 
@@ -193,6 +199,9 @@ async function evaluat(exproot)
 
        await hilight(r_val , "red");
 
+
+       document.getElementById(l_val).style.zIndex = "-1";
+        document.getElementById(r_val).style.zIndex = "-1";
        
        document.getElementById(l_val).style.top = parseInt( document.getElementById(exproot).style.top)+"px"
        document.getElementById(l_val).style.left = parseInt( document.getElementById(exproot).style.left)+"px"
