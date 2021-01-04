@@ -27,6 +27,199 @@ var expresstionstack = new Stack();
 
 var symboltopointer = {}
 
+
+
+async function evaluat(exproot)  
+{  
+    // empty tree  
+   
+    // leaf node i.e, an integer 
+    if (exproot == "null")  {
+
+        return 0;
+    }
+    
+
+    // Evaluate left subtree  
+    await evaluat(tree[exproot+'treeleft']);  
+  
+    // Evaluate right subtree  
+    await evaluat(tree[exproot+'treeright']);  
+
+    if (tree[exproot+'treeleft'] == "null" || tree[exproot+'treeright'] == "null") return;
+
+   
+   Log(`${exproot} ${tree[exproot+'treeleft']}  ${tree[exproot+'treeright']}`)
+
+   let l_val = tree[exproot+'treeleft']
+   let r_val = tree[exproot+'treeright']
+
+   mySVG.redrawLines();
+
+     
+    // Check which operator to apply  
+    if (document.getElementById(exproot+'treeval').innerHTML=="+")  {
+
+    
+
+        hilight(l_val , "red");
+
+       await hilight(r_val , "red");
+
+       
+       document.getElementById(l_val).style.top = parseInt( document.getElementById(exproot).style.top)+"px"
+       document.getElementById(l_val).style.left = parseInt( document.getElementById(exproot).style.left)+"px"
+
+       document.getElementById(r_val).style.top = parseInt( document.getElementById(exproot).style.top)+"px"
+       document.getElementById(r_val).style.left = parseInt( document.getElementById(exproot).style.left)+"px"
+
+       await waitforme(speed+100);
+
+       hilight(l_val , defaultcolor);
+
+       await hilight(r_val , defaultcolor);
+
+       
+
+       document.getElementById(exproot+"treeval").innerHTML = parseInt(document.getElementById(l_val+"treeval").innerHTML)+parseInt(document.getElementById(r_val+"treeval").innerHTML)
+
+       document.getElementById(l_val).remove();
+       document.getElementById(r_val).remove();
+
+
+      return;
+
+
+    }
+        
+  
+    if (document.getElementById(exproot+'treeval').innerHTML=="-")  {
+
+
+        hilight(l_val , "red");
+
+       await hilight(r_val , "red");
+
+       
+       document.getElementById(l_val).style.top = parseInt( document.getElementById(exproot).style.top)+"px"
+       document.getElementById(l_val).style.left = parseInt( document.getElementById(exproot).style.left)+"px"
+
+       document.getElementById(r_val).style.top = parseInt( document.getElementById(exproot).style.top)+"px"
+       document.getElementById(r_val).style.left = parseInt( document.getElementById(exproot).style.left)+"px"
+
+       await waitforme(speed+100);
+
+
+       hilight(l_val , defaultcolor);
+
+       await hilight(r_val , defaultcolor);
+
+       document.getElementById(exproot+"treeval").innerHTML = parseInt(document.getElementById(l_val+"treeval").innerHTML)-parseInt(document.getElementById(r_val+"treeval").innerHTML)
+
+       document.getElementById(l_val).remove();
+       document.getElementById(r_val).remove();
+
+
+      return;
+
+    }
+        
+  
+    if (document.getElementById(exproot+'treeval').innerHTML=="*")  {
+
+
+        hilight(l_val , "red");
+
+       await hilight(r_val , "red");
+
+       
+       document.getElementById(l_val).style.top = parseInt( document.getElementById(exproot).style.top)+"px"
+       document.getElementById(l_val).style.left = parseInt( document.getElementById(exproot).style.left)+"px"
+
+       document.getElementById(r_val).style.top = parseInt( document.getElementById(exproot).style.top)+"px"
+       document.getElementById(r_val).style.left = parseInt( document.getElementById(exproot).style.left)+"px"
+
+       await waitforme(speed+100);
+
+       hilight(l_val , defaultcolor);
+
+       await hilight(r_val , defaultcolor);
+
+
+       document.getElementById(exproot+"treeval").innerHTML = parseInt(document.getElementById(l_val+"treeval").innerHTML)*parseInt(document.getElementById(r_val+"treeval").innerHTML)
+
+       document.getElementById(l_val).remove();
+       document.getElementById(r_val).remove();
+
+
+      return;
+
+    }
+         
+
+    if (document.getElementById(exproot+'treeval').innerHTML=="/"){
+
+        hilight(l_val , "red");
+
+       await hilight(r_val , "red");
+
+       
+       document.getElementById(l_val).style.top = parseInt( document.getElementById(exproot).style.top)+"px"
+       document.getElementById(l_val).style.left = parseInt( document.getElementById(exproot).style.left)+"px"
+
+       document.getElementById(r_val).style.top = parseInt( document.getElementById(exproot).style.top)+"px"
+       document.getElementById(r_val).style.left = parseInt( document.getElementById(exproot).style.left)+"px"
+
+       await waitforme(speed+100);
+
+       hilight(l_val , defaultcolor);
+
+       await hilight(r_val , defaultcolor);
+
+       document.getElementById(exproot+"treeval").innerHTML = parseInt(document.getElementById(l_val+"treeval").innerHTML)/parseInt(document.getElementById(r_val+"treeval").innerHTML)
+
+       document.getElementById(l_val).remove();
+       document.getElementById(r_val).remove();
+
+
+      return;
+
+    }  
+        
+        
+    if (document.getElementById(exproot+'treeval').innerHTML=="^") {
+
+        hilight(l_val , "red");
+
+       await hilight(r_val , "red");
+
+       
+       document.getElementById(l_val).style.top = parseInt( document.getElementById(exproot).style.top)+"px"
+       document.getElementById(l_val).style.left = parseInt( document.getElementById(exproot).style.left)+"px"
+
+       document.getElementById(r_val).style.top = parseInt( document.getElementById(exproot).style.top)+"px"
+       document.getElementById(r_val).style.left = parseInt( document.getElementById(exproot).style.left)+"px"
+
+       await waitforme(speed+100);
+
+       hilight(l_val , defaultcolor);
+
+       await hilight(r_val , defaultcolor);
+
+       
+       document.getElementById(exproot+"treeval").innerHTML = Math.pow(parseInt(document.getElementById(l_val+"treeval").innerHTML),parseInt(document.getElementById(r_val+"treeval").innerHTML));
+     
+       document.getElementById(l_val).remove();
+       document.getElementById(r_val).remove();
+
+
+      return;
+
+    } 
+      
+   
+}  
+
 async function expressiontree(s) {
 
     if (document.getElementById("poststack"))  {
@@ -41,7 +234,7 @@ async function expressiontree(s) {
     count = 0;
     tree={}
     _lines=[]
-
+    lefthand = 500;
     redrawevent = requestAnimationFrame(redraw,50)
 
   
@@ -215,13 +408,41 @@ expresstionstack.push(oper);
 
 await waitforme(speed+100);
 
-cancelAnimationFrame(redrawevent)
-
 
 Log(PostFixed)
 
 mySVG.redrawLines();
 
+Log("Taking random value for nodes");
+
+let ie;
+for (ie = 0; ie < count; ie++) {
+
+    if (!['+','-','*','/','^'].includes(document.getElementById(ie+"treeval").innerHTML)) {
+        document.getElementById(ie+"treeval").innerHTML = Math.floor((Math.random()*100)+1);
+        hilight(ie , "red");
+    }
+
+
+  
+}
+
+await waitforme(speed+100);
+
+for (ie = 0; ie < count; ie++) {
+
+ hilight(ie , defaultcolor);
+
+}
+
+
+Log('Evaluating Expression Tree')
+
+await evaluat(count-1)
+
+cancelAnimationFrame(redrawevent)
+
+mySVG.redrawLines();
 
 }
 
