@@ -426,7 +426,7 @@ async function PascalTriangle( n)
  
     for (let x = 0 ; x < n ; x++) {
 
-        $("#lcstable").append( `<td class="floyd" id="lcs${(y)}-${(x)}">  <div id="lcs${(y)}-${(x)}div" style="z-index:1; text-align:center;min-width:70px;"> <p id="lcs${(y)}-${(x)}val" style="color:coral; text-align:center">${"-"}</p>  </div></td>`);
+        $("#lcstable").append( `<td class="floyd" id="lcs${(y)}-${(x)}">  <div id="lcs${(y)}-${(x)}div" style="z-index:1; text-align:center;min-width:70px;"> <p id="lcs${(y)}-${(x)}val" class="transit" style="color:coral; text-align:center;transition:${speed}ms linear;">${"-"}</p>  </div></td>`);
 
      
     }
@@ -494,13 +494,14 @@ async function PascalTriangle( n)
     } 
 } 
   
-// Driver code 
-// int main() 
-// { 
-//     int n = 5; 
-//     printPascal(n); 
-//     return 0; 
-// } 
+slider.onchange= function() {
 
-//LongestCommonSubseq("XMJYAUZ","MZJAWXU")
 
+  let x = document.getElementsByClassName("transit");
+  let ie;
+  for (ie = 0; ie < x.length; ie++) {
+    x[ie].style.transition = speed+"ms linear";
+  }
+  
+  
+}
