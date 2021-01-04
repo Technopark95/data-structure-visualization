@@ -124,7 +124,7 @@ function array (typed)  {
 
 window.scrollTo(0,0)
 
-cleareverything();
+//cleareverything();
 
 
   length = typed.length 
