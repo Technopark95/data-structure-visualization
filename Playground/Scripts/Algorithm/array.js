@@ -31,17 +31,100 @@ var tableobj
 var tabledata ;
 let tablelement;
 
+var arrayclone,mainarray;
+
 var ii=0 , data;
 
 
 data = {"0":{"top":138,"left":643},"1":{"top":247,"left":326},"2":{"top":247,"left":992},"3":{"top":406,"left":166},"4":{"top":406,"left":484.8125},"5":{"top":406,"left":815.8250122070312},"6":{"top":406,"left":1124},"7":{"top":538,"left":87},"8":{"top":538,"left":245.83750915527344},"9":{"top":541,"left":399},"10":{"top":538,"left":573},"11":{"top":538,"left":744.1124877929688},"12":{"top":538,"left":900.4125366210938},"13":{"top":538,"left":1052},"14":{"top":538,"left":1192},"15":{"top":703,"left":24},"16":{"top":805,"left":139},"17":{"top":682,"left":200},"18":{"top":804,"left":291},"19":{"top":675,"left":359},"20":{"top":808,"left":447},"21":{"top":666,"left":527},"22":{"top":803,"left":612},"23":{"top":665,"left":696},"24":{"top":799,"left":795},"25":{"top":663,"left":860},"26":{"top":792,"left":950},"27":{"top":664,"left":1009},"28":{"top":784,"left":1090},"29":{"top":666,"left":1149},"30":{"top":781,"left":1240}}
 
 
+function cleareverything()  {
+
+  ipointer.style.display = "none";
+  jpointer.style.display = "none";
+  kpointer.style.display = "none";
+
+  ipointer.style.display = "none";
+  jpointer.style.display = "none";
+  kpointer.style.display = "none";
+  ipointer.style.top = "-200px";
+  jpointer.style.top = "-200px";
+  kpointer.style.top = "-200px";
+
+  $(".dragg").remove();
+
+  if (document.getElementById("t1")) {
+
+    document.getElementById("t1").remove();
+
+  }
+
+  mySVG.redrawLines();
+
+   length =0
+
+ storedarray = []
+
+ arr = ''
+
+ tableobj = {}
+
+ tabledata = {};
+ tablelement = {};
+
+ ii=0 
+
+
+
+}
+
+
+function refresharray()   {
+
+  ipointer.style.display = "none";
+  jpointer.style.display = "none";
+  kpointer.style.display = "none";
+  ipointer.style.top = "-200px";
+  jpointer.style.top = "-200px";
+  kpointer.style.top = "-200px";
+  $(".dragg").remove();
+
+
+  mySVG.redrawLines();
+
+
+  if (document.getElementById("t1")) {
+
+    arrayclone = mainarray.cloneNode(true)
+
+    document.getElementById("t1").remove();
+
+    document.body.appendChild(arrayclone);
+    $("#t1").draggable();
+
+
+    for (let u = 0 ; u < storedarray.length ; ++u)  {
+
+
+      storedarray[u] = parseInt(document.getElementById("aitemval"+u).innerHTML);
+    }
+
+  }
+
+
+
+
+}
+
 
 
 function array (typed)  {
 
+
 window.scrollTo(0,0)
+
+cleareverything();
 
 
   length = typed.length 
@@ -82,6 +165,10 @@ window.scrollTo(0,0)
     ipointer.style.display = "";
     jpointer.style.display = "";
     kpointer.style.display = "";
+
+
+    mainarray = document.getElementById("t1")
+
   
   }
 
