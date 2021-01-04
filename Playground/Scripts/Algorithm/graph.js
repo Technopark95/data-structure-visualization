@@ -76,6 +76,7 @@ $("#distab").draggable();
     if(document.getElementById("postqueue")) document.getElementById("postqueue").remove();
 
     if(document.getElementById("dijkastratab")) document.getElementById("dijkastratab").remove();
+    pointerarrow.style.display = "none";
 
  
 }
@@ -92,6 +93,7 @@ const cleargraph = function()  {
     }
 if(document.getElementById("postqueue")) document.getElementById("postqueue").remove();
 if(document.getElementById("dijkastratab")) document.getElementById("dijkastratab").remove();
+pointerarrow.style.display = "none";
 
 
     NoOfVertex = 0;
