@@ -126,13 +126,28 @@ function heapleaf(element) {
 
 async function insertheap(value)   {
 
+if (count == storedarray.length) {
 
+    Log(`The heap is fixed size of ${storedarray.length} elements.`)
+
+    return;
+}
 
     if (count > 30)   {
 
         Log("Sorry, the maximum limit is 31");
         return 
     }
+
+    if (arrayflag == 0)  {
+
+        let h = []
+        for (let c = 0 ;c <31 ; c++) h[c] = 0
+    
+        array(h);
+    
+        arrayflag =1 ;
+    
 
     redrawevent= requestAnimationFrame(redraw)
 
@@ -144,15 +159,6 @@ storedarray[heapnode] = value;
 
 // doalign();
 
-if (arrayflag == 0)  {
-
-    let h = []
-    for (let c = 0 ;c <31 ; c++) h[c] = 0
-
-    array(h);
-
-    arrayflag =1 ;
-}
 
 
  insert(value , heapnode)
@@ -268,6 +274,8 @@ async function deleteheap() {
 
 
 async function createheap(elements="")  {
+
+    arrayflag=1;
 
 if (elements.length >31)  {
 
