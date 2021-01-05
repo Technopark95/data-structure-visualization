@@ -213,7 +213,6 @@ if (heapnode != 0)  {
     document.getElementById(0).style.left = 1905+"px";
 
     calcheight('0')
-    $(".dragg").css("transition" , speed+"ms linear");
   
    BalanceAll("0");
 
@@ -294,7 +293,6 @@ if (elements.length >31)  {
     document.getElementById(0).style.left = 1905+"px";
 
     calcheight('0')
-    $(".dragg").css("transition" , speed+"ms linear");
   
    BalanceAll("0");
 
@@ -308,3 +306,19 @@ if (elements.length >31)  {
     
 
 }
+
+
+
+slider.onchange= function() {
+
+
+    let x = document.getElementsByClassName("dragg");
+    let ie;
+    for (ie = 0; ie < x.length; ie++) {
+      x[ie].style.transition = speed+"ms linear";
+    }
+    
+    
+  }
+  
+  
