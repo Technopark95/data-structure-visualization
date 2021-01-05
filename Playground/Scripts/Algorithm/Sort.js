@@ -32,7 +32,7 @@ async  function SelectionSort() {
               hilight("aitem"+(min) , defaultcolor ,  "1s" , 1100)
               
           }
-          await hilight("aitem"+(isel) , "coral"  ,  "1s" , 1100)
+
       }
   
       $("#iindex").text("i").hide()
