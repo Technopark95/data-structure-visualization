@@ -126,12 +126,6 @@ function heapleaf(element) {
 
 async function insertheap(value)   {
 
-if (count == storedarray.length) {
-
-    Log(`The heap is fixed size of ${storedarray.length} elements.`)
-
-    return;
-}
 
     if (count > 30)   {
 
@@ -145,9 +139,25 @@ if (count == storedarray.length) {
         for (let c = 0 ;c <31 ; c++) h[c] = 0
     
         array(h);
+
+        let x = document.getElementsByClassName("arrayd");
+        let ie;
+        for (ie = 0; ie < x.length; ie++) {
+          x[ie].style.visibility = "hidden";
+
+        }
+        
     
         arrayflag =1 ;
     }
+
+    if (count == storedarray.length) {
+
+        Log(`The heap is fixed size of ${storedarray.length} elements.`)
+    
+        return;
+    }
+    
     
 
     redrawevent= requestAnimationFrame(redraw)
@@ -158,11 +168,10 @@ storedarray[heapnode] = value;
 
 
 
-// doalign();
-
-
 
  insert(value , heapnode)
+ document.getElementById("aitem"+heapnode).style.visibility = "visible";
+
 
  
  if (heapnode==0) {
@@ -246,7 +255,7 @@ async function deleteheap() {
   
     // Replace root with first element 
     storedarray[0] = lastElement; 
-
+   
    
      hilight((count-1) , "red" ,"1s" ,1100)  
      await hilight(0 , "red" ,"1s" ,1100) 
@@ -255,6 +264,10 @@ async function deleteheap() {
      await swapp(0,count-1)
 
      insert(0 , count-1)
+
+     document.getElementById("aitem"+(count-1)).style.visibility = "hidden";
+
+
 
      hilight((count-1) , defaultcolor ,"1s" ,1100)  
      await hilight(0 , defaultcolor ,"1s" ,1100) 
