@@ -139,8 +139,7 @@ this.kruskalize =function (_cl = "rgb(0,0,0,0.08)")  {
 			
 			
 			
-			try {
-			
+		
 			
 				
 		if ( option.left_node == undefined || option.left_node == "null" || option.right_node == undefined || option.right_node == "null"  ) {
@@ -220,7 +219,7 @@ this.kruskalize =function (_cl = "rgb(0,0,0,0.08)")  {
 
 
    if (option.gtype == "D") {
-						let headlen = 25; // length of head in pixels
+						let headlen = 16; // length of head in pixels
 						var dx = Number(ele2_x) - Number(ele1_x);
 						let dy = ele2_y - ele1_y;
 						let angle = Math.atan2(dy, dx);
@@ -247,10 +246,8 @@ f = 0;
 
 					//option.resize = option.resize || false;
 				
-			} catch (err) {
-				if (_error) alert('Mandatory Fields are missing or incorrect');
-			}
-		};
+			} 
+	
 
 		window.addEventListener("resize",function()  {
            
