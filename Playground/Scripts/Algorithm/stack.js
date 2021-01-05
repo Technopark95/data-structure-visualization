@@ -284,7 +284,14 @@ function peekstack(){
 
     function stack(typed) {
 
-
+      el = 0;
+      count_stack = 1;
+      stack_top = 0;
+      max = 0;
+      table = 0;
+      elements = [];
+     
+     
 
 
         max = typed
@@ -292,7 +299,7 @@ function peekstack(){
 
 
 
-      var stack = '<div style="position : absolute; top: 200px; left:100px; z-index:1; transition-duration : 100ms; width:500px;" id="tab'+count_stack+'"  class="stack"> <p id = "kaydeefir" style="margin-top: -40px;  " ></p>';
+      var stack = '<div style="position : absolute; top: 145px; left:100px; z-index:1; transition-duration : 100ms; width:500px;" id="tab'+count_stack+'"  class="stack"> <p id = "kaydeefir" style="margin-top: -40px;  " ></p>';
 
       stack += '<table class = "stack"  id="tb'+count_stack+'" style="border-collapse: collapse;  transition-duration : 100ms;">'
 
