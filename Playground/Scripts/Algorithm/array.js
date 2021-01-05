@@ -53,6 +53,10 @@ function cleareverything()  {
 
   $(".dragg").remove();
 
+  if (document.getElementById("tab1")) {document.getElementById("tab1").remove() }
+
+  if (document.getElementById("tb2")) {document.getElementById("tb2").remove() }
+
   if (document.getElementById("t1")) {
 
     document.getElementById("t1").remove();
@@ -68,6 +72,8 @@ function cleareverything()  {
  _lines = []
 
  ii=0 
+
+
 
 
 
@@ -88,6 +94,10 @@ function refresharray()   {
 
   mySVG.redrawLines();
 
+
+  if (document.getElementById("tab1")) {document.getElementById("tab1").remove() }
+
+  if (document.getElementById("tb2")) {document.getElementById("tb2").remove() }
 
   if (document.getElementById("t1")) {
 
