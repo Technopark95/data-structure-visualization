@@ -147,6 +147,7 @@ if (count == storedarray.length) {
         array(h);
     
         arrayflag =1 ;
+    }
     
 
     redrawevent= requestAnimationFrame(redraw)
