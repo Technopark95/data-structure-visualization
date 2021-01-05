@@ -20,6 +20,7 @@ Copyright 2020 Anoop Singh, Graphical Structure
 */
     
 var organized = {};
+var organizedcopy = {};
 
 var edgedata = [];
 var edgecount = 0;
@@ -170,17 +171,17 @@ function nextCharacter(c) {
 
     for (let x = 0 ; x < NoOfVertex ; x++) {
 
-        $("#distab").append( `<td class="floyd showdis" id="${(y)}${(x)}">  <div id="${(y)}${(x)}div" style="z-index:1; text-align:center;"> <p id="${(y)}${(x)}val" style="color:coral; text-align:center"></p>     <p id="${(y)}${(x)}distance" style=" margin-top:-37px; color:coral; text-align:center; opacity:0%;"></p>  </div></td>`);
+        $("#distab").append( `<td class="floyd showdis" id="${(y)}-${(x)}">  <div id="${(y)}-${(x)}div" style="z-index:1; text-align:center;"> <p id="${(y)}-${(x)}val" style="color:coral; text-align:center"></p>     <p id="${(y)}-${(x)}distance" style=" margin-top:-37px; color:coral; text-align:center; opacity:0%;"></p>  </div></td>`);
 
      
         if (y == x ) {
             distancemat[y][y] = 0;
-            $(`#${(y)}${(x)}val`).text("0")
+            $(`#${(y)}-${(x)}val`).text("0")
             continue;
         }
 
     distancemat[y][x] = Math.min();
-    $(`#${(y)}${(x)}val`).html('&#8734;')
+    $(`#${(y)}-${(x)}val`).html('&#8734;')
     }
 
     $("#distab").append("</tr>")
@@ -264,19 +265,19 @@ edgedata[edgecount][3] = graphtype;
 
       distancemat[a][b] = distance;
       
-      $(`#${(set_to_table1)}${(set_to_table2)}val`).text(distance)
+      $(`#${(set_to_table1)}-${(set_to_table2)}val`).text(distance)
       
       $(`#${set_to_table1}${set_to_table2}distance`).text(`${id1}${id2}`)
 
-      organized[`${a}${b}`] = `${id1}${id2}`
+      organized[`${a}-${b}`] = `${id1}${id2}`
 
 
       if (graphtype != "D") {
       adjlist.get(id2).push(id1);
       distancemat[b][a] = distance;
-      $(`#${(set_to_table2)}${(set_to_table1)}val`).text(distance)
+      $(`#${(set_to_table2)}-${(set_to_table1)}val`).text(distance)
       $(`#${set_to_table2}${set_to_table1}distance`).text(`${id2}${id1}`)
-      organized[`${b}${a}`] = `${id2}${id1}`
+      organized[`${b}-${a}`] = `${id2}${id1}`
 
       }
 
@@ -291,6 +292,8 @@ edgedata[edgecount][3] = graphtype;
             });
     
             graphmatrixcl = document.getElementById("distab").cloneNode(true);
+
+            organizedcopy = JSON.parse(JSON.stringify(organized))
     
         }
     
@@ -426,6 +429,8 @@ async function FloydWarshall()   {
 
     copydistintomain();
 
+    organized = JSON.parse(JSON.stringify(organizedcopy))
+
 await display("Pick all vertices as transit one by one")
 
     for (let k = 0; k < NoOfVertex; k++)  
@@ -449,35 +454,35 @@ await display("Pick all vertices as transit one by one")
                  {  
                 // If vertex k is on the shortest path from  
                 // i to j, then update the value of dist[i][j] 
-                await hilight(`${i}${j}` , "rgb(109,209,0,1)" , "1000ms" , 1000)
-                      hilight(`${i}${j}` , defaultcolor , "1000ms" , 500) 
+                await hilight(`${i}-${j}` , "rgb(109,209,0,1)" , "1000ms" , 1000)
+                      hilight(`${i}-${j}` , defaultcolor , "1000ms" , 500) 
 
                 if (floydmatrix[i][k] + floydmatrix[k][j] < floydmatrix[i][j]) { 
                 floydmatrix[i][j] = floydmatrix[i][k] + floydmatrix[k][j];
             
-                let sliceddistance1 = organized[`${i}${k}`];
-                let sliceddistance2 = organized[`${k}${j}`];
+                let sliceddistance1 = organized[`${i}-${k}`];
+                let sliceddistance2 = organized[`${k}-${j}`];
 
                 sliceddistance2 = sliceddistance2.slice(1,sliceddistance2.length)
 
-                organized[`${i}${j}`] = sliceddistance1 + sliceddistance2;
+                organized[`${i}-${j}`] = sliceddistance1 + sliceddistance2;
                 
-                $(`#${i}${j}distance`).text(`${sliceddistance1}${sliceddistance2}`)
+                $(`#${i}-${j}distance`).text(`${sliceddistance1}${sliceddistance2}`)
 
  
               await  display(`${organized[i]}${organized[k]} + ${organized[k]}${organized[j]} < ${organized[i]}${organized[j]},Update.`)
-                       hilight(`${i}${k}` , "rgb(109,209,0,1)" , "2000ms" , 2100)
-                 await hilight(`${k}${j}` , "rgb(109,209,0,1)" , "2000ms" , 2400)
+                       hilight(`${i}-${k}` , "rgb(109,209,0,1)" , "2000ms" , 2100)
+                 await hilight(`${k}-${j}` , "rgb(109,209,0,1)" , "2000ms" , 2400)
                
 
-                await hilight(`${(i)}${(j)}` , "red" , "2000ms" , 2500)
-                $(`#${(i)}${(j)}val`).text(floydmatrix[i][j])
-                await hilight(`${(i)}${(j)}` , defaultcolor , "2000ms" , 2400)
+                await hilight(`${(i)}-${(j)}` , "red" , "2000ms" , 2500)
+                $(`#${(i)}-${(j)}val`).text(floydmatrix[i][j])
+                await hilight(`${(i)}-${(j)}` , defaultcolor , "2000ms" , 2400)
 
 
 
-                hilight(`${i}${k}` , defaultcolor , "2000ms" , 2100)
-                await hilight(`${k}${j}` , defaultcolor , "2000ms" , 2400)
+                hilight(`${i}-${k}` , defaultcolor , "2000ms" , 2100)
+                await hilight(`${k}-${j}` , defaultcolor , "2000ms" , 2400)
 
 
                 }
