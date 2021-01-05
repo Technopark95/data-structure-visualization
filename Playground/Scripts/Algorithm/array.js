@@ -65,7 +65,7 @@ function cleareverything()  {
 
  storedarray = []
 
- 
+ _lines = []
 
  ii=0 
 
@@ -108,7 +108,7 @@ function refresharray()   {
   }
 
 
-
+_lines = []
 
 }
 
