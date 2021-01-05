@@ -462,7 +462,7 @@ async function QuickSort()  {
 
 
 refresharray()
-if( document.getElementById("tab1") == null) stack(10);
+if( document.getElementById("tab1") == null) stack(storedarray.length);
 
 document.getElementById("tab1").style.display=""
 
