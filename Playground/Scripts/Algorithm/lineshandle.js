@@ -49,7 +49,7 @@ const drawLine = (e) => {
    if (direction == "D") {
 
    
-   let headlen = 25; // length of head in pixels
+   let headlen = 16; // length of head in pixels
 	let dx = Number(lineCoordinates.x) - Number(startPosition.x);
 	let dy = lineCoordinates.y - startPosition.y;
 	let angle = Math.atan2(dy, dx);
