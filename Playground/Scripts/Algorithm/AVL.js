@@ -20,7 +20,7 @@ Copyright 2020 Anoop Singh, Graphical Structure
 
 var r = 0;
 
-
+var avlparent = []
 
 
  async function rightRotate(y)  
@@ -31,64 +31,22 @@ var r = 0;
     let x =  tree[`${y}treeleft`] /*  y->left;   */
     let T2 = tree[`${x}treeright`]  /* x->right;  */
 
+    tree[`${x}treeright`]  = y;
+    tree[`${y}treeleft`]  = T2;
+
  
-      if ( parseInt( $(`#${unbalparent}treeval`).text() ,10)   <  parseInt($(`#${x}treeval`).text(),10) )  {
-        treefy(unbalparent+"treeright" , x)
-        del(`${unbalparent}treeright` , `${y}treetop`);
-        
-        }
-    
-        else {
-    
-          treefy(unbalparent+"treeleft" , x)
-          del(`${unbalparent}treeleft` , `${y}treetop`);
-        
-        }
-  
-    
-    
-     //   SyncMoveBranch(x, Math.abs(ypos.left-xpos.left),-90);
-    
-  
-     del(`${y}treeleft` , `${x}treetop`);
-    
-    // Perform rotation  
-    treefy(x+"treeright" , y)   /* x->right = y;  */ 
-   
-   if (T2 != "null"){ 
-       treefy(y+"treeleft" , T2)
-       del(`${x}treeright` , `${T2}treetop`);
-     
-    
-
-
-}
-   /* y->left = T2;  */
-   else tree[y+"treeleft" ] = T2
-  
-    
-  
-    // Update heights  
-   // Log(`left height = ${height(tree[`${y}treeleft`])}   right height = ${height(tree[`${y}treeright`])}`)
    
    let yh = Math.max( height(tree[`${y}treeleft`]) ,  height(tree[`${y}treeright`])) + 1;  
     $(`#${y}height`).text(yh)
 
-
-    //Log(`left height = ${height(tree[`${x}treeleft`])}   right height = ${height(tree[`${y}treeright`])}`)
     let xh = Math.max(height(tree[`${x}treeleft`]),  height(tree[`${x}treeright`])) + 1;
     
     $(`#${x}height`).text(xh)
 
     r = x;
 
- //   SyncMoveBranch(y,Math.abs(ypos.left-xpos.left), 90);
- //   if (T2!="null") SyncMoveBranch(T2,Math.abs(T2pos.left - ypos.left), 0);
-
     
     return x;  
-
-    // Return new root  
   
 }  
   
@@ -104,57 +62,20 @@ function leftRotate(x)
     let y = tree[`${x}treeright`];
     let T2 = tree[`${y}treeleft`];  
   
-
+    tree[`${y}treeleft`] = x;
+    tree[`${x}treeright`] = T2
 
        
-    if ( parseInt( $(`#${unbalparent}treeval`).text() ,10)   <  parseInt($(`#${x}treeval`).text(),10) )  {
-      treefy(unbalparent+"treeright" , y)
-      del(`${unbalparent}treeright` , `${x}treetop`);
-       
-      }
-  
-      else {
-  
-        treefy(unbalparent+"treeleft" , y)
-        del(`${unbalparent}treeleft` , `${x}treetop`);
-         
-      }
-
-
-   //   SyncMoveBranch(y, -Math.abs(ypos.left-xpos.left),-90);
-    
-    
-    
-    // Perform rotation  
-    del(`${x}treeright` , `${y}treetop`);
-     
-    treefy(y+"treeleft" , x)
-
-    if (T2 != "null"){ 
-      treefy(x+"treeright" , T2) 
-      del(`${y}treeleft` , `${T2}treetop`);
-    
-
-
-}
-
-else tree[x+"treeright" ] = T2;
-    
-  
-  
-    // Update heights  
+ 
     let xheight = Math.max(height(tree[`${x}treeleft`]),  height(tree[`${x}treeright`])) + 1;  
     $(`#${x}height`).text(xheight)
 
     let yheight = Math.max(height(tree[`${y}treeleft`]),  height(tree[`${y}treeright`])) + 1;  
     $(`#${y}height`).text(yheight)
 
-    // Return new root 
+
     r = y;
 
-  //  SyncMoveBranch(x,-Math.abs(ypos.left-xpos.left), 90);
-  //  if (T2!="null") SyncMoveBranch(T2,-Math.abs(T2pos.left - xpos.left), 0);
-    
 
     return y;  
 }  
@@ -169,119 +90,81 @@ function getBalance(N)
 }  
 
 
+
+var avlnode;
+
+
+
 async function insertavl(node_, key_) { 
 
 
-    if ($(`#${node_}`).length == 0)  {
+    if (document.getElementById(node_) == null)  {
 
-      await display("Tree Empty. Adding root node.");
+     avlnode =  avl(key_); 
 
-     await  avl(key_); 
+
+     setTimeout(()=> {
+
+
+      if (avlparent[avlnode] != undefined)
+      if (parseInt( $("#"+avlnode+"treeval").text(),10) > parseInt( $("#"+avlparent[avlnode]+"treeval").text(),10)){
+       
+          document.getElementById(avlnode).style.top = parseInt( document.getElementById(avlparent[avlnode]).style.top)+85+"px";
+          document.getElementById(avlnode).style.left = parseInt( document.getElementById(avlparent[avlnode]).style.left)+35+"px";
+  
+      } 
+      else {
+  
+          document.getElementById(avlnode).style.top = parseInt( document.getElementById(avlparent[avlnode]).style.top)+85+"px";
+          document.getElementById(avlnode).style.left = parseInt( document.getElementById(avlparent[avlnode]).style.left)-35+"px";
+      
+      } 
+
+
+     })
     
-       let bodyy = $(document);
+     window.scrollTo(1200,0)
 
-       bodyy.scrollLeft(1200)
-       bodyy.scrollTop(0)
+     r= avlnode
 
-
-
-       return;
+       return avlnode;
     }
 
 
-    // await hilight(node_, "rgb(109,209,0,1)" , "1200ms linear" , 1300 )
-    // hilight(node_, defaultcolor , "1200ms linear" , 1300 )
+    if (key_ <  parseInt( $(`#${node_}treeval`).text()) ) {
 
 
- 
-    /* Otherwise, recur down the tree */
-    if (key_ <  parseInt( $(`#${node_}treeval`).text() , 10) ) {
+    tree[`${node_}treeleft`] = await insertavl(tree[`${node_}treeleft`], key_);
 
-            if (tree[`${node_}treeleft`] == "null") {
-
-              await display("Correct place to insert the element = CurrentNode->left")
-        let vid =  count;
-      await  avl(key_);
-      let videlement = document.getElementById(vid)
-      videlement.style.transition = speed+"ms linear";
-      videlement.style.top = parseInt( document.getElementById(node_).style.top)+85+"px";
-      videlement.style.left = parseInt( document.getElementById(node_).style.left)-35+"px";
+    let leftt =  tree[node_+"treeleft"];
+    avlparent[leftt] = node_; 
 
 
-        await new Promise(resolve => {
-
-
-          setTimeout(()=> {
-            treefy(`${node_}treeleft` ,vid)
-            
-            resolve('')
-            
-           },speed+100)
-            
-
-
-        })
-     
-        
-      
-             }
-
-             Log("Item smaller then current node, going left")
-
-    await insertavl(tree[`${node_}treeleft`], key_);
-
-      
     }
    
    
     else if (key_ >  parseInt( $(`#${node_}treeval`).text() , 10) )  {
 
 
-               if (tree[`${node_}treeright`] == "null") {
-
-                await display("Correct place to insert the element = CurrentNode->right")
-        let vid = count;
-        avl(key_);
-        let videlement = document.getElementById(vid)
-        videlement.style.transition = speed+"ms linear";
-        videlement.style.top = (parseInt( document.getElementById(node_).style.top)+85)+"px";
-        videlement.style.left = (parseInt( document.getElementById(node_).style.left)+35)+"px";
+    tree[`${node_}treeright`] = await insertavl(tree[`${node_}treeright`], key_);
 
 
-        await new Promise(resolve => {
+    let rightt =  tree[node_+"treeright"];
+    avlparent[rightt] = node_; 
 
 
-          setTimeout(()=> {
-            treefy(`${node_}treeright` ,vid)
-            
-            resolve('')
-            
-           },speed+100)
-            
-
-
-        })
-      
-                 }
-
-
-                 Log("Item larger then current node, going right")
-                 await   insertavl(tree[`${node_}treeright`], key_); 
-
-      
+                
     }
+
+    else return node_;
+
 
 
     let nodeheight = 1 + Math.max(height(tree[`${node_}treeleft`]), height(tree[`${node_}treeright`]));
     $(`#${node_}height`).text(nodeheight)
 
 
-
-
-
     let balance =  getBalance(node_);  
-
-   // Output("balance" + balance + "  node  "+ node_ )
 
    let lnode = tree[`${node_}treeleft`];
    let rnode = tree[`${node_}treeright`];
@@ -316,8 +199,6 @@ async function insertavl(node_, key_) {
       await display("Red node is unbalanced");
         let returned= await leftRotate(node_); 
 
-   
-
         await hilight(node_ , defaultcolor,"1200ms linear",1300);
 
         return returned;  
@@ -334,27 +215,18 @@ async function insertavl(node_, key_) {
       await display("Red node is unbalanced");
       await hilight(tree[`${node_}treeleft`] , defaultcolor,"1200ms linear",1300);
 
-        let newnodeleft = await leftRotate(tree[`${node_}treeleft`]);
+        tree[`${node_}treeleft`] = await leftRotate(tree[`${node_}treeleft`]);
 
-        await BalanceAll(node_);
+        BalanceAll(node_);
 
-        await waitforme(speed+100);
-       
-        let optiona = tree[`${node_}treeleft`];
-
-        del (`${node_}treeleft` , `${optiona}treetop`);
-
-         treefy(`${node_}treeleft`, newnodeleft);
-
+        await waitforme(speed+100)
+ 
       await hilight(node_ , "red","1200ms linear",1300);
       await display("Red node is unbalanced");
       await hilight(node_ , defaultcolor,"1200ms linear",1300);
 
-   
-        let returned = await rightRotate(node_);  
+        return  await rightRotate(node_);  
 
-       
-        return returned;
         
     }  
   
@@ -369,26 +241,20 @@ async function insertavl(node_, key_) {
       await hilight(tree[`${node_}treeright`] , defaultcolor,"1200ms linear",1300);
 
      
-        let newnoderight = await rightRotate(tree[`${node_}treeright`]);
+      tree[`${node_}treeright`] = await rightRotate(tree[`${node_}treeright`]);
 
-        await BalanceAll(node_);
-        await waitforme(speed+100);
-        let optiona = tree[`${node_}treeright`];
+      BalanceAll(node_);
 
-        del(`${node_}treeright` , `${optiona}treetop`);
-
-        treefy(`${node_}treeright`, newnoderight);
-
-
+      await waitforme(speed+100)
+  
         await hilight(node_ , "red","1200ms linear",1300);
         await display("Red node is unbalanced");
        await hilight(node_ , defaultcolor,"1200ms linear",1300);
 
         
-        let returned= await leftRotate(node_);  
+    return await leftRotate(node_);  
        
         
-        return returned;
     }  
 
 
@@ -418,10 +284,6 @@ async function deleteavl( _root , _key)
       
       tree[_root+`treeleft`] = await deleteavl(tree[_root+`treeleft`], _key); 
 
-    
-     if (dothetreefy == 1) { treefy(_root+`treeleft`, tree[_root+`treeleft`]); dothetreefy =0;}
-     
-
     }
     // If the _key to be deleted is greater than the _root's _key, 
     // then it lies in right subtree 
@@ -429,8 +291,6 @@ async function deleteavl( _root , _key)
 
       tree[_root+`treeright`]=   await deleteavl(tree[_root+`treeright`], _key); 
       
-    if (dothetreefy == 1) {treefy(_root+`treeright`, tree[_root+`treeright`]); dothetreefy=0; }
-
     }
 
 
@@ -441,8 +301,7 @@ async function deleteavl( _root , _key)
         if (tree[`${_root}treeleft`] == "null") 
         { 
             let temp = tree[`${_root}treeright`]; 
-           $("#"+_root).remove();
-           dothetreefy =1;
+           document.getElementById(_root).remove();
            r = temp
            return temp;
          
@@ -450,11 +309,9 @@ async function deleteavl( _root , _key)
         else if (tree[`${_root}treeright`] == "null") 
         { 
             let temp = tree[`${_root}treeleft`]; 
-         
-            dothetreefy =1;
-           
-            $("#"+_root).remove();
-         r = temp;
+
+            document.getElementById(_root).remove();
+            r = temp;
 
             return temp;
            
@@ -462,17 +319,11 @@ async function deleteavl( _root , _key)
 
         else {
 
-        
-  
-        // node with two children: Get the inorder successor (smallest 
-        // in the right subtree) 
-  
+      
         await display("getting Inorder Successor to replace");
 
         let temp = await minValueNode(tree[`${_root}treeright`]); 
 
-
-        
         // Copy the inorder successor's content to this node 
         await display("Copy the inorder successor's content to this node");
         $('#'+_root+"treeval").text(  $('#'+temp+"treeval").text() );
@@ -481,8 +332,6 @@ async function deleteavl( _root , _key)
         await display("Delete the inorder successor");
           dothetreefy=1;
         tree[`${_root}treeright`] = await deleteavl(tree[`${_root}treeright`], $('#'+temp+"treeval").text()); 
-
-        treefy(`${_root}treeright`,tree[`${_root}treeright`])
     } 
 
   }
@@ -544,15 +393,8 @@ if (balance > 1 &&  getBalance(tree[`${_root}treeleft`]) < 0)  {
   await hilight(tree[`${_root}treeleft`] , defaultcolor,"1200ms linear",1300);
 
 
-  let newnodeleft = await leftRotate(tree[`${_root}treeleft`]); 
+  tree[`${_root}treeleft`] = await leftRotate(tree[`${_root}treeleft`]); 
   
-  await waitforme(2000);
-
-  let optiona = tree[`${_root}treeleft`];
-
-  del (`${_root}treeleft` , `${optiona}treetop`);
-
-  treefy(`${_root}treeleft`, newnodeleft);
 
   await hilight(_root , "red","1200ms linear",1300);
       await display("Red node is unbalanced");
@@ -574,14 +416,8 @@ if (balance < -1 &&  getBalance(tree[`${_root}treeright`]) > 0)  {
   await hilight(tree[`${_root}treeright`] , defaultcolor,"1200ms linear",1300);
 
  
-  let newnoderight = await rightRotate(tree[`${_root}treeright`]);
+  tree[`${_root}treeright`] = await rightRotate(tree[`${_root}treeright`]);
   
-  await waitforme(2000);
-  let optiona = tree[`${_root}treeright`];
-
-  del(`${_root}treeright` , `${optiona}treetop`);
-
-  treefy(`${_root}treeright`, newnoderight);
   
   await hilight(_root , "red","1200ms linear",1300);
   await display("Red node is unbalanced");
@@ -630,7 +466,7 @@ function avl(element) {
    count = count +1;
    counttreenodes = counttreenodes + 1;
 
-return count;
+return count-1;
  }
 
 
@@ -643,11 +479,14 @@ return count;
 async function InsertAVL (h) {
 
   
-  redrawevent= requestAnimationFrame(redraw)
+  redrawevent= requestAnimationFrame(redrawsplay)
 
-    await insertavl(r,h);
+   await insertavl(r,h);
 
-    AVLpostleft[r] = 1900;
+
+    await waitforme(speed+100)
+
+    AVLpostleft[r] = 1905;
     AVLposttop[r] = 150;
 
     document.getElementById(r).style.top = 150+"px";
@@ -669,7 +508,7 @@ async function InsertAVL (h) {
 async function DeleteAVL (h) {
 
 
-  redrawevent= requestAnimationFrame(redraw)
+  redrawevent= requestAnimationFrame(redrawsplay)
 
   await deleteavl(r,h);
 
