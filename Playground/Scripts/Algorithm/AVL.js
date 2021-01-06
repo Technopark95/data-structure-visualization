@@ -121,7 +121,7 @@ async function insertavl(node_, key_) {
       } 
 
 
-     })
+     },100)
     
      window.scrollTo(1200,0)
 
