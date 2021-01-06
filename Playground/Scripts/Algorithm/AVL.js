@@ -484,7 +484,7 @@ async function InsertAVL (h) {
    await insertavl(r,h);
 
 
-    await waitforme(speed+100)
+    await waitforme(speed)
 
     AVLpostleft[r] = 1905;
     AVLposttop[r] = 150;
