@@ -35,7 +35,7 @@ Copyright 2020 Anoop Singh, Graphical Structure
 async function  preorder(CurrentNode) {
 
   
-  if (CurrentNode == "null") {
+  if (CurrentNode == "null" || document.getElementById(CurrentNode) == null) {
 
     return ;
 
@@ -58,7 +58,7 @@ async function  preorder(CurrentNode) {
 
 async function  inorder(CurrentNode ) {
 
-    if (CurrentNode == "null") {
+    if (CurrentNode == "null" || document.getElementById(CurrentNode) == null) {
   
       return;
   
@@ -84,7 +84,7 @@ async function  inorder(CurrentNode ) {
 
 async function  postorder(CurrentNode ) {
 
-    if (CurrentNode == "null") {
+    if (CurrentNode == "null" ||  document.getElementById(CurrentNode) == null) {
   
       return;
   
