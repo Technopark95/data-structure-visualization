@@ -323,6 +323,23 @@ document.body.insertAdjacentHTML("afterbegin",arr);
 let tablelement = document.getElementById("t1")
 
 
+
+
+tabledata = document.createElement("td");
+ 
+tabledata.style.cssText = "text-align:center; min-width:70px;background-color:coral;";
+
+tabledata.id= "minheapindication";
+
+tabledata.className = "arrayd";
+
+
+tabledata.innerHTML += '<div id="aitemdiv'+ "mh"+'"  style="text-align:center; position:absolute; z-index:1">         <p id="aitemindex'+"mh" +'" style="position:absolute; color:coral; margin-top:67px; margin-left:35px; font-size:37%";>'+"mh"+'</p>             <p id= "aitemvalc'+"mh" +'" class="arrayitem" style="color:black;top:-10px;">'+ "Min Heap"+'</p>   </div>'
+
+
+tablelement.appendChild(tabledata);
+
+
 $("#t1").draggable();
 let i=0;
 
