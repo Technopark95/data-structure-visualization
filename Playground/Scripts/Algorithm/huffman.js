@@ -1,8 +1,5 @@
 var lefthand = 500;
 
-var countedchars = {}
-
-
 var heapsize =0;
 
 async function swapphuff(vala,valb,cc)  {
@@ -253,7 +250,22 @@ getstring = String(getstring).toUpperCase();
 
 let stringelement = document.getElementById("stringholder");
 
-stringelement.innerHTML= "";
+
+stringelement.style.display=""
+
+ lefthand = 500;
+
+let countedchars = {}
+
+cleareverything();
+
+ heapsize =0;
+
+ count = 0;
+
+if (document.getElementById("t1"))document.getElementById("t1").remove();
+
+$(".dragg").remove();
 
 for (let letsgo = 0 ; letsgo < getstring.length ; letsgo++) {
 
@@ -355,6 +367,8 @@ kpointer.style.display = "";
 mainarray = document.getElementById("t1")
 
 stringelement.style.display="none"
+stringelement.innerHTML= "";
+
 
 Log("Sorting the array using Selection Sort");
 
