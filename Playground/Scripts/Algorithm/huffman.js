@@ -1,4 +1,4 @@
-var lefthand = 500;
+var lefthand = 100;
 
 var heapsize =0;
 
@@ -231,6 +231,16 @@ return refference;
 
 
 
+function swaplabels(lab1,lab2) {
+
+
+  let temp = document.getElementById(lab1).innerHTML;
+  document.getElementById(lab1).innerHTML = document.getElementById(lab2).innerHTML
+  document.getElementById(lab2).innerHTML = temp;
+
+
+}
+
 
 
 async function huffcode(getstring)  {
@@ -254,7 +264,7 @@ let stringelement = document.getElementById("stringholder");
 
 stringelement.style.display=""
 
- lefthand = 500;
+ lefthand = 100;
 
 let countedchars = {}
 
@@ -388,43 +398,20 @@ stringelement.style.display="none"
 stringelement.innerHTML= "";
 
 
-Log("Sorting the array using Selection Sort");
 
-await waitforme(speed);
-
-ipointer.style.display = "";
-      jpointer.style.display = "";
-      kpointer.style.display = "";
-  
-      var lene = storedarray.length;
-      
-      $("#iindex").text("j")
-      $("#jindex").text("j+1")
-  
       for (let i=0; i < storedarray.length-1; i++){
           for (let j=0; j < storedarray.length-i-1; j++){
-            await ij(j , j+1);
-            await display('Comparing index j=' + (j) + ' and j+1=' + (j+1) ) 
-            hilight("aitem"+(j) , "red" , "1000ms" , 1100)  
-                await hilight("aitem"+(j+1), "red" , "1000ms" , 1100) 
+      
               if (storedarray[j] > storedarray[j+1]){
-                var temp = storedarray[j];
+                let temp = storedarray[j];
                 storedarray[j] = storedarray[j+1];
                 storedarray[j+1] = temp;
-                await display('Element array['+ (j) +'] > array[' + (j+1)+ '] , Swapping')
-                
-                swapphuff(j,j+1,"f")
-               await swapphuff(j,j+1,"c")
+               
+                swaplabels("aitemvalf"+j,"aitemvalf"+(j+1))
+                swaplabels("aitemvalc"+j,"aitemvalc"+(j+1))
                
               }
-              
-              else {
-                await display('Element array['+ (j) +'] < array[' + (j+1)+ '] , Skip')  
-              }
-              hilight("aitem"+(j) , defaultcolor, '1s' , 900)  
-               hilight("aitem"+(j+1) ,defaultcolor,'1s' , 900)
-  
-               
+
                 
                 
           }
@@ -472,6 +459,8 @@ if (heapsize < 2) {
 
    AVLpostleft[summed] = lefthand;
    AVLposttop[summed] = 150;
+   
+   calcheight(summed)
 
    document.getElementById(summed).style.top = 150+"px";
    document.getElementById(summed).style.left = lefthand+"px";
@@ -479,7 +468,7 @@ if (heapsize < 2) {
 
    lefthand = lefthand + 150;
 
-   calcheight(summed)
+   
  
   BalanceAll(summed);
 
@@ -500,5 +489,20 @@ cancelAnimationFrame(redrawevent)
 
 
 }
+
+
+slider.onchange= function() {
+
+
+  let x = document.getElementsByClassName("dragg");
+  let ie;
+  for (ie = 0; ie < x.length; ie++) {
+    x[ie].style.transition = speed+"ms linear";
+  }
+  
+  
+}
+
+
 
 //huffcode('bcaadddccacacac')
