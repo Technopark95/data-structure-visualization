@@ -175,6 +175,7 @@ async function deleteminheap() {
     let refference;
     // Get the last element 
     let lastElement = storedarray[heapsize-1]; 
+
   
     // Replace root with first element 
     storedarray[0] = lastElement; 
@@ -440,13 +441,15 @@ Log("Treat array as Min-Heap");
 
 if (stats ==1) await pauser();
 
-
-redrawevent= requestAnimationFrame(redraw)
-
-
-while(heapsize >0) {
+ let summed;
+for (let u = 0 ; u < storedarray.length ; u++)  {
 
 
+  redrawevent= requestAnimationFrame(redraw)
+
+if (heapsize < 2) {
+  break;
+}
   let leftelem =  await deleteminheap()
  
   let rightelem =  await deleteminheap()
@@ -455,11 +458,11 @@ while(heapsize >0) {
 
   let sum = parseInt(leftelem.frequency)+parseInt(rightelem.frequency);
 
-
+ 
   await waitforme(speed)
 
 
- let summed =   await  insertminheap(sum)
+ summed =   await  insertminheap(sum)
 
 
    treefy(summed+"treeleft",leftelem.refference , "coral","0" )
@@ -474,28 +477,22 @@ while(heapsize >0) {
    document.getElementById(summed).style.left = lefthand+"px";
 
 
-   lefthand = lefthand + 130;
+   lefthand = lefthand + 150;
 
    calcheight(summed)
  
   BalanceAll(summed);
 
+  await waitforme (speed+100)
+
+  cancelAnimationFrame(redrawevent)
 
 
 
 }
 
 
-AVLpostleft[summed] = 700;
-AVLposttop[summed] = 150;
-
-document.getElementById(summed).style.top = 150+"px";
-document.getElementById(summed).style.left = 700+"px";
-
-calcheight(summed)
-
-BalanceAll(summed);
-
+Log("Huffman tree built")
 
 
 
