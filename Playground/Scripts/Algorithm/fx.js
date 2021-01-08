@@ -488,7 +488,7 @@ logscreen.scrollTop = logscreen.scrollHeight;
 
 
 
-function treefy(first,second ,color_ = "coral") {
+function treefy(first,second ,color_ = "coral" , _t ="") {
 
 
   mySVG.drawLine({
@@ -496,6 +496,7 @@ function treefy(first,second ,color_ = "coral") {
     right_node:second+'treetop',
     error:true,
     col : color_,
+    _text : _t,
     width:2,
       
   });
