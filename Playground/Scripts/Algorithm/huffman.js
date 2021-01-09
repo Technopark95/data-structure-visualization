@@ -123,7 +123,7 @@ async function minHEAPIFY2( n,  i)
         // If current node is greater than its parent 
         // Swap both of them and call heapify again 
         // for the parent 
-        if (storedarray[i] < storedarray[parent] && i!=parent) { 
+        if (storedarray[i] <= storedarray[parent] && i!=parent) { 
          //   swap(arr[i], arr[parent]);
             let tt = storedarray[i]
             storedarray[i] = storedarray[parent];
@@ -209,17 +209,26 @@ async function insertminheap(value)   {
 
     storedarray[heapsize] = value;
 
+
+
   let refference =  heapleaf(value)
 
 
  
     document.getElementById("aitemvalf"+(heapsize)).innerHTML = value;
      document.getElementById("aitemvalc"+(heapsize)).innerHTML = refference;
+
+     Log("inserted the sum")
+
+
     
  document.getElementById("aitem"+heapsize).style.visibility = "visible";
 
  await waitforme(speed)
 
+ Log("Heapifying")
+
+ Log(`${heapsize+1}  ${heapsize}`)
 
 await minHEAPIFY2(heapsize+1, heapsize)
 
@@ -506,3 +515,4 @@ slider.onchange= function() {
 
 
 //huffcode('bcaadddccacacac')
+//huffcode('huffcode('heleeelllllllishere')
