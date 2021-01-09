@@ -392,6 +392,10 @@ tabledata.innerHTML += '<div id="aitemdiv'+ i+'"  style="text-align:center; posi
 heapsize= Object.keys(countedchars).length
 
 
+Log("Sort the elements")
+await waitforme (speed+100)
+
+
 tableobj = $("#t1")
 
 ipointer.style.display = "";
@@ -431,6 +435,7 @@ stringelement.innerHTML= "";
 
 
 Log("Treat array as Min-Heap");
+
 
 
 if (stats ==1) await pauser();
@@ -513,4 +518,4 @@ slider.onchange= function() {
 
 
 //huffcode('bcaadddccacacac')
-//huffcode('huffcode('heleeelllllllishere')
+//huffcode('heleeelllllllishere')
