@@ -152,7 +152,7 @@ function heapleaf(element) {
 
 
    $("body").prepend(newnode)
-
+$("#"+count).draggable();
    tree[count+"treeleft"] = "null"
    tree[count+"treeright"] = "null"
 
