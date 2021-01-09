@@ -152,7 +152,6 @@ function heapleaf(element) {
 
 
    $("body").prepend(newnode)
-   $("#"+count).draggable();
 
    tree[count+"treeleft"] = "null"
    tree[count+"treeright"] = "null"
@@ -218,17 +217,16 @@ async function insertminheap(value)   {
     document.getElementById("aitemvalf"+(heapsize)).innerHTML = value;
      document.getElementById("aitemvalc"+(heapsize)).innerHTML = refference;
 
-     Log("inserted the sum")
-
-
     
  document.getElementById("aitem"+heapsize).style.visibility = "visible";
 
+ 
+ Log("inserting New elemet at correct position")
+
+
+
  await waitforme(speed)
 
- Log("Heapifying")
-
- Log(`${heapsize+1}  ${heapsize}`)
 
 await minHEAPIFY2(heapsize+1, heapsize)
 
