@@ -513,20 +513,20 @@ function treefy(first,second ,color_ = "coral" , _t ="") {
   parent[second] = par;
 
 
-      // $( '#'+par ).draggable({
-      //     drag: function(event, ui){
+      $( '#'+par ).draggable({
+          drag: function(event, ui){
             
             
-      //       mySVG.redrawLines();
+            mySVG.redrawLines();
 
-      //      // mySVG.Splaylines();
+           // mySVG.Splaylines();
           
-      //     }
-      //   });
-      //   $( '#'+second ).draggable({
-      //     drag: function(event, ui){mySVG.redrawLines();
-      //     }
-      //   });
+          }
+        });
+        $( '#'+second ).draggable({
+          drag: function(event, ui){mySVG.redrawLines();
+          }
+        });
 
 
 
