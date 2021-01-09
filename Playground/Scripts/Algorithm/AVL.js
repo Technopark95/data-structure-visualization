@@ -456,7 +456,7 @@ function avl(element) {
 
 
     document.body.insertAdjacentHTML("afterbegin",newnode)
-
+   $("#"+count).draggable();
 
    tree[count+"treeleft"] = "null"
    tree[count+"treeright"] = "null"
