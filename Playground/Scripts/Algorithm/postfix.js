@@ -26,7 +26,7 @@ Copyright 2020 Anoop Singh, Graphical Structure
 function finalexp()  {
 
 
-    $("body").append(`<div id="expression" style="backdrop-filter:blur(7px);position:absolute;top:450px;left:100px;min-width:100%;height:60px;border-radius:4px; background-color:rgba(0,0,0,.7);"><p id="exptext" style="font-size:200%;position:absolute; top:-20px;left:8px;letter-spacing:15px;font-family:consolas;color:white;"></p></div>`)
+    $("body").append(`<div id="expression" style="backdrop-filter:blur(7px);position:absolute;top:450px;left:100px;min-width:1050px;height:60px;border-radius:4px; background-color:rgba(0,0,0,.7);"><p id="exptext" style="font-size:200%;position:absolute; top:-20px;left:8px;letter-spacing:15px;font-family:consolas;color:white;"></p></div>`)
 
 
     $("#expression").draggable();
