@@ -68,6 +68,7 @@ var logscreen = document.getElementById("log1");
 var outputscreen = document.getElementById("out1");
 
 
+document.body.insertAdjacentHTML("afterbegin",`<div id='playlabel'><p id="plbl">Play</p></div><div id='pauselabel'><p id="palbl" >Pause</p></div>`)
 
 document.body.insertAdjacentHTML("afterbegin",`<img id="pointerarrow" src="../pointer.png" style="height: 70px; width: 70px; position: absolute; top: 135px;transition-duration:500ms;">`)
 var pointerarrow = document.getElementById("pointerarrow")
@@ -173,6 +174,39 @@ pausebtn.addEventListener("click",function()  {
   
 
 })
+
+
+playbtn.addEventListener("mouseenter",function()  {
+
+  document.getElementById("playlabel").style.opacity = "1";
+  
+
+})
+
+pausebtn.addEventListener("mouseenter",function()  {
+
+  document.getElementById("pauselabel").style.opacity = "1";
+  
+  
+
+})
+
+
+playbtn.addEventListener("mouseleave",function()  {
+
+  document.getElementById("playlabel").style.opacity = "0";
+  
+
+})
+
+pausebtn.addEventListener("mouseleave",function()  {
+
+  document.getElementById("pauselabel").style.opacity = "0";
+  
+  
+
+})
+
 
 
 
