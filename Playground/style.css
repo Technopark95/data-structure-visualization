@@ -667,3 +667,36 @@ font-size: 80%;
 color : black;
 
 }
+
+
+#playlabel {
+  width: 50px;height: 20px;position: fixed;top: 210px;right: 300px;border-style: dashed;border-radius: 20px;text-align: center;display: inline;border-width: 2px;border-color: purple;
+transition: opacity 500ms;
+  opacity: 0;
+}
+
+
+
+#pauselabel {
+  
+  width: 50px;height: 20px;position: fixed;top: 210px;right: 210px;border-style: dashed;border-radius: 20px;text-align: center;display: inline;border-width: 2px;border-color: red;
+  transition: opacity 500ms;
+    opacity: 0;
+  }
+  
+
+  #plbl {
+
+
+    font-size:13px;font-family: consolas;color:purple;top: -10px;left:12px;position: absolute;
+  }
+
+
+  #palbl {
+
+
+    font-size:13px;font-family: consolas;color:red;top: -10px;left:8px;position: absolute;
+  }
+
+
+
