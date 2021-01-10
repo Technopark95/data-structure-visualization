@@ -513,6 +513,41 @@ async function moveright(index)  {
 }
 
 
+async function moveleft(index)  {
+
+  if (stats == 1  ) await pauser();
+
+  let elemp1 = document.getElementById("aitemval"+(index-1));
+  let elem = document.getElementById("aitemval"+(index));
+
+  let elemtext = elem.innerHTML;
+  let elemp1text = elemp1.innerHTML;
+
+  elem.style.transition = speed+"ms linear";
+  elemp1.style.transition = speed+"ms linear";
+
+  elemp1.style.opacity = "0%";
+  elem.style.left = "-94px";
+
+  await waitforme(speed+100);
+
+  elem.style.transition = "0ms";
+  elemp1.style.transition ="0ms";
+
+  elem.innerHTML = elemp1text;
+  elemp1.innerHTML = elemtext;
+
+
+ elemp1.style.opacity = "100%";
+ elem.style.left = "0px";
+ elem.style.opacity = "0%";
+
+ await waitforme(50);
+
+
+}
+
+
 
 
 async function arraynodes() 
