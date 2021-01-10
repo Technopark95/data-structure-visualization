@@ -88,11 +88,11 @@ async function minheapify( len,  ind)
     var r = 2*ind + 2; // right = 2*i + 2 
   
     
-    // If left child is larger than root 
+    // If left child is smaller than root 
     if (l < len && storedarray[l] < storedarray[smallest]) 
         smallest = l; 
   
-    // If right child is larger than smallest so far 
+    // If right child is smaller than smallest so far 
     if (r < len && storedarray[r] < storedarray[smallest]) 
         smallest = r; 
   
@@ -169,7 +169,7 @@ $("#"+count).draggable();
 
 async function deleteminheap() { 
 
-    let frequency = storedarray[0];
+    let frequency =document.getElementById("aitemvalf0").innerHTML
     let character = document.getElementById("aitemvalc0").innerHTML
     let refference;
     // Get the last element 
@@ -206,7 +206,7 @@ async function deleteminheap() {
 
 async function insertminheap(value)   {
 
-    storedarray[heapsize] = value;
+    storedarray[heapsize] = value+0.5;
 
 
 
@@ -455,7 +455,7 @@ if (heapsize < 2) {
 
   
 
-  let sum = parseInt(leftelem.frequency)+parseInt(rightelem.frequency);
+  let sum = parseFloat(leftelem.frequency)+parseFloat(rightelem.frequency);
 
  
   await waitforme(speed)
