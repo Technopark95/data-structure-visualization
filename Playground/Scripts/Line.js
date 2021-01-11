@@ -59,8 +59,8 @@ var _error =false;
 		//Initialize Canvas object
 
 		_canvas.id = "cav1";
-		_canvas.width = 10000;
-		_canvas.height = 4300; 
+		_canvas.width = document.body.clientWidth;
+		_canvas.height = document.body.clientHeight; 
 		document.body.appendChild(_canvas)
 
 
