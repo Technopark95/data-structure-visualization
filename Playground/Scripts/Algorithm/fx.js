@@ -70,6 +70,8 @@ var outputscreen = document.getElementById("out1");
 
 document.body.insertAdjacentHTML("afterbegin",`<div id='playlabel'><p id="plbl">Play</p></div><div id='pauselabel'><p id="palbl" >Pause</p></div>`)
 
+document.body.insertAdjacentHTML("afterbegin",`<img id = "pause-btn-img" src="../pause-button-png-29658.png"  style= "position:fixed; left:40px;top: 40px; opacity: 0;transition:opacity 500ms;z-index:-1;"/>`)
+
 document.body.insertAdjacentHTML("afterbegin",`<img id="pointerarrow" src="../pointer.png" style="height: 70px; width: 70px; position: absolute; top: 135px;transition-duration:500ms;">`)
 var pointerarrow = document.getElementById("pointerarrow")
 pointerarrow.style.display="none";
@@ -151,6 +153,7 @@ function pauser ()  {
       playbtn.removeEventListener("click",playbuttonclick);
     
     stats = 0 ;
+    document.getElementById("pause-btn-img").style.opacity = "0";
     resolve("reolved");
     
     }
@@ -171,6 +174,7 @@ pausebtn.addEventListener("click",function()  {
 
   pausebtn.style.filter = "blur(5px)";
   playbtn.style.filter = "blur(0px)";
+  document.getElementById("pause-btn-img").style.opacity = ".3";
   
 
 })
