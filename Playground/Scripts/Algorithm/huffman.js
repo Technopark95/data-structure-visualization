@@ -62,7 +62,7 @@ for (let nodes = 1 ; nodes < alignments.length ; nodes++)  {
 
   positiongarray[nodes] = 100+ positiongarray[nodes-1]+ 20* ( Math.pow(2, rightheightprev) +  Math.pow(2, leftheightcurr))
 
-  Log(`${rootelement}   ${rightheightprev}  ${leftheightcurr}  ${positiongarray[nodes]} `)
+ // Log(`${rootelement}   ${rightheightprev}  ${leftheightcurr}  ${positiongarray[nodes]} `)
  
 }
 
