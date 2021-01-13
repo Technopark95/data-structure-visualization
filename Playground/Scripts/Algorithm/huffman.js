@@ -20,9 +20,82 @@ Copyright 2020 Anoop Singh, Graphical Structure
 */
 
 
+var alignments = [];
+
 var lefthand = 100;
 
 var heapsize =0;
+
+var positiongarray = []
+
+
+
+async function noncollide()   {
+
+let leftcord = 200;
+
+let rootelement = alignments[0], prevrootelement
+
+
+let rightheightprev, leftheightcurr;
+
+
+
+
+let heightofroot = parseInt( document.getElementById(rootelement+"height").innerHTML)
+
+positiongarray[0] =  leftcord +  20*( Math.pow(2,  heightofroot));
+
+
+
+
+
+for (let nodes = 1 ; nodes < alignments.length ; nodes++)  {
+
+
+  prevrootelement = alignments[nodes-1]
+  rootelement =alignments[nodes]
+
+
+   rightheightprev = parseInt( document.getElementById(prevrootelement+"height").innerHTML)
+   leftheightcurr = parseInt( document.getElementById(rootelement+"height").innerHTML)
+
+  positiongarray[nodes] = 100+ positiongarray[nodes-1]+ 20* ( Math.pow(2, rightheightprev) +  Math.pow(2, leftheightcurr))
+
+  Log(`${rootelement}   ${rightheightprev}  ${leftheightcurr}  ${positiongarray[nodes]} `)
+ 
+}
+
+
+
+for (let nodes = 0 ; nodes < alignments.length ; nodes++)  {
+
+
+rootelement = alignments[nodes];
+
+
+  calcheight(rootelement);
+  document.getElementById(rootelement).style.left =  positiongarray[nodes]+"px"
+
+AVLposttop[rootelement] = 150;
+AVLpostleft[rootelement] = positiongarray[nodes];
+
+BalanceAll(rootelement)
+
+
+
+
+
+}
+
+positiongarray=[]
+AVLpostleft = [];
+
+
+
+}
+
+
 
 async function swapphuff(vala,valb,cc)  {
 
@@ -274,6 +347,7 @@ function swaplabels(lab1,lab2) {
 
 async function huffcode(getstring)  {
 
+  alignments = []
 
   var regex = /^[A-Za-z0-9 ]+$/
  
@@ -463,6 +537,8 @@ Log("Treat array as Min-Heap");
 if (stats ==1) await pauser();
 
  let summed;
+
+ let subtreedata;
 for (let u = 0 ; u < storedarray.length ; u++)  {
 
 
@@ -473,9 +549,10 @@ if (heapsize < 2) {
 }
   let leftelem =  await deleteminheap()
  
+
   let rightelem =  await deleteminheap()
 
-  
+
 
   let sum = parseInt(leftelem.frequency)+parseInt(rightelem.frequency);
 
@@ -486,30 +563,32 @@ if (heapsize < 2) {
  summed =   await  insertminheap(sum)
 
 
+
+
+
    treefy(summed+"treeleft",leftelem.refference , "coral","0" )
    treefy(summed+"treeright",rightelem.refference ,"coral", "1" )
+calcheight(summed)
+
+   let index = alignments.indexOf(Number(leftelem.refference));
+
+   if (index > -1) {
+     alignments.splice(index, 1);
+   }
+
+   index = alignments.indexOf(Number(rightelem.refference));
+
+   if (index > -1) {
+     alignments.splice(index, 1);
+   }
 
 
-
-   AVLpostleft[summed] = lefthand;
-   AVLposttop[summed] = 150;
-   
-   calcheight(summed)
-
-   document.getElementById(summed).style.top = 150+"px";
-   document.getElementById(summed).style.left = lefthand+"px";
+   alignments.push(summed);
 
 
-   lefthand = lefthand + 150;
-
-   
- 
-  BalanceAll(summed);
+  noncollide();
 
   await waitforme (speed+100)
-
-  cancelAnimationFrame(redrawevent)
-
 
 
 }
