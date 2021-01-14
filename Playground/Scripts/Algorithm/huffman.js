@@ -583,7 +583,7 @@ calcheight(summed)
    }
 
 
-   alignments.push(summed);
+   alignments.unshift(summed);
 
 
   noncollide();
