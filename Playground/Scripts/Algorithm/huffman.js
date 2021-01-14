@@ -536,13 +536,13 @@ Log("Treat array as Min-Heap");
 
 if (stats ==1) await pauser();
 
+  redrawevent= requestAnimationFrame(redraw)
+
  let summed;
 
  let subtreedata;
 for (let u = 0 ; u < storedarray.length ; u++)  {
 
-
-  redrawevent= requestAnimationFrame(redraw)
 
 if (heapsize < 2) {
   break;
