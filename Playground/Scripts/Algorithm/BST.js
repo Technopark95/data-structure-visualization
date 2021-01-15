@@ -217,6 +217,8 @@ let precolor = document.getElementById(ro).style.backgroundColor;
               let temp = tree[`${_root}treeright`]; 
              document.getElementById(_root).remove();
              mySVG.redrawLines();
+             Pullup(temp);
+           
               return temp; 
           } 
           else if (tree[`${_root}treeright`] == "null") 
@@ -225,6 +227,7 @@ let precolor = document.getElementById(ro).style.backgroundColor;
            
               document.getElementById(_root).remove();
              mySVG.redrawLines();
+             Pullup(temp);
               return temp; 
           } 
     
@@ -246,6 +249,9 @@ let precolor = document.getElementById(ro).style.backgroundColor;
           tree[`${_root}treeright`] = await deletebst(tree[`${_root}treeright`],document.getElementById(temp+"treeval").innerHTML); 
           treefy(`${_root}treeright`,tree[`${_root}treeright`])
       } 
+
+   await   DelShiftleft(_root)
+   await   DelShiftright(_root)
       return _root; 
   
       
