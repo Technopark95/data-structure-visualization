@@ -703,8 +703,6 @@ function rightmost(rootnode)  {
         
               try {
                     
-                    
-                      
                 if ( source == undefined || source == "null" || destination == undefined || destination == "null"  ) {
                   return;
                 }
