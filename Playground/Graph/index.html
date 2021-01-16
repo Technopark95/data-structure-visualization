@@ -76,6 +76,7 @@
 
 
 
+
 <link rel="icon" href="../favicon.png" type="image/png" sizes="16x16">
 <link rel="stylesheet" href="../stack.css">
 <link rel="stylesheet" href="../queue.css">
@@ -84,6 +85,28 @@
 <script src="../Scripts/jquery.js"></script>
 <script src="../Scripts/jquery-ui.js"></script>
 <script src="../Scripts/Line.js"></script>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCKSfOfUQ23myUg-woZwWiLOMsjmuBwAHM",
+    authDomain: "graphicalstructure.firebaseapp.com",
+    databaseURL: "https://graphicalstructure-default-rtdb.firebaseio.com",
+    projectId: "graphicalstructure",
+    storageBucket: "graphicalstructure.appspot.com",
+    messagingSenderId: "350537227105",
+    appId: "1:350537227105:web:f03bf9e28a96e06fd30320"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
 
 
 </head>
@@ -190,27 +213,24 @@
 
 
   <div class="commandcopy">
-    <p>importgraph("Filename" , "password-to-access")</p>
+    <p>importgraph("graphname")</p>
   </div>
 
   <p  style="font-size: 110%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 40px;">Some prebuilt graph that you can import.</p>
 
 
   <div class="commandcopy">
-    <p>importgraph("Final2" , "rotate")</p>
+    <p>importgraph("Final2")</p>
   </div>
   <div class="commandcopy">
-    <p>importgraph("star" , "star")</p>
-  </div>
-  <div class="commandcopy">
-    <p>importgraph("mod" , "mod")</p>
+    <p>importgraph("star")</p>
   </div>
 
   <p  style="font-size: 80%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 60px;">Utility function to export graph at graphicalstructure database after you make a graph.</p>
 
 
   <div class="commandcopy">
-    <p>exportgraph("Filename" , "password-to-protect")</p>
+    <p>exportgraph("newgraphname")</p>
   </div>
 
 

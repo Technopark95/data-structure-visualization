@@ -962,27 +962,24 @@ $("#graphinput").val("")
     cleargraph();
     _ctx.clearRect(0, 0,  10000, 4300);
 
-    $(document).scrollLeft(0)
-    $(document).scrollTop(0)
+window.scrollTo(0,0)
 
-   let gname = `${name}.json`;
 
+let firebaseref = firebase.database().ref(name)
+
+
+let datasnapshot = await firebaseref.once("value");
+
+
+    if (datasnapshot.val() == null)  {
+        Output("Graph Doesnt exist")
+        return;
+    }
   
 
 
-   $.post("https://graphicalstructure.000webhostapp.com/loadprocess.php" , {filesig : name , oop : pass} , function(res,stat)  {
+    graphdata = datasnapshot.val();
 
-if (res == "FAILED") {
- display ("Password not correct.Try Again.");
- return;
-}
-
-
-     graphdata = JSON.parse(res);
-
-
-
-  
 
    NoOfVertex= graphdata["Nodes"];
 
@@ -1009,6 +1006,8 @@ if (res == "FAILED") {
    let edgeinfo = graphdata["Edge"];
    let noofedge = edgeinfo.length;
 
+
+
    for (let ed = 0 ; ed < noofedge ; ++ed)  {
 
        
@@ -1019,13 +1018,34 @@ if (res == "FAILED") {
    
        }
 
-     })
-
-     
-}
 
 
-function exportgraph(name , pass) {
+ }
+
+async function exportgraph(name) {
+
+       
+let firebasedatabse = firebase.database()
+
+let CheckIfExist = firebasedatabse.ref(name);
+
+ let check =await CheckIfExist.once("value");
+
+
+    if (check.val() != null)  {
+
+        Output("Try again with different graphname")
+        return;
+
+    }
+  
+
+
+
+
+let firebaseref = firebasedatabse.ref();
+
+
 
    let posar ={};
 let el_pos = {};
@@ -1034,7 +1054,6 @@ let el_pos = {};
 
 el_pos["Nodes"] = NoOfVertex;
 
-el_pos["encryption"] = pass;
 
    for ( let sig = 0 ; sig < NoOfVertex ; sig = sig +1) {
    
@@ -1053,21 +1072,12 @@ el_pos["encryption"] = pass;
 
 el_pos["Edge"] = edgedata;
 
-   
-   let jsonstring = JSON.stringify(el_pos ,null , 4)
-   
 
-   $.post("https://graphicalstructure.000webhostapp.com/process.php" , {filesig : name , content : jsonstring} , function(res)  {
-
-
-     display(res)
-
-
-
-   })
-  
-
-
+   firebaseref.child(name).set(el_pos)
 
    
+Output("Graph saved successfully")
+
+
+
    }
