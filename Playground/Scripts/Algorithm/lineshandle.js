@@ -139,8 +139,8 @@ const mouseupListener = (e) => {
 
  
 
-let mousex = e.clientX+70;
-let mousey = e.clientY+70;
+let mousex = e.clientX+40;
+let mousey = e.clientY+40;
 
 $("#graphinput").css({ "top" :`${mousey}px`, "left" :`${mousex}px`  , "visibility" : "visible"})
 $("#graphinput").focus();
