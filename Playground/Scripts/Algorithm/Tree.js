@@ -704,7 +704,7 @@ function rightmost(rootnode)  {
               try {
                     
                 if ( source == undefined || source == "null" || destination == undefined || destination == "null"  ) {
-                  return;
+                 continue;
                 }
                       //To decide colour of the line
                     
@@ -797,22 +797,21 @@ function rightmost(rootnode)  {
   function leaf(element) {
 
   
+    newnode = '<div id="'+count+'" style="transform:scale(.8,.8);left:0px;top:150px;transition:'+ speed+'ms linear;"  class="dragg" > <div class="treenode" id="'+ count+"treetop" +'" style="margin-left:35px;"></div>  <div class="treenode" id="'+ count+"treeleft" +'" style="margin-left:18px; margin-top:70px;"></div>   <div class="treenode" id="'+ count+"treeright" +'" style="margin-left:54px; margin-top:70px;"></div> <p  style="position:absolute;color:coral; font-size:70%; left:20px;" id="'+ count+"bottom" +'">'+count +'</p>   <div style="position:absolute; text-align:center; top:65px; left:38px;height:1px; width:20px;"><p  style="color:white;margin-top:-2px;margin-left:-15px; font-size:50%; " id="'+ count+"height" +'">'+"1" +'</p></div>   <p  id="'+ count+"treeval" +'" class="t">'+element+'</p>   </div>';
 
-     newnode = '<div id="'+count+'" style=" transition:'+ speed+ 'ms linear;transform:scale(.8,.8);left:1250px;top:150px;"  class="dragg" > <div class="treenode" id="'+ count+"treetop" +'" style="margin-left:35px;"></div>  <div class="treenode" id="'+ count+"treeleft" +'" style="margin-left:18px; margin-top:70px;"></div>   <div class="treenode" id="'+ count+"treeright" +'" style="margin-left:54px; margin-top:70px;"></div> <p  style="position:absolute;color:coral; font-size:70%; left:20px;" id="'+ count+"bottom" +'">'+count +'</p>    <p  id="'+ count+"treeval" +'" class="t">'+element+'</p>   </div>';
 
+    document.body.insertAdjacentHTML("afterbegin",newnode)
+   $("#"+count).draggable({drag:function(){mySVG.redrawsplay()}});
 
-     document.body.insertAdjacentHTML("afterbegin",newnode)
-    $("#"+count).draggable();
+   tree[count+"treeleft"] = "null"
+   tree[count+"treeright"] = "null"
 
-    tree[count+"treeleft"] = "null"
-    tree[count+"treeright"] = "null"
+   divbyelement[element] = count
+ 
+   count = count +1;
+   counttreenodes = counttreenodes + 1;
 
-    divbyelement[element] = count
-
-  
-
-    count = count +1;
-    counttreenodes = counttreenodes + 1;
+return count-1;
 
 
   }
