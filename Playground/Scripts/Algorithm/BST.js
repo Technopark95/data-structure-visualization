@@ -27,7 +27,7 @@ var avlparent = {}
 
 var r = 0;
 
-
+var deletednode = 0;
 
 
 
@@ -219,6 +219,7 @@ let precolor = document.getElementById(ro).style.backgroundColor;
               let temp = tree[`${_root}treeright`]; 
              document.getElementById(_root).remove();
           
+             deletednode = _root;
              Pullup(temp);
            
              r = temp
@@ -230,6 +231,7 @@ let precolor = document.getElementById(ro).style.backgroundColor;
            
               document.getElementById(_root).remove();
          
+              deletednode = _root;
              Pullup(temp);
 
              r = temp
@@ -267,14 +269,25 @@ let precolor = document.getElementById(ro).style.backgroundColor;
 
   async function InsertBST (value) {
 
+
+    let flag = 0;
+
+    if (document.getElementById(r) == null) {
+
+      flag = 1;
+    }
+
     redrawevent =  requestAnimationFrame(redrawsplay);
 
 await insertbst(r, value);
 
 
-
+   if ( flag == 1)  {
 document.getElementById(r).style.top = 150+"px";
-document.getElementById(r).style.left = 605+"px";
+document.getElementById(r).style.left = 1900+"px";
+
+window.scrollTo(1200,0)
+    }
 
 await waitforme(speed+100)
 
@@ -285,13 +298,23 @@ cancelAnimationFrame(redrawevent)
 
   async function DeleteBST (value) {
 
+   
+    let cpyr = r;
+ let flag = 0;
+
+    if (document.getElementById(r) == null) {
+
+      flag = 1;
+    }
+
     redrawevent = requestAnimationFrame(redrawsplay);
 
     await deletebst(r, value);
 
+    if (cpyr != deletednode || flag == 1)  {
 document.getElementById(r).style.top = 150+"px";
-document.getElementById(r).style.left = 605+"px";
-
+document.getElementById(r).style.left = 1900+"px";
+    }
 
     await waitforme (speed+100);
 
