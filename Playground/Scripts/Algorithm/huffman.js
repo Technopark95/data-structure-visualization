@@ -62,7 +62,6 @@ for (let nodes = 1 ; nodes < alignments.length ; nodes++)  {
 
   positiongarray[nodes] = 100+ positiongarray[nodes-1]+ 20* ( Math.pow(2, rightheightprev) +  Math.pow(2, leftheightcurr))
 
- // Log(`${rootelement}   ${rightheightprev}  ${leftheightcurr}  ${positiongarray[nodes]} `)
  
 }
 
@@ -597,6 +596,25 @@ calcheight(summed)
 Log("Huffman tree built")
 
 
+let huffmanroot = alignments[0];
+
+while (tree[huffmanroot+"treeleft"] !="null")  {
+
+  huffmanroot = tree[huffmanroot+"treeleft"];
+
+}
+
+let difference = parseInt( document.getElementById(huffmanroot).style.left)-100
+
+
+let x = document.getElementsByClassName("dragg");
+let ie;
+for (ie = 0; ie < x.length; ie++) {
+  x[ie].style.left = parseInt(  x[ie].style.left) - difference +"px"
+}
+
+
+await waitforme (speed+100)
 
 cancelAnimationFrame(redrawevent)
 
