@@ -469,11 +469,11 @@ AVLposttop[0] = 150;
   
     if (lefttarget != "null" ) {
   
-  AVLposttop[lefttarget] =  AVLposttop[root_] +85;  
-  AVLpostleft[lefttarget] =  AVLpostleft[root_]  - ( 20 * Math.pow( 2, height(lefttarget)) )
+  // AVLposttop[lefttarget] =  AVLposttop[root_] +85;  
+  // AVLpostleft[lefttarget] =  AVLpostleft[root_]  - ( 20 * Math.pow( 2, height(lefttarget)) )
   
-   document.getElementById(lefttarget).style.top = AVLposttop[lefttarget]+"px";
-    document.getElementById(lefttarget).style.left = AVLpostleft[lefttarget]+"px";
+   document.getElementById(lefttarget).style.top = parseInt(document.getElementById(root_).style.top)+85+"px";
+    document.getElementById(lefttarget).style.left = parseInt(document.getElementById(root_).style.left)- ( 20 * Math.pow( 2, height(lefttarget)) )+"px";
   
      
     }
@@ -482,15 +482,14 @@ AVLposttop[0] = 150;
     if (righttarget != "null" ) {
   
   
-   AVLposttop[righttarget] =  AVLposttop[root_] +85; 
+  //  AVLposttop[righttarget] =  AVLposttop[root_] +85; 
    
 
-   AVLpostleft[righttarget] =  AVLpostleft[root_]  + ( 20 * Math.pow( 2, height(righttarget)) )
+  //  AVLpostleft[righttarget] =  AVLpostleft[root_]  + ( 20 * Math.pow( 2, height(righttarget)) )
    
 
-    document.getElementById(righttarget).style.top = AVLposttop[righttarget]+"px";
-    document.getElementById(righttarget).style.left = AVLpostleft[righttarget]+"px";
-
+   document.getElementById(righttarget).style.top = parseInt(document.getElementById(root_).style.top)+85+"px";
+    document.getElementById(righttarget).style.left = parseInt(document.getElementById(root_).style.left)+ ( 20 * Math.pow( 2, height(righttarget)) )+"px";
   
 
   
