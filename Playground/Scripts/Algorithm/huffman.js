@@ -44,40 +44,44 @@ let rightheightprev, leftheightcurr;
 
 let heightofroot = parseInt( document.getElementById(rootelement+"height").innerHTML)
 
-positiongarray[0] =  leftcord +  20*( Math.pow(2,  heightofroot));
+
+calcheight(rootelement);
+
+document.getElementById(rootelement).style.left =  leftcord +  20*( Math.pow(2,  heightofroot))+"px"
+
+BalanceAll(rootelement)
 
 
+
+// for (let nodes = 1 ; nodes < alignments.length ; nodes++)  {
+
+
+//   prevrootelement = alignments[nodes-1]
+//   rootelement =alignments[nodes]
+
+
+//    rightheightprev = parseInt( document.getElementById(prevrootelement+"height").innerHTML)
+//    leftheightcurr = parseInt( document.getElementById(rootelement+"height").innerHTML)
+
+//   positiongarray[nodes] = 100+ positiongarray[nodes-1]+ 20* ( Math.pow(2, rightheightprev) +  Math.pow(2, leftheightcurr))
+
+ 
+// }
 
 
 
 for (let nodes = 1 ; nodes < alignments.length ; nodes++)  {
 
-
-  prevrootelement = alignments[nodes-1]
-  rootelement =alignments[nodes]
-
-
-   rightheightprev = parseInt( document.getElementById(prevrootelement+"height").innerHTML)
-   leftheightcurr = parseInt( document.getElementById(rootelement+"height").innerHTML)
-
-  positiongarray[nodes] = 100+ positiongarray[nodes-1]+ 20* ( Math.pow(2, rightheightprev) +  Math.pow(2, leftheightcurr))
-
- 
-}
-
-
-
-for (let nodes = 0 ; nodes < alignments.length ; nodes++)  {
-
+prevrootelement = alignments[nodes-1]
 
 rootelement = alignments[nodes];
 
+rightheightprev = parseInt( document.getElementById(prevrootelement+"height").innerHTML)
+   leftheightcurr = parseInt( document.getElementById(rootelement+"height").innerHTML)
+
 
   calcheight(rootelement);
-  document.getElementById(rootelement).style.left =  positiongarray[nodes]+"px"
-
-AVLposttop[rootelement] = 150;
-AVLpostleft[rootelement] = positiongarray[nodes];
+  document.getElementById(rootelement).style.left =  100+ parseInt(document.getElementById(prevrootelement).style.left) + 20* ( Math.pow(2, rightheightprev) +  Math.pow(2, leftheightcurr))+"px"
 
 BalanceAll(rootelement)
 
