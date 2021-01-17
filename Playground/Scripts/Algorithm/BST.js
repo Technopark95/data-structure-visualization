@@ -1,19 +1,66 @@
+
+/*
+
+Copyright 2020 Anoop Singh, Graphical Structure
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+
+
+*/
+
+
+var avlnode;
+
+var avlparent = {}
+
+
+var r = 0;
+
+
+
+
+
 async function insertbst(node_, key_) { 
 
 
-    if (document.getElementById(node_) ==null)  {
+    if (document.getElementById(node_) == null)  {
 
-      await display("Tree Empty. Adding root node.");
-      let vid =count;
-       leaf(key_); 
+      avlnode =  leaf(key_); 
 
-      document.getElementById(vid).style.transition = speed+"ms linear";
-      document.getElementById(vid).style.left = "1900px";
-       
-       window.scrollTo(1200,0)
+      setTimeout(()=> {
 
-       
-       return;
+     
+      if (avlparent[avlnode] != undefined)
+if (parseInt( $("#"+avlnode+"treeval").text(),10) > parseInt( $("#"+avlparent[avlnode]+"treeval").text(),10)){
+ 
+    document.getElementById(avlnode).style.top = parseInt( document.getElementById(avlparent[avlnode]).style.top)+85+"px";
+    document.getElementById(avlnode).style.left = parseInt( document.getElementById(avlparent[avlnode]).style.left)+35+"px";
+
+} 
+else {
+
+    document.getElementById(avlnode).style.top = parseInt( document.getElementById(avlparent[avlnode]).style.top)+85+"px";
+    document.getElementById(avlnode).style.left = parseInt( document.getElementById(avlparent[avlnode]).style.left)-35+"px";
+
+} 
+
+},100)
+
+
+        r= avlnode;
+        return avlnode;
+ 
     }
 
 
@@ -23,85 +70,41 @@ async function insertbst(node_, key_) {
 
  
     /* Otherwise, recur down the tree */
-    if (key_ <   parseInt(document.getElementById(node_+"treeval").innerHTML ) ) {
-
-            if (tree[`${node_}treeleft`] == "null") {
-
-              await display("Correct place to insert the element = CurrentNode->left")
-        let vid = count;
-        leaf(key_);
-        let videlement = document.getElementById(vid)
-      videlement.style.transition = speed+"ms linear";
-      videlement.style.top = parseInt( document.getElementById(node_).style.top)+85+"px";
-      videlement.style.left = parseInt( document.getElementById(node_).style.left)-35+"px";
+    if (key_ <  parseInt( $(`#${node_}treeval`).text()) ) {
 
 
-        return new Promise(resolve => {
-
-
-          setTimeout(()=> {
-            treefy(`${node_}treeleft` ,vid)
-            resolve('')
-            return;
-           },speed+100)
-            
-
-
-        })
+      tree[`${node_}treeleft`] = await insertbst(tree[`${node_}treeleft`], key_);
+  
+      let leftt =  tree[node_+"treeleft"];
+      avlparent[leftt] = node_; 
+  
+  
+      }
      
-        
-      
-             }
+     
+      else if (key_ >  parseInt( $(`#${node_}treeval`).text() , 10) )  {
+  
+  
+      tree[`${node_}treeright`] = await insertbst(tree[`${node_}treeright`], key_);
+  
+  
+      let rightt =  tree[node_+"treeright"];
+      avlparent[rightt] = node_; 
+  
+  
+                  
+      }
+  
+      else return node_;
 
-             Log("Item smaller then current node, going left")
-
-    await insertbst(tree[`${node_}treeleft`], key_);
-
-      
-    }
-   
-   
-    else if (key_ >  parseInt(document.getElementById(node_+"treeval").innerHTML ) )  {
-
-
-               if (tree[`${node_}treeright`] == "null") {
-
-                await display("Correct place to insert the element = CurrentNode->right")
-        let vid = count;
-        leaf(key_);
-        let videlement = document.getElementById(vid)
-        videlement.style.transition = speed+"ms linear";
-        videlement.style.top = parseInt( document.getElementById(node_).style.top)+85+"px";
-        videlement.style.left = parseInt( document.getElementById(node_).style.left)+35+"px";
+ await waitforme(speed+100)
+    Shiftleft(node_)
+    Shiftright(node_)
 
 
-        return new Promise(resolve => {
+   r = node_;
 
-
-          setTimeout(()=> {
-            treefy(`${node_}treeright` ,vid)
-            resolve('')
-            return;
-           },speed+100)
-            
-
-
-        })
-      
-                 }
-
-
-                 Log("Item larger then current node, going right")
-                 await   insertbst(tree[`${node_}treeright`], key_); 
-
-      
-    }
-
- 
-   await Shiftleft(node_)
-   await Shiftright(node_)
-
-
+  return node_;
 
     
 } 
@@ -196,7 +199,7 @@ let precolor = document.getElementById(ro).style.backgroundColor;
         
          tree[_root+`treeleft`] = await deletebst(tree[_root+`treeleft`], _key); 
   
-         treefy(_root+`treeleft`, tree[_root+`treeleft`])
+         
       }
       // If the _key to be deleted is greater than the _root's _key, 
       // then it lies in right subtree 
@@ -204,7 +207,6 @@ let precolor = document.getElementById(ro).style.backgroundColor;
   
       tree[_root+`treeright`] = await deletebst(tree[_root+`treeright`], _key); 
   
-      treefy(_root+`treeright`, tree[_root+`treeright`])
       }
   
   
@@ -216,9 +218,10 @@ let precolor = document.getElementById(ro).style.backgroundColor;
           { 
               let temp = tree[`${_root}treeright`]; 
              document.getElementById(_root).remove();
-             mySVG.redrawLines();
+          
              Pullup(temp);
            
+             r = temp
               return temp; 
           } 
           else if (tree[`${_root}treeright`] == "null") 
@@ -226,8 +229,10 @@ let precolor = document.getElementById(ro).style.backgroundColor;
               let temp = tree[`${_root}treeleft`]; 
            
               document.getElementById(_root).remove();
-             mySVG.redrawLines();
+         
              Pullup(temp);
+
+             r = temp
               return temp; 
           } 
     
@@ -247,11 +252,13 @@ let precolor = document.getElementById(ro).style.backgroundColor;
           // Delete the inorder successor 
           await display("Delete the inorder successor");
           tree[`${_root}treeright`] = await deletebst(tree[`${_root}treeright`],document.getElementById(temp+"treeval").innerHTML); 
-          treefy(`${_root}treeright`,tree[`${_root}treeright`])
+    
       } 
 
    await   DelShiftleft(_root)
    await   DelShiftright(_root)
+
+   r = _root
       return _root; 
   
       
@@ -260,9 +267,14 @@ let precolor = document.getElementById(ro).style.backgroundColor;
 
   async function InsertBST (value) {
 
-    redrawevent =  requestAnimationFrame(redraw);
+    redrawevent =  requestAnimationFrame(redrawsplay);
 
-await insertbst(0, value);
+await insertbst(r, value);
+
+
+
+document.getElementById(r).style.top = 150+"px";
+document.getElementById(r).style.left = 605+"px";
 
 await waitforme(speed+100)
 
@@ -273,9 +285,13 @@ cancelAnimationFrame(redrawevent)
 
   async function DeleteBST (value) {
 
-    redrawevent = requestAnimationFrame(redraw);
+    redrawevent = requestAnimationFrame(redrawsplay);
 
-    await deletebst(0, value);
+    await deletebst(r, value);
+
+document.getElementById(r).style.top = 150+"px";
+document.getElementById(r).style.left = 605+"px";
+
 
     await waitforme (speed+100);
 
@@ -296,3 +312,4 @@ cancelAnimationFrame(redrawevent)
         
       }
       
+
