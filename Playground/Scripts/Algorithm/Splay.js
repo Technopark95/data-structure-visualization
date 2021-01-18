@@ -94,10 +94,16 @@ async function splayleftRotate(x)
 // tree and returns the new root  
 async function splay(node_,  key)  
 {  
+
+ 
+
     // Base cases: node_ is NULL or 
     // key is present at node_  
     if (node_ == "null" || parseInt( $("#"+node_+"treeval").text(),10) == key)  return node_;  
   
+    await hilight(node_, "rgb(109,209,0,1)" , "1200ms" , 1300 )
+    hilight(node_, defaultcolor , "1200ms" , 1300 )
+
 
     // Key lies in left subtree  
     if (parseInt( $("#"+node_+"treeval").text(),10) > key)  
