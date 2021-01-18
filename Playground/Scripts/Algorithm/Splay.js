@@ -47,6 +47,8 @@ async function splayrightRotate(x)
     $(`#${y}height`).text(nodeheighty)
 
     balancenodes(y)
+    Shiftright(y)
+    Shiftleft(y)
 
     await waitforme(speed+100);
 
@@ -307,16 +309,23 @@ async function Splayinsert (key)  {
     await Splayi(key);
 
 
-    AVLpostleft[newroot] = 1900;
-    AVLposttop[newroot] = 150;
-
     $(`#${newroot}`).offset({"top" : `${150}` , "left" : `${ 1900 }` })
 
     $(".dragg").css("transition" , speed+"ms linear");
 
     await balancenodes(newroot);
+    Shiftright(newroot)
+    Shiftleft(newroot)
+
 
    await waitforme (speed+100);
+
+   DelShiftright(newroot)
+    DelShiftleft(newroot)
+
+    
+   await waitforme (speed+100);
+
 
     cancelAnimationFrame(redrawevent)
 
