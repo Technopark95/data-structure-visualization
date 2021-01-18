@@ -539,11 +539,11 @@ async function BalanceBST(_node)
   
     if (lefttarget != "null" ) {
   
-  AVLposttop[lefttarget] =  AVLposttop[root_] +90;  
-  AVLpostleft[lefttarget] =  AVLpostleft[root_]  - ( 30 * Math.pow( 2, rightheight[lefttarget]) )
+  // AVLposttop[lefttarget] =  AVLposttop[root_] +90;  
+  // AVLpostleft[lefttarget] =  AVLpostleft[root_]  - ( 30 * Math.pow( 2, rightheight[lefttarget]) )
   
-  document.getElementById(lefttarget).style.top = AVLposttop[lefttarget]+"px";
-  document.getElementById(lefttarget).style.left = AVLpostleft[lefttarget]+"px";
+  document.getElementById(lefttarget).style.top = parseInt(document.getElementById(root_).style.top)+85+"px";
+
 
   
      
@@ -554,15 +554,13 @@ async function BalanceBST(_node)
   
   
   
-   AVLposttop[righttarget] =  AVLposttop[root_] +90; 
+  //  AVLposttop[righttarget] =  AVLposttop[root_] +90; 
    
-   AVLpostleft[righttarget] =  AVLpostleft[root_]  + ( 30 * Math.pow( 2, leftheight[righttarget]) )
+  //  AVLpostleft[righttarget] =  AVLpostleft[root_]  + ( 30 * Math.pow( 2, leftheight[righttarget]) )
   
    
   
-   document.getElementById(righttarget).style.top = AVLposttop[righttarget]+"px";
-   document.getElementById(righttarget).style.left = AVLpostleft[righttarget]+"px";
-
+  document.getElementById(righttarget).style.top = parseInt(document.getElementById(root_).style.top)+85+"px";
      
   
   
