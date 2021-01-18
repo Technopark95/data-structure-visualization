@@ -673,6 +673,9 @@ async function redraw  ()  {
 
 var codehere = document.getElementById("codetype") ;
 
+
+
+
 codehere.addEventListener("keypress" , async function(e)  {
 
   
@@ -702,7 +705,12 @@ codehere.addEventListener("keypress" , async function(e)  {
 
           console.log(err.message);
 
+          
          log.removeChild(log.lastChild)
+
+         Log("Invalid Command")
+
+
 
       }
 
