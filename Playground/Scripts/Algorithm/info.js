@@ -196,3 +196,31 @@ for (ie = 0; ie < x11.length; ie++) {
 
 }
 
+codehere.addEventListener("focusin" , function()  {
+
+
+
+  infotabelement.addEventListener("mouseleave", leaveinfotab)
+
+  commandlistelement.style.transition= "300ms";
+  commandlistelement.style.opacity= "0%";
+  commandlistelement.style.zIndex= "0";
+  document.getElementById("infos").style.left = "0px"
+
+  
+
+      setTimeout(()=> {
+        infotabelement.style.top = "40%";
+        commandlistelement.style.display = "none"
+
+      },100)
+  
+  
+
+  
+      infoclick = 0;
+  
+  
+  
+  
+  })
