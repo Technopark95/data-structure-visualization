@@ -188,7 +188,6 @@ function splaynode(element) {
    tree[count+"treeleft"] = "null"
    tree[count+"treeright"] = "null"
 
-   divbyelement[element] = count
 
    count = count +1;
    counttreenodes = counttreenodes + 1;
