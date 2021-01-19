@@ -46,7 +46,7 @@ async function splayrightRotate(x)
     let nodeheighty = 1 + Math.max(height(tree[`${y}treeleft`]), height(tree[`${y}treeright`]));
     $(`#${y}height`).text(nodeheighty)
 
-    balancenodes(y)
+    BalanceBST(y)
     Shiftright(y)
     Shiftleft(y)
 
@@ -79,7 +79,7 @@ async function splayleftRotate(x)
     let nodeheighty = 1 + Math.max(height(tree[`${y}treeleft`]), height(tree[`${y}treeright`]));
     $(`#${y}height`).text(nodeheighty)
 
-    balancenodes(y)
+    BalanceBST(y)
 
     await waitforme(speed+100);
 
@@ -296,7 +296,7 @@ async function  Splaysearch(key)  {
 
     $(".dragg").css("transition" , speed+"ms linear");
 
-   await balancenodes(newroot);
+   await BalanceBST(newroot);
 
    await waitforme (speed+100);
 
@@ -319,7 +319,7 @@ async function Splayinsert (key)  {
 
     $(".dragg").css("transition" , speed+"ms linear");
 
-    await balancenodes(newroot);
+    await BalanceBST(newroot);
     Shiftright(newroot)
     Shiftleft(newroot)
 
