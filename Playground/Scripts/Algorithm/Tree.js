@@ -635,8 +635,6 @@ function calcrightheight( _root)
 
 async function balancenodes(startnode)   {
 
-  calcleftheight(startnode)
-  calcrightheight(startnode)
   BalanceBST(startnode)
   
 }
