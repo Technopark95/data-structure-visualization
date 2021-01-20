@@ -79,10 +79,10 @@ async function  Shiftleft(node)
 
    let referencecord = parseInt(document.getElementById(node).style.left)
 
-   let slidermagnitude = referencecord -100;
+   let slidermagnitude = referencecord -50;
    let allmagnitude = rightmostcord - slidermagnitude;
 
-   if (referencecord - rightmostcord < 30 )  {
+   if (referencecord - rightmostcord < 25 )  {
 
 
  await adjustsubtree(starting ,  -allmagnitude)
@@ -122,11 +122,11 @@ async function  Shiftright(node)
    let referencecord = parseInt(document.getElementById(node).style.left)
 
 
-   let slidermagnitude = referencecord +100;
+   let slidermagnitude = referencecord +50;
    let allmagnitude = slidermagnitude - rightmostcord;
 
 
-   if ( rightmostcord - referencecord < 30 )  {
+   if ( rightmostcord - referencecord < 25 )  {
 
    await adjustsubtree(starting ,  allmagnitude)
 
@@ -165,7 +165,7 @@ async function  DelShiftright(node)
 
 
 
-   let slidermagnitude = referencecord -35;
+   let slidermagnitude = referencecord -40;
    let allmagnitude = slidermagnitude - rightmostcord;
 
 
@@ -214,7 +214,7 @@ async function  DelShiftleft(node)
 
 
 
-   let slidermagnitude = referencecord +35;
+   let slidermagnitude = referencecord +40;
    let allmagnitude = rightmostcord - slidermagnitude;
 
 
