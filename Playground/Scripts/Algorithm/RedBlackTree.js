@@ -48,11 +48,14 @@ async function swapcolor (tparent,tgrandparent)  {
 
 
     await waitforme(speed+30);
+
+    if (stats == 1) await pauser();
   
 }
 
 async function RBTreerotateLeft( pt) 
 { 
+    if (stats == 1) await pauser();
     let pt_right =  tree[pt+"treeright"];// pt->right; 
   
     tree[pt+"treeright"] =  tree[pt_right+"treeleft"]
@@ -76,6 +79,7 @@ async function RBTreerotateLeft( pt)
   
 async function RBTreerotateRight( pt) 
 { 
+    if (stats == 1) await pauser();
     let pt_left = tree[pt+"treeleft"];
   
     tree[pt+"treeleft"] = tree[pt_left+"treeright"]
@@ -100,6 +104,7 @@ async function RBTreerotateRight( pt)
 
 async function fixViolation(_root, pt) 
 { 
+    if (stats == 1) await pauser();
     let parent_pt = "null"; 
     let grand_parent_pt = "null"; 
   
