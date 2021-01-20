@@ -102,7 +102,7 @@ var preheight = 0;
   // Level-order-traverse
   var AVLpostleft = [], AVLposttop =[];
   AVLpostleft[0] = 1900;
-  AVLposttop[0] = 150;
+  AVLposttop[0] = 100;
   
   var bheight = 0;
 
@@ -164,7 +164,7 @@ return bheight;
 
 
 
-         $("#"+root_).offset({left: 130+  ti*60*Math.pow(2,bheights[root_]) , top : 150 *(bheight-bheights[root_]+1)})
+         $("#"+root_).offset({left: 130+  ti*60*Math.pow(2,bheights[root_]) , top : 85+85 *(bheight-bheights[root_]+1)})
 
          
          
@@ -219,7 +219,7 @@ return bheight;
 
         let root_ = (q.front).data;
 
-        $("#"+root_).offset({left: 130+  ti*160 , top : 150 *(bheight+1)})
+        $("#"+root_).offset({left: 130+  ti*160 , top : 85+85 *(bheight+1)})
 
         ++ti;
 
