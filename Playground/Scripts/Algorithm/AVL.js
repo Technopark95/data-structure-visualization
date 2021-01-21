@@ -456,12 +456,12 @@ function avl(element) {
 
 
     document.body.insertAdjacentHTML("afterbegin",newnode)
-   $("#"+count).draggable();
+   $("#"+count).draggable({drag:function(){mySVG.Splaylines()}});
 
    tree[count+"treeleft"] = "null"
    tree[count+"treeright"] = "null"
 
-   divbyelement[element] = count
+  
  
    count = count +1;
    counttreenodes = counttreenodes + 1;
