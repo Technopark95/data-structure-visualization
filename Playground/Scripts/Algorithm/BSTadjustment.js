@@ -82,7 +82,7 @@ async function  Shiftleft(node)
    let slidermagnitude = referencecord -50;
    let allmagnitude = rightmostcord - slidermagnitude;
 
-   if (referencecord - rightmostcord < 25 )  {
+   if (referencecord - rightmostcord < 30 )  {
 
 
  await adjustsubtree(starting ,  -allmagnitude)
@@ -126,7 +126,7 @@ async function  Shiftright(node)
    let allmagnitude = slidermagnitude - rightmostcord;
 
 
-   if ( rightmostcord - referencecord < 25 )  {
+   if ( rightmostcord - referencecord < 30 )  {
 
    await adjustsubtree(starting ,  allmagnitude)
 
