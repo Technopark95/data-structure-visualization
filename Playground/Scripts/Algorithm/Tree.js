@@ -796,7 +796,7 @@ function rightmost(rootnode)  {
 
 
     document.body.insertAdjacentHTML("afterbegin",newnode)
-   $("#"+count).draggable({drag:function(){mySVG.redrawsplay()}});
+   $("#"+count).draggable({drag:function(){mySVG.Splaylines()}});
 
    tree[count+"treeleft"] = "null"
    tree[count+"treeright"] = "null"
