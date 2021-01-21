@@ -98,8 +98,8 @@ else {
       else return node_;
 
  await waitforme(speed+100)
-    Shiftleft(node_)
-    Shiftright(node_)
+ await   Shiftleft(node_)
+ await   Shiftright(node_)
 
 
    r = node_;
@@ -269,6 +269,7 @@ let precolor = document.getElementById(ro).style.backgroundColor;
 
   async function InsertBST (value) {
 
+ redrawevent =  requestAnimationFrame(redrawsplay);
 
     let flag = 0;
 
@@ -277,8 +278,7 @@ let precolor = document.getElementById(ro).style.backgroundColor;
       flag = 1;
     }
 
-    redrawevent =  requestAnimationFrame(redrawsplay);
-
+   
 await insertbst(r, value);
 
 
