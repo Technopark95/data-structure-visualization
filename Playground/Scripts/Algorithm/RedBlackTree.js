@@ -348,8 +348,7 @@ return count;
 
     redrawevent = requestAnimationFrame(redrawsplay)
 
-    
-
+  
     await  fixViolation(rbroot, pt); 
 
     calcheight(rbroot)
@@ -399,8 +398,8 @@ function Left(node)  { return tree[node+"treeleft"] }
 function Right(node)  { return tree[node+"treeright"] }
 function getcolor(node) {return document.getElementById(node+"col").innerHTML}
 function getvcolor(node) { return document.getElementById(node).style.backgroundColor}
-function setcolor(node,col) {document.getElementById(node+"col").innerHTML = col}
-function setvcolor(node,col) {document.getElementById(node).style.backgroundColor = col}
+function setcolor(node,col) {document.getElementById(node+"col").innerHTML = col;}
+async function setvcolor(node,col) {document.getElementById(node).style.backgroundColor = col;  await waitforme(speed+100);}
 function nodekey(node) {return parseInt(document.getElementById(node+"treeval").innerHTML)}
 function setnodekey(node,val) { document.getElementById(node+"treeval").innerHTML = val}
 
@@ -505,7 +504,7 @@ function rightRotate(x) {
 
 
 
-function fixDoubleBlack(x) { 
+async function fixDoubleBlack(x) { 
 
   if (x == rbroot) return; 
 
@@ -514,7 +513,7 @@ function fixDoubleBlack(x) {
 
   if (Sibling == "null") { 
     // No sibiling, double black pushed up 
-    fixDoubleBlack(parent); 
+  await  fixDoubleBlack(parent); 
   } 
   
   else { 
@@ -523,12 +522,12 @@ function fixDoubleBlack(x) {
      
 
       setcolor(parent , "red")
-      setvcolor(parent , "red")
+    await  setvcolor(parent , "red")
 
 
 
       setcolor(Sibling , "black")
-      setvcolor(Sibling , defaultcolor)
+      await   setvcolor(Sibling , defaultcolor)
 
       
 
@@ -537,6 +536,7 @@ function fixDoubleBlack(x) {
         rightRotate(parent); 
 
       }
+
       
       else { 
         // right case 
@@ -544,7 +544,7 @@ function fixDoubleBlack(x) {
       } 
 
 
-      fixDoubleBlack(x); 
+   await   fixDoubleBlack(x); 
 
 
     } 
@@ -561,13 +561,13 @@ function fixDoubleBlack(x) {
            
 
             setcolor(Left(Sibling) , getcolor(Sibling))
-            setvcolor(Left(Sibling) , getvcolor(Sibling))
+            await     setvcolor(Left(Sibling) , getvcolor(Sibling))
 
 
 
 
             setcolor(Sibling, getcolor(parent))
-            setvcolor(Sibling , getvcolor(parent))
+            await setvcolor(Sibling , getvcolor(parent))
 
 
             rightRotate(parent); 
@@ -577,7 +577,7 @@ function fixDoubleBlack(x) {
             // right left 
 
             setcolor(Left(Sibling), getcolor(parent))
-            setvcolor(Left(Sibling) , getvcolor(parent))
+            await   setvcolor(Left(Sibling) , getvcolor(parent))
 
 
             rightRotate(Sibling); 
@@ -592,7 +592,7 @@ function fixDoubleBlack(x) {
             // left right 
            
             setcolor(Right(Sibling), getcolor(parent))
-            setvcolor(Right(Sibling) , getvcolor(parent))
+            await    setvcolor(Right(Sibling) , getvcolor(parent))
 
 
             leftRotate(Sibling); 
@@ -605,12 +605,12 @@ function fixDoubleBlack(x) {
          
 
             setcolor(Right(Sibling), getcolor(Sibling))
-            setvcolor(Right(Sibling) , getvcolor(Sibling))
+            await   setvcolor(Right(Sibling) , getvcolor(Sibling))
 
 
     
             setcolor(Sibling, getcolor(parent))
-            setvcolor(Sibling , getvcolor(parent))
+            await setvcolor(Sibling , getvcolor(parent))
 
 
             leftRotate(parent); 
@@ -619,7 +619,7 @@ function fixDoubleBlack(x) {
 
        
         setcolor(parent, "black")
-        setvcolor(parent , defaultcolor)
+        await setvcolor(parent , defaultcolor)
 
 
 
@@ -629,19 +629,19 @@ function fixDoubleBlack(x) {
         // 2 black children 
        
         setcolor(Sibling, "red")
-        setvcolor(Sibling , "red")
+        await  setvcolor(Sibling , "red")
         
         
 
         if (getcolor(parent) == "black")  {
 
-          fixDoubleBlack(parent); 
+      await    fixDoubleBlack(parent); 
         }
           
         else{
 
         setcolor(parent, "black")
-        setvcolor(parent ,defaultcolor)
+        await   setvcolor(parent ,defaultcolor)
 
 
         }
@@ -687,7 +687,7 @@ function BSTreplace(x) {
 } 
 
 
-function deleteNode(v) { 
+async function deleteNode(v) { 
 
   let u = BSTreplace(v); 
 
@@ -711,7 +711,7 @@ function deleteNode(v) {
       if (uvBlack == true) { 
         // u and v both black 
         // v is leaf, fix double black at v 
-        fixDoubleBlack(v); 
+        await fixDoubleBlack(v); 
 
       }
       
@@ -721,7 +721,7 @@ function deleteNode(v) {
           // sibling is not null, make it red" 
          
          setcolor( sibling(v) , "red")
-         setvcolor( sibling(v) , "red")
+         await  setvcolor( sibling(v) , "red")
 
         }
            
@@ -744,7 +744,7 @@ function deleteNode(v) {
 
     } 
 
-  
+    document.getElementById(v).remove()
     return; 
   } 
 
@@ -758,6 +758,8 @@ function deleteNode(v) {
       tree[v+"treeleft"] = "null" 
       tree[v+"treeright"] = "null" 
 
+     
+      document.getElementById(u).remove()
     } 
     
     else { 
@@ -777,20 +779,22 @@ function deleteNode(v) {
       } 
 
 
-      delete v; 
+      
+    
+      document.getElementById(v).remove()
 
       
       rbparent[u] = parent
 
       if (uvBlack == true) { 
         // u and v both black, fix double black at u 
-        fixDoubleBlack(u); 
+      await  fixDoubleBlack(u); 
       } 
       
       else { 
         // u or v red, color u black 
         setcolor(u,"black")
-        setvcolor(u , defaultcolor)
+        await  setvcolor(u , defaultcolor)
       } 
 
     } 
@@ -799,17 +803,22 @@ function deleteNode(v) {
 
   // v has 2 children, swap values with successor and recurse 
   swapValues(u, v); 
-  deleteNode(u); 
+ await deleteNode(u); 
 
 
 } 
 
 
-function search( n) { 
+async function search( n) { 
 
  let temp = rbroot; 
 
   while (temp != "null") { 
+
+    let colorize = getvcolor(temp);
+    await hilight(temp , "rgb(109,209,0,1)");
+   await hilight(temp , colorize);
+
 
     if (n < nodekey(temp)) { 
 
@@ -819,7 +828,7 @@ function search( n) {
       }
         
       else {
-        temp =  left(temp) 
+        temp =  Left(temp) 
       }
         
     } 
@@ -850,18 +859,36 @@ function search( n) {
 
 
 
-function deleteByVal( n) { 
+async function RBTreedelete( n) { 
  
- 
-  if (rbroot == "null") return; 
+  redrawevent = requestAnimationFrame(redrawsplay)
 
-  let v = search(n), u; 
+  if ( document.getElementById(rbroot) == null) return; 
+
+  let v = await search(n), u; 
 
   if ( nodekey(v) != n) { 
-    Log("No node found to delete with value:")
+    Log("No node found to delete")
     return; 
   } 
 
-  deleteNode(v); 
+ await deleteNode(v); 
+
+
+
+ calcheight(rbroot)
+
+ document.getElementById(rbroot).style.top = 150+"px";
+ document.getElementById(rbroot).style.left = 1905+"px";
+
+ BalanceAll(rbroot);
+
+await waitforme (speed+100);
+
+ cancelAnimationFrame(redrawevent)
+
+
+
+
 
 } 
