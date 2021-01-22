@@ -105,6 +105,7 @@ async function RBTreerotateRight( pt)
 async function fixViolation(_root, pt) 
 { 
     if (stats == 1) await pauser();
+
     let parent_pt = "null"; 
     let grand_parent_pt = "null"; 
   
@@ -244,6 +245,7 @@ async function rbInsert(rbroot, pt)
     if ( $("#"+rbroot).length== 0)  {
 
         let newpt =  pt;
+
         rbroot = newpt;
         return newpt;
   
@@ -331,6 +333,8 @@ return count;
         document.getElementById(pt).style.top = parseInt( document.getElementById(rbparent[pt]).style.top)+85+"px";
         document.getElementById(pt).style.left = parseInt( document.getElementById(rbparent[pt]).style.left)+35+"px";
 
+        
+
     } 
     else {
 
@@ -386,3 +390,478 @@ async function RBTreesearch(h)  {
         
         
       }
+
+
+function getRoot() { return rbroot; } 
+        
+function Parent(node)  { return rbparent[node]; }
+function Left(node)  { return tree[node+"treeleft"] }
+function Right(node)  { return tree[node+"treeright"] }
+function getcolor(node) {return document.getElementById(node+"col").innerHTML}
+function getvcolor(node) { return document.getElementById(node).style.backgroundColor}
+function setcolor(node,col) {document.getElementById(node+"col").innerHTML = col}
+function setvcolor(node,col) {document.getElementById(node).style.backgroundColor = col}
+function nodekey(node) {return parseInt(document.getElementById(node+"treeval").innerHTML)}
+function setnodekey(node,val) { document.getElementById(node+"treeval").innerHTML = val}
+
+function isOnLeft( node) { return node ==  Left(Parent(node))} 
+function uncle(node) { 
+  
+  if ( Parent(node) == undefined || Parent(Parent(node)) == undefined)  return "null"; 
+
+  if (isOnLeft(Parent(node))) {return Right(Parent(Parent(node))); }
+
+  else { return Left(Parent(Parent(node)));}
+    
+} 
+
+function sibling( node) { 
+  // sibling null if no parent 
+  if ( Parent(node) == undefined) return "null"; 
+
+  if (isOnLeft(node)) 
+    return  Right(Parent(node)) 
+
+  return Left(Parent(node)) 
+} 
+
+
+
+function moveDown( node, nParent) { 
+  
+  if ( Parent(node) != undefined) { 
+    if (isOnLeft(node)) { 
+     tree[rbparent[node]+"treeleft"] = nParent; 
+    } 
+    
+    else { 
+      tree[rbparent[node]+"treeright"] = nParent; 
+    }
+
+  } 
+  
+  rbparent[nParent] = Parent(node)
+  rbparent[node] = nParent
+  
+} 
+
+
+
+function hasRedChild( node) { 
+  return ( Left(node) != "null" &&  getcolor(Left(node)) == "red") || (Right(node) != "null" && getcolor(Right(node)) == "red"); 
+} 
+
+
+
+
+function leftRotate(x) { 
+  // new parent will be node's right child 
+  let nParent =  Right(x)
+
+  // update root if current node is root 
+  if (x == rbroot) rbroot = nParent; 
+
+  moveDown(x,nParent); 
+
+  // connect x with new parent's left element 
+   tree[x+"treeright"] =  Left(nParent)
+  // connect new parent's left element with node 
+  // if it is not null 
+  if ( Left(nParent) != "null")  {
+ 
+    rbparent[tree[nParent+"treeleft"]] =x
+  }
+
+  // connect new parent with x 
+
+  tree[nParent+"treeleft"] = x
+}
+
+
+
+function rightRotate(x) { 
+  // new parent will be node's left child 
+  let nParent = Left(x)
+
+  // update root if current node is root 
+  if (x == rbroot) rbroot = nParent; 
+
+  moveDown(x,nParent); 
+
+  // connect x with new parent's right element 
+  tree[x+"treeleft"] =  Right(nParent)
+  // connect new parent's right element with node 
+  // if it is not null 
+  if (Right(nParent) != "null")  {
+
+  
+    rbparent[tree[nParent+"treeright"]] =x
+
+  }
+
+  tree[nParent+"treeright"] = x
+} 
+
+
+
+
+function fixDoubleBlack(x) { 
+
+  if (x == rbroot) return; 
+
+  let Sibling = sibling(x), parent = Parent(x); 
+
+
+  if (Sibling == "null") { 
+    // No sibiling, double black pushed up 
+    fixDoubleBlack(parent); 
+  } 
+  
+  else { 
+  
+    if ( getcolor(Sibling) == "red") { 
+     
+
+      setcolor(parent , "red")
+      setvcolor(parent , "red")
+
+
+
+      setcolor(Sibling , "black")
+      setvcolor(Sibling , defaultcolor)
+
+      
+
+      if (isOnLeft(Sibling)) { 
+        // left case 
+        rightRotate(parent); 
+
+      }
+      
+      else { 
+        // right case 
+        leftRotate(parent); 
+      } 
+
+
+      fixDoubleBlack(x); 
+
+
+    } 
+    
+    
+    else { 
+      // Sibling black 
+      if (hasRedChild(Sibling)) { 
+
+        // at least 1 red children 
+        if ( Left(Sibling) != "null" &&  getcolor(Left(Sibling)) == "red") { 
+          if (isOnLeft(Sibling)) { 
+            // left left 
+           
+
+            setcolor(Left(Sibling) , getcolor(Sibling))
+            setvcolor(Left(Sibling) , getvcolor(Sibling))
+
+
+
+
+            setcolor(Sibling, getcolor(parent))
+            setvcolor(Sibling , getvcolor(parent))
+
+
+            rightRotate(parent); 
+          } 
+          
+          else { 
+            // right left 
+
+            setcolor(Left(Sibling), getcolor(parent))
+            setvcolor(Left(Sibling) , getvcolor(parent))
+
+
+            rightRotate(Sibling); 
+            leftRotate(parent); 
+          } 
+
+        } 
+        
+        else { 
+         
+          if (isOnLeft(Sibling)) { 
+            // left right 
+           
+            setcolor(Right(Sibling), getcolor(parent))
+            setvcolor(Right(Sibling) , getvcolor(parent))
+
+
+            leftRotate(Sibling); 
+            rightRotate(parent); 
+
+          } 
+          
+          else { 
+            // right right 
+         
+
+            setcolor(Right(Sibling), getcolor(Sibling))
+            setvcolor(Right(Sibling) , getvcolor(Sibling))
+
+
+    
+            setcolor(Sibling, getcolor(parent))
+            setvcolor(Sibling , getvcolor(parent))
+
+
+            leftRotate(parent); 
+          } 
+        } 
+
+       
+        setcolor(parent, "black")
+        setvcolor(parent , defaultcolor)
+
+
+
+      } 
+      
+      else { 
+        // 2 black children 
+       
+        setcolor(Sibling, "red")
+        setvcolor(Sibling , "red")
+        
+        
+
+        if (getcolor(parent) == "black")  {
+
+          fixDoubleBlack(parent); 
+        }
+          
+        else{
+
+        setcolor(parent, "black")
+        setvcolor(parent ,defaultcolor)
+
+
+        }
+        
+      } 
+    } 
+  } 
+}
+
+
+function swapValues(u, v) { 
+  let temp; 
+  temp =  nodekey(u);
+  setnodekey(u , nodekey(v))
+  setnodekey(v ,temp)
+
+} 
+
+
+
+function successor(x) { 
+  if (x=="null") return;
+  let temp = x; 
+
+  while ( Left(temp) != "null")  {
+    temp = Left(temp)
+  }
+  return temp; 
+} 
+
+
+function BSTreplace(x) { 
+  // when node have 2 children 
+  if ( Left(x) != "null" &&  Right(x) != "null")  return successor(Right(x)); 
+
+  // when leaf 
+  if ( Left(x) == "null" &&  Right(x) == "null") return "null"; 
+
+  // when single child 
+  if ( Left(x) != "null") return Left(x);
+
+  else  return Right(x)
+} 
+
+
+function deleteNode(v) { 
+
+  let u = BSTreplace(v); 
+
+  // True when u and v are both black 
+  let uvBlack = ((u == "null" || getcolor(u) == "black") && ( getcolor(v) == "black")); 
+
+  let parent =  Parent(v)
+
+
+
+  if (u == "null") { 
+    // u is NULL therefore v is leaf 
+    if (v == "null") { 
+      // v is root, making root null 
+      rbroot = "null"; 
+    } 
+
+    else { 
+
+
+      if (uvBlack == true) { 
+        // u and v both black 
+        // v is leaf, fix double black at v 
+        fixDoubleBlack(v); 
+
+      }
+      
+      else { 
+        // u or v is red 
+        if (sibling(v) != "null")  {
+          // sibling is not null, make it red" 
+         
+         setcolor( sibling(v) , "red")
+         setvcolor( sibling(v) , "red")
+
+        }
+           
+      } 
+
+      // delete v from the tree 
+      if (isOnLeft(v)) { 
+    
+       tree[parent+"treeleft"]  = "null"
+
+      } 
+      else { 
+
+      
+        tree[parent+"treeright"]  = "null"
+
+
+
+      }
+
+    } 
+
+  
+    return; 
+  } 
+
+  if (Left(v) == "null" ||  Right(v) == 'null') { 
+    // v has 1 child 
+    if (v == rbroot) { 
+      // v is root, assign the value of u to v, and delete u 
+    
+      setnodekey(v , nodekey(u))
+
+      tree[v+"treeleft"] = "null" 
+      tree[v+"treeright"] = "null" 
+
+    } 
+    
+    else { 
+      // Detach v from tree and move u up 
+      if (isOnLeft(v)) { 
+
+        tree[parent+"treeleft"] = u;
+        
+      } 
+      
+      else { 
+
+        
+        tree[parent+"treeright"] = u; 
+
+
+      } 
+
+
+      delete v; 
+
+      
+      rbparent[u] = parent
+
+      if (uvBlack == true) { 
+        // u and v both black, fix double black at u 
+        fixDoubleBlack(u); 
+      } 
+      
+      else { 
+        // u or v red, color u black 
+        setcolor(u,"black")
+        setvcolor(u , defaultcolor)
+      } 
+
+    } 
+    return; 
+  } 
+
+  // v has 2 children, swap values with successor and recurse 
+  swapValues(u, v); 
+  deleteNode(u); 
+
+
+} 
+
+
+function search( n) { 
+
+ let temp = rbroot; 
+
+  while (temp != "null") { 
+
+    if (n < nodekey(temp)) { 
+
+      if ( Left(temp) == "null")  {
+
+        break; 
+      }
+        
+      else {
+        temp =  left(temp) 
+      }
+        
+    } 
+    
+    else if (n == nodekey(temp)) { 
+
+      break; 
+
+    }
+    
+    else { 
+
+      if ( Right(temp) == "null")  {
+         break; 
+      }
+       
+      else {
+        temp =  Right(temp)
+      }
+        
+    } 
+  } 
+
+  return temp; 
+
+
+} 
+
+
+
+function deleteByVal( n) { 
+ 
+ 
+  if (rbroot == "null") return; 
+
+  let v = search(n), u; 
+
+  if ( nodekey(v) != n) { 
+    Log("No node found to delete with value:")
+    return; 
+  } 
+
+  deleteNode(v); 
+
+} 
