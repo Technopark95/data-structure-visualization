@@ -174,8 +174,7 @@ this.kruskalize =function (_cl = "rgb(0,0,0,0.08)")  {
 				
 						 _left_node = document.getElementById(option.left_node);
 						 _right_node = document.getElementById(option.right_node);
-
-
+						 if (_left_node == null || _right_node == null) {return;}
 						 clientrectleft = _left_node.getBoundingClientRect();
 						 clientrectright = _right_node.getBoundingClientRect();
 						 leftnodeoffsetx = clientrectleft.left +document.documentElement.scrollLeft;
