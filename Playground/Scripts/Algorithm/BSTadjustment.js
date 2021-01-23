@@ -165,7 +165,7 @@ async function  DelShiftright(node)
 
 
 
-   let slidermagnitude = referencecord -40;
+   let slidermagnitude = referencecord -50;
    let allmagnitude = slidermagnitude - rightmostcord;
 
 
@@ -214,7 +214,7 @@ async function  DelShiftleft(node)
 
 
 
-   let slidermagnitude = referencecord +40;
+   let slidermagnitude = referencecord +50;
    let allmagnitude = rightmostcord - slidermagnitude;
 
 
