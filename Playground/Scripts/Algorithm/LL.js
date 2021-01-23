@@ -240,7 +240,7 @@ function deletelistnode(key)
       
     // If head node itself holds 
     // the key to be deleted 
-    if (temp != "null" && parseInt( $("#"+temp+"val").text(),10) == key) 
+    if (temp != "null" &&  $("#"+temp+"val").text()== key) 
     { 
         head_ref = next[temp] // Changed head 
         $("#"+temp).remove();
@@ -250,7 +250,7 @@ function deletelistnode(key)
     // Else Search for the key to be deleted,  
     // keep track of the previous node as we 
     // need to change 'prev->next' */ 
-    while (temp != "null" && parseInt( $("#"+temp+"val").text(),10) != key) 
+    while (temp != "null" &&  $("#"+temp+"val").text() != key) 
     { 
         prevr = temp; 
         temp = next[temp]; 
