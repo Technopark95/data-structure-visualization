@@ -130,6 +130,11 @@ async function insertavl(node_, key_) {
        return avlnode;
     }
 
+    
+    await hilight(node_, "rgb(109,209,0,1)" , "1200ms" , 1300 )
+    hilight(node_, defaultcolor , "1200ms" , 1300 )
+
+
 
     if (key_ <  parseInt( $(`#${node_}treeval`).text()) ) {
 
@@ -266,6 +271,30 @@ return node_;
 } 
   
 var dothetreefy = 0;
+
+
+
+
+async function  minValueNode( node) 
+{ 
+    let current = node; 
+  
+    /* loop down to find the leftmost leaf */
+    while ( tree[`${current}treeleft`] != "null")  {
+
+      await hilight(current, "red" , "1200ms" , 1300 )
+      hilight(current, defaultcolor , "1200ms" , 1300 )
+
+        current = tree[`${current}treeleft`]; 
+
+    }
+
+    await hilight(current, "red" , "1200ms" , 1300 )
+    hilight(current, defaultcolor , "1200ms" , 1300 )
+  
+    return current; 
+} 
+
 
 async function deleteavl( _root , _key) 
 { 
