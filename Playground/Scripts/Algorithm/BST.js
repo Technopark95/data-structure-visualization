@@ -311,7 +311,7 @@ cancelAnimationFrame(redrawevent)
 
     await deletebst(r, value);
 
-    if (cpyr != deletednode || flag == 1)  {
+    if ( flag == 1)  {
 document.getElementById(r).style.top = 150+"px";
 document.getElementById(r).style.left = 1900+"px";
     }
