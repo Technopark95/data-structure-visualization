@@ -23,8 +23,10 @@ Copyright 2020 Anoop Singh, Graphical Structure
 
 
 var newroot=0;
-
-
+function nodekey(node) {return parseInt(document.getElementById(node+"treeval").innerHTML)}
+function setnodekey(node,val) { document.getElementById(node+"treeval").innerHTML = val}
+function Left(node)  { return tree[node+"treeleft"] }
+function Right(node)  { return tree[node+"treeright"] }
 
 async function splayrightRotate(x)  
 {  
@@ -334,6 +336,92 @@ async function Splayinsert (key)  {
 }
 
 
+async function Splayd(key) { 
+
+
+    let temp; 
+    if (document.getElementById(newroot) ==null) 
+        return "null"; 
+      
+    // Splay the given key     
+    newroot = await splay(newroot, key); 
+      
+    // If key is not present, then 
+    // return newroot 
+    if (key !=  nodekey(newroot) ) 
+        return newroot; 
+          
+    // If key is present 
+    // If left child of newroot does not exist 
+    // make newroot->right as newroot    
+    if ( Left(newroot) == "null") 
+    { 
+        temp = newroot; 
+
+        newroot =  Right(newroot)
+
+    } 
+      
+    // Else if left child exits 
+    else
+    { 
+        temp = newroot; 
+  
+      
+        newroot = await splay( Left(newroot), key); 
+          
+    
+         tree[newroot+"treeright"] =   Right(temp);
+    } 
+      
+
+
+    document.getElementById(temp).remove();
+      
+    // return newroot of the new Splay Tree 
+    return newroot; 
+      
+} 
+
+
+async function Splaydelete (key)  {
+
+
+    
+    redrawevent = requestAnimationFrame(redrawsplay)
+
+
+    await Splayd(key);
+
+
+    $(`#${newroot}`).offset({"top" : `${150}` , "left" : `${ 1900 }` })
+
+    await BalanceBST(newroot);
+    Shiftright(newroot)
+    Shiftleft(newroot)
+
+
+   await waitforme (speed+100);
+
+   DelShiftright(newroot)
+    DelShiftleft(newroot)
+
+    
+   await waitforme (speed+100);
+
+
+    cancelAnimationFrame(redrawevent)
+
+  
+
+
+
+
+}
+
+
+
+
 slider.onchange= function() {
 
 
@@ -348,7 +436,7 @@ slider.onchange= function() {
 
   
 
-mySVG.connect()
+//mySVG.connect()
 
 /*
 splaynode(100)//0
