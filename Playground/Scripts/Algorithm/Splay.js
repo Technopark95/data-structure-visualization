@@ -184,7 +184,7 @@ async function splay(node_,  key)
 
 function splaynode(element) {
 
-    newnode = '<div id="'+count+'" style="transform:scale(.8,.8);left:1250px;top:150px;"  class="dragg" > <div class="treenode" id="'+ count+"treetop" +'" style="margin-left:35px;"></div>  <div class="treenode" id="'+ count+"treeleft" +'" style="margin-left:18px; margin-top:70px;"></div>   <div class="treenode" id="'+ count+"treeright" +'" style="margin-left:54px; margin-top:70px;"></div> <p  style="position:absolute;color:coral; font-size:70%; left:20px;" id="'+ count+"bottom" +'">'+count +'</p>   <div style="position:absolute; text-align:center; top:65px; left:38px;height:1px; width:20px;"><p  style="color:white; font-size:70%; " id="'+ count+"height" +'">'+"1" +'</p></div>   <p  id="'+ count+"treeval" +'" class="t">'+element+'</p>   </div>';
+    newnode = '<div id="'+count+'" style="transform:scale(.8,.8);left:1250px;top:150px;transition:'+ speed+'ms linear;"  class="dragg" > <div class="treenode" id="'+ count+"treetop" +'" style="margin-left:35px;"></div>  <div class="treenode" id="'+ count+"treeleft" +'" style="margin-left:18px; margin-top:70px;"></div>   <div class="treenode" id="'+ count+"treeright" +'" style="margin-left:54px; margin-top:70px;"></div> <p  style="position:absolute;color:coral; font-size:70%; left:20px;" id="'+ count+"bottom" +'">'+count +'</p>   <div style="position:absolute; text-align:center; top:65px; left:38px;height:1px; width:20px;"><p  style="color:white; font-size:70%; " id="'+ count+"height" +'">'+"1" +'</p></div>   <p  id="'+ count+"treeval" +'" class="t">'+element+'</p>   </div>';
 
 
    $("body").prepend(newnode)
@@ -288,13 +288,8 @@ async function  Splaysearch(key)  {
 
     await Splays(key);
 
-   
-    AVLpostleft[newroot] = 1900;
-    AVLposttop[newroot] = 150;
 
     $(`#${newroot}`).offset({"top" : `${150}` , "left" : `${ 1900 }` })
-
-    $(".dragg").css("transition" , speed+"ms linear");
 
    await BalanceBST(newroot);
 
@@ -317,8 +312,6 @@ async function Splayinsert (key)  {
 
     $(`#${newroot}`).offset({"top" : `${150}` , "left" : `${ 1900 }` })
 
-    $(".dragg").css("transition" , speed+"ms linear");
-
     await BalanceBST(newroot);
     Shiftright(newroot)
     Shiftleft(newroot)
@@ -340,6 +333,18 @@ async function Splayinsert (key)  {
 
 }
 
+
+slider.onchange= function() {
+
+
+    let x = document.getElementsByClassName("dragg");
+    let ie;
+    for (ie = 0; ie < x.length; ie++) {
+      x[ie].style.transition = speed+"ms linear";
+    }
+    
+    
+  }
 
   
 
