@@ -123,6 +123,8 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
   document.getElementById("log1").style.display = "none";
   document.getElementById("playlabel").style.display = "none";
   document.getElementById("pauselabel").style.display = "none";
+  document.getElementById("play-btn").style.display = "none";
+  document.getElementById("pause-btn").style.display = "none";
   document.getElementsByClassName("slidecontainer")[0].style.width = "150px";
   document.getElementsByClassName("slidecontainer")[0].style.right = "0";
 
