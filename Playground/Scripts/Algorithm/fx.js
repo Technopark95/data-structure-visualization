@@ -122,6 +122,8 @@ function del (one ,two)  {
           
 }
 
+var ismob ;
+
 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
  
   document.getElementById("log1").style.display = "none";
@@ -132,6 +134,8 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
   document.getElementsByClassName("slidecontainer")[0].style.width = "150px";
   document.getElementsByClassName("slidecontainer")[0].style.right = "0";
   codehere.style.fontSize = '130%'
+
+  ismob = true;
 
 }
 
@@ -144,6 +148,8 @@ else{
 
   _canvas.width = document.body.clientWidth;
   _canvas.height = document.body.clientHeight;
+
+  ismob = false;
 
 }
 
