@@ -25,6 +25,7 @@ var commandlistelement = document.getElementById("listofcommand");
 
 var infoclick = 0;
 
+document.getElementById("infos").style.transition  ="300ms";
 
 let x = document.getElementsByClassName("autohide");
 let ie;
@@ -196,8 +197,10 @@ for (ie = 0; ie < x11.length; ie++) {
 
 }
 
-codehere.addEventListener("focusin" , function()  {
+codehere.addEventListener("click" , function()  {
 
+
+if (codehere.value != "" ) {
 
 
   infotabelement.addEventListener("mouseleave", leaveinfotab)
@@ -220,7 +223,36 @@ codehere.addEventListener("focusin" , function()  {
   
       infoclick = 0;
   
+    }
+
+
+
+    else {
+
+      let codebox = document.getElementById("codetype").style.top;
   
+      infotabelement.style.top = parseInt(codebox+140)+"px";
+      document.getElementById("infos").style.left = "250px"
+
+      infotabelement.removeEventListener("mouseleave",leaveinfotab)
+
+      commandlistelement.style.display = "";
+
+      setTimeout(()=> {
+  
+  commandlistelement.style.transition= "300ms";
+  commandlistelement.style.opacity= "100%";
+  commandlistelement.style.zIndex= "5";
+  
+      },100)
+      
+  
+      
+      infoclick = 1;
+
+
+
+    }
   
   
   })
