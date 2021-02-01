@@ -124,8 +124,6 @@ function del (one ,two)  {
 
 var ismob ;
 
-document.getElementById("copy").style.display = "none"
-
 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
  
   document.getElementById("log1").style.display = "none";
@@ -141,6 +139,19 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
 
 }
 
+else{
+  // false for not mobile device
+
+
+  document.body.style.height = "1000px";
+  document.body.style.width = "5000px";
+
+  _canvas.width = document.body.clientWidth;
+  _canvas.height = document.body.clientHeight;
+
+  ismob = false;
+
+}
 
 
 
