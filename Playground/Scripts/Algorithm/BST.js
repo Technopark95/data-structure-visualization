@@ -269,8 +269,8 @@ let precolor = document.getElementById(ro).style.backgroundColor;
 
   async function InsertBST (value) {
 
-    document.body.style.width = "5000px";
-     
+    document.body.style.width = "4000px";
+     _canvas.width = document.body.clientWidth;
 
  redrawevent =  requestAnimationFrame(redrawsplay);
 

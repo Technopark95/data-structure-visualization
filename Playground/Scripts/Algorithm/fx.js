@@ -144,7 +144,7 @@ else{
 
 
   document.body.style.height = "1000px";
-  document.body.style.width = "5000px";
+  document.body.style.width = "4000px";
 
   _canvas.width = document.body.clientWidth;
   _canvas.height = document.body.clientHeight;
