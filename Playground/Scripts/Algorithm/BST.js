@@ -269,11 +269,6 @@ let precolor = document.getElementById(ro).style.backgroundColor;
 
   async function InsertBST (value) {
 
-    document.body.style.width = "4000px";
-     _canvas.width = document.body.clientWidth;
-
-     _canvas.height = screen.height;
-
  redrawevent =  requestAnimationFrame(redrawsplay);
 
     let flag = 0;
@@ -290,6 +285,7 @@ await insertbst(r, value);
    if ( flag == 1)  {
 document.getElementById(r).style.top = 150+"px";
 document.getElementById(r).style.left = 1900+"px";
+
 window.scrollTo(1200,0)
     }
 
