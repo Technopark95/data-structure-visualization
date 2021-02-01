@@ -124,7 +124,7 @@ function del (one ,two)  {
 
 var ismob ;
 
-document.getElementById("copy").style.display = "block"
+document.getElementById("copy").style.display = "none"
 
 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
  
