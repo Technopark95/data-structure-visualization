@@ -67,6 +67,10 @@ var output = document.getElementById("out1")
 var logscreen = document.getElementById("log1");
 var outputscreen = document.getElementById("out1");
 
+var codehere = document.getElementById("codetype") ;
+
+
+
 
 document.body.insertAdjacentHTML("afterbegin",`<div id='playlabel'><p id="plbl">Play</p></div><div id='pauselabel'><p id="palbl" >Pause</p></div>`)
 
@@ -127,6 +131,8 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
   document.getElementById("pause-btn").style.display = "none";
   document.getElementsByClassName("slidecontainer")[0].style.width = "150px";
   document.getElementsByClassName("slidecontainer")[0].style.right = "0";
+
+  codehere.style.fontSize = '130%'
 
 }
 
@@ -686,9 +692,6 @@ async function redraw  ()  {
 
 
 
-
-
-var codehere = document.getElementById("codetype") ;
 
 
 
