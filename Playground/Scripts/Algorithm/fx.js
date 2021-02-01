@@ -61,7 +61,7 @@ var newnode;
 var drawflag = false;
 
 
-var value="";
+var value="VALUE";
 var log = document.getElementById("log1")
 var output = document.getElementById("out1")
 var logscreen = document.getElementById("log1");
@@ -708,7 +708,7 @@ codehere.addEventListener("keypress" , async function(e)  {
           
          log.removeChild(log.lastChild)
 
-         Log("Invalid Command")
+         Log("Invalid Command.<br>Please check the parameters or the syntax.")
 
 
 
