@@ -118,6 +118,17 @@ function del (one ,two)  {
           
 }
 
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+ 
+  document.getElementById("log1").style.display = "none";
+
+}
+
+else{
+  // false for not mobile device
+
+}
+
 
 
 
