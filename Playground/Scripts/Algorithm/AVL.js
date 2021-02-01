@@ -468,6 +468,54 @@ return _root;
 
 
 
+async function searchavl(ro , item) {
+
+  let precolor = document.getElementById(ro).style.backgroundColor;
+  
+    await hilight(ro, "rgb(109,209,0,1)" , "1200ms" , 1300 )
+  
+       hilight(ro, precolor , "1200ms" , 1300 )
+  
+    
+      if (  parseInt(document.getElementById(ro+"treeval").innerHTML ) == item) {
+    
+       await  hilight(ro,"red")
+        await display("Item found.")
+  
+      await  hilight(ro, precolor , "1200ms" , 1300 )
+    
+        return;
+    
+      }
+    
+      if (    ro  == "null"   ) {
+    
+        return;
+    
+      }
+    
+       if (    parseInt(document.getElementById(ro+"treeval").innerHTML )   > item     ) {
+    
+        
+        await display("Item is smaller than "+ parseInt(document.getElementById(ro+"treeval").innerHTML ) + " Going Left") 
+       await searchavl(tree[ro+"treeleft"], item)
+    
+      }
+    
+    
+      if (     parseInt(document.getElementById(ro+"treeval").innerHTML )   < item     ) {
+    
+        await display("Item is larger than "+ parseInt(document.getElementById(ro+"treeval").innerHTML ) + " Going Right") 
+      await  searchavl(tree[ro+"treeright"], item)
+    
+      }
+    
+    
+    
+    }
+  
+
+
 
 
 
