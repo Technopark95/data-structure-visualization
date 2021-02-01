@@ -272,6 +272,8 @@ let precolor = document.getElementById(ro).style.backgroundColor;
     document.body.style.width = "4000px";
      _canvas.width = document.body.clientWidth;
 
+     _canvas.height = screen.height;
+
  redrawevent =  requestAnimationFrame(redrawsplay);
 
     let flag = 0;
