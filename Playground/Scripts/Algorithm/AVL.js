@@ -607,7 +607,7 @@ async function DeleteAVL (h) {
 
 async function SearchAVL(h)  {
 
-await searchbst(r,h);
+await searchavl(r,h);
 
 
 }
