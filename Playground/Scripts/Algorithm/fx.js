@@ -133,25 +133,11 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
   document.getElementById("pause-btn").style.display = "none";
   document.getElementsByClassName("slidecontainer")[0].style.width = "150px";
   document.getElementsByClassName("slidecontainer")[0].style.right = "0";
-  codehere.style.fontSize = '130%'
 
   ismob = true;
 
 }
 
-else{
-  // false for not mobile device
-
-
-  document.body.style.height = "1000px";
-  document.body.style.width = "5000px";
-
-  _canvas.width = document.body.clientWidth;
-  _canvas.height = document.body.clientHeight;
-
-  ismob = false;
-
-}
 
 
 
