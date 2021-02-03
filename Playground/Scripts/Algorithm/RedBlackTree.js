@@ -26,6 +26,17 @@ var rbroot=0;
 var rbparent ={}
 
 
+Object.defineProperty(window, 'key', {
+  get: function() {
+    Log(`You are using random <span style="font-size:120%;color:coral;">key</span><br>To define specific value then edit the parameter<br>For example<br><span style="color:red;">RBTreeinsert(${Math.ceil(Math.random() * 1000)})</span>`)
+    return Math.ceil(Math.random() * 1000)}
+  })
+
+
+
+
+
+
 async function swapcolor (tparent,tgrandparent)  {
     
 
