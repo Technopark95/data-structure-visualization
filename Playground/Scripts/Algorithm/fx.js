@@ -61,7 +61,8 @@ var newnode;
 var drawflag = false;
 
 
-var value="VALUE";
+
+
 var log = document.getElementById("log1")
 var output = document.getElementById("out1")
 var logscreen = document.getElementById("log1");
@@ -688,6 +689,11 @@ async function redraw  ()  {
  
 
 
+ Object.defineProperty(window, 'value', {
+  get: function() {
+    Log(`You are using random value<br>To define specific value then edit the parameter<br>For example<br><span style="color:red;">InsertBST(${Math.ceil(Math.random() * 1000)})</span>`)
+    return Math.ceil(Math.random() * 1000)}
+  })
 
 
 
