@@ -87,7 +87,7 @@ log.insertAdjacentHTML("afterbegin",'<p style="font-size:x-large; margin-top:-5p
 document.body.insertAdjacentHTML("afterbegin",`<p id="iindex" style="position:absolute; transition-duration : 500ms; top:-200px; font-size:150%; font-family:'segoe ui'; ">i</p>`)
 document.body.insertAdjacentHTML("afterbegin",`<p id="jindex" style="position:absolute; transition-duration  :500ms; top:-200px; font-size:150%; font-family:'segoe ui'; ">j</p>`)
 document.body.insertAdjacentHTML("afterbegin",`<p id="kindex" style="position:absolute; transition-duration  :500ms; top:-200px; font-size:150%; font-family:'segoe ui'; ">k</p>`)
-document.body.insertAdjacentHTML("beforeend",`<img id = "skip-btn" src="../teleport_skip.png"  style= "position:fixed; right:290px;top: 240px;width: 60px; border-radius: 100%;"/>
+document.body.insertAdjacentHTML("beforeend",`<img id = "skip-btn" src="../teleport_skip.png"  style= "position:fixed; right:290px;top: 240px;width: 60px; border-radius: 100%;z-index:5;"/>
 `)
 let ipointer = document.getElementById("iindex")
 let jpointer =document.getElementById("jindex")
@@ -261,6 +261,7 @@ skipbtn.addEventListener("mouseleave",function()  {
 
 skipbtn.addEventListener("click",function()  {
 
+Log(`<span style="color:red;font-size:170%;">Skipping animation.</span>`)
  skipper = 1;
 
 })
@@ -482,41 +483,35 @@ async function pins (symbol) {
 
   if (stats == 1  ) await pauser();
 
-return new Promise( resolve => {
-  
-
   
   $("#poststack").append(`<div id="ps${stackelement}" class="PSTACK postfixcss"><p style="position:relative;">${symbol}</p></div>`)
   
-  $(`#ps${stackelement}`).animate({"opacity" : "100%"} ,speed , ()=> {
+    document.getElementById(`ps${stackelement}`).style.opacity = `0%` 
+await waitforme(speed);
+document.getElementById(`ps${stackelement}`).style.transition = `500ms linear`;
+document.getElementById(`ps${stackelement}`).style.opacity = `100%`
 
 stackelement++;
-resolve('');
 
-  })
-
+await waitforme(speed);
 
 
-
-})
 }
 
 async function pout()  {
 
   if (stats == 1  ) await pauser();
-return new Promise( resolve => {
-  
+
 --stackelement;
 
-$(`#ps${stackelement}`).animate({left : "+=300" , opacity: "0%"},speed, ()=> {
-
+document.getElementById(`ps${stackelement}`).style.opacity = `0%`
+await waitforme(speed);
 $(`#ps${stackelement}`).remove();
 
-resolve('')
 
-})
+await waitforme(speed);
 
-})
+
 
 }
 
