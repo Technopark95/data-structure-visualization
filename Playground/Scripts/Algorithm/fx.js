@@ -87,7 +87,8 @@ log.insertAdjacentHTML("afterbegin",'<p style="font-size:x-large; margin-top:-5p
 document.body.insertAdjacentHTML("afterbegin",`<p id="iindex" style="position:absolute; transition-duration : 500ms; top:-200px; font-size:150%; font-family:'segoe ui'; ">i</p>`)
 document.body.insertAdjacentHTML("afterbegin",`<p id="jindex" style="position:absolute; transition-duration  :500ms; top:-200px; font-size:150%; font-family:'segoe ui'; ">j</p>`)
 document.body.insertAdjacentHTML("afterbegin",`<p id="kindex" style="position:absolute; transition-duration  :500ms; top:-200px; font-size:150%; font-family:'segoe ui'; ">k</p>`)
-
+document.body.insertAdjacentHTML("beforeend",`<img id = "skip-btn" src="../teleport_skip.png"  style= "position:fixed; right:290px;top: 240px;width: 60px; border-radius: 100%;"/>
+`)
 let ipointer = document.getElementById("iindex")
 let jpointer =document.getElementById("jindex")
 let kpointer =document.getElementById("kindex")
@@ -103,12 +104,18 @@ var mySVG = connect();
 
 var pausebtn = document.getElementById("pause-btn");
 var playbtn = document.getElementById("play-btn");
+var skipbtn = document.getElementById("skip-btn");
+
+
+var skipper = 0;
 
 
 function waitforme(ms) {
 
+  if (skipper == 1) { speed=0; return;}
+
   return new Promise( resolve =>  {
-  
+
   setTimeout(()=>{ resolve('')},ms)
   
   })
@@ -218,11 +225,21 @@ pausebtn.addEventListener("mouseenter",function()  {
 })
 
 
+skipbtn.addEventListener("mouseenter",function()  {
+
+  skipbtn.style.transition = "200ms";
+
+  skipbtn.style.transform = "rotate(360deg)";
+  
+
+})
+
+
+
 playbtn.addEventListener("mouseleave",function()  {
 
   document.getElementById("playlabel").style.opacity = "0";
   
-
 })
 
 pausebtn.addEventListener("mouseleave",function()  {
@@ -230,6 +247,21 @@ pausebtn.addEventListener("mouseleave",function()  {
   document.getElementById("pauselabel").style.opacity = "0";
   
   
+
+})
+
+skipbtn.addEventListener("mouseleave",function()  {
+
+
+  skipbtn.style.transform = "rotate(0deg)";
+  
+
+})
+
+
+skipbtn.addEventListener("click",function()  {
+
+ skipper = 1;
 
 })
 
@@ -526,6 +558,8 @@ async function display (data , fin= 2000 , fout = 1000)  {
 
 function Log (data)  {
 
+  if (skipper == 1) return;
+
 $("#log1").append('<p class="uncaps" style="font-size:65%;color:black;font-family:Segoe UI;">'+data+'</p>')
 
 
@@ -744,6 +778,9 @@ codehere.addEventListener("keypress" , async function(e)  {
    
   codehere.removeAttribute("disabled");
   document.getElementById("animationplay").remove();
+  speed = 2020-2000*(slider.value/100);
+  skipper = 0;
+  
   
  
     
