@@ -455,9 +455,9 @@ async function ij(_i ,_j  , cellid="a" , cellid1 = "a") {
 
 
  async  function insert(value ,index , cellid="a") {
+
     if (stats == 1  ) await pauser();
 
-    return new Promise ( resolve => {
     $(`#${cellid}itemval${index}`).css({opacity:"0%"})
 
     $(`#${cellid}itemval${index}`).text(value)
@@ -465,13 +465,7 @@ async function ij(_i ,_j  , cellid="a" , cellid1 = "a") {
     $(`#${cellid}itemval${index}`).animate({opacity:"100%"} , speed)
 
 
-    setTimeout (function()  {
-
-      resolve('resolved')
-          },speed+80)
-          
-
-    })
+    await waitforme(speed+80);
 
   }
 
