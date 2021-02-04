@@ -197,7 +197,7 @@ async function queensolver(col=0)
 
           document.getElementById(`q${i}-${col}val`).style.opacity= "1"; 
 
-          document.getElementById(`q${i}-${col}`).style.backgroundColor= "red"; 
+          hilight(`q${i}-${col}` , "red")
 
           await waitforme(speed+100);
 
@@ -229,7 +229,7 @@ async function queensolver(col=0)
         else {
 
             document.getElementById(`q${i}-${col}val`).style.opacity= "0"; 
-            document.getElementById(`q${i}-${col}`).style.backgroundColor= defaultcolor; 
+            hilight(`q${i}-${col}` , defaultcolor) 
 
             await waitforme(speed+100);
         }
