@@ -56,14 +56,14 @@ function prec( c)
     let Expressive =$("#exptext");
     var st = new Stack()
     st.push('N'); 
-    await display("add parenthesis at both end");
+    await Log("add parenthesis at both end");
     s = "("+s+")"
     let l = s.length; 
     let ns=""; 
     for(let i = 0; i < l; i++) 
     { 
 
-        await display("Symbol : " + s.charAt(i) ,1000,1000);
+        await Log("Symbol : " + s.charAt(i));
         // If the scanned character is an operand, add it to output string. 
         if((s.charAt(i) >= 'a' && s.charAt(i) <= 'z')||(s.charAt(i) >= 'A' && s.charAt(i) <= 'Z')){ 
             
@@ -87,7 +87,7 @@ function prec( c)
         // until an ‘(‘ is encountered. 
         else if(s.charAt(i) == ')') 
         { 
-            await display("Pop untill '(' or !stack.empty() " ,1000,1000);
+            await Log("Pop untill '(' or !stack.empty() " );
             while(st.top() != 'N' && st.top() != '(') 
             { 
                 let c = st.top(); 
