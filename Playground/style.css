@@ -547,6 +547,7 @@ max-height: 0;
 vertical-align: middle;
         font-size: 140%;
         opacity: 0%;
+        transition: 500ms linear;
         
     }
 
