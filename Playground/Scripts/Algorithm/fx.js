@@ -488,7 +488,7 @@ async function pins (symbol) {
   
     document.getElementById(`ps${stackelement}`).style.opacity = `0%` 
 await waitforme(speed);
-document.getElementById(`ps${stackelement}`).style.transition = `500ms linear`;
+document.getElementById(`ps${stackelement}`).style.transition = `${speed}ms linear`;
 document.getElementById(`ps${stackelement}`).style.opacity = `100%`
 
 stackelement++;
@@ -773,10 +773,19 @@ codehere.addEventListener("keypress" , async function(e)  {
    
   codehere.removeAttribute("disabled");
   document.getElementById("animationplay").remove();
+
+  if (skipper == 1) {
+
+     
   speed = 2020-2000*(slider.value/100);
   skipper = 0;
+  mySVG.redrawLines();
+  mySVG.Splaylines();
+
+
   
-  
+  }
+ 
  
     
   }
