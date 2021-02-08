@@ -404,7 +404,7 @@ await waitforme(speed);
 
 for (let letsgo = 0 ; letsgo < getstring.length ; letsgo++) {
 
-
+  if (stats == 1  ) await pauser();
     let charbychar = document.getElementById("str"+letsgo);
 
     charbychar.style.transition= speed+"ms linear";
