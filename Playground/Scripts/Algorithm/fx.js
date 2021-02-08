@@ -111,6 +111,8 @@ var pausebtn = document.getElementById("pause-btn");
 var playbtn = document.getElementById("play-btn");
 var skipbtn = document.getElementById("skip-btn");
 
+playbtn.style.filter = "blur(5px)";
+
 
 var skipper = 0;
 
@@ -204,6 +206,16 @@ playbtn.addEventListener("click",playbuttonclick)
 
 pausebtn.addEventListener("click",function()  {
 
+
+  if (document.getElementById("animationplay") == null) {
+
+
+    Log(`<span style="color:red;font-size:130%;">You can pause animation only while they are running.</span>`)
+
+return
+ 
+  }
+
   stats =1;
 
   pausebtn.style.filter = "blur(5px)";
@@ -265,8 +277,21 @@ skipbtn.addEventListener("mouseleave",function()  {
 
 
 skipbtn.addEventListener("click",function()  {
+
+if (document.getElementById("animationplay")) {
+
 Log(`<span style="color:red;font-size:170%;">Skipping animation.</span>`)
  skipper = 1;
+
+}
+
+else {
+
+  Log(`<span style="color:red;font-size:130%;">You can skip animation only while they are running.</span>`)
+
+
+}
+
 
 })
 
