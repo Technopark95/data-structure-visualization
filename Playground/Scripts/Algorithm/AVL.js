@@ -123,8 +123,7 @@ async function insertavl(node_, key_) {
 
      },100)
     
-     window.scrollTo(1200,0)
-
+   
      r= avlnode
 
        return avlnode;
@@ -555,8 +554,14 @@ return count-1;
  
 async function InsertAVL (h) {
 
+
   
   redrawevent= requestAnimationFrame(redrawsplay)
+
+  if (document.getElementById(r)== null) {
+    window.scrollTo(1200,0)
+
+  }
 
    await insertavl(r,h);
 
@@ -600,6 +605,7 @@ async function DeleteAVL (h) {
   await waitforme(speed+100);
 
   cancelAnimationFrame(redrawevent)
+
 
 
 }
