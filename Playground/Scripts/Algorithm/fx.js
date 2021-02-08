@@ -278,6 +278,14 @@ skipbtn.addEventListener("mouseleave",function()  {
 
 skipbtn.addEventListener("click",function()  {
 
+  if (stats == 1)  {
+
+    Log(`<span style="color:red;font-size:130%;">Cant Skip a paused animation.</span>`)
+
+    return
+
+  }
+
 if (document.getElementById("animationplay")) {
 
 Log(`<span style="color:red;font-size:170%;">Skipping animation.</span>`)
@@ -806,11 +814,13 @@ codehere.addEventListener("keypress" , async function(e)  {
 
   if (skipper == 1) {
 
+
      
   speed = 2020-2000*(slider.value/100);
   skipper = 0;
+
+  if (_lines.length !=0)
   mySVG.redrawLines();
-  mySVG.Splaylines();
 
 
   
