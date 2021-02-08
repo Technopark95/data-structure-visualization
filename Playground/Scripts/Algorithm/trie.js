@@ -27,6 +27,8 @@ var ani = "yes";
 var leftcord= 0;
 var topcord =0;
 
+skipbtn.style.display = 'none'
+
 function arrangetries(gotobject)  {
 
   let i =0;

@@ -26,6 +26,8 @@ var BTree= {}
 
 var Btreeinv = {}
 
+skipbtn.style.display = 'none'
+
 function  BTreeNode(l)  {
 
 let btreenode = `<div id=${count} class="btnode" style="transition:${speed}ms linear;width:${46*1+10}px;"><p style="display:none;" id=${count}leaf>${l}</p><p style="display:none;" id=${count}n>0</p></div>`

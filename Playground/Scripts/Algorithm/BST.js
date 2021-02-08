@@ -28,7 +28,7 @@ var avlparent = {}
 var r = 0;
 
 var deletednode = 0;
-
+skipbtn.style.display = 'none'
 
 
 async function insertbst(node_, key_) { 

@@ -23,6 +23,8 @@ var r = 0;
 var avlparent = []
 
 
+skipbtn.style.display = 'none'
+
  async function rightRotate(y)  
 {  
    let unbalparent = parent[y];

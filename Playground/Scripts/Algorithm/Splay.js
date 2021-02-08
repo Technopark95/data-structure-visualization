@@ -28,6 +28,8 @@ function setnodekey(node,val) { document.getElementById(node+"treeval").innerHTM
 function Left(node)  { return tree[node+"treeleft"] }
 function Right(node)  { return tree[node+"treeright"] }
 
+skipbtn.style.display = 'none'
+
 async function splayrightRotate(x)  
 {  
 

@@ -24,7 +24,7 @@ Copyright 2020 Anoop Singh, Graphical Structure
 
 var rbroot=0;
 var rbparent ={}
-
+skipbtn.style.display = 'none'
 
 Object.defineProperty(window, 'key', {
   get: function() {
