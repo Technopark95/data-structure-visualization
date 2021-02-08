@@ -736,7 +736,7 @@ async function redraw  ()  {
 codehere.addEventListener("keypress" , async function(e)  {
 
   
-  if (e.which == 13) {
+  if (e.key == "Enter") {
 
     codehere.setAttribute("disabled","disabled");
 
@@ -777,6 +777,7 @@ codehere.addEventListener("keypress" , async function(e)  {
    
   codehere.removeAttribute("disabled");
   document.getElementById("animationplay").remove();
+
 
   if (skipper == 1) {
 
