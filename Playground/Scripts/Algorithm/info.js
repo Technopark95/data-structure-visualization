@@ -213,8 +213,7 @@ if (codehere.value != "" ) {
   commandlistelement.style.zIndex= "0";
   document.getElementById("infos").style.left = "0px"
 
-  arrowpointer.style.transform = "rotate(90deg)"
-  
+  arrowpointer.style.transform = "rotate(0deg)"
 
       setTimeout(()=> {
         infotabelement.style.top = "40%";
@@ -239,7 +238,8 @@ if (codehere.value != "" ) {
       document.getElementById("infos").style.left = "250px"
 
       infotabelement.removeEventListener("mouseleave",leaveinfotab)
-      arrowpointer.style.transform = "rotate(0deg)"
+      
+      arrowpointer.style.transform = "rotate(90deg)"
 
       commandlistelement.style.display = "";
 
