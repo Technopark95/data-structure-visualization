@@ -31,6 +31,10 @@ let redrawlistevent;
 
 var xp = 0;
 
+skipbtn.style.display = 'none'
+playbtn.style.display = 'none'
+pausebtn.style.display = 'none'
+
 async function redrawlist  ()  {
 
     mySVG.Listlines();
