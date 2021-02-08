@@ -70,7 +70,10 @@ var outputscreen = document.getElementById("out1");
 
 var codehere = document.getElementById("codetype") ;
 
+var arrowpointer = document.getElementById("infos").childNodes[1];
+arrowpointer.style.transition = "200ms"
 
+document.getElementById("infos").childNodes[0].innerText = "Code List";
 
 
 document.body.insertAdjacentHTML("afterbegin",`<div id='playlabel'><p id="plbl">Play</p></div><div id='pauselabel'><p id="palbl" >Pause</p></div>`)
@@ -87,8 +90,10 @@ log.insertAdjacentHTML("afterbegin",'<p style="font-size:x-large; margin-top:-5p
 document.body.insertAdjacentHTML("afterbegin",`<p id="iindex" style="position:absolute; transition-duration : 500ms; top:-200px; font-size:150%; font-family:'segoe ui'; ">i</p>`)
 document.body.insertAdjacentHTML("afterbegin",`<p id="jindex" style="position:absolute; transition-duration  :500ms; top:-200px; font-size:150%; font-family:'segoe ui'; ">j</p>`)
 document.body.insertAdjacentHTML("afterbegin",`<p id="kindex" style="position:absolute; transition-duration  :500ms; top:-200px; font-size:150%; font-family:'segoe ui'; ">k</p>`)
-document.body.insertAdjacentHTML("beforeend",`<img id = "skip-btn" src="../teleport_skip.png"  style= "position:fixed; right:290px;top: 240px;width: 60px; border-radius: 100%;z-index:5;"/>
-`)
+document.body.insertAdjacentHTML("beforeend",`<img id = "skip-btn" src="../teleport_skip.png"  style= "position:fixed; right:290px;top: 240px;width: 60px; border-radius: 100%;z-index:5;"/>`)
+
+
+
 let ipointer = document.getElementById("iindex")
 let jpointer =document.getElementById("jindex")
 let kpointer =document.getElementById("kindex")
@@ -260,7 +265,6 @@ skipbtn.addEventListener("mouseleave",function()  {
 
 
 skipbtn.addEventListener("click",function()  {
-
 Log(`<span style="color:red;font-size:170%;">Skipping animation.</span>`)
  skipper = 1;
 

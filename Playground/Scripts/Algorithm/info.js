@@ -67,6 +67,8 @@ infotabelement.addEventListener("mouseenter" , () => {
 
       infotabelement.removeEventListener("mouseleave",leaveinfotab)
 
+      arrowpointer.style.transform = "rotate(90deg)"
+
       commandlistelement.style.display = "";
 
       setTimeout(()=> {
@@ -94,6 +96,7 @@ infotabelement.addEventListener("mouseenter" , () => {
   commandlistelement.style.transition= "300ms";
   commandlistelement.style.opacity= "0%";
   commandlistelement.style.zIndex= "0";
+  arrowpointer.style.transform = "rotate(0deg)"
 
   
 
