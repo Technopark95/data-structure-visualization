@@ -458,6 +458,50 @@ async function ShellSort()
 
     
 
+async function heapify(nn,i)
+{
+    let largest = i; // Initialize largest as root
+    let l = 2 * i + 1; // left = 2*i + 1
+    let r = 2 * i + 2; // right = 2*i + 2
+ 
+    // If left child is larger than root
+    if (l < nn && bararray[l] > bararray[largest])
+        largest = l;
+ 
+    // If right child is larger than largest so far
+    if (r < nn && bararray[r] > bararray[largest])
+        largest = r;
+ 
+    // If largest is not root
+    if (largest != i) {
+        await swapper(i, largest);
+ 
+        // Recursively heapify the affected sub-tree
+       await heapify( nn, largest);
+    }
+}
+ 
+// main function to do heap sort
+async function HeapSort()
+{
+    // Build heap (rearrange array)
+    for (let i = Math.floor( n / 2) - 1; i >= 0; i--)
+        await heapify(n, i);
+ 
+    // One by one extract an element from heap
+    for (let i = n - 1; i > 0; i--) {
+        // Move current root to end
+      await  swapper(0, i);
+
+      document.getElementById("bigr"+i).style.opacity = "20%";
+ 
+        // call max heapify on the reduced heap
+        await   heapify( i, 0);
+    }
+
+
+    await fadeaway(0,n-1)
+}
 
 
 
