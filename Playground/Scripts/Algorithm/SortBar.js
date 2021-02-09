@@ -405,8 +405,6 @@ async function ShellSort()
         // The first gap elements a[0..gap-1] are already in gapped order 
         // keep adding one more element until the entire array is 
         // gap sorted 
-        
-        await filler(gap, "coral");
 
         for (let i = gap; i < n; i += 1) 
         { 
