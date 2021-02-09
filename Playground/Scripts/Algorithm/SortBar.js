@@ -1,3 +1,26 @@
+
+/*
+
+Copyright 2020 Anoop Singh, Graphical Structure
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+
+
+*/
+
+
+
 document.getElementById("cav1").remove();
 
 let bararray = {}
@@ -50,6 +73,7 @@ document.getElementById("bigr"+i).setAttribute("height" ,`${(ra/n)*maxheight}`)
 
 async function swapper(i1,i2)  {
 
+  if (stats == 1  ) await pauser();
 
   let e1 = document.getElementById(`bigr${i1}`)
   let e2 = document.getElementById(`bigr${i2}`)
@@ -79,6 +103,8 @@ async function swapper(i1,i2)  {
  e2.style.fill = 'red';
 
  await waitforme(speed+100);
+
+ if (stats == 1  ) await pauser();
 
 }
 
@@ -139,7 +165,7 @@ async  function SelectionSort() {
 
     async function insert(i,val)  {
 
-
+      if (stats == 1  ) await pauser();
 
 val.style.transition = "0ms";
 val.setAttribute("x" , (15+(i*5)));
@@ -154,13 +180,14 @@ val.style.opacity = "1";
 
 await waitforme(speed);
 
-
+if (stats == 1  ) await pauser();
 
     }
     
 
   async function shiftright(i) {
 
+    if (stats == 1  ) await pauser();
 
     let elem = document.getElementById(`bigr${i}`);
 
@@ -188,7 +215,7 @@ let e1x = elem.getAttribute("x")
  elemp1.setAttribute("x" , e1x);
 
 
-    
+ if (stats == 1  ) await pauser();
   }
     
 
