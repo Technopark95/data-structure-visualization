@@ -261,10 +261,13 @@ let e1x = elem.getAttribute("x")
       let x = document.getElementsByClassName("bars");
       let ie;
       for (ie = 0; ie < x.length; ie++) {
-        x[ie].style.opacity = "0.3";
+        x[ie].style.opacity = "20%";
         x[ie].style.fill = "red";
       }
       
+      if (l == -2) {
+        return;
+      }
 
 for (let s = l ; s <= h ; s++) {
 
@@ -391,6 +394,69 @@ await fadeaway(0,n-1)
 
 }
 
+
+
+async function ShellSort() 
+{ 
+    // Start with a big gap, then reduce the gap 
+    for (let gap = Math.floor(n/2); gap > 0; gap = Math.floor(gap / 2)) 
+    { 
+        // Do a gapped insertion sort for this gap size. 
+        // The first gap elements a[0..gap-1] are already in gapped order 
+        // keep adding one more element until the entire array is 
+        // gap sorted 
+        
+        await filler(gap, "coral");
+
+        for (let i = gap; i < n; i += 1) 
+        { 
+            // add a[i] to the elements that have been gap sorted 
+            // save a[i] in temp and make a hole at position i 
+          await  fadeaway(-2,-2);
+
+            let temp = bararray[i]; 
+        //   var tempbar = document.getElementById("bigr"+i);
+  
+            // shift earlier gap-sorted elements up until the correct  
+            // location for a[i] is found 
+            let j;    
+            
+            for (let jj =i ; jj >= gap ; jj -= gap) {
+
+              document.getElementById("bigr"+jj).style.opacity = "1";
+
+              document.getElementById("bigr"+(jj-gap)).style.opacity = "1";
+
+
+
+            }
+                
+            await waitforme(speed+100);
+
+
+            for (j = i; j >= gap && bararray[j - gap] > temp; j -= gap) {
+
+              bararray[j] = bararray[j - gap];
+              
+              document.getElementById("bigr"+j).style.opacity = "1";
+              document.getElementById("bigr"+(j-gap)).style.opacity = "1";
+
+              await swapper(j - gap,j)
+
+
+            }
+                
+              
+            //  put temp (the original a[i]) in its correct location 
+            bararray[j] = temp;
+
+           // await insert(j,tempbar)
+            
+            
+        } 
+    } 
+    return 0; 
+} 
 
     
 
