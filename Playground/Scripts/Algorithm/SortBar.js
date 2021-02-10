@@ -117,7 +117,7 @@ async function swapper(i1,i2)  {
 
   e1.style.fill = 'blue';
   e2.style.fill = 'blue';
-  await waitforme(speed+100);
+ 
 
  let e1x = e1.getAttribute("x")
  let e2x = e2.getAttribute("x")
@@ -139,7 +139,6 @@ async function swapper(i1,i2)  {
  e1.style.fill = 'red';
  e2.style.fill = 'red';
 
- await waitforme(speed+100);
 
  if (stats == 1  ) await pauser();
 
