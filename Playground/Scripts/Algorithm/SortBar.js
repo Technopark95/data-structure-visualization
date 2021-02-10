@@ -23,6 +23,7 @@ Copyright 2020 Anoop Singh, Graphical Structure
 
 document.getElementById("cav1").remove();
 
+
 let bararray = {}
 
 var n = 43;
@@ -32,7 +33,7 @@ let i = 1;
 
 for ( i = 0 ; i < n ; i++) {
 
-  let ra = Math.ceil(((Math.ceil(Math.random() *1000))/1000)*36);
+  let ra = Math.ceil(((Math.ceil(Math.random() *1000))/1000)*n);
 
 
 
@@ -68,6 +69,40 @@ document.getElementById("bigr"+i).setAttribute("height" ,`${(ra/n)*maxheight}`)
 
 
 }
+
+
+
+function movedown(i,type,col,newid)  {
+
+document.getElementById("bigr"+i).setAttribute("y" ,`${((maxheight+130)-(bararray[i]/n)*maxheight)}`)
+
+document.getElementById("bigr"+i).style.fill = col
+
+document.getElementById("bigr"+i).setAttribute("id" ,`bigr${type}${newid}`)
+
+
+}
+
+
+function mergerinsert(i , type , j)  {
+
+  let selfheight = document.getElementById("bigr"+type+i).getAttribute("height")
+
+  document.getElementById("bigr"+type+i).setAttribute("y" ,`${((maxheight+35)-selfheight)}`)
+
+  document.getElementById("bigr"+type+i).setAttribute("x" ,`${15+(j*5)}`)
+
+  document.getElementById("bigr"+type+i).style.fill = "red"
+
+
+  document.getElementById("bigr"+type+i).setAttribute("id" ,`bigr${j}`)
+  
+
+  
+  
+  }
+  
+
 
 
 
@@ -502,6 +537,155 @@ async function HeapSort()
 
     await fadeaway(0,n-1)
 }
+
+
+
+
+
+
+
+async function merge( l,  m,  r) 
+{ 
+    let i, j, k; 
+    let n1 = Math.floor( m - l + 1); 
+    let n2 = Math.floor( r - m); 
+  
+    /* create temp arrays */
+    let L = [], R = [];
+
+    /* Copy data to temp arrays L[] and R[] */
+    for (i = 0; i < n1; i++) {
+
+        L[i] = bararray[l + i];
+
+       movedown((l+i) , "l" , "coral",i)
+
+        await waitforme(speed)
+   
+    }
+
+
+
+    for (j = 0; j < n2; j++)  {
+
+        R[j] = bararray[m + 1 + j];
+
+
+        movedown((m + 1 + j) , "r" , "purple",j)
+
+        await waitforme(speed)
+
+
+        
+    }
+
+  
+    /* Merge the temp arrays back into arr[l..r]*/
+    i = 0; // Initial index of first subarray 
+    j = 0; // Initial index of second subarray 
+    k = l; // Initial index of merged subarray 
+    
+    while (i < n1 && j < n2) { 
+        if (L[i] <= R[j]) { 
+          
+          bararray[k] = L[i]; 
+
+          mergerinsert(i,"l" , k)
+
+          await waitforme(speed)
+     
+            i++; 
+        } 
+        else { 
+          bararray[k] = R[j]; 
+
+          mergerinsert(j,"r" , k)
+
+          await waitforme(speed)
+
+            j++; 
+        } 
+        k++; 
+    } 
+  
+    /* Copy the remaining elements of L[], if there 
+       are any */
+    while (i < n1) { 
+     
+      bararray[k] = L[i]; 
+
+      mergerinsert(i,"l" , k)
+
+      await waitforme(speed)
+
+        i++; 
+        k++; 
+    } 
+  
+    /* Copy the remaining elements of R[], if there 
+       are any */
+    while (j < n2) { 
+      
+      bararray[k] = R[j];
+
+      mergerinsert(j,"r" , k)
+
+      await waitforme(speed)
+        j++; 
+        k++; 
+    } 
+
+
+} 
+  
+/* l is for left index and r is right index of the 
+   sub-array of arr to be sorted */
+async function ms(  l,  r) 
+{ 
+    if (l < r) { 
+        // Same as (l+sr)/2, but avoids overflow for 
+        // large l and h 
+      let m = Math.floor (l + (r - l) / 2); 
+       await ms( l, m); 
+       await ms( m + 1, r); 
+     //  await cutoutarray(l,r)
+       await merge( l, m, r); 
+
+    } 
+} 
+
+
+async function MergeSort( ) 
+{ 
+
+  document.getElementById("svg1").style.transition = "500ms"
+
+
+  document.getElementById("svg1").style.transform = "scale(.56,.56) translate(0,-28%)";
+
+  await waitforme(1000);
+    
+
+  await ms(0,n-1);
+
+  document.getElementById("svg1").style.transform = "scale(1,1) translate(0,0)";
+
+
+
+
+
+} 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
