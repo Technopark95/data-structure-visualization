@@ -26,7 +26,11 @@ document.getElementById("cav1").remove();
 
 let bararray = {}
 
-var n = 43;
+
+skipbtn.style.right = "60px"
+skipbtn.style.top = "308px"
+
+var n = 50;
 var maxheight = 90;
 var limit = n+maxheight;
 let i = 1;
@@ -34,8 +38,6 @@ let i = 1;
 for ( i = 0 ; i < n ; i++) {
 
   let ra = Math.ceil(((Math.ceil(Math.random() *1000))/1000)*n);
-
-
 
   bararray[i] = ra;
 
@@ -53,7 +55,7 @@ function randomize()  {
 
   for ( i = 0 ; i < n ; i++) {
 
-    let ra = Math.ceil(((Math.ceil(Math.random() *1000))/1000)*36);
+    let ra = Math.ceil(((Math.ceil(Math.random() *1000))/1000)*n);
   
     bararray[i] = ra;
   
@@ -390,7 +392,7 @@ await waitforme(speed)
 }  
   
 /* The main function that implements QuickSort  
-arr[] --> Array to be sorted,  
+bararray[] --> Array to be sorted,  
 low --> Starting index,  
 high --> Ending index */
 async function qs(  low,  high)  
@@ -684,10 +686,121 @@ async function MergeSort( )
 
 
 
+async function iSort( left, right) 
+{ 
+    for (let i = left + 1; i <= right; i++) 
+    { 
+        let temp = bararray[i]; 
+        var tempbar = document.getElementById("bigr"+i);
+        let j = i - 1; 
+        while (j >= left && bararray[j] > temp) 
+        { 
+            bararray[j+1] = bararray[j]; 
+            await shiftright(j);
+            j--; 
+        } 
+        bararray[j+1] = temp; 
+        await insert(j+1,tempbar)
+    } 
+} 
+  
+
+async function TimSort() 
+{ 
+
+  let RUN =16;
+
+
+    // Sort individual subarrays of size RUN 
+    for (let i = 0; i < n; i+=RUN) 
+      await  iSort( i, Math.min((i+15), (n-1))); 
+  
+    // Start merging from size RUN (or 32).  
+    // It will merge 
+    // to form size 64, then 128, 256  
+    // and so on .... 
+
+    document.getElementById("svg1").style.transition = "500ms"
+
+
+    document.getElementById("svg1").style.transform = "scale(.56,.56) translate(0,-28%)";
+  
+    await waitforme(1000);
+    for (let size = RUN; size < n;  size = 2*size) { 
+          
+        // pick starting point of  
+        // left sub array. We 
+        // are going to merge  
+        // bararray[left..left+size-1] 
+        // and bararray[left+size, left+2*size-1] 
+        // After every merge, we  
+        // increase left by 2*size 
+        for (let left = 0; left < n;  left += 2*size) { 
+              
+            // find ending point of  
+            // left sub array 
+            // mid+1 is starting point  
+            // of right sub array 
+            let mid = left + size - 1; 
+            let right = Math.min((left + 2*size - 1),  (n-1)); 
+  
+            // merge sub array bararray[left.....mid] & 
+            // bararray[mid+1....right] 
+          await  merge(left, mid, right); 
+        } 
+    } 
+
+
+    document.getElementById("svg1").style.transform = "scale(1,1) translate(0,0)";
 
 
 
+} 
+  
 
+
+function getNextGap( gap)
+{
+    // Shrink gap by Shrink factor
+    gap = (gap*10)/13;
+ 
+    if (gap < 1)
+        return 1;
+    return gap;
+}
+ 
+// Function to sort bararray[0..n-1] using Comb Sort
+async function CombSort()
+{
+    // Initialize gap
+    let gap = n;
+ 
+    // Initialize swapped as true to make sure that
+    // loop runs
+    let swapped = true;
+ 
+    // Keep running while gap is more than 1 and last
+    // iteration caused bararray swap
+    while (gap != 1 || swapped == true)
+    {
+        // Find next gap
+        gap = getNextGap(gap);
+ 
+        // Initialize swapped as false so that we can
+        // check if swap happened or not
+        swapped = false;
+ 
+        // Compare all elements with current gap
+        for (let i=0; i<n-gap; i++)
+        {
+            if (bararray[i] > bararray[i+gap])
+            {
+              await  swapper(i, i+gap);
+                swapped = true;
+            }
+        }
+    }
+}
 
 
 
