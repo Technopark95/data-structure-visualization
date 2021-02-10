@@ -854,8 +854,8 @@ async function CocktailShakerSort()
         for (let i = end - 1; i >= start; --i) 
         {
 
-                filler(i,"coral");
-           await filler(i+1,"coral");
+                filler(i,"blue");
+           await filler(i+1,"blue");
             if (bararray[i] > bararray[i + 1]) {
                await swapper(i, i + 1);
                 swapped = true;
