@@ -546,6 +546,10 @@ async function HeapSort()
 
 async function merge( l,  m,  r) 
 { 
+
+
+await fadeaway(l,r);
+
     let i, j, k; 
     let n1 = Math.floor( m - l + 1); 
     let n2 = Math.floor( r - m); 
