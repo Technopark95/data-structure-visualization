@@ -162,6 +162,7 @@ for (ie = 0; ie < x11.length; ie++) {
 
 (e.target).style.transition = '300ms';
 (e.target).style.fontSize = '130%';
+codehere.value = (e.target).innerText;
 
 
   })
@@ -186,19 +187,19 @@ for (ie = 0; ie < x11.length; ie++) {
 
 
 
-for (ie = 0; ie < x11.length; ie++) {
+// for (ie = 0; ie < x11.length; ie++) {
 
-  x11[ie].addEventListener("click" , (e)=> {
+//   x11[ie].addEventListener("click" , (e)=> {
 
-    let com =  (e.target).innerHTML;
+//     let com =  (e.target).innerHTML;
 
-    document.getElementById("codetype").value= com;
-
-
-  })
+//     document.getElementById("codetype").value= com;
 
 
-}
+//   })
+
+
+// }
 
 codehere.addEventListener("click" , function()  {
 
