@@ -41,7 +41,7 @@ for ( i = 0 ; i < n ; i++) {
 
   bararray[i] = ra;
 
-document.getElementById("svg1").insertAdjacentHTML("beforeend", `<rect class="bars" id="bigr${i}" x="${15+(i*5)}" y="${((maxheight+35)-(ra/n)*maxheight)}" width="4" height="${(ra/n)*maxheight}"style="fill:red;stroke:black;stroke-width:.1;" />`)
+document.getElementById("svg1").insertAdjacentHTML("beforeend", `<rect class="bars" id="bigr${i}" x="${15+(i*5)}" y="${((maxheight+35)-(ra/n)*maxheight)}" width="4" height="${(ra/n)*maxheight}"style="fill:red;stroke:black;stroke-width:.3;" />`)
 
 document.getElementById(`bigr${i}`).style.transition = `${speed}ms ease-in-out`;
 
