@@ -809,7 +809,7 @@ async function CocktailShakerSort()
     let start = 0;
     let end = n - 1;
  
-    while (swapped) 
+    while (start <= end) 
     {
         // reset the swapped flag on entering
         // the loop, because it might be true from
@@ -831,12 +831,12 @@ async function CocktailShakerSort()
 
 
             filler(i,"red");
-            await filler(i+1,"red");
+             filler(i+1,"red");
         }
  
         // if nothing moved, then array is sorted.
-        if (!swapped)
-            break;
+        // if (!swapped)
+        //     break;
  
         // otherwise, reset the swapped flag so that it
         // can be used in the next stage
@@ -862,7 +862,7 @@ async function CocktailShakerSort()
             }
 
             filler(i,"red");
-            await filler(i+1,"red");
+            filler(i+1,"red");
 
         }
  
