@@ -21,11 +21,11 @@ Copyright 2020 Anoop Singh, Graphical Structure
 
 
 
-document.getElementById("cav1").remove();
 
 
 let bararray = {}
 
+document.getElementById("cav1").remove();
 
 skipbtn.style.right = "60px"
 skipbtn.style.top = "308px"
