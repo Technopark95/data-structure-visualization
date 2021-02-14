@@ -1,4 +1,23 @@
 
+/*
+
+Copyright 2020 Anoop Singh, Graphical Structure
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+
+
+*/
 
 document.getElementById("cav1").remove();
 
@@ -51,7 +70,7 @@ axisdrawevent = requestAnimationFrame(axisdraw)
 
 async function update(deg) {
 
-
+    Log(`<span style="font-size:120%;">Angle : ${(adjuster+deg).toFixed(3)}</span>`)
 document.getElementById("rott").style.transform = `translate(-50%,0) rotate(${(adjuster+deg)}deg)`;
 
 axisdrawevent = requestAnimationFrame(axisdraw)
@@ -77,6 +96,9 @@ async function cordicutil( theta, n, sign)
 
   for (k=0; k<n; ++k)
   {
+
+    Log(`<span style="font-size:160%;color:coral;">Iteration ${k+1}</span>`)
+
     d = z>>31;
     //get sign. for other architectures, you might want to use the more portable version
     //d = z>=0 ? 0 : -1;
@@ -87,17 +109,41 @@ async function cordicutil( theta, n, sign)
     y = ty;
     z = tz;
 
-    if (adjuster == 0)
-    await update(Math.asin(y/MUL )*180/Math.PI)
+    Log(`cosval<br><span style="font-size:130%;">${(tx/MUL).toFixed(5)}</span><br><span style="font-size:130%;">sinval<br>${(ty/MUL).toFixed(5)}</span>`)
 
-    if (adjuster == 90)
-     await update(90- Math.asin(y/MUL )*180/Math.PI)
+    if (adjuster == 0) {
 
-     if (adjuster == 180)
-     await update(Math.asin(y/MUL )*180/Math.PI)
+        let angles = Math.asin(y/MUL )*180/Math.PI;
+     
+           await update(angles)
 
-     if (adjuster == 270)
-     await update(90-Math.asin(y/MUL )*180/Math.PI)
+           
+    }
+ 
+
+    if (adjuster == 90) {
+
+        let angles = 90- Math.asin(y/MUL )*180/Math.PI;
+        
+          await update(angles)
+    }
+   
+
+     if (adjuster == 180) {
+
+         let angles = Math.asin(y/MUL )*180/Math.PI;
+      
+           await update(angles)
+     }
+     
+
+     if (adjuster == 270) {
+
+        let angles = 90- Math.asin(y/MUL )*180/Math.PI;
+       
+          await update(angles)
+     }
+     
 
 
   
