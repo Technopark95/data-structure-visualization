@@ -87,7 +87,20 @@ async function cordicutil( theta, n, sign)
     y = ty;
     z = tz;
 
+    if (adjuster == 0)
     await update(Math.asin(y/MUL )*180/Math.PI)
+
+    if (adjuster == 90)
+     await update(90- Math.asin(y/MUL )*180/Math.PI)
+
+     if (adjuster == 180)
+     await update(Math.asin(y/MUL )*180/Math.PI)
+
+     if (adjuster == 270)
+     await update(90-Math.asin(y/MUL )*180/Math.PI)
+
+
+  
 
   }  
 
@@ -114,7 +127,7 @@ i =deg;
 if (i >=0 && i <= 90) {
     
     sign = 1;
-    
+    adjuster = 0;
     
 }
 
@@ -123,6 +136,10 @@ else if (i >90 && i <= 180) {
      sign = 1;
      
      i = 180-i;
+
+     adjuster= 90;
+
+     
     
 }
 
@@ -132,6 +149,8 @@ else if (i >180 && i <= 270) {
      sign = -1;
      
      i = i-180; 
+
+     adjuster = 180;
     
 }
 
@@ -140,6 +159,8 @@ else  if (i >270 && i <= 360) {
      sign = -1; 
      
      i = 360-i;
+
+     adjuster = 270;
     
 }
 
