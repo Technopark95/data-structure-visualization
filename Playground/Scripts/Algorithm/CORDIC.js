@@ -170,7 +170,7 @@ async function cordic(deg) {
 
     if (deg < 0 || deg > 360) {
 
-        Log(`<span style="font-size:160%;color:coral;">Enter value from 0 to 360.</span>`)
+        Log(`<span style="font-size:125%;color:coral;">Enter value from 0 to 360.</span>`)
 
         return;
 
