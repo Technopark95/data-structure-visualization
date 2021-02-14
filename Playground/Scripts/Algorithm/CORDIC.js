@@ -42,6 +42,12 @@ let xis = document.getElementById("xaxis");
 let yis = document.getElementById("yaxis");
 
 
+let rotor = document.getElementById("rott");
+
+rotor.style.transition = `${speed}ms linear`;
+xis.style.transition = `${speed}ms linear`;
+yis.style.transition = `${speed}ms linear`;
+
 var axisdrawevent ;
 
 
@@ -71,11 +77,11 @@ axisdrawevent = requestAnimationFrame(axisdraw)
 async function update(deg) {
 
     Log(`<span style="font-size:120%;">Angle : ${(adjuster+deg).toFixed(3)}</span>`)
-document.getElementById("rott").style.transform = `translate(-50%,0) rotate(${(adjuster+deg)}deg)`;
+rotor.style.transform = `translate(-50%,0) rotate(${(adjuster+deg)}deg)`;
 
 axisdrawevent = requestAnimationFrame(axisdraw)
 
-await waitforme(2100)
+await waitforme(speed+100)
 
 cancelAnimationFrame(axisdrawevent)
 
@@ -227,6 +233,18 @@ else  if (i >270 && i <= 360) {
 
 }
 
+
+
+
+slider.onchange= function() {
+
+rotor.style.transition = `${speed}ms linear`;
+xis.style.transition = `${speed}ms linear`;
+yis.style.transition = `${speed}ms linear`;
+
+  }
+
 //CORDIC(180)
+
 
 
