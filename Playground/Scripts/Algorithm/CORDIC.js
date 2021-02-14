@@ -85,7 +85,7 @@ await waitforme(100)
 
 
 
-async function cordicutil( theta, n, sign)
+async function cordicutil( theta, n, sign,cosfactor)
 {
     
  
@@ -109,7 +109,7 @@ async function cordicutil( theta, n, sign)
     y = ty;
     z = tz;
 
-    Log(`cosval<br><span style="font-size:130%;">${(tx/MUL).toFixed(5)}</span><br><span style="font-size:130%;">sinval<br>${(ty/MUL).toFixed(5)}</span>`)
+    Log(`cosval<br><span style="font-size:130%;">${(tx/MUL).toFixed(4)*cosfactor}</span><br><span style="font-size:130%;">sinval<br>${(ty/MUL).toFixed(4)*sign}</span>`)
 
     if (adjuster == 0) {
 
@@ -146,12 +146,11 @@ async function cordicutil( theta, n, sign)
      
 
 
-  
-
   }  
 
 
- cosval = x*sign; sinval = y*sign;
+
+ cosval = x*cosfactor; sinval = y*sign;
 
 
 }
@@ -169,18 +168,20 @@ let i;
     
 i =deg;
  let sign = 1;
+ let signcos = 1;
 
 if (i >=0 && i <= 90) {
     
     sign = 1;
+    signcos = 1
     adjuster = 0;
     
 }
 
 else if (i >90 && i <= 180) {
  
-     sign = 1;
-     
+    sign = 1;
+    signcos = -1
      i = 180-i;
 
      adjuster= 90;
@@ -192,8 +193,8 @@ else if (i >90 && i <= 180) {
 else if (i >180 && i <= 270) {
    
   
-     sign = -1;
-     
+    sign = -1;
+    signcos = -1;
      i = i-180; 
 
      adjuster = 180;
@@ -202,8 +203,8 @@ else if (i >180 && i <= 270) {
 
 else  if (i >270 && i <= 360) {
 
-     sign = -1; 
-     
+    sign = -1; 
+    signcos = 1
      i = 360-i;
 
      adjuster = 270;
@@ -218,7 +219,7 @@ else  if (i >270 && i <= 360) {
     p = i *(Math.PI/180);   
 
 
-   await cordicutil((p*MUL),20,sign);
+   await cordicutil((p*MUL),20,sign,signcos);
 
     console.log("sin",(sinval/MUL).toFixed(5), "cos",(cosval/MUL).toFixed(5))
     
