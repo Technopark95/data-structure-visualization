@@ -20,7 +20,7 @@ Copyright 2020 Anoop Singh, Graphical Structure
 */
 
 document.getElementById("cav1").remove();
-
+Log(`<span style="font-size:140%;color:coral;">Total Iterations : 20</span>`)
 
 var MUL =  1073741824
 var CORDIC_NTAB = 32
@@ -103,7 +103,7 @@ async function cordicutil( theta, n, sign,cosfactor)
   for (k=0; k<n; ++k)
   {
 
-    Log(`<span style="font-size:160%;color:coral;">Iteration ${k+1}</span>`)
+    Log(`<span style="font-size:130%;color:coral;">Iteration : ${k+1} out of 20</span>`)
 
     d = z>>31;
     //get sign. for other architectures, you might want to use the more portable version
