@@ -166,7 +166,7 @@ async function cordicutil( theta, n, sign,cosfactor)
 
 
 
-async function CORDIC(deg) {
+async function cordic(deg) {
 
 
 let p;
