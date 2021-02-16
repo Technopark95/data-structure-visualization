@@ -286,7 +286,7 @@ async function listtraverse()  {
         break;
       }
 
-    value = $("#"+head+"val").text();
+  let  value = $("#"+head+"val").text();
 
     await hilight(head, "rgb(109,209,0,1)" , "1200ms" , 1300 )
     
