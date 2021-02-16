@@ -118,6 +118,8 @@ u=0;
 graphdata ={}
 _lines = []
 
+linemap = {}
+
 
   
 }
