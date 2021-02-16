@@ -30,7 +30,7 @@ skipbtn.style.display = 'none'
 
 function  BTreeNode(l)  {
 
-let btreenode = `<div id=${count} class="btnode" style="transition:${speed}ms linear;width:${46*1+10}px;"><p style="display:none;" id=${count}leaf>${l}</p><p style="display:none;" id=${count}n>0</p></div>`
+let btreenode = `<div id=${count} class="btnode" style="transition:${speed}ms linear;width:${46*3+10}px;"><p style="display:none;" id=${count}leaf>${l}</p><p style="display:none;" id=${count}n>0</p></div>`
 
    $("body").prepend(btreenode);
 
@@ -59,7 +59,7 @@ let btreenode = `<div id=${count} class="btnode" style="transition:${speed}ms li
    child1 = `<div  id=${count}c3 style="position:absolute; height:5px; width:5px; border-radius:5px; background-color:${"rgba(0,0,0,0)"};left:129px;top:13px;"></div>`
    $("#"+count).append(child1);
    
-   child1 = `<div  id=${count}top style="position:absolute; height:5px; width:5px; border-radius:5px; background-color:${"rgba(0,0,0,0)"};left:27px;top:0px;"></div>`
+   child1 = `<div  id=${count}top style="position:absolute; height:5px; width:5px; border-radius:5px; background-color:${"rgba(0,0,0,0)"};left:70px;top:0px;"></div>`
    $("#"+count).append(child1);
 
    //$("#"+count).append(`<div style="display:none;width:30px;height:10px;top:-6px;position:absolute;text-align:center;left:95px;"><p id=${count}keys3 class="btnode-text" style="color:white;">0</p></div>`);
@@ -255,7 +255,7 @@ async function splitChild( x ,  splitindex)
     document.getElementById(z+"leaf").innerHTML = document.getElementById(y+"leaf").innerHTML
     
    
-    document.getElementById(z).style.width = (46*1+10)+"px"
+    // document.getElementById(z).style.width = (46*1+10)+"px"
     document.getElementById(z+"n").innerHTML =1
   
     Log("Copy the data into new node the node");
@@ -265,12 +265,13 @@ async function splitChild( x ,  splitindex)
   
       document.getElementById(z+"keys"+j).innerHTML = document.getElementById(y+"keys"+(j+2)).innerHTML;
 
-
       document.getElementById(y+"keys"+(j+2)).innerHTML="";
 
       await waitforme(speed)
 
     } 
+
+    
     
     Log("Move the child into new node the node");
     
@@ -311,9 +312,9 @@ async function splitChild( x ,  splitindex)
 
     }
        
-    document.getElementById(x).style.width= (46*(Number(document.getElementById(x+"n").innerHTML)+1))+10+"px";
+    // document.getElementById(x).style.width= (46*(Number(document.getElementById(x+"n").innerHTML)+1))+10+"px";
 
-    document.getElementById(x+"top").style.width = (46*1+10)/2+"px"
+  //  document.getElementById(x+"top").style.width = (46*1+10)/2+"px"
 
    
     document.getElementById(x+"keys"+(splitindex)).innerHTML = document.getElementById(y+"keys1").innerHTML;
@@ -328,7 +329,7 @@ async function splitChild( x ,  splitindex)
        ++document.getElementById(x+"n").innerHTML
 
      
-       document.getElementById(y).style.width = (46*1+10)+"px"
+    //   document.getElementById(y).style.width = (46*1+10)+"px"
 
         document.getElementById(y+"n").innerHTML =1;
 
@@ -357,6 +358,9 @@ async function insertNonFull(targ , k)
 
             document.getElementById(targ+"keys"+(iter+1)).innerHTML = document.getElementById(targ+"keys"+(iter)).innerHTML;
 
+            document.getElementById(targ+"keys"+(iter)).innerHTML = "";
+
+            await waitforme(speed)
            
             iter--; 
         } 
@@ -366,14 +370,16 @@ async function insertNonFull(targ , k)
 
 
     
-        await waitforme(100)
+        await waitforme(speed+100)
   
 
         
         ++document.getElementById(targ+"n").innerHTML
-        document.getElementById(targ).style.width= (46*document.getElementById(targ+"n").innerHTML)+10+"px";
+    //    document.getElementById(targ).style.width= (46*document.getElementById(targ+"n").innerHTML)+10+"px";
 
     } 
+
+
     else // If this node is not leaf 
     { 
         // Find the child which is going to have the new key 
