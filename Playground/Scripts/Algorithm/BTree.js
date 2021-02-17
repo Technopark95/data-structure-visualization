@@ -316,7 +316,7 @@ async function splitChild( x ,  splitindex)
   
    
   Log("Split the node");
-  //BLevel(rot)
+  BLevel(rot)
   await waitforme (speed+100);
 
 
