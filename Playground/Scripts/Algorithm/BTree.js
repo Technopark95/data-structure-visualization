@@ -24,7 +24,9 @@ let rot = "null";
 
 var BTree= {}
 
-var Btreeinv = {}
+var aligncont = {}
+
+var leafnodes= 0;
 
 skipbtn.style.display = 'none'
 
@@ -160,17 +162,16 @@ return bheight;
    
           if (preheight != bheights[root_]) {
 
-          ti= 1; 
+          aligncont[bheights[root_]] = []
+
+      
 
          }
 
+if (aligncont[bheights[root_]][aligncont[bheights[root_]].length-1] != root_ )
+     aligncont[bheights[root_]].push(root_);
 
 
-         $("#"+root_).offset({left: 130+  ti*60*Math.pow(2,bheights[root_]) , top : 85+85 *(bheight-bheights[root_]+1)})
-
-         
-         
-         ti = ti+2;
 
          preheight = bheights[root_];
        
@@ -215,7 +216,72 @@ return bheight;
       }
 
 
-      ti = 0;
+      // ti = 0;
+
+
+      
+
+      for (let seeker = 0 ; seeker < count ; seeker++)  {
+
+
+        if (document.getElementById(seeker+"leaf").innerText == "true") {
+
+    
+          ++leafnodes;
+
+        }  
+
+
+      }
+
+
+
+let totalxlength = 150*leafnodes;
+
+
+for (let uptoh = bheight ; uptoh >= 1 ; uptoh-- )  {
+
+
+  let levellength = aligncont[uptoh].length
+
+
+
+  let pushfactor = totalxlength/(levellength*2+1);
+
+  let spacer =1;
+
+  for (let le = 0 ; le < levellength ; le++ )  {
+
+ 
+
+    let elemref =aligncont[uptoh][le];
+
+    let amounttopush = (spacer*pushfactor);
+
+
+
+$("#"+elemref).offset({left:130+ amounttopush , top : 85+85 *(bheight-bheights[elemref]+1)})
+
+spacer +=2;
+
+if (bheight == 1) {
+  break;
+}
+
+
+
+
+  }
+
+
+}
+
+
+
+leafnodes = 0;
+
+ti=0;
+
 
       while (!q.isEmpty()) {
 
@@ -246,9 +312,11 @@ async function splitChild( x ,  splitindex)
     let y =  BTree[x+"c"+splitindex]
     
     let z =  BTreeNode("true"); 
+
+  
    
   Log("Split the node");
-  BLevel(rot)
+  //BLevel(rot)
   await waitforme (speed+100);
 
 
@@ -423,6 +491,7 @@ redrawevent = requestAnimationFrame(redrawBtreelines);
         
       rot =  BTreeNode("true"); 
   
+  
       document.getElementById(rot+"keys0").innerHTML = k;
       document.getElementById(rot+"n").innerHTML= 1;
 
@@ -437,6 +506,7 @@ redrawevent = requestAnimationFrame(redrawBtreelines);
         { 
             
             let s =  BTreeNode("false");
+            
       
             rot = s; 
 
