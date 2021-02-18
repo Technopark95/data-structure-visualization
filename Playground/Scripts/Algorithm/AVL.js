@@ -23,6 +23,9 @@ var r = 0;
 var avlparent = []
 
 
+var stopflag = 0;
+
+
 skipbtn.style.display = 'none'
 
  async function rightRotate(y)  
@@ -284,12 +287,12 @@ async function insertavl(node_, key_) {
     r = node_
 
 
-    await waitforme(speed+100)
+  if (stopflag == 0) {  await waitforme(speed); stopflag=1;}
 
     await   Shiftleft(r)
     await   Shiftright(r)
 
-    await waitforme(speed) 
+    
     
 
 return node_;
@@ -614,6 +617,7 @@ async function InsertAVL (h) {
     cancelAnimationFrame(redrawevent)
 
   mySVG.redrawLines();
+  stopflag = 0;
 
 
 }
