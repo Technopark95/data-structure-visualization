@@ -223,9 +223,9 @@ async function insertavl(node_, key_) {
 
         tree[`${node_}treeleft`] = await leftRotate(tree[`${node_}treeleft`]);
 
-        BalanceAll(node_);
+        // BalanceAll(node_);
 
-        await waitforme(speed+100)
+        // await waitforme(speed+100)
  
       await hilight(node_ , "red","1200ms linear",1300);
       await display("Red node is unbalanced");
@@ -249,9 +249,9 @@ async function insertavl(node_, key_) {
      
       tree[`${node_}treeright`] = await rightRotate(tree[`${node_}treeright`]);
 
-      BalanceAll(node_);
+      // BalanceAll(node_);
 
-      await waitforme(speed+100)
+      // await waitforme(speed+100)
   
         await hilight(node_ , "red","1200ms linear",1300);
         await display("Red node is unbalanced");
