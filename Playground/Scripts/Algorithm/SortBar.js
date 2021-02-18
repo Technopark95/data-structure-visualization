@@ -567,6 +567,7 @@ await fadeaway(l,r);
 
         await waitforme(speed)
    
+        if (stats == 1  ) await pauser();
     }
 
 
@@ -581,7 +582,7 @@ await fadeaway(l,r);
         await waitforme(speed)
 
 
-        
+        if (stats == 1  ) await pauser();
     }
 
   
@@ -600,6 +601,8 @@ await fadeaway(l,r);
           await waitforme(speed)
      
             i++; 
+
+            if (stats == 1  ) await pauser();
         } 
         else { 
           bararray[k] = R[j]; 
@@ -609,6 +612,8 @@ await fadeaway(l,r);
           await waitforme(speed)
 
             j++; 
+
+            if (stats == 1  ) await pauser();
         } 
         k++; 
     } 
@@ -625,6 +630,7 @@ await fadeaway(l,r);
 
         i++; 
         k++; 
+        if (stats == 1  ) await pauser();
     } 
   
     /* Copy the remaining elements of R[], if there 
@@ -638,6 +644,7 @@ await fadeaway(l,r);
       await waitforme(speed)
         j++; 
         k++; 
+        if (stats == 1  ) await pauser();
     } 
 
 
