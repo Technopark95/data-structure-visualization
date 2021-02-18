@@ -287,7 +287,7 @@ async function insertavl(node_, key_) {
     r = node_
 
 
-  if (stopflag == 0) {  await waitforme(speed); stopflag=1;}
+  if (stopflag == 0) {  await waitforme(speed+200); stopflag=1;}
 
     await   Shiftleft(r)
     await   Shiftright(r)
