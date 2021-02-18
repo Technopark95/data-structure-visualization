@@ -47,13 +47,16 @@ skipbtn.style.display = 'none'
 
     r = x;
 
+  
+      
+     
     
     return x;  
   
 }  
   
 
-function leftRotate(x)  
+async function leftRotate(x)  
 {  
 
   let unbalparent = parent[x];
@@ -77,7 +80,8 @@ function leftRotate(x)
 
 
     r = y;
-
+ 
+      
 
     return y;  
 }  
@@ -98,7 +102,6 @@ var avlnode;
 
 
 async function insertavl(node_, key_) { 
-
 
     if (document.getElementById(node_) == null)  {
 
@@ -139,17 +142,23 @@ async function insertavl(node_, key_) {
 
     if (key_ <  parseInt( $(`#${node_}treeval`).text()) ) {
 
+      
+
 
     tree[`${node_}treeleft`] = await insertavl(tree[`${node_}treeleft`], key_);
 
     let leftt =  tree[node_+"treeleft"];
     avlparent[leftt] = node_; 
 
+    
+
 
     }
    
    
     else if (key_ >  parseInt( $(`#${node_}treeval`).text() , 10) )  {
+
+      
 
 
     tree[`${node_}treeright`] = await insertavl(tree[`${node_}treeright`], key_);
@@ -226,6 +235,9 @@ async function insertavl(node_, key_) {
         // BalanceAll(node_);
 
         // await waitforme(speed+100)
+  
+    await   Shiftleft(node_)
+    await   Shiftright(node_)
  
       await hilight(node_ , "red","1200ms linear",1300);
       await display("Red node is unbalanced");
@@ -252,6 +264,10 @@ async function insertavl(node_, key_) {
       // BalanceAll(node_);
 
       // await waitforme(speed+100)
+
+
+    await   Shiftleft(node_)
+    await   Shiftright(node_)
   
         await hilight(node_ , "red","1200ms linear",1300);
         await display("Red node is unbalanced");
@@ -266,7 +282,16 @@ async function insertavl(node_, key_) {
 
 
     r = node_
+
+
+    await waitforme(speed+100)
+
+    await   Shiftleft(r)
+    await   Shiftright(r)
+
+    await waitforme(speed) 
     
+
 return node_;
     
 } 
@@ -576,7 +601,13 @@ async function InsertAVL (h) {
     document.getElementById(r).style.top = 150+"px";
     document.getElementById(r).style.left = 1905+"px";
   
-   BalanceAll(r);
+   BalanceBST(r);
+
+       Shiftleft(r)
+       Shiftright(r)
+
+       DelShiftleft(r)
+       DelShiftright(r)
 
     await waitforme(speed+100);
 
