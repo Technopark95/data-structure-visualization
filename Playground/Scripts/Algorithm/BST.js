@@ -24,6 +24,7 @@ var avlnode;
 
 var avlparent = {}
 
+var stopflag = 0;
 
 var r = 0;
 
@@ -97,7 +98,7 @@ else {
   
       else return node_;
 
- await waitforme(speed+100)
+      if (stopflag == 0) {  await waitforme(speed+200); stopflag=1;}
  await   Shiftleft(node_)
  await   Shiftright(node_)
 
@@ -257,8 +258,8 @@ let precolor = document.getElementById(ro).style.backgroundColor;
     
       } 
 
-   await   DelShiftleft(_root)
-   await   DelShiftright(_root)
+      DelShiftleft(_root)
+      DelShiftright(_root)
 
    r = _root
       return _root; 
@@ -292,6 +293,8 @@ window.scrollTo(1200,0)
 await waitforme(speed+100)
 
 cancelAnimationFrame(redrawevent)
+
+stopflag = 0;
 
   }
 
