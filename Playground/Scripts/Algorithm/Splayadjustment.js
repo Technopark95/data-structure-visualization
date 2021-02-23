@@ -183,7 +183,6 @@ async function  DelShiftright(node)
 
 
 
-   await waitforme(speed)
 
   
     return; 
@@ -230,7 +229,6 @@ await adjustsubtree(starting ,  -allmagnitude)
    }
 
 
-   await waitforme(speed)
 
 
   
