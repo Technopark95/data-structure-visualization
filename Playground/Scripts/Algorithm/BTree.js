@@ -260,7 +260,7 @@ for (let uptoh = bheight ; uptoh >= 1 ; uptoh-- )  {
 
 
 
-$("#"+elemref).offset({left:130+ amounttopush , top : 85+85 *(bheight-bheights[elemref]+1)})
+$("#"+elemref).offset({left:130+ amounttopush , top : 85+95 *(bheight-bheights[elemref]+1)})
 
 spacer +=2;
 
@@ -287,7 +287,7 @@ ti=0;
 
         let root_ = (q.front).data;
 
-        $("#"+root_).offset({left: 130+  ti*160 , top : 85+85 *(bheight+1)})
+        $("#"+root_).offset({left: 130+  ti*160 , top : 85+95 *(bheight+1)})
 
         ++ti;
 
