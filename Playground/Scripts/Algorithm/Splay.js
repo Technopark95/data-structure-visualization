@@ -50,11 +50,11 @@ async function splayrightRotate(x)
     let nodeheighty = 1 + Math.max(height(tree[`${y}treeleft`]), height(tree[`${y}treeright`]));
     $(`#${y}height`).text(nodeheighty)
 
-    BalanceBST(y)
-    Shiftright(y)
-    Shiftleft(y)
+    // BalanceBST(y)
+    // Shiftright(y)
+    // Shiftleft(y)
 
-    await waitforme(speed+100);
+    // await waitforme(speed+100);
 
     return y;  
 }  
@@ -83,9 +83,9 @@ async function splayleftRotate(x)
     let nodeheighty = 1 + Math.max(height(tree[`${y}treeleft`]), height(tree[`${y}treeright`]));
     $(`#${y}height`).text(nodeheighty)
 
-    BalanceBST(y)
+    // BalanceBST(y)
 
-    await waitforme(speed+100);
+    // await waitforme(speed+100);
 
     return y;  
 }  
@@ -140,11 +140,17 @@ async function splay(node_,  key)
             if (tree[left+"treeright"] != "null")  
                tree[node_+"treeleft"] = await splayleftRotate(tree[node_+"treeleft"]);  
         }  
-  
+        BalanceBST(node_)
+        Shiftright(node_)
+        Shiftleft(node_)
+    
+        await waitforme(speed+100);
         
         // Do second rotation for node_  
         return (tree[node_+"treeleft"] == "null")? node_: await splayrightRotate(node_);  
     }  
+
+
     else // Key lies in right subtree  
     {  
         // Key is not in tree, we are done 
@@ -169,6 +175,13 @@ async function splay(node_,  key)
             tree[right+"treeright"] = await splay(tree[right+"treeright"] , key);  
             node_ = await splayleftRotate(node_);  
         }  
+
+        BalanceBST(node_)
+        Shiftright(node_)
+        Shiftleft(node_)
+    
+        await waitforme(speed+100);
+        
   
 
         // Do second rotation for node_  
@@ -176,6 +189,7 @@ async function splay(node_,  key)
     }  
 
 
+    
 
 }  
 
