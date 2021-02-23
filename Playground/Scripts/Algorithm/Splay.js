@@ -33,9 +33,9 @@ skipbtn.style.display = 'none'
 async function splayrightRotate(x)  
 {  
 
-    await hilight(x ,  "red");
+ //   await hilight(x ,  "red");
     
-   await hilight(x);
+  // await hilight(x);
 
    // node *y = x->left;  
     let y = tree[x+"treeleft"]
@@ -51,8 +51,7 @@ async function splayrightRotate(x)
     $(`#${y}height`).text(nodeheighty)
 
     // BalanceBST(y)
-    // Shiftright(y)
-    // Shiftleft(y)
+
 
     // await waitforme(speed+100);
 
@@ -65,9 +64,9 @@ async function splayrightRotate(x)
 async function splayleftRotate(x)  
 {  
 
-    await hilight(x ,  "red");
+    //await hilight(x ,  "red");
     
-    await hilight(x);
+  //  await hilight(x);
 
   //  node *y = x->right;
     let y = tree[x+"treeright"]  
@@ -127,6 +126,8 @@ async function splay(node_,  key)
             // Do first rotation for node_,  
             // second rotation is done after else  
             node_ = await splayrightRotate(node_);  
+
+      
         }  
         else if (parseInt( $("#"+tree[node_+"treeleft"]+"treeval").text(),10) < key) // Zig-Zag (Left Right)  
         {  
@@ -138,9 +139,11 @@ async function splay(node_,  key)
   
             // Do first rotation for node_->left  
             if (tree[left+"treeright"] != "null")  
-               tree[node_+"treeleft"] = await splayleftRotate(tree[node_+"treeleft"]);  
+               tree[node_+"treeleft"] = await splayleftRotate(tree[node_+"treeleft"]); 
+               
+      
         }  
-        BalanceBST(node_)
+
         Shiftright(node_)
         Shiftleft(node_)
     
@@ -176,7 +179,7 @@ async function splay(node_,  key)
             node_ = await splayleftRotate(node_);  
         }  
 
-        BalanceBST(node_)
+      
         Shiftright(node_)
         Shiftleft(node_)
     
@@ -330,12 +333,11 @@ async function Splayinsert (key)  {
 
     $(`#${newroot}`).offset({"top" : `${150}` , "left" : `${ 1900 }` })
 
-    await BalanceBST(newroot);
+
     Shiftright(newroot)
     Shiftleft(newroot)
 
 
-   await waitforme (speed+100);
 
    DelShiftright(newroot)
     DelShiftleft(newroot)
@@ -412,12 +414,9 @@ async function Splaydelete (key)  {
 
     $(`#${newroot}`).offset({"top" : `${150}` , "left" : `${ 1900 }` })
 
-    await BalanceBST(newroot);
+   
     Shiftright(newroot)
     Shiftleft(newroot)
-
-
-   await waitforme (speed+100);
 
    DelShiftright(newroot)
     DelShiftleft(newroot)
