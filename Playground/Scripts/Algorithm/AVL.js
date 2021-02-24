@@ -422,6 +422,7 @@ if (balance > 1 &&  getBalance(tree[`${_root}treeleft`]) >= 0)   {
 
   await hilight(_root , defaultcolor,"1200ms linear",1300);
 
+
   return returned;
 
 }
@@ -436,6 +437,8 @@ if (balance < -1 &&  getBalance(tree[`${_root}treeright`]) <= 0)  {
   let returned = await leftRotate(_root);  
 
   await hilight(_root , defaultcolor,"1200ms linear",1300);
+
+
 
   return returned;
 
@@ -461,7 +464,8 @@ if (balance > 1 &&  getBalance(tree[`${_root}treeleft`]) < 0)  {
       await display("Red node is unbalanced");
       await hilight(_root , defaultcolor,"1200ms linear",1300);
 
-  let returned = await rightRotate(_root);  
+  let returned = await rightRotate(_root); 
+  
 
   return returned;
 
@@ -491,15 +495,15 @@ if (balance < -1 &&  getBalance(tree[`${_root}treeright`]) > 0)  {
 
   let returned= await leftRotate(_root);  
 
+
         
   return returned;
 }  
 
 r= _root;
 
-   DelShiftleft(_root)
-   DelShiftright(_root)
-
+DelShiftleft(r)
+DelShiftright(r)
 return _root;
 
 }  
