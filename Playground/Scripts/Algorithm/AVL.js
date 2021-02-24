@@ -452,6 +452,9 @@ if (balance > 1 &&  getBalance(tree[`${_root}treeleft`]) < 0)  {
 
 
   tree[`${_root}treeleft`] = await leftRotate(tree[`${_root}treeleft`]); 
+
+  DelShiftleft(_root)
+   DelShiftright(_root)
   
 
   await hilight(_root , "red","1200ms linear",1300);
@@ -475,6 +478,10 @@ if (balance < -1 &&  getBalance(tree[`${_root}treeright`]) > 0)  {
 
  
   tree[`${_root}treeright`] = await rightRotate(tree[`${_root}treeright`]);
+
+
+  DelShiftleft(_root)
+   DelShiftright(_root)
   
   
   await hilight(_root , "red","1200ms linear",1300);
@@ -490,8 +497,8 @@ if (balance < -1 &&  getBalance(tree[`${_root}treeright`]) > 0)  {
 
 r= _root;
 
-   DelShiftleft(r)
-   DelShiftright(r)
+   DelShiftleft(_root)
+   DelShiftright(_root)
 
 return _root;
 
