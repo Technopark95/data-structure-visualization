@@ -490,6 +490,8 @@ if (balance < -1 &&  getBalance(tree[`${_root}treeright`]) > 0)  {
 
 r= _root;
 
+   DelShiftleft(r)
+   DelShiftright(r)
 
 return _root;
 
@@ -637,7 +639,13 @@ async function DeleteAVL (h) {
     document.getElementById(r).style.top = 150+"px";
     document.getElementById(r).style.left = 1905+"px";
 
-   BalanceAll(r);
+    BalanceBST(r);
+
+    Shiftleft(r)
+    Shiftright(r)
+
+    DelShiftleft(r)
+    DelShiftright(r)
 
   await waitforme(speed+100);
 
