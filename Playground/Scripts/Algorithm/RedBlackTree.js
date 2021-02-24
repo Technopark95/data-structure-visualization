@@ -293,6 +293,36 @@ async function rbInsert(rbroot, pt)
   
 
 
+function RBTreealign(nodelement)  {
+
+
+  while(nodelement != undefined) {
+
+       Shiftleft(nodelement);
+       Shiftright(nodelement);
+
+       nodelement = rbparent[nodelement];
+
+  }
+
+
+}
+
+
+function RBTreedelalign(nodelement)  {
+
+
+  while(nodelement != undefined) {
+
+       DelShiftleft(nodelement);
+       DelShiftright(nodelement);
+
+       nodelement = rbparent[nodelement];
+
+  }
+
+
+}
 
 
 
@@ -362,19 +392,27 @@ return count;
   
     await  fixViolation(rbroot, pt); 
 
-    calcheight(rbroot)
+    // calcheight(rbroot)
 
-    AVLpostleft[rbroot] = 1900;
-    AVLposttop[rbroot] = 150;
+    // AVLpostleft[rbroot] = 1900;
+    // AVLposttop[rbroot] = 150;
 
     document.getElementById(rbroot).style.top = 150+"px";
     document.getElementById(rbroot).style.left = 1905+"px";
    
-    BalanceAll(rbroot);
+  //  BalanceAll(rbroot);
+
+  RBTreealign(pt)
+
+
+  DelShiftleft(rbroot);
+  DelShiftright(rbroot);
+
 
    await waitforme (speed+100);
 
     cancelAnimationFrame(redrawevent)
+
 
 
 } 
@@ -659,7 +697,12 @@ async function fixDoubleBlack(x) {
         
       } 
     } 
-  } 
+  }
+  
+
+  DelShiftleft(x)
+DelShiftright(x)
+
 }
 
 
@@ -878,6 +921,8 @@ async function RBTreedelete( n) {
 
   let v = await search(n), u; 
 
+  let vparent = rbparent[v]
+
   if ( nodekey(v) != n) { 
     Log("No node found to delete")
     return; 
@@ -887,13 +932,20 @@ async function RBTreedelete( n) {
 
 
 
- calcheight(rbroot)
+ //calcheight(rbroot)
 
  document.getElementById(rbroot).style.top = 150+"px";
  document.getElementById(rbroot).style.left = 1905+"px";
 
- BalanceAll(rbroot);
+// BalanceAll(rbroot);
 
+BalanceBST(rbroot)
+
+RBTreedelalign(vparent);
+Shiftleft(rbroot)
+Shiftright(rbroot)
+DelShiftleft(rbroot)
+DelShiftright(rbroot)
 await waitforme (speed+100);
 
  cancelAnimationFrame(redrawevent)
