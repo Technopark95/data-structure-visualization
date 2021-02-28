@@ -277,18 +277,29 @@ if (stats == 1  ) await pauser();
 treefy(`${oper}treeleft`  ,  leftelement );
 treefy(`${oper}treeright` , rightelement );
 
-AVLpostleft[oper] = lefthand;
-AVLposttop[oper] = 150;
+// AVLpostleft[oper] = lefthand;
+// AVLposttop[oper] = 150;
 
 
-$("#"+oper).offset({left:lefthand , top:"150"})
+// $("#"+oper).offset({left:lefthand , top:"150"})
+
+document.getElementById(oper).style.left = lefthand+"px";
+document.getElementById(oper).style.top = 150+"px";
 
 lefthand = lefthand + 50;
 
-calcheight(oper)
-BalanceAll(oper)
+Shiftright(oper);
 
-await waitforme(speed+50);
+Shiftleft(oper);
+
+DelShiftright(oper);
+
+DelShiftleft(oper);
+
+// calcheight(oper)
+// BalanceAll(oper)
+
+await waitforme(speed+100);
 
 expresstionstack.push(oper);
 
