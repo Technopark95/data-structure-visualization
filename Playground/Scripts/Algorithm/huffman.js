@@ -29,217 +29,125 @@ var heapsize =0;
 var positiongarray = []
 
 
-
-async function noncollide()   {
-
-let leftcord = 200;
-
-let rootelement = alignments[0], prevrootelement
-
-
-let rightheightprev, leftheightcurr;
+var noderef = []
+var  nodefreq = []
 
 
 
 
-let heightofroot = parseInt( document.getElementById(rootelement+"height").innerHTML)
+function hyperright(node_)  {
 
+  let current = node_
 
-calcheight(rootelement);
-
-document.getElementById(rootelement).style.left =  leftcord +  20*( Math.pow(2,  heightofroot))+"px"
-
-BalanceAll(rootelement)
-
-
-
-// for (let nodes = 1 ; nodes < alignments.length ; nodes++)  {
-
-
-//   prevrootelement = alignments[nodes-1]
-//   rootelement =alignments[nodes]
-
-
-//    rightheightprev = parseInt( document.getElementById(prevrootelement+"height").innerHTML)
-//    leftheightcurr = parseInt( document.getElementById(rootelement+"height").innerHTML)
-
-//   positiongarray[nodes] = 100+ positiongarray[nodes-1]+ 20* ( Math.pow(2, rightheightprev) +  Math.pow(2, leftheightcurr))
-
- 
-// }
-
-
-
-for (let nodes = 1 ; nodes < alignments.length ; nodes++)  {
-
-prevrootelement = alignments[nodes-1]
-
-rootelement = alignments[nodes];
-
-rightheightprev = parseInt( document.getElementById(prevrootelement+"height").innerHTML)
-   leftheightcurr = parseInt( document.getElementById(rootelement+"height").innerHTML)
-
-
-  calcheight(rootelement);
-  document.getElementById(rootelement).style.left =  100+ parseInt(document.getElementById(prevrootelement).style.left) + 20* ( Math.pow(2, rightheightprev) +  Math.pow(2, leftheightcurr))+"px"
-
-BalanceAll(rootelement)
-
-
-
-
-
-}
-
-positiongarray=[]
-AVLpostleft = [];
-
-
-
+  if (current == "null") {
+    return;
 }
 
 
 
-async function swapphuff(vala,valb,cc)  {
+  while(tree[current+"treeright"] != "null")  {
 
-    if (stats == 1  ) await pauser();
-
-    if (vala == valb) {
-      return;
-    }
-  
-    if (vala > valb) {
-  
-      [vala ,valb] = [valb,vala]
-  
-    }
-  
-  
-  
-    let ele1 ,ele2;
-  
-    ele1 = document.getElementById("aitemval"+cc+vala);
-    ele2 = document.getElementById("aitemval"+cc+valb);
-    let text1 = ele1.innerHTML;
-    let text2 = ele2.innerHTML;
-  
-  
-    ele1.style.transition = speed+"ms";
-    ele2.style.transition = speed+"ms";
-
-    let elem1topdef =  ele1.style.top;
-    let elem2topdef =  ele2.style.top;
-    let elem1leftdef = ele1.style.left;
-    let elem2leftdef = ele2.style.left;
+current = tree[current+"treeright"];
 
 
-
-
-    ele1.style.color = "black";
-    ele1.style.top = "100px";
-    ele2.style.color = "black";
-    ele2.style.top = "-100px";
-  
-    await waitforme(speed+30)
-  
-    ele1.style.transition = speed+"ms";
-    ele2.style.transition = speed+"ms";
-    
-     ele1.style.left =  94*(valb-vala)+"px";
-     ele2.style.left = -94*(valb-vala)+"px";
-  
-    await waitforme(speed+30)
-  
-    ele1.style.transition = speed+"ms";
-    ele2.style.transition = speed+"ms";
-    ele1.style.top ="0px";
-    ele1.style.color = "white";
-    ele2.style.top ="0px";
-    ele2.style.color = "white";
-    
-    await waitforme(speed+30)
-  
-    ele1.style.transition = "0ms";
-    ele2.style.transition = "0ms";
-  
-    ele1.style.top = elem1topdef;
-    ele1.style.left = elem1leftdef;
-    ele2.style.top = elem2topdef;
-    ele2.style.left = elem2leftdef;
-  
-    ele2.innerHTML = text1
-    ele1.innerHTML = text2
-  
-  
-  await waitforme(speed+50)
-  
-  if (stats == 1  ) await pauser();
-  
   }
+
+  let hyperrightcord = parseInt(document.getElementById(current).style.left)
+
+
+  return hyperrightcord
+}
+
+
+
+function hyperleft(node_)  {
+
+  let current = node_
+
+
+  if (current == "null") {
+    return;
+}
+
+
+
+
+  while(tree[current+"treeleft"] != "null")  {
+
+current = tree[current+"treeleft"];
+
+
+  }
+
+  let hyperleftcord = parseInt(document.getElementById(current).style.left)
+
+
+  return hyperleftcord
+}
+
+
+
+function adjustadjecent(prev,curr) {
+
+  BalanceBST(curr)
+  Shiftright(curr)
+  Shiftleft(curr)
+  DelShiftright(curr)
+  DelShiftleft(curr)
+
+  let prevright = hyperright(prev);
+
+  document.getElementById(curr).style.left = prevright+100;
+
+  let currentleft = hyperleft(curr);
+
+
+  let gap = prevright + 100;
+
+let slidefactor = gap - currentleft;
+
+adjustsubtree(curr , slidefactor)
+
+
+}
+
+
+async function adjustall()  {
+
+  document.getElementById(noderef[0]).style.left = 200+"px";
+
+  let currentleft = hyperleft(noderef[0]);
+
+ BalanceBST(noderef[0])
+  Shiftright(noderef[0])
+  Shiftleft(noderef[0])
+  DelShiftright(noderef[0])
+  DelShiftleft(noderef[0])
+
   
 
-async function minheapify( len,  ind) 
-{ 
-    ind = Math.floor(ind)
-    var smallest = ind; // Initialize smallest as root 
-    var l = 2*ind + 1; // left = 2*i + 1 
-    var r = 2*ind + 2; // right = 2*i + 2 
-  
-    
-    // If left child is larger than root 
-    if (l < len && storedarray[l] < storedarray[smallest]) 
-        smallest = l; 
-  
-    // If right child is larger than smallest so far 
-    if (r < len && storedarray[r] < storedarray[smallest]) 
-        smallest = r; 
-  
-    // If smallest is not root 
-    if (smallest != ind) 
-    { 
+if (currentleft < 200) {
+  let difference = 200-currentleft;
+  Log(`${currentleft} ,${difference}`)
+   adjustsubtree(noderef[0] , difference);
+}
 
-        var te = storedarray[ind];
-        storedarray[ind] = storedarray[smallest];
-        storedarray[smallest] = te;
+if (noderef.length == 1 ) return;
+   
+
+  for (let restnodes = 1 ; restnodes < noderef.length ; restnodes++)   {
+
+    adjustadjecent(noderef[restnodes-1] , noderef[restnodes]);
+
+  }
 
 
-      swapphuff(ind,smallest,"c")
-     await swapphuff(ind,smallest,"f")
-
-        // Recursively heapify the affected sub-tree 
-    await    minheapify(len, smallest); 
-    } 
-} 
-
-async function minHEAPIFY2( n,  i) 
-{ 
-    
-    let parent = Math.floor( (i - 1) / 2); 
-  
-    if (storedarray[parent] > 0) { 
-        // For Max-Heap 
-        // If current node is greater than its parent 
-        // Swap both of them and call heapify again 
-        // for the parent 
-        if (storedarray[i] < storedarray[parent] && i!=parent) { 
-         //   swap(arr[i], arr[parent]);
-            let tt = storedarray[i]
-            storedarray[i] = storedarray[parent];
-            storedarray[parent] = tt;
-        
-              swapphuff(parent, i,"c")
-             await swapphuff(parent, i,"f")
-
-            // Recursively heapify the parent node 
-            await minHEAPIFY2( n, parent); 
-
-        } 
+  await waitforme(speed);
 
 
-    } 
 
-    
-} 
+}
+
 
 
 function heapleaf(element) {
@@ -265,86 +173,43 @@ $("#"+count).draggable();
 
 
 
-async function deleteminheap() { 
 
-    let frequency = storedarray[0];
-    let character = document.getElementById("aitemvalc0").innerHTML
-    let refference;
-    // Get the last element 
-    let lastElement = storedarray[heapsize-1]; 
-
+function popitems()  {
   
-    // Replace root with first element 
-    storedarray[0] = lastElement; 
-   
-   
-      swapphuff(0,heapsize-1,"c")
-      await swapphuff(0,heapsize-1,"f")
-
-      if (character == "sp") { refference =  heapleaf("sp");}
-   else  if (character >= 'A' && character <= 'Z' ) { refference =  heapleaf(character);}
-     else refference = character;
-
-     document.getElementById("aitemvalf"+(heapsize-1)).innerHTML = "";
-     document.getElementById("aitemvalc"+(heapsize-1)).innerHTML = "";
-
-     document.getElementById("aitem"+(heapsize-1)).style.visibility = "hidden";
-
-     mySVG.redrawLines();
-  
- 
-     heapsize = heapsize - 1; 
-  
-    // heapify the root node 
-  await  minheapify(heapsize, 0); 
-
-  return  {refference,frequency};
-
-} 
-
-async function insertminheap(value)   {
-
-    storedarray[heapsize] = value;
+  let frequency = nodefreq.shift()
+  let reference = noderef.shift()
 
 
 
-  let refference =  heapleaf(value)
 
-
- 
-    document.getElementById("aitemvalf"+(heapsize)).innerHTML = value;
-     document.getElementById("aitemvalc"+(heapsize)).innerHTML = refference;
-
-    
- document.getElementById("aitem"+heapsize).style.visibility = "visible";
-
- 
- Log("inserting New elemet at correct position")
-
-
-
- await waitforme(speed)
-
-
-await minHEAPIFY2(heapsize+1, heapsize)
-
-heapsize +=1;
-
-return refference;
-
+  return {frequency , reference }
+	
+	
 }
 
 
+function insertnewfreq (item)   {
 
-function swaplabels(lab1,lab2) {
+  let newtop = heapleaf(item);
 
+	let j = nodefreq.length-1;
+	
+	for (; j >= 0 && item < nodefreq[j]  ; j--)  {
+		
 
-  let temp = document.getElementById(lab1).innerHTML;
-  document.getElementById(lab1).innerHTML = document.getElementById(lab2).innerHTML
-  document.getElementById(lab2).innerHTML = temp;
+    nodefreq[j+1] = nodefreq[j];
+    noderef[j+1] = noderef[j];
+		
+		
+	}
 
+  nodefreq[j+1] =item;
+  noderef[j+1] =newtop;
+  
+ return newtop;
 
 }
+
 
 
 
@@ -374,7 +239,6 @@ stringelement.style.display=""
 
 let countedchars = {}
 
-cleareverything();
 
  heapsize =0;
 
@@ -399,7 +263,7 @@ spanchar= ``;
 }
 
 
-await waitforme(speed);
+//await waitforme(speed);
 
 
 for (let letsgo = 0 ; letsgo < getstring.length ; letsgo++) {
@@ -414,12 +278,12 @@ for (let letsgo = 0 ; letsgo < getstring.length ; letsgo++) {
 
     if (getstring[letsgo] == " ") {
 
-        Log(`space = ${countedchars[getstring[letsgo]]}`)
+      //  Log(`space = ${countedchars[getstring[letsgo]]}`)
     }
 else
-    Log(`${getstring[letsgo]} = ${countedchars[getstring[letsgo]]}`)
+   // Log(`${getstring[letsgo]} = ${countedchars[getstring[letsgo]]}`)
 
-    await waitforme(speed+100);
+   // await waitforme(speed+100);
 
     charbychar.style.transition= speed+"ms linear";
     charbychar.style.color = "black";
@@ -428,97 +292,45 @@ else
 
 
 
-await waitforme(speed);
+//await waitforme(speed);
 
 
-
-arr = '<table id="t1" style=" z-index: 1;position:absolute;border-collapse: collapse; top:505px; left:150px; text-align:center; transition-duration : 100ms;table-layout: fixed;" ></table>'
-
-document.body.insertAdjacentHTML("afterbegin",arr);
-
-
-let tablelement = document.getElementById("t1")
-
-
-
-
-tabledata = document.createElement("td");
- 
-tabledata.style.cssText = "text-align:center; min-width:70px;background-color:coral;";
-
-tabledata.id= "minheapindication";
-
-tabledata.className = "arrayd";
-
-
-tabledata.innerHTML += '<div id="aitemdiv'+ "mh"+'"  style="text-align:center; position:absolute; z-index:1">         <p id="aitemindex'+"mh" +'" style="position:absolute; color:coral; margin-top:67px; margin-left:35px; font-size:37%";>'+"mh"+'</p>             <p id= "aitemvalc'+"mh" +'" class="arrayitem" style="color:black;top:-10px;">'+ "Min Heap"+'</p>   </div>'
-
-
-tablelement.appendChild(tabledata);
-
-
-$("#t1").draggable();
-let i=0;
+let characters = []
 
 for (let keys in countedchars)  {
 
- tabledata = document.createElement("td");
- 
- tabledata.style.cssText = "text-align:center; min-width:70px";
 
- tabledata.id= "aitem"+i;
+nodefreq.push(countedchars[keys]);
 
- tabledata.className = "arrayd";
+if (keys == " ") {
+  characters.push("sp")
+}
+else
+characters.push(keys)
 
- if (keys == " ") {
-
-tabledata.innerHTML += '<div id="aitemdiv'+ i+'"  style="text-align:center; position:absolute; z-index:1">         <p id="aitemindex'+i +'" style="position:absolute; color:coral; margin-top:67px; margin-left:35px; font-size:37%";>'+i+'</p>             <p id= "aitemvalc'+i +'" class="arrayitem" >'+ "sp"+'</p>   </div>  <div style="text-align:center; position:absolute; z-index:1;left:50px;"><p id= "aitemvalf'+i +'" class="arrayitem" >'+(countedchars[keys]) +'</p></div>'
-
- }
-
- else
- tabledata.innerHTML += '<div id="aitemdiv'+ i+'"  style="text-align:center; position:absolute; z-index:1">         <p id="aitemindex'+i +'" style="position:absolute; color:coral; margin-top:67px; margin-left:35px; font-size:37%";>'+i+'</p>             <p id= "aitemvalc'+i +'" class="arrayitem" >'+ keys+'</p>   </div>  <div style="text-align:center; position:absolute; z-index:1;left:50px;"><p id= "aitemvalf'+i +'" class="arrayitem" >'+(countedchars[keys]) +'</p></div>'
-
-
- tablelement.appendChild(tabledata);
-
- storedarray.push(countedchars[keys])
-
- ++i;
 
 }
+
+
+
 
 heapsize= Object.keys(countedchars).length
 
 
-Log("Sort the elements")
-await waitforme (speed+100)
-
-
-tableobj = $("#t1")
-
-ipointer.style.display = "";
-jpointer.style.display = "";
-kpointer.style.display = "";
-
-
-mainarray = document.getElementById("t1")
-
-stringelement.style.display="none"
-stringelement.innerHTML= "";
-
-
-
-      for (let i=0; i < storedarray.length-1; i++){
-          for (let j=0; j < storedarray.length-i-1; j++){
+      for (let i=0; i < nodefreq.length-1; i++){
+          for (let j=0; j < nodefreq.length-i-1; j++){
       
-              if (storedarray[j] > storedarray[j+1]){
-                let temp = storedarray[j];
-                storedarray[j] = storedarray[j+1];
-                storedarray[j+1] = temp;
+
+              if (nodefreq[j] > nodefreq[j+1]){
+                let temp = nodefreq[j];
+                nodefreq[j] = nodefreq[j+1];
+                nodefreq[j+1] = temp;
                
-                swaplabels("aitemvalf"+j,"aitemvalf"+(j+1))
-                swaplabels("aitemvalc"+j,"aitemvalc"+(j+1))
+
+                 temp = characters[j];
+                characters[j] = characters[j+1];
+                characters[j+1] = temp;
+            
                
               }
 
@@ -528,14 +340,32 @@ stringelement.innerHTML= "";
   
          
       }
+
+stringelement.style.display="none"
+stringelement.innerHTML= "";
+ 
+
+
+
+      let lefth = 200;
+
+      for (let i=0; i < nodefreq.length; i++){
+
+
+        
+
+        let newnode = heapleaf(characters[i]+` (${nodefreq[i]})`);
+
+        noderef.push(i);
+
+        document.getElementById(newnode).style.left = lefth+"px";
+        document.getElementById(newnode).style.top = 150+"px";
+
+        lefth += 100;
+
+
+      }
   
-      $("#iindex").text("i").hide()
-      $("#jindex").text("j").hide()
-
-
-Log("Treat array as Min-Heap");
-
-
 
 if (stats ==1) await pauser();
 
@@ -544,54 +374,46 @@ if (stats ==1) await pauser();
  let summed;
 
  let subtreedata;
-for (let u = 0 ; u < storedarray.length ; u++)  {
+
+for (let u = 0 ; ; u++)  {
 
 
-if (heapsize < 2) {
-  break;
-}
-  let leftelem =  await deleteminheap()
+  if (noderef.length == 1) {
+    break;
+  }
+
+
+  let leftelem =  popitems()
  
-
-  let rightelem =  await deleteminheap()
+  let rightelem =  popitems();
 
 
 
   let sum = parseInt(leftelem.frequency)+parseInt(rightelem.frequency);
 
+//  Log(`${leftelem.frequency} , ${rightelem.frequency} , ${sum}`)
+
+
+
+
+
+ summed =   insertnewfreq(sum)
+
+// Log(nodefreq)
+
+
+   treefy(summed+"treeleft",leftelem.reference , "coral","0" )
+   treefy(summed+"treeright",rightelem.reference ,"coral", "1" )
+
+//calcheight(summed)
+
+//BalanceAll(summed)
+await  adjustall();
+
  
-  await waitforme(speed)
 
 
- summed =   await  insertminheap(sum)
-
-
-
-
-
-   treefy(summed+"treeleft",leftelem.refference , "coral","0" )
-   treefy(summed+"treeright",rightelem.refference ,"coral", "1" )
-calcheight(summed)
-
-   let index = alignments.indexOf(Number(leftelem.refference));
-
-   if (index > -1) {
-     alignments.splice(index, 1);
-   }
-
-   index = alignments.indexOf(Number(rightelem.refference));
-
-   if (index > -1) {
-     alignments.splice(index, 1);
-   }
-
-
-   alignments.unshift(summed);
-
-
-  noncollide();
-
-  await waitforme (speed+100)
+  
 
 
 }
@@ -600,25 +422,24 @@ calcheight(summed)
 Log("Huffman tree built")
 
 
-let huffmanroot = alignments[0];
+let huffmanroot = hyperleft(noderef[0])
 
-while (tree[huffmanroot+"treeleft"] !="null")  {
+if (huffmanroot < 200) {
 
-  huffmanroot = tree[huffmanroot+"treeleft"];
-
-}
-
-let difference = parseInt( document.getElementById(huffmanroot).style.left)-100
-
+let difference = 200 - huffmanroot
 
 let x = document.getElementsByClassName("dragg");
 let ie;
 for (ie = 0; ie < x.length; ie++) {
-  x[ie].style.left = parseInt(  x[ie].style.left) - difference +"px"
+  x[ie].style.left = parseInt(  x[ie].style.left) + difference +"px"
 }
 
 
-await waitforme (speed+100)
+
+}
+
+
+await waitforme(speed+100)
 
 cancelAnimationFrame(redrawevent)
 
