@@ -116,24 +116,34 @@ async function adjustall()  {
 
   document.getElementById(noderef[0]).style.left = 200+"px";
 
-  let currentleft = hyperleft(noderef[0]);
 
- BalanceBST(noderef[0])
-  Shiftright(noderef[0])
+Shiftright(noderef[0])
   Shiftleft(noderef[0])
   DelShiftright(noderef[0])
   DelShiftleft(noderef[0])
 
-  
 
-if (currentleft < 200) {
-  let difference = 200-currentleft;
-  Log(`${currentleft} ,${difference}`)
-   adjustsubtree(noderef[0] , difference);
+
+  let currentl = hyperleft(noderef[0]);
+
+let difference = 0;
+
+  if (currentl < 200) {
+
+     difference = 200-currentl;
+ 
+     let x = document.getElementsByClassName("dragg");
+let ie;
+for (ie = 0; ie < x.length; ie++) {
+  x[ie].style.left = parseInt(  x[ie].style.left) + difference +"px"
 }
 
-if (noderef.length == 1 ) return;
    
+  } 
+
+let tempcurrentleft = hyperleft(noderef[0]);
+Log(`After : ${tempcurrentleft}`)
+
 
   for (let restnodes = 1 ; restnodes < noderef.length ; restnodes++)   {
 
@@ -382,61 +392,27 @@ for (let u = 0 ; ; u++)  {
     break;
   }
 
-
   let leftelem =  popitems()
  
   let rightelem =  popitems();
 
 
-
   let sum = parseInt(leftelem.frequency)+parseInt(rightelem.frequency);
 
-//  Log(`${leftelem.frequency} , ${rightelem.frequency} , ${sum}`)
-
-
-
-
-
  summed =   insertnewfreq(sum)
-
-// Log(nodefreq)
 
 
    treefy(summed+"treeleft",leftelem.reference , "coral","0" )
    treefy(summed+"treeright",rightelem.reference ,"coral", "1" )
 
-//calcheight(summed)
 
-//BalanceAll(summed)
 await  adjustall();
-
- 
-
-
-  
 
 
 }
 
 
 Log("Huffman tree built")
-
-
-let huffmanroot = hyperleft(noderef[0])
-
-if (huffmanroot < 200) {
-
-let difference = 200 - huffmanroot
-
-let x = document.getElementsByClassName("dragg");
-let ie;
-for (ie = 0; ie < x.length; ie++) {
-  x[ie].style.left = parseInt(  x[ie].style.left) + difference +"px"
-}
-
-
-
-}
 
 
 await waitforme(speed+100)
