@@ -134,15 +134,12 @@ let difference = 0;
  
      let x = document.getElementsByClassName("dragg");
 let ie;
-for (ie = 0; ie < x.length; ie++) {
-  x[ie].style.left = parseInt(  x[ie].style.left) + difference +"px"
-}
 
+adjustsubtree(noderef[0] , difference)
    
   } 
 
 let tempcurrentleft = hyperleft(noderef[0]);
-Log(`After : ${tempcurrentleft}`)
 
 
   for (let restnodes = 1 ; restnodes < noderef.length ; restnodes++)   {
