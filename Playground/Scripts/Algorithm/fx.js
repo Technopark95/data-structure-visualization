@@ -306,9 +306,9 @@ else {
 
 
 
-var defaultcolor = "rgba(0,0,0,0.842)";
+var defaultcolor = "rgb(40,40,40)";
 
-async function hilight (acc , color="rgb(0,0,0,0.842)" , duration = "4000ms" , timeout = 4100) {
+async function hilight (acc , color="rgb(40,40,40)" , duration = "4000ms" , timeout = 4100) {
 
   let coloring = document.getElementById(acc);
 
