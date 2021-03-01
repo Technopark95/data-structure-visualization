@@ -312,7 +312,13 @@ async function  Splaysearch(key)  {
 
     $(`#${newroot}`).offset({"top" : `${150}` , "left" : `${ 1900 }` })
 
-   await BalanceBST(newroot);
+
+    Shiftright(newroot)
+    Shiftleft(newroot)
+
+   DelShiftright(newroot)
+    DelShiftleft(newroot)
+
 
    await waitforme (speed+100);
 
