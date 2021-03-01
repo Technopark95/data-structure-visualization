@@ -394,13 +394,29 @@ for (let u = 0 ; ; u++)  {
   let rightelem =  popitems();
 
 
+  hilight(leftelem.reference , "red");
+
+  await hilight(rightelem.reference , "red");
+
+  Log(`Add Frequencies`);
+
+  await waitforme(speed)
+
   let sum = parseInt(leftelem.frequency)+parseInt(rightelem.frequency);
 
  summed =   insertnewfreq(sum)
 
+ hilight(leftelem.reference );
+
+  hilight(rightelem.reference );
+
 
    treefy(summed+"treeleft",leftelem.reference , "coral","0" )
    treefy(summed+"treeright",rightelem.reference ,"coral", "1" )
+
+   Log("Insert at Correct position")
+
+   await waitforme(speed)
 
 
 await  adjustall();
