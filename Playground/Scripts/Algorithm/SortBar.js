@@ -23,7 +23,7 @@ Copyright 2020 Anoop Singh, Graphical Structure
 
 
 
-let bararray = {}
+let bararray = []
 
 document.getElementById("cav1").remove();
 
@@ -35,11 +35,21 @@ var maxheight = 90;
 var limit = n+maxheight;
 let i = 1;
 
+
 for ( i = 0 ; i < n ; i++) {
 
-  let ra = Math.ceil(((Math.ceil(Math.random() *1000))/1000)*n);
 
-  bararray[i] = ra;
+bararray.push(i+1);
+
+
+}
+
+bararray.sort(()=>Math.random()-0.5 );
+
+for ( i = 0 ; i < n ; i++) {
+
+
+ ra = bararray[i];
 
 document.getElementById("svg1").insertAdjacentHTML("beforeend", `<rect class="bars" id="bigr${i}" x="${15+(i*5)}" y="${((maxheight+35)-(ra/n)*maxheight)}" width="4" height="${(ra/n)*maxheight}"style="fill:red;stroke:black;stroke-width:.3;" />`)
 
@@ -52,12 +62,11 @@ document.getElementById(`bigr${i}`).style.transition = `${speed}ms ease-in-out`;
 
 function randomize()  {
 
+  bararray.sort(()=>Math.random()-0.5 );
 
   for ( i = 0 ; i < n ; i++) {
 
-    let ra = Math.ceil(((Math.ceil(Math.random() *1000))/1000)*n);
-  
-    bararray[i] = ra;
+  ra = bararray[i];
   
 document.getElementById("bigr"+i).setAttribute("y" ,`${((maxheight+35)-(ra/n)*maxheight)}`)
 
