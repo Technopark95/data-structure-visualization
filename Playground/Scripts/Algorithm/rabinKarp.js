@@ -28,8 +28,9 @@ let hashvaltext = document.getElementById("hvt");
 let hashvalpattern = document.getElementById("hvp");
 
 
-textcontainer.style.cssText =  "top: 200px;left :150px;"
-patterncontainer.style.cssText =  "top: 270px;left :150px;"
+textcontainer.style.cssText =  `top: 200px;left :150px;transition:${speed}ms linear;`
+patterncontainer.style.cssText =  `top: 270px;left :150px;transition:${speed}ms linear;`
+
 
 
 
@@ -137,6 +138,9 @@ async function RabinKarputil(pat, txt, q)
 
                 if (txt[i+j] != pat[j])  {
 
+                    hilight(`text${i+j}` , 'coral')
+                    await hilight(`pattern${j}` , "coral")
+
                     break; 
 
                 } 
@@ -147,7 +151,6 @@ async function RabinKarputil(pat, txt, q)
   
             // if p == t and pat[0...M-1] = txt[i, i+1, ...i+M-1]  
             if (j == M)   {
-                console.log("Pattern found at index  "+i)  
                 Log(`<span style="font-size:130%;">Pattern found at index ${i}</span>`)
             }
 
