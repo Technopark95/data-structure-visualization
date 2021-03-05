@@ -772,3 +772,17 @@ margin-top: 6px;
 
 
 }
+
+.knuthtable {
+
+position: relative;
+display: flex;
+
+flex-direction: row;
+flex-wrap: nowrap;
+
+align-items: center;
+justify-content: center;
+transition: 1010ms linear;
+
+}
