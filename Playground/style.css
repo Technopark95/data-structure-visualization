@@ -672,7 +672,7 @@ color : black;
 #playlabel {
   width: 50px;
   height: 20px;
-  position: fixed;top: 210px;right: 300px;border-style: dashed;border-radius: 20px;text-align: center;display: inline;border-width: 2px;border-color: purple;
+  position: fixed;top: 210px;right: 300px;border-style: dashed;border-radius: 20px;text-align: center;border-width: 2px;border-color: purple;
 transition: opacity 500ms;
   opacity: 0;
 }
@@ -681,7 +681,7 @@ transition: opacity 500ms;
 
 #pauselabel {
   
-  width: 50px; height: 20px; position: fixed;top: 210px;right: 210px;border-style: dashed;border-radius: 20px;text-align: center;display: inline;border-width: 2px;border-color: red;
+  width: 50px; height: 20px; position: fixed;top: 210px;right: 210px;border-style: dashed;border-radius: 20px;text-align: center;border-width: 2px;border-color: red;
   transition: opacity 500ms;
     opacity: 0;
   }
