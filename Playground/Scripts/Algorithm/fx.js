@@ -310,7 +310,12 @@ var defaultcolor = "rgb(40,40,40)";
 
 async function hilight (acc , color="rgb(40,40,40)" , duration = "4000ms" , timeout = 4100) {
 
+
+
+
   let coloring = document.getElementById(acc);
+
+  if (coloring == null) return;
 
   coloring.style.backgroundColor = color;
   coloring.style.transition = speed+"ms linear";
