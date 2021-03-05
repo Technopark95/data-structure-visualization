@@ -218,10 +218,32 @@ async function RabinKarputil(pat, txt, q)
 
 async function RabinKarp(text , pattern)  {
 
+    hashvaltext.innerText= "X";
+    hashvalpattern.innerText= "X";
+
+    textcontainer.style.left = "150px";
+    patterncontainer.style.left = "150px";
+
+    x = document.getElementsByClassName("charwords");
+
+    for (ie= x.length-1 ; ie >= 0 ; ie--) {
+
+        x[ie].remove();
+
+    }
+
+    x = document.getElementsByClassName("charpatterns");
+
+    for (ie= x.length-1 ; ie >= 0 ; ie--) {
+
+        x[ie].remove();
+
+    }
+
 
     createblocks(text,pattern);
 
-    await waitforme(300);
+    await waitforme(800);
 
    await RabinKarputil(pattern,text,101);
 
