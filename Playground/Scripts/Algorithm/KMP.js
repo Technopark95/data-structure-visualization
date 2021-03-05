@@ -28,12 +28,19 @@ let knuthvalues = document.getElementById("knuthval");
 let hashvaltext = document.getElementById("hvt");
 let hashvalpattern = document.getElementById("hvp");
 
+let graphicallen = document.getElementById("gLen")
+let graphicallenhold = document.getElementById("gLenhold")
 
 textcontainer.style.cssText =  `top: 200px;left :150px;transition:${speed}ms linear;`
 patterncontainer.style.cssText =  `transition:${speed}ms linear;`
 
 
+graphicallen.style.left = "150px";
 
+graphicallen.style.top = "530px";
+graphicallen.style.margin = "0";
+
+graphicallen.style.fontSize = "130%";
 
 
 ipointer.style.top = "225px";
@@ -80,11 +87,14 @@ function createblocks(word,pattern) {
 let lps = []
 
 
+x = document.getElementsByClassName("charpatterns");
+
 // Fills lps[] for given patttern pat[0..M-1] 
 async function computeLPSArray( pat,  M) 
 { 
+
     // length of the previous longest prefix suffix 
-    let len = 0; 
+    let len = 0;
   
     lps[0] = 0; // lps[0] is always 0 
 
@@ -94,15 +104,41 @@ async function computeLPSArray( pat,  M)
   
     // the loop calculates lps[i] for i = 1 to M-1 
     let i = 1; 
+
+    jpointer.style.left = 170 + (44*1)+"px";
+
+
     while (i < M) { 
+
         
+
+
+    for (ie = 0; ie < x.length; ie++) {
+      x[ie].style.backgroundColor = "coral";
+    }
+
+await waitforme(speed+100);
+
+
+         hilight(`pattern${i}` , "dodgerblue");
+         await hilight(`pattern${len}` , "dodgerblue");
+
         if (pat[i] == pat[len]) { 
             len++; 
-            lps[i] = len; 
-           document.getElementById(`KMP${i}`).innerText = len
-            i++; 
+            graphicallenhold.innerText = len;
 
-            await waitforme(speed);
+            lps[i] = len;
+            
+         await   hilight(`knuth${i}` , "red");
+
+            document.getElementById(`KMP${i}`).innerText = len;
+
+
+             await   hilight(`knuth${i}` , "coral");
+
+            i++; 
+            jpointer.style.left = 170 + (44*i)+"px";
+
         } 
 
         else // (pat[i] != pat[len]) 
@@ -112,6 +148,7 @@ async function computeLPSArray( pat,  M)
             // to search step. 
             if (len != 0) { 
                 len = lps[len - 1]; 
+                graphicallenhold.innerText = len;
   
                 // Also, note that we do not increment 
                 // i here 
@@ -122,12 +159,20 @@ async function computeLPSArray( pat,  M)
             { 
                 lps[i] = 0; 
                document.getElementById(`KMP${i}`).innerText = 0
+
+               jpointer.style.left = 170 + (44*i)+"px";
+
+                await waitforme(speed+100);
                 
                 i++; 
 
-                await waitforme(speed);
+                jpointer.style.left = 170 + (44*i)+"px";
+
+                await waitforme(speed+100);
             } 
-        } 
+        }
+        
+        
     } 
 } 
 
@@ -144,6 +189,17 @@ async function KMPSearch( pat, txt)
   
     // Preprocess the pattern (calculate lps[] array) 
     await computeLPSArray(pat, M); 
+
+    graphicallen.style.display ="none";
+
+    jpointer.style.left = 170 +"px";
+
+    for (ie = 0; ie < x.length; ie++) {
+        x[ie].style.backgroundColor = "coral";
+      }
+      
+
+    await waitforme(speed+100)
   
     let i = 0; // index for txt[] 
     let j = 0; // index for pat[] 
@@ -215,12 +271,38 @@ async function KMPSearch( pat, txt)
 async function KMP(text , pattern)  {
 
 
+        lps=[]
+        graphicallenhold.innerText = "0";
+
+        ipointer.style.left = "170px";
+        jpointer.style.left = "170px";
+
+    x = document.getElementsByClassName("charwords");
+
+    for (ie= x.length-1 ; ie >= 0 ; ie--) {
+
+        x[ie].remove();
+
+    }
+
+    x = document.getElementsByClassName("charpatterns");
+
+    for (ie= x.length-1 ; ie >= 0 ; ie--) {
+
+        x[ie].remove();
+
+    }
+
+
+
     createblocks(text,pattern);
 
     ipointer.style.display =""
 jpointer.style.display =""
 
-    await waitforme(300);
+graphicallen.style.display =""
+await waitforme(800);
+
 
    await KMPSearch(pattern,text);
 
