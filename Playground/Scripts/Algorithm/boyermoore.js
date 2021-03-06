@@ -65,7 +65,7 @@ var NO_OF_CHARS = 256
 
 /* A pattern searching function that uses Bad  
 Character Heuristic of Boyer Moore Algorithm */
-function boyerMooreutil(  txt,  pat)  
+async function boyerMooreutil(  txt,  pat)  
 {  
     let m = pat.length;  
     let n = txt.length;  
@@ -84,10 +84,16 @@ function boyerMooreutil(  txt,  pat)
   
     // Fill the actual value of last occurrence  
     // of a character  
-    for (i = 0; i < m; i++)  
-        badchar[Number(pat.charCodeAt(i))] = i;  
+    for (i = 0; i < m; i++) { 
+        badchar[pat.charCodeAt(i)] = i;  
 
-    
+        Log(`Badchar ${pat[i]} = ${i}`)
+
+     
+
+    }
+
+       await waitforme(speed+100);
   
     let s = 0; // s is shift of the pattern with  
                 // respect to text  
@@ -100,14 +106,29 @@ function boyerMooreutil(  txt,  pat)
         characters of pattern and text are  
         matching at this shift s */
         while(j >= 0 && pat[j] == txt[s + j])   {
-            j--;  
+
+                  hilight(`pattern${j}` , "dodgerblue")
+            await hilight(`text${s+j}` , "dodgerblue")
+
+            hilight(`pattern${j}` , "coral")
+            await hilight(`text${s+j}` , "coral")
+            
+            j--;
+
+            Log(`<span style="font-size:130%;">J = ${j}</span>`)
+
+
         }
+
+
+        await waitforme(speed+100);
+        
   
         /* If the pattern is present at current  
         shift, then index j will become -1 after  
         the above loop */
         if (j < 0)  {  
-            console.log(`pattern occurs at shift = ${s}`) 
+            Log(`<span style="font-size:130%;">pattern occurs at shift = ${s}</span>`)
   
             /* Shift the pattern so that the next  
             character in text aligns with the last  
@@ -115,9 +136,15 @@ function boyerMooreutil(  txt,  pat)
             The condition s+m < n is necessary for  
             the case when pattern occurs at the end  
             of text */
-            s += (s + m < n)? m-badchar[txt.charCodeAt(s + m)] : 1;  
+            s += (s + m < n)? m-badchar[txt.charCodeAt(s + m)] : 1; 
+            
+            patterncontainer.style.left = 150+ (44*s)+"px";
+
+            await waitforme(speed+100)
   
         }  
+
+
   
         else {
             /* Shift the pattern so that the bad character  
@@ -128,8 +155,39 @@ function boyerMooreutil(  txt,  pat)
             occurrence of bad character in pattern  
             is on the right side of the current  
             character. */
-            s += Math.max(1, j - badchar[txt.charCodeAt(s + j)]);   
+
+            let s_ =s;
+
+            Log(` s + j => ${s_} + ${j} = ${s_+j}`)
+
+            s += Math.max(1, j - badchar[txt.charCodeAt(s + j)]);  
+
+
+
+            Log(`txt[s+j] => txt[${s_}+${j}] => txt[${s_+j}] = ${txt[s_+j]} `)
+
+            await waitforme(speed+100)
+
+    
+            Log(`badchar[${txt[s_ + j]}] => badchar[${txt.charCodeAt(s_ + j)}] = ${badchar[txt.charCodeAt(s_ + j)]}`)
+
+            await waitforme(speed+100)
+
+            
+            Log(`s = ${s_} + max(1 , ${j}-(${badchar[txt.charCodeAt(s_ + j)]})) = ${s}`)
+
+            await waitforme(speed+100)
+
+            patterncontainer.style.left = 150+ (44*s)+"px";
+
+            await waitforme(speed+100)
+
         }
+
+
+
+
+
     }  
 }  
 
