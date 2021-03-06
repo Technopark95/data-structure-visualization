@@ -20,18 +20,46 @@ Copyright 2020 Anoop Singh, Graphical Structure
 */
 
 
-var alignments = [];
 
-var lefthand = 100;
 
 var heapsize =0;
-
-var positiongarray = []
-
 
 var noderef = []
 var  nodefreq = []
 
+
+function cleareverything()  {
+
+
+ let x = document.getElementsByClassName("dragg")
+
+ for (let ie= x.length-1 ; ie >=0 ; ie-- ) {
+
+
+  x[ie].remove();
+
+
+ }
+
+
+  mySVG.redrawLines();
+
+   length =0
+
+ storedarray = []
+
+ _lines = []
+
+ ii=0 
+
+ count=0;
+
+ 
+ noderef = []
+  nodefreq = []
+
+
+}
 
 
 
@@ -222,7 +250,9 @@ function insertnewfreq (item)   {
 
 async function huffcode(getstring)  {
 
-  alignments = []
+
+
+
 
   var regex = /^[A-Za-z0-9 ]+$/
  
@@ -234,6 +264,10 @@ async function huffcode(getstring)  {
     return;
 } 
 
+
+cleareverything();
+
+
   window.scrollTo(0,0)
 getstring = String(getstring).toUpperCase();
 
@@ -241,8 +275,6 @@ let stringelement = document.getElementById("stringholder");
 
 
 stringelement.style.display=""
-
- lefthand = 100;
 
 let countedchars = {}
 
