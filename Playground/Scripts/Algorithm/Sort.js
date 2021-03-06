@@ -487,7 +487,6 @@ document.getElementById("tab1").style.display="none"
 }
 
 
-
   
 // main function to do heap sort 
 async function HeapSort() 
@@ -504,11 +503,26 @@ if (storedarray.length >31) {
 
 document.getElementById("t1").style.left = 100+"px"
 document.getElementById("t1").style.top = 500+"px"
-  await  arraynodes()
+ 
+
+await arraynodes();
+
+build();
+
+document.getElementById("0").style.top = 150+"px";
+document.getElementById("0").style.left = 630+"px";
    
-      doalign()
-    await waitforme(speed+50);
-    build()
+redrawevent = requestAnimationFrame(redraw);
+
+calcheight('0')
+  
+BalanceAll("0");
+    
+await waitforme(speed+100);
+
+cancelAnimationFrame(redrawevent);
+
+
     // Build heap (rearrange array) 
     await display('Building Heap')
     for (var ind = length / 2 - 1; ind >= 0; ind--) 
