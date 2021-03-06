@@ -117,9 +117,29 @@ var d = 256
 async function NaiveSearch(text , pattern)  {
 
 
-  await  createblocks(text,pattern);
+    textcontainer.style.left = "150px";
+    patterncontainer.style.left = "150px";
 
-   
+    x = document.getElementsByClassName("charwords");
+
+    for (ie= x.length-1 ; ie >= 0 ; ie--) {
+
+        x[ie].remove();
+
+    }
+
+    x = document.getElementsByClassName("charpatterns");
+
+    for (ie= x.length-1 ; ie >= 0 ; ie--) {
+
+        x[ie].remove();
+
+    }
+
+
+    createblocks(text,pattern);
+
+   await waitforme(800)
 
   await  brutesearch(text,pattern);
 
