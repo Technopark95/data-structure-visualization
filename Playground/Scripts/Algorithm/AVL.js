@@ -690,4 +690,24 @@ slider.onchange= function() {
 
 
 
+placeholdermessage = `Try typing 'InsertAVL(${Math.ceil(Math.random() * 1000)})'`;
+
+
+window.onload = async function WindowLoad(event) {
+
+  let adder = ""
+
+for (let i = 0 ; i < placeholdermessage.length ; ++i) {
+adder = adder + placeholdermessage[i];
+
+codehere.placeholder = adder
+
+await waitforme(70)
+
+}
+            
+ }
+
+
+
 //            insertavl(0,65)
