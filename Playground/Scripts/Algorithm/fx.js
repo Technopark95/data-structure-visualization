@@ -71,7 +71,7 @@ var outputscreen = document.getElementById("out1");
 
 var codehere = document.getElementById("codetype") ;
 
-codehere.placeholder =""
+codehere.placeholder ="Type here & Press Enter key."
 
 var arrowpointer = document.getElementById("infos").childNodes[1];
 arrowpointer.style.transition = "200ms"
