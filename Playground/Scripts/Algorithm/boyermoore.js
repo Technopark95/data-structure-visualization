@@ -21,14 +21,46 @@ Copyright 2020 Anoop Singh, Graphical Structure
 
 
 
+
+
 let textcontainer = document.getElementById("stringcont");
 let patterncontainer = document.getElementById("patterncont");
 
 textcontainer.style.cssText =  `top: 200px;left :150px;transition:${speed}ms linear;`
-patterncontainer.style.cssText =  `top: 270px;left :150px;transition:${speed}ms linear;`
+patterncontainer.style.cssText =  `top: 300px;left :150px;transition:${speed}ms linear;`
+
+
+$("#patterncont").draggable();
+
+
+var sourcemoore ,destmoore;
+
+let upperpart , lowerpart;
+
+function redrawmoore()  {
+
+ _ctx.clearRect(0,0,_canvas.width,_canvas.height);
+
+     upperpart = document.getElementById(`text${sourcemoore}`).getBoundingClientRect();
+     lowerpart = document.getElementById(`pattern${destmoore}`).getBoundingClientRect();
+
+            _ctx.beginPath();
+
+
+            _ctx.moveTo(upperpart.left+20 , upperpart.top+40)
+
+            _ctx.lineTo(lowerpart.left+20 , lowerpart.top);
+
+
+            _ctx.stroke();
+
+           
+
+    redrawevent = requestAnimationFrame(redrawmoore);
 
 
 
+}
 
 
 function createblocks(word,pattern) {
@@ -163,26 +195,84 @@ async function boyerMooreutil(  txt,  pat)
             if (j - badchar[txt.charCodeAt(s + j)] < 1) {
 
 
-colorflag = false;
+            colorflag = false;
 
             }
 
             Log(` s + j => ${s_} + ${j} = ${s_+j}`)
 
+
+             upperpart = document.getElementById(`text${s}`).getBoundingClientRect();
+             lowerpart = document.getElementById(`pattern${j}`).getBoundingClientRect();
+
+            _ctx.beginPath();
+
+
+            _ctx.moveTo(upperpart.left+20 , upperpart.top+40)
+
+            _ctx.lineTo(lowerpart.left+20 , lowerpart.top);
+
+
+            _ctx.fillText(`${s_}+${j}`,(upperpart.left +lowerpart.left)/2-40 ,( upperpart.top + lowerpart.top)/2+20);
+
+            
+
+
+            upperpart = document.getElementById(`text${(s+j)}`).getBoundingClientRect();
+
+
+            _ctx.moveTo(lowerpart.left+20 , lowerpart.top)
+
+            _ctx.lineTo(upperpart.left+20 , upperpart.top+40);
+
+
+            _ctx.fillText(`${s_+j}`,(upperpart.left +lowerpart.left)/2 +40 ,( upperpart.top + lowerpart.top)/2+20);
+
+         
+            _ctx.stroke();
+
+
+
+/*
+
+
+*/
+
             s += Math.max(1, j - badchar[txt.charCodeAt(s + j)]);  
+
+
+/*
+
+
+
+
+*/
 
 
 
             Log(`txt[s+j] => txt[${s_}+${j}] => txt[${s_+j}] = ${txt[s_+j]} `)
 
+            sourcemoore = (s_+j);
+            destmoore =  badchar[txt.charCodeAt(s_ + j)];
 
-if (colorflag == true) {
+            if (colorflag == true) {
 
 
-            hilight(`text${s_+j}` , "red");
+            hilight(`text${(s_+j)}` , "red");
+
             await hilight(`pattern${badchar[txt.charCodeAt(s_ + j)]}` , "red");
 
-}
+        
+
+            }
+
+            await waitforme(speed+200)
+
+
+            _ctx.clearRect(0,0,_canvas.width,_canvas.height)
+
+
+
 
             Log(`badchar[${txt[s_ + j]}] => badchar[${txt.charCodeAt(s_ + j)}] = ${badchar[txt.charCodeAt(s_ + j)]}`)
 
@@ -193,9 +283,17 @@ if (colorflag == true) {
 
             await waitforme(speed+100)
 
+        if (document.getElementById(`pattern${destmoore}`))
+            redrawevent = requestAnimationFrame(redrawmoore);
+
+
             patterncontainer.style.left = 150+ (44*s)+"px";
 
             await waitforme(speed+100)
+
+            cancelAnimationFrame(redrawevent);
+
+            _ctx.clearRect(0,0,_canvas.width,_canvas.height);
             
             if (colorflag == true) {
 
@@ -211,8 +309,7 @@ if (colorflag == true) {
 
 
 
-
-
+    
     }  
 }  
 
@@ -220,6 +317,7 @@ if (colorflag == true) {
   
 async function BoyerMoore(text , pattern)  {
 
+    _ctx.font = "20px Segoe ui";
 
     textcontainer.style.left = "150px";
     patterncontainer.style.left = "150px";
