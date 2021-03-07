@@ -717,26 +717,7 @@ var index = length-2
               }
 
 
-let arraycom = ["BubbleSort()" , "SelectionSort()" , "QuickSort()" , "MergeSort()" , "InsertionSort()" , "HeapSort()"]
 
-
-placeholdermessage = `Try typing '${arraycom[ Math.floor( Math.random() *6 ) ]}'`;
-
-
-window.onload = async function WindowLoad(event) {
-
-  let adder = ""
-
-for (let i = 0 ; i < placeholdermessage.length ; ++i) {
-adder = adder + placeholdermessage[i];
-
-codehere.placeholder = adder
-
-await waitforme(70)
-
-}
-            
- }
 
 
  array([10,5,23,4,89,65,35,86,45]);
