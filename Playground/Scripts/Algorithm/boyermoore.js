@@ -37,6 +37,8 @@ var sourcemoore ,destmoore;
 
 let upperpart , lowerpart;
 
+
+
 function redrawmoore()  {
 
  _ctx.clearRect(0,0,_canvas.width,_canvas.height);
@@ -44,28 +46,20 @@ function redrawmoore()  {
      upperpart = document.getElementById(`text${sourcemoore}`).getBoundingClientRect();
      lowerpart = document.getElementById(`pattern${destmoore}`).getBoundingClientRect();
 
-            _ctx.beginPath();
+    _ctx.beginPath();
 
+    _ctx.moveTo(upperpart.left+20 , upperpart.top+40)
 
-            _ctx.moveTo(upperpart.left+20 , upperpart.top+40)
+    _ctx.lineTo(lowerpart.left+20 , lowerpart.top);
 
-            _ctx.lineTo(lowerpart.left+20 , lowerpart.top);
-
-
-            _ctx.stroke();
-
-           
+    _ctx.stroke();
 
     redrawevent = requestAnimationFrame(redrawmoore);
-
-
 
 }
 
 
 function createblocks(word,pattern) {
-
-
 
     for (let i = 0 ; i < word.length ; i++)  {
 
@@ -87,8 +81,6 @@ function createblocks(word,pattern) {
 
     }
     
-
-
 }
 
 
@@ -120,8 +112,6 @@ async function boyerMooreutil(  txt,  pat)
         badchar[pat.charCodeAt(i)] = i;  
 
         Log(`Badchar ${pat[i]} = ${i}`)
-
-     
 
     }
 
@@ -191,72 +181,33 @@ async function boyerMooreutil(  txt,  pat)
 
             let colorflag = true;
 
-            if (j - badchar[txt.charCodeAt(s + j)] < 1) {
-
-
-            colorflag = false;
-
-            }
+            if (j - badchar[txt.charCodeAt(s + j)] < 1)  colorflag = false;
 
             Log(` s + j => ${s_} + ${j} = ${s_+j}`)
 
 
              upperpart = document.getElementById(`text${s}`).getBoundingClientRect();
              lowerpart = document.getElementById(`pattern${j}`).getBoundingClientRect();
-
             _ctx.beginPath();
-
-
             _ctx.moveTo(upperpart.left+20 , upperpart.top+40)
-
             _ctx.lineTo(lowerpart.left+20 , lowerpart.top);
-
-
             _ctx.fillText(`${s_}+${j}`,(upperpart.left +lowerpart.left)/2-40 ,( upperpart.top + lowerpart.top)/2+20);
-
-            
-
-
             upperpart = document.getElementById(`text${(s+j)}`).getBoundingClientRect();
-
-
             _ctx.moveTo(lowerpart.left+20 , lowerpart.top)
-
             _ctx.lineTo(upperpart.left+20 , upperpart.top+40);
-
-
             _ctx.fillText(`${s_+j}`,(upperpart.left +lowerpart.left)/2 +40 ,( upperpart.top + lowerpart.top)/2+20);
-
-         
             _ctx.stroke();
 
 
-            if (colorflag == true) {
-
-
-                await hilight(`text${(s_+j)}` , "red");
-     
-            
-     
-                 }
-
-
-
-
-
+            if (colorflag == true) await hilight(`text${(s_+j)}` , "red");
 
 /*
-
 
 */
 
             s += Math.max(1, j - badchar[txt.charCodeAt(s + j)]);  
 
-
 /*
-
-
-
 
 */
 
@@ -275,10 +226,6 @@ async function boyerMooreutil(  txt,  pat)
 
 
 
-
- 
-
-
             Log(`badchar[${txt[s_ + j]}] => badchar[${txt.charCodeAt(s_ + j)}] = ${badchar[txt.charCodeAt(s_ + j)]}`)
 
             await waitforme(speed+100)
@@ -287,18 +234,12 @@ async function boyerMooreutil(  txt,  pat)
             Log(`s = ${s_} + max(1 , ${j}-(${badchar[txt.charCodeAt(s_ + j)]})) = ${s}`)
 
 
-            if (colorflag == true) {
+            if (colorflag == true) await hilight(`pattern${badchar[txt.charCodeAt(s_ + j)]}` , "red");
 
-
-        
-                await hilight(`pattern${badchar[txt.charCodeAt(s_ + j)]}` , "red");
     
-            
-    
-                }
-    
-
             await waitforme(speed+100)
+
+
 
         if (document.getElementById(`pattern${destmoore}`))
             redrawevent = requestAnimationFrame(redrawmoore);
@@ -312,9 +253,8 @@ async function boyerMooreutil(  txt,  pat)
 
             _ctx.clearRect(0,0,_canvas.width,_canvas.height);
             
+
             if (colorflag == true) {
-
-
                 hilight(`text${s_+j}` , "coral");
                 await hilight(`pattern${badchar[txt.charCodeAt(s_ + j)]}` , "coral");
     
