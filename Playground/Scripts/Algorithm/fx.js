@@ -42,6 +42,7 @@ var prev = { }
 var tree = { }
 var parent = {}
 var redrawevent; 
+var placeholdermessage;
 var divbyelement = { }
 
 //var variables ={}
@@ -762,7 +763,7 @@ async function redraw  ()  {
 
  Object.defineProperty(window, 'value', {
   get: function() {
-    Log(`You are using random value<br>To define specific value then edit the parameter<br>For example<br><span style="color:red;">InsertBST(${Math.ceil(Math.random() * 1000)})</span>`)
+    Log(`You are using random value<br>To define specific value then edit the arguement.`)
     return Math.ceil(Math.random() * 1000)}
   })
 
