@@ -153,8 +153,7 @@ async function boyerMooreutil(  txt,  pat)
         }
 
 
-        await waitforme(speed+100);
-        
+    
   
         /* If the pattern is present at current  
         shift, then index j will become -1 after  
@@ -232,6 +231,19 @@ async function boyerMooreutil(  txt,  pat)
             _ctx.stroke();
 
 
+            if (colorflag == true) {
+
+
+                await hilight(`text${(s_+j)}` , "red");
+     
+            
+     
+                 }
+
+
+
+
+
 
 /*
 
@@ -255,23 +267,16 @@ async function boyerMooreutil(  txt,  pat)
             sourcemoore = (s_+j);
             destmoore =  badchar[txt.charCodeAt(s_ + j)];
 
-            if (colorflag == true) {
-
-
-            hilight(`text${(s_+j)}` , "red");
-
-            await hilight(`pattern${badchar[txt.charCodeAt(s_ + j)]}` , "red");
-
-        
-
-            }
-
-            await waitforme(speed+200)
+   
+            await waitforme(speed+400)
 
 
             _ctx.clearRect(0,0,_canvas.width,_canvas.height)
 
 
+
+
+ 
 
 
             Log(`badchar[${txt[s_ + j]}] => badchar[${txt.charCodeAt(s_ + j)}] = ${badchar[txt.charCodeAt(s_ + j)]}`)
@@ -280,6 +285,18 @@ async function boyerMooreutil(  txt,  pat)
 
             
             Log(`s = ${s_} + max(1 , ${j}-(${badchar[txt.charCodeAt(s_ + j)]})) = ${s}`)
+
+
+            if (colorflag == true) {
+
+
+        
+                await hilight(`pattern${badchar[txt.charCodeAt(s_ + j)]}` , "red");
+    
+            
+    
+                }
+    
 
             await waitforme(speed+100)
 
