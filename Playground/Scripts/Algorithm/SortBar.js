@@ -911,3 +911,26 @@ slider.onchange= function() {
     
     
   }
+
+
+
+let arraycom = ["BubbleSort()" , "SelectionSort()" , "QuickSort()" , "MergeSort()" , "InsertionSort()" , "HeapSort()" , "ShellSort()" , "TimSort()" , "CombSort()" , "CocktailShakerSort()"]
+
+
+placeholdermessage = `Try typing '${arraycom[ Math.floor( Math.random() *arraycom.length ) ]}'`;
+
+
+window.onload = async function WindowLoad(event) {
+
+  let adder = ""
+
+for (let i = 0 ; i < placeholdermessage.length ; ++i) {
+adder = adder + placeholdermessage[i];
+
+codehere.placeholder = adder
+
+await waitforme(70)
+
+}
+            
+ }
