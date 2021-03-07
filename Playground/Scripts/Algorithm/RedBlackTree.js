@@ -1003,3 +1003,24 @@ await waitforme (speed+100);
 
 
 } 
+
+
+
+
+placeholdermessage = `Try typing 'RBTreeinsert(${Math.ceil(Math.random() * 1000)})'`;
+
+
+window.onload = async function WindowLoad(event) {
+
+  let adder = ""
+
+for (let i = 0 ; i < placeholdermessage.length ; ++i) {
+adder = adder + placeholdermessage[i];
+
+codehere.placeholder = adder
+
+await waitforme(70)
+
+}
+            
+ }
