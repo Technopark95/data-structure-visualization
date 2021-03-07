@@ -144,13 +144,13 @@ var ismob ;
 
 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
  
-  document.getElementById("log1").style.display = "none";
-  document.getElementById("playlabel").style.display = "none";
-  document.getElementById("pauselabel").style.display = "none";
-  document.getElementById("play-btn").style.display = "none";
-  document.getElementById("pause-btn").style.display = "none";
-  document.getElementsByClassName("slidecontainer")[0].style.width = "150px";
-  document.getElementsByClassName("slidecontainer")[0].style.right = "0";
+  // document.getElementById("log1").style.display = "none";
+  // document.getElementById("playlabel").style.display = "none";
+  // document.getElementById("pauselabel").style.display = "none";
+  // document.getElementById("play-btn").style.display = "none";
+  // document.getElementById("pause-btn").style.display = "none";
+  // document.getElementsByClassName("slidecontainer")[0].style.width = "150px";
+  // document.getElementsByClassName("slidecontainer")[0].style.right = "0";
 
   ismob = true;
 
@@ -806,7 +806,7 @@ codehere.addEventListener("keypress" , async function(e)  {
           
          log.removeChild(log.lastChild)
 
-         Log("Invalid Command.<br>Please check the parameters or the syntax.")
+         Log("Invalid Command.<br>Please check syntax or <br><span style='font-size:120%;color:red;'>Refer code list in the left of the screen.</span>")
 
 
 
@@ -842,5 +842,8 @@ codehere.addEventListener("keypress" , async function(e)  {
 
 })
 
+
+
+Log("<span style='font-size:120%;color:coral;'>Click arrow on the left side to open Codes list.</span>")
 
 
