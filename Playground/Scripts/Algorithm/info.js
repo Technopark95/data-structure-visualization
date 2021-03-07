@@ -201,64 +201,28 @@ for (ie = 0; ie < x11.length; ie++) {
 }
 
 
-// codehere.addEventListener("click" , function()  {
+codehere.addEventListener("mouseenter" , function()  {
 
 
-// if (codehere.value != "" ) {
 
+  infotabelement.addEventListener("mouseleave", leaveinfotab)
 
-//   infotabelement.addEventListener("mouseleave", leaveinfotab)
+  commandlistelement.style.transition= "300ms";
+  commandlistelement.style.opacity= "0%";
+  commandlistelement.style.zIndex= "0";
+  document.getElementById("infos").style.left = "0px"
 
-//   commandlistelement.style.transition= "300ms";
-//   commandlistelement.style.opacity= "0%";
-//   commandlistelement.style.zIndex= "0";
-//   document.getElementById("infos").style.left = "0px"
+  arrowpointer.style.transform = "rotate(0deg)"
 
-//   arrowpointer.style.transform = "rotate(0deg)"
+      setTimeout(()=> {
+        infotabelement.style.top = "40%";
+        commandlistelement.style.display = "none"
 
-//       setTimeout(()=> {
-//         infotabelement.style.top = "40%";
-//         commandlistelement.style.display = "none"
-
-//       },100)
+      },100)
   
   
 
   
-//       infoclick = 0;
+      infoclick = 0;
   
-//     }
-
-
-
-//     else {
-
-//       let codebox = document.getElementById("codetype").style.top;
-  
-//       infotabelement.style.top = parseInt(codebox+140)+"px";
-//       document.getElementById("infos").style.left = "250px"
-
-//       infotabelement.removeEventListener("mouseleave",leaveinfotab)
-      
-//       arrowpointer.style.transform = "rotate(90deg)"
-
-//       commandlistelement.style.display = "";
-
-//       setTimeout(()=> {
-  
-//   commandlistelement.style.transition= "300ms";
-//   commandlistelement.style.opacity= "100%";
-//   commandlistelement.style.zIndex= "5";
-  
-//       },100)
-      
-  
-      
-//       infoclick = 1;
-
-
-
-//     }
-  
-  
-//   })
+  })
