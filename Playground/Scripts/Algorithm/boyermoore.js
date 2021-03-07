@@ -158,6 +158,15 @@ async function boyerMooreutil(  txt,  pat)
 
             let s_ =s;
 
+            let colorflag = true;
+
+            if (j - badchar[txt.charCodeAt(s + j)] < 1) {
+
+
+colorflag = false;
+
+            }
+
             Log(` s + j => ${s_} + ${j} = ${s_+j}`)
 
             s += Math.max(1, j - badchar[txt.charCodeAt(s + j)]);  
@@ -166,9 +175,15 @@ async function boyerMooreutil(  txt,  pat)
 
             Log(`txt[s+j] => txt[${s_}+${j}] => txt[${s_+j}] = ${txt[s_+j]} `)
 
-            await waitforme(speed+100)
 
-    
+if (colorflag == true) {
+
+
+            hilight(`text${s_+j}` , "red");
+            await hilight(`pattern${badchar[txt.charCodeAt(s_ + j)]}` , "red");
+
+}
+
             Log(`badchar[${txt[s_ + j]}] => badchar[${txt.charCodeAt(s_ + j)}] = ${badchar[txt.charCodeAt(s_ + j)]}`)
 
             await waitforme(speed+100)
@@ -181,6 +196,16 @@ async function boyerMooreutil(  txt,  pat)
             patterncontainer.style.left = 150+ (44*s)+"px";
 
             await waitforme(speed+100)
+            
+            if (colorflag == true) {
+
+
+                hilight(`text${s_+j}` , "coral");
+                await hilight(`pattern${badchar[txt.charCodeAt(s_ + j)]}` , "coral");
+    
+    }
+
+    
 
         }
 
