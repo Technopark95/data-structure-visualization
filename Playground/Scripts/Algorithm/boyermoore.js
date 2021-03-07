@@ -27,7 +27,7 @@ let textcontainer = document.getElementById("stringcont");
 let patterncontainer = document.getElementById("patterncont");
 
 textcontainer.style.cssText =  `top: 200px;left :150px;transition:${speed}ms linear;`
-patterncontainer.style.cssText =  `top: 300px;left :150px;transition:${speed}ms linear;`
+patterncontainer.style.cssText =  `top: 350px;left :150px;transition:${speed}ms linear;`
 
 
 $("#patterncont").draggable();
