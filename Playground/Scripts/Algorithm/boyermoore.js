@@ -30,8 +30,6 @@ textcontainer.style.cssText =  `top: 200px;left :150px;transition:${speed}ms lin
 patterncontainer.style.cssText =  `top: 350px;left :150px;transition:${speed}ms linear;`
 
 
-$("#patterncont").draggable();
-
 
 var sourcemoore ,destmoore;
 
