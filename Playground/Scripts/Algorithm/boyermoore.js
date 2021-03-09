@@ -223,12 +223,14 @@ async function boyerMooreutil(  txt,  pat)
             _ctx.clearRect(0,0,_canvas.width,_canvas.height)
 
 
+            if (document.getElementById(`pattern${destmoore}`))
+            redrawevent = requestAnimationFrame(redrawmoore);
+
 
             Log(`badchar[${txt[s_ + j]}] => badchar[${txt.charCodeAt(s_ + j)}] = ${badchar[txt.charCodeAt(s_ + j)]}`)
 
-            await waitforme(speed+100)
 
-            
+
             Log(`s = ${s_} + max(1 , ${j}-(${badchar[txt.charCodeAt(s_ + j)]})) = ${s}`)
 
 
@@ -239,10 +241,7 @@ async function boyerMooreutil(  txt,  pat)
 
 
 
-        if (document.getElementById(`pattern${destmoore}`))
-            redrawevent = requestAnimationFrame(redrawmoore);
-
-
+ 
             patterncontainer.style.left = 150+ (44*s)+"px";
 
             await waitforme(speed+100)
