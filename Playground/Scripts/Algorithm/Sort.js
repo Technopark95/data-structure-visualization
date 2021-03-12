@@ -550,6 +550,7 @@ cancelAnimationFrame(redrawevent);
     } 
 } 
 
+array([10,5,23,4,89,65,35,86,45]);
 
 let arraycom = ["BubbleSort()" , "SelectionSort()" , "QuickSort()" , "MergeSort()" , "InsertionSort()" , "HeapSort()"]
 
