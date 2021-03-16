@@ -783,7 +783,7 @@ codehere.addEventListener("keypress" , async function(e)  {
 
     
   
-    document.body.insertAdjacentHTML("beforeend" , `<img id = "animationplay" src="../813.gif"  style= "position:fixed; right:300px;bottom: 50px;width: 50px;z-index:-1"/>`)
+    document.body.insertAdjacentHTML("beforeend" , `<img id = "animationplay" src="../loader-3.gif"  style= "position:fixed; right:300px;bottom: 50px;width: 200px;z-index:-1"/>`)
 
     command = codehere.value;
 
