@@ -786,3 +786,50 @@ justify-content: center;
 transition: 1010ms linear;
 
 }
+
+
+.sudo {
+
+
+  width: 60px;
+  
+  height: 60px;
+ 
+ overflow-y: hidden;
+ 
+  background-color:rgb(255, 255, 255); 
+ 
+   font-family: Segoe UI;
+   border-style: solid;
+   border-width: 1px;
+   position: relative;
+
+   border-collapse: collapse;
+   padding: .5em;  
+   border-radius: 5px;
+
+   font-size: 100%;
+  
+
+
+}
+
+.inpsudo {
+
+position: absolute;
+margin: 0;
+padding: 0;
+width: 40px;
+height: 60px;
+left:20px;
+font-size: 400%;
+background-color: transparent;
+border: none;
+
+}
+
+
+.inpsudo:focus {
+
+  outline: none;
+}
