@@ -53,7 +53,7 @@ const clearscreen = function(e)  {
 
 function makeboard(n)   {
 
-    $("body").append(`<table id="qboard" style ="position:absolute; transition:100ms linear; top:70px;left:200px;transform:scale(0.7,0.7);border-spacing:3px;" ></table>`);
+    $("body").append(`<table id="qboard" style ="position:absolute; transition:100ms linear; top:70px;left:200px;transform:scale(0.7,0.7);border-spacing:1px;" ></table>`);
 
     $("#qboard").append("<tr>");
   
