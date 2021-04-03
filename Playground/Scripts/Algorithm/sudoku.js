@@ -53,33 +53,39 @@ const clearscreen = function(e)  {
 
 function makeboard(n)   {
 
-    $("body").append(`<table id="qboard" style ="position:absolute; transition:100ms linear; top:70px;left:200px;transform:scale(0.7,0.7);border-spacing:1px;" ></table>`);
+    $("body").append(`<table id="qboard" style ="position:absolute; transition:100ms linear; top:70px;left:70px;transform:scale(0.7,0.7);border-spacing:1px;" ></table>`);
 
     $("#qboard").append("<tr>");
+
+    let suval;
+    let defc = "black";
   
   
     for (let y = 0 ; y < n ; y++) {
   
       $("#qboard").append("<tr>");
+
       board.push([])
   
       for (let x = 0 ; x < n ; x++) {
   
-        let suval = Sudoku[y][x];
+       suval = Sudoku[y][x];
 
         if(Sudoku[y][x] == 0)  {
 
-suval = "";
+        suval = "";
+        defc = "red"
+
 
         }
 
     if (y >=3 && y <=5 )   {
 
       if (x >=3 && x <=5) {
-        $("#qboard").append( `<td class="sudo" id="q${(y)}-${(x)}" style="transition:${speed}ms linear;">  <div id="q${(y)}-${(x)}div" style="z-index:1; text-align:center;max-height:10px;">  <input class="inpsudo" id=in${y}-${x} maxlength="1" value=${suval} ></div></td>`);
+        $("#qboard").append( `<td class="sudo" id="q${(y)}-${(x)}" style="transition:${speed}ms linear;">  <div id="q${(y)}-${(x)}div" style="z-index:1; text-align:center;max-height:10px;">  <input class="inpsudo" id=in${y}-${x} maxlength="1" style="color:${defc}" value=${suval} ></div></td>`);
       }
       else
-      $("#qboard").append( `<td class="sudo" id="q${(y)}-${(x)}" style="transition:${speed}ms linear;background-color:rgb(247, 255, 134);">  <div id="q${(y)}-${(x)}div" style="z-index:1; text-align:center;max-height:10px;">  <input class="inpsudo" id=in${y}-${x} maxlength="1" value=${suval} ></div></td>`);
+      $("#qboard").append( `<td class="sudo" id="q${(y)}-${(x)}" style="transition:${speed}ms linear;background-color:rgb(247, 255, 134);">  <div id="q${(y)}-${(x)}div" style="z-index:1; text-align:center;max-height:10px;">  <input class="inpsudo" id=in${y}-${x} maxlength="1" style="color:${defc}" value=${suval} ></div></td>`);
       
 
     }  
@@ -89,15 +95,15 @@ suval = "";
 
 
 if (x >=3 && x <=5) {
-  $("#qboard").append( `<td class="sudo" id="q${(y)}-${(x)}" style="transition:${speed}ms linear;background-color:rgb(247, 255, 134);">  <div id="q${(y)}-${(x)}div" style="z-index:1; text-align:center;max-height:10px;">  <input class="inpsudo" id=in${y}-${x} maxlength="1" value=${suval} ></div></td>`);
+  $("#qboard").append( `<td class="sudo" id="q${(y)}-${(x)}" style="transition:${speed}ms linear;background-color:rgb(247, 255, 134);">  <div id="q${(y)}-${(x)}div" style="z-index:1; text-align:center;max-height:10px;">  <input class="inpsudo" id=in${y}-${x} maxlength="1" style="color:${defc}" value=${suval} ></div></td>`);
 }
 else
-$("#qboard").append( `<td class="sudo" id="q${(y)}-${(x)}" style="transition:${speed}ms linear;">  <div id="q${(y)}-${(x)}div" style="z-index:1; text-align:center;max-height:10px;">  <input class="inpsudo" id=in${y}-${x} maxlength="1" value=${suval} ></div></td>`);
+$("#qboard").append( `<td class="sudo" id="q${(y)}-${(x)}" style="transition:${speed}ms linear;">  <div id="q${(y)}-${(x)}div" style="z-index:1; text-align:center;max-height:10px;">  <input class="inpsudo" id=in${y}-${x} maxlength="1" style="color:${defc}" value=${suval} ></div></td>`);
 
 }
 
 
-
+defc = "black"
 
           board[y][x] = 0;
        
@@ -341,6 +347,58 @@ async function boardcolor(valu)  {
     for (ie = 0; ie < x.length; ie++) {
 
       x[ie].style.opacity = valu;
+    }
+
+
+
+}
+
+
+document.getElementById("suimg").onchange = async function() {
+
+
+  var formData = new FormData(document.getElementById("form1"));
+    
+  let rr = await   $.ajax({
+       url: "http://sudokusazyv2.azurewebsites.net/api/get_json",
+       type: "POST",
+       data: formData,
+       cache: false,
+       contentType: false,
+       processData: false
+     });
+
+     let i = 0;
+
+
+     for (let u = 0;u <81;u+=9){
+
+
+       let row = rr.predictions.slice(u,u+9);
+
+
+       for (let j = 0 ; j < 9 ; j++) {
+
+
+      Sudoku[i][j] = Number(row[j]);
+
+      if (Sudoku[i][j] == 0) {
+
+        document.getElementById(`in${i}-${j}`).style.color = "red"
+        document.getElementById(`in${i}-${j}`).value = ""
+        
+      }
+
+      else {
+      document.getElementById(`in${i}-${j}`).style.color = "black"
+      document.getElementById(`in${i}-${j}`).value = Sudoku[i][j]
+      }
+
+
+       }
+        
+        ++i;
+
     }
 
 
