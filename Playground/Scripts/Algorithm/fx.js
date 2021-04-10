@@ -79,9 +79,6 @@ arrowpointer.style.transition = "200ms"
 document.getElementById("infos").childNodes[0].innerText = "Code List";
 
 
-document.body.insertAdjacentHTML("afterbegin",`<div id='playlabel'><p id="plbl">Play</p></div><div id='pauselabel'><p id="palbl" >Pause</p></div>`)
-
-document.body.insertAdjacentHTML("afterbegin",`<img id = "pause-btn-img" src="../pause-button-png-29658.png"  style= "position:fixed; left:40px;top: 40px; opacity: 0;transition:opacity 500ms;z-index:-1;"/>`)
 
 document.body.insertAdjacentHTML("afterbegin",`<img id="pointerarrow" src="../pointer.png" style="height: 70px; width: 70px; position: absolute; top: 135px;transition-duration:500ms;">`)
 var pointerarrow = document.getElementById("pointerarrow")
@@ -192,7 +189,6 @@ function pauser ()  {
       playbtn.removeEventListener("click",playbuttonclick);
     
     stats = 0 ;
-    document.getElementById("pause-btn-img").style.opacity = "0";
     resolve("reolved");
     
     }
@@ -223,26 +219,12 @@ return
 
   pausebtn.style.filter = "blur(5px)";
   playbtn.style.filter = "blur(0px)";
-  document.getElementById("pause-btn-img").style.opacity = ".3";
+
   
 
 })
 
 
-playbtn.addEventListener("mouseenter",function()  {
-
-  document.getElementById("playlabel").style.opacity = "1";
-  
-
-})
-
-pausebtn.addEventListener("mouseenter",function()  {
-
-  document.getElementById("pauselabel").style.opacity = "1";
-  
-  
-
-})
 
 
 skipbtn.addEventListener("mouseenter",function()  {
@@ -255,20 +237,6 @@ skipbtn.addEventListener("mouseenter",function()  {
 })
 
 
-
-playbtn.addEventListener("mouseleave",function()  {
-
-  document.getElementById("playlabel").style.opacity = "0";
-  
-})
-
-pausebtn.addEventListener("mouseleave",function()  {
-
-  document.getElementById("pauselabel").style.opacity = "0";
-  
-  
-
-})
 
 skipbtn.addEventListener("mouseleave",function()  {
 
