@@ -833,3 +833,17 @@ border: none;
 
   outline: none;
 }
+
+
+
+.conwaycells  {
+
+  background-color: coral;
+  color: white;
+  width:10px;
+  height: 10px;
+  font-size: 20px;
+  text-align: center;
+  margin: .2px;
+  
+}
