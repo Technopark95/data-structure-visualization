@@ -35,7 +35,7 @@ let FutureCA = [];
 let cellrow = 70 ,cellcol = 130;
 
 if (ismob) {
-    cellcol = 70;
+    cellcol = 85;
     cellrow = 130;
 }
 
