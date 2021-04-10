@@ -32,8 +32,15 @@ let conwaygrid =document.getElementById("conwaygrid");
 let CellularAutomata = [];
 let FutureCA = [];
 
+let cellrow = 70 ,cellcol = 130;
 
-for (let i = 0 ; i < 70 ; i++) {
+if (ismob) {
+    cellcol = 70;
+    cellrow = 130;
+}
+
+
+for (let i = 0 ; i < cellrow ; i++) {
 
     CellularAutomata.push([])
     FutureCA.push([])
@@ -41,7 +48,7 @@ for (let i = 0 ; i < 70 ; i++) {
     conwaygrid.insertAdjacentHTML("beforeend" , `<div id="cgr${i}" class="knuthtable"></div>`)
 
 
-    for (let j = 0 ; j < 130 ; j++) {
+    for (let j = 0 ; j < cellcol ; j++) {
 
 
        document.getElementById(`cgr${i}`).insertAdjacentHTML("beforeend" , `<div id=cgc${i}-${j} class="conwaycells" style="background-color: coral;"><p style="display:none;">${i}</p><p style="display:none;">${j}</p></div>`)
@@ -117,10 +124,10 @@ function countAliveNeighbor( m ,  n)  {
 function Generation ()  {
 	
 	
-    for(let i = 1 ; i < 70-1 ; i++) {
+    for(let i = 1 ; i < cellrow-1 ; i++) {
      
  
-      for(let j = 1 ; j < 130-1 ; j++) {
+      for(let j = 1 ; j < cellcol-1 ; j++) {
       
       
       let aliveadjacent = countAliveNeighbor(i,j);
@@ -167,10 +174,10 @@ function Generation ()  {
 }
 
 
-for(let i = 0 ; i < 70 ; i++) {
+for(let i = 0 ; i < cellrow ; i++) {
 		
 	
-    for(let j = 0 ; j < 130 ; j++) {
+    for(let j = 0 ; j < cellcol ; j++) {
         
         CellularAutomata[i][j] = FutureCA[i][j] ; 
         FutureCA[i][j] = 0;
