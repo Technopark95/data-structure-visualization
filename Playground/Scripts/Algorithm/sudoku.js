@@ -170,10 +170,13 @@ defc = "black"
 
             //  await hilight(`q${obj.row}-${obj.col}` , "red");
 
+            
         
               document.getElementById(`in${obj.row}-${obj.col}`).value= num;
 
               await waitforme (speed+10);
+              
+              if (stats == 1 ) await pauser();
               
              // await hilight(`q${obj.row}-${obj.col}` , defcol);
    
