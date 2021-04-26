@@ -51,6 +51,9 @@ ipointer.style.transition = `${speed}ms linear`;
 jpointer.style.transition = `${speed}ms linear`;
 
 
+
+
+
 function createblocks(word,pattern) {
 
 
