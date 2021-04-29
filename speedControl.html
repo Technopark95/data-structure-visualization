@@ -33,6 +33,7 @@
         html,
         body {
             height: 100%;
+            width: 100%;
             margin: 0;
             padding: 0%;
         }
@@ -84,12 +85,14 @@
 .controls {
 
     text-align: center;
-    width: 100px;
+
+    padding: 20px;
     height: 100%;
     background-color: black;
     color: white;
     font-size: larger;
     border: none;
+    width: 100%;
 
 }
 .controls:hover {
@@ -111,9 +114,9 @@
     </div>
 
     <div
-        style="position: absolute; display:flex; bottom: 0; width: 100%;height:70px;background-color: rgb(0, 0, 0);align-items: center;color: white;">
-        <div class="slidecontainer">
-            <input type="range" min="1" max="100" value="50" class="slider" id="animation-speed">
+        style="position: absolute; display:flex; bottom: 0;justify-content: center; align-items: center; flex-direction: row;width: 100%;">
+        <div class="slidecontainer" style="margin-bottom: 20px">
+            <input type="range" min="1" max="100" value="50" class="slider" id="animation-speed" >
         </div>
 
         <button class="controls" id="lin"  value="linear">Linear</button>
