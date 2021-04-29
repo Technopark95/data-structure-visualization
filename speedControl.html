@@ -86,7 +86,7 @@
 
     text-align: center;
 
-    padding: 20px;
+    padding: 10px;
     height: 100%;
     background-color: black;
     color: white;
@@ -95,11 +95,24 @@
     width: 100%;
 
 }
+
+
 .controls:hover {
 
     background-color: white;
     color: black;
+}
 
+#controlsystem {
+    flex-direction: row;
+    position: relative; display:flex; bottom: 0;justify-content: center; align-items: center;width: 100%;
+    left: 0;
+  }
+
+@media (max-width: 800px) {
+  #controlsystem {
+    flex-direction: column;
+  }
 }
 
 
@@ -114,7 +127,7 @@
     </div>
 
     <div
-        style="position: absolute; display:flex; bottom: 0;justify-content: center; align-items: center; flex-direction: row;width: 100%;">
+       id="controlsystem" >
         <div class="slidecontainer" style="margin-bottom: 20px">
             <input type="range" min="1" max="100" value="50" class="slider" id="animation-speed" >
         </div>
@@ -155,10 +168,13 @@
 
         if (e.target.className != "controls") return;
 
-alert(e.target.id)
+        rotator.style.animationTimingFunction =   document.getElementById(e.target.id).value
 
 
     })
+
+
+
 
 
     </script>
