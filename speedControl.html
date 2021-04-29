@@ -24,8 +24,8 @@
         #tiananmen-square {
 
            
-            width:300px;
-            height: 300px;
+            width:200px;
+            height: 200px;
             border: 2px solid black;
 
         }
@@ -40,7 +40,7 @@
 
 
         .slidecontainer {
-            width: 300px;
+            width: 200px;
 
             z-index: 5;
 
@@ -107,11 +107,13 @@
     flex-direction: row;
     position: relative; display:flex; bottom: 0;justify-content: center; align-items: center;width: 100%;
     left: 0;
+
   }
 
 @media (max-width: 800px) {
   #controlsystem {
     flex-direction: column;
+    margin-top: 20px;
   }
 }
 
@@ -128,7 +130,7 @@
 
     <div
        id="controlsystem" >
-        <div class="slidecontainer" style="margin-bottom: 20px">
+        <div class="slidecontainer" style="margin-bottom: 20px;">
             <input type="range" min="1" max="100" value="50" class="slider" id="animation-speed" >
         </div>
 
