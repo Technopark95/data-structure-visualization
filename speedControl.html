@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        * {
+            font-family: 'Segoe UI';
+            cursor: default;
+        }
+        
+        @keyframes rotate360 {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        #tiananmen-square {
+
+           
+            width:300px;
+            height: 300px;
+            border: 2px solid black;
+
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0%;
+        }
+
+
+        .slidecontainer {
+            width: 300px;
+
+            z-index: 5;
+
+
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            width: 200px;
+            height: 3px;
+            border-radius: 3px;
+            background: linear-gradient(to right, gray, black);
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+
+        .slider:hover {
+            opacity: 1;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: linear-gradient(to left, #FF512F, #DD2476);
+            cursor: default;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #000000;
+            cursor: pointer;
+        }
+
+
+.controls {
+
+    text-align: center;
+    width: 100px;
+    height: 100%;
+    background-color: black;
+    color: white;
+    font-size: larger;
+    border: none;
+
+}
+.controls:hover {
+
+    background-color: white;
+    color: black;
+
+}
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <div style="display: flex;justify-content: center;align-items:center;height: 600px;background-color: blueviolet;">
+        <div id="tiananmen-square"></div>
+    </div>
+
+    <div
+        style="position: absolute; display:flex; bottom: 0; width: 100%;height:70px;background-color: rgb(0, 0, 0);align-items: center;color: white;">
+        <div class="slidecontainer">
+            <input type="range" min="1" max="100" value="50" class="slider" id="animation-speed">
+        </div>
+
+        <button class="controls" id="lin"  value="linear">Linear</button>
+        <button class="controls" id="es"  value="ease">ease</button>
+        <button class="controls" id="esi"  value="ease-in">ease-in</button>
+        <button class="controls" id="esio"  value="ease-in-out">ease-in-out</button>
+
+    </div>
+
+    <script>
+
+        var speed;
+        var type = "linear";
+        var rotator = document.getElementById("tiananmen-square")
+        var slider = document.getElementById("animation-speed");
+
+        speed = 2010 - 2000 * (slider.value / 100);
+
+        slider.onchange = function () {
+
+            speed = 2020 - 2000 * (this.value / 100);
+
+            rotator.style.animationDuration = speed + "ms";
+
+        }
+
+        window.onload = function () {
+
+            rotator.style.animation = speed + "ms rotate360 infinite " + type;
+
+        }
+
+
+    document.addEventListener("click" , (e)=> {
+
+
+        if (e.target.className != "controls") return;
+
+alert(e.target.id)
+
+
+    })
+
+
+    </script>
+</body>
+
+</html>
