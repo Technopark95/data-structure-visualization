@@ -146,14 +146,14 @@
             minuteHand.style.transform = `rotate(${minuteHandAngle}deg)`;
 
 
-            if (hourHandAngle - minuteHand < 180 && hourHandAngle - minuteHand > 0) {
-                calculatedAngle.innerText = hourHandAngle - minuteHand;
+            if ((hourHandAngle - minuteHandAngle <= 180 && hourHandAngle - minuteHandAngle >= 0) || (minuteHandAngle - hourHandAngle <= 180 && minuteHandAngle - hourHandAngle >= 0)) {
+                calculatedAngle.innerText = hourHandAngle - minuteHandAngle;
              
             }
 
             else if (hourHandAngle - minuteHand < 0) {
 
-                calculatedAngle.innerText = Math.abs(hourHandAngle - minuteHand);
+                calculatedAngle.innerText = Math.abs(hourHandAngle - minuteHandAngle);
                 if (calculatedAngle.innerText >180) {
                     calculatedAngle.innerText = 360 - Math.abs(calculatedAngle.innerText);
 
@@ -167,6 +167,9 @@
                 
 
             }
+
+      
+
 
         }
 
@@ -187,14 +190,15 @@
             hourHand.style.transform = `rotate(${hourHandAngle}deg)`;
             minuteHand.style.transform = `rotate(${minuteHandAngle}deg)`;
 
-            if (hourHandAngle - minuteHandAngle < 180 && hourHandAngle - minuteHandAngle > 0) {
-                calculatedAngle.innerText = hourHandAngle - minuteHand;
-         
+            if ((hourHandAngle - minuteHandAngle <= 180 && hourHandAngle - minuteHandAngle >= 0) || (minuteHandAngle - hourHandAngle <= 180 && minuteHandAngle - hourHandAngle >= 0)) {
+                calculatedAngle.innerText = hourHandAngle - minuteHandAngle;
+             
             }
 
             else if (hourHandAngle - minuteHandAngle < 0) {
 
                 calculatedAngle.innerText = Math.abs(hourHandAngle - minuteHandAngle);
+
                 if (calculatedAngle.innerText >180) {
                     calculatedAngle.innerText = 360 - Math.abs(calculatedAngle.innerText);
 
@@ -208,6 +212,8 @@
         
 
             }
+
+            
             
 
 
