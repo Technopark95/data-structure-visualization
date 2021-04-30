@@ -117,33 +117,34 @@
             hourHand.style.transform = `rotate(${hourHandAngle}deg)`;
             minuteHand.style.transform = `rotate(${minuteHandAngle}deg)`;
 
-            if ((hourHandAngle - minuteHandAngle <= 180 && hourHandAngle - minuteHandAngle >= 0))  {
-                calculatedAngle.innerText = Math.abs(hourHandAngle - minuteHandAngle);
+            if (hourHandAngle > minuteHandAngle) {
 
-            }
-            
-            
-            else if( (minuteHandAngle - hourHandAngle <= 180 && minuteHandAngle - hourHandAngle >= 0)) {
-
-                calculatedAngle.innerText = Math.abs(minuteHandAngle - hourHandAngle);
-             
-            }
-
-
-            else if (hourHandAngle - minuteHandAngle < 0) {
+                let tempAngle = hourHandAngle - minuteHandAngle;
 
                 calculatedAngle.innerText = Math.abs(hourHandAngle - minuteHandAngle);
-                if (calculatedAngle.innerText >180) {
-                    calculatedAngle.innerText = Math.abs(360 - Math.abs(calculatedAngle.innerText));
+
+                if (tempAngle > 180) {
+
+                    calculatedAngle.innerText = Math.abs(360 - tempAngle);
 
                 }
 
+
             }
 
-            else if (hourHandAngle - minuteHandAngle > 180) {
+
+            if (hourHandAngle < minuteHandAngle) {
+
+                let tempAngle = minuteHandAngle - hourHandAngle;
 
                 calculatedAngle.innerText = Math.abs(minuteHandAngle - hourHandAngle);
-                
+
+                if (tempAngle > 180) {
+
+                    calculatedAngle.innerText = Math.abs(360 - tempAngle);
+
+                }
+
 
             }
 
@@ -171,37 +172,37 @@
             hourHand.style.transform = `rotate(${hourHandAngle}deg)`;
             minuteHand.style.transform = `rotate(${minuteHandAngle}deg)`;
 
-            if ((hourHandAngle - minuteHandAngle <= 180 && hourHandAngle - minuteHandAngle >= 0))  {
-                calculatedAngle.innerText = Math.abs(hourHandAngle - minuteHandAngle);
 
-            }
-            
-            
-            else if( (minuteHandAngle - hourHandAngle <= 180 && minuteHandAngle - hourHandAngle >= 0)) {
+            if (hourHandAngle > minuteHandAngle) {
 
-                calculatedAngle.innerText = Math.abs(minuteHandAngle - hourHandAngle);
-             
-            }
-
-
-            else if (hourHandAngle - minuteHandAngle < 0) {
+                let tempAngle = hourHandAngle - minuteHandAngle;
 
                 calculatedAngle.innerText = Math.abs(hourHandAngle - minuteHandAngle);
-                if (calculatedAngle.innerText >180) {
-                    calculatedAngle.innerText = Math.abs(360 - Math.abs(calculatedAngle.innerText));
+
+                if (tempAngle > 180) {
+
+                    calculatedAngle.innerText = Math.abs(360 - tempAngle);
 
                 }
 
+
             }
 
-            else if (hourHandAngle - minuteHandAngle > 180) {
+
+            if (hourHandAngle < minuteHandAngle) {
+
+                let tempAngle = minuteHandAngle - hourHandAngle;
 
                 calculatedAngle.innerText = Math.abs(minuteHandAngle - hourHandAngle);
-                
+
+                if (tempAngle > 180) {
+
+                    calculatedAngle.innerText = Math.abs(360 - tempAngle);
+
+                }
+
 
             }
-
-      
 
 
         }
@@ -223,38 +224,39 @@
             hourHand.style.transform = `rotate(${hourHandAngle}deg)`;
             minuteHand.style.transform = `rotate(${minuteHandAngle}deg)`;
 
-            if ((hourHandAngle - minuteHandAngle <= 180 && hourHandAngle - minuteHandAngle >= 0))  {
-                calculatedAngle.innerText = Math.abs(hourHandAngle - minuteHandAngle);
+            if (hourHandAngle > minuteHandAngle) {
 
-            }
-            
-            
-            else if( (minuteHandAngle - hourHandAngle <= 180 && minuteHandAngle - hourHandAngle >= 0)) {
-
-                calculatedAngle.innerText = Math.abs(minuteHandAngle - hourHandAngle);
-             
-            }
-
-            else if (hourHandAngle - minuteHandAngle < 0) {
+                let tempAngle = hourHandAngle - minuteHandAngle;
 
                 calculatedAngle.innerText = Math.abs(hourHandAngle - minuteHandAngle);
 
-                if (calculatedAngle.innerText >180) {
-                    calculatedAngle.innerText = Math.abs(360 - Math.abs(calculatedAngle.innerText));
+                if (tempAngle > 180) {
+
+                    calculatedAngle.innerText = Math.abs(360 - tempAngle);
 
                 }
 
+
             }
 
-            else if (hourHandAngle - minuteHandAngle > 180) {
+
+            if (hourHandAngle < minuteHandAngle) {
+
+                let tempAngle = minuteHandAngle - hourHandAngle;
 
                 calculatedAngle.innerText = Math.abs(minuteHandAngle - hourHandAngle);
-        
+
+                if (tempAngle > 180) {
+
+                    calculatedAngle.innerText = Math.abs(360 - tempAngle);
+
+                }
+
 
             }
 
-            
-            
+
+
 
 
         }
