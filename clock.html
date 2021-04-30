@@ -98,24 +98,8 @@
         var minuteInput = document.getElementById("minput");
         var calculatedAngle = document.getElementById("angle");
 
-        window.onload = function () {
 
-            let timeData = new Date;
-
-            let hours = timeData.getHours();
-            let minutes = timeData.getMinutes();
-
-            if (hours > 11) {
-
-                hours = hours - 12;
-            }
-
-            let hourHandAngle = (hours * 30) + (minutes * 0.5);
-            let minuteHandAngle = minutes * 6;
-
-
-            hourHand.style.transform = `rotate(${hourHandAngle}deg)`;
-            minuteHand.style.transform = `rotate(${minuteHandAngle}deg)`;
+        function setAngle(hourHandAngle, minuteHandAngle) {
 
             if (hourHandAngle > minuteHandAngle) {
 
@@ -148,7 +132,36 @@
 
             }
 
+
         }
+
+
+        window.onload = function () {
+
+            let timeData = new Date;
+
+            let hours = timeData.getHours();
+            let minutes = timeData.getMinutes();
+
+            if (hours > 11) {
+
+                hours = hours - 12;
+            }
+
+            let hourHandAngle = (hours * 30) + (minutes * 0.5);
+            let minuteHandAngle = minutes * 6;
+
+
+            hourHand.style.transform = `rotate(${hourHandAngle}deg)`;
+            minuteHand.style.transform = `rotate(${minuteHandAngle}deg)`;
+
+
+            setAngle(hourHandAngle , minuteHandAngle);
+
+
+        }
+
+
 
         hourInput.oninput = function () {
 
@@ -173,36 +186,7 @@
             minuteHand.style.transform = `rotate(${minuteHandAngle}deg)`;
 
 
-            if (hourHandAngle > minuteHandAngle) {
-
-                let tempAngle = hourHandAngle - minuteHandAngle;
-
-                calculatedAngle.innerText = Math.abs(hourHandAngle - minuteHandAngle);
-
-                if (tempAngle > 180) {
-
-                    calculatedAngle.innerText = Math.abs(360 - tempAngle);
-
-                }
-
-
-            }
-
-
-            if (hourHandAngle < minuteHandAngle) {
-
-                let tempAngle = minuteHandAngle - hourHandAngle;
-
-                calculatedAngle.innerText = Math.abs(minuteHandAngle - hourHandAngle);
-
-                if (tempAngle > 180) {
-
-                    calculatedAngle.innerText = Math.abs(360 - tempAngle);
-
-                }
-
-
-            }
+            setAngle(hourHandAngle , minuteHandAngle);
 
 
         }
@@ -224,39 +208,7 @@
             hourHand.style.transform = `rotate(${hourHandAngle}deg)`;
             minuteHand.style.transform = `rotate(${minuteHandAngle}deg)`;
 
-            if (hourHandAngle > minuteHandAngle) {
-
-                let tempAngle = hourHandAngle - minuteHandAngle;
-
-                calculatedAngle.innerText = Math.abs(hourHandAngle - minuteHandAngle);
-
-                if (tempAngle > 180) {
-
-                    calculatedAngle.innerText = Math.abs(360 - tempAngle);
-
-                }
-
-
-            }
-
-
-            if (hourHandAngle < minuteHandAngle) {
-
-                let tempAngle = minuteHandAngle - hourHandAngle;
-
-                calculatedAngle.innerText = Math.abs(minuteHandAngle - hourHandAngle);
-
-                if (tempAngle > 180) {
-
-                    calculatedAngle.innerText = Math.abs(360 - tempAngle);
-
-                }
-
-
-            }
-
-
-
+            setAngle(hourHandAngle , minuteHandAngle);
 
 
         }
