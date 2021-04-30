@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock Angle</title>
+    <style>
+        * {
+            font-family: 'Segoe UI';
+        }
+
+        #hourhand {
+
+            transition: 2s linear;
+            background-color: blue;
+            position: absolute;
+            margin-top: -55px;
+            height: 60px;
+            width: 10px;
+            border-radius: 10px;
+            transform-origin: bottom center;
+            z-index: 0;
+        }
+
+        #minutehand {
+
+            position: absolute;
+            margin-top: -95px;
+            height: 100px;
+            width: 10px;
+            background-color: rgb(0, 0, 0);
+            border-radius: 10px;
+            transform-origin: bottom center;
+            transition: 2s linear;
+            z-index: 1;
+
+
+        }
+
+
+        #controlbox {
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            border-width: 2px;
+            border-style: solid;
+        }
+
+        #hinput:focus,
+        #minput:focus {
+
+            outline: 0;
+
+
+        }
+
+        @media (max-width :800px) {
+
+            #controlbox {
+                flex-direction: column;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="clockholder"
+        style="display: flex; flex-wrap: nowrap; align-items: center; justify-content: center; height: 350px; background-color: cornsilk;">
+        <img src="pngtree-vector-clock-icon-png-image_4187292.png" width="280px" style="z-index: 2;">
+        <div id="hourhand"></div>
+        <div id="minutehand"></div>
+    </div>
+
+    <div id="controlbox">
+        <div
+            style="display:flex; align-items: center; justify-content: center; height: 50px;width: 100%;text-align: center;vertical-align: middle;">
+            <label style="font-size: 150%;">The angle is : <span id="angle">Deg</span>&deg;</label></div>
+        <div style="display: flex;  height: 50px;width: 100%;background-color:lavenderblush;"><input id="hinput"
+                style="width: 100%;margin:5px;border:0; font-size: larger;" placeholder="Hours"></div>
+        <div style="display: flex;  height: 50px;width: 100%;background-color:lavenderblush;"><input id="minput"
+                style="width: 100%;margin:5px;border:0; font-size: larger;" placeholder="Minutes"></div>
+    </div>
+
+    <script>
+
+
+        var hourHand = document.getElementById("hourhand");
+        var minuteHand = document.getElementById("minutehand");
+
+        var hourInput = document.getElementById("hinput");
+        var minuteInput = document.getElementById("minput");
+        var calculatedAngle = document.getElementById("angle");
+
+        window.onload = function () {
+
+            hourHand.style.transform = "rotate(90deg)";
+            minuteHand.style.transform = "rotate(0deg)";
+
+        }
+
+        hourInput.oninput = function () {
+
+            if (hourInput.value <0 || hourInput.value >12 ) {
+                calculatedAngle.innerText= "Not valid input"
+                return;
+            }
+
+            if (hourInput.value == "")  {
+                return;
+            }
+
+            let hourHandAngle = (hourInput.value * 30) + (minuteInput.value * 0.5);
+            let minuteHandAngle = minuteInput.value * 6;
+
+            hourHand.style.transform = `rotate(${hourHandAngle}deg)`;
+            minuteHand.style.transform = `rotate(${minuteHandAngle}deg)`;
+
+            calculatedAngle.innerText = Math.abs( hourHandAngle - minuteHandAngle) < 180 ? Math.abs(hourHandAngle-minuteHandAngle) : Math.abs( 360- (hourHandAngle - minuteHandAngle));
+
+
+        }
+
+        minuteInput.oninput = function () {
+
+            if (minuteInput.value <0 || minuteInput.value >59) {
+                calculatedAngle.innerText= "Not valid input"
+                return;
+            }
+
+            if (minuteInput.value == "")  {
+                return;
+            }
+
+            let hourHandAngle = (hourInput.value * 30) + (minuteInput.value * 0.5);
+            let minuteHandAngle = minuteInput.value * 6;
+
+            hourHand.style.transform = `rotate(${hourHandAngle}deg)`;
+            minuteHand.style.transform = `rotate(${minuteHandAngle}deg)`;
+
+            calculatedAngle.innerText = Math.abs( hourHandAngle - minuteHandAngle) < 180 ? Math.abs(hourHandAngle-minuteHandAngle) :  Math.abs(360- (hourHandAngle - minuteHandAngle));
+
+
+
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
