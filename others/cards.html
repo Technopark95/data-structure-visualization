@@ -14,18 +14,39 @@
             font-family: 'Segoe UI';
         }
 
+html,body {
+    height: 100%;
+}
+        .parallex {
+
+            height: 100%;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+
         #cont {
 
             display: flex;
             flex-direction: row;
             align-items: center;
+            z-index: 0;
+            overflow: auto;
 
+
+
+        }
+
+
+        #cont::-webkit-scrollbar {
+            display: none;
         }
 
         .frame {
 
-            margin: 7px;
-            border-radius: 10px;
+        
+        
+            min-width:400px ;
         }
 
         .frameimg {
@@ -175,6 +196,13 @@
 
 <body>
 
+    <div class="parallex" style="background-image: url('universe.jpg');">
+    
+        <div style="position: absolute; top: 50%;left: 50%;transform: translate(-50%,-50%);background-color:snow;border-radius:60px;padding:20px;text-align: center    ;">
+        <label style="font-size: 200%;">Scroll Down</label>
+            </div>
+    </div>
+
 
     <div id="cont">
 
@@ -217,12 +245,12 @@
 
 
         <div class="frame" style="position: relative;width:400px;overflow: hidden;">
-            <img src="green4.jpg" style="z-index: 0;width: 100%;height: auto;display: block;">
+            <img src="green3.jpg" style="z-index: 0;width: 100%;height: auto;display: block;">
 
             <div class="frameimg">
             </div>
 
-            <label class="info">More Greenary</label>
+            <label class="info">Snow Leaves</label>
             <div class="underliner"></div>
             <button  class="likebtn"><i class="glyphicon glyphicon-thumbs-up"
                 style="font-size:170%;color: white;" id='photo2' onclick="addToLiked(this)"></i></button>
@@ -233,8 +261,46 @@
 
         </div>
 
+        <div class="frame" style="position: relative;width:400px;overflow: hidden;">
+            <img src="green4.jpg" style="z-index: 0;width: 100%;height: auto;display: block;">
+
+            <div class="frameimg">
+            </div>
+
+            <label class="info">More Greenary</label>
+            <div class="underliner"></div>
+            <button  class="likebtn"><i class="glyphicon glyphicon-thumbs-up"
+                style="font-size:170%;color: white;" id='photo3' onclick="addToLiked(this)"></i></button>
+        <button class="sharebtn"><i class="glyphicon glyphicon-cloud"
+                style="font-size:170%;color: white;"></i></button>
+        <button class="removebtn"><i class="glyphicon glyphicon-remove"
+                style="font-size:170%;color: white;"></i></button>
+
+        </div>
+
+
+        <div class="frame" style="position: relative;width:400px;overflow: hidden;">
+            <img src="green5.jpg" style="z-index: 0;width: 100%;height: auto;display: block;">
+    
+            <div class="frameimg">
+            </div>
+    
+            <label class="info">Tiny Leaves</label>
+            <div class="underliner"></div>
+            <button  class="likebtn"><i class="glyphicon glyphicon-thumbs-up"
+                style="font-size:170%;color: white;" id='photo4' onclick="addToLiked(this)"></i></button>
+        <button class="sharebtn"><i class="glyphicon glyphicon-cloud"
+                style="font-size:170%;color: white;"></i></button>
+        <button class="removebtn"><i class="glyphicon glyphicon-remove"
+                style="font-size:170%;color: white;"></i></button>
+    
+        </div>
 
     </div>
+
+
+    <div class="parallex" style="background-image: url('universe2.jpg');"></div>
+
 
 
 <script>
