@@ -14,9 +14,11 @@
             font-family: 'Segoe UI';
         }
 
-html,body {
-    height: 100%;
-}
+        html,
+        body {
+            height: 100%;
+        }
+
         .parallex {
 
             height: 100%;
@@ -32,7 +34,7 @@ html,body {
             align-items: center;
             z-index: 0;
             overflow: auto;
-            box-shadow:0px 5px 20px 20px rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+            box-shadow: 0px 5px 20px 20px rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
 
 
 
@@ -45,9 +47,9 @@ html,body {
 
         .frame {
 
-        
-        
-            min-width:400px ;
+
+
+            min-width: 400px;
         }
 
         .frameimg {
@@ -198,103 +200,104 @@ html,body {
 <body>
 
     <div class="parallex" style="background-image: url('universe.jpg');">
-    
-        <div style="position: absolute; top: 50%;left: 50%;transform: translate(-50%,-50%);background-color:rgba(255, 250, 250, 0.288);border-radius:60px;padding:20px;text-align: center    ;">
-        <label style="font-size: 200%; color: rgb(255, 255, 255); ">Scroll Down</label>
-            </div>
+
+        <div
+            style="position: absolute; top: 50%;left: 50%;transform: translate(-50%,-50%);background-color:rgba(255, 250, 250, 0.288);border-radius:60px;padding:20px;text-align: center    ;">
+            <label style="font-size: 200%; color: rgb(255, 255, 255); ">Scroll Down</label>
+        </div>
     </div>
 
 
     <div id="cont">
 
-        <div class="frame" style="position: relative;width: 400px;overflow: hidden;">
-            <img src="green.jpg" style="z-index: 0;width: 100%;height: auto;display: block;">
+        <div id="f1" class="frame" style="position: relative;width: 400px;overflow: hidden;">
+            <img id="f1img" src="green1.jpg" style="z-index: 0;width: 100%;height: auto;display: block;">
 
             <div class="frameimg">
             </div>
 
             <label class="info">A beautiful greeny.</label>
             <div class="underliner"></div>
-            <button  class="likebtn"><i class="glyphicon glyphicon-thumbs-up"
-                    style="font-size:170%;color: white;" id="photo0" onclick="addToLiked(this)"></i></button>
-            <button class="sharebtn"><i class="glyphicon glyphicon-send"
+            <button class="likebtn"><i class="glyphicon glyphicon-thumbs-up" style="font-size:170%;color: white;"
+                    id="photo0" onclick="addToLiked(this)"></i></button>
+            <button class="sharebtn"><i class="glyphicon glyphicon-send" onclick="shareToFacebook('f1')"
                     style="font-size:170%;color: white;"></i></button>
             <button class="removebtn"><a href="green.jpg" download><i class="glyphicon glyphicon-download-alt"
-                    style="font-size:170%;color: white;"></i></a></button>
+                        style="font-size:170%;color: white;"></i></a></button>
 
 
         </div>
 
 
-        <div class="frame" style="position: relative;width:400px;overflow: hidden;">
-            <img src="green2.jpg" style="z-index: 0;width: 100%;height: auto;display: block;">
+        <div id="f2"  class="frame" style="position: relative;width:400px;overflow: hidden;">
+            <img id="f2img" src="green2.jpg" style="z-index: 0;width: 100%;height: auto;display: block;">
 
             <div class="frameimg">
             </div>
 
             <label class="info">Marijuana</label>
             <div class="underliner"></div>
-            <button  class="likebtn"><i class="glyphicon glyphicon-thumbs-up"
-                style="font-size:170%;color: white;" id="photo1" onclick="addToLiked(this)"></i></button>
-        <button class="sharebtn"><i class="glyphicon glyphicon-send" 
-                style="font-size:170%;color: white;"></i></button>
-        <button class="removebtn"><a href="green2.jpg" download><i class="glyphicon glyphicon-download-alt" id="save1"
-                style="font-size:170%;color: white;"></i></a></button>
+            <button class="likebtn"><i class="glyphicon glyphicon-thumbs-up" style="font-size:170%;color: white;"
+                    id="photo1" onclick="addToLiked(this)"></i></button>
+            <button class="sharebtn"><i class="glyphicon glyphicon-send"  onclick="shareToFacebook('f2')"
+                    style="font-size:170%;color: white;"></i></button>
+            <button class="removebtn"><a href="green2.jpg" download><i class="glyphicon glyphicon-download-alt"
+                        id="save1" style="font-size:170%;color: white;"></i></a></button>
 
         </div>
 
 
 
-        <div class="frame" style="position: relative;width:400px;overflow: hidden;">
-            <img src="green3.jpg" style="z-index: 0;width: 100%;height: auto;display: block;">
+        <div id="f3" class="frame" style="position: relative;width:400px;overflow: hidden;">
+            <img id="f3img" src="green3.jpg" style="z-index: 0;width: 100%;height: auto;display: block;">
 
             <div class="frameimg">
             </div>
 
             <label class="info">Snow Leaves</label>
             <div class="underliner"></div>
-            <button  class="likebtn"><i class="glyphicon glyphicon-thumbs-up"
-                style="font-size:170%;color: white;" id='photo2' onclick="addToLiked(this)"></i></button>
-        <button class="sharebtn"><i class="glyphicon glyphicon-send"
-                style="font-size:170%;color: white;"></i></button>
-        <button class="removebtn"><a href="green3.jpg" download><i class="glyphicon glyphicon-download-alt"
-                style="font-size:170%;color: white;"></i></a></button>
+            <button class="likebtn"><i class="glyphicon glyphicon-thumbs-up" style="font-size:170%;color: white;"
+                    id='photo2' onclick="addToLiked(this)"></i></button>
+            <button class="sharebtn"><i class="glyphicon glyphicon-send"  onclick="shareToFacebook('f3')"
+                    style="font-size:170%;color: white;"></i></button>
+            <button class="removebtn"><a href="green3.jpg" download><i class="glyphicon glyphicon-download-alt"
+                        style="font-size:170%;color: white;"></i></a></button>
 
         </div>
 
-        <div class="frame" style="position: relative;width:400px;overflow: hidden;">
-            <img src="green4.jpg" style="z-index: 0;width: 100%;height: auto;display: block;">
+        <div id="f4" class="frame" style="position: relative;width:400px;overflow: hidden;">
+            <img id="f4img" src="green4.jpg" style="z-index: 0;width: 100%;height: auto;display: block;">
 
             <div class="frameimg">
             </div>
 
             <label class="info">More Greenary</label>
             <div class="underliner"></div>
-            <button  class="likebtn"><i class="glyphicon glyphicon-thumbs-up"
-                style="font-size:170%;color: white;" id='photo3' onclick="addToLiked(this)"></i></button>
-        <button class="sharebtn"><i class="glyphicon glyphicon-send"
-                style="font-size:170%;color: white;"></i></button>
-        <button class="removebtn"><a href="green4.jpg" download><i class="glyphicon glyphicon-download-alt"
-                style="font-size:170%;color: white;"></i></a></button>
+            <button class="likebtn"><i class="glyphicon glyphicon-thumbs-up" style="font-size:170%;color: white;"
+                    id='photo3' onclick="addToLiked(this)"></i></button>
+            <button class="sharebtn"><i class="glyphicon glyphicon-send"  onclick="shareToFacebook('f4')"
+                    style="font-size:170%;color: white;"></i></button>
+            <button class="removebtn"><a href="green4.jpg" download><i class="glyphicon glyphicon-download-alt"
+                        style="font-size:170%;color: white;"></i></a></button>
 
         </div>
 
 
-        <div class="frame" style="position: relative;width:400px;overflow: hidden;">
-            <img src="green5.jpg" style="z-index: 0;width: 100%;height: auto;display: block;">
-    
+        <div id="f5" class="frame" style="position: relative;width:400px;overflow: hidden;">
+            <img id="f5img" src="green5.jpg" style="z-index: 0;width: 100%;height: auto;display: block;">
+
             <div class="frameimg">
             </div>
-    
+
             <label class="info">Tiny Leaves</label>
             <div class="underliner"></div>
-            <button  class="likebtn"><i class="glyphicon glyphicon-thumbs-up"
-                style="font-size:170%;color: white;" id='photo4' onclick="addToLiked(this)"></i></button>
-        <button class="sharebtn"><i class="glyphicon glyphicon-send"
-                style="font-size:170%;color: white;"></i></button>
-        <button class="removebtn"><a href="green5.jpg" download><i class="glyphicon glyphicon-download-alt"
-                style="font-size:170%;color: white;"></i></a></button>
-    
+            <button class="likebtn"><i class="glyphicon glyphicon-thumbs-up" style="font-size:170%;color: white;"
+                    id='photo4' onclick="addToLiked(this)"></i></button>
+            <button class="sharebtn"><i class="glyphicon glyphicon-send"  onclick="shareToFacebook('f5')"
+                    style="font-size:170%;color: white;"></i></button>
+            <button class="removebtn"><a href="green5.jpg" download><i class="glyphicon glyphicon-download-alt"
+                        style="font-size:170%;color: white;"></i></a></button>
+
         </div>
 
     </div>
@@ -302,76 +305,84 @@ html,body {
 
     <div class="parallex" style="background-image: url('universe2.jpg');"></div>
 
-    
-
-
-
-<script>
-
-let likedPhotos = {}
-
-
-function savePhoto (event) {
 
 
 
 
+    <script>
 
+        let likedPhotos = {}
+
+
+
+        function shareToFacebook(event) {
+
+
+            let imageElement = document.getElementById(event+"img");
+
+            window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(imageElement.src),'sharer','toolbar=0,status=0,width=626,height=436');return false;
 }
 
 
 
 
-function addToLiked(event)  {
-
-let target = event;
-
-if (target.style.color == "white") {
-  target.style.color = "red";  
-
-  localStorage.setItem(target.id,true) ;
-}
 
 
-else  {
-    target.style.color = "white";
-    localStorage.setItem(target.id,false);
-}
-
-}
-
-
-window.onload = function ()  {
-
-
-  let photoLength = document.getElementsByClassName("frame").length;
-
-
-  for(let i = 0 ; i < photoLength  ; i++) {
-
-    console.log(i)
-
-    let getIdStatus = localStorage.getItem("photo"+i);
-
-    if (getIdStatus == "true") {
-
-        document.getElementById("photo"+i).style.color = "red"; 
-
-    }
-
-    else {
-        continue;
-    }
-
-
-  }
+        
 
 
 
 
-}
+        function addToLiked(event) {
 
-</script>
+            let target = event;
+
+            if (target.style.color == "white") {
+                target.style.color = "red";
+
+                localStorage.setItem(target.id, true);
+            }
+
+
+            else {
+                target.style.color = "white";
+                localStorage.setItem(target.id, false);
+            }
+
+        }
+
+
+        window.onload = function () {
+
+
+            let photoLength = document.getElementsByClassName("frame").length;
+
+
+            for (let i = 0; i < photoLength; i++) {
+
+                console.log(i)
+
+                let getIdStatus = localStorage.getItem("photo" + i);
+
+                if (getIdStatus == "true") {
+
+                    document.getElementById("photo" + i).style.color = "red";
+
+                }
+
+                else {
+                    continue;
+                }
+
+
+            }
+
+
+
+
+        }
+
+    </script>
 
 </body>
 
