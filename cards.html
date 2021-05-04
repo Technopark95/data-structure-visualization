@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+
+    <style>
+        * {
+            font-family: 'Segoe UI';
+        }
+
+        #cont {
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            border-style: solid;
+            border-width: 2px;
+
+        }
+
+        .frame {
+
+            margin: 7px;
+            border-radius: 10px;
+        }
+
+        .frameimg {
+
+            background-image: linear-gradient(rgba(255, 0, 0, 0), rgb(0, 0, 0));
+            height: auto;
+            width: 100%;
+            z-index: 1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            opacity: 0;
+            transition: 300ms linear;
+        }
+
+        .info {
+
+            position: absolute;
+            bottom: -50px;
+            left: 20px;
+            color: white;
+            z-index: 1;
+            font-size: 170%;
+            transition: 100ms ease-in;
+            transition-delay: 200ms;
+
+        }
+
+        .underliner {
+
+            width: 60%;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.74);
+            z-index: 1;
+            position: absolute;
+            bottom: 30%;
+            left: -61%;
+            transform: skewX(20deg);
+            overflow: visible;
+            transition: 200ms ease-in 300ms;
+
+
+
+        }
+
+
+        .likebtn {
+
+            position: absolute;
+            bottom: -15%;
+            left: 10%;
+            z-index: 1;
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            outline: none;
+            background-color: rgba(0, 0, 0, 0.185);
+            border: 0;
+
+            transition: 100ms ease-in 500ms;
+        }
+
+
+
+        .sharebtn {
+
+            position: absolute;
+            bottom: -15%;
+            left: 46%;
+            z-index: 1;
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            outline: none;
+            background-color: rgba(0, 0, 0, 0.185);
+            border: 0;
+
+            transition: 100ms ease-in 600ms;
+
+        }
+
+
+
+        .removebtn {
+
+            position: absolute;
+            bottom: -15%;
+            left: 80%;
+            z-index: 1;
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            outline: none;
+            background-color: rgba(0, 0, 0, 0.185);
+            border: 0;
+            transition: 100ms ease-in 700ms;
+
+        }
+
+        .frame:hover>.frameimg {
+
+            opacity: 1;
+        }
+
+        .frame:hover>.info {
+
+
+            bottom: 35%;
+        }
+
+        .frame:hover>.underliner {
+
+            left: -5px;
+        }
+
+
+        .frame:hover>.likebtn {
+
+            bottom: 5%;
+        }
+
+        .frame:hover>.sharebtn {
+
+            bottom: 5%;
+        }
+
+        .frame:hover>.removebtn {
+
+            bottom: 5%;
+        }
+
+
+
+        @media (max-width:800px) {
+
+            #cont {
+
+                flex-direction: column;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div id="cont">
+
+        <div class="frame" style="position: relative;width: 400px;overflow: hidden;">
+            <img src="green.jpg" style="z-index: 0;width: 100%;height: auto;display: block;">
+
+            <div class="frameimg">
+            </div>
+
+            <label class="info">A beautiful greeny.</label>
+            <div class="underliner"></div>
+            <button  class="likebtn"><i class="glyphicon glyphicon-thumbs-up"
+                    style="font-size:170%;color: white;" id="photo0" onclick="addToLiked(this)"></i></button>
+            <button class="sharebtn"><i class="glyphicon glyphicon-cloud"
+                    style="font-size:170%;color: white;"></i></button>
+            <button class="removebtn"><i class="glyphicon glyphicon-remove"
+                    style="font-size:170%;color: white;"></i></button>
+
+
+        </div>
+
+
+        <div class="frame" style="position: relative;width:400px;overflow: hidden;">
+            <img src="green2.jpg" style="z-index: 0;width: 100%;height: auto;display: block;">
+
+            <div class="frameimg">
+            </div>
+
+            <label class="info">Marijuana</label>
+            <div class="underliner"></div>
+            <button  class="likebtn"><i class="glyphicon glyphicon-thumbs-up"
+                style="font-size:170%;color: white;" id="photo1" onclick="addToLiked(this)"></i></button>
+        <button class="sharebtn"><i class="glyphicon glyphicon-cloud"
+                style="font-size:170%;color: white;"></i></button>
+        <button class="removebtn"><i class="glyphicon glyphicon-remove"
+                style="font-size:170%;color: white;"></i></button>
+
+        </div>
+
+
+
+        <div class="frame" style="position: relative;width:400px;overflow: hidden;">
+            <img src="green4.jpg" style="z-index: 0;width: 100%;height: auto;display: block;">
+
+            <div class="frameimg">
+            </div>
+
+            <label class="info">More Greenary</label>
+            <div class="underliner"></div>
+            <button  class="likebtn"><i class="glyphicon glyphicon-thumbs-up"
+                style="font-size:170%;color: white;" id='photo2' onclick="addToLiked(this)"></i></button>
+        <button class="sharebtn"><i class="glyphicon glyphicon-cloud"
+                style="font-size:170%;color: white;"></i></button>
+        <button class="removebtn"><i class="glyphicon glyphicon-remove"
+                style="font-size:170%;color: white;"></i></button>
+
+        </div>
+
+
+    </div>
+
+
+<script>
+
+let likedPhotos = {}
+
+function addToLiked(event)  {
+
+let target = event;
+
+if (target.style.color == "white") {
+  target.style.color = "red";  
+
+  localStorage.setItem(target.id,true) ;
+}
+
+
+else  {
+    target.style.color = "white";
+    localStorage.setItem(target.id,false);
+}
+
+}
+
+
+window.onload = function ()  {
+
+
+  let photoLength = document.getElementsByClassName("frame").length;
+
+
+  for(let i = 0 ; i < photoLength  ; i++) {
+
+    console.log(i)
+
+    let getIdStatus = localStorage.getItem("photo"+i);
+
+    if (getIdStatus == "true") {
+
+        document.getElementById("photo"+i).style.color = "red"; 
+
+    }
+
+    else {
+        continue;
+    }
+
+
+  }
+
+
+
+
+}
+
+</script>
+
+</body>
+
+</html>
