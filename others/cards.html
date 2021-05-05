@@ -47,9 +47,8 @@
 
         .frame {
 
-
-
             min-width: 400px;
+
         }
 
         .frameimg {
@@ -151,10 +150,70 @@
 
         }
 
+
+        .commentbtn {
+
+            position: absolute;
+            top: -15%;
+            left: 80%;
+            z-index: 1;
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            outline: none;
+            background-color: rgba(0, 0, 0, 0.185);
+            border: 0;
+            transition: 100ms ease-in 700ms;
+
+        }
+
+
+        .closebtn {
+
+
+            position: absolute;
+            bottom: -15%;
+            left: 80%;
+            z-index: 1;
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            outline: none;
+            background-color: rgba(0, 0, 0, 0.185);
+            border: 0;
+            transition: 100ms ease-in 1200ms;
+            z-index: 3;
+
+
+
+        }
+
+        .comments {
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.432);
+            z-index: 3;
+            color: white;
+            padding: 40px;
+            font-size: 150%;
+            transition: 300ms ease-in;
+            opacity: 0;
+            visibility: hidden;
+            resize: none;
+            outline: none;
+            border:none;
+
+        }
+
         .frame:hover>.frameimg {
 
             opacity: 1;
         }
+
 
         .frame:hover>.info {
 
@@ -182,6 +241,13 @@
 
             bottom: 5%;
         }
+
+        .frame:hover>.commentbtn {
+
+            top: 5%;
+
+        }
+
 
 
 
@@ -222,14 +288,21 @@
                     id="photo0" onclick="addToLiked(this)"></i></button>
             <button class="sharebtn"><i class="glyphicon glyphicon-send" onclick="shareToFacebook('f1')"
                     style="font-size:170%;color: white;"></i></button>
-            <button class="removebtn"><a href="green.jpg" download><i class="glyphicon glyphicon-download-alt"
+            <button class="removebtn"><a href="green1.jpg" download><i class="glyphicon glyphicon-download-alt"
                         style="font-size:170%;color: white;"></i></a></button>
+            <button class="commentbtn" onclick="showCommentBox('f1')"><i class="glyphicon glyphicon-list-alt"
+                    style="font-size:170%;color: white;"></i></button>
+            <textarea id="f1com" class="comments" placeholder="Please leave a short note."></textarea>
+
+            <button id="f1close" class="closebtn" onclick="closeComment('f1')"><i class="glyphicon glyphicon-remove"
+                    style="font-size:170%;color: white;"></i></button>
+
 
 
         </div>
 
 
-        <div id="f2"  class="frame" style="position: relative;width:400px;overflow: hidden;">
+        <div id="f2" class="frame" style="position: relative;width:400px;overflow: hidden;">
             <img id="f2img" src="green2.jpg" style="z-index: 0;width: 100%;height: auto;display: block;">
 
             <div class="frameimg">
@@ -239,10 +312,16 @@
             <div class="underliner"></div>
             <button class="likebtn"><i class="glyphicon glyphicon-thumbs-up" style="font-size:170%;color: white;"
                     id="photo1" onclick="addToLiked(this)"></i></button>
-            <button class="sharebtn"><i class="glyphicon glyphicon-send"  onclick="shareToFacebook('f2')"
+            <button class="sharebtn"><i class="glyphicon glyphicon-send" onclick="shareToFacebook('f2')"
                     style="font-size:170%;color: white;"></i></button>
             <button class="removebtn"><a href="green2.jpg" download><i class="glyphicon glyphicon-download-alt"
                         id="save1" style="font-size:170%;color: white;"></i></a></button>
+            <button class="commentbtn" onclick="showCommentBox('f2')"><i class="glyphicon glyphicon-list-alt"
+                    style="font-size:170%;color: white;"></i></button>
+            <textarea id="f2com" class="comments" placeholder="Please leave a short note."></textarea>
+
+            <button id="f2close" class="closebtn" onclick="closeComment('f2')"><i class="glyphicon glyphicon-remove"
+                    style="font-size:170%;color: white;"></i></button>
 
         </div>
 
@@ -258,10 +337,17 @@
             <div class="underliner"></div>
             <button class="likebtn"><i class="glyphicon glyphicon-thumbs-up" style="font-size:170%;color: white;"
                     id='photo2' onclick="addToLiked(this)"></i></button>
-            <button class="sharebtn"><i class="glyphicon glyphicon-send"  onclick="shareToFacebook('f3')"
+            <button class="sharebtn"><i class="glyphicon glyphicon-send" onclick="shareToFacebook('f3')"
                     style="font-size:170%;color: white;"></i></button>
             <button class="removebtn"><a href="green3.jpg" download><i class="glyphicon glyphicon-download-alt"
                         style="font-size:170%;color: white;"></i></a></button>
+            <button class="commentbtn" onclick="showCommentBox('f3')"><i class="glyphicon glyphicon-list-alt"
+                    style="font-size:170%;color: white;"></i></button>
+
+            <textarea id="f3com" class="comments" placeholder="Please leave a short note."></textarea>
+
+            <button id="f3close" class="closebtn" onclick="closeComment('f3')"><i class="glyphicon glyphicon-remove"
+                    style="font-size:170%;color: white;"></i></button>
 
         </div>
 
@@ -275,10 +361,16 @@
             <div class="underliner"></div>
             <button class="likebtn"><i class="glyphicon glyphicon-thumbs-up" style="font-size:170%;color: white;"
                     id='photo3' onclick="addToLiked(this)"></i></button>
-            <button class="sharebtn"><i class="glyphicon glyphicon-send"  onclick="shareToFacebook('f4')"
+            <button class="sharebtn"><i class="glyphicon glyphicon-send" onclick="shareToFacebook('f4')"
                     style="font-size:170%;color: white;"></i></button>
             <button class="removebtn"><a href="green4.jpg" download><i class="glyphicon glyphicon-download-alt"
                         style="font-size:170%;color: white;"></i></a></button>
+            <button class="commentbtn" onclick="showCommentBox('f4')"><i class="glyphicon glyphicon-list-alt"
+                    style="font-size:170%;color: white;"></i></button>
+            <textarea id="f4com" class="comments" placeholder="Please leave a short note."></textarea>
+
+            <button id="f4close" class="closebtn" onclick="closeComment('f4')"><i class="glyphicon glyphicon-remove"
+                    style="font-size:170%;color: white;"></i></button>
 
         </div>
 
@@ -293,10 +385,17 @@
             <div class="underliner"></div>
             <button class="likebtn"><i class="glyphicon glyphicon-thumbs-up" style="font-size:170%;color: white;"
                     id='photo4' onclick="addToLiked(this)"></i></button>
-            <button class="sharebtn"><i class="glyphicon glyphicon-send"  onclick="shareToFacebook('f5')"
+            <button class="sharebtn"><i class="glyphicon glyphicon-send" onclick="shareToFacebook('f5')"
                     style="font-size:170%;color: white;"></i></button>
             <button class="removebtn"><a href="green5.jpg" download><i class="glyphicon glyphicon-download-alt"
                         style="font-size:170%;color: white;"></i></a></button>
+            <button class="commentbtn" onclick="showCommentBox('f5')"><i class="glyphicon glyphicon-list-alt"
+                    style="font-size:170%;color: white;"></i></button>
+
+            <textarea id="f5com" class="comments" placeholder="Please leave a short note."></textarea>
+
+            <button id="f5close" class="closebtn" onclick="closeComment('f5')"><i class="glyphicon glyphicon-remove"
+                    style="font-size:170%;color: white;"></i></button>
 
         </div>
 
@@ -311,26 +410,65 @@
 
     <script>
 
-        let likedPhotos = {}
 
+        function closeComment(data) {
+
+
+            let allChild = document.getElementById(data).children;
+
+            
+
+            allChild[9].style.transitionDelay = "100ms";
+            allChild[9].style.bottom = "-15%";
+
+            setTimeout(() => {
+                allChild[9].style.transitionDelay = "1200ms";
+            }, 200)
+
+            for (let i = 2; i <= 7; i++) {
+                allChild[i].style.opacity = "1";
+            }
+
+            let commentBox = document.getElementById(data + "com");
+
+            localStorage.setItem(data+"com" , commentBox.value)
+            localStorage.getItem(data+"com")
+            commentBox.style.opacity = '0';
+            commentBox.style.visibility = "hidden";
+
+
+
+
+        }
+
+
+        function showCommentBox(data) {
+
+            let commentBox = document.getElementById(data + "com");
+
+            commentBox.style.opacity = '1';
+            commentBox.style.visibility = "visible";
+
+
+            let allChild = document.getElementById(data).children;
+
+            for (let i = 2; i <= 7; i++) {
+                allChild[i].style.opacity = "0";
+            }
+
+            allChild[9].style.bottom = "5%";
+
+
+        }
 
 
         function shareToFacebook(event) {
 
 
-            let imageElement = document.getElementById(event+"img");
+            let imageElement = document.getElementById(event + "img");
 
-            window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(imageElement.src),'sharer','toolbar=0,status=0,width=626,height=436');return false;
-}
-
-
-
-
-
-
-        
-
-
+            window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(imageElement.src), 'sharer', 'toolbar=0,status=0,width=626,height=436'); return false;
+        }
 
 
         function addToLiked(event) {
@@ -360,15 +498,24 @@
 
             for (let i = 0; i < photoLength; i++) {
 
-                console.log(i)
 
                 let getIdStatus = localStorage.getItem("photo" + i);
+
+                let getComment = localStorage.getItem(`f${i+1}com`)
 
                 if (getIdStatus == "true") {
 
                     document.getElementById("photo" + i).style.color = "red";
 
                 }
+
+                if (getComment.length >0) {
+
+                document.getElementById(`f${i+1}com`).value = getComment;
+
+                }
+
+                
 
                 else {
                     continue;
