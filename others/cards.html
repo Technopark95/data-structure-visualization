@@ -472,6 +472,8 @@
             commentBox.style.visibility = "visible";
 
 
+
+
             let allChild = document.getElementById(data).children;
 
             for (let i = 2; i <= 7; i++) {
@@ -479,6 +481,13 @@
             }
 
             allChild[9].style.bottom = "5%";
+
+            setTimeout(()=> {
+                document.getElementById(data + "com").focus();
+            },100)
+            
+
+           
 
 
         }
