@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+
+    <style>
+        * {
+            font-family: 'Segoe UI';
+        }
+
+        ::-webkit-scrollbar {
+
+            width: 7px;
+            height: 7px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: grey;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: coral;
+
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        .parallex {
+
+            height: 100%;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .cont {
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            z-index: 0;
+            box-shadow: 0px 5px 20px 20px rgba(0, 0, 0, 0.24), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+            flex-wrap: wrap;
+           
+
+
+
+        }
+
+
+        .cont::-webkit-scrollbar {
+            display: none;
+        }
+
+        .frame {
+
+            min-width: 350px;
+            max-width: 350px;
+            margin: 20px;
+
+        }
+
+        .frameimg {
+
+            /* background-image: linear-gradient(rgba(255, 0, 0, 0), rgb(0, 0, 0)); */
+            background-color: rgba(0, 0, 0, 0.671);
+            height: auto;
+            width: 100%;
+            z-index: 1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            opacity: 1;
+
+        }
+
+        .info {
+
+            position: absolute;
+            bottom: 16%;
+            left: 20px;
+            color: white;
+            z-index: 1;
+            font-size: 170%;
+            transition: 100ms ease-in;
+            transition-delay: 200ms;
+
+        }
+
+        .underliner {
+
+            width: 60%;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.74);
+            z-index: 1;
+            position: absolute;
+            bottom: 15%;
+            left: -5px;
+            transform: skewX(20deg);
+            overflow: visible;
+            transition: 200ms ease-in 300ms;
+
+
+
+        }
+
+
+        .likebtn {
+
+            position: absolute;
+            bottom: -15%;
+            z-index: 1;
+            width: 100%;
+            height: 50px;
+
+            outline: none;
+            background-color: rgba(0, 0, 0, 0.733);
+            border: 0;
+            color: snow;
+            font-size: large;
+            transition: 100ms ease-in 300ms;
+        }
+
+
+
+        .sharebtn {
+
+            position: absolute;
+            bottom: -15%;
+            left: 46%;
+            z-index: 1;
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            outline: none;
+            background-color: rgba(0, 0, 0, 0.185);
+            border: 0;
+
+            transition: 100ms ease-in 300ms;
+
+        }
+
+
+
+        .removebtn {
+
+            position: absolute;
+            bottom: -15%;
+            left: 80%;
+            z-index: 1;
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            outline: none;
+            background-color: rgba(0, 0, 0, 0.185);
+            border: 0;
+            transition: 100ms ease-in 300ms;
+
+        }
+
+
+        .commentbtn {
+
+            position: absolute;
+            top: -20%;
+            left: 80%;
+            z-index: 1;
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            outline: none;
+            background-color: rgba(0, 0, 0, 0.185);
+            border: 0;
+            transition: 100ms ease-in 300ms;
+
+        }
+
+
+        .closebtn {
+
+
+            position: absolute;
+            bottom: -15%;
+            left: 80%;
+            z-index: 1;
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            outline: none;
+            background-color: rgba(0, 0, 0, 0.185);
+            border: 0;
+            transition: 100ms ease-in 800ms;
+            z-index: 3;
+
+
+
+        }
+
+        .comments {
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 75%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.432);
+            z-index: 3;
+            color: white;
+            padding: 40px;
+            font-size: 150%;
+            transition: 300ms ease-in;
+            opacity: 0;
+            visibility: hidden;
+            overflow: scroll;
+
+
+
+        }
+
+        .comments::placeholder {
+            color: snow;
+            opacity: .6;
+        }
+
+
+        .frame:hover>.comments {
+
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* 
+        .frame:hover>.info {
+
+
+            bottom: 16%;
+        }
+
+        .frame:hover>.underliner {
+
+            left: -5px;
+        } */
+
+
+        .frame:hover>.likebtn {
+
+            bottom: 0%;
+        }
+
+        .frame:hover>.sharebtn {
+
+            bottom: 5%;
+        }
+
+        .frame:hover>.removebtn {
+
+            bottom: 5%;
+        }
+
+        .frame:hover>.commentbtn {
+
+            top: 5%;
+
+        }
+
+        .labels {
+
+            visibility: hidden;
+        }
+
+
+
+
+        @media (max-width:800px) {
+
+            .cont {
+
+                flex-direction: column;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div id ='container' class="cont">
+
+        <!-- <div id="0" class="frame" style="position: relative;overflow: hidden;">
+            <img id="img0" src="aries.png" style="z-index: 0;width: 100%;height: auto;display: block;">
+
+            <div class="frameimg">
+            </div>
+
+            <label id="title0" class="info">Aries</label>
+            <div id="under0" class="underliner"></div>
+            <button id='btn0' class="likebtn">Get horoscope<span style="position: absolute;left:260px;top: 12px;"><i
+                        class="glyphicon glyphicon-menu-right" style="font-size:170%;color: red;"
+                        id="photo0"></i></span></button>
+            <label id="key0" class="labels">aries</label>
+            <label id="horo0" class="comments" placeholder="Please leave a short note.">Your horoscope will be shown
+                here.</label>
+
+        </div> -->
+
+
+    </div>
+
+
+    <script>
+
+        let container = document.getElementById('container')
+
+        let horoArray = ["aries", "taurus" , "gemini" , "cancer"  ,"leo" , "virgo" , "libra" , "scorpio" , "sagittarius" , 'capricorn' , "aquarius" , "pisces"]
+
+        let horoLength = 1;
+
+
+        for (let i = 0; i < horoArray.length; i++) {
+
+            let element =
+
+                `<div id="${i}" class="frame" style="position: relative;overflow: hidden;">
+            <img id="img${i}" src="${horoArray[i]}.png" style="z-index: 0;width: 100%;height: auto;display: block;">
+
+            <div class="frameimg">
+            </div>
+
+            <label id="title${i}" class="info">${horoArray[i]}</label>
+            <div id="under${i}" class="underliner"></div>
+            <button id='btn${i}' class="likebtn">Get horoscope<span style="position: absolute;left:235px;top: 12px;"><i
+                        class="glyphicon glyphicon-menu-right" style="font-size:170%;color: red;"
+                        id="photo${i}"></i></span></button>
+            <label id="key${i}" class="labels">${horoArray[i]}</label>
+            <label id="horo${i}" class="comments" placeholder="Please leave a short note.">Your horoscope will be shown here.</label>
+
+        </div>`
+
+
+        container.insertAdjacentHTML("beforeend" , element);
+
+        
+
+
+        }
+
+
+        let allGetHoroButtons = document.getElementsByClassName("likebtn");
+
+        for (let i = 0; i < allGetHoroButtons.length; i++) {
+
+            allGetHoroButtons[i].addEventListener('click', () => {
+                gethoroscope(i);
+            })
+
+        }
+
+
+
+
+        async function gethoroscope(event) {
+
+
+            let horoscopeKey = document.getElementById('key' + event);
+            let horoscopeLabel = document.getElementById('horo' + event);
+            console.log(horoscopeKey)
+
+            horoscopeLabel.innerHTML = "Please wait while we fetch your horoscope.";
+
+            let response = await fetch(`https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=${horoscopeKey.innerHTML}&day=today`, {
+                "method": "POST",
+                "headers": {
+                    "x-rapidapi-key": "6bc157dcdemshb42a8ea204054eap180063jsn044f82aa9f8f",
+                    "x-rapidapi-host": "sameer-kumar-aztro-v1.p.rapidapi.com"
+                }
+            })
+
+            let body = await response.json();
+
+            horoscopeLabel.innerHTML = body["description"];
+
+
+
+
+
+
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>
