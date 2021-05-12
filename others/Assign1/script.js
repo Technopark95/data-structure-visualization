@@ -202,6 +202,7 @@ let done = 0;
 
 function handleEffects(element)  {
 
+    messageBox.focus();
     var selectedText = '';
   
     // window.getSelection
@@ -277,6 +278,7 @@ document.getElementById("boldbtn").onclick = function() {
     }
 
 
+    handleEffects("boldindicator")
     document.execCommand("bold");
 
 }
@@ -303,6 +305,8 @@ document.getElementById("italicbtn").onclick = function() {
        
         return;
     }
+
+    handleEffects("italicindicator")
 
     document.execCommand("italic");
 
