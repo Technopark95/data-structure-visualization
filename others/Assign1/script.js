@@ -1,7 +1,3 @@
-
-
-
-
 let allInputFields = document.getElementsByClassName("inputfield")
 
 let messageBox = document.getElementById("messageph");
@@ -19,7 +15,7 @@ for (let i = 0; i < allInputFields.length; i++) {
     let fromFieldUnderline = allChilren[2];
 
 
-    fromFieldTextarea.oninput = function () {
+    fromFieldTextarea.oninput = function() {
 
         fromFieldLabel.style.cssText = `top:-5px;
         font-size: 10px;
@@ -28,7 +24,7 @@ for (let i = 0; i < allInputFields.length; i++) {
     }
 
 
-    fromFieldTextarea.onfocus = function () {
+    fromFieldTextarea.onfocus = function() {
 
         fromFieldUnderline.style.backgroundColor = "rgb(0, 103, 221)";
 
@@ -40,7 +36,7 @@ for (let i = 0; i < allInputFields.length; i++) {
     }
 
 
-    fromFieldTextarea.onblur = function () {
+    fromFieldTextarea.onblur = function() {
 
         fromFieldUnderline.style.backgroundColor = "rgb(95, 95, 95)";
 
@@ -53,9 +49,7 @@ for (let i = 0; i < allInputFields.length; i++) {
             color: rgb(0, 103, 221);`
 
 
-        }
-
-        else {
+        } else {
 
             fromFieldLabel.style.cssText = `top:15px;
             font-size: larger;
@@ -80,9 +74,7 @@ function showCC(element) {
 
         targetElement.style.display = "none";
 
-    }
-
-    else {
+    } else {
 
         targetElement.style.display = "block";
 
@@ -105,7 +97,7 @@ let bccTextInput = document.getElementById("bccfieldtextinput");
 
 let validationArray = [toTextInput, ccTextInput, bccTextInput]
 
-toTextInput.onkeydown = function (e) {
+toTextInput.onkeydown = function(e) {
 
     if (e.key == " " || e.key == "Tab") {
 
@@ -118,7 +110,7 @@ toTextInput.onkeydown = function (e) {
 
 }
 
-ccTextInput.onkeydown = function (e) {
+ccTextInput.onkeydown = function(e) {
 
     if (e.key == " " || e.key == "Tab") {
 
@@ -132,7 +124,7 @@ ccTextInput.onkeydown = function (e) {
 }
 
 
-bccTextInput.onkeydown = function (e) {
+bccTextInput.onkeydown = function(e) {
 
     if (e.key == " " || e.key == "Tab") {
 
@@ -206,17 +198,112 @@ function checker() {
 
 }
 
+let done = 0;
+
+function handleEffects(element)  {
+
+    var selectedText = '';
+  
+    // window.getSelection
+    if (window.getSelection) {
+        selectedText = window.getSelection();
+    }
+    // document.getSelection
+    else if (document.getSelection) {
+        selectedText = document.getSelection();
+    }
+    // document.selection
+    else if (document.selection) {
+        selectedText = 
+        document.selection.createRange().text;
+    } else return;
+
+    if (selectedText.type == "Range") {
+       
+        return;
+    }
 
 
-document.getElementById("boldbtn").onclick = function () {
+    let getSpecificIndicator = document.getElementById(element);
+
+
+
+   if (getSpecificIndicator.style.backgroundColor == "white") {
+
+    getSpecificIndicator.style.backgroundColor = "blueviolet"
+
+    document.getElementById(element+"lbl").style.color = "white";
+
+   }
+
+   else {
+
+
+    
+ 
+    getSpecificIndicator.style.backgroundColor = "white"
+    document.getElementById(element+"lbl").style.color = "black";
+
+   }
+
+
+
+}
+
+
+
+document.getElementById("boldbtn").onclick = function() {
+
+    
+    var selectedText = '';
+  
+    // window.getSelection
+    if (window.getSelection) {
+        selectedText = window.getSelection();
+    }
+    // document.getSelection
+    else if (document.getSelection) {
+        selectedText = document.getSelection();
+    }
+    // document.selection
+    else if (document.selection) {
+        selectedText = 
+        document.selection.createRange().text;
+    } else return;
+
+    if (selectedText.type == "Range") {
+       
+        return;
+    }
+
 
     document.execCommand("bold");
 
 }
 
-document.getElementById("italicbtn").onclick = function () {
+document.getElementById("italicbtn").onclick = function() {
+
+    var selectedText = '';
+  
+    // window.getSelection
+    if (window.getSelection) {
+        selectedText = window.getSelection();
+    }
+    // document.getSelection
+    else if (document.getSelection) {
+        selectedText = document.getSelection();
+    }
+    // document.selection
+    else if (document.selection) {
+        selectedText = 
+        document.selection.createRange().text;
+    } else return;
+
+    if (selectedText.type == "Range") {
+       
+        return;
+    }
 
     document.execCommand("italic");
 
 }
-

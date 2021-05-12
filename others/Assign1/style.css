@@ -127,3 +127,16 @@ color: rgb(0, 103, 221);
       }
 
     }
+
+
+    .indictors {
+
+
+      width:70px;
+      height: auto;
+      border:blueviolet 1px solid;
+      position: absolute;
+      right: 10px;
+      border-radius: 20px;
+      text-align: center;
+    }
