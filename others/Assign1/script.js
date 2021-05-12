@@ -103,7 +103,7 @@ let toTextInput = document.getElementById("tofieldtextinput");
 let ccTextInput = document.getElementById("ccfieldtextinput");
 let bccTextInput = document.getElementById("bccfieldtextinput");
 
-let validationArray = [toTextInput , ccTextInput , bccTextInput]
+let validationArray = [toTextInput, ccTextInput, bccTextInput]
 
 toTextInput.onkeydown = function (e) {
 
@@ -151,43 +151,42 @@ function checker() {
 
 
 
-    for (let i = 0 ; i < validationArray.length ; i++) {
+    for (let i = 0; i < validationArray.length; i++) {
 
-    let receivingPeople = validationArray[i].value;
+        let receivingPeople = validationArray[i].value;
 
-    if (validationArray[i].parentNode.style.display == "none") {
-        continue;
-    }
-
-    let allPeople = receivingPeople.split(';')
-
-
-
-    if (allPeople[0] == "") {
-        alert("Check your Receipient list.")
-        return;
-    }
-
-    for (let email of allPeople) {
-
-        if (email == "") continue;
-
-
-        if (!emailRegEx.test(String(email).toLowerCase())) {
-
-            alert("Check your Receipient list.")
-
-            return false;
-
+        if (validationArray[i].parentNode.style.display == "none") {
+            continue;
         }
 
+        let allPeople = receivingPeople.split(';')
 
-    }
+
+
+        if (allPeople[0] == "") {
+            alert("Check your Receipient list.")
+            return;
+        }
+
+        for (let email of allPeople) {
+
+            if (email == "") continue;
+
+
+            if (!emailRegEx.test(String(email).toLowerCase())) {
+
+                alert("Check your Receipient list.")
+
+                return false;
+
+            }
+
+
+        }
 
     }
 
     if (!emailRegEx.test(String(document.getElementById("fromfieldtextinput").value).toLowerCase())) {
-
 
         alert("Check your email.")
         return;

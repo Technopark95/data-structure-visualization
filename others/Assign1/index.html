@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mail</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -27,10 +27,10 @@
         <div id="tofieldunderline" class="underliner"></div>
 
         <div id="optional" style="position: absolute;right: 30px;top: 5px;width: 100px;height: auto;
-            background-color: rgba(250, 215, 215, 0.336);text-align: center;border-radius: 50px;z-index: 2;">
+            background-color: rgba(250, 215, 215, 0.336);text-align: center;
+            border-radius: 50px;z-index: 2;">
 
-            <p class="optionallinks"><a href="#" id="ccbtn" onclick="showCC('ccfield')">CC</a> / <a href="#" id="bccbtn"
-                    onclick="showCC('bccfield')">BCC</a></p>
+            <p class="optionallinks"><a href="#" id="ccbtn" onclick="showCC('ccfield')">CC</a> / <a href="#" id="bccbtn" onclick="showCC('bccfield')">BCC</a></p>
         </div>
     </div>
 
@@ -62,19 +62,21 @@
 
 
 
-    <div
-        style="position: relative; display: flex; flex-direction: column; border:solid 1px transparent; width: 100%;height:400px;margin-top: 40px;">
+    <div style="position: relative; display: flex; flex-direction: column; 
+        border:solid 1px transparent; width: 100%;height:400px;margin-top: 40px;">
 
-        <div
-            style="position: absolute;top:-15px;left: 0px;text-align: center;width:70px;height: auto;background: rgb(255, 127, 80);padding: 5px;border-radius: 50px;">
+        <div style="position: absolute;top:-15px;left: 0px;text-align: center;
+            width:70px;height: auto;background: rgb(255, 127, 80);padding: 5px;border-radius: 50px;">
             <label style="color: white;">Message</label>
         </div>
-        <div
-            style="position: relative; background-color: rgba(0, 0, 0, 0.301); width: 100%;height: 2px;margin-top: 40px;">
+        <div style="position: relative; background-color: rgba(0, 0, 0, 0.301); 
+            width: 100%;height: 2px;margin-top: 40px;">
         </div>
 
-        <div contenteditable="true" id="messageph"
-            style="margin-top: 10px;width: 97%;outline: none;border:0; height:360px;font-size: 105%;background-color: rgba(0, 0, 0, 0);color: coral;padding: 20px;overflow: scroll;"></div>
+        <div contenteditable="true" id="messageph" style="margin-top: 10px;width: 97%;outline: none;border:0; height:360px;
+            font-size: 105%;background-color: rgba(0, 0, 0, 0);color: coral;padding: 20px;
+            overflow: scroll;">
+        </div>
 
     </div>
 
@@ -83,12 +85,9 @@
     <div style="position: relative; background-color: rgba(0, 0, 0, 0.301); width: 100%;height: 2px;margin-top: 20px;">
     </div>
 
-    <div
-        style="position: relative; display: flex; flex-direction: row;align-items: center;margin-top: 10px;flex-wrap: wrap;">
+    <div style="position: relative; display: flex; flex-direction: row;align-items: center;margin-top: 10px;flex-wrap: wrap;">
 
-        <button type="button"
-            style="padding:7px;width:100px;background-color:rgb(0,120,212);border:0;font-size: larger;color: white;cursor: pointer;"
-            onclick="checker()">Send</button>
+        <button type="button" style="padding:7px;width:100px;background-color:rgb(0,120,212);border:0;font-size: larger;color: white;cursor: pointer;" onclick="checker()">Send</button>
 
         <div style="position: relative;width: 30px;height:25px;margin-left: 30px;">
             <img src="attach.PNG" style="position: absolute;width: 100%;z-index: 1;" />
@@ -98,7 +97,7 @@
         <img src="fav.PNG" style="padding: 0;width: 30px;margin-left: 7px;" />
         <img src="emoji.PNG" style="padding: 0;width: 30px;margin-left: 7px;" />
         <img src="link.PNG" style="padding: 0;width: 30px;margin-left: 30px;" />
-        <img src="bold.PNG" id="boldbtn" style="padding: 0;width: 30px;margin-left: 7px;" onclick="moveend(this)"/>
+        <img src="bold.PNG" id="boldbtn" style="padding: 0;width: 30px;margin-left: 7px;" onclick="moveend(this)" />
         <img src="italic.PNG" id="italicbtn" style="padding: 0;width: 30px;margin-left: 7px;" onclick="moveend(this)" />
         <img src="color.PNG" style="padding: 0;width: 30px;margin-left: 7px;" />
         <img src="font.PNG" style="padding: 0;width: 30px;margin-left: 7px;" />
