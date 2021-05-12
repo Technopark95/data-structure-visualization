@@ -219,8 +219,6 @@ codehere.addEventListener("mouseenter" , function()  {
         commandlistelement.style.display = "none"
 
       },100)
-  
-  
 
   
       infoclick = 0;

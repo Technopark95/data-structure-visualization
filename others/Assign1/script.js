@@ -127,11 +127,16 @@ function checker() {
 
     let allPeople = receivingPeople.split(';')
 
+    console.log(allPeople)
+
+    if (allPeople[0] == "") {
+        alert("Check your Receipient list.")
+    }
 
     for (let email of allPeople) {
 
         if (email == "") continue;
-        console.log(email)
+       
 
         if (!emailRegEx.test(String(email).toLowerCase())) {
 
