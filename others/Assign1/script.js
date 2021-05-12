@@ -2,16 +2,10 @@
 
 
 
-let toField = document.getElementById("tofieldtextinput");
-let toFieldlabel = document.getElementById("tofieldlabel");
-let toFieldTextarea = document.getElementById("tofieldtextinput");
-let toFieldunderline = document.getElementById("tofieldunderline");
-
-
 let allInputFields = document.getElementsByClassName("inputfield")
 
-
 let messageBox = document.getElementById("messageph");
+
 
 const emailRegEx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -20,14 +14,14 @@ for (let i = 0; i < allInputFields.length; i++) {
 
     let allChilren = allInputFields[i].children;
 
-    let fromFieldlabel = allChilren[0];
+    let fromFieldLabel = allChilren[0];
     let fromFieldTextarea = allChilren[1];
-    let fromFieldunderline = allChilren[2];
+    let fromFieldUnderline = allChilren[2];
 
 
     fromFieldTextarea.oninput = function () {
 
-        fromFieldlabel.style.cssText = `top:-5px;
+        fromFieldLabel.style.cssText = `top:-5px;
         font-size: 10px;
         color: rgb(0, 103, 221);`
 
@@ -36,10 +30,10 @@ for (let i = 0; i < allInputFields.length; i++) {
 
     fromFieldTextarea.onfocus = function () {
 
-        fromFieldunderline.style.backgroundColor = "rgb(0, 103, 221)";
+        fromFieldUnderline.style.backgroundColor = "rgb(0, 103, 221)";
 
 
-        fromFieldlabel.style.cssText = `top:-5px;
+        fromFieldLabel.style.cssText = `top:-5px;
         font-size: 10px;
         color: rgb(0, 103, 221);`
 
@@ -48,13 +42,13 @@ for (let i = 0; i < allInputFields.length; i++) {
 
     fromFieldTextarea.onblur = function () {
 
-        fromFieldunderline.style.backgroundColor = "rgb(95, 95, 95)";
+        fromFieldUnderline.style.backgroundColor = "rgb(95, 95, 95)";
 
 
 
         if (fromFieldTextarea.value.length > 0) {
 
-            fromFieldlabel.style.cssText = `top:-5px;
+            fromFieldLabel.style.cssText = `top:-5px;
             font-size: 10px;
             color: rgb(0, 103, 221);`
 
@@ -63,7 +57,7 @@ for (let i = 0; i < allInputFields.length; i++) {
 
         else {
 
-            fromFieldlabel.style.cssText = `top:15px;
+            fromFieldLabel.style.cssText = `top:15px;
             font-size: larger;
             color: rgb(129, 129, 129);`
 
@@ -73,6 +67,7 @@ for (let i = 0; i < allInputFields.length; i++) {
     }
 
 
+    
 
 }
 
