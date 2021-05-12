@@ -67,7 +67,7 @@ for (let i = 0; i < allInputFields.length; i++) {
     }
 
 
-    
+
 
 }
 
@@ -100,16 +100,43 @@ function showCC(element) {
 
 
 let toTextInput = document.getElementById("tofieldtextinput");
+let ccTextInput = document.getElementById("ccfieldtextinput");
+let bccTextInput = document.getElementById("bccfieldtextinput");
 
-
+let validationArray = [toTextInput , ccTextInput , bccTextInput]
 
 toTextInput.onkeydown = function (e) {
-
-
 
     if (e.key == " " || e.key == "Tab") {
 
         toTextInput.value += ";"
+
+        return false;
+
+    }
+
+
+}
+
+ccTextInput.onkeydown = function (e) {
+
+    if (e.key == " " || e.key == "Tab") {
+
+        ccTextInput.value += ";"
+
+        return false;
+
+    }
+
+
+}
+
+
+bccTextInput.onkeydown = function (e) {
+
+    if (e.key == " " || e.key == "Tab") {
+
+        bccTextInput.value += ";"
 
         return false;
 
@@ -123,33 +150,41 @@ toTextInput.onkeydown = function (e) {
 function checker() {
 
 
-    let receivingPeople = toTextInput.value;
+
+    for (let i = 0 ; i < validationArray.length ; i++) {
+
+    let receivingPeople = validationArray[i].value;
+
+    if (validationArray[i].parentNode.style.display == "none") {
+        continue;
+    }
 
     let allPeople = receivingPeople.split(';')
 
-    console.log(allPeople)
+
 
     if (allPeople[0] == "") {
         alert("Check your Receipient list.")
+        return;
     }
 
     for (let email of allPeople) {
 
         if (email == "") continue;
-       
+
 
         if (!emailRegEx.test(String(email).toLowerCase())) {
 
             alert("Check your Receipient list.")
 
-            return;
+            return false;
 
         }
 
 
     }
 
-
+    }
 
     if (!emailRegEx.test(String(document.getElementById("fromfieldtextinput").value).toLowerCase())) {
 
@@ -174,13 +209,13 @@ function checker() {
 
 
 
-document.getElementById("boldbtn").onclick = function ()  {
+document.getElementById("boldbtn").onclick = function () {
 
     document.execCommand("bold");
 
 }
 
-document.getElementById("italicbtn").onclick = function ()  {
+document.getElementById("italicbtn").onclick = function () {
 
     document.execCommand("italic");
 
