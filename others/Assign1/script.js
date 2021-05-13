@@ -275,7 +275,8 @@ document.getElementById("italicbtn").onclick = function() {
 
 colorswatch.onchange = function()  {
 
-    
+    messageBox.focus();
+    console.log(this.value)
     document.execCommand( "foreColor", false, this.value );
 
 }
