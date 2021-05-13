@@ -2,6 +2,11 @@ let allInputFields = document.getElementsByClassName("inputfield")
 
 let messageBox = document.getElementById("messageph");
 
+let boldInd = document.getElementById('boldindicator');
+let ItalicInd = document.getElementById('italicindicator');
+let boldIndLbl = document.getElementById('boldindicatorlbl');
+let ItalicIndLbl = document.getElementById('italicindicatorlbl');
+
 
 const emailRegEx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -203,81 +208,56 @@ let done = 0;
 function handleEffects(element)  {
 
     messageBox.focus();
-    var selectedText = '';
-  
-    // window.getSelection
-    if (window.getSelection) {
-        selectedText = window.getSelection();
-    }
-    // document.getSelection
-    else if (document.getSelection) {
-        selectedText = document.getSelection();
-    }
-    // document.selection
-    else if (document.selection) {
-        selectedText = 
-        document.selection.createRange().text;
-    } else return;
-
-    if (selectedText.type == "Range") {
-       
-        return;
-    }
-
-
-    let getSpecificIndicator = document.getElementById(element);
-
-
-
-   if (getSpecificIndicator.style.backgroundColor == "white") {
-
-    getSpecificIndicator.style.backgroundColor = "blueviolet"
-
-    document.getElementById(element+"lbl").style.color = "white";
-
-   }
-
-   else {
-
-
-    
- 
-    getSpecificIndicator.style.backgroundColor = "white"
-    document.getElementById(element+"lbl").style.color = "black";
-
-   }
-
-
 
 }
+
+setInterval(function () {
+
+    var isBold = document.queryCommandValue("Bold");
+    var isItalic = document.queryCommandValue("Italic");
+    
+
+
+    if (isBold == 'true') {
+
+        boldInd.style.backgroundColor = "blueviolet"
+        boldIndLbl.style.color = "white";
+    
+    }
+
+    else {
+
+        boldInd.style.backgroundColor = "white"
+        boldIndLbl.style.color = "black";
+
+
+    }
+
+    if (isItalic == 'true') {
+
+        ItalicInd.style.backgroundColor = "blueviolet"
+        ItalicIndLbl.style.color = "white";
+    
+    }
+
+    else {
+
+        ItalicInd.style.backgroundColor = "white"
+        ItalicIndLbl.style.color = "black";
+
+
+    }
+    
+    
+    
+
+}, 150)
 
 
 
 document.getElementById("boldbtn").onclick = function() {
 
     
-    var selectedText = '';
-  
-    // window.getSelection
-    if (window.getSelection) {
-        selectedText = window.getSelection();
-    }
-    // document.getSelection
-    else if (document.getSelection) {
-        selectedText = document.getSelection();
-    }
-    // document.selection
-    else if (document.selection) {
-        selectedText = 
-        document.selection.createRange().text;
-    } else return;
-
-    if (selectedText.type == "Range") {
-       
-        return;
-    }
-
-
     handleEffects("boldindicator")
     document.execCommand("bold");
 
@@ -285,26 +265,7 @@ document.getElementById("boldbtn").onclick = function() {
 
 document.getElementById("italicbtn").onclick = function() {
 
-    var selectedText = '';
-  
-    // window.getSelection
-    if (window.getSelection) {
-        selectedText = window.getSelection();
-    }
-    // document.getSelection
-    else if (document.getSelection) {
-        selectedText = document.getSelection();
-    }
-    // document.selection
-    else if (document.selection) {
-        selectedText = 
-        document.selection.createRange().text;
-    } else return;
 
-    if (selectedText.type == "Range") {
-       
-        return;
-    }
 
     handleEffects("italicindicator")
 
