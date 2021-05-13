@@ -302,7 +302,7 @@ function setCaretToEnd(target) {
 
 toTextInput.onkeydown = function (e) {
 
-    if (e.key == "Enter") {
+    if (e.key == "Enter" || e.key == " " || e.key == "Tab") {
 
         let allChildNodes = toTextInput.childNodes;
 
