@@ -308,8 +308,6 @@ toTextInput.onkeydown = function (e) {
 
         let email = allChildNodes[allChildNodes.length - 1].data.trim();
 
-
-        alert(email)
         if (!emailRegEx.test(String(email).toLowerCase())) {
 
             alert("Email incorrect.")
