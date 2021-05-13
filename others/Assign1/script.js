@@ -407,8 +407,7 @@ function inserter(mail) {
 
     domElement.classList.add("outeremail");
 
-    domElement.innerHTML = `<p class="emailtemplate">${mail}<span style="margin-left:5px;
-    font-size:107%;cursor:pointer;" onclick="closeOnClick(this)">&times;</span> </p>`
+    domElement.innerHTML = `<p class="emailtemplate">${mail}</p><p style="margin-left:5px;font-size:107%;cursor:pointer;position:relative;right:5px;display:inline-block;" onclick="closeOnClick(this)">&times;</p> `
 
     receipientDiv.insertBefore(domElement, receipientDiv.lastElementChild)
 

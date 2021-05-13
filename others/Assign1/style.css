@@ -158,12 +158,17 @@ color: rgb(0, 103, 221);
 
 
 .emailtemplate {
-  display:inline-block; width: fit-content;background-color: rgb(255, 242, 65);
-            padding:9px;border-radius:30px;margin: 0;margin-left: 10px;margin-top: 5px;
+  display:inline-block; width: fit-content;
+            padding:9px;border-radius:30px;margin: 0;
 }
 
 
 .outeremail {
 
   display: inline-block; width: fit-content;position: relative;
+  width: fit-content;
+  background-color: rgb(255, 242, 65);
+  border-radius: 60px;
+  margin-left: 10px;
+  margin-top: 5px;
 }
