@@ -355,7 +355,6 @@ toTextInput.onkeydown = function (e) {
         if (!emailRegEx.test(String(email).toLowerCase())) {
 
             alert("Email incorrect.")
-            setCaretToEnd(toTextInput)
 
             e.preventDefault();
             return false;
