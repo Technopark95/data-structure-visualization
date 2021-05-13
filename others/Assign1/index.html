@@ -20,10 +20,11 @@
 
     </div>
 
-    <div class="inputfield" id="tofield" style="margin-top: 10px;">
+    <div class="inputfield" id="tofield" style="margin-top: 10px;overflow-y:hidden;">
 
         <label id="tofieldlabel" class="labels">To</label>
-        <input id="tofieldtextinput" tabindex="-1" class="textboxarea" type="text"  style="width: 97%;">
+        <div contenteditable="true" id="tofieldtextinput" tabindex="-1" class="textboxarea" type="text"  style="width: 97%;height:auto;min-height: 30px;overflow-x: scroll;overflow-y: auto;margin-left: 30px;">
+                  </div>
         <div id="tofieldunderline" class="underliner"></div>
 
 
@@ -84,6 +85,7 @@
         <div contenteditable="true" id="messageph" style="margin-top: 10px;width: 97%;outline: none;border:0; height:360px;
             font-size: 105%;background-color: rgba(0, 0, 0, 0);color: black;padding: 20px;
             overflow: scroll;">
+
         </div>
 
         <div class="indictors" id="boldindicator" style="bottom: 50px;background-color: white;">

@@ -22,52 +22,79 @@ for (let i = 0; i < allInputFields.length; i++) {
     let fromFieldUnderline = allChilren[2];
 
 
-    fromFieldTextarea.oninput = function() {
+    fromFieldTextarea.oninput = function () {
 
-        fromFieldLabel.style.cssText = `top:-5px;
+        fromFieldLabel.style.cssText = `top:-2px;
         font-size: 10px;
         color: rgb(0, 103, 221);`
 
     }
 
 
-    fromFieldTextarea.onfocus = function() {
+
+
+    fromFieldTextarea.onfocus = function () {
 
         fromFieldUnderline.style.backgroundColor = "rgb(0, 103, 221)";
 
 
-        fromFieldLabel.style.cssText = `top:-5px;
+        fromFieldLabel.style.cssText = `top:-2px;
         font-size: 10px;
         color: rgb(0, 103, 221);`
 
     }
 
 
-    fromFieldTextarea.onblur = function() {
+    fromFieldTextarea.onblur = function () {
 
         fromFieldUnderline.style.backgroundColor = "rgb(95, 95, 95)";
 
+        if (i == 1) {
+
+            if (fromFieldTextarea.children.length > 0) {
+
+                fromFieldLabel.style.cssText = `top:-2px;
+        font-size: 10px;
+        color: rgb(0, 103, 221);`
 
 
-        if (fromFieldTextarea.value.length > 0) {
+            }
 
-            fromFieldLabel.style.cssText = `top:-5px;
+            else {
+
+                fromFieldLabel.style.cssText = `top:15px;
+        font-size: larger;
+        color: rgb(129, 129, 129);`
+
+            }
+
+
+        }
+
+        else {
+            if (fromFieldTextarea.value.length > 0) {
+
+                fromFieldLabel.style.cssText = `top:-2px;
             font-size: 10px;
             color: rgb(0, 103, 221);`
 
 
-        } else {
+            }
 
-            fromFieldLabel.style.cssText = `top:15px;
+            else {
+
+                fromFieldLabel.style.cssText = `top:15px;
             font-size: larger;
             color: rgb(129, 129, 129);`
+
+            }
+
 
         }
 
 
+
     }
-
-
 
 
 }
@@ -94,55 +121,11 @@ function showCC(element) {
 
 
 
-
-
-
-
 let toTextInput = document.getElementById("tofieldtextinput");
 let ccTextInput = document.getElementById("ccfieldtextinput");
 let bccTextInput = document.getElementById("bccfieldtextinput");
 
-let validationArray = [toTextInput, ccTextInput, bccTextInput]
-
-toTextInput.onkeydown = function(e) {
-
-    if (e.key == " " || e.key == "Tab") {
-
-        toTextInput.value += ";"
-
-        return false;
-
-    }
-
-
-}
-
-ccTextInput.onkeydown = function(e) {
-
-    if (e.key == " " || e.key == "Tab") {
-
-        ccTextInput.value += ";"
-
-        return false;
-
-    }
-
-
-}
-
-
-bccTextInput.onkeydown = function(e) {
-
-    if (e.key == " " || e.key == "Tab") {
-
-        bccTextInput.value += ";"
-
-        return false;
-
-    }
-
-
-}
+let validationArray = [ccTextInput, bccTextInput]
 
 
 
@@ -207,7 +190,7 @@ function checker() {
 
 let done = 0;
 
-function handleEffects(element)  {
+function handleEffects(element) {
 
     messageBox.focus();
 
@@ -217,14 +200,14 @@ setInterval(function () {
 
     var isBold = document.queryCommandValue("Bold");
     var isItalic = document.queryCommandValue("Italic");
-    
+
 
 
     if (isBold == 'true') {
 
         boldInd.style.backgroundColor = "blueviolet"
         boldIndLbl.style.color = "white";
-    
+
     }
 
     else {
@@ -239,7 +222,7 @@ setInterval(function () {
 
         ItalicInd.style.backgroundColor = "blueviolet"
         ItalicIndLbl.style.color = "white";
-    
+
     }
 
     else {
@@ -249,23 +232,23 @@ setInterval(function () {
 
 
     }
-    
-    
-    
+
+
+
 
 }, 150)
 
 
 
-document.getElementById("boldbtn").onclick = function() {
+document.getElementById("boldbtn").onclick = function () {
 
-    
+
     handleEffects("boldindicator")
     document.execCommand("bold");
 
 }
 
-document.getElementById("italicbtn").onclick = function() {
+document.getElementById("italicbtn").onclick = function () {
 
     handleEffects("italicindicator")
 
@@ -274,10 +257,109 @@ document.getElementById("italicbtn").onclick = function() {
 }
 
 
-colorswatch.onchange = function()  {
+colorswatch.onchange = function () {
 
     messageBox.focus();
     console.log(this.value)
-    document.execCommand( "foreColor", false, this.value );
+    document.execCommand("foreColor", false, this.value);
+
+}
+
+
+function closeOnClick(element) {
+
+    element.parentNode.remove();
+
+}
+
+
+
+function makeInlineEmail(email) {
+    let emailTemplate = `<p contenteditable="false" 
+                           style="display:inline-block; width: fit-content;background-color: rgb(255, 242, 65);
+                           padding:9px;border-radius:30px;margin-top: -30px;">${email}<span style="margin-left:5px;
+                        font-size:107%;cursor:pointer;" onclick="closeOnClick(this)">&times;</span> </p>`
+
+    return emailTemplate;
+
+}
+
+
+function setCaretToEnd(target) {
+    const range = document.createRange();
+    const sel = window.getSelection();
+    range.selectNodeContents(target);
+    range.collapse(false);
+    sel.removeAllRanges();
+    sel.addRange(range);
+    target.focus();
+    range.detach(); // optimization
+
+
+
+}
+
+
+toTextInput.onkeydown = function (e) {
+
+    if (e.key == "Enter") {
+
+        let allChildNodes = toTextInput.childNodes;
+
+        let email = allChildNodes[allChildNodes.length - 1].data.trim();
+
+
+        if (!emailRegEx.test(String(email).toLowerCase())) {
+
+            alert("Email incorrect.")
+            setCaretToEnd(toTextInput)
+
+            e.preventDefault();
+            return false;
+
+        }
+
+
+
+        toTextInput.removeChild(allChildNodes[allChildNodes.length - 1])
+
+        let inlinedEmail = makeInlineEmail(email);
+
+        toTextInput.insertAdjacentHTML("beforeend", inlinedEmail);
+
+        setCaretToEnd(toTextInput)
+
+        e.preventDefault();
+        return false;
+
+    }
+
+
+}
+
+ccTextInput.onkeydown = function (e) {
+
+    if (e.key == " " || e.key == "Tab") {
+
+        ccTextInput.value += ";"
+        return false;
+
+
+    }
+
+
+}
+
+
+bccTextInput.onkeydown = function (e) {
+
+    if (e.key == " " || e.key == "Tab") {
+
+        bccTextInput.value += ";"
+
+        return false;
+
+    }
+
 
 }
