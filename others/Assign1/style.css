@@ -126,6 +126,20 @@ color: rgb(0, 103, 221);
         width: 70%;
       }
 
+      #sendbtn {
+        width: 100%!important;
+      }
+
+      #attachbtn {
+        margin-left: 5px!important;
+      }
+
+      #bottomwraper {
+
+        justify-content: space-between;
+        
+      }
+
     }
 
 

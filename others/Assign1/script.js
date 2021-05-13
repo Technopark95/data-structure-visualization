@@ -7,6 +7,7 @@ let ItalicInd = document.getElementById('italicindicator');
 let boldIndLbl = document.getElementById('boldindicatorlbl');
 let ItalicIndLbl = document.getElementById('italicindicatorlbl');
 let colorswatch = document.getElementById("colorselect")
+let sendButton = document.getElementById("sendbtn")
 
 
 const emailRegEx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
