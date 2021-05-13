@@ -154,3 +154,16 @@ color: rgb(0, 103, 221);
       border-radius: 20px;
       text-align: center;
     }
+
+
+
+.emailtemplate {
+  display:inline-block; width: fit-content;background-color: rgb(255, 242, 65);
+            padding:9px;border-radius:30px;margin: 0;margin-left: 10px;margin-top: 5px;
+}
+
+
+.outeremail {
+
+  display: inline-block; width: fit-content;position: relative;
+}

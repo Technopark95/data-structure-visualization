@@ -8,6 +8,8 @@ let boldIndLbl = document.getElementById('boldindicatorlbl');
 let ItalicIndLbl = document.getElementById('italicindicatorlbl');
 let colorswatch = document.getElementById("colorselect")
 let sendButton = document.getElementById("sendbtn")
+let receipientDiv = document.getElementById("tofieldtextinput")
+let emailInputBox = document.getElementById("emailinput")
 
 
 const emailRegEx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -31,31 +33,36 @@ for (let i = 0; i < allInputFields.length; i++) {
     }
 
 
+    if (i == 1) {
 
+        emailInputBox.onfocus = function () {
 
-    fromFieldTextarea.onfocus = function () {
-
-        fromFieldUnderline.style.backgroundColor = "rgb(0, 103, 221)";
-
-
-        fromFieldLabel.style.cssText = `top:-2px;
+            fromFieldUnderline.style.backgroundColor = "rgb(0, 103, 221)";
+            fromFieldLabel.style.cssText = `top:-2px;
         font-size: 10px;
         color: rgb(0, 103, 221);`
 
-    }
+        }
+
+        fromFieldTextarea.onfocus = function () {
+
+            fromFieldUnderline.style.backgroundColor = "rgb(0, 103, 221)";
+            fromFieldLabel.style.cssText = `top:-2px;
+        font-size: 10px;
+        color: rgb(0, 103, 221);`
+
+        }
 
 
-    fromFieldTextarea.onblur = function () {
+        fromFieldTextarea.onblur = function () {
 
-        fromFieldUnderline.style.backgroundColor = "rgb(95, 95, 95)";
+            fromFieldUnderline.style.backgroundColor = "rgb(95, 95, 95)";
 
-        if (i == 1) {
-
-            if (fromFieldTextarea.children.length > 0) {
+            if (fromFieldTextarea.children.length > 1) {
 
                 fromFieldLabel.style.cssText = `top:-2px;
-        font-size: 10px;
-        color: rgb(0, 103, 221);`
+            font-size: 10px;
+            color: rgb(0, 103, 221);`
 
 
             }
@@ -63,15 +70,72 @@ for (let i = 0; i < allInputFields.length; i++) {
             else {
 
                 fromFieldLabel.style.cssText = `top:15px;
-        font-size: larger;
-        color: rgb(129, 129, 129);`
+            font-size: larger;
+            color: rgb(129, 129, 129);`
 
             }
 
 
+
+
+
+
         }
 
-        else {
+
+
+        emailInputBox.onblur = function () {
+
+            fromFieldUnderline.style.backgroundColor = "rgb(95, 95, 95)";
+
+            if (fromFieldTextarea.children.length > 1) {
+
+                fromFieldLabel.style.cssText = `top:-2px;
+            font-size: 10px;
+            color: rgb(0, 103, 221);`
+
+
+            }
+
+            else {
+
+                fromFieldLabel.style.cssText = `top:15px;
+            font-size: larger;
+            color: rgb(129, 129, 129);`
+
+            }
+
+
+
+
+
+
+        }
+
+
+
+
+    }
+
+
+
+    else {
+
+        fromFieldTextarea.onfocus = function () {
+
+            fromFieldUnderline.style.backgroundColor = "rgb(0, 103, 221)";
+            fromFieldLabel.style.cssText = `top:-2px;
+        font-size: 10px;
+        color: rgb(0, 103, 221);`
+
+        }
+
+
+        fromFieldTextarea.onblur = function () {
+
+            fromFieldUnderline.style.backgroundColor = "rgb(95, 95, 95)";
+
+
             if (fromFieldTextarea.value.length > 0) {
 
                 fromFieldLabel.style.cssText = `top:-2px;
@@ -90,11 +154,18 @@ for (let i = 0; i < allInputFields.length; i++) {
             }
 
 
+
+
+
+
         }
 
 
-
     }
+
+
+
+
 
 
 }
@@ -274,39 +345,12 @@ function closeOnClick(element) {
 
 
 
-function makeInlineEmail(email) {
-    let emailTemplate = `<p contenteditable="false" 
-                           style="display:inline-block; width: fit-content;background-color: rgb(255, 242, 65);
-                           padding:9px;border-radius:30px;margin-top: -30px;">${email}<span style="margin-left:5px;
-                        font-size:107%;cursor:pointer;" onclick="closeOnClick(this)">&times;</span> </p>`
-
-    return emailTemplate;
-
-}
-
-
-function setCaretToEnd(target) {
-    const range = document.createRange();
-    const sel = window.getSelection();
-    range.selectNodeContents(target);
-    range.collapse(false);
-    sel.removeAllRanges();
-    sel.addRange(range);
-    target.focus();
-    range.detach(); // optimization
-
-
-
-}
-
 
 toTextInput.onkeydown = function (e) {
 
     if (e.key == "Enter" || e.key == " " || e.key == "Tab") {
 
-        let allChildNodes = toTextInput.childNodes;
-
-        let email = allChildNodes[allChildNodes.length - 1].data.trim();
+        let email = emailInputBox.value;
 
         if (!emailRegEx.test(String(email).toLowerCase())) {
 
@@ -318,15 +362,9 @@ toTextInput.onkeydown = function (e) {
 
         }
 
+        inserter(email)
 
-
-        toTextInput.removeChild(allChildNodes[allChildNodes.length - 1])
-
-        let inlinedEmail = makeInlineEmail(email);
-
-        toTextInput.insertAdjacentHTML("beforeend", inlinedEmail);
-
-        setCaretToEnd(toTextInput)
+        emailInputBox.value = ""
 
         e.preventDefault();
         return false;
@@ -359,6 +397,21 @@ bccTextInput.onkeydown = function (e) {
         return false;
 
     }
+
+
+}
+
+
+function inserter(mail) {
+
+    let domElement = document.createElement("div")
+
+    domElement.classList.add("outeremail");
+
+    domElement.innerHTML = `<p class="emailtemplate">${mail}<span style="margin-left:5px;
+    font-size:107%;cursor:pointer;" onclick="closeOnClick(this)">&times;</span> </p>`
+
+    receipientDiv.insertBefore(domElement, receipientDiv.lastElementChild)
 
 
 }
