@@ -98,7 +98,10 @@ color: rgb(0, 103, 221);
  }
 
     #emailinput {
-        width: 400px;padding: 10px;border:0;outline: none;font-size: 110%;
+        width: 400px;
+        padding: 10px;
+        border:0;
+        outline: none;font-size: 110%;
       }
 
 
@@ -172,10 +175,12 @@ color: rgb(0, 103, 221);
 
 .outeremail {
 
-  display: inline-block; width: fit-content;position: relative;
+  display: flex; width: fit-content;position: relative;
   width: fit-content;
   background-color: rgb(255, 242, 65);
   border-radius: 60px;
   margin-left: 10px;
   margin-top: 5px;
+  justify-content: center;
+  align-items: baseline;
 }
