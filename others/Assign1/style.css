@@ -114,13 +114,13 @@ color: rgb(0, 103, 221);
     }
     
     ::-webkit-scrollbar-thumb {
-      background: grey; 
+      background: rgb(255, 255, 255); 
       border-radius: 10px;
       cursor: default;
     }
     
     ::-webkit-scrollbar-thumb:hover {
-      background: black; 
+      background: rgb(201, 201, 201); 
       cursor: default;
     }
 
@@ -153,6 +153,19 @@ color: rgb(0, 103, 221);
 
     }
 
+
+    #messageph {
+      margin-top: 10px;
+      width: 97%;
+      outline: none;
+      border:0;
+       height:360px;
+      font-size: 105%;
+      background-color: rgba(0, 0, 0, 0);
+      color: white;
+      padding: 20px;
+      overflow: scroll;
+    }
 
     .indictors {
 
