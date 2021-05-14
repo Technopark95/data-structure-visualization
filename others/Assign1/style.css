@@ -181,4 +181,6 @@ color: rgb(0, 103, 221);
   margin-top: 5px;
   justify-content: center;
   align-items: baseline;
+  flex-wrap: nowrap;
+  flex-direction: row;
 }
