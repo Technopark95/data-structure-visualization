@@ -21,7 +21,8 @@ html,body {
     width: 100%;
     height: auto;
     position: relative;
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0,0.589);
+    
 }
 
 
@@ -35,7 +36,9 @@ html,body {
     outline: none;
     position: relative;
     font-size: 105%;
- 
+
+ background-color: rgba(0, 0, 0,0.589);
+ color: white;
 
 
 }
@@ -168,6 +171,7 @@ color: rgb(0, 103, 221);
 .emailtemplate {
   display:inline-block; width: fit-content;
             padding:9px;border-radius:30px;margin: 0;
+         
 }
 
 
@@ -175,7 +179,7 @@ color: rgb(0, 103, 221);
 
   display: flex; width: fit-content;position: relative;
   width: fit-content;
-  background-color: rgb(255, 242, 65);
+  background-color: snow;
   border-radius: 60px;
   margin-left: 10px;
   margin-top: 5px;
@@ -183,4 +187,5 @@ color: rgb(0, 103, 221);
   align-items: baseline;
   flex-wrap: nowrap;
   flex-direction: row;
+  color: black;
 }

@@ -28,7 +28,7 @@ for (let i = 0; i < allInputFields.length; i++) {
 
         fromFieldLabel.style.cssText = `top:-2px;
         font-size: 10px;
-        color: rgb(0, 103, 221);`
+        color: red;`
 
     }
 
@@ -37,19 +37,19 @@ for (let i = 0; i < allInputFields.length; i++) {
 
         emailInputBox.onfocus = function () {
 
-            fromFieldUnderline.style.backgroundColor = "rgb(0, 103, 221)";
+            fromFieldUnderline.style.backgroundColor = "red";
             fromFieldLabel.style.cssText = `top:-2px;
         font-size: 10px;
-        color: rgb(0, 103, 221);`
+        color: red;`
 
         }
 
         fromFieldTextarea.onfocus = function () {
 
-            fromFieldUnderline.style.backgroundColor = "rgb(0, 103, 221)";
+            fromFieldUnderline.style.backgroundColor = "red";
             fromFieldLabel.style.cssText = `top:-2px;
         font-size: 10px;
-        color: rgb(0, 103, 221);`
+        color: red;`
 
         }
 
@@ -62,7 +62,7 @@ for (let i = 0; i < allInputFields.length; i++) {
 
                 fromFieldLabel.style.cssText = `top:-2px;
             font-size: 10px;
-            color: rgb(0, 103, 221);`
+            color: red;`
 
 
             }
@@ -92,7 +92,7 @@ for (let i = 0; i < allInputFields.length; i++) {
 
                 fromFieldLabel.style.cssText = `top:-2px;
             font-size: 10px;
-            color: rgb(0, 103, 221);`
+            color: red;`
 
 
             }
@@ -123,10 +123,10 @@ for (let i = 0; i < allInputFields.length; i++) {
 
         fromFieldTextarea.onfocus = function () {
 
-            fromFieldUnderline.style.backgroundColor = "rgb(0, 103, 221)";
+            fromFieldUnderline.style.backgroundColor = "red";
             fromFieldLabel.style.cssText = `top:-2px;
         font-size: 10px;
-        color: rgb(0, 103, 221);`
+        color: red;`
 
         }
 
@@ -140,7 +140,7 @@ for (let i = 0; i < allInputFields.length; i++) {
 
                 fromFieldLabel.style.cssText = `top:-2px;
             font-size: 10px;
-            color: rgb(0, 103, 221);`
+            color: red;`
 
 
             }
