@@ -97,6 +97,10 @@ color: rgb(0, 103, 221);
     cursor: pointer;
  }
 
+    #emailinput {
+        width: 400px;padding: 10px;border:0;outline: none;font-size: 110%;
+      }
+
 
  ::-webkit-scrollbar {
 
@@ -122,9 +126,7 @@ color: rgb(0, 103, 221);
 
     @media (max-width:800px) {
       
-      #tofieldtextinput {
-        width: 50%;
-      }
+  
 
       #sendbtn {
         width: 100%!important;
@@ -138,6 +140,11 @@ color: rgb(0, 103, 221);
 
         justify-content: space-between;
         
+      }
+
+
+      #emailinput {
+        width:200px;
       }
 
     }
