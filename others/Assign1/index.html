@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="background-image: url(universe2.jpg);background-attachment: fixed;margin-top: 30px;background-size: cover;">
+<body
+    style="background-image: url(universe2.jpg);background-attachment: fixed;margin-top: 30px;background-size: cover;">
 
 
     <div style="background-color: rgba(0, 0, 0, 0.904);">
@@ -17,148 +18,148 @@
 
         <!-- from Input Fieldss -->
 
-    <div class="inputfield" id="fromfield" style="margin-top: 10px;">
+        <div class="inputfield" id="fromfield" style="margin-top: 10px;">
 
-        <label id="fromfieldlabel" class="labels">From</label>
-        <input id="fromfieldtextinput" class="textboxarea" type="text" style="width: 97%;">
-        <div id="fromfieldunderline" class="underliner"></div>
+            <label id="fromfieldlabel" class="labels">From</label>
+            <input id="fromfieldtextinput" class="textboxarea" type="text" style="width: 97%;">
+            <div id="fromfieldunderline" class="underliner"></div>
 
-    </div>
-
-    <!-- to Input Fieldss -->
-
-    <div class="inputfield" id="tofield" style="margin-top: 10px;overflow-y:hidden;">
-
-        <label id="tofieldlabel" class="labels">To</label>
-        <div id="tofieldtextinput" tabindex="-1" class="textboxarea" type="text"
-            style="height:auto;min-height: 30px;overflow-x: scroll;overflow-y: auto;margin-left: 30px;display: flex;flex-wrap: wrap;">
-            <input id="emailinput" type="text" placeholder="Type email here"
-                style="padding: 10px;border:0;outline: none;font-size: 110%;background-color: transparent;color: white;">
         </div>
-        <div id="tofieldunderline" class="underliner"></div>
+
+        <!-- to Input Fieldss -->
+
+        <div class="inputfield" id="tofield" style="margin-top: 10px;overflow-y:hidden;">
+
+            <label id="tofieldlabel" class="labels">To</label>
+            <div id="tofieldtextinput" tabindex="-1" class="textboxarea" type="text"
+                style="height:auto;min-height: 30px;overflow-x: scroll;overflow-y: auto;margin-left: 30px;display: flex;flex-wrap: wrap;">
+                <input id="emailinput" type="text" placeholder="Type email here"
+                    style="padding: 10px;border:0;outline: none;font-size: 110%;background-color: transparent;color: white;">
+            </div>
+            <div id="tofieldunderline" class="underliner"></div>
 
 
-        <!-- CC/BCC -->
+            <!-- CC/BCC -->
 
-        <div id="optional" style="position: absolute;right: 10px;bottom: 15px;width: 100px;height: auto;
+            <div id="optional" style="position: absolute;right: 10px;bottom: 15px;width: 100px;height: auto;
             background-color: rgba(250, 215, 215, 0.336);text-align: center;
             border-radius: 50px;z-index: 2;">
 
-            <p class="optionallinks">
-                <a href="#" id="ccbtn" onclick="showCC('ccfield')">CC</a> / <a href="#" id="bccbtn"
-                    onclick="showCC('bccfield')">BCC
-                </a>
-            </p>
+                <p class="optionallinks">
+                    <a href="#" id="ccbtn" onclick="showCC('ccfield')">CC</a> / <a href="#" id="bccbtn"
+                        onclick="showCC('bccfield')">BCC
+                    </a>
+                </p>
+            </div>
+
+
         </div>
 
 
-    </div>
+        <!-- CC Input Fieldss -->
+
+        <div class="inputfield" id="ccfield" style="margin-top: 10px;display: none;">
+
+            <label id="ccfieldlabel" class="labels">CC</label>
+            <input id="ccfieldtextinput" class="textboxarea" type="text" style="width: 97%;">
+            <div id="ccfieldunderline" class="underliner"></div>
+
+        </div>
 
 
-    <!-- CC Input Fieldss -->
+        <!-- BCC Input Fieldss -->
 
-    <div class="inputfield" id="ccfield" style="margin-top: 10px;display: none;">
+        <div class="inputfield" id="bccfield" style="margin-top: 10px;display: none;">
 
-        <label id="ccfieldlabel" class="labels">CC</label>
-        <input id="ccfieldtextinput" class="textboxarea" type="text" style="width: 97%;">
-        <div id="ccfieldunderline" class="underliner"></div>
+            <label id="bccfieldlabel" class="labels">BCC</label>
+            <input id="bccfieldtextinput" class="textboxarea" type="text" style="width: 97%;">
+            <div id="bccfieldunderline" class="underliner"></div>
 
-    </div>
+        </div>
 
-
-    <!-- BCC Input Fieldss -->
-
-    <div class="inputfield" id="bccfield" style="margin-top: 10px;display: none;">
-
-        <label id="bccfieldlabel" class="labels">BCC</label>
-        <input id="bccfieldtextinput" class="textboxarea" type="text" style="width: 97%;">
-        <div id="bccfieldunderline" class="underliner"></div>
-
-    </div>
-
-    <!-- Subject Input Fieldss -->
+        <!-- Subject Input Fieldss -->
 
 
-    <div class="inputfield" id="subfield" style="margin-top: 10px;display: block;">
+        <div class="inputfield" id="subfield" style="margin-top: 10px;display: block;">
 
-        <label id="subfieldlabel" class="labels">Subject</label>
-        <input id="subfieldtextinput" class="textboxarea" type="text" style="width: 97%;">
-        <div id="subfieldunderline" class="underliner"></div>
+            <label id="subfieldlabel" class="labels">Subject</label>
+            <input id="subfieldtextinput" class="textboxarea" type="text" style="width: 97%;">
+            <div id="subfieldunderline" class="underliner"></div>
 
-    </div>
+        </div>
 
 
 
-<!-- Main Body -->
+        <!-- Main Body -->
 
-    <div style="position: relative; display: flex; flex-direction: column; 
+        <div style="position: relative; display: flex; flex-direction: column; 
         border:solid 1px transparent; width: 100%;height:400px;margin-top: 40px;">
 
-        <div style="position: absolute;top:-15px;left: 0px;text-align: center;
+            <div style="position: absolute;top:-15px;left: 0px;text-align: center;
             width:70px;height: auto;background: rgb(255, 127, 80);padding: 5px;border-radius: 50px;">
-            <label style="color: white;">Message</label>
-        </div>
+                <label style="color: white;">Message</label>
+            </div>
 
-        <div style="position: relative; background-color: rgb(255, 0, 0); 
+            <div style="position: relative; background-color: rgb(255, 0, 0); 
             width: 100%;height: 2px;margin-top: 40px;">
+            </div>
+
+
+            <!-- Message area start -->
+
+            <div contenteditable="true" id="messageph"></div>
+
+            <!-- Message area Ends -->
+
+
+            <!-- Live style indictor -->
+
+            <div class="indictors" id="boldindicator" style="bottom: 50px;background-color: white;">
+                <label id="boldindicatorlbl">Bold</label>
+            </div>
+
+            <div class="indictors" id="italicindicator" style="bottom: 20px;background-color: white;">
+                <label id="italicindicatorlbl">Italic</label>
+            </div>
+
+            <!-- Live style indictor endss -->
+
         </div>
 
 
-        <!-- Message area start -->
-
-        <div contenteditable="true" id="messageph" ></div>
-
-        <!-- Message area Ends -->
 
 
-        <!-- Live style indictor -->
+        <!-- Footer controls -->
 
-        <div class="indictors" id="boldindicator" style="bottom: 50px;background-color: white;">
-            <label id="boldindicatorlbl">Bold</label>
-        </div>
+        <div id="bottomwraper"
+            style="position: relative; display: flex; flex-direction: row;align-items: center;margin-bottom: 20px; flex-wrap: wrap;">
 
-        <div class="indictors" id="italicindicator" style="bottom: 20px;background-color: white;">
-            <label id="italicindicatorlbl">Italic</label>
-        </div>
-
-        <!-- Live style indictor endss -->
-
-    </div>
-
-
-  
-
-    <!-- Footer controls -->
-
-    <div id="bottomwraper"
-        style="position: relative; display: flex; flex-direction: row;align-items: center;margin-bottom: 20px; flex-wrap: wrap;">
-
-        <button id="sendbtn" type="button" style="padding:7px;width:100px;background-color:rgb(0,120,212);
+            <button id="sendbtn" type="button" style="padding:7px;width:100px;background-color:rgb(0,120,212);
                                      border:0;font-size: larger;color: white;cursor: pointer;"
-            onclick="checker()">Send</button>
+                onclick="checker()">Send</button>
 
-        <div id="attachbtn" style="position: relative;width: 30px;height:25px;margin-left: 30px;">
-            <img src="attach.PNG" style="position: absolute;width: 100%;z-index: 1;" />
-            <input type="file"
-                style="position: absolute; top: 0; left: 0; height:100%;width:100%;opacity: 0;z-index: 3;cursor: pointer;">
+            <div id="attachbtn" style="position: relative;width: 30px;height:25px;margin-left: 30px;">
+                <img src="attach.PNG" style="position: absolute;width: 100%;z-index: 1;" />
+                <input type="file"
+                    style="position: absolute; top: 0; left: 0; height:100%;width:100%;opacity: 0;z-index: 3;cursor: pointer;">
+            </div>
+            <img src="gif.PNG" style="padding: 0;width: 30px;margin-left: 7px;" />
+            <img src="fav.PNG" style="padding: 0;width: 30px;margin-left: 7px;" />
+            <img src="emoji.PNG" style="padding: 0;width: 30px;margin-left: 7px;" />
+            <img src="link.PNG" style="padding: 0;width: 30px;margin-left: 30px;" />
+            <img src="bold.PNG" id="boldbtn" style="padding: 0;width: 30px;margin-left: 7px;" />
+            <img src="italic.PNG" id="italicbtn" style="padding: 0;width: 30px;margin-left: 7px;" />
+            <div style="position: relative;width: 30px;height:25px;margin-left: 7px;">
+                <img src="color.PNG" style="position: absolute;width: 100%;z-index: 1;" />
+                <input id='colorselect' type="color"
+                    style="position: absolute; top: 0; left: 0; height:100%;width:100%;opacity: 0;z-index: 3;cursor: pointer;">
+            </div>
+
+            <img src="font.PNG" style="padding: 0;width: 30px;margin-left: 7px;margin: 5px;" />
+
+
         </div>
-        <img src="gif.PNG" style="padding: 0;width: 30px;margin-left: 7px;" />
-        <img src="fav.PNG" style="padding: 0;width: 30px;margin-left: 7px;" />
-        <img src="emoji.PNG" style="padding: 0;width: 30px;margin-left: 7px;" />
-        <img src="link.PNG" style="padding: 0;width: 30px;margin-left: 30px;" />
-        <img src="bold.PNG" id="boldbtn" style="padding: 0;width: 30px;margin-left: 7px;" />
-        <img src="italic.PNG" id="italicbtn" style="padding: 0;width: 30px;margin-left: 7px;" />
-        <div style="position: relative;width: 30px;height:25px;margin-left: 7px;">
-            <img src="color.PNG" style="position: absolute;width: 100%;z-index: 1;" />
-            <input id='colorselect' type="color"
-                style="position: absolute; top: 0; left: 0; height:100%;width:100%;opacity: 0;z-index: 3;cursor: pointer;">
-        </div>
-
-        <img src="font.PNG" style="padding: 0;width: 30px;margin-left: 7px;margin: 5px;" />
-
-
     </div>
-</div>
 
 
     <script src="script.js"></script>
