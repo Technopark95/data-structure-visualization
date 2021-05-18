@@ -15,7 +15,7 @@ window.onscroll = function () {
 
 
 if (window.scrollY > 210) {
-logoDiv.style.opacity = "1";
+logoDiv.style.opacity = ".4";
 }
 
 if (window.scrollY <= 120) {
