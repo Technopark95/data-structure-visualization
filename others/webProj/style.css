@@ -257,6 +257,17 @@ background-color: red;
         flex-direction: column;
     }
 
+    #remarkable {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .remarkable-inner-cont {
+
+        margin-top: 30px;
+    }
+
     #bannerinfo {
 
         margin-bottom: 30px;
