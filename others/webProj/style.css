@@ -39,7 +39,7 @@ align-items: s;
 align-items: center;
 }
 
-#opacitylayer {
+.opacitylayer {
 
     position: absolute;
     background-color: rgba(0, 0, 0, 0.87);
@@ -176,7 +176,7 @@ background-color: red;
     justify-content: space-evenly;    
     margin-top: 30px;
     position: relative;
-    margin-bottom: 10px;
+
 
 
 
@@ -241,6 +241,64 @@ background-color: red;
 
 }
 
+
+#offer-cont {
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color:snow;
+    position: relative;
+    background-image: url("offer.jpg");
+
+}
+
+.offer {
+
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;    
+    margin-top: 30px;
+    position: relative;
+    margin-bottom: 30px;
+
+}
+
+.offer-inner-cont {
+
+    display: flex;
+    width: 300px;
+    flex-direction: column;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.774);
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 5px;
+
+}
+
+
+.offerhead {
+    color: white;
+    font-size: 140%;
+}
+
+
+.offer-data {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+}
 
 .remarkable-inner-cont:hover > .imgcontainer > .overlayer {
     opacity: .8;
