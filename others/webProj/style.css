@@ -275,8 +275,8 @@ background-color: red;
     display: flex;
     width: 300px;
     flex-direction: column;
-    border-radius: 20px;
-    background-color: rgb(255, 92, 32);
+border:.5px solid white;
+border-radius: 50px;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -299,10 +299,10 @@ background-color: red;
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: rgb(255, 255, 255);
-    border-radius: 20px;
+
     height: 100px ;
     text-align: center;
+    color: coral;
 }
 
 .remarkable-inner-cont:hover > .imgcontainer > .overlayer {
