@@ -305,6 +305,101 @@ border-radius: 50px;
     color: coral;
 }
 
+
+#comment-cont {
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color:white;
+    position: relative;
+    background-image: url("comment.jpg");
+    background-attachment: fixed;
+
+
+}
+
+
+#comment {
+
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;    
+    margin-top: 30px;
+    position: relative;
+    margin-bottom: 60px;
+
+
+}
+
+
+.comment-inner-cont {
+
+    display: flex;
+    width: 300px;
+    height: max-content;
+    flex-direction: column;
+
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 5px;
+    margin: 10px;
+
+    padding: 15px;
+
+}
+
+.commentname {
+    color: black;
+    font-size: 140%;
+}
+
+
+.comment-data {
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 100px ;
+    text-align: justify;
+    color: blanchedalmond;
+    flex-direction: column;
+}
+
+.comment-style {
+
+    font-size: 200%;
+    
+}
+
+.commentator {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+    align-items: center;
+    color: blanchedalmond    ;
+    border-radius: 50px;
+}
+
+.commentator-image {
+
+width:50px;
+border-radius: 100%;
+
+
+}
+
+
+
 .remarkable-inner-cont:hover > .imgcontainer > .overlayer {
     opacity: .8;
 }
