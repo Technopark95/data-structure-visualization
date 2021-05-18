@@ -428,6 +428,25 @@ border-radius: 100%;
     opacity: 1;
 }
 
+
+::-webkit-scrollbar {
+
+    width: 7px;
+      height: 7px;
+      cursor: default;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: rgb(20, 20, 20); 
+      border-radius: 10px;
+      cursor: default;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgb(189, 0, 0); 
+      cursor: default;
+    }
+
 @media (max-width:800px) {
 
     #topbanner {
