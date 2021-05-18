@@ -2,7 +2,7 @@
 body {
 
     margin: 0;
-    margin-bottom: 100px;
+
 }
 
 
@@ -403,6 +403,21 @@ border-radius: 100%;
     border-color: red;
 }
 
+
+
+#footer-cont {
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color:white;
+    position: relative;
+    background-image: url("footer.png");
+    background-repeat: repeat;
+
+}
 
 
 .remarkable-inner-cont:hover > .imgcontainer > .overlayer {
