@@ -24,6 +24,7 @@ color: blanchedalmond;
 background-image: url("banner.jpg");
 justify-content: space-evenly;
 align-items: s;
+background-attachment: fixed;
 
 }
 
@@ -252,6 +253,7 @@ background-color: red;
     background-color:snow;
     position: relative;
     background-image: url("offer.jpg");
+    background-attachment: fixed;
 
 }
 
