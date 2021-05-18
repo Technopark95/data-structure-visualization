@@ -398,6 +398,11 @@ border-radius: 100%;
 
 }
 
+.comment-inner-cont:hover {
+
+    border-color: red;
+}
+
 
 
 .remarkable-inner-cont:hover > .imgcontainer > .overlayer {
