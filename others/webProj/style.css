@@ -445,6 +445,14 @@ border-radius: 100%;
       cursor: default;
     }
 
+
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    } 
+
 @media (max-width:800px) {
 
     #topbanner {
