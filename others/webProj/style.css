@@ -68,7 +68,7 @@ opacity: 0.2;
     z-index: 1;
     justify-content: center;
     align-items: center;
-    border: 3px dashed white;
+    border: 3px solid white;
     border-radius: 30px;
     margin-bottom: 10px;
 }
@@ -418,6 +418,19 @@ border-radius: 100%;
 }
 
 
+#noteholder {
+
+    width:100%;
+    max-height:0;
+    overflow:hidden;
+    transition: 200ms ease-in;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 #notebtn {
     margin-top:10px;
     width:60px;
@@ -434,14 +447,13 @@ border-radius: 100%;
 
 
     width: 80%;
-    max-height:100px;
+    height:80px;
     border:0;
     outline: none;
     background-color: rgba(0, 0, 0, 0.671);
     color: coral;
-    font-size: larger;
-    padding: 30px;
-    overflow: scroll;
+    font-size: 105%;
+    padding: 26px;
     resize: none;
     text-decoration: none;
         
