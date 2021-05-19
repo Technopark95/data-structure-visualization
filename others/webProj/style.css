@@ -14,7 +14,6 @@ body {
 #topbanner {
 
 display: flex;
-
 flex-direction: row;
 height: auto;
 width: 100%;
@@ -23,7 +22,7 @@ height: auto;
 color: blanchedalmond;
 background-image: url("banner.jpg");
 justify-content: space-evenly;
-align-items: s;
+align-items: center;
 background-attachment: fixed;
 
 }
@@ -31,9 +30,9 @@ background-attachment: fixed;
 
 #bannerinfo {
 
+    position: relative;
     display: flex;
     flex-direction: column;
-
  z-index: 1;
  padding:40px;
  justify-content: center;
@@ -62,8 +61,7 @@ opacity: 0.2;
 
 #contactform {
 
-    min-width: 300px;
-    max-width: 96%;
+    width: 300px;
     display: flex;
     flex-direction: column;
     padding: 30px;
@@ -529,6 +527,11 @@ border-radius: 100%;
     #topbanner {
 
         flex-direction: column;
+    }
+
+    #contactform {
+
+        width: 80%;
     }
 
     #remarkable {
