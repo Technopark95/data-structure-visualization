@@ -74,6 +74,5 @@ document.getElementById("notebtn").onclick =function ()  {
 
 document.getElementById("noteholder").style.maxHeight = "130px";
 
-document.getElementById("notearea").focus();
 
 }
