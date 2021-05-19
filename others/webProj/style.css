@@ -111,27 +111,25 @@ justify-content: flex-end;
     position: relative;
     color: white;
     font-size: large;
+    border-radius: 100px;
+    padding: 10px;
+
 }
 
 
 
 
-.inputs:focus ~ .underliner {
 
-background-color: red;
-}
-
-.inputs:focus ~ .placeholders {
-
- bottom:35px;
- opacity: .4;
-}
 
 .inputs::placeholder {
 
     color: rgb(255, 127, 80);
-    margin-left: 20px;
+    text-align: center;
 
+}
+
+.inputs:focus {
+    border-bottom: 2px solid red;
 }
 
 
