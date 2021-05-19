@@ -39,7 +39,7 @@ let startedElement =  document.getElementById("responsemessage");
 
     startedElement.innerText = responseText
     startedElement.style.color = responseColor
-    startedElement.style.display = ""
+    startedElement.style.display = "block"
 
 }
 

@@ -464,6 +464,18 @@ border-radius: 100%;
 }
 
 
+#responsemessage  {
+
+    font-size: 100%;
+    font-weight: 500;
+    margin-top: 20px;
+    display: none;
+    background-color: rgb(0, 0, 0);
+    padding: 5px;
+    border-radius: 100px;
+}
+
+
 #notearea::placeholder {
 
     color: coral;
