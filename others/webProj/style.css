@@ -21,9 +21,10 @@ position: relative;
 height: auto;
 color: blanchedalmond;
 background-image: url("banner.jpg");
-justify-content: space-evenly;
+justify-content: space-around;
 align-items: center;
 background-attachment: fixed;
+overflow: hidden;
 
 }
 
