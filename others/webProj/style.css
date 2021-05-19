@@ -455,6 +455,11 @@ border-radius: 100%;
 
 }
 
+#notearea:focus {
+
+    border-bottom: 2px solid red;
+}
+
 
 .remarkable-inner-cont:hover > .imgcontainer > .overlayer {
     opacity: .8;
