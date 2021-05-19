@@ -112,7 +112,7 @@ justify-content: flex-end;
     color: white;
     font-size: large;
     border-radius: 100px;
-    padding: 10px;
+    text-align: center;
 
 }
 
@@ -414,6 +414,44 @@ border-radius: 100%;
     position: relative;
     background-image: url("footer.png");
     background-repeat: repeat;
+
+}
+
+
+#notebtn {
+    margin-top:10px;
+    width:60px;
+    margin-left: 20px;
+    background-color:blanchedalmond;
+    border:0;
+    outline: none;
+    cursor: pointer;
+    border-radius: 100%;
+}
+
+
+#notearea {
+
+
+    width: 80%;
+    max-height:100px;
+    border:0;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.671);
+    color: coral;
+    font-size: larger;
+    padding: 30px;
+    overflow: scroll;
+    resize: none;
+    text-decoration: none;
+        
+}
+
+
+#notearea::placeholder {
+
+    color: coral;
+    opacity: .5;
 
 }
 

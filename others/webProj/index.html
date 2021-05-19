@@ -53,7 +53,15 @@
 
             </div>
 
+            <div id="noteholder" style="width:100%;max-height:0;overflow:hidden;transition: 200ms ease-in;margin-top: 10px;">
+
+            <textarea id="notearea" placeholder="Write a Short for here."></textarea>
+            </div>
+
+            <div style="width: 100%;display: flex;flex-direction: row;">
             <button class="sendbutton" onclick="clickSend()">Send</button>
+            <button title="Add note for us" id="notebtn"><img src="pen.ico" style="width: 80%;"></button>
+        </div>
 
             <label style="font-size: 120%;margin-top: 20px;" id="responsemessage">Hello</label>
         </div>
