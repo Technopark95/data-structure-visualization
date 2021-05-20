@@ -11,13 +11,15 @@ let allInputs = document.getElementsByClassName("inputs");
 
 let status="";
 
-let name = allInputs[0].value;
-let email = allInputs[1].value;
-let contact = allInputs[2].value;
-let occupation = allInputs[3].value;
+let firstName = allInputs[0].value;
+let lastName = allInputs[1].value;
+let email = allInputs[2].value;
+let contact = allInputs[3].value;
+let occupation = allInputs[4].value;
 
 
-let isValidName = name.length > 0;
+let isValidFirstName = firstName.length > 0;
+let isValidLastName = lastName.length > 0;
 let isValidEmail = email.length >0;
 let isValidEmailFormat = emailRegEx.test(String(email).toLocaleLowerCase());
 let isValidContact = contact.length > 0;  
@@ -27,12 +29,12 @@ let responseText = "";
 let responseColor = "";
 
 
-if (isValidName && isValidEmail && isValidContact && isValidOccupation && !isValidEmailFormat) {
+if (isValidFirstName && isValidLastName  && isValidEmail && isValidContact && isValidOccupation && !isValidEmailFormat) {
     responseText = "Incorrect Email";
     responseColor = "red"
 }
 
-else if (isValidName && isValidEmail && isValidContact && isValidOccupation) {
+else if (isValidFirstName && isValidLastName && isValidEmail && isValidContact && isValidOccupation) {
     responseText = "Thank you, We will contact you soon.";
     responseColor = "lightgreen"
 }
@@ -84,5 +86,35 @@ document.getElementById("notebtn").onclick =function ()  {
 
 document.getElementById("noteholder").style.maxHeight = "140px";
 
+
+}
+
+
+document.getElementById("firstname").onkeypress = function(event)  {
+
+
+    var charCode = event.key;
+
+    if ((charCode >= 'a' && charCode <= 'z') || (charCode >= 'A' && charCode <= 'Z') || charCode == ' ') {
+        return true;
+    }
+    else{
+        return false;
+    }
+
+}
+
+
+document.getElementById("lastname").onkeypress = function(event)  {
+
+
+    var charCode = event.key;
+
+    if ((charCode >= 'a' && charCode <= 'z') || (charCode >= 'A' && charCode <= 'Z') || charCode == ' ') {
+        return true;
+    }
+    else{
+        return false;
+    }
 
 }
