@@ -9,6 +9,8 @@ function clickSend()  {
 
 let allInputs = document.getElementsByClassName("inputs");
 
+let status="";
+
 let name = allInputs[0].value;
 let email = allInputs[1].value;
 let contact = allInputs[2].value;
@@ -16,20 +18,27 @@ let occupation = allInputs[3].value;
 
 
 let isValidName = name.length > 0;
-let isValidEmail = emailRegEx.test(String(email).toLocaleLowerCase());
+let isValidEmail = email.length >0;
+let isValidEmailFormat = emailRegEx.test(String(email).toLocaleLowerCase());
 let isValidContact = contact.length > 0;  
 let isValidOccupation = occupation.length > 0;  
 
 let responseText = "";
 let responseColor = "";
 
-if (isValidName && isValidEmail && isValidContact && isValidOccupation) {
+
+if (isValidName && isValidEmail && isValidContact && isValidOccupation && !isValidEmailFormat) {
+    responseText = "Incorrect Email";
+    responseColor = "red"
+}
+
+else if (isValidName && isValidEmail && isValidContact && isValidOccupation) {
     responseText = "Thank you, We will contact you soon.";
     responseColor = "lightgreen"
 }
 
 else {
-    responseText = "Check your input";
+    responseText = "You are required to fill all the information properly.";
     responseColor = "red"
 }
 
@@ -37,7 +46,7 @@ else {
 let startedElement =  document.getElementById("responsemessage");
 
 
-    startedElement.innerText = responseText
+    startedElement.innerHTML = responseText
     startedElement.style.color = responseColor
     startedElement.style.display = "block"
 
