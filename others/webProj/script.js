@@ -57,11 +57,16 @@ let startedElement =  document.getElementById("responsemessage");
 
 contactField.onkeypress = function (evt)  {
 
-    let charCode = evt.keyCode;
-    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        return false;
+    let charCode = evt.key;
+    
+    if (charCode == ' ') {
+        return true;
     }
-    return true;
+
+    if ((charCode >= '0' && charCode <= '9') || charCode == '+')  {
+        return true;
+    }
+    return false;
 
 
 }
