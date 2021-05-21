@@ -95,7 +95,7 @@ document.getElementById("noteholder").style.maxHeight = "140px";
 }
 
 
-document.getElementById("firstname").onkeypress = function(event)  {
+document.getElementById("firstname").onkeydown = function(event)  {
 
 
     var charCode = event.key;
@@ -110,7 +110,7 @@ document.getElementById("firstname").onkeypress = function(event)  {
 }
 
 
-document.getElementById("lastname").onkeypress = function(event)  {
+document.getElementById("lastname").onkeydown = function(event)  {
 
 
     var charCode = event.key;
