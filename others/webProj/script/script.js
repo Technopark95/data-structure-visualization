@@ -182,8 +182,7 @@ function clickSend() {
     validateForm();
 
     showStatus();
-
-    window.scrollTo(0, 0)
+    document.getElementById("contactform").scrollIntoView();
 
 
 }
