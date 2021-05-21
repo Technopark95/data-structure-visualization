@@ -12,8 +12,6 @@ let contact;
 let occupation;
 let statusCode = "";
 
-
-
 window.onload = function() {
 
     allInputs = document.getElementsByClassName("inputs");
@@ -25,19 +23,12 @@ window.onload = function() {
 
 }
 
-
 function focusError(field) {
-
     field.style.border = "2px solid red";
     field.focus();
-
     setTimeout(() => {
-
         field.style.border = "";
-
     }, 3000)
-
-
 }
 
 
@@ -105,7 +96,6 @@ function validatePhone() {
 function validateOccupation() {
 
     let isValidOccupation = occupation.value.length > 0;
-
 
     if (!isValidOccupation) {
 
