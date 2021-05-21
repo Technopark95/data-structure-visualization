@@ -26,7 +26,7 @@ function validateForm() {
 
             firstName.style.border = "";
 
-        }, 1000)
+        }, 3000)
         return "First name";
     }
 
@@ -42,7 +42,7 @@ function validateForm() {
 
             lastName.style.border = "";
 
-        }, 1000)
+        }, 3000)
         return "Last name";
     }
 
@@ -57,7 +57,7 @@ function validateForm() {
 
             email.style.border = "";
 
-        }, 1000)
+        }, 3000)
         return "email";
     }
 
@@ -74,7 +74,7 @@ function validateForm() {
 
             contact.style.border = "";
 
-        }, 1000)
+        }, 3000)
         return "contact";
     }
 
@@ -92,7 +92,7 @@ function validateForm() {
 
             occupation.style.border = "";
 
-        }, 1000)
+        }, 3000)
         return "occupation";
     }
 
