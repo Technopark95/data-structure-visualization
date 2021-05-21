@@ -1,0 +1,11 @@
+#feedbacklabel {
+    font-size: 150%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: black;
+    z-index: 1;
+}
+
+#backgroundopacity {
+    background-color: rgba(255, 255, 255, 0.404);
+}

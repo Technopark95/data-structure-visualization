@@ -1,0 +1,15 @@
+#offer-label {
+    font-size: 150%;
+    margin-top: 30px;
+    z-index: 1;
+    color: white;
+}
+
+.middlebtn {
+    z-index: 1;
+    width: fit-content;
+    margin-bottom: 20px;
+    height: auto;
+    padding: 20px;
+    background-color: rgb(192, 51, 0);
+}

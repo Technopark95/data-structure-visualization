@@ -1,0 +1,16 @@
+#startedmessage {
+    font-size: 200%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+#send-container {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+#pencil-icon {
+    width: 80%;
+}

@@ -1,4 +1,3 @@
-
 let logoDiv = document.getElementById("logoholder")
 let contactField = document.getElementById("contactfield")
 const emailRegEx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -115,9 +114,7 @@ function showStatus(status) {
     if (status == 0) {
         responseText = "Thank you, We will contact you soon.";
         responseColor = "white"
-    }
-
-    else {
+    } else {
         responseText = "Enter " + status + " correctly";
         responseColor = "red"
     }
@@ -144,30 +141,8 @@ function showStatus(status) {
 
 
 function clickSend() {
-    
+
     let status = validateForm();
 
     showStatus(status);
 }
-
-
-window.onscroll = function () {
-
-
-    if (window.scrollY > 210) {
-        logoDiv.style.opacity = ".4";
-    }
-
-    if (window.scrollY <= 120) {
-        logoDiv.style.opacity = "0";
-    }
-
-
-}
-
-
-document.getElementById("notebtn").onclick = function () {
-    document.getElementById("noteholder").style.maxHeight = "140px";
-}
-
-

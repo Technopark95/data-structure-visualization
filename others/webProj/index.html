@@ -7,14 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stella's Academy</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/remarkable-helper.css">
+    <link rel="stylesheet" href="css/comment-helper.css">
+    <link rel="stylesheet" href="css/contact-helper.css">
+    <link rel="stylesheet" href="css/offer-helper.css">
+    <link rel="stylesheet" href="css/footer-helper.css">
+
     <link rel="icon" href="img/static/eagle.png" type="image/gif" sizes="16x16">
 </head>
 
 <body>
 
-    <div id="logoholder"
-        style="width: 50px;height: auto;position: fixed;top: 20px;left:30px;z-index: 1;transition: 200ms ease-in;opacity: 0;">
-        <img src="./img/static/eagle.png" style="width: 100%;" />
+    <div id="logoholder">
+        <img src="./img/static/eagle.png" />
     </div>
 
     <div id="topbanner">
@@ -27,8 +32,8 @@
         </div>
 
 
-        <div id="contactform" style="z-index: 2;">
-            <label style="font-size: 200%;margin-top: 20px;margin-bottom: 30px;" id="startedmessage">Contact us</label>
+        <div id="contactform">
+            <label id="startedmessage">Contact us</label>
 
             <label id="responsemessage">Hello</label>
 
@@ -61,9 +66,9 @@
                 <textarea id="notearea" placeholder="Add note for us here."></textarea>
             </div>
 
-            <div style="width: 90%;display: flex;flex-direction: row;margin-bottom: 20px;">
-                <button class="sendbutton" onclick="clickSend()" style="border-radius: 50px;">Send</button>
-                <button title="Add note for us" id="notebtn"><img src="img/ico/pen.ico" style="width: 80%;"></button>
+            <div id="send-container">
+                <button class="sendbutton topbtn" onclick="clickSend()">Send</button>
+                <button title="Add note for us" id="notebtn"><img src="img/ico/pen.ico" id="pencil-icon"></button>
             </div>
 
 
@@ -71,7 +76,7 @@
     </div>
 
     <div id="remarkable-cont">
-        <label style="font-size: 150%;margin-top: 30px;">Our remarkable users.</label>
+        <label id="remarklabel">Our remarkable users.</label>
 
         <div id="remarkable">
 
@@ -109,37 +114,35 @@
                 <label>Günther</label>
             </div>
         </div>
-        <label style="font-size: 110%;margin-top: 20px; margin-bottom: 30px;">Soo many to list them here!</label>
+        <label id="remark-end-message">Soo many to list them here!</label>
     </div>
 
 
     <div id="offer-cont">
         <div class="opacitylayer"></div>
-        <label style="font-size: 150%;margin-top: 30px;z-index: 1;color: white;">What do we offer?</label>
+        <label id="offerlabel">What do we offer?</label>
 
         <div class="offer">
 
             <div class="offer-inner-cont">
                 <label class="offerhead">Data Structures</label>
                 <div class="offer-data">
-                    <p>We offer our users Data Structures and Algorithms so that they are well trained for the
-                        competitive events like hackathon.</p>
+                    <p>We offer our users Data Structures and Algorithms so that they are well trained for the competitive events like hackathon.</p>
                 </div>
             </div>
 
             <div class="offer-inner-cont">
                 <label class="offerhead">Mathematics</label>
                 <div class="offer-data">
-                    <p>We guide our user in core of all subjects that is Mathematics, learn and practice it in a fun
-                        way.</p>
+                    <p>We guide our user in core of all subjects that is Mathematics, learn and practice it in a fun way.
+                    </p>
                 </div>
             </div>
 
             <div class="offer-inner-cont">
                 <label class="offerhead">Science</label>
                 <div class="offer-data">
-                    <p>We offer Physics Chemistry in same learning portal so that user wont have to choose seperate
-                        portal for these 2 important subjects.</p>
+                    <p>We offer Physics Chemistry in same learning portal so that user wont have to choose seperate portal for these 2 important subjects.</p>
                 </div>
             </div>
 
@@ -160,8 +163,7 @@
 
         </div>
 
-        <button class="sendbutton"
-            style="z-index: 1;width: fit-content;margin-bottom:20px;height: auto;padding: 20px;background-color: rgb(192, 51, 0);">Book
+        <button class="sendbutton middlebtn">Book
             a Free trial Today and get Best offer!</button>
 
 
@@ -170,8 +172,8 @@
 
 
     <div id="comment-cont">
-        <div class="opacitylayer" style="background-color: rgba(255, 255, 255, 0.404);"></div>
-        <label style="font-size: 150%;margin-top: 30px;margin-bottom: 20px;color: black;z-index: 1;">What our users say
+        <div class="opacitylayer" id="backgroundopacity"></div>
+        <label id="feedbacklabel">What our users say
             about us ?</label>
 
         <div id="comment">
@@ -183,7 +185,7 @@
 
                 <div class="commentator">
                     <img class="commentator-image" src="./img/userphoto/1.jpg" />
-                    <label style="margin:10px;">Jessica</label>
+                    <label class="namelabel">Jessica</label>
                 </div>
 
             </div>
@@ -191,12 +193,11 @@
             <div class="comment-inner-cont">
 
 
-                <p class="comment-data"> A very good platform to learn about programming, Doubts clearing session is
-                    good. </p>
+                <p class="comment-data"> A very good platform to learn about programming, Doubts clearing session is good. </p>
 
                 <div class="commentator">
                     <img class="commentator-image" src="./img/userphoto/4.png" />
-                    <label style="margin:10px;">Günther</label>
+                    <label class="namelabel">Günther</label>
                 </div>
 
             </div>
@@ -204,12 +205,11 @@
             <div class="comment-inner-cont">
 
 
-                <p class="comment-data">Mock tests are design in such a perfect way here you can analyse yourself
-                    without anyone's need or you want assistance they are always ready to sort it out .</p>
+                <p class="comment-data">Mock tests are design in such a perfect way here you can analyse yourself without anyone's need or you want assistance they are always ready to sort it out .</p>
 
                 <div class="commentator">
                     <img class="commentator-image" src="./img/userphoto/2.png" />
-                    <label style="margin:10px;">Arnold</label>
+                    <label class="namelabel">Arnold</label>
                 </div>
 
             </div>
@@ -217,12 +217,11 @@
             <div class="comment-inner-cont">
 
 
-                <p class="comment-data">They provide best interface for data structures and algorithma in an interactive
-                    and animated way where you can study the topic deep and thoroghly.</p>
+                <p class="comment-data">They provide best interface for data structures and algorithma in an interactive and animated way where you can study the topic deep and thoroghly.</p>
 
                 <div class="commentator">
                     <img class="commentator-image" src="./img/userphoto/3.png" />
-                    <label style="margin:10px;">David</label>
+                    <label class="namelabel">David</label>
                 </div>
 
             </div>
@@ -234,24 +233,24 @@
     </div>
 
 
-    <div id="footer-cont" style="color: blanchedalmond;">
+    <div id="footer-cont">
 
-        <div class="opacitylayer" style="opacity: .9;"></div>
-        <label style="font-size: 150%;margin-top: 30px;z-index: 1;">Our Coaches</label>
+        <div class="opacitylayer footer-opacity"></div>
+        <label class="coacheslabel">Our Coaches</label>
 
-        <div id="remarkable" style="margin-bottom:20px;">
+        <div id="remarkable">
+
 
             <div class="remarkable-inner-cont">
-
                 <div class="imgcontainer">
                     <div class="overlayer"></div>
                     <img class="remarkable-img" src="./img/userphoto/p1.jpg" />
-                    <div class="usermarks" style="text-align: center;">
-                        <label style="z-index: 3;">PhD Maths</label>
-                    </div>
+                    <label class="usermarks">Maths</label>
                 </div>
-                <label>RK Venkata</label>
+                <label>Rebecca Hills</label>
             </div>
+
+
             <div class="remarkable-inner-cont">
                 <div class="imgcontainer">
                     <div class="overlayer"></div>
@@ -265,12 +264,12 @@
 
     </div>
 
-    <button class="sendbutton"
-        style="z-index: 1;width:100%;margin:0;height: auto;padding: 20px;background-color: rgb(255, 0, 0);">Book a Free
+    <button class="sendbutton bottombtn">Book a Free
         trial Today and get Best offer!</button>
 
 
     <script src="script/script.js"></script>
+    <script src="script/events.js"></script>
 </body>
 
 </html>

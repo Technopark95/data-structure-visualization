@@ -1,47 +1,56 @@
-
 body {
-
     margin: 0;
-
 }
 
-
 * {
-
     font-family: 'Segoe UI';
 }
 
 #topbanner {
-
-display: flex;
-flex-direction: row;
-height: auto;
-width: 100%;
-position: relative;
-height: auto;
-color: blanchedalmond;
-background-image: url('../img/static/banner.jpg');
-justify-content: space-evenly;
-align-items: center;
-background-attachment: fixed;
-overflow: hidden;
-
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: 100%;
+    position: relative;
+    height: auto;
+    color: blanchedalmond;
+    background-image: url('../img/static/banner.jpg');
+    justify-content: space-evenly;
+    align-items: center;
+    background-attachment: fixed;
+    overflow: hidden;
 }
 
+.namelabel {
+    margin: 10px;
+}
+
+#logoholder {
+    width: 50px;
+    height: auto;
+    position: fixed;
+    top: 20px;
+    left: 30px;
+    z-index: 1;
+    transition: 200ms ease-in;
+    opacity: 0;
+}
+
+#logoholder>img {
+    width: 100%;
+}
 
 #bannerinfo {
-
     position: relative;
     display: flex;
     flex-direction: column;
- z-index: 1;
- padding:40px;
- justify-content: center;
-align-items: center;
+    z-index: 1;
+    padding: 40px;
+    justify-content: center;
+    align-items: center;
 }
 
 .opacitylayer {
-
     position: absolute;
     background-color: rgba(0, 0, 0, 0.87);
     top: 0;
@@ -49,19 +58,14 @@ align-items: center;
     left: 0;
     right: 0;
     height: auto;
-
-
 }
 
 #eagle {
-
-width:120px;
-opacity: 0.2;
-
+    width: 120px;
+    opacity: 0.2;
 }
 
 #contactform {
-
     width: 400px;
     display: flex;
     flex-direction: column;
@@ -71,41 +75,39 @@ opacity: 0.2;
     border: 3px solid white;
     border-radius: 30px;
     margin-bottom: 10px;
+    z-index: 2;
 }
 
-
 .sendbutton {
-
     width: 100%;
-    height :50px;
+    height: 50px;
     margin-top: 10px;
     background-color: rgb(255, 72, 0);
-    border:0;
+    border: 0;
     color: white;
     font-size: 130%;
     cursor: pointer;
 }
 
-.inputcontainer {
-
-position: relative;
-width: 90%;
-height: 50px;
-margin-top: 14px;
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-justify-content: flex-end;
-
-
+.topbtn {
+    border-radius: 50px;
 }
 
+.inputcontainer {
+    position: relative;
+    width: 90%;
+    height: 50px;
+    margin-top: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
 
 .inputs {
-
     width: 100%;
     height: 50px;
-    border: 0 ;
+    border: 0;
     outline: none;
     background-color: rgba(0, 0, 0, 0.685);
     position: relative;
@@ -114,76 +116,53 @@ justify-content: flex-end;
     border-radius: 100px;
     text-align: left;
     text-indent: 20px;
-
 }
 
-
-
-
-
-
 .inputs::placeholder {
-
     color: rgb(255, 127, 80);
     text-align: left;
-
 }
 
 .inputs:focus {
     border-bottom: 2px solid coral;
 }
 
-
 .underliner {
-
     width: 101%;
     height: 2px;
     transition: 100ms ease-in;
-    
-   
 }
 
 .placeholders {
-
     position: absolute;
     bottom: 5px;
     transition: 100ms ease-in;
     opacity: .6;
     left: 10px;
-
 }
 
-
-
 #remarkable-cont {
-
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-color:whitesmoke;
+    background-color: whitesmoke;
     position: relative;
-
 }
 
 #remarkable {
-
     width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;    
+    justify-content: space-evenly;
     margin-top: 30px;
     position: relative;
-
-
-
-
+    margin-bottom: 20px;
 }
 
 .remarkable-inner-cont {
-
     display: flex;
     width: 140px;
     flex-direction: column;
@@ -191,9 +170,7 @@ justify-content: flex-end;
     justify-content: center;
     align-items: center;
     position: relative;
-
 }
-
 
 .remarkable-img {
     width: 100%;
@@ -201,159 +178,127 @@ justify-content: flex-end;
     display: block;
 }
 
-
 .overlayer {
-
-
     background-color: rgb(0, 0, 0);
     position: absolute;
-    top:0;
+    top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     border-radius: 100%;
     opacity: 0;
     transition: 200ms linear;
-
 }
 
-
 .imgcontainer {
-
     width: 100%;
     height: auto;
     position: relative;
-
 }
 
-
 .usermarks {
-
     position: absolute;
     top: 50%;
     left: 50%;
     font-size: large;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     z-index: 1;
     color: white;
     transition: 200ms linear;
     opacity: 0;
-
+    text-align: center;
 }
 
-
 #offer-cont {
-
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-color:snow;
+    background-color: snow;
     position: relative;
     background-image: url("../img/static/offer.jpg");
     background-attachment: fixed;
-
 }
 
 .offer {
-
     width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;    
+    justify-content: space-evenly;
     margin-top: 30px;
     position: relative;
     margin-bottom: 30px;
-
 }
 
 .offer-inner-cont {
-
     display: flex;
     width: 300px;
     flex-direction: column;
-border:.5px solid white;
-border-radius: 50px;
+    border: .5px solid white;
+    border-radius: 50px;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     position: relative;
     padding: 5px;
     margin: 10px;
-
 }
-
 
 .offerhead {
     color: white;
     font-size: 140%;
 }
 
-
 .offer-data {
-
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-
-    height: 100px ;
+    height: 100px;
     text-align: center;
     color: coral;
 }
 
-
 #comment-cont {
-
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-color:white;
+    background-color: white;
     position: relative;
     background-image: url("../img/static/comment.jpg");
     background-attachment: fixed;
-
-
 }
 
-
 #comment {
-
     width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;    
+    justify-content: space-evenly;
     margin-top: 30px;
     position: relative;
     margin-bottom: 60px;
-
-
 }
 
-
 .comment-inner-cont {
-
     display: flex;
     width: 300px;
     height: max-content;
     flex-direction: column;
-
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     position: relative;
     padding: 5px;
     margin: 10px;
-    border-bottom:2px solid black ;
-    border-top:2px solid black ;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
     padding: 15px;
     backdrop-filter: blur(8px);
-
 }
 
 .commentname {
@@ -361,71 +306,57 @@ border-radius: 50px;
     font-size: 140%;
 }
 
-
 .comment-data {
-
     display: flex;
     justify-content: center;
     align-items: flex-start;
     width: 100%;
-    height: 100px ;
+    height: 100px;
     text-align: justify;
     color: black;
     flex-direction: column;
 }
 
 .comment-style {
-
     font-size: 200%;
-    
 }
 
 .commentator {
     width: 100%;
-
     display: flex;
     flex-direction: row;
-    justify-content:flex-end;
+    justify-content: flex-end;
     align-items: center;
-    color: black    ;
+    color: black;
     border-radius: 50px;
 }
 
 .commentator-image {
-
-width:55px;
-border-radius: 100%;
-
-
+    width: 55px;
+    border-radius: 100%;
 }
 
 .comment-inner-cont:hover {
-
     border-color: red;
 }
 
-
-
 #footer-cont {
-
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-color:white;
+    background-color: white;
     position: relative;
     background-image: url("../img/static/footer.png");
     background-repeat: repeat;
-
+    color: blanchedalmond;
 }
 
-
 #noteholder {
-
-    width:100%;
-    max-height:0;
-    overflow:hidden;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
     transition: 200ms ease-in;
     margin-top: 10px;
     display: flex;
@@ -433,25 +364,21 @@ border-radius: 100%;
     justify-content: center;
 }
 
-
 #notebtn {
-    margin-top:10px;
-    width:60px;
+    margin-top: 10px;
+    width: 60px;
     margin-left: 20px;
-    background-color:blanchedalmond;
-    border:0;
+    background-color: blanchedalmond;
+    border: 0;
     outline: none;
     cursor: pointer;
     border-radius: 100%;
 }
 
-
 #notearea {
-
-
     width: 80%;
-    height:80px;
-    border:0;
+    height: 80px;
+    border: 0;
     outline: none;
     background-color: rgba(0, 0, 0, 0.671);
     color: coral;
@@ -459,12 +386,9 @@ border-radius: 100%;
     padding: 26px;
     resize: none;
     text-decoration: none;
-        
 }
 
-
-#responsemessage  {
-
+#responsemessage {
     position: absolute;
     top: 50px;
     font-size: 100%;
@@ -475,86 +399,64 @@ border-radius: 100%;
     background-color: rgb(0, 0, 0);
     padding: 5px;
     border-radius: 100px;
-
 }
 
-
 #notearea::placeholder {
-
     color: coral;
     opacity: .5;
-
 }
 
 #notearea:focus {
-
     border-bottom: 2px solid coral;
 }
 
-
-.remarkable-inner-cont:hover > .imgcontainer > .overlayer {
+.remarkable-inner-cont:hover>.imgcontainer>.overlayer {
     opacity: .8;
 }
 
-.remarkable-inner-cont:hover > .imgcontainer > .usermarks {
+.remarkable-inner-cont:hover>.imgcontainer>.usermarks {
     opacity: 1;
 }
 
-
 ::-webkit-scrollbar {
-
     width: 12px;
-      height: 7px;
-      cursor: default;
-    }
-    
-    ::-webkit-scrollbar-thumb {
-      background: rgb(20, 20, 20); 
-      border-radius: 10px;
-      cursor: default;
-    }
-    
-    ::-webkit-scrollbar-thumb:hover {
-      background: rgb(189, 0, 0); 
-      cursor: default;
-    }
+    height: 7px;
+    cursor: default;
+}
 
+ ::-webkit-scrollbar-thumb {
+    background: rgb(20, 20, 20);
+    border-radius: 10px;
+    cursor: default;
+}
 
+ ::-webkit-scrollbar-thumb:hover {
+    background: rgb(189, 0, 0);
+    cursor: default;
+}
 
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-    } 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 
 @media (max-width:800px) {
-
     #topbanner {
-
         flex-direction: column;
     }
-
     #contactform {
-
         width: 70%;
     }
-
     #remarkable {
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-
     .remarkable-inner-cont {
-
         margin-top: 30px;
     }
-
     #bannerinfo {
-
         margin-bottom: 30px;
     }
-
 }
-
-
