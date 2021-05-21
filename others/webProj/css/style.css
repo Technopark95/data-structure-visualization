@@ -435,12 +435,25 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
+    cursor: pointer;
+}
+
+.address {
+    position: relative;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    cursor: default;
+    font-size: 120%;
 }
 
 .copyright {
     position: relative;
-    margin-bottom: 20px;
     cursor: default;
+    opacity: .5;
+}
+
+.copyrightholder {
+    width: 100%;
 }
 
 #notearea::placeholder {
