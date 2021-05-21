@@ -1,131 +1,161 @@
 let logoDiv = document.getElementById("logoholder")
 let contactField = document.getElementById("contactfield")
 const emailRegEx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+let startedElement = document.getElementById("responsemessage");
 
 
-function validateForm() {
-
-
-    let allInputs = document.getElementsByClassName("inputs");
-
-    let firstName = allInputs[0];
-    let lastName = allInputs[1];
-    let email = allInputs[2];
-    let contact = allInputs[3];
-    let occupation = allInputs[4];
-
-
-    let isValidFirstName = firstName.value.length > 0;
-
-    if (!isValidFirstName) {
-
-        firstName.style.border = "2px solid red";
-        firstName.focus();
-
-
-        setTimeout(() => {
-
-            firstName.style.border = "";
-
-        }, 3000)
-        return "First Name";
-    }
-
-
-    let isValidLastName = lastName.value.length > 0;
-
-    if (!isValidLastName) {
-
-        lastName.style.border = "2px solid red";
-        lastName.focus();
-
-
-        setTimeout(() => {
-
-            lastName.style.border = "";
-
-        }, 3000)
-        return "Last Name";
-    }
-
-    let isValidEmail = emailRegEx.test(String(email.value).toLowerCase());
-
-    if (!isValidEmail) {
-
-        email.style.border = "2px solid red";
-        email.focus();
-
-
-        setTimeout(() => {
-
-            email.style.border = "";
-
-        }, 3000)
-        return "Email";
-    }
-
-
-    let isValidContact = contact.value.length > 0;
-
-
-    if (!isValidContact) {
-
-        contact.style.border = "2px solid red";
-        contact.focus();
-
-        setTimeout(() => {
-
-            contact.style.border = "";
-
-        }, 3000)
-        return "Phone number";
-    }
+let allInputs;
+let firstName;
+let lastName;
+let email;
+let contact;
+let occupation;
+let statusCode = "";
 
 
 
-    let isValidOccupation = occupation.value.length > 0;
+window.onload = function() {
+
+    allInputs = document.getElementsByClassName("inputs");
+    firstName = allInputs[0];
+    lastName = allInputs[1];
+    email = allInputs[2];
+    contact = allInputs[3];
+    occupation = allInputs[4];
+
+}
 
 
-    if (!isValidOccupation) {
+function focusError(field) {
 
-        occupation.style.border = "2px solid red";
-        occupation.focus();
+    field.style.border = "2px solid red";
+    field.focus();
 
-        setTimeout(() => {
+    setTimeout(() => {
 
-            occupation.style.border = "";
+        field.style.border = "";
 
-        }, 3000)
-        return "Occupation";
-    }
-
-
-    return 0;
-
+    }, 3000)
 
 
 }
 
 
 
-function showStatus(status) {
+function validateFirstName() {
+
+    let isValidFirstName = firstName.value.length > 0;
+
+    if (!isValidFirstName) {
+
+        focusError(firstName);
+
+        statusCode = "First Name";
+
+    }
+
+}
+
+
+
+function validateLastName() {
+
+    let isValidLastName = lastName.value.length > 0;
+
+    if (!isValidLastName) {
+
+        focusError(lastName);
+
+        statusCode = "Last Name";
+
+    }
+
+}
+
+
+function validateEmail() {
+
+    let isValidEmail = emailRegEx.test(String(email.value).toLowerCase());
+
+    if (!isValidEmail) {
+
+        focusError(email);
+
+        statusCode = "Email";
+
+    }
+
+}
+
+
+function validatePhone() {
+
+    let isValidContact = contact.value.length > 0;
+
+    if (!isValidContact) {
+
+        focusError(contact);
+
+        statusCode = "Phone number";
+
+    }
+
+}
+
+function validateOccupation() {
+
+    let isValidOccupation = occupation.value.length > 0;
+
+
+    if (!isValidOccupation) {
+
+        focusError(occupation);
+
+        statusCode = "Occupation";
+    }
+
+
+}
+
+
+
+function validateForm() {
+
+
+    if (statusCode.length == 0) validateFirstName();
+    else return
+
+    if (statusCode.length == 0) validateLastName();
+    else return
+
+    if (statusCode.length == 0) validateEmail();
+    else return
+
+    if (statusCode.length == 0) validatePhone();
+    else return
+
+    if (statusCode.length == 0) validateOccupation();
+    else return
+
+
+}
+
+
+
+async function showStatus() {
 
 
     let responseText = "";
     let responseColor = "";
 
-    if (status == 0) {
+    if (statusCode.length == 0) {
         responseText = "Thank you, We will contact you soon.";
         responseColor = "green"
         window.scrollTo(0, 0)
     } else {
-        responseText = "Enter " + status + " correctly";
+        responseText = "Enter " + statusCode + " correctly";
         responseColor = "red"
     }
-
-
-    let startedElement = document.getElementById("responsemessage");
-
 
     startedElement.innerHTML = responseText
     startedElement.style.color = responseColor
@@ -146,7 +176,14 @@ function showStatus(status) {
 
 function clickSend() {
 
-    let status = validateForm();
 
-    showStatus(status);
+    statusCode = ""
+
+    validateForm();
+
+    showStatus();
+
+    window.scrollTo(0, 0)
+
+
 }
