@@ -6,72 +6,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stella's Academy</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="eagle.png" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/static/eagle.png" type="image/gif" sizes="16x16">
 </head>
 
 <body>
 
-    <div id="logoholder" style="width: 50px;height: auto;position: fixed;top: 20px;left:30px;z-index: 1;transition: 200ms ease-in;opacity: 0;">
-
-        <img src="eagle.png" style="width: 100%;"/>
-
+    <div id="logoholder"
+        style="width: 50px;height: auto;position: fixed;top: 20px;left:30px;z-index: 1;transition: 200ms ease-in;opacity: 0;">
+        <img src="./img/static/eagle.png" style="width: 100%;" />
     </div>
 
     <div id="topbanner">
-
-
-
         <div class="opacitylayer"></div>
 
         <div id="bannerinfo">
-            <img src="eagle.png" id="eagle" />
+            <img src="./img/static/eagle.png" id="eagle" />
             <h1>Welcome to Stella's Academy</h1>
             <p>Register Today to get the best of us and stay updated with out latest courses and offerings.</p>
         </div>
 
 
         <div id="contactform" style="z-index: 2;">
-            <label style="font-size: 200%;margin-top: 20px;" id="startedmessage">Get Started.</label>
+            <label style="font-size: 200%;margin-top: 20px;margin-bottom: 30px;" id="startedmessage">Contact us</label>
+
+            <label id="responsemessage">Hello</label>
 
             <div class="inputcontainer">
-                <input id="firstname"  class="inputs" type="text" placeholder="*First Name">
+                <input id="firstname" class="inputs" type="text" placeholder="First Name*">
             </div>
 
             <div class="inputcontainer">
-                <input id="lastname" class="inputs" type="text" placeholder="*Last Name">
-             
-            </div>
-
-            <div class="inputcontainer">
-                <input id="email" class="inputs" type="text" placeholder="*Email">
-
-            </div>
-
-            <!-- no restriction for Contact number length due to the country issues -->
-            <!-- For India Specific code: maxlength="10" -->
-
-            <div class="inputcontainer">
-                <input id="contactfield" class="inputs" type="number"  placeholder="*Contact with country code"  >
+                <input id="lastname" class="inputs" type="text" placeholder="Last Name*">
 
             </div>
 
             <div class="inputcontainer">
-                <input id="occupation" class="inputs" type="text" placeholder="*Occupation">
+                <input id="email" class="inputs" type="text" placeholder="Email*">
+
+            </div>
+
+            <div class="inputcontainer">
+                <input id="contactfield" class="inputs" type="number" placeholder="Contact with country code*">
+
+            </div>
+
+            <div class="inputcontainer">
+                <input id="occupation" class="inputs" type="text" placeholder="Occupation*">
 
             </div>
 
             <div id="noteholder">
 
-            <textarea id="notearea" placeholder="Add note for us here."></textarea>
+                <textarea id="notearea" placeholder="Add note for us here."></textarea>
             </div>
 
             <div style="width: 90%;display: flex;flex-direction: row;margin-bottom: 20px;">
-            <button class="sendbutton" onclick="clickSend()" style="border-radius: 50px;">Send</button>
-            <button title="Add note for us" id="notebtn"><img src="pen.ico" style="width: 80%;"></button>
-        </div>
+                <button class="sendbutton" onclick="clickSend()" style="border-radius: 50px;">Send</button>
+                <button title="Add note for us" id="notebtn"><img src="img/ico/pen.ico" style="width: 80%;"></button>
+            </div>
 
-            <label id="responsemessage"></label>
+
         </div>
     </div>
 
@@ -84,7 +79,7 @@
 
                 <div class="imgcontainer">
                     <div class="overlayer"></div>
-                    <img class="remarkable-img" src="userphoto/1.jpg" />
+                    <img class="remarkable-img" src="./img/userphoto/1.jpg" />
                     <label class="usermarks">87.89%</label>
                 </div>
                 <label>Jessica</label>
@@ -92,7 +87,7 @@
             <div class="remarkable-inner-cont">
                 <div class="imgcontainer">
                     <div class="overlayer"></div>
-                    <img class="remarkable-img" src="userphoto/2.png" />
+                    <img class="remarkable-img" src="./img/userphoto/2.png" />
                     <label class="usermarks">90.11%</label>
                 </div>
                 <label>Arnold</label>
@@ -100,7 +95,7 @@
             <div class="remarkable-inner-cont">
                 <div class="imgcontainer">
                     <div class="overlayer"></div>
-                    <img class="remarkable-img" src="userphoto/3.png" />
+                    <img class="remarkable-img" src="./img/userphoto/3.png" />
                     <label class="usermarks">94.44%</label>
                 </div>
                 <label>David</label>
@@ -108,7 +103,7 @@
             <div class="remarkable-inner-cont">
                 <div class="imgcontainer">
                     <div class="overlayer"></div>
-                    <img class="remarkable-img" src="userphoto/4.png" />
+                    <img class="remarkable-img" src="./img/userphoto/4.png" />
                     <label class="usermarks">87.1%</label>
                 </div>
                 <label>Günther</label>
@@ -143,7 +138,8 @@
             <div class="offer-inner-cont">
                 <label class="offerhead">Science</label>
                 <div class="offer-data">
-                    <p>We offer Physics Chemistry in same learning portal so that user wont have to choose seperate portal for these 2 important subjects.</p>
+                    <p>We offer Physics Chemistry in same learning portal so that user wont have to choose seperate
+                        portal for these 2 important subjects.</p>
                 </div>
             </div>
 
@@ -164,7 +160,9 @@
 
         </div>
 
-        <button class="sendbutton" style="z-index: 1;width: fit-content;margin-bottom:20px;height: auto;padding: 20px;background-color: rgb(192, 51, 0);">Book a Free trial Today and get Best offer!</button>
+        <button class="sendbutton"
+            style="z-index: 1;width: fit-content;margin-bottom:20px;height: auto;padding: 20px;background-color: rgb(192, 51, 0);">Book
+            a Free trial Today and get Best offer!</button>
 
 
 
@@ -173,57 +171,61 @@
 
     <div id="comment-cont">
         <div class="opacitylayer" style="background-color: rgba(255, 255, 255, 0.404);"></div>
-        <label style="font-size: 150%;margin-top: 30px;margin-bottom: 20px;color: black;z-index: 1;">What our users say about us ?</label>
-        
+        <label style="font-size: 150%;margin-top: 30px;margin-bottom: 20px;color: black;z-index: 1;">What our users say
+            about us ?</label>
+
         <div id="comment">
 
             <div class="comment-inner-cont">
 
-       
+
                 <p class="comment-data">No more math phobia!</p>
-                    
-            <div class="commentator">
-                <img class="commentator-image" src="userphoto/1.jpg" />
-                <label style="margin:10px;">Jessica</label>
-            </div>
-           
+
+                <div class="commentator">
+                    <img class="commentator-image" src="./img/userphoto/1.jpg" />
+                    <label style="margin:10px;">Jessica</label>
+                </div>
+
             </div>
 
             <div class="comment-inner-cont">
 
-             
-                    <p class="comment-data"> A very good platform to learn about programming, Doubts clearing session is good.  </p>
-                        
+
+                <p class="comment-data"> A very good platform to learn about programming, Doubts clearing session is
+                    good. </p>
+
                 <div class="commentator">
-                    <img class="commentator-image" src="userphoto/4.png" />
+                    <img class="commentator-image" src="./img/userphoto/4.png" />
                     <label style="margin:10px;">Günther</label>
                 </div>
-                
+
+            </div>
+
+            <div class="comment-inner-cont">
+
+
+                <p class="comment-data">Mock tests are design in such a perfect way here you can analyse yourself
+                    without anyone's need or you want assistance they are always ready to sort it out .</p>
+
+                <div class="commentator">
+                    <img class="commentator-image" src="./img/userphoto/2.png" />
+                    <label style="margin:10px;">Arnold</label>
                 </div>
 
-                <div class="comment-inner-cont">
+            </div>
 
-                 
-                        <p class="comment-data">Mock tests are design in such a perfect way here you can analyse yourself without anyone's need or you want assistance they are always ready to sort it out .</p>
-                            
-                    <div class="commentator">
-                        <img class="commentator-image" src="userphoto/2.png" />
-                        <label style="margin:10px;">Arnold</label>
-                    </div>
-                    
-                    </div>
+            <div class="comment-inner-cont">
 
-                    <div class="comment-inner-cont">
 
-                 
-                        <p class="comment-data">They provide best interface for data structures and algorithma in an interactive and animated way where you can study the topic deep and thoroghly.</p>
-                            
-                    <div class="commentator">
-                        <img class="commentator-image" src="userphoto/3.png" />
-                        <label style="margin:10px;">David</label>
-                    </div>
-                    
-                    </div>
+                <p class="comment-data">They provide best interface for data structures and algorithma in an interactive
+                    and animated way where you can study the topic deep and thoroghly.</p>
+
+                <div class="commentator">
+                    <img class="commentator-image" src="./img/userphoto/3.png" />
+                    <label style="margin:10px;">David</label>
+                </div>
+
+            </div>
 
 
         </div>
@@ -232,28 +234,28 @@
     </div>
 
 
-    <div id="footer-cont"  style="color: blanchedalmond;">
+    <div id="footer-cont" style="color: blanchedalmond;">
 
         <div class="opacitylayer" style="opacity: .9;"></div>
         <label style="font-size: 150%;margin-top: 30px;z-index: 1;">Our Coaches</label>
 
         <div id="remarkable" style="margin-bottom:20px;">
 
-            <div class="remarkable-inner-cont" >
+            <div class="remarkable-inner-cont">
 
                 <div class="imgcontainer">
                     <div class="overlayer"></div>
-                    <img class="remarkable-img" src="userphoto/p1.jpg" />
+                    <img class="remarkable-img" src="./img/userphoto/p1.jpg" />
                     <div class="usermarks" style="text-align: center;">
-                    <label  style="z-index: 3;">PhD Maths</label>
-                </div>
+                        <label style="z-index: 3;">PhD Maths</label>
+                    </div>
                 </div>
                 <label>RK Venkata</label>
             </div>
             <div class="remarkable-inner-cont">
                 <div class="imgcontainer">
                     <div class="overlayer"></div>
-                    <img class="remarkable-img" src="userphoto/p2.jpg" />
+                    <img class="remarkable-img" src="./img/userphoto/p2.jpg" />
                     <label class="usermarks">Computer Science</label>
                 </div>
                 <label>Rebecca Hills</label>
@@ -263,10 +265,12 @@
 
     </div>
 
-    <button class="sendbutton" style="z-index: 1;width:100%;margin:0;height: auto;padding: 20px;background-color: rgb(255, 0, 0);">Book a Free trial Today and get Best offer!</button>
+    <button class="sendbutton"
+        style="z-index: 1;width:100%;margin:0;height: auto;padding: 20px;background-color: rgb(255, 0, 0);">Book a Free
+        trial Today and get Best offer!</button>
 
 
-    <script src="script.js"></script>
+    <script src="script/script.js"></script>
 </body>
 
 </html>

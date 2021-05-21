@@ -20,7 +20,7 @@ width: 100%;
 position: relative;
 height: auto;
 color: blanchedalmond;
-background-image: url("banner.jpg");
+background-image: url('../img/static/banner.jpg');
 justify-content: space-evenly;
 align-items: center;
 background-attachment: fixed;
@@ -112,7 +112,8 @@ justify-content: flex-end;
     color: white;
     font-size: large;
     border-radius: 100px;
-    text-align: center;
+    text-align: left;
+    text-indent: 20px;
 
 }
 
@@ -124,12 +125,12 @@ justify-content: flex-end;
 .inputs::placeholder {
 
     color: rgb(255, 127, 80);
-    text-align: center;
+    text-align: left;
 
 }
 
 .inputs:focus {
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid coral;
 }
 
 
@@ -250,7 +251,7 @@ justify-content: flex-end;
     align-items: center;
     background-color:snow;
     position: relative;
-    background-image: url("offer.jpg");
+    background-image: url("../img/static/offer.jpg");
     background-attachment: fixed;
 
 }
@@ -313,7 +314,7 @@ border-radius: 50px;
     align-items: center;
     background-color:white;
     position: relative;
-    background-image: url("comment.jpg");
+    background-image: url("../img/static/comment.jpg");
     background-attachment: fixed;
 
 
@@ -414,7 +415,7 @@ border-radius: 100%;
     align-items: center;
     background-color:white;
     position: relative;
-    background-image: url("footer.png");
+    background-image: url("../img/static/footer.png");
     background-repeat: repeat;
 
 }
@@ -454,7 +455,7 @@ border-radius: 100%;
     outline: none;
     background-color: rgba(0, 0, 0, 0.671);
     color: coral;
-    font-size: 105%;
+    font-size: large;
     padding: 26px;
     resize: none;
     text-decoration: none;
@@ -464,13 +465,17 @@ border-radius: 100%;
 
 #responsemessage  {
 
+    position: absolute;
+    top: 50px;
     font-size: 100%;
     font-weight: 500;
     margin-bottom: 20px;
+    margin-top: 20px;
     display: none;
     background-color: rgb(0, 0, 0);
     padding: 5px;
     border-radius: 100px;
+
 }
 
 
@@ -483,7 +488,7 @@ border-radius: 100%;
 
 #notearea:focus {
 
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid coral;
 }
 
 
@@ -498,7 +503,7 @@ border-radius: 100%;
 
 ::-webkit-scrollbar {
 
-    width: 7px;
+    width: 12px;
       height: 7px;
       cursor: default;
     }
@@ -531,7 +536,7 @@ border-radius: 100%;
 
     #contactform {
 
-        width: 98%;
+        width: 70%;
     }
 
     #remarkable {
