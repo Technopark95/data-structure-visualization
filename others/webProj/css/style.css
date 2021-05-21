@@ -340,7 +340,7 @@ body {
     border-color: red;
 }
 
-#footer-cont {
+#coach-cont {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -401,6 +401,36 @@ body {
     border-radius: 100px;
 }
 
+#footer-cont {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    position: relative;
+    background-image: url("../img/static/googlemap.jpg");
+    background-repeat: repeat;
+    background-attachment: fixed;
+    color: blanchedalmond;
+}
+
+#footer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.copyright {
+    position: relative;
+    margin-bottom: 20px;
+}
+
 #notearea::placeholder {
     color: coral;
     opacity: .5;
@@ -449,6 +479,11 @@ input::-webkit-inner-spin-button {
         width: 70%;
     }
     #remarkable {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #footer {
         flex-direction: column;
         justify-content: center;
         align-items: center;

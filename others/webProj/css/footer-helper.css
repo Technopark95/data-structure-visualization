@@ -1,11 +1,12 @@
-.footer-opacity {
+.coach-opacity {
     opacity: .9;
 }
 
-#coacheslabel {
+.coacheslabel {
     font-size: 150%;
     margin-top: 30px;
-    z-index: 1;
+    z-index: 4;
+    color: aliceblue;
 }
 
 .bottombtn {
