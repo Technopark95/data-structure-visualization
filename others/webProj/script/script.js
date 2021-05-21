@@ -119,6 +119,7 @@ function showStatus(status) {
     if (status == 0) {
         responseText = "Thank you, We will contact you soon.";
         responseColor = "white"
+        window.scrollTo(0, 0)
     } else {
         responseText = "Enter " + status + " correctly";
         responseColor = "red"
