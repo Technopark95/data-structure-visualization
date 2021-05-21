@@ -140,7 +140,7 @@ async function showStatus() {
 
     if (statusCode.length == 0) {
         responseText = "Thank you, We will contact you soon.";
-        responseColor = "green"
+        responseColor = "rgb(109,209,0,1)"
         window.scrollTo(0, 0)
     } else {
         responseText = "Enter " + statusCode + " correctly";
