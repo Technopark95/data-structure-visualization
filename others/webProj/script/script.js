@@ -21,6 +21,7 @@ function validateForm() {
 
         firstName.style.border = "2px solid red";
         firstName.focus();
+        firstName.scrollIntoView();
 
         setTimeout(() => {
 
@@ -37,6 +38,7 @@ function validateForm() {
 
         lastName.style.border = "2px solid red";
         lastName.focus();
+        lastName.scrollIntoView();
 
         setTimeout(() => {
 
@@ -52,6 +54,7 @@ function validateForm() {
 
         email.style.border = "2px solid red";
         email.focus();
+        email.scrollIntoView();
 
         setTimeout(() => {
 
@@ -69,6 +72,7 @@ function validateForm() {
 
         contact.style.border = "2px solid red";
         contact.focus();
+        contact.scrollIntoView();
 
         setTimeout(() => {
 
@@ -87,6 +91,7 @@ function validateForm() {
 
         occupation.style.border = "2px solid red";
         occupation.focus();
+        occupation.scrollIntoView();
 
         setTimeout(() => {
 
