@@ -350,6 +350,7 @@ body {
     position: relative;
     background-image: url("../img/static/footer.png");
     background-repeat: repeat;
+    background-attachment: fixed;
     color: blanchedalmond;
 }
 
