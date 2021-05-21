@@ -95,12 +95,12 @@ document.getElementById("noteholder").style.maxHeight = "140px";
 }
 
 
-document.getElementById("firstname").onkeydown = function(event)  {
+document.getElementById("firstname").onkeypress = function(event)  {
 
 
-    var charCode = event.which;
+    var charCode = event.key;
 
-    if ((charCode >= 65 && charCode <= 97) || (charCode >= 'A' && charCode <= 'Z') || charCode == 8) {
+    if ((charCode >= 'a' && charCode <= 'z') || (charCode >= 'A' && charCode <= 'Z') || charCode == ' ') {
         return true;
     }
     else{
@@ -110,7 +110,7 @@ document.getElementById("firstname").onkeydown = function(event)  {
 }
 
 
-document.getElementById("lastname").onkeydown = function(event)  {
+document.getElementById("lastname").onkeypress = function(event)  {
 
 
     var charCode = event.key;
