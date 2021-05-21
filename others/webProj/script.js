@@ -98,9 +98,9 @@ document.getElementById("noteholder").style.maxHeight = "140px";
 document.getElementById("firstname").onkeydown = function(event)  {
 
 
-    var charCode = event.key;
+    var charCode = event.which;
 
-    if ((charCode >= 'a' && charCode <= 'z') || (charCode >= 'A' && charCode <= 'Z') || charCode == ' ') {
+    if ((charCode >= 65 && charCode <= 97) || (charCode >= 'A' && charCode <= 'Z') || charCode == 8) {
         return true;
     }
     else{
