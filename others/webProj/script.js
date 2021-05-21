@@ -2,7 +2,7 @@
 let logoDiv  = document.getElementById("logoholder")
 let contactField  = document.getElementById("contactfield")
 const emailRegEx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
+const nameRegEx = /^[A-Za-z]*$/;
 
 
 function clickSend()  {
@@ -18,10 +18,9 @@ let contact = allInputs[3].value;
 let occupation = allInputs[4].value;
 
 
-let isValidFirstName = firstName.length > 0;
-let isValidLastName = lastName.length > 0;
-let isValidEmail = email.length >0;
-let isValidEmailFormat = emailRegEx.test(String(email).toLocaleLowerCase());
+let isValidFirstName = nameRegEx.test(firstName);
+let isValidLastName = nameRegEx.test(lastName);
+let isValidEmail = emailRegEx.test(String(email).toLocaleLowerCase());
 let isValidContact = contact.length > 0;  
 let isValidOccupation = occupation.length > 0;  
 
@@ -29,18 +28,14 @@ let responseText = "";
 let responseColor = "";
 
 
-if (isValidFirstName && isValidLastName  && isValidEmail && isValidContact && isValidOccupation && !isValidEmailFormat) {
-    responseText = "Incorrect Email";
-    responseColor = "red"
-}
 
-else if (isValidFirstName && isValidLastName && isValidEmail && isValidContact && isValidOccupation) {
+if (isValidFirstName && isValidLastName && isValidEmail && isValidContact && isValidOccupation) {
     responseText = "Thank you, We will contact you soon.";
     responseColor = "lightgreen"
 }
 
 else {
-    responseText = "You are required to fill all the information properly.";
+    responseText = "Please provide all information correctly.";
     responseColor = "red"
 }
 
@@ -55,21 +50,21 @@ let startedElement =  document.getElementById("responsemessage");
 }
 
 
-contactField.onkeypress = function (evt)  {
+// contactField.onkeypress = function (evt)  {
 
-    let charCode = evt.key;
+//     let charCode = evt.key;
     
-    if (charCode == ' ') {
-        return true;
-    }
+//     if (charCode == ' ') {
+//         return true;
+//     }
 
-    if ((charCode >= '0' && charCode <= '9') || charCode == '+')  {
-        return true;
-    }
-    return false;
+//     if ((charCode >= '0' && charCode <= '9') || charCode == '+')  {
+//         return true;
+//     }
+//     return false;
 
 
-}
+// }
 
 
 window.onscroll = function () {
@@ -95,31 +90,31 @@ document.getElementById("noteholder").style.maxHeight = "140px";
 }
 
 
-document.getElementById("firstname").onkeypress = function(event)  {
+// document.getElementById("firstname").onkeypress = function(event)  {
 
 
-    var charCode = event.key;
+//     var charCode = event.key;
 
-    if ((charCode >= 'a' && charCode <= 'z') || (charCode >= 'A' && charCode <= 'Z') || charCode == ' ') {
-        return true;
-    }
-    else{
-        return false;
-    }
+//     if ((charCode >= 'a' && charCode <= 'z') || (charCode >= 'A' && charCode <= 'Z') || charCode == ' ') {
+//         return true;
+//     }
+//     else{
+//         return false;
+//     }
 
-}
-
-
-document.getElementById("lastname").onkeypress = function(event)  {
+// }
 
 
-    var charCode = event.key;
+// document.getElementById("lastname").onkeypress = function(event)  {
 
-    if ((charCode >= 'a' && charCode <= 'z') || (charCode >= 'A' && charCode <= 'Z') || charCode == ' ') {
-        return true;
-    }
-    else{
-        return false;
-    }
 
-}
+//     var charCode = event.key;
+
+//     if ((charCode >= 'a' && charCode <= 'z') || (charCode >= 'A' && charCode <= 'Z') || charCode == ' ') {
+//         return true;
+//     }
+//     else{
+//         return false;
+//     }
+
+// }
