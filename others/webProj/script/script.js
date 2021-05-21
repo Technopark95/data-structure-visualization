@@ -21,14 +21,14 @@ function validateForm() {
 
         firstName.style.border = "2px solid red";
         firstName.focus();
-        firstName.scrollIntoView();
+
 
         setTimeout(() => {
 
             firstName.style.border = "";
 
         }, 3000)
-        return "First name";
+        return "First Name";
     }
 
 
@@ -38,14 +38,14 @@ function validateForm() {
 
         lastName.style.border = "2px solid red";
         lastName.focus();
-        lastName.scrollIntoView();
+
 
         setTimeout(() => {
 
             lastName.style.border = "";
 
         }, 3000)
-        return "Last name";
+        return "Last Name";
     }
 
     let isValidEmail = emailRegEx.test(String(email.value).toLowerCase());
@@ -54,14 +54,14 @@ function validateForm() {
 
         email.style.border = "2px solid red";
         email.focus();
-        email.scrollIntoView();
+
 
         setTimeout(() => {
 
             email.style.border = "";
 
         }, 3000)
-        return "email";
+        return "Email";
     }
 
 
@@ -72,14 +72,13 @@ function validateForm() {
 
         contact.style.border = "2px solid red";
         contact.focus();
-        contact.scrollIntoView();
 
         setTimeout(() => {
 
             contact.style.border = "";
 
         }, 3000)
-        return "contact";
+        return "Phone number";
     }
 
 
@@ -91,14 +90,13 @@ function validateForm() {
 
         occupation.style.border = "2px solid red";
         occupation.focus();
-        occupation.scrollIntoView();
 
         setTimeout(() => {
 
             occupation.style.border = "";
 
         }, 3000)
-        return "occupation";
+        return "Occupation";
     }
 
 
@@ -118,7 +116,7 @@ function showStatus(status) {
 
     if (status == 0) {
         responseText = "Thank you, We will contact you soon.";
-        responseColor = "white"
+        responseColor = "green"
         window.scrollTo(0, 0)
     } else {
         responseText = "Enter " + status + " correctly";

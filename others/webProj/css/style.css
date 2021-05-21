@@ -386,6 +386,7 @@ body {
     padding: 26px;
     resize: none;
     text-decoration: none;
+    border-radius: 30px;
 }
 
 #responsemessage {
