@@ -53,7 +53,7 @@ const clearscreen = function(e)  {
 
 function makeboard(n)   {
 
-    $("body").append(`<table id="qboard" style ="position:absolute; transition:100ms linear; top:70px;left:70px;transform:scale(0.7,0.7);border-spacing:1px;" ></table>`);
+    $("body").append(`<table id="qboard" style ="position:absolute; transition:100ms linear; top:70px;left:15%;transform:scale(0.7,0.7);border-spacing:1px;" ></table>`);
 
     $("#qboard").append("<tr>");
 
@@ -357,56 +357,56 @@ async function boardcolor(valu)  {
 }
 
 
-document.getElementById("suimg").onchange = async function() {
+// document.getElementById("suimg").onchange = async function() {
 
 
-  var formData = new FormData(document.getElementById("form1"));
+//   var formData = new FormData(document.getElementById("form1"));
     
-  let rr = await   $.ajax({
-       url: "http://sudokusazyv2.azurewebsites.net/api/get_json",
-       type: "POST",
-       data: formData,
-       cache: false,
-       contentType: false,
-       processData: false
-     });
+//   let rr = await   $.ajax({
+//        url: "http://sudokusazyv2.azurewebsites.net/api/get_json",
+//        type: "POST",
+//        data: formData,
+//        cache: false,
+//        contentType: false,
+//        processData: false
+//      });
 
-     let i = 0;
-
-
-     for (let u = 0;u <81;u+=9){
+//      let i = 0;
 
 
-       let row = rr.predictions.slice(u,u+9);
+//      for (let u = 0;u <81;u+=9){
 
 
-       for (let j = 0 ; j < 9 ; j++) {
+//        let row = rr.predictions.slice(u,u+9);
 
 
-      Sudoku[i][j] = Number(row[j]);
+//        for (let j = 0 ; j < 9 ; j++) {
 
-      if (Sudoku[i][j] == 0) {
 
-        document.getElementById(`in${i}-${j}`).style.color = "red"
-        document.getElementById(`in${i}-${j}`).value = ""
+//       Sudoku[i][j] = Number(row[j]);
+
+//       if (Sudoku[i][j] == 0) {
+
+//         document.getElementById(`in${i}-${j}`).style.color = "red"
+//         document.getElementById(`in${i}-${j}`).value = ""
         
-      }
+//       }
 
-      else {
-      document.getElementById(`in${i}-${j}`).style.color = "black"
-      document.getElementById(`in${i}-${j}`).value = Sudoku[i][j]
-      }
+//       else {
+//       document.getElementById(`in${i}-${j}`).style.color = "black"
+//       document.getElementById(`in${i}-${j}`).value = Sudoku[i][j]
+//       }
 
 
-       }
+//        }
         
-        ++i;
+//         ++i;
 
-    }
+//     }
 
 
 
-}
+// }
 
 
 placeholdermessage = `click sudoku cells to input values then write SudokuSolver()`;
