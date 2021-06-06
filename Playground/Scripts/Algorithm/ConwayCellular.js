@@ -22,6 +22,7 @@ Copyright 2020 Anoop Singh, Graphical Structure
 
 
 document.getElementById("cav1").remove();
+let indicator = document.getElementById("ctrlhold")
 
 skipbtn.style.display = "none";
 
@@ -256,3 +257,29 @@ document.getElementById("pause-btn2").onclick = function () {
     stopper = 1;
 
 };
+
+
+
+document.onkeydown = function(e)  {
+
+    if (!e.ctrlKey) return;
+
+    indicator.style.backgroundColor = "red";
+    indicator.children[0].style.color = "white";
+
+
+
+
+}
+
+document.onkeyup = function(e)  {
+
+
+
+    indicator.style.backgroundColor = "white";
+    indicator.children[0].style.color = "black";
+
+
+
+
+}
