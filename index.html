@@ -743,13 +743,13 @@ var span = document.getElementsByClassName("close")[0];
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
 	document.body.style.position="fixed";
-	document.body.style.overflow="hidden";
+	document.body.style.overflowY="hidden";
   modal.style.display = "block";
 }
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
-	document.body.style.overflow="auto";
+	document.body.style.overflowY="auto";
 	document.body.style.position="";
   modal.style.display = "none";
 }
@@ -757,7 +757,7 @@ span.onclick = function() {
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
-	  document.body.style.overflow="auto";
+	  document.body.style.overflowY="auto";
 	  document.body.style.position="";
     modal.style.display = "none";
   }
