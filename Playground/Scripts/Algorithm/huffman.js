@@ -160,8 +160,8 @@ let difference = 0;
 
      difference = 200-currentl;
  
-     let x = document.getElementsByClassName("dragg");
-let ie;
+//      let x = document.getElementsByClassName("dragg");
+// let ie;
 
 adjustsubtree(noderef[0] , difference)
    
