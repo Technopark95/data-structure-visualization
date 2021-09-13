@@ -308,8 +308,8 @@
           </div>
         </div>
       </div>
-      <p style="color:black;">
-          &nbsp;&copy; Graphical Structure <script>document.write(new Date().getFullYear());</script>. All Rights Reserved. 
+      <p id="copyright" style="color:black;">
+           
       </p>
     </section>
     
@@ -681,6 +681,9 @@ Copyright &copy; <script>document.write(new Date().getFullYear());</script> All 
     resetPosition = true;
   }
 </script>
-	
+<!-- copyright -->
+	<script>
+    document.getElementById("copyright").innerHTML = "&nbsp;&copy; Graphical Structure "+new Date().getFullYear()+". All Rights Reserved.";
+  </script>
 </body>
 </html>
