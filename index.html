@@ -120,7 +120,7 @@
 
             <ul class="navbar-right">
               <li class="nav-item">
-                <button class="button button-header bg" onclick="location.href='/Playground';"><a href="/Playground">Play Ground</a></button>
+                <button class="button button-header bg" onclick="location.href='/Playground';"><a href="/Playground">Play-Ground</a></button>
               </li>
             </ul>
           </div> 
@@ -308,10 +308,11 @@
           </div>
         </div>
       </div>
-      <p style="color:black;">
-          &nbsp;&copy; Graphical Structure <script>document.write(new Date().getFullYear());</script>. All Rights Reserved. 
+      <p id="copyright" style="color:black;">
+           
       </p>
     </section>
+    
     <!--================ Solution section end =================-->      
 
     <!--================ Pricing section start =================      
@@ -454,12 +455,12 @@
   </main>
 
 
-  <!-- ================ start footer Area ================= -->
+  <!-- ================ start footer Area ================= 
   <footer class="footer-area section-gap" style="display:none;">
 			<div class="footer-bottom row align-items-center text-center text-lg-left">
 				<p class="footer-text m-0 col-lg-8 col-md-12" style="display: none;">
-Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved. | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+Copyright &copy; <script(new Date().getFullYear());</script> All rights reserved. | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+ Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. </p> -->
 
 				<div style="display: none;" class="col-lg-4 col-md-12 text-center text-lg-right footer-social">
 					<a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -680,6 +681,9 @@ Copyright &copy; <script>document.write(new Date().getFullYear());</script> All 
     resetPosition = true;
   }
 </script>
-	
+<!-- copyright -->
+	<script>
+    document.getElementById("copyright").innerHTML = "&nbsp;&copy; Graphical Structure "+new Date().getFullYear()+". All Rights Reserved.";
+  </script>
 </body>
 </html>
