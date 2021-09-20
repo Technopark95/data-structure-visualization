@@ -69,9 +69,6 @@
         }
     ]
 }</script>
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5185226808178747" crossorigin="anonymous"></script>
-
 	<!-- </ANIRBAN ROY SEO> -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -89,11 +86,11 @@
 
   <style>
     @media (max-width: 767px) {
-      #yt-tutorial-box{
+      #donationBox{
         left: 10% !important;
         width:auto;
       }
-      #video{
+      #plzDonate{
         width:auto;
       }
     }
@@ -106,6 +103,16 @@
     display: none;
     position: fixed;
     z-index: 888888888;
+    }
+
+    #ytvideo{
+      width: 100%;
+      height: 400px;
+
+    }
+
+    html{
+      scroll-behavior: smooth;
     }
 
   </style>
@@ -133,16 +140,10 @@
           <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
             <ul class="nav navbar-nav menu_nav justify-content-end">
               <li class="nav-item"  style="color: white;"><a style="cursor: pointer;" class="nav-link" onClick="
-                document.getElementById('yt-tutorial-box').style.display = 'block'; document.getElementById('blur-background').style.display='block'; document.body.style.overflow='hidden' ">How to use ?</a></li> 
+                document.getElementById('donationBox').style.display = 'block'; document.getElementById('blur-background').style.display='block'; document.body.style.overflow='hidden' ">Donate</a></li> 
              
-         
-              <li class="nav-item submenu dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                  aria-expanded="false">Pages</a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item"><a href="https://blog.graphicalstructure.org" target="_blank" class="nav-link">Blog</a></li>
-                </ul>
-							</li>
+                <li class="nav-item"  style="color: white;"><a href="#ytvideo" style="cursor: pointer;" class="nav-link" >How To Use?</a></li> 
+          
             </ul>
 
             <ul class="navbar-right">
@@ -188,6 +189,13 @@
     <!--================ Offer section start =================-->      
     <section class="section-margin">
       <div class="container">
+
+        <!-- section intro title about how to use graphical structure -->
+        <div class="section-intro pb-85px text-center">
+        <h2 class="section-intro__title"> How To Use Graphical Structure ?</h2>
+        <iframe id="ytvideo" src="https://www.youtube-nocookie.com/embed/Js_RboNRf4c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
         <div class="section-intro pb-85px text-center">
           <h2 class="section-intro__title">Cool Graphical Structure Features</h2>
           <p class="section-intro__subtitle">At Graphical Structure, we focus on building and providing the best possible user experience to the learners. Thus, we keep developing innovative tools and features that would make learning easier and more fun!</p>
@@ -543,21 +551,34 @@
 	<script>
     document.getElementById("copyright").innerHTML = "&nbsp;&copy; Graphical Structure "+new Date().getFullYear()+". All Rights Reserved.";
   </script>
-  <!-- YouTube Tutorial Floating Box -->
+  <!-- Donation Floating Box -->
 <div style="position: fixed;
-top: 30%;
+top: 50%;
 text-align: center;
-left: 28%;
-z-index: 999999999; display:none;" id="yt-tutorial-box">
-<div onclick="stopVideo()" title="Close" style="background-color: black; color: #fff; padding:5px; cursor: pointer; font-size:20px;">X</div>
-  <iframe id="video" width="560" height="315" src="https://www.youtube-nocookie.com/embed/Js_RboNRf4c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+left:50%;
+transform: translate(-50%, -50%);
+z-index: 999999999; display:none;" id="donationBox">
+<div onclick="closeDonationBox()" title="Close" style="font-weight: bold; background-color:white; color:black; padding:5px; cursor: pointer; font-size:20px;">X</div>
+  <div id="plzDonate" style="background-color: rgba(0,0,0,0.33); border: #fff 1px solid;">
 
+    <div class="custom-model-wrap">
+      <div class="pop-up-content-wrap">
+      <h2 style="color:white; padding:50px;"><b><u>Support The Creators Of Graphical Structure</u></b></h2><br>
+      <div style="text-align:center; margin-bottom: 20px;">
+      <a href="https://www.buymeacoffee.com/gStructure"><img style=" box-shadow: 0 -6px 8px 0 rgba(255, 255, 255, 0.5), 0 6px 20px 0 rgba(255, 255, 255, 0.6);
+        border-radius: 50px;  cursor:pointer;" src="/plzdonate.png"></a>
+      </div>
+      </div>
+      </div>
+
+
+  </div>
 </div>
 <script>
-function stopVideo() {
+function closeDonationBox() {
   document.body.style.overflow = "auto";
-  document.getElementById("yt-tutorial-box").style.display = "none";
-  document.getElementById("video").src = "https://www.youtube-nocookie.com/embed/Js_RboNRf4c";
+  document.getElementById("donationBox").style.display = "none";
+  document.getElementById("plzDonate").src = "https://www.youtube-nocookie.com/embed/Js_RboNRf4c";
   document.getElementById("blur-background").style.display="none";
 }
 
