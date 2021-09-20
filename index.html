@@ -97,13 +97,25 @@
         width:auto;
       }
     }
+
+    #blur-background{
+      backdrop-filter: blur(2px);
+          background:rgba(0,0,0,0.6);
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+    z-index: 888888888;
+    }
+
   </style>
 	
 </head>
 	
 <body>
 
-  
+  <!-- Blur Background When YT Modal Is On -->
+  <div id="blur-background" class="blur-background"></div>
 	
   <!--================Header Menu Area =================-->
   <header class="header_area">
@@ -121,7 +133,7 @@
           <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
             <ul class="nav navbar-nav menu_nav justify-content-end">
               <li class="nav-item"  style="color: white;"><a style="cursor: pointer;" class="nav-link" onClick="
-                document.getElementById('yt-tutorial-box').style.display = 'block';">How to use ?</a></li> 
+                document.getElementById('yt-tutorial-box').style.display = 'block'; document.getElementById('blur-background').style.display='block'; document.body.style.overflow='hidden' ">How to use ?</a></li> 
              
          
               <li class="nav-item submenu dropdown">
@@ -543,8 +555,10 @@ z-index: 999999999; display:none;" id="yt-tutorial-box">
 </div>
 <script>
 function stopVideo() {
+  document.body.style.overflow = "auto";
   document.getElementById("yt-tutorial-box").style.display = "none";
   document.getElementById("video").src = "https://www.youtube-nocookie.com/embed/Js_RboNRf4c";
+  document.getElementById("blur-background").style.display="none";
 }
 
  </script>
