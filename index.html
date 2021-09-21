@@ -139,8 +139,7 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
             <ul class="nav navbar-nav menu_nav justify-content-end">
-              <li class="nav-item"  style="color: white;"><a style="cursor: pointer;" class="nav-link" onClick="
-                document.getElementById('donationBox').style.display = 'block'; document.getElementById('blur-background').style.display='block'; document.body.style.overflow='hidden' ">Donate</a></li> 
+              <li class="nav-item"  style="color: white;"><a style="cursor: pointer;" class="nav-link" onClick="isMobile()?window.open('https://www.buymeacoffee.com/gStructure') : openDonationBox()">Donate</a></li> 
              
                 <li class="nav-item"  style="color: white;"><a href="#ytvideo" style="cursor: pointer;" class="nav-link" >How To Use?</a></li> 
           
@@ -148,7 +147,7 @@
 
             <ul class="navbar-right">
               <li class="nav-item">
-                <button class="button button-header bg" onclick="location.href='/Playground';"><a href="/Playground">Play-Ground</a></button>
+                <button class="button button-header bg" onclick="location.href='/Playground';"><a href="/Playground">Play Ground</a></button>
               </li>
             </ul>
           </div> 
@@ -285,19 +284,22 @@
                 <span>
                   <img src="https://techrbun.com/wp-content/uploads/2019/11/Anirban2BRoy.png" style=" border-radius: 500px; height: 200px;">
                
-                  <br/><br/><br/><br/>   <h3><a href="https://www.techrbun.com/about/" target="_blank"><b>Anirban Roy</b></a></h3>
-                  <p>The SEO guy. Also built the front page.</p>
+                  <br/><br/><br/><br/>   <h3><a href="https://www.techrbun.com/author/anirban/" target="_blank"><b>Anirban Roy</b></a></h3>
+                  <p>Top Contributor. Full-Stack Developer And SEO Expert.</p>
                 </span>
                 
               </div>
             </div>
-           <div class="col-lg-4">
+           <div class="col-lg-4" style="text-align:center">
               <div class="card card-feature text-center text-lg-left mb-4 mb-lg-0">
-                <span class="card-feature__icon">
+                <span style="display: block; margin-left: auto; margin-right: auto;" class="card-feature__icon">
                   <i class="fa fa-code" aria-hidden="true"></i>
                 </span>
-                <h3 class="card-feature__title">Wanna contribute?</h3>
-                <p class="card-feature__subtitle"><a style="color:white!important;background-color: coral!important;" class="button bg" href="https://github.com/Technopark95/Graphical-Structure" target="_blank"><b>GitHub Repository</b></a></p>
+                <h3 style="display: block; margin-left: auto; margin-right: auto;" class="card-feature__title">Wanna contribute?</h3>
+                <p style="display: block; margin-left: auto; margin-right: auto;" class="card-feature__subtitle"><a style="color:white!important;background-color: coral!important;" class="button bg" href="https://github.com/Technopark95/Graphical-Structure" target="_blank"><b>GitHub Repository</b></a></p>
+                <br>
+                <p style="display: block; margin-left: auto; margin-right: auto;" class="card-feature__subtitle"><a style="color:white!important;background-color: coral!important;" class="button bg" href="https://www.buymeacoffee.com/gStructure" target="_blank"><b>Donate</b></a></p>
+             
               </div>
             </div>
           
@@ -565,7 +567,7 @@ z-index: 999999999; display:none;" id="donationBox">
       <div class="pop-up-content-wrap">
       <h2 style="color:white; padding:50px;"><b><u>Support The Creators Of Graphical Structure</u></b></h2><br>
       <div style="text-align:center; margin-bottom: 20px;">
-      <a href="https://www.buymeacoffee.com/gStructure" target="_blank"><img style=" box-shadow: 0 -6px 8px 0 rgba(255, 255, 255, 0.5), 0 6px 20px 0 rgba(255, 255, 255, 0.6);
+      <a onclick="closeDonationBox()" href="https://www.buymeacoffee.com/gStructure" target="_blank"><img style=" box-shadow: 0 -6px 8px 0 rgba(255, 255, 255, 0.5), 0 6px 20px 0 rgba(255, 255, 255, 0.6);
         border-radius: 50px;  cursor:pointer;" src="/plzdonate.png"></a>
       </div>
       </div>
@@ -578,9 +580,19 @@ z-index: 999999999; display:none;" id="donationBox">
 function closeDonationBox() {
   document.body.style.overflow = "auto";
   document.getElementById("donationBox").style.display = "none";
-  document.getElementById("plzDonate").src = "https://www.youtube-nocookie.com/embed/Js_RboNRf4c";
   document.getElementById("blur-background").style.display="none";
 }
+
+function openDonationBox() {
+  document.getElementById('donationBox').style.display = 'block'; 
+  document.getElementById('blur-background').style.display='block'; 
+  document.body.style.overflow='hidden';
+}
+
+function isMobile() {
+  return (screen.width <= 768);
+}
+
 
  </script>
 </body>
