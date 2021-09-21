@@ -10,7 +10,13 @@
   const el = document.createElement('pwa-update');
   document.body.appendChild(el);
 </script>
-
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/pwabuilder-sw/pwabuilder-sw.js');
+  });
+}
+</script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BK8TV34GJW"></script>
 <script>
