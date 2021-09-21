@@ -1,0 +1,22 @@
+{
+  "background_color": "#ffffff",
+  "description": "Data Structures And Algorithms Visualization",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "Graphical Structure",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "Graphical Structure",
+  "start_url": "/",
+  "theme_color": "#ff7f50",
+  "categories": [],
+  "screenshots": [],
+  "icons": [
+    {
+      "src": "/img/favicon.png",
+      "type": "image/png",
+      "sizes": "16x16"
+    }
+  ],
+  "shortcuts": []
+}
