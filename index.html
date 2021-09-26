@@ -102,7 +102,31 @@
   <link rel="stylesheet" href="/css/style.css">
 
   <style>
+    body{
+      background-color: whitesmoke;
+    }
+    #playIMG{
+      margin-top: 100px;
+    }
+    #learnGo{
+      margin-top:60px; margin-left: 25%; float:left; color:black; font-size: 80px; width:300px; text-align: left;
+    }
+    #androidapp{
+      text-align: center; margin-top: 100px; height: 300px;
+    }
     @media (max-width: 767px) {
+      .section-padding--small{
+        padding-top:200px;
+      }
+      #playIMG{
+        margin-top: 50px;
+      }
+      #learnGo{
+        margin-left:20px;
+      }
+    #androidapp{
+      text-align: center; margin-top: 100px; height: 300px;
+    }
       #donationBox{
         left: 10% !important;
         width:auto;
@@ -323,9 +347,20 @@
           </div>
         </div>
       </div>
+
+      <div id="androidapp">
+        <div>
+          <h2 id="learnGo">Learn On The Go!</h2>
+    <a  href='https://play.google.com/store/apps/details?id=org.graphicalstructure.app&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img id="playIMG" width="300px" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a>
+        </div>
+        <p>Google Play and the Google Play logo are trademarks of Google LLC.</p>
+      </div>
     </section>
     <!--================ Solution section start =================-->      
-    <section class="section-padding--small bg-magnolia">
+    <section style="background: inherit;" class="section-padding--small bg-magnolia">
+      
+    </div>
+  </div>
       <div class="container">
         <div class="row align-items-center pt-xl-3 pb-xl-5">
           <div class="col-lg-6">
@@ -333,6 +368,7 @@
               <img class="img-fluid" src="/img/solution.png"  alt="GitHub OctoCat">
             </div>
           </div>
+        
           <div class="col-lg-6">
             <div class="solution__content">
               <h2>Without Github, Graphical Structure wouldn't have been possible!</h2>
@@ -341,7 +377,7 @@
           </div>
         </div>
       </div>
-      <p id="copyright" style="color:black;">
+      <p id="copyright" style="color:black; padding-left: 25px;">
            
       </p>
     </section>
