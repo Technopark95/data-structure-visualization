@@ -100,11 +100,10 @@
 
 </div>
 
-<div class="watermark" style="position: fixed;"> 
 
-  <img  src="../logo1.png"/>
+  <img  src="../logo1.png" style="position:fixed;width:5%;left:0px;bottom:0;opacity: .2;"/>
 
-</div>
+
 
 
 
@@ -145,7 +144,7 @@
 
 
      <div class="commandcopy">
-      <p>Coming Soon.</p>
+      <p>factorial(n)</p>
     </div>
 
   
@@ -170,7 +169,23 @@
     <input type="range" min="1" max="100" value="50" class="slider" id="animation-speed" style="transform: rotate(-90deg);">
   </div>
 
+  <div id="codetracerholder">
+  
+    <pre class="codecolor">
+  <span>let factorial (<span id="paramn">n</span>) {</span><span class="codetracerinfo">                        inside factorial function</span>
+  <span>  if (n == 0) {        </span><span class="codetracerinfo">                        check n value</span>
+  <span>    return 1;</span><span class="codetracerinfo">                                  Recursion reached end return 1</span>
+  <span>  }</span>
+  <span>  return n * factorial(n - 1);</span><span class="codetracerinfo">      call factorial again factorial(<span>val</span>)</span>
+  <span>}</span>
+  </pre>
+  
+</div>
 
+<div id="stackanimationarea">
+<div id="factorialstackholder" style="top: 0px;z-index: 0;">
+</div>
+</div>
 
 <!-- <div id="copy"><p id="copyrightname">Anoop Singh, Graphical Structure © 2020</p></div> -->
 
@@ -188,6 +203,6 @@
 
 <script src="../Scripts/Algorithm/fx.js"></script>
 <script src="../Scripts/Algorithm/info.js"></script>
-
+<script src="../Scripts/Algorithm/factorial.js"></script>
 </body>
 </html>
