@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <title>Factorial - Recursion</title>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BK8TV34GJW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BK8TV34GJW');
+</script>
+
+<meta name="description" content="Data Structures And Algorithms Visualisation."/>
+<meta name="robots" content="index, follow"/>
+<meta name="viewport" content="width=device-width, initial-scale=0.3">
+<link rel="canonical" href="https://graphicalstructure.org/" />
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Graphical Structure">
+<meta property="og:description" content="Data Structures And Algorithms Visualisation.">
+<meta property="og:url" content="https://graphicalstructure.org">
+<meta property="og:site_name" content="Graphical Structure">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Graphical Structure">
+<meta name="twitter:description" content="Data Structures And Algorithms Visualisation.">
+<script type="application/ld+json" class="rank-math-schema">{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "EducationalOrganization",
+            "@id": "https://graphicalstructure.org/#organization",
+            "name": "Graphical Structure",
+            "url": "https://graphicalstructure.org",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://graphicalstructure.org/Playground/logo1.png"
+            }
+        },
+        {
+            "@type": "WebSite",
+            "@id": "https://graphicalstructure.org/#website",
+            "url": "https://graphicalstructure.org",
+            "name": "Graphical Structure",
+            "publisher": {
+                "@id": "https://graphicalstructure.org#organization"
+            },
+            "inLanguage": "en-US",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://blog.graphicalstructure.org/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        },
+        {
+            "@type": "CollectionPage",
+            "@id": "https://graphicalstructure.org/#webpage",
+            "url": "https://graphicalstructure.org/",
+            "name": "Graphical Structure",
+            "about": {
+                "@id": "https://graphicalstructure.org/#organization"
+            },
+            "isPartOf": {
+                "@id": "https://graphicalstructure.org/#website"
+            },
+            "inLanguage": "en-US"
+        }
+    ]
+}</script>
+
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+
+
+<link rel="icon" href="../favicon.png" type="image/png" sizes="16x16">
+<link rel="stylesheet" href="../stack.css">
+<link rel="stylesheet" href="../queue.css">
+<link rel="stylesheet" href="../style.css">
+
+<script src="../Scripts/jquery.js"></script>
+<script src="../Scripts/jquery-ui.js"></script>
+<script src="../Scripts/Line.js"></script>
+
+
+</head>
+<body>
+
+ 
+  <input id ="codetype" spellcheck="false" type="text" placeholder="Code here and press Enter >__"/>
+
+
+
+
+<div class="log" id="log1" style="position: fixed;"> 
+
+</div>
+
+
+  <img  src="../logo1.png" style="position:fixed;width:5%;left:0px;bottom:0;opacity: .2;"/>
+
+
+
+
+
+
+
+
+<div class="footer" style="display: none;">
+
+<p id="feed" class="uncaps" style=" opacity:100%; color: black; margin-top: -10px; font-size: 120%; text-shadow: 0 0 3px #FF0000; "></p>
+
+
+</div>
+
+
+<div id="infotab" style="position: absolute; z-index: 0; position: fixed; top: 40%; left: -300px; width: auto; height: auto;transition: 300ms;">
+  
+  <div id="infos"style=" top:0 ; left:0;" ><p style="position: absolute; font-size:xx-large; margin-top:5px; margin-left: 120px; color:coral;font-family:Segoe UI; cursor:default;">Codes();</p><img src="../info.png" style="position: absolute;height: 40px; width: 40px; left: 300px; top: 10px;" ></div>
+
+</div>
+
+
+
+<div class="infomega"  id="listofcommand" style="text-align: center;"> 
+
+  
+  <p style="font-size:80%;">Zoom out : CTRTL -</p>
+  <p style="font-size:80%;">Zoom in  : CTRTL +</p>
+
+ 
+
+  <div >
+
+    <p class = "acchead" id="trieacc" style="background-color: rgba(0, 0, 0, 0.123); ">Factorial - Recursion</p>
+    <div class="autohide" id="trieaccdata">
+
+
+      <p  style="font-size: 85%; background-color: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.637);margin-bottom: -12px;margin-top: 20px;">Enter the Number</p>
+
+
+     <div class="commandcopy">
+      <p>factorial(n)</p>
+    </div>
+
+  
+  </div>
+
+  </div>
+
+
+  
+  </div>
+
+
+
+<div id="anispeed" style="z-index: 2;display: none; position: fixed; top: 70%; left: -250px; width: auto; height: auto;">
+  <div id="anislow"><p style="position: absolute; font-size:xx-large; margin-top:10px; margin-left: 110px; color:rgb(0, 0, 0);font-family:Segoe UI; cursor:default;">Slow</p><img src="../snail.png" style="position: absolute;height: 40px; width: 40px; left: 255px; top: 10px;" ></div>
+  <div id="aniquick"><p style="position: absolute; font-size:xx-large; margin-top:10px; margin-left: 110px;  color:rgb(0, 0, 0);font-family:Segoe UI; cursor: default;">Quick</p><img src="../light.png" style="transform: rotate(15deg); position: absolute;height: 40px; width: 50px; left: 250px; top: 13px;" ></div>
+  </div>
+
+  <div class="slidecontainer" >
+    <img src="../fastman.png" id="fastiden" style="width: 20%; position: absolute;top:-100px;left:105px; opacity: .5;"/>
+    <img src="../slowman.png" id="slowiden" style="width: 13%; position: absolute;top: 80px;left:115px; opacity: .5;"/>
+    <input type="range" min="1" max="100" value="50" class="slider" id="animation-speed" style="transform: rotate(-90deg);">
+  </div>
+
+  <div id="codetracerholder">
+  
+    <pre class="codecolor">
+  <span>let factorial (<span id="paramn">n</span>) {</span><span class="codetracerinfo">                        inside factorial function</span>
+  <span>  if (n == 0) {        </span><span class="codetracerinfo">                        check n value</span>
+  <span>    return 1;</span><span class="codetracerinfo">                                  Recursion reached end return 1</span>
+  <span>  }</span>
+  <span>  return n * factorial(n - 1);</span><span class="codetracerinfo">      call factorial again factorial(<span>val</span>)</span>
+  <span>}</span>
+  </pre>
+  
+</div>
+
+<div id="stackanimationarea">
+<div id="factorialstackholder" style="top: 0px;z-index: 0;">
+</div>
+</div>
+
+<!-- <div id="copy"><p id="copyrightname">Anoop Singh, Graphical Structure © 2020</p></div> -->
+
+<img id = "play-btn" src="../playbtn.png"  style= "position:fixed; right:290px;top: 140px;width: 70px; border-radius: 100%; "/>
+<img id = "pause-btn" src="../clock.png"  style= "position:fixed; right:200px;top: 140px;width: 70px; border-radius: 100%;"/>
+
+
+<!---
+<script src="all.js"></script>
+<script src="AVL.js"></script>
+<script src="expression.js"></script>
+<script src="trie.js"></script>
+<script src="LCS.js"></script>
+-->
+
+<script src="../Scripts/Algorithm/fx.js"></script>
+<script src="../Scripts/Algorithm/info.js"></script>
+<script src="../Scripts/Algorithm/factorial.js"></script>
+</body>
+</html>

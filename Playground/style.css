@@ -849,3 +849,91 @@ border: none;
 }
 
 
+#codetracerholder {
+
+  height: 200px;
+  width: 350px;
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  right:550px;
+  font-family: poppins;
+
+}
+
+.codecolor {
+
+  font-family: calibri;
+  font-size: 1.5em;
+  color: black;
+}
+
+.codetracerinfo {
+
+  opacity: .3;
+  font-size: 0.7em;
+}
+
+#stackanimationarea {
+  top: 200px;
+  left:10%;
+  width: 200px;
+  height: auto;
+  overflow-y: visible;
+  position: absolute;
+}
+
+#factorialstackholder {
+
+position: absolute;
+width: 150px;
+height: 50px;
+overflow-y: visible;
+top: 0px;
+display: flex;
+flex-direction: column;
+}
+
+.stackcalls {
+
+min-width: 208px;
+min-height: 109.2px;
+border: 2px red solid;
+margin: 2px;
+display: flex;
+flex-direction: column;
+opacity: 0;
+
+}
+
+.stackcalltopheader {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: blanchedalmond;
+  font-family: consolas;
+}
+
+
+.stackcallbody {
+
+  font-family: consolas;
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.stackcallreturn {
+
+  margin-bottom: 2px;
+}
+
+.stackcallreturnvalue {
+
+  font-size: 15px;
+}

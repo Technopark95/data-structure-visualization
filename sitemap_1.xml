@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url><loc>https://graphicalstructure.org/</loc><lastmod>2020-12-30T02:44:38+00:00</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://graphicalstructure.org/index.html</loc><lastmod>2020-12-30T02:44:38+00:00</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://blog.graphicalstructure.org/</loc><lastmod>2020-12-17T01:38:13+00:00</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://graphicalstructure.org/Playground/</loc><lastmod>2020-12-30T02:44:38+00:00</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://graphicalstructure.org/Playground/Array/</loc><lastmod>2020-12-30T02:44:38+00:00</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://graphicalstructure.org/Playground/LinkedList/</loc><lastmod>2020-12-30T02:44:38+00:00</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://graphicalstructure.org/Playground/Stack/</loc><lastmod>2020-12-30T02:44:38+00:00</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://graphicalstructure.org/Playground/Queue/</loc><lastmod>2020-12-30T02:44:38+00:00</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://graphicalstructure.org/Playground/BST/</loc><lastmod>2020-12-30T02:44:38+00:00</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://graphicalstructure.org/Playground/AVL/</loc><lastmod>2020-12-30T02:44:38+00:00</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://graphicalstructure.org/Playground/Splay/</loc><lastmod>2020-12-30T02:44:38+00:00</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://graphicalstructure.org/Playground/RedBlack/</loc><lastmod>2020-12-30T02:44:38+00:00</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://graphicalstructure.org/Playground/BTree/</loc><lastmod>2020-12-30T02:44:38+00:00</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://graphicalstructure.org/Playground/Heap/</loc><lastmod>2020-12-30T02:44:38+00:00</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://graphicalstructure.org/Playground/Priorityqueue/</loc><lastmod>2020-12-30T02:44:38+00:00</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://graphicalstructure.org/Playground/Graph/</loc><lastmod>2020-12-30T02:44:38+00:00</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://graphicalstructure.org/Playground/Trie/</loc><lastmod>2020-12-30T02:44:38+00:00</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://graphicalstructure.org/Playground/ShuntingYard/</loc><lastmod>2020-12-30T02:44:38+00:00</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://graphicalstructure.org/Playground/DP/</loc><lastmod>2020-12-30T02:44:38+00:00</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://graphicalstructure.org/Playground/KnuthMorris/</loc><lastmod>2020-12-30T02:44:38+00:00</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://graphicalstructure.org/Playground/MinHeap/</loc><lastmod>2020-12-30T02:44:38+00:00</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://graphicalstructure.org/Playground/CORDIC/</loc><lastmod>2020-12-30T02:44:38+00:00</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://graphicalstructure.org/Playground/nQueen/</loc><lastmod>2020-12-30T02:44:38+00:00</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://graphicalstructure.org/Playground/RabinKarp/</loc><lastmod>2020-12-30T02:44:38+00:00</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://graphicalstructure.org/Playground/BoyerMoore/</loc><lastmod>2020-12-30T02:44:38+00:00</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://graphicalstructure.org/Playground/naiveSM/</loc><lastmod>2020-12-30T02:44:38+00:00</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://graphicalstructure.org/Playground/KnuthMorris/</loc><lastmod>2020-12-30T02:44:38+00:00</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://graphicalstructure.org/Playground/SortBars/</loc><lastmod>2020-12-30T02:44:38+00:00</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://graphicalstructure.org/Playground/Sudoku/</loc><lastmod>2020-12-30T02:44:38+00:00</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://graphicalstructure.org/Playground/TOH/</loc><lastmod>2020-12-30T02:44:38+00:00</lastmod><changefreq>daily</changefreq></url>
+<url><loc>https://graphicalstructure.org/Playground/TreeAdjustmentAlgorithm/</loc><lastmod>2020-12-30T02:44:38+00:00</lastmod><changefreq>daily</changefreq></url>
+
+</urlset>

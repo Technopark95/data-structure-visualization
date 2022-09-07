@@ -4,9 +4,8 @@ Graphical Structure is a Data structures and algorithms visualization web platfo
 
 ## Website Link
 
-Homepage - [Graphical Structure](https://graphicalstructure.codes)
-Playground - [Graphical Structure Playground](https://graphicalstructure.codes/Playground)
-Blog - [Graphical Structure Blog](https://blog.graphicalstructure.codes)
+Homepage - [Graphical Structure](https://graphicalstructure.org)
+Playground - [Graphical Structure Playground](https://graphicalstructure.org/Playground)
 
 
 ## Usage

@@ -147,9 +147,13 @@ position: absolute;
 }
 
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+
 </head>
 <body>
-  
   <!-- horizontal
 
 <h4>Horizontal Flip</h4>
@@ -185,8 +189,10 @@ position: absolute;
 <br>
 
 vertical -->
-
-
+<div style="text-align: center;">
+<h1 onClick="location.href='/'" style="cursor:pointer; font-size:60px; font-weight: 900; font-family: 'Roboto', sans-serif;">Graphical Structure</h1>
+</div>
+<section id="mainbody">
 <div class="flip flip-vertical" onclick="location.href='./Conway';">
    <div class="front" style="text-align: center;" >
       <h1 class="text-shadow">Conway's Game of Life</h1>
@@ -360,6 +366,17 @@ vertical -->
  </div>
 
 
+ <div class="flip flip-vertical" onclick="location.href='./FactRecursion';">
+   <div class="front" style="text-align: center;" >
+      <h1 class="text-shadow">Factorial (Recursion)</h1>
+   </div>
+   <div class="back" style="background-image: url(thumbnails/placehold.png)">
+      
+      
+   </div>
+ </div>
+
+
 
 <div class="flip flip-vertical" onclick="location.href='./ShuntingYard';">
   <div class="front" >
@@ -479,6 +496,6 @@ vertical -->
   </div>
 </div>
 
-
+</section>
 </body>
 </html> 
