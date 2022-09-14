@@ -71,7 +71,11 @@ var outputscreen = document.getElementById("out1");
 
 var codehere = document.getElementById("codetype") ;
 
-codehere.placeholder ="Type here & Press Enter key."
+codehere.placeholder ="Type here & Press Enter key.";
+
+if (document.title == "Boolean Expression") {
+  codehere.placeholder ="Enter Boolean Expression.";
+}
 
 var arrowpointer = document.getElementById("infos").childNodes[1];
 arrowpointer.style.transition = "200ms"
@@ -110,6 +114,10 @@ var mySVG = connect();
 var pausebtn = document.getElementById("pause-btn");
 var playbtn = document.getElementById("play-btn");
 var skipbtn = document.getElementById("skip-btn");
+
+if (document.title == "Boolean Expression") {
+  skipbtn.style.display = "none";
+}
 
 playbtn.style.filter = "blur(5px)";
 
