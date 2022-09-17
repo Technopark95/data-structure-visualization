@@ -24,6 +24,18 @@ let truthTableWrapper =  document.getElementById("boolean-table");
 
 const convertBoolToInt = (val) => { return  val ? 1 :0; }
 
+const equivalence = (a,b) => {
+
+    let equivalent = [];
+    for (let i = 0 ; i < a.length ; i++) {
+        if ( a[i] == b[i]  ) equivalent.push(1);
+        else equivalent.push(0);
+    }
+
+    return equivalent;
+
+}
+
 const impliesTo = (a,b) => {
 
     let implied = [];
@@ -108,7 +120,7 @@ function pop() {
 // character is operator or not
 function operator(op) {
     if (op == '>' || op == '|' ||
-        op == '&' || op == '<' ||
+        op == '&' || op == '=' ||
         op == '(' || op == ')') {
         return true;
     }
@@ -127,7 +139,7 @@ function precedency(pre) {
     else if (pre == '&') {
         return 3;
     }
-    else if (pre == '>' || pre == '<') {
+    else if (pre == '>' || pre == '=') {
         return 4;
     }
     else if (pre == '\'') {
@@ -365,17 +377,25 @@ const evaluateExpression = (postfixedExpression) => {
                      break;
                   
                 case '>':
-                     alphabeticalExpression = `(${val2.displayExp}&nbsp;${c}&nbsp;${val1.displayExp})`;
+                     alphabeticalExpression = `(${val2.displayExp}&nbsp;→&nbsp;${val1.displayExp})`;
                      calculatedExpression = impliesTo(val2.value, val1.value);
-                     stack.push({displayExp:alphabeticalExpression,value:calculatedExpression});
-                     columnData = columnMaker(calculatedExpression);
-                     tabVal = tabValue(columnData,alphabeticalExpression);
-                     document.getElementById("boolean-table").insertAdjacentHTML("beforeend",tabVal);
+                    stack.push({ displayExp: alphabeticalExpression, value: calculatedExpression });
+                    columnData = columnMaker(calculatedExpression);
+                    tabVal = tabValue(columnData, alphabeticalExpression);
+                    document.getElementById("boolean-table").insertAdjacentHTML("beforeend", tabVal);
                     break;
-          }
-          console.log(stack[stack.length-1]);
+                case '=':
+                    alphabeticalExpression = `(${val2.displayExp}&nbsp;⟷&nbsp;${val1.displayExp})`;
+                    calculatedExpression = equivalence(val2.value, val1.value);
+                    stack.push({ displayExp: alphabeticalExpression, value: calculatedExpression });
+                    columnData = columnMaker(calculatedExpression);
+                    tabVal = tabValue(columnData, alphabeticalExpression);
+                    document.getElementById("boolean-table").insertAdjacentHTML("beforeend", tabVal);
+                    break;
+            }
+            console.log(stack[stack.length - 1]);
         }
-       
+
     }
 }
 catch(e) {
