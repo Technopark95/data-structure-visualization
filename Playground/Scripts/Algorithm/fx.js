@@ -74,7 +74,7 @@ var codehere = document.getElementById("codetype") ;
 codehere.placeholder ="Type here & Press Enter key.";
 
 if (document.title == "Boolean Expression") {
-  codehere.placeholder ="Enter Boolean Expression.";
+  codehere.placeholder ="Enter Boolean Expression. Ex. A|(B&C)";
 }
 
 var arrowpointer = document.getElementById("infos").childNodes[1];
