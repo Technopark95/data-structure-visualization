@@ -20,6 +20,7 @@ Copyright 2020 Anoop Singh, Graphical Structure
 */
 
 _canvas.style.display = "none";
+let truthTableWrapper =  document.getElementById("boolean-table");
 
 const convertBoolToInt = (val) => { return  val ? 1 :0; }
 
@@ -106,8 +107,8 @@ function pop() {
 // Function to check whether the passed
 // character is operator or not
 function operator(op) {
-    if (op == '>' || op == 'u' ||
-        op == 'n' || op == '<' ||
+    if (op == '>' || op == '|' ||
+        op == '&' || op == '<' ||
         op == '(' || op == ')') {
         return true;
     }
@@ -120,10 +121,10 @@ function precedency(pre) {
     if (pre == '@' || pre == '(' || pre == ')') {
         return 1;
     }
-    else if (pre == 'u') {
+    else if (pre == '|') {
         return 2;
     }
-    else if (pre == 'n') {
+    else if (pre == '&') {
         return 3;
     }
     else if (pre == '>' || pre == '<') {
@@ -152,7 +153,7 @@ function InfixtoPostfix(infix) {
         // Checking whether operator or not
         if (operator(el)) {
             if (el == ')') {
-                while (stackarr[topp] != "(") {
+                while (stackarr[topp] != "(" ) {
                     postfix[temp++] = pop();
                 }
                 pop();
@@ -212,7 +213,39 @@ var tabValue = (columnValue,list,i) => {
     `;
 }
 
-var truthTable = (noOfVars , list , expression) => {
+const getVariablesFromExpression = (expression) => {
+
+   return  Array.from(new Set(expression.match(/[a-zA-Z]/g)));
+
+
+}
+
+const validateParenthesis = (expression) => {
+
+    let flag = 0;
+
+    for(let char of expression) {
+
+        if (char == "(") ++flag;
+        else if (char == ")") -- flag;
+    }
+
+    return !flag;
+
+}
+
+var truthTable = (expression) => {
+
+    expression = "("+expression+")";
+
+    if (!validateParenthesis(expression)) {
+        return;
+    }
+
+    truthTableWrapper.innerHTML = "";
+
+    let list = getVariablesFromExpression(expression);
+    let noOfVars = list.length;
 
  for (let i = 0 ; i < noOfVars ; i++) {
 
@@ -279,6 +312,7 @@ const columnMaker = (list) => {
 
 const evaluateExpression = (postfixedExpression) => {
 
+    try {
     let exp = postfixedExpression;
 
     let stack = [];
@@ -291,12 +325,12 @@ const evaluateExpression = (postfixedExpression) => {
           
         // If the scanned character is an operand (number here),
         // push it to the stack.
-        if(c >="A" && c <="Z")
+        if((c >="A" && c <="Z") || (c >= "a" && c <= "z"))
         stack.push({displayExp:c,value:expressionValue[c]});
           
         else if (c == "\'") {
             let top = stack.pop();
-            alphabeticalExpression = `&nbsp;(${top.displayExp}')&nbsp;`;
+            alphabeticalExpression = `(${top.displayExp}${c})`;
             calculatedExpression = not(top.value);
             stack.push({displayExp:alphabeticalExpression,value:calculatedExpression});
             columnData = columnMaker(calculatedExpression);
@@ -312,8 +346,8 @@ const evaluateExpression = (postfixedExpression) => {
               
             switch(c)
             {
-                case 'u':
-                     alphabeticalExpression = `&nbsp;(${val2.displayExp}&nbsp;u&nbsp;${val1.displayExp})&nbsp;`;
+                case '|':
+                     alphabeticalExpression = `(${val2.displayExp}&nbsp;${c}&nbsp;${val1.displayExp})`;
                      calculatedExpression = union(val2.value, val1.value);
                      stack.push({displayExp:alphabeticalExpression,value:calculatedExpression});
                      columnData = columnMaker(calculatedExpression);
@@ -321,8 +355,8 @@ const evaluateExpression = (postfixedExpression) => {
                      document.getElementById("boolean-table").insertAdjacentHTML("beforeend",tabVal);
                     break;
                   
-                case 'n':
-                     alphabeticalExpression = `&nbsp;(${val2.displayExp}&nbsp;n&nbsp;${val1.displayExp})&nbsp;`;
+                case '&':
+                     alphabeticalExpression = `(${val2.displayExp}&nbsp;${c}&nbsp;${val1.displayExp})`;
                      calculatedExpression = intersection(val2.value, val1.value);
                      stack.push({displayExp:alphabeticalExpression,value:calculatedExpression});
                      columnData = columnMaker(calculatedExpression);
@@ -331,7 +365,7 @@ const evaluateExpression = (postfixedExpression) => {
                      break;
                   
                 case '>':
-                     alphabeticalExpression = `&nbsp;(${val2.displayExp}&nbsp;>&nbsp;${val1.displayExp})&nbsp;`;
+                     alphabeticalExpression = `(${val2.displayExp}&nbsp;${c}&nbsp;${val1.displayExp})`;
                      calculatedExpression = impliesTo(val2.value, val1.value);
                      stack.push({displayExp:alphabeticalExpression,value:calculatedExpression});
                      columnData = columnMaker(calculatedExpression);
@@ -343,5 +377,10 @@ const evaluateExpression = (postfixedExpression) => {
         }
        
     }
+}
+catch(e) {
+    truthTableWrapper.innerHTML = "";
+    console.log("Unable to evalute expression");
+}
 
 }

@@ -90,7 +90,6 @@
   body,html {
     width: 100%;
     height:100%;
-    padding-bottom: 20px;
   }
   p{
     margin: 0;
@@ -107,13 +106,17 @@
     padding-top: 4px;
     padding-bottom: 4px;
   }
+
+  #boolean-table {
+    margin-bottom: 20px;
+  }
 </style>
 
 </head>
 <body>
 
  
-  <input id ="codetype" style="height:80px;font-size: 28px;" spellcheck="false" type="text" placeholder="Code here and press Enter >__"/>
+  <input id ="codetype" onkeyup="truthTable(event.target.value)" data-restrict-eval="true" style="height:80px;font-size: 28px;" spellcheck="false" type="text" placeholder="Code here and press Enter >__"/>
 
 
 

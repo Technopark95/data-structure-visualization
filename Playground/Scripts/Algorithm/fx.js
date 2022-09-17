@@ -752,6 +752,12 @@ async function redraw  ()  {
 
 codehere.addEventListener("keypress" , async function(e)  {
 
+  let evalFlag = e.target.getAttribute("data-restrict-eval");
+
+  if (evalFlag == "true") {
+    return;
+  }
+
   
   if (e.key == "Enter") {
 
