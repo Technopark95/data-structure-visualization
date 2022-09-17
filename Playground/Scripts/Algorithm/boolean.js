@@ -22,6 +22,15 @@ Copyright 2020 Anoop Singh, Graphical Structure
 _canvas.style.display = "none";
 let truthTableWrapper =  document.getElementById("boolean-table");
 
+document.getElementById("boolean-info-icon").onmouseenter = function () {
+    document.getElementById("info-table-ref").style.display = "initial";
+}
+
+document.getElementById("boolean-info-icon").onmouseleave = function () {
+    document.getElementById("info-table-ref").style.display = "none";
+}
+
+
 const convertBoolToInt = (val) => { return  val ? 1 :0; }
 
 const equivalence = (a,b) => {
@@ -249,6 +258,8 @@ const validateParenthesis = (expression) => {
 var truthTable = (expression) => {
 
     expression = "("+expression+")";
+
+    expression = expression.replaceAll(" " , "")
 
     if (!validateParenthesis(expression)) {
         return;

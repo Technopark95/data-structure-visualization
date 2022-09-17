@@ -110,6 +110,20 @@
   #boolean-table {
     margin-bottom: 20px;
   }
+
+  .info-table {
+    width: 100%;display: flex;justify-content: space-evenly ;border-bottom:1px rgba(0, 0, 0, 0.282) dashed;
+    padding: 9px 0px 9px 0px;
+  }
+
+  .info-table-wrapper {
+     width: 180px;position:absolute;top:130px;right:20px;display: flex;flex-direction: column;height: auto;justify-content: center;align-items: center;
+    box-shadow: 0px 0px 9px -3px;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 0px 10px 0px 10px;
+    display: none;
+  }
 </style>
 
 </head>
@@ -203,7 +217,25 @@
 <img id = "pause-btn" src="../clock.png"  style= "position:fixed; right:200px;top: 140px;width: 70px; border-radius: 100%;display: none;"/>
 
 
+<img id="boolean-info-icon" src="./info.icon.png" style="position: absolute;right:20px;top:90px;width: 30px;"/>
 
+<div id="info-table-ref" class="info-table-wrapper">
+  <div class="info-table" >
+    <i>OR</i> A | B
+  </div>
+  <div class="info-table">
+    <i>AND</i>  A & B
+  </div>
+  <div class="info-table">
+    <i>NOT</i>  A'
+  </div>
+  <div class="info-table">
+    <i>Implication</i> A > B
+  </div>
+  <div class="info-table">
+    <i>Equivalence</i> A = B
+  </div>
+</div>
 <div id="boolean-table" style="overflow: hidden; min-height: 100px;box-shadow: -2px 2px 18px -5px;display: inline-flex;border-radius:20px;backdrop-filter:blur(8px); border:1px black solid;margin-top: 100px;margin-right:100px; height: auto;flex-direction: row;margin-left: 50px;"> 
 
 </div>
