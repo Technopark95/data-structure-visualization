@@ -186,11 +186,11 @@ this.kruskalize =function (_cl = "rgb(0,0,0,0.08)")  {
 						 day = (rightnodeoffsety+ _right_node.offsetHeight/2) - (leftnodeoffsety+ _left_node.offsetHeight/2);
 						 dangle = Math.atan2(day ,dax);
 
-						 rightx = (_right_node.offsetWidth/2) * Math.cos(135+dangle) + (rightnodeoffsetx+ _right_node.offsetWidth/2) ;
-						 righty  = (_right_node.offsetHeight/2) * Math.sin(135+dangle) + (rightnodeoffsety + (_right_node.offsetHeight / 2)) ;
+						 rightx = (_right_node.offsetWidth/2) * Math.cos(dangle+Math.PI) + (rightnodeoffsetx+ _right_node.offsetWidth/2) ;
+						 righty  = (_right_node.offsetHeight/2) * Math.sin(dangle+Math.PI) + (rightnodeoffsety + (_right_node.offsetHeight / 2)) ;
 
-						 leftx = (_left_node.offsetWidth/2) * Math.cos(.05+dangle) + (leftnodeoffsetx+ _left_node.offsetWidth/2) ;
-						 lefty  = (_left_node.offsetHeight/2) * Math.sin(.05+dangle) + (leftnodeoffsety + (_left_node.offsetHeight / 2)) ;
+						 leftx = (_left_node.offsetWidth/2) * Math.cos(dangle) + (leftnodeoffsetx+ _left_node.offsetWidth/2) ;
+						 lefty  = (_left_node.offsetHeight/2) * Math.sin(dangle) + (leftnodeoffsety + (_left_node.offsetHeight / 2)) ;
 
 						//Get Left point and Right Point
 						_left.x = leftx
